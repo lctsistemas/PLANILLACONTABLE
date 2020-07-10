@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,5 +46,17 @@ namespace Presentacion.Vista
         {
             this.Dispose();
         }
-    }s
+
+        private void panelcontrato_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+    
 }

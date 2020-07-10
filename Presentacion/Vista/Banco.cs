@@ -26,25 +26,25 @@ namespace Presentacion.Vista
         public void generarCodigo()
         {
             codigoban = 0;
-            using (NBanco)
+            using (nb)
             {
-                codigoban=NBanco.
+               // codigoban = nb.
             }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            
+
             result = "";
             using (nb)
             {
                 if (nb.state == EntityState.Guardar)
-                    nb.IdBanco = 
+                    nb.IdBanco =
                     nb.Nom_banco = txtBanco.Text.Trim();
 
-                
+
                 result = nb.GuardarCambios();
-                
+
                 Messages.M_info(result);
                 if (nb.state == EntityState.Guardar)
                 {

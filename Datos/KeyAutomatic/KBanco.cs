@@ -16,14 +16,21 @@ namespace Datos.KeyAutomatic
             using (SqlConnection conn = RConexion.Getconectar())
             {
                 conn.Open();
-                using(SqlCommand cmd=new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    
+
+
+
+
+
+
+                    return codigo;
+
                 }
             }
         }
-        
+
 
     }
 }

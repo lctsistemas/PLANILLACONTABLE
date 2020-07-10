@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelcontrato = new System.Windows.Forms.Panel();
+            this.btnmaximizar = new System.Windows.Forms.PictureBox();
+            this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,31 +61,88 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtpen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtcargo = new System.Windows.Forms.TextBox();
+            this.lblcargo = new System.Windows.Forms.Label();
             this.txtdocumento = new System.Windows.Forms.TextBox();
-            this.lbldoc = new System.Windows.Forms.Label();
-            this.txtapellido = new System.Windows.Forms.TextBox();
-            this.lblapellidos = new System.Windows.Forms.Label();
+            this.lbldocumento = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtafp = new System.Windows.Forms.TextBox();
+            this.panelcontrato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelcontrato
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(675, 50);
-            this.panel1.TabIndex = 0;
+            this.panelcontrato.BackColor = System.Drawing.Color.SteelBlue;
+            this.panelcontrato.Controls.Add(this.btnmaximizar);
+            this.panelcontrato.Controls.Add(this.btnrestaurar);
+            this.panelcontrato.Controls.Add(this.btnminimizar);
+            this.panelcontrato.Controls.Add(this.btncerrar);
+            this.panelcontrato.Controls.Add(this.pictureBox1);
+            this.panelcontrato.Controls.Add(this.label1);
+            this.panelcontrato.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelcontrato.Location = new System.Drawing.Point(0, 0);
+            this.panelcontrato.Name = "panelcontrato";
+            this.panelcontrato.Size = new System.Drawing.Size(676, 50);
+            this.panelcontrato.TabIndex = 0;
+            this.panelcontrato.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelcontrato_MouseDown);
+            // 
+            // btnmaximizar
+            // 
+            this.btnmaximizar.Image = global::Presentacion.Properties.Resources.maxi;
+            this.btnmaximizar.Location = new System.Drawing.Point(600, 6);
+            this.btnmaximizar.Name = "btnmaximizar";
+            this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
+            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnmaximizar.TabIndex = 9;
+            this.btnmaximizar.TabStop = false;
+            this.btnmaximizar.Visible = false;
+            // 
+            // btnrestaurar
+            // 
+            this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
+            this.btnrestaurar.Location = new System.Drawing.Point(600, 6);
+            this.btnrestaurar.Name = "btnrestaurar";
+            this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
+            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrestaurar.TabIndex = 10;
+            this.btnrestaurar.TabStop = false;
+            this.btnrestaurar.Visible = false;
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
+            this.btnminimizar.Location = new System.Drawing.Point(563, 6);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnminimizar.TabIndex = 11;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Visible = false;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
+            this.btncerrar.Location = new System.Drawing.Point(637, 6);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 20);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncerrar.TabIndex = 12;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // pictureBox1
             // 
@@ -116,9 +177,9 @@
             this.panel2.Controls.Add(this.cmbbanco);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtnum_cuenta);
-            this.panel2.Location = new System.Drawing.Point(3, 365);
+            this.panel2.Location = new System.Drawing.Point(1, 365);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(672, 138);
+            this.panel2.Size = new System.Drawing.Size(675, 138);
             this.panel2.TabIndex = 17;
             // 
             // txtid_empleado
@@ -268,9 +329,9 @@
             this.panel3.Controls.Add(this.txtremune);
             this.panel3.Controls.Add(this.lblasig);
             this.panel3.Controls.Add(this.txtasig);
-            this.panel3.Location = new System.Drawing.Point(3, 193);
+            this.panel3.Location = new System.Drawing.Point(1, 193);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(672, 166);
+            this.panel3.Size = new System.Drawing.Size(675, 166);
             this.panel3.TabIndex = 18;
             // 
             // cmbtipcont
@@ -338,14 +399,16 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightCyan;
+            this.panel4.Controls.Add(this.txtafp);
+            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.txtcussp);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.txtpen);
             this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.txtcargo);
+            this.panel4.Controls.Add(this.lblcargo);
             this.panel4.Controls.Add(this.txtdocumento);
-            this.panel4.Controls.Add(this.lbldoc);
-            this.panel4.Controls.Add(this.txtapellido);
-            this.panel4.Controls.Add(this.lblapellidos);
+            this.panel4.Controls.Add(this.lbldocumento);
             this.panel4.Controls.Add(this.txtnombre);
             this.panel4.Controls.Add(this.lblnombre);
             this.panel4.Controls.Add(this.label5);
@@ -357,7 +420,7 @@
             // txtcussp
             // 
             this.txtcussp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcussp.Location = new System.Drawing.Point(200, 106);
+            this.txtcussp.Location = new System.Drawing.Point(305, 106);
             this.txtcussp.Name = "txtcussp";
             this.txtcussp.Size = new System.Drawing.Size(160, 22);
             this.txtcussp.TabIndex = 30;
@@ -367,7 +430,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(197, 87);
+            this.label6.Location = new System.Drawing.Point(307, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 16);
             this.label6.TabIndex = 29;
@@ -378,7 +441,7 @@
             this.txtpen.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpen.Location = new System.Drawing.Point(15, 106);
             this.txtpen.Name = "txtpen";
-            this.txtpen.Size = new System.Drawing.Size(114, 22);
+            this.txtpen.Size = new System.Drawing.Size(83, 22);
             this.txtpen.TabIndex = 28;
             // 
             // label3
@@ -392,46 +455,46 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "PENSION";
             // 
+            // txtcargo
+            // 
+            this.txtcargo.Enabled = false;
+            this.txtcargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcargo.Location = new System.Drawing.Point(487, 55);
+            this.txtcargo.Name = "txtcargo";
+            this.txtcargo.Size = new System.Drawing.Size(139, 22);
+            this.txtcargo.TabIndex = 26;
+            this.txtcargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblcargo
+            // 
+            this.lblcargo.AutoSize = true;
+            this.lblcargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcargo.ForeColor = System.Drawing.Color.Black;
+            this.lblcargo.Location = new System.Drawing.Point(493, 36);
+            this.lblcargo.Name = "lblcargo";
+            this.lblcargo.Size = new System.Drawing.Size(58, 16);
+            this.lblcargo.TabIndex = 25;
+            this.lblcargo.Text = "CARGO";
+            // 
             // txtdocumento
             // 
             this.txtdocumento.Enabled = false;
             this.txtdocumento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdocumento.Location = new System.Drawing.Point(406, 55);
+            this.txtdocumento.Location = new System.Drawing.Point(305, 55);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(139, 22);
-            this.txtdocumento.TabIndex = 26;
-            this.txtdocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdocumento.Size = new System.Drawing.Size(160, 22);
+            this.txtdocumento.TabIndex = 24;
             // 
-            // lbldoc
+            // lbldocumento
             // 
-            this.lbldoc.AutoSize = true;
-            this.lbldoc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldoc.ForeColor = System.Drawing.Color.Black;
-            this.lbldoc.Location = new System.Drawing.Point(403, 36);
-            this.lbldoc.Name = "lbldoc";
-            this.lbldoc.Size = new System.Drawing.Size(92, 16);
-            this.lbldoc.TabIndex = 25;
-            this.lbldoc.Text = "DOCUMENTO";
-            // 
-            // txtapellido
-            // 
-            this.txtapellido.Enabled = false;
-            this.txtapellido.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtapellido.Location = new System.Drawing.Point(200, 55);
-            this.txtapellido.Name = "txtapellido";
-            this.txtapellido.Size = new System.Drawing.Size(160, 22);
-            this.txtapellido.TabIndex = 24;
-            // 
-            // lblapellidos
-            // 
-            this.lblapellidos.AutoSize = true;
-            this.lblapellidos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblapellidos.ForeColor = System.Drawing.Color.Black;
-            this.lblapellidos.Location = new System.Drawing.Point(197, 36);
-            this.lblapellidos.Name = "lblapellidos";
-            this.lblapellidos.Size = new System.Drawing.Size(75, 16);
-            this.lblapellidos.TabIndex = 23;
-            this.lblapellidos.Text = "APELLIDOS";
+            this.lbldocumento.AutoSize = true;
+            this.lbldocumento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldocumento.ForeColor = System.Drawing.Color.Black;
+            this.lbldocumento.Location = new System.Drawing.Point(307, 36);
+            this.lbldocumento.Name = "lbldocumento";
+            this.lbldocumento.Size = new System.Drawing.Size(92, 16);
+            this.lbldocumento.TabIndex = 23;
+            this.lbldocumento.Text = "DOCUMENTO";
             // 
             // txtnombre
             // 
@@ -439,7 +502,7 @@
             this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(15, 55);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(139, 22);
+            this.txtnombre.Size = new System.Drawing.Size(257, 22);
             this.txtnombre.TabIndex = 22;
             // 
             // lblnombre
@@ -449,9 +512,9 @@
             this.lblnombre.ForeColor = System.Drawing.Color.Black;
             this.lblnombre.Location = new System.Drawing.Point(16, 36);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(75, 16);
+            this.lblnombre.Size = new System.Drawing.Size(138, 16);
             this.lblnombre.TabIndex = 21;
-            this.lblnombre.Text = "NOMBRES ";
+            this.lblnombre.Text = "NOMBRE COMPLETO";
             // 
             // label5
             // 
@@ -495,6 +558,25 @@
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(142, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 16);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "TIPO A.F.P";
+            // 
+            // txtafp
+            // 
+            this.txtafp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtafp.Location = new System.Drawing.Point(115, 106);
+            this.txtafp.Name = "txtafp";
+            this.txtafp.Size = new System.Drawing.Size(157, 22);
+            this.txtafp.TabIndex = 30;
+            // 
             // frmcontrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,14 +587,19 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelcontrato);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmcontrato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Contrato";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmcontrato_FormClosing);
             this.Load += new System.EventHandler(this.frmcontrato_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelcontrato.ResumeLayout(false);
+            this.panelcontrato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -526,7 +613,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelcontrato;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
@@ -551,18 +638,24 @@
         private System.Windows.Forms.Label lbltipomoneda;
         private System.Windows.Forms.Label lblcts;
         private System.Windows.Forms.TextBox txtcts;
-        private System.Windows.Forms.Label lbldoc;
-        private System.Windows.Forms.Label lblapellidos;
+        private System.Windows.Forms.Label lblcargo;
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtcussp;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.TextBox txtpen;
+        public System.Windows.Forms.TextBox txtcargo;
         public System.Windows.Forms.TextBox txtdocumento;
-        public System.Windows.Forms.TextBox txtapellido;
         public System.Windows.Forms.TextBox txtnombre;
         public System.Windows.Forms.TextBox txtid_empleado;
+        private System.Windows.Forms.PictureBox btnmaximizar;
+        private System.Windows.Forms.PictureBox btnrestaurar;
+        private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtafp;
+        public System.Windows.Forms.Label lbldocumento;
+        public System.Windows.Forms.TextBox txtcussp;
     }
 }
