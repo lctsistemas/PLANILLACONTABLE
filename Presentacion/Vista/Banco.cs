@@ -17,7 +17,7 @@ namespace Presentacion.Vista
         String result;
         private Int32 codigoban;
 
-        private NBanco nb=new NBanco();
+        private NBanco nbanco=new NBanco();
         public Banco()
         {
             InitializeComponent();
@@ -26,9 +26,9 @@ namespace Presentacion.Vista
         public void generarCodigo()
         {
             codigoban = 0;
-            using (NBanco)
+            using (nbanco)
             {
-                codigoban=NBanco.
+                codigoban = nbanco.GetCodigo();
             }
         }
 
@@ -36,19 +36,19 @@ namespace Presentacion.Vista
         {
             
             result = "";
-            using (nb)
+            using (nbanco)
             {
-                if (nb.state == EntityState.Guardar)
-                    nb.IdBanco = 
-                    nb.Nom_banco = txtBanco.Text.Trim();
+                if (nbanco.state == EntityState.Guardar)
+                    nbanco.IdBanco = codigoban;
+                    nbanco.Nom_banco = txtBanco.Text.Trim();
 
                 
-                result = nb.GuardarCambios();
+                result = nbanco.GuardarCambios();
                 
                 Messages.M_info(result);
-                if (nb.state == EntityState.Guardar)
+                if (nbanco.state == EntityState.Guardar)
                 {
-                    GenerarCodigo();
+                    generarCodigo();
                     limpiar();
                 }
 
@@ -59,6 +59,31 @@ namespace Presentacion.Vista
         {
             txtBanco.Text = String.Empty;
             txtBanco.Focus();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnminimizar.Visible = true;
+            btnmaximizar.Visible = false;
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
         }
     }
 }

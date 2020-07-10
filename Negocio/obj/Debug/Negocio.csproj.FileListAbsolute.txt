@@ -79,3 +79,11 @@ C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Neg
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Negocio.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Negocio.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Datos.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Datos.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csproj.CopyComplete

@@ -1,5 +1,6 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
+using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
@@ -40,6 +41,11 @@ namespace Negocio.Models
             }
 
             return mensaje;
+        }
+
+        public int GetCodigo()
+        {
+            return new KBanco().GetCodigo(); 
         }
         public void Dispose()
         {
