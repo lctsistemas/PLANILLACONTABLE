@@ -45,6 +45,7 @@
     <Compile Include="Contract\IRepository.cs" />
     <Compile Include="Contract\IGenerict.cs" />
     <Compile Include="Entities\Dafp.cs" />
+    <Compile Include="Entities\DBanco.cs" />
     <Compile Include="Entities\Dcargo.cs" />
     <Compile Include="Entities\DEmpleado.cs" />
     <Compile Include="Entities\DempresaMaestra.cs" />
