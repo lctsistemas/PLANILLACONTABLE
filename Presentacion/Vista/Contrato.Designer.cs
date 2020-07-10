@@ -123,7 +123,7 @@
             // 
             // txtid_empleado
             // 
-            this.txtid_empleado.Location = new System.Drawing.Point(473, 94);
+            this.txtid_empleado.Location = new System.Drawing.Point(493, 94);
             this.txtid_empleado.Name = "txtid_empleado";
             this.txtid_empleado.Size = new System.Drawing.Size(29, 20);
             this.txtid_empleado.TabIndex = 31;
