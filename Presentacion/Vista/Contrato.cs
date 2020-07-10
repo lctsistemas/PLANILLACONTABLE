@@ -31,7 +31,7 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-
+            //laflalk
         }
 
         private void frmcontrato_Load(object sender, EventArgs e)
@@ -40,5 +40,10 @@ namespace Presentacion.Vista
             cmbmoneda.SelectedIndex = 0;
             txtpen.Enabled = false;
         }
-    }
+
+        private void frmcontrato_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
+    }s
 }

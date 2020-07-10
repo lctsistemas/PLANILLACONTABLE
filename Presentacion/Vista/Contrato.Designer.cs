@@ -123,7 +123,7 @@
             // 
             // txtid_empleado
             // 
-            this.txtid_empleado.Location = new System.Drawing.Point(493, 94);
+            this.txtid_empleado.Location = new System.Drawing.Point(473, 96);
             this.txtid_empleado.Name = "txtid_empleado";
             this.txtid_empleado.Size = new System.Drawing.Size(29, 20);
             this.txtid_empleado.TabIndex = 31;
@@ -509,6 +509,7 @@
             this.Name = "frmcontrato";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Contrato";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmcontrato_FormClosing);
             this.Load += new System.EventHandler(this.frmcontrato_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
