@@ -19,7 +19,6 @@ namespace Datos.KeyAutomatic
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-<<<<<<< HEAD
                     cmd.CommandText = "SP_GENERAR_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Banco", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -27,7 +26,6 @@ namespace Datos.KeyAutomatic
 
                     codigo = Convert.ToInt32(cmd.Parameters["Banco"].Value);
                     cmd.Parameters.Clear();
-=======
 
 
 
