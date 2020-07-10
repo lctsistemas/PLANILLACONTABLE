@@ -51,5 +51,9 @@ namespace Negocio.Models
         {
            // throw new NotImplementedException();
         }
+
+
+
+        //OBTENER CODIGO
     }
 }

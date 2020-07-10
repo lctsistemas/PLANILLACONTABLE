@@ -654,13 +654,15 @@ namespace Presentacion.Vista
                     frmcontrato formcontrato = new frmcontrato();
                     DataGridViewRow dgr = dgvempleado.CurrentRow;
                     formcontrato.txtid_empleado.Text = dgr.Cells[1].Value.ToString();
-                    formcontrato.txtnombre.Text=dgr.Cells[2].Value.ToString();
-                    formcontrato.txtapellido.Text = dgr.Cells[3].Value.ToString();
+                    string last_name = dgr.Cells[2].Value.ToString() + " " + dgr.Cells[3].Value.ToString() + " " + dgr.Cells[4].Value.ToString();
+                    formcontrato.txtnombre.Text = last_name.ToString();
                     formcontrato.txtdocumento.Text = dgr.Cells[10].Value.ToString();
+                    formcontrato.lbldocumento.Text = dgr.Cells[16].Value.ToString();
+                    formcontrato.txtcargo.Text = dgr.Cells[18].Value.ToString();
                     formcontrato.txtpen.Text = dgr.Cells[13].Value.ToString();
 
                     formcontrato.ShowDialog();
-                    
+
                 }
             }
         }

@@ -16,9 +16,10 @@ namespace Datos.KeyAutomatic
             using (SqlConnection conn = RConexion.Getconectar())
             {
                 conn.Open();
-                using(SqlCommand cmd=new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
+<<<<<<< HEAD
                     cmd.CommandText = "SP_GENERAR_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Banco", SqlDbType.Int).Direction = ParameterDirection.Output;
@@ -26,11 +27,21 @@ namespace Datos.KeyAutomatic
 
                     codigo = Convert.ToInt32(cmd.Parameters["Banco"].Value);
                     cmd.Parameters.Clear();
+=======
+
+
+
+
+
+
+                    return codigo;
+
+>>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
                 }
                 return codigo;
             }
         }
-        
+
 
     }
 }

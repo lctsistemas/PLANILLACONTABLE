@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,7 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-
+            //laflalk
         }
 
         private void frmcontrato_Load(object sender, EventArgs e)
@@ -40,5 +41,22 @@ namespace Presentacion.Vista
             cmbmoneda.SelectedIndex = 0;
             txtpen.Enabled = false;
         }
+
+        private void frmcontrato_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void panelcontrato_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
+    
 }

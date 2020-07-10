@@ -53,8 +53,17 @@ C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.dll
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.pdb
+<<<<<<< HEAD
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Datos.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Datos.pdb
+=======
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\obj\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\obj\Debug\Datos.pdb
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Datos.pdb
+>>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05

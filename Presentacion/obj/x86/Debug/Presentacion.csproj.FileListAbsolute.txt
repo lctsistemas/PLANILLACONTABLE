@@ -108,6 +108,7 @@ C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Presentacion\obj\x86\De
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Presentacion\obj\x86\Debug\Presentacion.Menu_Principal.resources
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Presentacion\obj\x86\Debug\Presentacion.Vista.frmcontrato.resources
 C:\Users\mramirez\source\repos\Planillalct\Planilla_contable\Presentacion\obj\x86\Debug\Presentacion.Vista.frmcontrato.resources
+<<<<<<< HEAD
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csprojAssemblyReference.cache
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Menu_Principal.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.frmprincipal.resources
@@ -137,3 +138,35 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Datos.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Negocio.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Datos.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csproj.CopyComplete
+=======
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csprojAssemblyReference.cache
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Menu_Principal.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.frmprincipal.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.MDIParent1.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.frmvista_empresa.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.frmvista_usuario.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmafp.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.AfpModid.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Banco.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmcargo.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmcontrato.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmdocumento.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Empleado.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmempresa.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmrol.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmsucursal.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmusuario.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.exe
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.pdb
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Negocio.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Negocio.pdb
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Datos.pdb
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csproj.CopyComplete
+>>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
