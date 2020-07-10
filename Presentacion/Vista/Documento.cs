@@ -1,0 +1,212 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Negocio.ValueObjects;
+using Negocio.Models;
+using Presentacion.Helps;
+
+namespace Presentacion.Vista
+{
+    public partial class frmdocumento : Form
+    {
+        private Ndocumento nd = new Ndocumento();    
+        string result;
+
+        public frmdocumento()
+        {
+            InitializeComponent();
+            ShowDocument("");
+        }
+        //METODO MOSTRAR
+        private void ShowDocument(string data)
+        {
+            using(nd)
+            {
+                nd.nombre_documento= data;
+                dgvdocumento.DataSource = nd.Getall();
+                lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
+            }
+        }
+        //MODIFICAR DATAGRIDVIEW
+        private void Tabla()
+        {
+            dgvdocumento.Columns[0].HeaderText = "CODIGO";
+            dgvdocumento.Columns[0].Width = 50;
+            dgvdocumento.Columns[0].Visible = false;
+
+            dgvdocumento.Columns[1].HeaderText = "DOCUMENTO";
+            dgvdocumento.Columns[1].Width = 150;
+
+            dgvdocumento.Columns[2].HeaderText = "DESCRIPCION";
+            dgvdocumento.Columns[2].Width = 250;
+        }
+        //VALIDAR CONTROLES
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtdocumento.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
+        //HABILITAR CONTROLES
+        private void Habilitar(bool v)
+        {
+            txtdocumento.Enabled = v;
+            txtdescripcion.Enabled = v;
+            btnguardar.Enabled = v;
+            btneliminar.Enabled = v;
+        }
+
+        //LIMPIAR CONTROLES
+        private void limpiar()
+        {
+            txtdocumento.Text = String.Empty;
+            txtdescripcion.Text = String.Empty;
+            txtdocumento.Focus();
+        }
+        //LOAD
+        private void frmdocumento_Load(object sender, EventArgs e)
+        {
+            Tabla();
+            Tooltip.Title(txtbuscar,"Buscar por documento");
+            Habilitar(false);
+        }
+        //NUEVO
+        private void btnnuevo_Click(object sender, EventArgs e)
+        {
+            nd.state = EntityState.Guardar;
+            ValidateError.validate.Clear();
+            Habilitar(true);
+            limpiar();
+
+        }
+        //SAVE CHANGE
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (Validar())
+                return;
+
+            using (nd)
+            {
+                nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
+                nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
+                result = nd.SaveChanges();
+                ShowDocument("");
+                Messages.M_info(result);
+            }
+        }
+        //VALIATE
+        private void txtdocumento_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdocumento,"Campo requerido!");
+        }
+        //BUSCAR
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            ShowDocument(txtbuscar.Text.Trim());
+        }
+
+        //TABLA
+        private void dgvdocumento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvdocumento.CurrentRow;
+
+            if (dgvdocumento.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                nd.state = EntityState.Modificar;
+                nd.iddocumento = Convert.ToInt32(r.Cells[0].Value);
+                txtdocumento.Text = Convert.ToString(r.Cells[1].Value);
+                txtdescripcion.Text = Convert.ToString(r.Cells[2].Value);
+                ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
+            }
+        }
+        //ELIMINAR
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (dgvdocumento.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                if (r == DialogResult.Yes)
+                {
+                    nd.state = EntityState.Remover;
+                    nd.iddocumento = Convert.ToInt32(dgvdocumento.CurrentRow.Cells[0].Value);
+                    result = nd.SaveChanges();
+                    ShowDocument("");
+                    Messages.M_info(result);
+                }
+                
+            }
+            else {
+                Messages.M_warning("Seleccione una fila de la tabla");
+            }
+
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnminimizar.Visible = true;
+            btnmaximizar.Visible = false;
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
+
+        }  
+
+        private void barraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void frmdocumento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(231, 76, 60);
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(36, 113, 163);
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(205, 97, 85);
+        }
+
+        private void barraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    } 
+}

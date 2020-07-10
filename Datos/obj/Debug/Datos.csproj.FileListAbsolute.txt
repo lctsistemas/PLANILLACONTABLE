@@ -1,0 +1,55 @@
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Datos\bin\Debug\Datos.dll
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Datos\bin\Debug\Datos.pdb
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.dll
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.pdb
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.pdb
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.dll
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Datos\obj\Debug\Datos.pdb
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Datos\bin\Debug\Datos.dll
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.pdb
+<<<<<<< HEAD
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.pdb
+=======
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Datos\obj\Debug\Datos.pdb
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+>>>>>>> 61e6e38f553a00f599afa3a99982ba5fd854abce
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\mramirez\source\repos\juanfm1998\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\mramirez\source\repos\juanfm1998\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\mramirez\source\repos\juanfm1998\Planilla_contable\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\mramirez\source\repos\juanfm1998\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\mramirez\source\repos\juanfm1998\Planilla_contable\Datos\obj\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.pdb
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\bin\Debug\Datos.pdb
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Datos\obj\Debug\Datos.pdb

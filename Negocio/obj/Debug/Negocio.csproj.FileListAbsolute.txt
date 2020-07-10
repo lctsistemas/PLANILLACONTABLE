@@ -1,0 +1,81 @@
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Datos.dll
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+D:\SISTEMAS EN DESARROLLO\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\mramirez\Desktop\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Datos.dll
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+E:\Programacion\PLANILLA_LCT\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+<<<<<<< HEAD
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\Usuario\source\repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+=======
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\juan\Source\Repos\Planilla\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+>>>>>>> 61e6e38f553a00f599afa3a99982ba5fd854abce
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\juan\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\mramirez\Source\Repos\juanfm1998\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\mramirez\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.dll
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\bin\Debug\Datos.pdb
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
+C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
