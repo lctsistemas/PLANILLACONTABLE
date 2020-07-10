@@ -20,11 +20,8 @@ namespace Datos.Repositories
             using (SqlConnection connect = RConexion.Getconectar())
             {
                 connect.Open();
-<<<<<<< HEAD
                 using (cmd = new SqlCommand())
-=======
                 using ( cmd = new SqlCommand())
->>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
                 {
                     cmd.Connection = connect;
                     cmd.CommandText = "SP_INSERT_BANCO";
