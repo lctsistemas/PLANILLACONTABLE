@@ -34,7 +34,6 @@ namespace Datos.KeyAutomatic
 
                     return codigo;
 
->>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
                 }
                 return codigo;
             }
