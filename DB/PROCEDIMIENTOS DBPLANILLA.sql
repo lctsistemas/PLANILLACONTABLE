@@ -563,6 +563,22 @@ ELSE
 END
 GO
 
+CREATE PROC SP_GENERAR_BANCO
+(@Banco int output)
+AS BEGIN
+SET @Banco=(SELECT count(b.id_banco) FROM Banco b)
+IF(@Banco=0)
+	BEGIN
+		SET @Banco=1
+	END
+ELSE
+	BEGIN
+		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)
+	END
+END
+GO
+
+
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
 CREATE PROC SP_LLENAR_CARGO_EMPLEADO
 AS BEGIN
@@ -603,12 +619,22 @@ GO
 
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
-CREATE PROC SP_INSERT_BANCO(
+alter PROC SP_INSERT_BANCO(
 @id_banco int,
-@nombre_banco varchar(25)
+@nombre_banco varchar(25),
+@mensaje varchar(100)
 )
 AS BEGIN
-INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
+IF(EXISTS(SELECT b.nombre_banco FROM Banco b WHERE b.id_banco=@id_banco))
+	BEGIN 
+		SET @mensaje ='EL BANCO ('+@nombre_banco+') YA SE ENCUENTRA REGISTRADO'
+	END
+ELSE
+	BEGIN
+		INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
+		SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
+	END
+
 END
 GO
 

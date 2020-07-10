@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\NBanco.cs" />
     <Compile Include="Models\Ncargo.cs" />
     <Compile Include="Models\NContrato.cs" />
     <Compile Include="Models\Ndocumento.cs" />

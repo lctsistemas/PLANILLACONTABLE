@@ -672,6 +672,10 @@ namespace Presentacion.Vista
             else
                 dgvempleado.Columns[0].Visible = false;
         }
-      
+
+        private void txtcodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }

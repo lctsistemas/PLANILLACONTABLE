@@ -323,6 +323,7 @@ namespace Presentacion.Vista
             this.txtcodigo.Size = new System.Drawing.Size(105, 20);
             this.txtcodigo.TabIndex = 66;
             this.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcodigo.TextChanged += new System.EventHandler(this.txtcodigo_TextChanged);
             // 
             // label9
             // 

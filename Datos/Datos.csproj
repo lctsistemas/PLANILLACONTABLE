@@ -53,6 +53,7 @@
     <Compile Include="Entities\DtipoDocumento.cs" />
     <Compile Include="Entities\Dusuario.cs" />
     <Compile Include="KeyAutomatic\KAFP.cs" />
+    <Compile Include="KeyAutomatic\KBanco.cs" />
     <Compile Include="KeyAutomatic\Kcontrato.cs" />
     <Compile Include="KeyAutomatic\Kcargo_empleado.cs" />
     <Compile Include="KeyAutomatic\Kdocumento_emp.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="KeyAutomatic\KEmpresa.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RBanco.cs" />
     <Compile Include="Repositories\Rcargo.cs" />
     <Compile Include="Repositories\RConexion.cs" />
     <Compile Include="Repositories\Rdocumento.cs" />

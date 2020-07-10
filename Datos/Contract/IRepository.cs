@@ -32,4 +32,9 @@ namespace Datos.Contract
     {
 
     }
+
+    public interface IBanco : IGenerict<DBanco>
+    {
+
+    }
 }
