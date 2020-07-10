@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtid_empleado = new System.Windows.Forms.TextBox();
             this.lblcts = new System.Windows.Forms.Label();
             this.txtcts = new System.Windows.Forms.TextBox();
             this.cmbmoneda = new System.Windows.Forms.ComboBox();
@@ -65,7 +66,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.txtid_empleado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -120,6 +120,13 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(672, 138);
             this.panel2.TabIndex = 17;
+            // 
+            // txtid_empleado
+            // 
+            this.txtid_empleado.Location = new System.Drawing.Point(473, 94);
+            this.txtid_empleado.Name = "txtid_empleado";
+            this.txtid_empleado.Size = new System.Drawing.Size(29, 20);
+            this.txtid_empleado.TabIndex = 31;
             // 
             // lblcts
             // 
@@ -487,13 +494,6 @@
             this.btnguardar.TabIndex = 65;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // txtid_empleado
-            // 
-            this.txtid_empleado.Location = new System.Drawing.Point(531, 94);
-            this.txtid_empleado.Name = "txtid_empleado";
-            this.txtid_empleado.Size = new System.Drawing.Size(29, 20);
-            this.txtid_empleado.TabIndex = 31;
             // 
             // frmcontrato
             // 
