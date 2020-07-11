@@ -20,8 +20,8 @@ namespace Datos.Entities
             this.nom_banco = nom_banco;
         }
 
-        public int IdBanco { get => idBanco; set => idBanco = value; }
-        public string Nom_banco { get => nom_banco; set => nom_banco = value; }
+        public int IdBanco { get; set; }
+        public string Nom_banco { get ; set ; }
 
         public String mensaje { get; set; }
 

@@ -410,7 +410,12 @@ namespace Presentacion.Vista
                 MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             mostrarEmp("");
-            limpiar();
+            if (nEmpleado.state == EntityState.Guardar)
+            {
+                GenerateCodigo();
+                limpiar();
+            }
+            
             
         }
 

@@ -38,10 +38,21 @@ namespace Presentacion.Vista
         public void generarCodigo()
         {
             codigoban = 0;
-
+            
             using (nbanco)
             {
                 codigoban = nbanco.GetCodigo();
+                txtcodigo.Text = "BAN 0" + codigoban;
+            }
+        }
+
+        private void ShowBanco(String data)
+        {
+            using (nbanco)
+            {
+                nbanco.Nom_banco = data;
+                dgvBanco.DataSource = nbanco.Listar();
+                
             }
         }
 
@@ -110,6 +121,19 @@ namespace Presentacion.Vista
         private void txtBanco_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtBanco, "Campo requerido");
+        }
+
+        private void Banco_Load(object sender, EventArgs e)
+        {
+            ShowBanco("");
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            using (nbanco) { nbanco.state = EntityState.Guardar; }
+            generarCodigo();
+
+            limpiar();
         }
     }
 }
