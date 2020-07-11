@@ -669,14 +669,15 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
-CREATE PROC SP_SHOW_BANCO(
-@id_banco int,
-@nombre_cargo varchar(25)
+alter PROC SP_SHOW_BANCO(
+@search varchar(50)
 )
 AS BEGIN 
-SELECT id_banco,nombre_banco from Banco; 
+SELECT b.id_banco,b.nombre_banco from Banco b where b.nombre_banco like @search+'%' ; 
 END;
 GO
+
+EXEC SP_SHOW_BANCO 'B';
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
 CREATE PROC SP_INSERT_TIP_CONT(
