@@ -20,6 +20,7 @@ namespace Datos.Repositories
             using (SqlConnection connect = RConexion.Getconectar())
             {
                 connect.Open();
+                using (cmd = new SqlCommand())
                 using ( cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
