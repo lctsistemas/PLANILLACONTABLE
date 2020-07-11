@@ -23,6 +23,18 @@ namespace Presentacion.Vista
             InitializeComponent();
         }
 
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtBanco.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
+
         public void generarCodigo()
         {
             codigoban = 0;
@@ -35,6 +47,8 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar())
+                return;
 
             result = "";
             using (nbanco)
@@ -91,6 +105,11 @@ namespace Presentacion.Vista
         {
             this.WindowState = FormWindowState.Minimized;
 
+        }
+
+        private void txtBanco_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtBanco, "Campo requerido");
         }
     }
 }
