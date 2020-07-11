@@ -1,15 +1,10 @@
 ﻿using Negocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Presentacion.Helps;
 using Negocio.ValueObjects;
+using Presentacion.Helps;
 using Presentacion.Subvista;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
@@ -117,7 +112,7 @@ namespace Presentacion.Vista
             txtusuario.Text = "";
             txtregimen.Text = "";
             txtcodigo_sucursal.Focus();
-        }    
+        }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -226,7 +221,7 @@ namespace Presentacion.Vista
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            using (nsu){ nsu.state = EntityState.Guardar; }
+            using (nsu) { nsu.state = EntityState.Guardar; }
             Limpiar();
         }
 

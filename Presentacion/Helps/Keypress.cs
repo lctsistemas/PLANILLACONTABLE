@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Presentacion.Helps
@@ -14,7 +11,7 @@ namespace Presentacion.Helps
             {
                 txt.Focus();
             }
-        
+
         }
 
         public static void Combo(KeyPressEventArgs e, ComboBox cbo)
@@ -23,16 +20,16 @@ namespace Presentacion.Helps
             {
                 cbo.Focus();
             }
-        
+
         }
 
         public static void Button(KeyPressEventArgs e, Button btn)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Tab) )
+            if (e.KeyChar == Convert.ToChar(Keys.Tab))
             {
                 MessageBox.Show("Enter");//no captura el tap
             }
-        
+
         }
 
         public static void SoloNumeros(KeyPressEventArgs e)

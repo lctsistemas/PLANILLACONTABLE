@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Presentacion.Helps;
-using Negocio.Models;
+﻿using Negocio.Models;
 using Negocio.ValueObjects;
+using Presentacion.Helps;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
@@ -26,13 +22,14 @@ namespace Presentacion.Vista
             ShowUser("");
         }
         //MOSTRAR ROL
-        private void ShowRol() {
-            using (Nrol nr=new Nrol())
+        private void ShowRol()
+        {
+            using (Nrol nr = new Nrol())
             {
                 cborol.DataSource = nr.Getall();
                 cborol.DisplayMember = "nombre_rol";
-                cborol.ValueMember = "idrol";             
-            }        
+                cborol.ValueMember = "idrol";
+            }
         }
 
         //MOSTRAR USUARIO
@@ -74,7 +71,7 @@ namespace Presentacion.Vista
             dgvusuario.Columns[3].Width = 100;
 
             dgvusuario.Columns[4].HeaderText = "CODIGO ROL";
-            dgvusuario.Columns[4].Width =50;
+            dgvusuario.Columns[4].Width = 50;
             dgvusuario.Columns[4].Visible = false;
 
             dgvusuario.Columns[5].HeaderText = "ROL";
@@ -88,7 +85,7 @@ namespace Presentacion.Vista
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text)
-                || String.IsNullOrWhiteSpace(txtpassword.Text)|| cborol.Text.Equals(""))
+                || String.IsNullOrWhiteSpace(txtpassword.Text) || cborol.Text.Equals(""))
             {
                 ValidateChildren();
                 return true;
@@ -118,12 +115,12 @@ namespace Presentacion.Vista
             cborol.SelectedValue = 0;
             txtacceso.Focus();
         }
-	
+
         //LOAD
         private void frmusuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(btnrol,"Registrar Rol");
-            Tooltip.Title(txtbuscar,"Buscar por nombre usuario");
+            Tooltip.Title(btnrol, "Registrar Rol");
+            Tooltip.Title(txtbuscar, "Buscar por nombre usuario");
             Tabla();
             Habilitar(false);
             cborol.Text = "";
@@ -146,7 +143,7 @@ namespace Presentacion.Vista
 
         private void txtnom_usuario_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtnom_usuario,"Campo requerido");
+            ValidateError.Validate_text(txtnom_usuario, "Campo requerido");
         }
 
         private void txtpassword_Validating(object sender, CancelEventArgs e)
@@ -185,11 +182,11 @@ namespace Presentacion.Vista
                     GenerarCodigo();
                     limpiar();
                 }
-                  
-            }      
+
+            }
         }
 
-       
+
 
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -200,13 +197,13 @@ namespace Presentacion.Vista
         private void dgvusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvusuario.CurrentRow;
-            if (dgvusuario.Rows.GetFirstRow(DataGridViewElementStates.Selected)!=-1)
+            if (dgvusuario.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 using (nu)
                 {
                     nu.state = EntityState.Modificar;
                     nu.idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario
-                    txtcodigo.Text = "USER 0"+nu.idusuario;
+                    txtcodigo.Text = "USER 0" + nu.idusuario;
                     txtacceso.Text = r.Cells[1].Value.ToString();//codigo acceso
                     txtnom_usuario.Text = r.Cells[2].Value.ToString();//referencia
                     txtpassword.Text = r.Cells[3].Value.ToString();//contrasena
@@ -216,7 +213,7 @@ namespace Presentacion.Vista
                     Habilitar(true);
                     ValidateError.validate.Clear();
                 }
-                  
+
             }
         }
         //REMOVER BUTTON
@@ -226,7 +223,7 @@ namespace Presentacion.Vista
             if (dgvusuario.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 DialogResult re = Messages.M_question("¿Desea Eliminar Usuario?");
-                if (re==DialogResult.Yes)
+                if (re == DialogResult.Yes)
                 {
                     using (nu)
                     {
@@ -238,9 +235,10 @@ namespace Presentacion.Vista
                         btnguardar.Enabled = false;
                     }
                 }
-                
+
             }
-            else {
+            else
+            {
                 Messages.M_warning("Seleccione un Fila");
             }
         }

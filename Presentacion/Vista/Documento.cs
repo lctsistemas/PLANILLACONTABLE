@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using Negocio.Models;
 using Negocio.ValueObjects;
-using Negocio.Models;
 using Presentacion.Helps;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
     public partial class frmdocumento : Form
     {
-        private Ndocumento nd = new Ndocumento();    
+        private Ndocumento nd = new Ndocumento();
         string result;
 
         public frmdocumento()
@@ -25,9 +21,9 @@ namespace Presentacion.Vista
         //METODO MOSTRAR
         private void ShowDocument(string data)
         {
-            using(nd)
+            using (nd)
             {
-                nd.nombre_documento= data;
+                nd.nombre_documento = data;
                 dgvdocumento.DataSource = nd.Getall();
                 lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
             }
@@ -77,7 +73,7 @@ namespace Presentacion.Vista
         private void frmdocumento_Load(object sender, EventArgs e)
         {
             Tabla();
-            Tooltip.Title(txtbuscar,"Buscar por documento");
+            Tooltip.Title(txtbuscar, "Buscar por documento");
             Habilitar(false);
         }
         //NUEVO
@@ -108,7 +104,7 @@ namespace Presentacion.Vista
         //VALIATE
         private void txtdocumento_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtdocumento,"Campo requerido!");
+            ValidateError.Validate_text(txtdocumento, "Campo requerido!");
         }
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -145,9 +141,10 @@ namespace Presentacion.Vista
                     ShowDocument("");
                     Messages.M_info(result);
                 }
-                
+
             }
-            else {
+            else
+            {
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
 
@@ -176,7 +173,7 @@ namespace Presentacion.Vista
             btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
 
-        }  
+        }
 
         private void barraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -208,5 +205,5 @@ namespace Presentacion.Vista
         {
 
         }
-    } 
+    }
 }

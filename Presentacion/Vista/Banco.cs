@@ -2,12 +2,7 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -17,7 +12,7 @@ namespace Presentacion.Vista
         String result;
         private Int32 codigoban;
 
-        private NBanco nbanco=new NBanco();
+        private NBanco nbanco = new NBanco();
         public Banco()
         {
             InitializeComponent();
@@ -38,7 +33,7 @@ namespace Presentacion.Vista
         public void generarCodigo()
         {
             codigoban = 0;
-            
+
             using (nbanco)
             {
                 codigoban = nbanco.GetCodigo();
@@ -51,8 +46,17 @@ namespace Presentacion.Vista
             using (nbanco)
             {
                 nbanco.Nom_banco = data;
-                dgvBanco.DataSource = nbanco.Listar();
-                
+                try
+                {
+                    dgvBanco.DataSource = nbanco.Listar();
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+
+                }
+
             }
         }
 
@@ -66,11 +70,11 @@ namespace Presentacion.Vista
             {
                 if (nbanco.state == EntityState.Guardar)
                     nbanco.IdBanco = codigoban;
-                    nbanco.Nom_banco = txtBanco.Text.Trim();
+                nbanco.Nom_banco = txtBanco.Text.Trim();
 
-                
+
                 result = nbanco.GuardarCambios();
-                
+
                 if (nbanco.state == EntityState.Guardar)
                     nbanco.Nom_banco = txtBanco.Text.Trim();
 
@@ -126,6 +130,7 @@ namespace Presentacion.Vista
         private void Banco_Load(object sender, EventArgs e)
         {
             ShowBanco("");
+            generarCodigo();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

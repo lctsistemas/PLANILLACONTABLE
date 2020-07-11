@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Negocio.Models;
+﻿using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
@@ -34,19 +30,22 @@ namespace Presentacion.Vista
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         //METODO MOSTRAR
-        private void ShowCargo(string data) {
-        
-            using(nc){
+        private void ShowCargo(string data)
+        {
+
+            using (nc)
+            {
                 nc.nombre_cargo = data;
                 dgvcargo.DataSource = nc.Getall();
                 lbltotal.Text = "TOTAL REGISTRO: " + dgvcargo.Rows.Count;
             }
-        
+
         }
 
 
         //MODIFICAR DATAGRIDVIEW
-        private void Tabla() {
+        private void Tabla()
+        {
             dgvcargo.Columns[0].HeaderText = "CODIGO";
             dgvcargo.Columns[0].Width = 50;
             dgvcargo.Columns[0].Visible = false;
@@ -56,11 +55,12 @@ namespace Presentacion.Vista
 
             dgvcargo.Columns[2].HeaderText = "DESCRIPCION";
             dgvcargo.Columns[2].Width = 200;
-        
+
         }
 
         //VALIDAR CONTROLES
-        private bool Validar() {
+        private bool Validar()
+        {
             if (String.IsNullOrWhiteSpace(txtnom_cargo.Text))
             {
                 ValidateChildren();
@@ -71,7 +71,8 @@ namespace Presentacion.Vista
         }
 
         //HABILITAR CONTROLES
-        private void Habilitar(bool v) {
+        private void Habilitar(bool v)
+        {
             txtnom_cargo.Enabled = v;
             txtdescrip.Enabled = v;
             btnguardar.Enabled = v;
@@ -79,7 +80,8 @@ namespace Presentacion.Vista
         }
 
         //LIMPIAR CONTROLES
-        private void limpiar() {
+        private void limpiar()
+        {
             txtnom_cargo.Text = String.Empty;
             txtdescrip.Text = String.Empty;
             txtnom_cargo.Focus();
@@ -89,7 +91,7 @@ namespace Presentacion.Vista
         private void frmcargo_Load(object sender, EventArgs e)
         {
             Tabla();
-             Tooltip.Title(txtbuscar,"Buscar por cargo");
+            Tooltip.Title(txtbuscar, "Buscar por cargo");
             Habilitar(false);
         }
 
@@ -125,11 +127,11 @@ namespace Presentacion.Vista
         //DELETE
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            result="";
+            result = "";
             if (dgvcargo.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
-                if (r==DialogResult.Yes)
+                if (r == DialogResult.Yes)
                 {
                     using (nc)
                     {
@@ -140,9 +142,10 @@ namespace Presentacion.Vista
                         Messages.M_info(result);
                     }
                 }
-               
+
             }
-            else {
+            else
+            {
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
         }
@@ -156,20 +159,21 @@ namespace Presentacion.Vista
 
             if (dgvcargo.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                using(nc){
-                nc.state = EntityState.Modificar;
-                nc.idcargo = Convert.ToInt32(r.Cells[0].Value);
-                txtnom_cargo.Text = Convert.ToString(r.Cells[1].Value);
-                txtdescrip.Text = Convert.ToString(r.Cells[2].Value);
-                ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
+                using (nc)
+                {
+                    nc.state = EntityState.Modificar;
+                    nc.idcargo = Convert.ToInt32(r.Cells[0].Value);
+                    txtnom_cargo.Text = Convert.ToString(r.Cells[1].Value);
+                    txtdescrip.Text = Convert.ToString(r.Cells[2].Value);
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
                 }
             }
-            
+
         }
         //VALIDAR CAJA
         private void txtnom_cargo_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtnom_cargo,"Ingrese Cargo");
+            ValidateError.Validate_text(txtnom_cargo, "Ingrese Cargo");
         }
 
         private void txtnom_cargo_KeyPress(object sender, KeyPressEventArgs e)
@@ -177,10 +181,10 @@ namespace Presentacion.Vista
             Keypress.Text(e, txtdescrip);
         }
 
-       
+
         private void txtdescrip_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Keypress.Button(e,btnguardar);
+            Keypress.Button(e, btnguardar);
         }
 
         private void txtnom_cargo_TextChanged(object sender, EventArgs e)
@@ -217,7 +221,7 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
 
         }
-     
+
 
         private void barratitulo_MouseDown(object sender, MouseEventArgs e)
         {

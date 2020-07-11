@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Presentacion.Vista;
+using System;
 using System.Windows.Forms;
-using Presentacion.Subvista;
-using Presentacion.Vista;
 
 namespace Presentacion
 {

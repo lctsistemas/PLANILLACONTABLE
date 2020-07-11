@@ -1,14 +1,10 @@
 ﻿using Datos.Repositories;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 
 namespace Datos.KeyAutomatic
 {
-   public class Kcontrato
+    public class Kcontrato
     {
         SqlCommand cmd;
 
@@ -19,14 +15,14 @@ namespace Datos.KeyAutomatic
             {
                 conn.Open();
                 SqlDataAdapter da = new SqlDataAdapter();
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_LLENAR_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
-                    using(DataTable dt=new DataTable())
+                    using (DataTable dt = new DataTable())
                     {
                         da.Fill(dt);
                         da.Dispose();

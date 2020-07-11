@@ -6,17 +6,15 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 
 namespace Negocio.Models
 {
-    public class NBanco:IDisposable
+    public class NBanco : IDisposable
     {
         String mensaje;
 
-        public int IdBanco { get; set ; }
-        public string Nom_banco { get ; set ; }
+        public int IdBanco { get; set; }
+        public string Nom_banco { get; set; }
 
         public EntityState state { get; set; }
 
@@ -26,7 +24,7 @@ namespace Negocio.Models
 
         public NBanco()
         {
-            RBanco =new RBanco();
+            RBanco = new RBanco();
         }
 
         public String GuardarCambios()
@@ -40,7 +38,7 @@ namespace Negocio.Models
                 case EntityState.Guardar:
                     RBanco.Add(ban);
                     mensaje = ban.mensaje;
-                break;
+                    break;
             }
 
             return mensaje;
@@ -48,11 +46,11 @@ namespace Negocio.Models
 
         public int GetCodigo()
         {
-            return new KBanco().GetCodigo(); 
+            return new KBanco().GetCodigo();
         }
         public void Dispose()
         {
-           // throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
 
@@ -64,7 +62,7 @@ namespace Negocio.Models
             using (DataTable dt = RBanco.GetData(dbanco))
             {
                 list_banco = new List<NBanco>();
-                foreach(DataRow item in dt.Rows)
+                foreach (DataRow item in dt.Rows)
                 {
                     list_banco.Add(new NBanco()
                     {
@@ -72,8 +70,11 @@ namespace Negocio.Models
                         Nom_banco = item[1].ToString()
                     });
                 }
+
                 return list_banco;
+
             }
+
         }
     }
 }

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Negocio.ValueObjects;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
 using Datos.Repositories;
+using Negocio.ValueObjects;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Negocio.Models
 {
-    public class Ndocumento:IDisposable
+    public class Ndocumento : IDisposable
     {
         private string mensaje;
         public int iddocumento { get; set; }
@@ -21,12 +19,14 @@ namespace Negocio.Models
 
         private List<Ndocumento> listadocu;
 
-        public Ndocumento() {
+        public Ndocumento()
+        {
             docu_repsository = new Rdocumento();
         }
 
         //MEDOTO GUARDAR CAMBIOS
-        public string SaveChanges() {
+        public string SaveChanges()
+        {
             mensaje = "";
             try
             {
@@ -54,43 +54,44 @@ namespace Negocio.Models
                         mensaje = "Error in Transaction!";
                         break;
                 }
-                
+
             }
             catch (Exception ex)
             {
                 mensaje = ex.ToString();
             }
-            finally {}
+            finally { }
             return mensaje;
-        
+
         }
         //METODO MOSTRAR
-        public List<Ndocumento> Getall() {
+        public List<Ndocumento> Getall()
+        {
             DtipoDocumento rt = new DtipoDocumento();
             rt.Nombre_documento = nombre_documento;
-            using (var dt=docu_repsository.GetData(rt))
+            using (var dt = docu_repsository.GetData(rt))
             {
                 listadocu = new List<Ndocumento>();
                 foreach (DataRow item in dt.Rows)
                 {
                     listadocu.Add(new Ndocumento()
                     {
-                        iddocumento=Convert.ToInt32(item[0]),
-                        nombre_documento=item[1].ToString(),
-                        descripcion=item[2].ToString()
+                        iddocumento = Convert.ToInt32(item[0]),
+                        nombre_documento = item[1].ToString(),
+                        descripcion = item[2].ToString()
 
                     });
                 }
-                return listadocu;   
+                return listadocu;
             }
         }
         //...
 
         public void Dispose()
         {
-           
+
         }
 
-       
+
     }
 }

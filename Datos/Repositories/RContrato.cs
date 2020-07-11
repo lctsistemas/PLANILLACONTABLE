@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
+using System;
+using System.Data;
 using System.Data.SqlClient;
 
 
-namespace Datos.Repositories 
+namespace Datos.Repositories
 {
     public class RContrato : IContrato
     {
@@ -38,15 +35,15 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;
                     cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
                     cmd.Parameters.Add("@cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
-                    
-                    resul = cmd.ExecuteNonQuery();                    
+
+                    resul = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                     return resul;
                 }
             }
         }
 
-        
+
         public int Edit(Dcontrato entiti)
         {
             resul = 0;
@@ -59,7 +56,7 @@ namespace Datos.Repositories
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_UPDATE_CONTRATO";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    
+
                     cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                     cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.Id_banco;
                     cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
@@ -92,8 +89,8 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_DELETE_CONTRATO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;                   
-                    resul = cmd.ExecuteNonQuery();                 
+                    cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;
+                    resul = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                     return resul;
                 }

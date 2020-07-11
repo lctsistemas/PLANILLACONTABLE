@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Datos.Entities
 {
@@ -10,7 +7,7 @@ namespace Datos.Entities
         private Int32 idrol;
         private String nombre_rol;
         public String mesage { get; set; }
-       
+
         //METODOS SET AND GET
         public Int32 Idrol
         {

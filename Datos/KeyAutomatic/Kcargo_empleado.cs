@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Datos.Repositories;
 using System.Data;
 using System.Data.SqlClient;
-using Datos.Repositories;
 
 namespace Datos.KeyAutomatic
 {

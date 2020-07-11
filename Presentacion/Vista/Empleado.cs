@@ -1,14 +1,9 @@
 ﻿using Negocio.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using Presentacion.Helps;
-using System.Windows.Forms;
 using Negocio.ValueObjects;
+using Presentacion.Helps;
+using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
@@ -49,16 +44,16 @@ namespace Presentacion.Vista
             dgvempleado.Columns[1].HeaderText = "CODIGO";//codigo empleado
             dgvempleado.Columns[1].Width = 50;
             dgvempleado.Columns[1].Visible = false;
-           
+
             dgvempleado.Columns[2].HeaderText = "NOMBRE";
             dgvempleado.Columns[2].Width = 100;
-           
+
             dgvempleado.Columns[3].HeaderText = "APELLIDO PATERNO";
             dgvempleado.Columns[3].Width = 100;
 
             dgvempleado.Columns[4].HeaderText = "APELLIDO MATERNO";
             dgvempleado.Columns[4].Width = 100;
-           
+
             dgvempleado.Columns[5].HeaderText = "FECHA NACIMIENTO";
             dgvempleado.Columns[5].Width = 100;
 
@@ -123,12 +118,12 @@ namespace Presentacion.Vista
         {
             txtnumdoc.Enabled = v;
         }
-       
+
         private bool btnValidar_telefono()
         {
             if (txttele.Text.Trim().Length != 9)
             {
-                return false; 
+                return false;
             }
 
             return true;
@@ -154,7 +149,7 @@ namespace Presentacion.Vista
                     return false;
                 }
 
-                
+
             }
             return true;
         }
@@ -260,16 +255,16 @@ namespace Presentacion.Vista
 
         private bool Validar_campos()
         {
-            if (string.IsNullOrEmpty(txtNombre.Text)|| string.IsNullOrEmpty(txtApePat.Text)||
-                string.IsNullOrEmpty(txtApeMat.Text)|| string.IsNullOrEmpty(txttele.Text)||
-                string.IsNullOrEmpty(cmbtipdoc.Text)|| string.IsNullOrEmpty(cmbcar.Text)||
-                string.IsNullOrEmpty(cbxempresa.Text)||
-                string.IsNullOrEmpty(txtnac.Text)|| string.IsNullOrEmpty(txtdire.Text)||
-                string.IsNullOrEmpty(txtnumdoc.Text)||
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApePat.Text) ||
+                string.IsNullOrEmpty(txtApeMat.Text) || string.IsNullOrEmpty(txttele.Text) ||
+                string.IsNullOrEmpty(cmbtipdoc.Text) || string.IsNullOrEmpty(cmbcar.Text) ||
+                string.IsNullOrEmpty(cbxempresa.Text) ||
+                string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtdire.Text) ||
+                string.IsNullOrEmpty(txtnumdoc.Text) ||
                 string.IsNullOrEmpty(cbxpen.Text) || string.IsNullOrEmpty(cbxgene.Text))
             {
                 ValidateChildren();
-                return true;             
+                return true;
             }
             else
             {
@@ -288,11 +283,11 @@ namespace Presentacion.Vista
                     nEmpleado.state = EntityState.Modificar;
                     nEmpleado.Id_empleado = Convert.ToInt32(r.Cells[1].Value);
 
-                    txtcodigo.Text="EMP 0"+ r.Cells[1].Value.ToString();
+                    txtcodigo.Text = "EMP 0" + r.Cells[1].Value.ToString();
                     txtNombre.Text = r.Cells[2].Value.ToString();
                     txtApePat.Text = r.Cells[3].Value.ToString();
                     txtApeMat.Text = r.Cells[4].Value.ToString();
-                    
+
                     dtfecha.Value = Convert.ToDateTime(r.Cells[5].Value.ToString());
                     txtnac.Text = r.Cells[6].Value.ToString();
                     cbxgene.Text = r.Cells[7].Value.ToString();
@@ -302,14 +297,14 @@ namespace Presentacion.Vista
                     txtnumdoc.Text = r.Cells[10].Value.ToString();
                     txtestado.Text = r.Cells[11].Value.ToString();
                     cbxpen.Text = r.Cells[13].Value.ToString();
-                    if (cbxpen.Text=="A.F.P")
+                    if (cbxpen.Text == "A.F.P")
                     {
                         cmbafp.SelectedValue = r.Cells[12].Value.ToString();
                         cmbafp.Text = r.Cells[14].Value.ToString();
                     }
-                    
 
-                    cmbtipdoc.SelectedValue= r.Cells[15].Value.ToString();
+
+                    cmbtipdoc.SelectedValue = r.Cells[15].Value.ToString();
                     cmbtipdoc.Text = (r.Cells[16].Value.ToString());
 
                     cmbcar.SelectedValue = r.Cells[17].Value.ToString();
@@ -322,7 +317,7 @@ namespace Presentacion.Vista
                     Habilitar_doc(true);
                     ValidateError.validate.Clear();
 
-                    
+
                 }
             }
 
@@ -357,7 +352,7 @@ namespace Presentacion.Vista
                 return;
             }
 
-            if (btnValidar_telefono()==false)
+            if (btnValidar_telefono() == false)
             {
                 Messages.M_warning("El Teléfono debe tener 9 dígitos");
                 return;
@@ -374,12 +369,12 @@ namespace Presentacion.Vista
                 Messages.M_warning("El Pasaporte debe tener 9 dígitos");
                 return;
             }
-            
-            
+
+
             result = "";
             using (nEmpleado)
             {
-                if (nEmpleado.state==EntityState.Guardar)                
+                if (nEmpleado.state == EntityState.Guardar)
                     nEmpleado.Id_empleado = codigoemp;
 
                 nEmpleado.Nom_emp = txtNombre.Text.Trim();
@@ -387,8 +382,8 @@ namespace Presentacion.Vista
                 nEmpleado.Ape_mat = txtApeMat.Text.Trim();
                 //nEmpleado.Tip_pension = cbxpen.SelectedItem.ToString();
                 //nEmpleado.Fec_nac = Convert.ToDateTime( String.Format("DD/MM/YYYY",dtfecha.Value));
-                nEmpleado.Fec_nac = Convert.ToDateTime(dtfecha.Value);            
-                
+                nEmpleado.Fec_nac = Convert.ToDateTime(dtfecha.Value);
+
                 nEmpleado.Tip_pension = cbxpen.SelectedItem.ToString();
                 nEmpleado.Tipo_genero = cbxgene.SelectedItem.ToString();
 
@@ -405,7 +400,7 @@ namespace Presentacion.Vista
                 nEmpleado.Id_cargo = Convert.ToInt32(cmbcar.SelectedValue);
                 nEmpleado.Id_emp_maestra = Convert.ToInt32(cbxempresa.SelectedValue);
 
-                result = nEmpleado.GuardarCambios();                
+                result = nEmpleado.GuardarCambios();
 
                 MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -415,13 +410,13 @@ namespace Presentacion.Vista
                 GenerateCodigo();
                 limpiar();
             }
-            
-            
+
+
         }
 
         private void btnmensaje_Click_1(object sender, EventArgs e)
         {
-            Messages.M_info(""+ txtNombre.Text.ToString());
+            Messages.M_info("" + txtNombre.Text.ToString());
             //Messages.M_info("" + (cmbtipdoc.SelectedValue));
 
         }
@@ -436,7 +431,7 @@ namespace Presentacion.Vista
         {
             using (nEmpleado) { nEmpleado.state = EntityState.Guardar; }
             GenerateCodigo();
-            
+
             Habilitar(true);
             limpiar();
         }
@@ -462,7 +457,7 @@ namespace Presentacion.Vista
             if (cmbtipdoc.Text == "")
             {
                 Habilitar_doc(false);
-                
+
             }
             else
             {
@@ -470,7 +465,7 @@ namespace Presentacion.Vista
                 txtnumdoc.Focus();
             }
 
-            if(cmbtipdoc.SelectedIndex==0)
+            if (cmbtipdoc.SelectedIndex == 0)
             {
                 txtnumdoc.MaxLength = 8;
 
@@ -478,7 +473,8 @@ namespace Presentacion.Vista
                 {
                     txtnumdoc.Focus();
                 }
-            }else if(cmbtipdoc.SelectedIndex == 1)
+            }
+            else if (cmbtipdoc.SelectedIndex == 1)
             {
                 txtnumdoc.MaxLength = 11;
                 if (txtnumdoc.Text != "")
@@ -547,7 +543,7 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtnumdoc, "Campo requerido");
 
-           
+
         }
 
         private void txtdire_Validating(object sender, CancelEventArgs e)
@@ -615,7 +611,7 @@ namespace Presentacion.Vista
             }
         }
 
-            
+
 
         private void Empleado_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -648,7 +644,7 @@ namespace Presentacion.Vista
             btnmaximizar.Visible = true;
         }
 
-       
+
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -690,4 +686,4 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
         }
     }
-    }
+}

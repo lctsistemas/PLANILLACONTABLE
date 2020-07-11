@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
 using Datos.Repositories;
 using Negocio.ValueObjects;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Negocio.Models
 {
-    public class Nrol:IDisposable
+    public class Nrol : IDisposable
     {
         private List<Nrol> list_rol;
         private String mesage;
@@ -20,12 +18,14 @@ namespace Negocio.Models
         public EntityState state;
         private IRol rol_repository;
 
-        public Nrol() {
+        public Nrol()
+        {
             rol_repository = new Rrol();
         }
 
         //METODO SAVE CHANGES
-        public String SaveChanges() {
+        public String SaveChanges()
+        {
             mesage = "";
             try
             {
@@ -59,25 +59,26 @@ namespace Negocio.Models
             }
             finally { }
             return mesage;
-        
+
         }
 
         //METODO SHOW
-        public List<Nrol> Getall() {
-            using (var dt=rol_repository.GetData(null))
+        public List<Nrol> Getall()
+        {
+            using (var dt = rol_repository.GetData(null))
             {
                 list_rol = new List<Nrol>();
                 foreach (DataRow item in dt.Rows)
                 {
                     list_rol.Add(new Nrol()
                     {
-                        idrol=Convert.ToInt32(item[0]),//id_rol
-                        nombre_rol=item[1].ToString()//rol
+                        idrol = Convert.ToInt32(item[0]),//id_rol
+                        nombre_rol = item[1].ToString()//rol
                     });
                 }
                 return list_rol;
             }
-        
+
         }
         //...
 

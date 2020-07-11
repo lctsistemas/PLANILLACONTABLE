@@ -1,33 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
 using Datos.Repositories;
 using Negocio.ValueObjects;
+using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Negocio.Models
 {
-    public class Ncargo:IDisposable
+    public class Ncargo : IDisposable
     {
-        public int idcargo{get; set;}
-        public string nombre_cargo{get; set;}
+        public int idcargo { get; set; }
+        public string nombre_cargo { get; set; }
         public string descripcion { get; set; }
 
-        public EntityState state {private get; set; }//esto me muestra en datagridview->then ponemos private
+        public EntityState state { private get; set; }//esto me muestra en datagridview->then ponemos private
         private IRepository cargo_repository;
 
         //PODEMOS VALIDAR DATOS CON: System.ComponentModel.DataAnnotations;
 
-        public Ncargo() {
+        public Ncargo()
+        {
             cargo_repository = new Rcargo();
         }
 
         //GopherStyleUriParser
         //METODO ADD,EDIT, DELETE
-        public string SaveChanges(){
+        public string SaveChanges()
+        {
             string message;
             try
             {
@@ -35,7 +35,7 @@ namespace Negocio.Models
                 dc.Idcargo = idcargo;
                 dc.Nombre_cargo = nombre_cargo;
                 dc.Descripcion = descripcion;
-                
+
                 switch (state)
                 {
                     case EntityState.Guardar:
@@ -59,14 +59,16 @@ namespace Negocio.Models
             catch (Exception ex)
             {
                 message = ex.ToString();
-            }finally { }
+            }
+            finally { }
 
-             return message;
-            
+            return message;
+
         }
         //METODO MOSTRAR
 
-        public List<Ncargo> Getall() {
+        public List<Ncargo> Getall()
+        {
             Dcargo dc = new Dcargo();
             dc.Nombre_cargo = nombre_cargo;
             using (var dt = cargo_repository.GetData(dc))

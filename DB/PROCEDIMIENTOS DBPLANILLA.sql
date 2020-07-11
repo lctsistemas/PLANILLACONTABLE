@@ -563,7 +563,7 @@ ELSE
 END
 GO
 
-CREATE PROC SP_GENERAR_BANCO
+alter PROC SP_GENERAR_BANCO
 (@Banco int output)
 AS BEGIN
 SET @Banco=(SELECT count(b.id_banco) FROM Banco b)

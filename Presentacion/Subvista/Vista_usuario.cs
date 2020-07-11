@@ -2,12 +2,6 @@
 using Presentacion.Helps;
 using Presentacion.Vista;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 
 
 using System.Windows.Forms;
@@ -25,16 +19,17 @@ namespace Presentacion.Subvista
         }
 
 
-        private void Vista_user(String arg) {
+        private void Vista_user(String arg)
+        {
             using (nu)
             {
                 nu.nombre_refe = arg;
                 dgvvista_user.DataSource = nu.Getall();
-                lblcantidad.Text = "Total Registro: "+dgvvista_user.RowCount;
+                lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
             }
         }
 
-       //TITULO A LA TABLA.
+        //TITULO A LA TABLA.
         private void Tabla()
         {
             dgvvista_user.Columns[0].HeaderText = "CODIGO";
@@ -65,20 +60,20 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar,"Buscar por Nombre Usuario");
+            Tooltip.Title(txtbuscar, "Buscar por Nombre Usuario");
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmempresa femp =(frmempresa) Owner;
+            frmempresa femp = (frmempresa)Owner;
 
-            if(dgvvista_user.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvvista_user.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 femp.txtiduser.Text = dgvvista_user.CurrentRow.Cells[0].Value.ToString();
                 femp.txtusuario.Text = dgvvista_user.CurrentRow.Cells[2].Value.ToString();
                 this.Close();
             }
-            
+
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)

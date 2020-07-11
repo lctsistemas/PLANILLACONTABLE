@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 
 namespace Presentacion.Helps
@@ -12,10 +9,11 @@ namespace Presentacion.Helps
     {
         public static ErrorProvider validate = new ErrorProvider();
 
-        public static void Validate_text(CancelEventArgs e, TextBox txt, string m) {
+        public static void Validate_text(CancelEventArgs e, TextBox txt, string m)
+        {
 
             if (String.IsNullOrWhiteSpace(txt.Text))
-            {             
+            {
                 e.Cancel = true;
                 txt.Focus();
                 validate.SetError(txt, m);
@@ -32,7 +30,7 @@ namespace Presentacion.Helps
         {
             //validate.Icon = Properties.Resources.java2;
             validate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
-           // validate.BlinkRate = 250 velocidad en milesegundos en que parpadea
+            // validate.BlinkRate = 250 velocidad en milesegundos en que parpadea
             if (String.IsNullOrWhiteSpace(txt.Text))
                 validate.SetError(txt, m);
             else
@@ -53,7 +51,7 @@ namespace Presentacion.Helps
                 validate.SetError(cbo, null);
             }
         }
-       
+
         public static void Validate_combo(ComboBox cbo, string m)
         {
             if (String.IsNullOrWhiteSpace(cbo.Text))

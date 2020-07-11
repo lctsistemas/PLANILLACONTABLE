@@ -1,11 +1,8 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
 
 namespace Datos.Repositories
 {
@@ -19,8 +16,8 @@ namespace Datos.Repositories
             result = 0;
             using (SqlConnection connect = RConexion.Getconectar())
             {
-                connect.Open();               
-                using ( cmd = new SqlCommand())
+                connect.Open();
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
                     cmd.CommandText = "SP_INSERT_BANCO";
@@ -28,7 +25,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
                     cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
-                   
+
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
@@ -56,7 +53,7 @@ namespace Datos.Repositories
                 cmd = null;
                 SqlDataAdapter da = new SqlDataAdapter();
 
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_SHOW_BANCO";
@@ -74,7 +71,7 @@ namespace Datos.Repositories
                         return dt;
                     }
                 }
-            } 
+            }
         }
     }
 }

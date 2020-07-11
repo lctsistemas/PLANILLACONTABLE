@@ -1,16 +1,13 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
+using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using Datos.KeyAutomatic;
 namespace Negocio.Models
 {
-    public class NEmpleado:IDisposable
+    public class NEmpleado : IDisposable
     {
 
         public Int32 Id_empleado { get; set; }
@@ -34,7 +31,7 @@ namespace Negocio.Models
         public Int32 Id_emp_maestra { get; set; }
         public string Empresa { get; set; }
 
-        public EntityState state{get; set;}
+        public EntityState state { get; set; }
 
         public IEmpleado Rempleado;
 
@@ -47,7 +44,7 @@ namespace Negocio.Models
 
         public String GuardarCambios()
         {
-            String mensaje="";
+            String mensaje = "";
 
             try
             {
@@ -79,7 +76,7 @@ namespace Negocio.Models
                     case EntityState.Modificar:
                         Rempleado.Edit(emp);
                         mensaje = "Editado correctamente";
-                    break;
+                        break;
 
                     case EntityState.Remover:
                         Rempleado.Delete(emp);
@@ -90,7 +87,7 @@ namespace Negocio.Models
                         break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ex.ToString();
             }
@@ -130,10 +127,10 @@ namespace Negocio.Models
         //public List<NEmpleado> listar()
         //{
         //    DEmpleado de = new DEmpleado();
-            
+
         //    de.Nom_emp = Nom_emp;
-            
-            
+
+
 
         //    using (DataTable dt = Rempleado.GetData(de))
         //    {
@@ -158,7 +155,7 @@ namespace Negocio.Models
 
         //            Id_afp= Convert.ToInt32(item[12]),
         //            Nombre_afp=item[13].ToString(),
-                    
+
         //            Id_doc= Convert.ToInt32(item[14]),
         //            Documento = item[15].ToString(),
 
@@ -167,7 +164,7 @@ namespace Negocio.Models
 
         //            Id_emp = Convert.ToInt32(item[18]),
         //            Empresa =item[19].ToString()
-                    
+
         //             });
         //        }
         //    return listaemp;
@@ -177,14 +174,15 @@ namespace Negocio.Models
 
         //PRUEBA
 
-        public DataTable GetData(String entiti) {
+        public DataTable GetData(String entiti)
+        {
             DEmpleado d = new DEmpleado();
-            d.Nom_emp=entiti;
-            using (var dt= Rempleado.GetData(d))
+            d.Nom_emp = entiti;
+            using (var dt = Rempleado.GetData(d))
             {
                 return dt;
             }
-            
+
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Datos.Entities
+﻿namespace Datos.Entities
 {
     public class DtipoDocumento
     {
@@ -34,7 +29,8 @@ namespace Datos.Entities
         //CONSTRUCTORES
         public DtipoDocumento() { }
 
-        public DtipoDocumento(string docu, string des) {
+        public DtipoDocumento(string docu, string des)
+        {
             this.Nombre_documento = docu;
             this.Descripcion = des;
         }

@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace Datos.Repositories
 {
-    public class Rsucursal : IEmpresa_maestra 
+    public class Rsucursal : IEmpresa_maestra
     {
         Int32 result;
         public int Add(DempresaMaestra entiti)

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Datos.Contract;
+using Datos.Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using Datos.Contract;
-using Datos.Entities;
 
 namespace Datos.Repositories
 {
@@ -19,48 +16,48 @@ namespace Datos.Repositories
             try
             {
 
-           
-            using (SqlConnection conn = RConexion.Getconectar())
-            {
-                using (SqlCommand cmd = new SqlCommand())
+
+                using (SqlConnection conn = RConexion.Getconectar())
                 {
-                    conn.Open();
-
-                    cmd.Connection = conn;
-                    cmd.CommandText = "SP_INSERT_EMPRESA_MAESTRA";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@razon_social", SqlDbType.VarChar, 50).Value = entiti.Razon_social;
-                    cmd.Parameters.Add("@direccion", SqlDbType.NVarChar, 250).Value = entiti.Direccion;
-                    cmd.Parameters.Add("@domicilio", SqlDbType.NVarChar, 250).Value = entiti.Domicilio;
-                    cmd.Parameters.Add("@ruc", SqlDbType.Char, 11).Value = entiti.Ruc;
-                    cmd.Parameters.Add("@regimen", SqlDbType.VarChar, 50).Value = entiti.Regimen;
-                    cmd.Parameters.Add("@localidad", SqlDbType.VarChar, 50).Value = entiti.Localidad;
-
-                    using (SqlCommand cmd1 = new SqlCommand())
+                    using (SqlCommand cmd = new SqlCommand())
                     {
-                        cmd1.Connection = conn;
-                        cmd1.CommandText = "SP_EMPRESA";
-                        cmd1.CommandType = CommandType.StoredProcedure;
+                        conn.Open();
 
-                        cmd1.Parameters.Add("@cod_empresa", SqlDbType.VarChar, 8).Value = entiti.Ecodigo_empresa;
-                        cmd1.Parameters.Add("@id_usuario", SqlDbType.Int).Value = entiti.Eidusuario;
-                        cmd1.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
-                        result = cmd.ExecuteNonQuery();
+                        cmd.Connection = conn;
+                        cmd.CommandText = "SP_INSERT_EMPRESA_MAESTRA";
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                        if (result > 0)
+                        cmd.Parameters.Add("@razon_social", SqlDbType.VarChar, 50).Value = entiti.Razon_social;
+                        cmd.Parameters.Add("@direccion", SqlDbType.NVarChar, 250).Value = entiti.Direccion;
+                        cmd.Parameters.Add("@domicilio", SqlDbType.NVarChar, 250).Value = entiti.Domicilio;
+                        cmd.Parameters.Add("@ruc", SqlDbType.Char, 11).Value = entiti.Ruc;
+                        cmd.Parameters.Add("@regimen", SqlDbType.VarChar, 50).Value = entiti.Regimen;
+                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar, 50).Value = entiti.Localidad;
+
+                        using (SqlCommand cmd1 = new SqlCommand())
                         {
-                            result = cmd1.ExecuteNonQuery();
-                            entiti.mesages = cmd1.Parameters["@mesage"].Value.ToString();
+                            cmd1.Connection = conn;
+                            cmd1.CommandText = "SP_EMPRESA";
+                            cmd1.CommandType = CommandType.StoredProcedure;
+
+                            cmd1.Parameters.Add("@cod_empresa", SqlDbType.VarChar, 8).Value = entiti.Ecodigo_empresa;
+                            cmd1.Parameters.Add("@id_usuario", SqlDbType.Int).Value = entiti.Eidusuario;
+                            cmd1.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                            result = cmd.ExecuteNonQuery();
+
+                            if (result > 0)
+                            {
+                                result = cmd1.ExecuteNonQuery();
+                                entiti.mesages = cmd1.Parameters["@mesage"].Value.ToString();
+                            }
+
+
+                            cmd.Parameters.Clear();
+                            cmd1.Parameters.Clear();
                         }
-
-
-                        cmd.Parameters.Clear();
-                        cmd1.Parameters.Clear();
                     }
+
                 }
-                
-            }
 
             }
             catch (Exception ex)

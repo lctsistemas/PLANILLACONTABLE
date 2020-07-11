@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Negocio.Models;
+﻿using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
+using System;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
@@ -24,14 +18,16 @@ namespace Presentacion.Vista
             Tabla();
         }
         //METODO PARA INSTANCIAR EL FORMULARIO
-        public static frmrol GetInstance() {
+        public static frmrol GetInstance()
+        {
             if (instance == null)
                 instance = new frmrol();
 
             return instance;
         }
         //METODO SHOW IN DATAGRIVIEW
-        private void ShowRol() {
+        private void ShowRol()
+        {
             using (nr)
             {
                 dgvrol.DataSource = nr.Getall();
@@ -46,17 +42,18 @@ namespace Presentacion.Vista
             dgvrol.Columns[0].Visible = false;
 
             dgvrol.Columns[1].HeaderText = "NOMBRE ROL";
-            dgvrol.Columns[1].Width = 195;            
+            dgvrol.Columns[1].Width = 195;
         }
-        private void Limpiar() {
+        private void Limpiar()
+        {
             txtrol.Text = String.Empty;
             using (nr) { nr.state = EntityState.Guardar; }
-            txtrol.Focus();   
+            txtrol.Focus();
         }
 
         //...........
         private void frmrol_FormClosing(object sender, FormClosingEventArgs e)
-        { instance = null;}
+        { instance = null; }
         //GUARDAR
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -67,28 +64,28 @@ namespace Presentacion.Vista
             {
                 nr.nombre_rol = txtrol.Text.Trim().ToUpper();
                 result = nr.SaveChanges();
-                ShowRol();                
+                ShowRol();
                 Messages.M_info(result);
                 Limpiar();
             }
         }
         //LOAD
         private void frmrol_Load(object sender, EventArgs e)
-        {}
+        { }
         //PARA EDITAR
         private void dgvrol_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-                if (dgvrol.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvrol.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nr)
                 {
-                    using (nr)
-                    {
-                        nr.state = EntityState.Modificar;
-                        nr.idrol = Convert.ToInt32(dgvrol.CurrentRow.Cells[0].Value);//idrol
-                        txtrol.Text = dgvrol.CurrentRow.Cells[1].Value.ToString();//nombre rol
-                        tabrol.SelectedIndex = 1;
-                    }
-                }                        
+                    nr.state = EntityState.Modificar;
+                    nr.idrol = Convert.ToInt32(dgvrol.CurrentRow.Cells[0].Value);//idrol
+                    txtrol.Text = dgvrol.CurrentRow.Cells[1].Value.ToString();//nombre rol
+                    tabrol.SelectedIndex = 1;
+                }
+            }
         }
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
@@ -117,17 +114,17 @@ namespace Presentacion.Vista
                         {
                             Messages.M_info(result);
                         }
-                            Limpiar();
-                        
+                        Limpiar();
+
                     }
                 }
             }
         }
 
-        
-       
 
-       
+
+
+
 
 
     }

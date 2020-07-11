@@ -1,37 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace Datos.Repositories
 {
-    public class Rrol:IRol
+    public class Rrol : IRol
     {
         Int32 resul;
         SqlCommand cmd;
         public int Add(Drol entiti)
         {
             resul = 0;
-            using (SqlConnection cnn=RConexion.Getconectar())
+            using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
                 cmd = null;
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_INSERT_ROL";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@rol",SqlDbType.VarChar,30).Value = entiti.Nombre_rol;
+                    cmd.Parameters.Add("@rol", SqlDbType.VarChar, 30).Value = entiti.Nombre_rol;
                     resul = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                     return resul;
                 }
-                
+
             }
         }
         //EDIT
@@ -84,18 +81,18 @@ namespace Datos.Repositories
         //SHOW DATA
         public DataTable GetData(Drol entiti)
         {
-            using (SqlConnection cnn=RConexion.Getconectar())
+            using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
                 cmd = null;
                 SqlDataAdapter da = new SqlDataAdapter();
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_ROL";
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
-                    using (DataTable dt=new DataTable())
+                    using (DataTable dt = new DataTable())
                     {
                         da.Fill(dt);
                         da.Dispose();

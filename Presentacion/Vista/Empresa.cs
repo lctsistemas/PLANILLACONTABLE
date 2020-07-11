@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using Negocio.Models;
+﻿using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using Presentacion.Subvista;
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
@@ -30,7 +26,7 @@ namespace Presentacion.Vista
             {
                 ne.search = buscar;
                 dgvempresa.DataSource = ne.Getall();
-                lbltotal.Text = "TOTAL REGISTRO:  "+dgvempresa.RowCount;
+                lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
             }
         }
         private void Tabla()
@@ -88,8 +84,8 @@ namespace Presentacion.Vista
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtcodigo_empresa.Text) || String.IsNullOrWhiteSpace(txtrazon_social.Text)
-                || String.IsNullOrWhiteSpace(txtdireccion.Text) || String.IsNullOrWhiteSpace(txtdomicilio.Text) 
-                || String.IsNullOrWhiteSpace(txtruc.Text) || String.IsNullOrWhiteSpace(txtusuario.Text) 
+                || String.IsNullOrWhiteSpace(txtdireccion.Text) || String.IsNullOrWhiteSpace(txtdomicilio.Text)
+                || String.IsNullOrWhiteSpace(txtruc.Text) || String.IsNullOrWhiteSpace(txtusuario.Text)
                 || cboregimen.Text.Equals(""))
             {
                 ValidateChildren();
@@ -155,7 +151,7 @@ namespace Presentacion.Vista
         {
             using (ne) { ne.state = EntityState.Guardar; }
             Limpiar();
-            ValidateError.validate.Clear();                      
+            ValidateError.validate.Clear();
         }
 
         private void btnusuario_Click(object sender, EventArgs e)
@@ -179,32 +175,32 @@ namespace Presentacion.Vista
 
         private void txtcodigo_empresa_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtcodigo_empresa,"Ingrese Codigo");
+            ValidateError.Validate_text(txtcodigo_empresa, "Ingrese Codigo");
         }
 
         private void txtrazon_social_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtrazon_social,"Ingrese Razon Social");
+            ValidateError.Validate_text(txtrazon_social, "Ingrese Razon Social");
         }
 
         private void txtdireccion_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtdireccion,"Ingrese Dirección");
+            ValidateError.Validate_text(txtdireccion, "Ingrese Dirección");
         }
 
         private void txtdomicilio_Validated(object sender, EventArgs e)
         {
-            ValidateError.Validate_text(txtdomicilio,"Ingrese Domicilio");
+            ValidateError.Validate_text(txtdomicilio, "Ingrese Domicilio");
         }
 
         private void txtruc_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtruc,"Ingrese Ruc");
+            ValidateError.Validate_text(txtruc, "Ingrese Ruc");
         }
 
         private void cboregimen_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_combo(cboregimen,"Seleccione Regimen");
+            ValidateError.Validate_combo(cboregimen, "Seleccione Regimen");
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -296,7 +292,7 @@ namespace Presentacion.Vista
             this.Dispose();
         }
 
-         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
         }
@@ -347,6 +343,6 @@ namespace Presentacion.Vista
             btnmaximizar.BackColor = Color.FromArgb(31, 97, 141);
         }
 
-        
+
     }
 }

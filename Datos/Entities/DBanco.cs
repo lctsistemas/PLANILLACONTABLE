@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Datos.Entities
 {
@@ -21,7 +18,7 @@ namespace Datos.Entities
         }
 
         public int IdBanco { get; set; }
-        public string Nom_banco { get ; set ; }
+        public string Nom_banco { get; set; }
 
         public String mensaje { get; set; }
 

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 namespace Presentacion.Helps
 {
-   public class WindowsMove
+    public class WindowsMove
     {
         //PARA MOVER EL FORMULARIO
         [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]

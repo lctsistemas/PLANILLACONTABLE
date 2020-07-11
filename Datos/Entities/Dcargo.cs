@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Datos.Entities
+﻿namespace Datos.Entities
 {
     public class Dcargo
     {
@@ -12,7 +7,7 @@ namespace Datos.Entities
         private string _descripcion;
         public string Message { get; set; }
 
-       
+
 
         //METODOS GET AND SET
         public int Idcargo
@@ -36,7 +31,8 @@ namespace Datos.Entities
         //CONSTRUCTORES
         public Dcargo() { }
 
-        public Dcargo(string car, string des) {
+        public Dcargo(string car, string des)
+        {
             this.Nombre_cargo = car;
             this.Descripcion = des;
         }

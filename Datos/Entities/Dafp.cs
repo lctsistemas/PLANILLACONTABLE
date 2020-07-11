@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Datos.Entities
+﻿namespace Datos.Entities
 {
     public class Dafp
     {
@@ -16,7 +11,7 @@ namespace Datos.Entities
         private float _fonto_pensiones;
         private float _remu_maxima;
 
-       
+
         //1
         public int Idafp
         {

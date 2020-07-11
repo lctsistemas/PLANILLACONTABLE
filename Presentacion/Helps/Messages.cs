@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 namespace Presentacion.Helps
 {
-   public class Messages
+    public class Messages
     {
         public static void M_info(String men)
         {
@@ -22,9 +19,10 @@ namespace Presentacion.Helps
             MessageBox.Show(men, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-       public static DialogResult M_question(String men){
-           return MessageBox.Show(men, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-       }
+        public static DialogResult M_question(String men)
+        {
+            return MessageBox.Show(men, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
 
     }
 }
