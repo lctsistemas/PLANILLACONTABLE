@@ -12,11 +12,10 @@ namespace Datos.Entities
         {
         }
 
-        public DBanco(int idBanco, string Cod_banco, string nom_banco)
+        public DBanco(int idBanco, string nom_banco)
         {
             this.idBanco = idBanco;
             this.nom_banco = nom_banco;
-            this.Cod_banco = Cod_banco;
 
         }
 

@@ -39,6 +39,11 @@ namespace Negocio.Models
                     RBanco.Add(ban);
                     mensaje = ban.mensaje;
                     break;
+
+                case EntityState.Remover:
+                    RBanco.Delete(ban);
+                    mensaje = ban.mensaje;
+                    break;
             }
 
             return mensaje;

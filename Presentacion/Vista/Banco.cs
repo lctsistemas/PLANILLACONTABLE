@@ -18,7 +18,19 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
         }
+        private void Tabla()
+        {
+            dgvBanco.Columns[0].HeaderText = "CODIGO";
+            dgvBanco.Columns[0].Width = 50;
 
+            dgvBanco.Columns[1].HeaderText = "BANCO";
+            dgvBanco.Columns[1].Width = 150;
+
+            dgvBanco.Columns[2].HeaderText = "entidad";
+            dgvBanco.Columns[2].Width = 150;
+            dgvBanco.Columns[2].Visible = false;
+
+        }
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtBanco.Text))
@@ -129,6 +141,7 @@ namespace Presentacion.Vista
         {
             ShowBanco("");
             generarCodigo();
+            Tabla();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
