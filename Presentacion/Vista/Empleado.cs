@@ -330,7 +330,12 @@ namespace Presentacion.Vista
 
             cbxgene.Items.Add("Masculino");
             cbxgene.Items.Add("Femenino");
+
             cmbcar.Text = "";
+            cmbcar.SelectedValue = 0;
+
+            cbxempresa.Text = "";
+            cbxempresa.SelectedValue = 0;
             Tabla();
             Habilitar_afp(false);
             Habilitar(false);
@@ -402,14 +407,22 @@ namespace Presentacion.Vista
 
                 result = nEmpleado.GuardarCambios();
 
-                MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(result.Contains("YA SE ENCUENTRA REGISTRADO"))
+                {
+                    MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+                else
+                {
+                    MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    limpiar();
+
+                }
+
             }
             mostrarEmp("");
-            if (nEmpleado.state == EntityState.Guardar)
-            {
-                GenerateCodigo();
-                limpiar();
-            }
+        
+            GenerateCodigo();
 
 
         }

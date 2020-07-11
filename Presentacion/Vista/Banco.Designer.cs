@@ -46,6 +46,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgvBanco = new System.Windows.Forms.DataGridView();
+            this.btnremover = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -70,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(398, 50);
+            this.panel1.Size = new System.Drawing.Size(410, 50);
             this.panel1.TabIndex = 0;
             // 
             // btncerrar
@@ -78,7 +79,7 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(357, 14);
+            this.btncerrar.Location = new System.Drawing.Point(369, 14);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,7 +92,7 @@
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(285, 14);
+            this.btnminimizar.Location = new System.Drawing.Point(297, 14);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -105,7 +106,7 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
-            this.btnmaximizar.Location = new System.Drawing.Point(322, 14);
+            this.btnmaximizar.Location = new System.Drawing.Point(333, 14);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -115,9 +116,10 @@
             // 
             // btnrestaurar
             // 
+            this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnrestaurar.Enabled = false;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(321, 14);
+            this.btnrestaurar.Location = new System.Drawing.Point(334, 14);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +152,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(88, 26);
+            this.label2.Location = new System.Drawing.Point(90, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(207, 19);
             this.label2.TabIndex = 1;
@@ -161,7 +163,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(89, 123);
+            this.label3.Location = new System.Drawing.Point(91, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 2;
@@ -169,7 +171,7 @@
             // 
             // txtBanco
             // 
-            this.txtBanco.Location = new System.Drawing.Point(195, 120);
+            this.txtBanco.Location = new System.Drawing.Point(197, 115);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(100, 20);
             this.txtBanco.TabIndex = 3;
@@ -184,7 +186,7 @@
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.Location = new System.Drawing.Point(90, 174);
+            this.btnguardar.Location = new System.Drawing.Point(92, 169);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(61, 46);
             this.btnguardar.TabIndex = 63;
@@ -195,7 +197,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(89, 71);
+            this.label4.Location = new System.Drawing.Point(91, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 64;
@@ -203,7 +205,8 @@
             // 
             // txtcodigo
             // 
-            this.txtcodigo.Location = new System.Drawing.Point(195, 71);
+            this.txtcodigo.Enabled = false;
+            this.txtcodigo.Location = new System.Drawing.Point(197, 66);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(77, 20);
             this.txtcodigo.TabIndex = 65;
@@ -215,7 +218,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-1, 50);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(398, 281);
+            this.tabControl1.Size = new System.Drawing.Size(413, 266);
             this.tabControl1.TabIndex = 66;
             // 
             // tabPage1
@@ -230,7 +233,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(390, 255);
+            this.tabPage1.Size = new System.Drawing.Size(405, 240);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestion Bancos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -244,7 +247,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnNuevo.Location = new System.Drawing.Point(245, 174);
+            this.btnNuevo.Location = new System.Drawing.Point(247, 169);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(61, 46);
             this.btnNuevo.TabIndex = 66;
@@ -253,11 +256,12 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnremover);
             this.tabPage2.Controls.Add(this.dgvBanco);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(390, 255);
+            this.tabPage2.Size = new System.Drawing.Size(405, 240);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lista Bancos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -268,17 +272,31 @@
             this.dgvBanco.AllowUserToDeleteRows = false;
             this.dgvBanco.BackgroundColor = System.Drawing.Color.White;
             this.dgvBanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBanco.Location = new System.Drawing.Point(0, 0);
+            this.dgvBanco.Location = new System.Drawing.Point(0, 56);
             this.dgvBanco.Name = "dgvBanco";
             this.dgvBanco.ReadOnly = true;
-            this.dgvBanco.Size = new System.Drawing.Size(395, 249);
+            this.dgvBanco.Size = new System.Drawing.Size(432, 184);
             this.dgvBanco.TabIndex = 0;
+            // 
+            // btnremover
+            // 
+            this.btnremover.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnremover.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnremover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnremover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnremover.ForeColor = System.Drawing.Color.White;
+            this.btnremover.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
+            this.btnremover.Location = new System.Drawing.Point(338, 7);
+            this.btnremover.Name = "btnremover";
+            this.btnremover.Size = new System.Drawing.Size(57, 43);
+            this.btnremover.TabIndex = 2;
+            this.btnremover.UseVisualStyleBackColor = false;
             // 
             // Banco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 321);
+            this.ClientSize = new System.Drawing.Size(410, 312);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Banco";
@@ -320,5 +338,6 @@
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.DataGridView dgvBanco;
         private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnremover;
     }
 }
