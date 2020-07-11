@@ -5,6 +5,7 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -20,6 +21,8 @@ namespace Negocio.Models
         public EntityState state { get; set; }
 
         public IBanco RBanco;
+
+        private List<NBanco> list_banco;
 
         public NBanco()
         {
@@ -53,7 +56,24 @@ namespace Negocio.Models
         }
 
 
+        public List<NBanco> Listar()
+        {
+            DBanco dbanco = new DBanco();
+            dbanco.Nom_banco = Nom_banco;
 
-        //OBTENER CODIGO
+            using (DataTable dt = RBanco.GetData(dbanco))
+            {
+                list_banco = new List<NBanco>();
+                foreach(DataRow item in dt.Rows)
+                {
+                    list_banco.Add(new NBanco()
+                    {
+                        IdBanco = Convert.ToInt32(item[0]),
+                        Nom_banco = item[1].ToString()
+                    });
+                }
+                return list_banco;
+            }
+        }
     }
 }

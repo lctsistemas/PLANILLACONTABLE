@@ -37,6 +37,8 @@
             this.dgvusuario = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.tabgestion = new System.Windows.Forms.TabPage();
+            this.btnnuevo = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnrol = new System.Windows.Forms.Button();
@@ -49,8 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnguardar = new System.Windows.Forms.Button();
-            this.btnnuevo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.USUARIO = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -181,6 +181,35 @@
             this.tabgestion.Size = new System.Drawing.Size(521, 280);
             this.tabgestion.TabIndex = 1;
             this.tabgestion.Text = "GESTION USUARIO";
+            // 
+            // btnnuevo
+            // 
+            this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnnuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp1;
+            this.btnnuevo.Location = new System.Drawing.Point(174, 220);
+            this.btnnuevo.Name = "btnnuevo";
+            this.btnnuevo.Size = new System.Drawing.Size(53, 43);
+            this.btnnuevo.TabIndex = 6;
+            this.btnnuevo.UseVisualStyleBackColor = false;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp2;
+            this.btnguardar.Location = new System.Drawing.Point(283, 220);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(56, 43);
+            this.btnguardar.TabIndex = 5;
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // panel1
             // 
@@ -318,35 +347,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "NOMBRE DE USUARIO";
             // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp2;
-            this.btnguardar.Location = new System.Drawing.Point(134, 222);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(56, 43);
-            this.btnguardar.TabIndex = 5;
-            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // btnnuevo
-            // 
-            this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp1;
-            this.btnnuevo.Location = new System.Drawing.Point(25, 222);
-            this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.Size = new System.Drawing.Size(53, 43);
-            this.btnnuevo.TabIndex = 6;
-            this.btnnuevo.UseVisualStyleBackColor = false;
-            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
@@ -432,7 +432,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(529, 366);
+            this.ClientSize = new System.Drawing.Size(529, 364);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabuser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

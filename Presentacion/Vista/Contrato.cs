@@ -57,6 +57,21 @@ namespace Presentacion.Vista
         {
             this.Close();
         }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.SteelBlue;
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(205, 97, 85);
+        }
     }
     
 }

@@ -622,7 +622,7 @@ GO
 alter PROC SP_INSERT_BANCO(
 @id_banco int,
 @nombre_banco varchar(25),
-@mensaje varchar(100)
+@mensaje varchar(100) output
 )
 AS BEGIN
 IF(EXISTS(SELECT b.nombre_banco FROM Banco b WHERE b.id_banco=@id_banco))
@@ -669,14 +669,15 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
-CREATE PROC SP_SHOW_BANCO(
-@id_banco int,
-@nombre_cargo varchar(25)
+alter PROC SP_SHOW_BANCO(
+@search varchar(50)
 )
 AS BEGIN 
-SELECT id_banco,nombre_banco from Banco; 
+SELECT b.id_banco,b.nombre_banco from Banco b where b.nombre_banco like @search+'%' ; 
 END;
 GO
+
+EXEC SP_SHOW_BANCO 'B';
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
 CREATE PROC SP_INSERT_TIP_CONT(

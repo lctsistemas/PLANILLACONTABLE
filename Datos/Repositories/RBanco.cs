@@ -19,8 +19,7 @@ namespace Datos.Repositories
             result = 0;
             using (SqlConnection connect = RConexion.Getconectar())
             {
-                connect.Open();
-                using (cmd = new SqlCommand())
+                connect.Open();               
                 using ( cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
@@ -51,7 +50,31 @@ namespace Datos.Repositories
 
         public DataTable GetData(DBanco entiti)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = RConexion.Getconectar())
+            {
+                conn.Open();
+                cmd = null;
+                SqlDataAdapter da = new SqlDataAdapter();
+
+                using (cmd=new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_SHOW_BANCO";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@search", SqlDbType.VarChar, 50).Value = entiti.Nom_banco;
+
+                    da.SelectCommand = cmd;
+
+                    using (DataTable dt = new DataTable())
+                    {
+                        da.Fill(dt);
+                        cmd.Parameters.Clear();
+                        da.Dispose();
+                        return dt;
+                    }
+                }
+            } 
         }
     }
 }

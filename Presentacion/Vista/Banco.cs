@@ -23,28 +23,47 @@ namespace Presentacion.Vista
             InitializeComponent();
         }
 
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtBanco.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
+
         public void generarCodigo()
         {
             codigoban = 0;
-<<<<<<< HEAD
+            
             using (nbanco)
             {
                 codigoban = nbanco.GetCodigo();
-=======
-            using (nb)
+                txtcodigo.Text = "BAN 0" + codigoban;
+            }
+        }
+
+        private void ShowBanco(String data)
+        {
+            using (nbanco)
             {
-               // codigoban = nb.
->>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
+                nbanco.Nom_banco = data;
+                dgvBanco.DataSource = nbanco.Listar();
+                
             }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar())
+                return;
 
             result = "";
             using (nbanco)
             {
-<<<<<<< HEAD
                 if (nbanco.state == EntityState.Guardar)
                     nbanco.IdBanco = codigoban;
                     nbanco.Nom_banco = txtBanco.Text.Trim();
@@ -52,15 +71,12 @@ namespace Presentacion.Vista
                 
                 result = nbanco.GuardarCambios();
                 
-=======
-                if (nb.state == EntityState.Guardar)
-                    nb.IdBanco =
-                    nb.Nom_banco = txtBanco.Text.Trim();
+                if (nbanco.state == EntityState.Guardar)
+                    nbanco.Nom_banco = txtBanco.Text.Trim();
 
 
-                result = nb.GuardarCambios();
+                result = nbanco.GuardarCambios();
 
->>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
                 Messages.M_info(result);
                 if (nbanco.state == EntityState.Guardar)
                 {
@@ -100,6 +116,24 @@ namespace Presentacion.Vista
         {
             this.WindowState = FormWindowState.Minimized;
 
+        }
+
+        private void txtBanco_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtBanco, "Campo requerido");
+        }
+
+        private void Banco_Load(object sender, EventArgs e)
+        {
+            ShowBanco("");
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            using (nbanco) { nbanco.state = EntityState.Guardar; }
+            generarCodigo();
+
+            limpiar();
         }
     }
 }

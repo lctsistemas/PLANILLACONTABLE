@@ -95,14 +95,14 @@ namespace Presentacion.Vista
             dgvempleado.Columns[15].Visible = false;
 
             dgvempleado.Columns[16].HeaderText = "DOCUMENTO";
-            dgvempleado.Columns[16].Width = 150;
+            dgvempleado.Columns[16].Width = 90;
 
             dgvempleado.Columns[17].HeaderText = "ID CARGO";
             dgvempleado.Columns[17].Width = 70;
             dgvempleado.Columns[17].Visible = false;
 
             dgvempleado.Columns[18].HeaderText = "CARGO";
-            dgvempleado.Columns[18].Width = 70;
+            dgvempleado.Columns[18].Width = 150;
 
             dgvempleado.Columns[19].HeaderText = "ID EMPRESA";
             dgvempleado.Columns[19].Width = 70;
@@ -410,7 +410,12 @@ namespace Presentacion.Vista
                 MessageBox.Show(result, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             mostrarEmp("");
-            limpiar();
+            if (nEmpleado.state == EntityState.Guardar)
+            {
+                GenerateCodigo();
+                limpiar();
+            }
+            
             
         }
 

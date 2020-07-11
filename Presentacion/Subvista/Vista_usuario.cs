@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Presentacion.Helps;
 using Presentacion.Vista;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace Presentacion.Subvista
             {
                 nu.nombre_refe = arg;
                 dgvvista_user.DataSource = nu.Getall();
-                lblcantidad.Text = "ALL RECORDS "+dgvvista_user.RowCount;
+                lblcantidad.Text = "Total Registro: "+dgvvista_user.RowCount;
             }
         }
 
@@ -48,6 +49,7 @@ namespace Presentacion.Subvista
 
             dgvvista_user.Columns[3].HeaderText = "CONTRASEÑA";
             dgvvista_user.Columns[3].Width = 100;
+            dgvvista_user.Columns[3].Visible = false;
 
             dgvvista_user.Columns[4].HeaderText = "CODIGO ROL";
             dgvvista_user.Columns[4].Width = 50;
@@ -63,7 +65,7 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
-
+            Tooltip.Title(txtbuscar,"Buscar por Nombre Usuario");
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

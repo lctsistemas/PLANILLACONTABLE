@@ -24,18 +24,13 @@ namespace Datos.KeyAutomatic
                     cmd.Parameters.Add("@Banco", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
 
-                    codigo = Convert.ToInt32(cmd.Parameters["Banco"].Value);
+                    codigo = Convert.ToInt32(cmd.Parameters["@Banco"].Value);
                     cmd.Parameters.Clear();
 
-
-
-
-
-
-                    return codigo;
-
                 }
+
                 return codigo;
+
             }
         }
 
