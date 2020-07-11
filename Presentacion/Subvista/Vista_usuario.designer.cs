@@ -40,11 +40,11 @@
             // 
             this.txtbuscar.BackColor = System.Drawing.SystemColors.Menu;
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtbuscar.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtbuscar.Location = new System.Drawing.Point(22, 20);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(387, 15);
+            this.txtbuscar.Size = new System.Drawing.Size(387, 16);
             this.txtbuscar.TabIndex = 0;
             this.txtbuscar.WordWrap = false;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
@@ -59,14 +59,14 @@
             this.dgvvista_user.Name = "dgvvista_user";
             this.dgvvista_user.ReadOnly = true;
             this.dgvvista_user.RowHeadersWidth = 30;
-            this.dgvvista_user.Size = new System.Drawing.Size(648, 307);
+            this.dgvvista_user.Size = new System.Drawing.Size(625, 307);
             this.dgvvista_user.TabIndex = 1;
             this.dgvvista_user.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvvista_user_CellDoubleClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtbuscar);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(441, 50);
@@ -77,9 +77,10 @@
             // lblcantidad
             // 
             this.lblcantidad.AutoSize = true;
+            this.lblcantidad.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcantidad.Location = new System.Drawing.Point(482, 21);
             this.lblcantidad.Name = "lblcantidad";
-            this.lblcantidad.Size = new System.Drawing.Size(10, 13);
+            this.lblcantidad.Size = new System.Drawing.Size(11, 16);
             this.lblcantidad.TabIndex = 3;
             this.lblcantidad.Text = ".";
             // 
@@ -87,7 +88,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 360);
+            this.ClientSize = new System.Drawing.Size(627, 360);
             this.Controls.Add(this.lblcantidad);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvvista_user);

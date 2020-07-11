@@ -104,9 +104,10 @@
             this.barraTitulo.Controls.Add(this.pictureBox1);
             this.barraTitulo.Controls.Add(this.label4);
             this.barraTitulo.Controls.Add(this.btnrestaurar);
+            this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(0, 0);
             this.barraTitulo.Name = "barraTitulo";
-            this.barraTitulo.Size = new System.Drawing.Size(598, 50);
+            this.barraTitulo.Size = new System.Drawing.Size(596, 50);
             this.barraTitulo.TabIndex = 8;
             this.barraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.barraTitulo_Paint);
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);

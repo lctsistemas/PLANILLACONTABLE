@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Presentacion.Helps;
 
 namespace Presentacion.Subvista
 {
@@ -26,6 +27,7 @@ namespace Presentacion.Subvista
             {
                 ne.search = txt;
                 dgvvista_emp.DataSource = ne.Getall();
+                lbltotal.Text ="Total Registro: " +dgvvista_emp.RowCount;
             }
         }
 
@@ -87,7 +89,7 @@ namespace Presentacion.Subvista
 
         private void Vista_empresa_Load(object sender, EventArgs e)
         {
-
+            Tooltip.Title(txtbuscar,"Buscar por Empresa");
         }
 
         private void dgvvista_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -106,6 +108,11 @@ namespace Presentacion.Subvista
                 su.txtusuario.Text = ro.Cells[12].Value.ToString();
                 this.Close();
             }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            this.Llenar_empresa(txtbuscar.Text.Trim());
         }
     }
 }
