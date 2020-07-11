@@ -57,6 +57,8 @@
             this.lblfechaini = new System.Windows.Forms.Label();
             this.dtinicio = new System.Windows.Forms.DateTimePicker();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtafp = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtcussp = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtpen = new System.Windows.Forms.TextBox();
@@ -70,8 +72,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtafp = new System.Windows.Forms.TextBox();
             this.panelcontrato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
@@ -177,7 +177,7 @@
             this.panel2.Controls.Add(this.cmbbanco);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtnum_cuenta);
-            this.panel2.Location = new System.Drawing.Point(1, 365);
+            this.panel2.Location = new System.Drawing.Point(0, 363);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(675, 138);
             this.panel2.TabIndex = 17;
@@ -329,7 +329,7 @@
             this.panel3.Controls.Add(this.txtremune);
             this.panel3.Controls.Add(this.lblasig);
             this.panel3.Controls.Add(this.txtasig);
-            this.panel3.Location = new System.Drawing.Point(1, 193);
+            this.panel3.Location = new System.Drawing.Point(0, 194);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(675, 166);
             this.panel3.TabIndex = 18;
@@ -416,6 +416,25 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(675, 141);
             this.panel4.TabIndex = 19;
+            // 
+            // txtafp
+            // 
+            this.txtafp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtafp.Location = new System.Drawing.Point(115, 106);
+            this.txtafp.Name = "txtafp";
+            this.txtafp.Size = new System.Drawing.Size(157, 22);
+            this.txtafp.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(142, 87);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 16);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "TIPO A.F.P";
             // 
             // txtcussp
             // 
@@ -557,25 +576,6 @@
             this.btnguardar.TabIndex = 65;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(142, 87);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 16);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "TIPO A.F.P";
-            // 
-            // txtafp
-            // 
-            this.txtafp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtafp.Location = new System.Drawing.Point(115, 106);
-            this.txtafp.Name = "txtafp";
-            this.txtafp.Size = new System.Drawing.Size(157, 22);
-            this.txtafp.TabIndex = 30;
             // 
             // frmcontrato
             // 
