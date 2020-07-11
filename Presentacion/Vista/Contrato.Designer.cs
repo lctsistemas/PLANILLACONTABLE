@@ -427,6 +427,7 @@
             this.txtafp.Name = "txtafp";
             this.txtafp.Size = new System.Drawing.Size(157, 22);
             this.txtafp.TabIndex = 30;
+            this.txtafp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -465,6 +466,7 @@
             this.txtpen.Name = "txtpen";
             this.txtpen.Size = new System.Drawing.Size(83, 22);
             this.txtpen.TabIndex = 28;
+            this.txtpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -480,10 +482,10 @@
             // txtcargo
             // 
             this.txtcargo.Enabled = false;
-            this.txtcargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcargo.Location = new System.Drawing.Point(487, 55);
             this.txtcargo.Name = "txtcargo";
-            this.txtcargo.Size = new System.Drawing.Size(139, 22);
+            this.txtcargo.Size = new System.Drawing.Size(139, 23);
             this.txtcargo.TabIndex = 26;
             this.txtcargo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -501,11 +503,12 @@
             // txtdocumento
             // 
             this.txtdocumento.Enabled = false;
-            this.txtdocumento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdocumento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdocumento.Location = new System.Drawing.Point(305, 55);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(160, 22);
+            this.txtdocumento.Size = new System.Drawing.Size(160, 23);
             this.txtdocumento.TabIndex = 24;
+            this.txtdocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbldocumento
             // 
@@ -521,10 +524,10 @@
             // txtnombre
             // 
             this.txtnombre.Enabled = false;
-            this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnombre.Location = new System.Drawing.Point(15, 55);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(257, 22);
+            this.txtnombre.Size = new System.Drawing.Size(257, 23);
             this.txtnombre.TabIndex = 22;
             // 
             // lblnombre
