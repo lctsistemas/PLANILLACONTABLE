@@ -625,18 +625,12 @@ alter PROC SP_INSERT_BANCO(
 @mensaje varchar(100) output
 )
 AS BEGIN
-IF(EXISTS(SELECT b.nombre_banco FROM Banco b WHERE b.id_banco=@id_banco))
-	BEGIN 
-		SET @mensaje ='EL BANCO ('+@nombre_banco+') YA SE ENCUENTRA REGISTRADO'
-	END
-ELSE
-	BEGIN
-		INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
-		SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
-	END
+	INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
+	SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
 
 END
 GO
+
 
 --PROCEDIMENTO PARA ACTUALIZAR BANCO
 CREATE PROC SP_UPDATE_BANCO(

@@ -3,6 +3,7 @@ using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -87,7 +88,7 @@ namespace Presentacion.Vista
                     generarCodigo();
                     limpiar();
                 }
-
+                ShowBanco("");
             }
         }
 
@@ -122,10 +123,7 @@ namespace Presentacion.Vista
 
         }
 
-        private void txtBanco_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtBanco, "Campo requerido");
-        }
+        
 
         private void Banco_Load(object sender, EventArgs e)
         {
@@ -139,6 +137,58 @@ namespace Presentacion.Vista
             generarCodigo();
 
             limpiar();
+        }
+        private void BorrarError(TextBox textbox)
+        {
+            ValidateError.Validate_text(txtBanco, "");
+           
+        }
+
+
+        private void txtBanco_Validating(object sender, CancelEventArgs e)
+        {
+            if (this.txtBanco.Text.Equals(""))
+            {
+                this.pictureBox2.Visible = true;
+                this.pictureBox2.BackColor = Color.FromArgb(231, 76, 60);
+            }
+
+            else
+            {
+                this.pictureBox2.Visible = false;
+                this.txtBanco.BackColor = Color.White;
+            }
+        }
+
+        private void txtBanco_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.pictureBox2.BackColor = Color.FromArgb(41, 128, 185);
+        }
+
+        private void btnremover_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (dgvBanco.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                DialogResult re = Messages.M_question("¿Desea Eliminar Banco?");
+                if (re == DialogResult.Yes)
+                {
+                    using (nbanco)
+                    {
+                        nbanco.state = EntityState.Remover;
+                        nbanco.IdBanco = Convert.ToInt32(dgvBanco.CurrentRow.Cells[0].Value);//idusuario
+                        result = nbanco.GuardarCambios();
+                        Messages.M_info(result);
+                        ShowBanco("");
+                        btnguardar.Enabled = false;
+                    }
+                }
+
+            }
+            else
+            {
+                Messages.M_warning("Seleccione un Fila");
+            }
         }
     }
 }

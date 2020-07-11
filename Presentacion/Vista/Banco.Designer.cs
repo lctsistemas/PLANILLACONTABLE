@@ -37,16 +37,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBanco = new System.Windows.Forms.TextBox();
             this.btnguardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtBanco = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgvBanco = new System.Windows.Forms.DataGridView();
             this.btnremover = new System.Windows.Forms.Button();
+            this.dgvBanco = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -55,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanco)).BeginInit();
             this.SuspendLayout();
@@ -169,14 +171,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Banco";
             // 
-            // txtBanco
-            // 
-            this.txtBanco.Location = new System.Drawing.Point(197, 115);
-            this.txtBanco.Name = "txtBanco";
-            this.txtBanco.Size = new System.Drawing.Size(100, 20);
-            this.txtBanco.TabIndex = 3;
-            this.txtBanco.Validating += new System.ComponentModel.CancelEventHandler(this.txtBanco_Validating);
-            // 
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
@@ -230,6 +224,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtBanco);
+            this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -254,6 +249,26 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
+            // txtBanco
+            // 
+            this.txtBanco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBanco.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBanco.Location = new System.Drawing.Point(197, 115);
+            this.txtBanco.Name = "txtBanco";
+            this.txtBanco.Size = new System.Drawing.Size(102, 25);
+            this.txtBanco.TabIndex = 68;
+            this.txtBanco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBanco_KeyDown);
+            this.txtBanco.Validating += new System.ComponentModel.CancelEventHandler(this.txtBanco_Validating);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Location = new System.Drawing.Point(195, 114);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(106, 27);
+            this.pictureBox2.TabIndex = 69;
+            this.pictureBox2.TabStop = false;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnremover);
@@ -265,18 +280,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lista Bancos";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgvBanco
-            // 
-            this.dgvBanco.AllowUserToAddRows = false;
-            this.dgvBanco.AllowUserToDeleteRows = false;
-            this.dgvBanco.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBanco.Location = new System.Drawing.Point(0, 56);
-            this.dgvBanco.Name = "dgvBanco";
-            this.dgvBanco.ReadOnly = true;
-            this.dgvBanco.Size = new System.Drawing.Size(432, 184);
-            this.dgvBanco.TabIndex = 0;
             // 
             // btnremover
             // 
@@ -291,12 +294,26 @@
             this.btnremover.Size = new System.Drawing.Size(57, 43);
             this.btnremover.TabIndex = 2;
             this.btnremover.UseVisualStyleBackColor = false;
+            this.btnremover.Click += new System.EventHandler(this.btnremover_Click);
+            // 
+            // dgvBanco
+            // 
+            this.dgvBanco.AllowUserToAddRows = false;
+            this.dgvBanco.AllowUserToDeleteRows = false;
+            this.dgvBanco.BackgroundColor = System.Drawing.Color.White;
+            this.dgvBanco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvBanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBanco.Location = new System.Drawing.Point(0, 56);
+            this.dgvBanco.Name = "dgvBanco";
+            this.dgvBanco.ReadOnly = true;
+            this.dgvBanco.Size = new System.Drawing.Size(407, 184);
+            this.dgvBanco.TabIndex = 0;
             // 
             // Banco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 312);
+            this.ClientSize = new System.Drawing.Size(410, 315);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Name = "Banco";
@@ -312,6 +329,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBanco)).EndInit();
             this.ResumeLayout(false);
@@ -325,7 +343,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtBanco;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtcodigo;
@@ -339,5 +356,7 @@
         private System.Windows.Forms.DataGridView dgvBanco;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnremover;
+        internal System.Windows.Forms.TextBox txtBanco;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

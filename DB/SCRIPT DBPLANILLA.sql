@@ -128,8 +128,10 @@ id_banco int not null,
 nombre_banco varchar(25) not null
 )
 
+
+drop Banco;
 INSERT INTO Banco VALUES(1,'Banco Continental');
-INSERT INTO Banco VALUES(2,'Banco de Credito del Peru');
+INSERT INTO Banco VALUES(2,'Bcp');
 INSERT INTO Banco VALUES(3,'Scotiabank');
 INSERT INTO Banco VALUES(4,'Interbank');
 
