@@ -47,6 +47,7 @@
     <Compile Include="Entities\Dafp.cs" />
     <Compile Include="Entities\DBanco.cs" />
     <Compile Include="Entities\Dcargo.cs" />
+    <Compile Include="Entities\Dcontrato.cs" />
     <Compile Include="Entities\DEmpleado.cs" />
     <Compile Include="Entities\DempresaMaestra.cs" />
     <Compile Include="Entities\Drol.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Repositories\RBanco.cs" />
     <Compile Include="Repositories\Rcargo.cs" />
     <Compile Include="Repositories\RConexion.cs" />
+    <Compile Include="Repositories\RContrato.cs" />
     <Compile Include="Repositories\Rdocumento.cs" />
     <Compile Include="Repositories\REmpleado.cs" />
     <Compile Include="Repositories\Rempresa.cs" />

@@ -27,15 +27,10 @@ namespace Datos.KeyAutomatic
                     codigo = Convert.ToInt32(cmd.Parameters["Banco"].Value);
                     cmd.Parameters.Clear();
 
-
-
-
-
-
                     return codigo;
 
                 }
-                return codigo;
+                
             }
         }
 

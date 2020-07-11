@@ -9,7 +9,6 @@ namespace Datos.Contract
     public interface IRepository:IGenerict<Dcargo> 
     {
     }
-
     
     public interface IDocumento:IGenerict<DtipoDocumento>
     {
@@ -18,7 +17,6 @@ namespace Datos.Contract
     public interface IEmpresa_maestra:IGenerict<DempresaMaestra> 
     { 
     }
-
 
     public interface IUsuario : IGenerict<Dusuario> 
     {
@@ -30,11 +28,13 @@ namespace Datos.Contract
 
     public interface IEmpleado : IGenerict<DEmpleado>
     {
-
     }
 
     public interface IBanco : IGenerict<DBanco>
     {
+    }
 
+    public interface IContrato : IGenerict<Dcontrato>
+    {
     }
 }
