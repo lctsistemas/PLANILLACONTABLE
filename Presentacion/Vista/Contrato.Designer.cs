@@ -143,6 +143,9 @@
             this.btncerrar.TabIndex = 12;
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
             // pictureBox1
             // 
@@ -329,7 +332,7 @@
             this.panel3.Controls.Add(this.txtremune);
             this.panel3.Controls.Add(this.lblasig);
             this.panel3.Controls.Add(this.txtasig);
-            this.panel3.Location = new System.Drawing.Point(0, 194);
+            this.panel3.Location = new System.Drawing.Point(0, 195);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(675, 166);
             this.panel3.TabIndex = 18;
