@@ -79,7 +79,6 @@ C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Neg
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.dll
 C:\Users\Carlos\Source\Repos\Planillalct\Planilla_contable\Negocio\obj\Debug\Negocio.pdb
-<<<<<<< HEAD
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.pdb
@@ -88,7 +87,6 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Negocio.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Datos.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Datos.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csproj.CopyComplete
-=======
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.dll
@@ -99,3 +97,10 @@ C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\bin\Debug\Dato
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\bin\Debug\Datos.pdb
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\obj\Debug\Negocio.csproj.CopyComplete
 >>>>>>> f04750b705c61975c9d91c1f6d8c7ed4e2334d05
+C:\Users\juan\Source\Repos\Planillalct\Negocio\bin\Debug\Negocio.dll
+C:\Users\juan\Source\Repos\Planillalct\Negocio\bin\Debug\Negocio.pdb
+C:\Users\juan\Source\Repos\Planillalct\Negocio\bin\Debug\Datos.dll
+C:\Users\juan\Source\Repos\Planillalct\Negocio\bin\Debug\Datos.pdb
+C:\Users\juan\Source\Repos\Planillalct\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\juan\Source\Repos\Planillalct\Negocio\obj\Debug\Negocio.dll
+C:\Users\juan\Source\Repos\Planillalct\Negocio\obj\Debug\Negocio.pdb

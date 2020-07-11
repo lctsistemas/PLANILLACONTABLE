@@ -622,7 +622,7 @@ GO
 alter PROC SP_INSERT_BANCO(
 @id_banco int,
 @nombre_banco varchar(25),
-@mensaje varchar(100)
+@mensaje varchar(100) output
 )
 AS BEGIN
 IF(EXISTS(SELECT b.nombre_banco FROM Banco b WHERE b.id_banco=@id_banco))
