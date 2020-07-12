@@ -8,13 +8,15 @@ namespace Presentacion.Vista
 {
     public partial class frmcontrato : Form
     {
+        NContrato nContrato = new NContrato();
+        Ntipocontrato ntcontrato;
         public frmcontrato()
         {
             InitializeComponent();
             Mostrar_banco();
+            Mostrar_tcontrato();
         }
-        NEmpleado nEmpleado = new NEmpleado();
-        NContrato nContrato = new NContrato();
+        
         private void Mostrar_banco()
         {
             using (nContrato)
@@ -23,6 +25,16 @@ namespace Presentacion.Vista
                 cmbbanco.DisplayMember = "nombre_banco";
                 cmbbanco.ValueMember = "id_banco";
             }
+        }
+
+        private void Mostrar_tcontrato()
+        {
+            using ( ntcontrato=new Ntipocontrato())
+            {
+                cmbtipcont.DataSource = ntcontrato.MostrarTcontrato();
+                cmbtipcont.DisplayMember = "tiem_contrato";
+                cmbtipcont.ValueMember = "id_tcontrato";
+            }                
         }
 
         private void btnguardar_Click(object sender, EventArgs e)

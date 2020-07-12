@@ -78,7 +78,6 @@ namespace Negocio.Models
                 }
                 return list_rol;
             }
-
         }
         //...
 

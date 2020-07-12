@@ -33,4 +33,5 @@ namespace Datos.Contract
     public interface IContrato : IGenerict<Dcontrato>
     {
     }
+    public interface ITipo_contrato : IGenerict<Dtipocontrato> { }
 }

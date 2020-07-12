@@ -249,6 +249,7 @@
             // 
             // cmbbanco
             // 
+            this.cmbbanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbanco.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbbanco.FormattingEnabled = true;
             this.cmbbanco.Location = new System.Drawing.Point(31, 31);
@@ -284,7 +285,7 @@
             this.lblasig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblasig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblasig.ForeColor = System.Drawing.Color.White;
-            this.lblasig.Location = new System.Drawing.Point(28, 87);
+            this.lblasig.Location = new System.Drawing.Point(229, 96);
             this.lblasig.Name = "lblasig";
             this.lblasig.Size = new System.Drawing.Size(159, 16);
             this.lblasig.TabIndex = 11;
@@ -297,7 +298,7 @@
             this.lblremu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblremu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblremu.ForeColor = System.Drawing.Color.White;
-            this.lblremu.Location = new System.Drawing.Point(229, 87);
+            this.lblremu.Location = new System.Drawing.Point(28, 96);
             this.lblremu.Name = "lblremu";
             this.lblremu.Size = new System.Drawing.Size(166, 16);
             this.lblremu.TabIndex = 10;
@@ -306,7 +307,7 @@
             // txtremune
             // 
             this.txtremune.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtremune.Location = new System.Drawing.Point(232, 106);
+            this.txtremune.Location = new System.Drawing.Point(31, 115);
             this.txtremune.Name = "txtremune";
             this.txtremune.Size = new System.Drawing.Size(163, 22);
             this.txtremune.TabIndex = 12;
@@ -314,9 +315,9 @@
             // txtasig
             // 
             this.txtasig.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtasig.Location = new System.Drawing.Point(31, 106);
+            this.txtasig.Location = new System.Drawing.Point(232, 115);
             this.txtasig.Name = "txtasig";
-            this.txtasig.Size = new System.Drawing.Size(156, 22);
+            this.txtasig.Size = new System.Drawing.Size(106, 22);
             this.txtasig.TabIndex = 15;
             // 
             // panel3
@@ -339,6 +340,7 @@
             // 
             // cmbtipcont
             // 
+            this.cmbtipcont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbtipcont.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbtipcont.FormattingEnabled = true;
             this.cmbtipcont.Location = new System.Drawing.Point(31, 38);
@@ -362,7 +364,7 @@
             this.dtfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtfin.Location = new System.Drawing.Point(427, 37);
             this.dtfin.Name = "dtfin";
-            this.dtfin.Size = new System.Drawing.Size(152, 20);
+            this.dtfin.Size = new System.Drawing.Size(101, 20);
             this.dtfin.TabIndex = 19;
             // 
             // lblfechafin
@@ -396,7 +398,7 @@
             this.dtinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtinicio.Location = new System.Drawing.Point(232, 38);
             this.dtinicio.Name = "dtinicio";
-            this.dtinicio.Size = new System.Drawing.Size(156, 20);
+            this.dtinicio.Size = new System.Drawing.Size(106, 20);
             this.dtinicio.TabIndex = 16;
             // 
             // panel4
@@ -433,7 +435,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.ForeColor = System.Drawing.Color.Gray;
             this.label7.Location = new System.Drawing.Point(142, 87);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 16);
@@ -452,7 +454,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(307, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 16);
@@ -472,7 +474,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(16, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 16);
@@ -493,7 +495,7 @@
             // 
             this.lblcargo.AutoSize = true;
             this.lblcargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcargo.ForeColor = System.Drawing.Color.Black;
+            this.lblcargo.ForeColor = System.Drawing.Color.Gray;
             this.lblcargo.Location = new System.Drawing.Point(493, 36);
             this.lblcargo.Name = "lblcargo";
             this.lblcargo.Size = new System.Drawing.Size(58, 16);
@@ -514,7 +516,7 @@
             // 
             this.lbldocumento.AutoSize = true;
             this.lbldocumento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldocumento.ForeColor = System.Drawing.Color.Black;
+            this.lbldocumento.ForeColor = System.Drawing.Color.Gray;
             this.lbldocumento.Location = new System.Drawing.Point(307, 36);
             this.lbldocumento.Name = "lbldocumento";
             this.lbldocumento.Size = new System.Drawing.Size(92, 16);
@@ -534,7 +536,7 @@
             // 
             this.lblnombre.AutoSize = true;
             this.lblnombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombre.ForeColor = System.Drawing.Color.Black;
+            this.lblnombre.ForeColor = System.Drawing.Color.Gray;
             this.lblnombre.Location = new System.Drawing.Point(16, 36);
             this.lblnombre.Name = "lblnombre";
             this.lblnombre.Size = new System.Drawing.Size(138, 16);
@@ -545,7 +547,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label5.Location = new System.Drawing.Point(239, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(190, 23);
