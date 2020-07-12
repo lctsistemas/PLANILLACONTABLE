@@ -285,7 +285,7 @@
             this.lblasig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblasig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblasig.ForeColor = System.Drawing.Color.White;
-            this.lblasig.Location = new System.Drawing.Point(229, 96);
+            this.lblasig.Location = new System.Drawing.Point(244, 96);
             this.lblasig.Name = "lblasig";
             this.lblasig.Size = new System.Drawing.Size(159, 16);
             this.lblasig.TabIndex = 11;
@@ -315,7 +315,7 @@
             // txtasig
             // 
             this.txtasig.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtasig.Location = new System.Drawing.Point(232, 115);
+            this.txtasig.Location = new System.Drawing.Point(247, 115);
             this.txtasig.Name = "txtasig";
             this.txtasig.Size = new System.Drawing.Size(106, 22);
             this.txtasig.TabIndex = 15;
@@ -387,7 +387,7 @@
             this.lblfechaini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblfechaini.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechaini.ForeColor = System.Drawing.Color.White;
-            this.lblfechaini.Location = new System.Drawing.Point(229, 18);
+            this.lblfechaini.Location = new System.Drawing.Point(244, 18);
             this.lblfechaini.Name = "lblfechaini";
             this.lblfechaini.Size = new System.Drawing.Size(97, 16);
             this.lblfechaini.TabIndex = 17;
@@ -396,7 +396,7 @@
             // dtinicio
             // 
             this.dtinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtinicio.Location = new System.Drawing.Point(232, 38);
+            this.dtinicio.Location = new System.Drawing.Point(247, 38);
             this.dtinicio.Name = "dtinicio";
             this.dtinicio.Size = new System.Drawing.Size(106, 20);
             this.dtinicio.TabIndex = 16;

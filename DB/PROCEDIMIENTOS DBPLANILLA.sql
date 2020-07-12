@@ -104,8 +104,6 @@ AS BEGIN
 SELECT * FROM Tipo_documento where nombre like @nom+'%' order by id_documento desc
 END
 GO
-EXEC SP_SELECT_DOCUMENTO ''
-GO
 
 --Agregar empleado
 ALTER PROC SP_AGR_EMPL(
@@ -154,13 +152,11 @@ ELSE
 END;
 go
 
-select * from Empleado
-
-
 
 EXEC SP_AGR_EMPL 7,'Pedro','Solorzano','Baldoceda','O.N.P','31-12-2020','Peru','Masculino','Jr. Direccion 1','956324466',
 '09645645','ACTIVO',1,1,4,1;
 go
+
 select * from Empleado;
 Select * from Afp;
 select * from cargo;
@@ -215,16 +211,6 @@ UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
 END
 GO
 
-
-create table Ejmplo(
-id_ej int identity(1,1),
-fecha date,
-numero varchar(20)
-)
-go
-insert into Ejmplo(fecha,numero)values('12/12/1999','078765456')
-select * from Ejmplo
-
 /*     EMPRESA AND SUCURSAL      */
 CREATE PROC SP_INSERT_EMPRESA_MAESTRA
 @razon_social varchar(50),
@@ -275,7 +261,7 @@ ELSE
 	END
 END
 GO
---SELECT * FROM Empresa_maestra
+
 --UPDATE EMPRESA MAESTRA
 CREATE PROC SP_UPDATE_EMPRESAMAESTRA
 @razon_social varchar(50),
@@ -394,12 +380,10 @@ ELSE
 	END
 END
 GO
-select * from Empresa_maestra;
-select * from Empresa;
-select * from Sucursal
+
 
  --UPDATE USUARIO
-CREATE PROC SP_UPDATE_USUARIO
+ALTER PROC SP_UPDATE_USUARIO
 (@codigo_usu varchar(20),
 @referencia varchar(50),
 @passwor varchar(10),
@@ -410,6 +394,7 @@ UPDATE dbo.Usuario SET codigo_usuario=@codigo_usu, referencia=@referencia, contr
 WHERE id_usuario=@idusu
 END
 GO
+
 --REMOVE USUARIO
 CREATE PROC SP_REMOVE_USUARIO
 (@idusu int,
@@ -430,23 +415,13 @@ END
 GO
 
 --ELIMINAR EMPLEADO
-
 CREATE PROC SP_ELIM_EMPL
 (@id_emp int)
 AS BEGIN 
 UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
 END
-
-
-alter PROC SP_REMOVE_EMPRESAMAESTRA
-@id_maestra int
-AS BEGIN		/*PREPARA CONDICION PARA ESTE PROCEDIMIENTO CON LA TABLA RELACIONADA*/
-UPDATE dbo.Empresa_maestra SET estado_eliminado='ANULADO' WHERE id_em_maestra=@id_maestra
-END
 GO
 
-exec SP_ELIM_EMPL 1
-select * from empleado
 --MOSTRAR USUARIO
 CREATE PROC SP_SHOW_USER
 @search varchar(50)
@@ -479,17 +454,6 @@ ORDER BY e.id_empleado DESC
 END;
 GO
 
-select * from Empleado join Afp on e.id_afp = a.id_afp
-truncate  table empleado;
-
-
-
-
-SELECT * FROM Empleado e  left join dbo.Afp a on e.id_afp=a.id_afp
---e.tipo_pension, a.id_afp
-GO
-exec SP_SHOW_EMP 'j';
---un scrip que muestre el empleado con todos los datos, afp, cargo, tip_documento, empresa
 
 /*     PROCEDIMIENTO ROL     */
 CREATE PROC SP_INSERT_ROL
@@ -498,6 +462,7 @@ AS BEGIN
 INSERT INTO dbo.Rol(rol)VALUES(@rol)
 END
 GO
+
 --UPDATE ROL
 CREATE PROC SP_UPDATE_ROL
 (@rol varchar(30),
@@ -506,6 +471,7 @@ AS BEGIN
 UPDATE dbo.Rol SET rol=@rol WHERE id_rol=@idrol
 END
 GO
+
 --REMOVE ROL
 --preparar condicion para rol=another user, que nadie elimine
 CREATE PROC SP_REMOVE_ROL
@@ -525,6 +491,7 @@ BEGIN
 END
 END
 GO
+
 --MOSTRAR ROL
 CREATE PROC SP_SHOW_ROL
 AS
@@ -578,6 +545,20 @@ ELSE
 END
 GO
 
+CREATE PROC SP_GENERAR_CONTRATO
+(@contrato int output)
+AS BEGIN
+SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
+IF(@contrato=0)
+	BEGIN
+		SET @contrato=1		
+	END
+ELSE
+	BEGIN
+		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)		
+	END
+END
+GO
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
 CREATE PROC SP_LLENAR_CARGO_EMPLEADO
@@ -592,15 +573,13 @@ SELECT id_documento,nombre, descripcion FROM tipo_documento
 END
 GO
 
-exec SP_LLENAR_DOCUMENTO_EMPLEADO
-use Planilla_lct
 CREATE PROC SP_LLEN_AFP
 AS BEGIN 
 SELECT  a.id_afp,a.nombre_afp,a.comision,a.comision_anual,a.prima_seguros,a.aportes_fondo_pensiones,a.remu_maxi_asegurable
 FROM Afp a
 END
+GO
 
-EXEC SP_LLEN_AFP
 
 CREATE PROC SP_EMPR
 AS BEGIN
@@ -609,7 +588,7 @@ FROM Empresa e
 INNER JOIN Empresa_maestra em
 on(em.id_em_maestra=e.id_em_maestra)
 END
-
+GO
 
 CREATE PROC SP_LLENAR_BANCO
 AS BEGIN
@@ -627,7 +606,6 @@ alter PROC SP_INSERT_BANCO(
 AS BEGIN
 	INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
 	SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
-
 END
 GO
 
@@ -668,11 +646,11 @@ alter PROC SP_SHOW_BANCO(
 @search varchar(50)
 )
 AS BEGIN 
-SELECT b.id_banco,b.nombre_banco from Banco b where b.nombre_banco like @search+'%' ; 
+SELECT b.id_banco,b.nombre_banco from Banco b where b.nombre_banco like @search+'%'; 
 END;
 GO
 
-EXEC SP_SHOW_BANCO 'B';
+--EXEC SP_SHOW_BANCO 'B';
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
 CREATE PROC SP_INSERT_TIP_CONT(
@@ -680,9 +658,11 @@ CREATE PROC SP_INSERT_TIP_CONT(
 @tiempo_contrato varchar(30)
 )
 AS BEGIN
-INSERT INTO Tipo_contrato(id_tipo_contrato,tiempo_contrato) VALUES(@id_tip_cont,@tiempo_contrato)
-END;
+INSERT INTO Tipo_contrato(id_tipo_contrato, tiempo_contrato) VALUES(@id_tip_cont,@tiempo_contrato)
+END
 GO
+
+--sp_rename 'Tipo_contrato.tiempo_contato','tiempo_contrato'
 
 --PROCEDIMIENTO PARA ACTUALIZAR TIPO CONTRATO 
 CREATE PROC SP_UPDATE_TIP_CONT(
@@ -690,7 +670,7 @@ CREATE PROC SP_UPDATE_TIP_CONT(
 @tiempo_contrato varchar(30)
 )
 AS BEGIN 
-UPDATE Tipo_contrato SET id_tipo_contrato=@id_tip_cont,tiempo_contrato=@tiempo_contrato where id_tipo_contrato=@id_tip_cont
+UPDATE Tipo_contrato SET tiempo_contrato=@tiempo_contrato where id_tipo_contrato=@id_tip_cont
 END;
 GO
 
@@ -712,15 +692,18 @@ GO
 --GO
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
-CREATE PROC SP_SHOW_TIP_CONT(
-@id_tip_cont int,
-@tiempo_contrato varchar(30)
-)
+AlTER PROC SP_SHOW_TIP_CONT
 AS BEGIN 
-SELECT id_tipo_contrato,tiempo_contrato  from Tipo_contrato;
-END;
+SELECT id_tipo_contrato, tiempo_contrato from Tipo_contrato;
+END
 GO
 
+--INSERTAR TIPO CONTRATO
+INSERT INTO dbo.Tipo_contrato(id_tipo_contrato,tiempo_contrato)
+VALUES(1,'Contrato Indefinido'),(2,'Contrato a Tiempo Parcial'),
+(3,'Contrato Temporal')
+GO
+select * from Tipo_contrato
 --procedimientos contrato 
 CREATE PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
@@ -780,25 +763,3 @@ SELECT * FROM dbo.Contrato c
 END
 GO
 
---PRACTICA
-DECLARE @usuario int
-SET @usuario=(SELECT count(u.id_usuario) FROM dbo.Usuario u)
-IF(@usuario=0)
-	BEGIN
-		SET @usuario=1
-		insert into Usuario(id_usuario,codigo_usuario,referencia,contrasena,id_rol)
-		values(@usuario,'cmamani','cristina mamani','123',1)
-		PRINT 'successfully record'
-	END
-ELSE
-	BEGIN
-		SET @usuario=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
-		PRINT @usuario
-	END
-GO
-
-select * from cargo
-select * from dbo.Tipo_documento
-SELECT * FROM USUARIO
-select * from rol
-delete from Usuario

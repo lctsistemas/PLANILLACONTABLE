@@ -44,7 +44,6 @@
     <Compile Include="Models\Ncargo.cs" />
     <Compile Include="Models\NContrato.cs" />
     <Compile Include="Models\Ndocumento.cs" />
-    <Compile Include="Models\Nejemplo.cs" />
     <Compile Include="Models\NEmpleado.cs" />
     <Compile Include="Models\Nempresa.cs" />
     <Compile Include="Models\Nrol.cs" />

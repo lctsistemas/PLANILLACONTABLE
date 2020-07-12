@@ -24,7 +24,7 @@ id_em_maestra int not null,
 eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado in ('ANULADO','NO ANULADO')) not null
 )
 GO
-alter table empleado drop constraint UNQ_docu
+
 --TABLA: CARGO
 CREATE TABLE Cargo(
 id_cargo int identity(1,1),
@@ -127,9 +127,8 @@ CREATE TABLE Banco(
 id_banco int not null, 
 nombre_banco varchar(25) not null
 )
+GO
 
-
-drop Banco;
 INSERT INTO Banco VALUES(1,'Banco Continental');
 INSERT INTO Banco VALUES(2,'Bcp');
 INSERT INTO Banco VALUES(3,'Scotiabank');
@@ -157,23 +156,25 @@ tipo_moneda varchar(10) not null,
 cts nvarchar(50) null,
 CUSSP varchar(30) null,
 estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
-);
+)
 go
 
-alter table Contrato drop column asignacion_familiar 
+--alter table Contrato drop column asignacion_familiar 
 
 CREATE TABLE Remuneraciones(
 id_remu int not null,
 remuneracion_basica money,
 asignacion_familiar money default (0.00)
 )
+GO
 --print year('12/10/2020')
 
-ALTER TABLE Contrato add CUSSP varchar(30) null;
+--ALTER TABLE Contrato add CUSSP varchar(30) null;
 
-alter table Contrato alter column numero_cuenta varchar(30) null;
+--alter table Contrato alter column numero_cuenta varchar(30) null;
 
-ALTER TABLE dbo.contrato add estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
+--ALTER TABLE dbo.contrato add estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
+
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL
 	--PRIMARY KEY
