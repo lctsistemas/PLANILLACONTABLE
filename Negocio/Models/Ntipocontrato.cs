@@ -66,6 +66,10 @@ namespace Negocio.Models
             }
         }
 
+        public int Getcodigo()
+        {
+            return new 
+        }
 
         public void Dispose()
         {

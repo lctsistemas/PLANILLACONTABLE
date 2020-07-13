@@ -1,4 +1,6 @@
 ﻿using Negocio.Models;
+using Negocio.ValueObjects;
+using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,21 +14,59 @@ namespace Presentacion.Vista
 {
     public partial class TipoContrato : Form
     {
-        Ntipocontrato nTipocontrato = new Ntipocontrato();
+        private String result;
+        Ntipocontrato nTipocont = new Ntipocontrato();
+        private Int32 codigo;
         public TipoContrato()
         {
             InitializeComponent();
             ShowTipoContrato();
         }
 
+        private void GenerarCodigo()
+        {
+            codigo = 0;
+            using (nTipocont)
+            {
+                codigo = nTipocont.Getcodigo();
+                txtcodigo.Text = "USER 0" + codigo;
+            }
+        }
+
         private void ShowTipoContrato()
         {
-            using (nTipocontrato)
+            using (nTipocont)
             {
-                dgvtipocontrato.DataSource = nTipocontrato.MostrarTcontrato();
+                dgvtipocontrato.DataSource = nTipocont.MostrarTcontrato();
 
             }
         }
 
+        private void limpiar()
+        {
+            txttipo.Text = String.Empty;
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            result = "";
+
+            using (nTipocont)
+            {
+                if (nTipocont.state==EntityState.Guardar)
+                {
+                    nTipocont.id_tcontrato = Convert.ToInt32(txtcodigo.Text);
+                    nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
+                    ShowTipoContrato();
+
+                    Messages.M_info(result);
+                    if (nTipocont.state == EntityState.Guardar)
+                    {
+                        GenerarCodigo();
+                        limpiar();
+                    }
+                }
+            }
+        }
     }
 }

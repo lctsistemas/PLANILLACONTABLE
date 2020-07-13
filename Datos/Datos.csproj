@@ -61,6 +61,7 @@
     <Compile Include="KeyAutomatic\Kdocumento_emp.cs" />
     <Compile Include="KeyAutomatic\KEmpleado.cs" />
     <Compile Include="KeyAutomatic\KEmpresa.cs" />
+    <Compile Include="KeyAutomatic\Ktipocontrato.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RBanco.cs" />
