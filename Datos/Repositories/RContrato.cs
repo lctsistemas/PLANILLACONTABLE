@@ -30,12 +30,13 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
                     cmd.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = entiti.Fecha_inicio;
                     cmd.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = entiti.Fecha_fin;
-                    cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar, 30).Value = entiti.Num_cuenta;
+                    cmd.Parameters.AddWithValue("@num_cuenta", entiti.Num_cuenta);
                     cmd.Parameters.Add("@remu_basica", SqlDbType.Money).Value = entiti.Remu_basica;
                     cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;
                     cmd.Parameters.Add("@descuento", SqlDbType.Money).Value = entiti.Descuento;
                     cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
                     cmd.Parameters.Add("@cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
+                    cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 100).Value = entiti.Cussp;
 
                     resul = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();

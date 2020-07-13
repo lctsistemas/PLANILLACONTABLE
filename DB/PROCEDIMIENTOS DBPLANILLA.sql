@@ -698,14 +698,9 @@ SELECT id_tipo_contrato, tiempo_contrato from Tipo_contrato;
 END
 GO
 
---INSERTAR TIPO CONTRATO
-INSERT INTO dbo.Tipo_contrato(id_tipo_contrato,tiempo_contrato)
-VALUES(1,'Contrato Indefinido'),(2,'Contrato a Tiempo Parcial'),
-(3,'Contrato Temporal')
-GO
-select * from Tipo_contrato
+--select * from Tipo_contrato
 --procedimientos contrato 
-CREATE PROCEDURE SP_INSERT_CONTRATO
+ALTER PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
 @id_empleado int,
 @id_banco int,
@@ -715,18 +710,19 @@ CREATE PROCEDURE SP_INSERT_CONTRATO
 @num_cuenta varchar(30),
 @remu_basica money,
 @asig_fami money,
+@descuento money,
 @tipo_modeda varchar(10),
 @cts nvarchar(50))
 AS BEGIN
 INSERT INTO dbo.Contrato(id_contrato,id_empleado,id_banco,id_tipo_contrato,fecha_inicio,
-fecha_fin,numero_cuenta,remuneracion_basica,asignacion_familiar,tipo_moneda,cts,estado)
+fecha_fin,numero_cuenta,remuneracion_basica,asignacion_familiar,descuento,tipo_moneda,cts,estado)
 VALUES(@id_contrato,@id_empleado,@id_banco,@id_tcontrato,@fecha_inicio,@fecha_fin,@num_cuenta,
-@remu_basica,@asig_fami,@tipo_modeda,@cts,'NO ANULADO')
+@remu_basica,@asig_fami,@descuento,@tipo_modeda,@cts,'NO ANULADO')
 END
 GO
 
 --UPDATE EMPLEADO.
-CREATE PROCEDURE SP_UPDATE_CONTRATO
+ALTER PROCEDURE SP_UPDATE_CONTRATO
 (@id_empleado int,
 @id_banco int,
 @id_tcontrato int,
@@ -735,6 +731,7 @@ CREATE PROCEDURE SP_UPDATE_CONTRATO
 @num_cuenta varchar(30),
 @remu_basica money,
 @asig_fami money,
+@descuento money,
 @tipo_modeda varchar(10),
 @cts nvarchar(50),
 @id_contrato int)
@@ -742,7 +739,7 @@ AS BEGIN
 UPDATE dbo.Contrato SET id_empleado=@id_empleado, id_banco=@id_banco, 
 id_tipo_contrato=@id_tcontrato,fecha_inicio=@fecha_inicio, fecha_fin=@fecha_fin,
 numero_cuenta=@num_cuenta, remuneracion_basica=@remu_basica, asignacion_familiar=@asig_fami,
-tipo_moneda=@tipo_modeda, cts=@cts WHERE id_contrato=@id_contrato
+descuento=@descuento,tipo_moneda=@tipo_modeda, cts=@cts WHERE id_contrato=@id_contrato
 END
 GO
 

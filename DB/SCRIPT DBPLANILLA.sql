@@ -134,15 +134,17 @@ INSERT INTO Banco VALUES(2,'Bcp');
 INSERT INTO Banco VALUES(3,'Scotiabank');
 INSERT INTO Banco VALUES(4,'Interbank');
 
-
-
 --TIPO DE CONTRATO 
 CREATE TABLE Tipo_contrato(
 id_tipo_contrato int not null,
 tiempo_contrato varchar(30) not null
 )
-
-
+GO
+--INSERTAR TIPO CONTRATO
+INSERT INTO dbo.Tipo_contrato(id_tipo_contrato,tiempo_contrato)
+VALUES(1,'Contrato Indefinido'),(2,'Contrato a Tiempo Parcial'),
+(3,'Contrato Temporal')
+GO
 --CONTRATO 
 CREATE TABLE Contrato(
 id_contrato int not null,
@@ -152,6 +154,9 @@ id_tipo_contrato int not null,
 fecha_inicio date not null,
 fecha_fin date null,
 numero_cuenta varchar(30) null,
+remuneracion_basica money,
+asignacion_familiar money default (0.00),
+descuento money default(0.00),
 tipo_moneda varchar(10) not null,
 cts nvarchar(50) null,
 CUSSP varchar(30) null,
@@ -159,13 +164,8 @@ estado varchar(30) check(estado in ('ANULADO','NO ANULADO'))
 )
 go
 
---alter table Contrato drop column asignacion_familiar 
+alter table Contrato add  descuento money null 
 
-CREATE TABLE Remuneraciones(
-id_remu int not null,
-remuneracion_basica money,
-asignacion_familiar money default (0.00)
-)
 GO
 --print year('12/10/2020')
 

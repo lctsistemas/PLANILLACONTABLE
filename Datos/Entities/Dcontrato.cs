@@ -16,6 +16,7 @@ namespace Datos.Entities
         private Decimal descuento;
         private String tipo_moneda;
         private String cts;
+        private String cussp;
 
         public int Id_contrato { get { return id_contrato; } set { id_contrato = value; } }
         public int Id_empleado { get { return id_empleado; } set { id_empleado = value; } }
@@ -29,6 +30,7 @@ namespace Datos.Entities
         public decimal Descuento { get { return descuento; } set { descuento = value; } }
         public string Tipo_moneda { get { return tipo_moneda; } set { tipo_moneda = value; } }
         public string Cts { get { return cts; } set { cts = value; } }
+        public string Cussp { get { return cussp; } set { cussp = value; } }
         public String mensaje { get; set; }
 
         public Dcontrato() { }

@@ -73,7 +73,7 @@
             // 
             this.tabuser.Controls.Add(this.tablista);
             this.tabuser.Controls.Add(this.tabgestion);
-            this.tabuser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabuser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabuser.ItemSize = new System.Drawing.Size(98, 26);
             this.tabuser.Location = new System.Drawing.Point(0, 49);
             this.tabuser.Name = "tabuser";
@@ -124,7 +124,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(7, 29);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(281, 32);
+            this.label19.Size = new System.Drawing.Size(281, 34);
             this.label19.TabIndex = 86;
             this.label19.Text = "_______________________________________\r\n\r\n";
             // 
@@ -149,7 +149,7 @@
             this.dgvusuario.AllowUserToDeleteRows = false;
             this.dgvusuario.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvusuario.Location = new System.Drawing.Point(2, 61);
+            this.dgvusuario.Location = new System.Drawing.Point(3, 63);
             this.dgvusuario.Name = "dgvusuario";
             this.dgvusuario.ReadOnly = true;
             this.dgvusuario.RowHeadersWidth = 30;

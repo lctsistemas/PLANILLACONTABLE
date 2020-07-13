@@ -8,8 +8,9 @@ namespace Presentacion.Vista
 {
     public partial class frmcontrato : Form
     {
-        NContrato nContrato = new NContrato();
+        NContrato ncontrato = new NContrato();
         Ntipocontrato ntcontrato;
+        String result;
         public frmcontrato()
         {
             InitializeComponent();
@@ -19,9 +20,9 @@ namespace Presentacion.Vista
         
         private void Mostrar_banco()
         {
-            using (nContrato)
+            using (ncontrato)
             {
-                cmbbanco.DataSource = nContrato.MostrarBanco();
+                cmbbanco.DataSource = ncontrato.MostrarBanco();
                 cmbbanco.DisplayMember = "nombre_banco";
                 cmbbanco.ValueMember = "id_banco";
             }
@@ -39,7 +40,24 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            //laflalk
+            using (ncontrato)
+            {
+                ncontrato.id_contrato = ncontrato.Getcodigo();
+                ncontrato.id_empleado = Convert.ToInt32(txtid_empleado.Text.Trim());
+                ncontrato.id_banco = Convert.ToInt32(cmbbanco.SelectedValue);
+                ncontrato.id_tcontrato = Convert.ToInt32(cmbtipcont.SelectedValue);
+                ncontrato.fecha_inicio = Convert.ToDateTime(dtinicio.Value);
+                ncontrato.fecha_fin = Convert.ToDateTime(dtfin.Value);
+                ncontrato.num_cuenta = txtnum_cuenta.Text.Trim();
+                ncontrato.remu_basica = Convert.ToDecimal(txtremune.Text.Trim());
+                ncontrato.asig_fami= Convert.ToDecimal(txtasig.Text.Trim());
+                ncontrato.descuento= Convert.ToDecimal(txtdescuento.Text.Trim());
+                ncontrato.tipo_moneda = cmbmoneda.SelectedItem.ToString();
+                ncontrato.cts = txtcts.Text.Trim();
+                ncontrato.cussp = txtcussp.Text.Trim();
+                result = ncontrato.SaveChanges();
+                Messages.M_info(result);
+            }
         }
 
         private void frmcontrato_Load(object sender, EventArgs e)

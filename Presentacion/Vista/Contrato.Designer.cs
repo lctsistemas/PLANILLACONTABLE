@@ -244,7 +244,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(28, 12);
+            this.label2.Location = new System.Drawing.Point(28, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 21;
@@ -255,7 +255,7 @@
             this.cmbbanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbanco.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbbanco.FormattingEnabled = true;
-            this.cmbbanco.Location = new System.Drawing.Point(31, 31);
+            this.cmbbanco.Location = new System.Drawing.Point(31, 32);
             this.cmbbanco.Name = "cmbbanco";
             this.cmbbanco.Size = new System.Drawing.Size(140, 25);
             this.cmbbanco.TabIndex = 19;
@@ -267,7 +267,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(189, 12);
+            this.label4.Location = new System.Drawing.Point(189, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 16);
             this.label4.TabIndex = 18;
@@ -276,7 +276,7 @@
             // txtnum_cuenta
             // 
             this.txtnum_cuenta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnum_cuenta.Location = new System.Drawing.Point(190, 30);
+            this.txtnum_cuenta.Location = new System.Drawing.Point(190, 35);
             this.txtnum_cuenta.Name = "txtnum_cuenta";
             this.txtnum_cuenta.Size = new System.Drawing.Size(163, 22);
             this.txtnum_cuenta.TabIndex = 17;

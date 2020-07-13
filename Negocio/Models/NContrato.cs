@@ -15,18 +15,19 @@ namespace Negocio.Models
     {
         String mensaje;
         //List<NContrato> list_contract;
-        private Int32 id_contrato { get; set; }
-        private Int32 id_empleado { get; set; }
-        private Int32 id_banco { get; set; }
-        private Int32 id_tcontrato { get; set; }
-        private DateTime fecha_inicio { get; set; }
-        private DateTime fecha_fin { get; set; }
-        private String num_cuenta { get; set; }
-        private Decimal remu_basica { get; set; }
-        private Decimal asig_fami { get; set; }
-        private Decimal descuento { get; set; }
-        private String tipo_moneda { get; set; }
-        private String cts { get; set; }
+        public Int32 id_contrato { get; set; }
+        public Int32 id_empleado { get; set; }
+        public Int32 id_banco { get; set; }
+        public Int32 id_tcontrato { get; set; }
+        public DateTime fecha_inicio { get; set; }
+        public DateTime fecha_fin { get; set; }
+        public String num_cuenta { get; set; }
+        public Decimal remu_basica { get; set; }
+        public Decimal asig_fami { get; set; }
+        public Decimal descuento { get; set; }
+        public String tipo_moneda { get; set; }
+        public String cts { get; set; }
+        public String cussp { get; set; }
 
         public EntityState state { get; set; }
         private IContrato contract_repository;
@@ -43,17 +44,19 @@ namespace Negocio.Models
             try
             {
                 Dcontrato dc = new Dcontrato();
-                id_contrato = dc.Id_contrato;
-                id_empleado = dc.Id_empleado;
-                id_banco = dc.Id_banco;
-                id_tcontrato = dc.Id_tcontrato;
-                fecha_inicio = dc.Fecha_inicio;
-                num_cuenta = dc.Num_cuenta;
-                remu_basica = dc.Remu_basica;
-                asig_fami = dc.Asig_fami;
-                descuento = dc.Descuento;
-                tipo_moneda = dc.Tipo_moneda;
-                cts = dc.Cts;
+                dc.Id_contrato = id_contrato;
+                dc.Id_empleado = id_empleado;
+                dc.Id_banco = id_banco;
+                dc.Id_tcontrato = id_tcontrato;
+                dc.Fecha_inicio = fecha_inicio;
+                dc.Fecha_fin = fecha_fin;
+                dc.Num_cuenta = num_cuenta;
+                dc.Remu_basica = remu_basica;
+                dc.Asig_fami = asig_fami;
+                dc.Descuento = descuento;
+                dc.Tipo_moneda = tipo_moneda;
+                dc.Cts = cts;
+                dc.Cussp = cussp;
 
                 switch (state)
                 {
@@ -88,6 +91,11 @@ namespace Negocio.Models
             return new Kcontrato().MostrarBanco();
         }
 
+        //CODIGO AUTO GENERADO
+        public int Getcodigo()
+        {
+            return new Kcontrato().Getcodigo();
+        }
         public void Dispose()
         {
             //  throw new NotImplementedException();
