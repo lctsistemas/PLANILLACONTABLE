@@ -14,7 +14,28 @@ namespace Datos.Repositories
         SqlCommand cmd;
         public int Add(Dtipocontrato entiti)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            using (SqlConnection conn = RConexion.Getconectar())
+            {
+                conn.Open();
+                using (cmd=new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_INSERT_TIP_CONT";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
+                    cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar,30).Value = entiti.Tipo_contrato;
+
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+
+                    result = cmd.ExecuteNonQuery();
+                    entiti.Mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+                    cmd.Parameters.Clear();
+                    return result;
+
+                }
+            }
         }     
         public int Edit(Dtipocontrato entiti)
         {

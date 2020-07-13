@@ -653,12 +653,14 @@ GO
 --EXEC SP_SHOW_BANCO 'B';
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
-CREATE PROC SP_INSERT_TIP_CONT(
+ALTER PROC SP_INSERT_TIP_CONT(
 @id_tip_cont int,
-@tiempo_contrato varchar(30)
+@tiempo_contrato varchar(30),
+@mensaje varchar(100) output
 )
 AS BEGIN
 INSERT INTO Tipo_contrato(id_tipo_contrato, tiempo_contrato) VALUES(@id_tip_cont,@tiempo_contrato)
+SET @mensaje= 'TIPO DE CONTRATO REGISTRADO CORRECTAMENTE'
 END
 GO
 
@@ -692,7 +694,7 @@ GO
 --GO
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
-AlTER PROC SP_SHOW_TIP_CONT
+alter PROC SP_SHOW_TIP_CONT
 AS BEGIN 
 SELECT id_tipo_contrato, tiempo_contrato from Tipo_contrato;
 END
