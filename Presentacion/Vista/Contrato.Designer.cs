@@ -56,6 +56,8 @@
             this.lblfechafin = new System.Windows.Forms.Label();
             this.lblfechaini = new System.Windows.Forms.Label();
             this.dtinicio = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtdescuento = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtafp = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.txtdescuento = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panelcontrato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
@@ -216,6 +216,7 @@
             // 
             // cmbmoneda
             // 
+            this.cmbmoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbmoneda.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbmoneda.FormattingEnabled = true;
             this.cmbmoneda.Items.AddRange(new object[] {
@@ -406,6 +407,27 @@
             this.dtinicio.Size = new System.Drawing.Size(106, 20);
             this.dtinicio.TabIndex = 16;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(424, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "DESCUENTO";
+            // 
+            // txtdescuento
+            // 
+            this.txtdescuento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescuento.Location = new System.Drawing.Point(427, 115);
+            this.txtdescuento.Name = "txtdescuento";
+            this.txtdescuento.Size = new System.Drawing.Size(106, 22);
+            this.txtdescuento.TabIndex = 15;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.LightCyan;
@@ -589,27 +611,6 @@
             this.btnguardar.TabIndex = 65;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // txtdescuento
-            // 
-            this.txtdescuento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescuento.Location = new System.Drawing.Point(427, 115);
-            this.txtdescuento.Name = "txtdescuento";
-            this.txtdescuento.Size = new System.Drawing.Size(106, 22);
-            this.txtdescuento.TabIndex = 15;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(424, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 16);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "DESCUENTO";
             // 
             // frmcontrato
             // 

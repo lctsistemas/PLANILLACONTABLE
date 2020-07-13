@@ -145,6 +145,7 @@ INSERT INTO dbo.Tipo_contrato(id_tipo_contrato,tiempo_contrato)
 VALUES(1,'Contrato Indefinido'),(2,'Contrato a Tiempo Parcial'),
 (3,'Contrato Temporal')
 GO
+
 --CONTRATO 
 CREATE TABLE Contrato(
 id_contrato int not null,
@@ -154,7 +155,7 @@ id_tipo_contrato int not null,
 fecha_inicio date not null,
 fecha_fin date null,
 numero_cuenta varchar(30) null,
-remuneracion_basica money,
+remuneracion_basica money not null,
 asignacion_familiar money default (0.00),
 descuento money default(0.00),
 tipo_moneda varchar(10) not null,

@@ -712,14 +712,16 @@ ALTER PROCEDURE SP_INSERT_CONTRATO
 @asig_fami money,
 @descuento money,
 @tipo_modeda varchar(10),
-@cts nvarchar(50))
+@cts nvarchar(50),
+@cussp nvarchar(100))
 AS BEGIN
 INSERT INTO dbo.Contrato(id_contrato,id_empleado,id_banco,id_tipo_contrato,fecha_inicio,
-fecha_fin,numero_cuenta,remuneracion_basica,asignacion_familiar,descuento,tipo_moneda,cts,estado)
-VALUES(@id_contrato,@id_empleado,@id_banco,@id_tcontrato,@fecha_inicio,@fecha_fin,@num_cuenta,
-@remu_basica,@asig_fami,@descuento,@tipo_modeda,@cts,'NO ANULADO')
+fecha_fin,numero_cuenta,remuneracion_basica,asignacion_familiar,descuento,tipo_moneda,cts,cussp,estado)
+VALUES(@id_contrato,@id_empleado,@id_banco,@id_tcontrato,@fecha_inicio,@fecha_fin, @num_cuenta,
+@remu_basica,@asig_fami,@descuento,@tipo_modeda,@cts,@cussp,'NO ANULADO')
 END
 GO
+
 
 --UPDATE EMPLEADO.
 ALTER PROCEDURE SP_UPDATE_CONTRATO
