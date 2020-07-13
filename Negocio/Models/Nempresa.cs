@@ -36,7 +36,7 @@ namespace Negocio.Models
             empre_reposi = new Rempresa();
         }
 
-        //MEDOTO GUARDAR CAMBIOS
+        //METODO GUARDAR CAMBIOS
         public string SaveChanges()
         {
             mensaje = "";

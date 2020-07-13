@@ -72,6 +72,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
+            this.txtdescuento = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panelcontrato.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
@@ -191,6 +193,7 @@
             this.txtid_empleado.Name = "txtid_empleado";
             this.txtid_empleado.Size = new System.Drawing.Size(29, 20);
             this.txtid_empleado.TabIndex = 31;
+            this.txtid_empleado.Visible = false;
             // 
             // lblcts
             // 
@@ -331,7 +334,9 @@
             this.panel3.Controls.Add(this.dtinicio);
             this.panel3.Controls.Add(this.lblremu);
             this.panel3.Controls.Add(this.txtremune);
+            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.lblasig);
+            this.panel3.Controls.Add(this.txtdescuento);
             this.panel3.Controls.Add(this.txtasig);
             this.panel3.Location = new System.Drawing.Point(0, 195);
             this.panel3.Name = "panel3";
@@ -585,6 +590,27 @@
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
+            // txtdescuento
+            // 
+            this.txtdescuento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescuento.Location = new System.Drawing.Point(427, 115);
+            this.txtdescuento.Name = "txtdescuento";
+            this.txtdescuento.Size = new System.Drawing.Size(106, 22);
+            this.txtdescuento.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(424, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "DESCUENTO";
+            // 
             // frmcontrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -665,5 +691,7 @@
         public System.Windows.Forms.TextBox txtafp;
         public System.Windows.Forms.Label lbldocumento;
         public System.Windows.Forms.TextBox txtcussp;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtdescuento;
     }
 }
