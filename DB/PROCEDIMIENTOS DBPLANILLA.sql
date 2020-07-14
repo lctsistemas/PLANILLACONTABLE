@@ -545,6 +545,21 @@ ELSE
 END
 GO
 
+CREATE PROC SP_GEN_TIPO_CONT
+(@Tipocont int output)
+AS BEGIN
+SET @Tipocont=(SELECT COUNT(t.id_tipo_contrato) FROM Tipo_contrato t)
+IF(@Tipocont=0)
+	BEGIN
+		SET @Tipocont=1
+	END
+ELSE
+	BEGIN
+		SET @Tipocont=(SELECT MAX(t.id_tipo_contrato)+1 FROM Tipo_contrato t)
+	END
+END
+GO
+
 CREATE PROC SP_GENERAR_CONTRATO
 (@contrato int output)
 AS BEGIN
@@ -653,7 +668,7 @@ GO
 --EXEC SP_SHOW_BANCO 'B';
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
-ALTER PROC SP_INSERT_TIP_CONT(
+CREATE PROC SP_INSERT_TIP_CONT(
 @id_tip_cont int,
 @tiempo_contrato varchar(30),
 @mensaje varchar(100) output
@@ -694,7 +709,7 @@ GO
 --GO
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
-alter PROC SP_SHOW_TIP_CONT
+CREATE PROC SP_SHOW_TIP_CONT
 AS BEGIN 
 SELECT id_tipo_contrato, tiempo_contrato from Tipo_contrato;
 END
@@ -702,7 +717,7 @@ GO
 
 --select * from Tipo_contrato
 --procedimientos contrato 
-ALTER PROCEDURE SP_INSERT_CONTRATO
+CREATE PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
 @id_empleado int,
 @id_banco int,
