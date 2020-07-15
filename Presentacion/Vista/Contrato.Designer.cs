@@ -370,7 +370,7 @@
             this.dtfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtfin.Location = new System.Drawing.Point(427, 37);
             this.dtfin.Name = "dtfin";
-            this.dtfin.Size = new System.Drawing.Size(101, 20);
+            this.dtfin.Size = new System.Drawing.Size(106, 20);
             this.dtfin.TabIndex = 19;
             // 
             // lblfechafin
