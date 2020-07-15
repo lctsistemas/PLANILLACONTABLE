@@ -97,6 +97,7 @@
             this.btnNuevo.Size = new System.Drawing.Size(61, 46);
             this.btnNuevo.TabIndex = 68;
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnguardar
             // 
@@ -116,6 +117,7 @@
             // 
             // txtcodigo
             // 
+            this.txtcodigo.Enabled = false;
             this.txtcodigo.Location = new System.Drawing.Point(211, 63);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(100, 20);
@@ -160,9 +162,9 @@
             // dgvtipocontrato
             // 
             this.dgvtipocontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtipocontrato.Location = new System.Drawing.Point(50, 71);
+            this.dgvtipocontrato.Location = new System.Drawing.Point(76, 54);
             this.dgvtipocontrato.Name = "dgvtipocontrato";
-            this.dgvtipocontrato.Size = new System.Drawing.Size(307, 163);
+            this.dgvtipocontrato.Size = new System.Drawing.Size(245, 159);
             this.dgvtipocontrato.TabIndex = 0;
             // 
             // panel1

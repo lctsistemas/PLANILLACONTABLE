@@ -21,6 +21,7 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
             ShowTipoContrato();
+            Tabla();
         }
 
         private void GenerarCodigo()
@@ -53,7 +54,7 @@ namespace Presentacion.Vista
 
             using (nTipocont)
             {
-                if (nTipocont.state==EntityState.Guardar)
+                if (nTipocont.state == EntityState.Guardar)
                 {
                     nTipocont.id_tcontrato = Convert.ToInt32(txtcodigo.Text);
                     nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
@@ -67,6 +68,23 @@ namespace Presentacion.Vista
                     }
                 }
             }
+        }
+
+
+        private void Tabla()
+        {
+            dgvtipocontrato.Columns[0].HeaderText = "CODIGO";
+            dgvtipocontrato.Columns[0].Width = 50;
+
+            dgvtipocontrato.Columns[1].HeaderText = "ACCESO USUARIO";
+            dgvtipocontrato.Columns[1].Width = 150;
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            using (nTipocont) { nTipocont.state = EntityState.Guardar; }
+            GenerarCodigo();
+            limpiar();
         }
     }
 }

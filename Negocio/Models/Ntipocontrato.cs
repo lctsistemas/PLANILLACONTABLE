@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Datos.Contract;
 using Datos.Entities;
+using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 
@@ -68,7 +69,7 @@ namespace Negocio.Models
 
         public int Getcodigo()
         {
-            return new 
+            return new Ktipocontrato().GetCodigo();
         }
 
         public void Dispose()
