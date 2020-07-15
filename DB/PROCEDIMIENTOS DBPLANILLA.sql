@@ -211,6 +211,29 @@ UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
 END
 GO
 
+--MOSTRAR EMPLEADO 
+ALTER PROC SP_SHOW_EMP
+@search varchar(50)
+AS BEGIN 
+SELECT top(200) e.id_empleado, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
+e.nacionalidad,e.tipo_genero,e.direccion,e.telefono,e.numero_documento,e.estado,a.id_afp,e.tipo_pension ,a.nombre_afp as 'Tipo de AFP',
+t.id_documento,t.nombre as 'DOCUMENTO',c.id_cargo,c.nombre_cargo AS 'CARGO',em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Tipo_documento t 
+on(t.id_documento=e.id_documento)
+left JOIN Afp a
+ON(a.id_afp=e.id_afp)
+INNER JOIN Cargo c
+ON(c.id_cargo=e.id_cargo)
+INNER JOIN Empresa_maestra em
+ON(em.id_em_maestra=e.id_em_maestra)
+WHERE e.eliminado_estado='NO ANULADO' and
+(e.nombre_empleado like @search+'%'
+or e.ape_paterno 
+like @search+'%') 
+ORDER BY e.id_empleado DESC
+END
+GO
+
+
 /*     EMPRESA AND SUCURSAL      */
 CREATE PROC SP_INSERT_EMPRESA_MAESTRA
 @razon_social varchar(50),
@@ -431,29 +454,6 @@ dbo.Usuario u join Rol r on u.id_rol=r.id_rol WHERE u.referencia like @search+'%
 ORDER BY u.id_usuario DESC
 END
 GO
-
---MOSTRAR EMPLEADO 
-ALTER PROC SP_SHOW_EMP
-@search varchar(50)
-AS BEGIN 
-SELECT top(200) e.id_empleado, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
-e.nacionalidad,e.tipo_genero,e.direccion,e.telefono,e.numero_documento,e.estado,a.id_afp,e.tipo_pension ,a.nombre_afp as 'Tipo de AFP',
-t.id_documento,t.nombre as 'DOCUMENTO',c.id_cargo,c.nombre_cargo AS 'CARGO',em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Tipo_documento t 
-on(t.id_documento=e.id_documento)
-left JOIN Afp a
-ON(a.id_afp=e.id_afp)
-INNER JOIN Cargo c
-ON(c.id_cargo=e.id_cargo)
-INNER JOIN Empresa_maestra em
-ON(em.id_em_maestra=e.id_em_maestra)
-WHERE e.eliminado_estado='NO ANULADO' and
-(e.nombre_empleado like @search+'%'
-or e.ape_paterno 
-like @search+'%') 
-ORDER BY e.id_empleado DESC
-END;
-GO
-
 
 /*     PROCEDIMIENTO ROL     */
 CREATE PROC SP_INSERT_ROL

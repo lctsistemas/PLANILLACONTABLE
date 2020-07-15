@@ -437,6 +437,10 @@ namespace Presentacion.Vista
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            if (rdnombre.Checked==true) 
+            { 
+                
+            }
             mostrarEmp(txtBuscar.Text.Trim());
         }
 
@@ -669,14 +673,13 @@ namespace Presentacion.Vista
                     DataGridViewRow dgr = dgvempleado.CurrentRow;
                     formcontrato.txtid_empleado.Text = dgr.Cells[1].Value.ToString();
                     string last_name = dgr.Cells[2].Value.ToString() + " " + dgr.Cells[3].Value.ToString() + " " + dgr.Cells[4].Value.ToString();
-                    formcontrato.txtnombre.Text = last_name.ToString();
+                    formcontrato.txtnombre.Text = last_name;
                     formcontrato.txtdocumento.Text = dgr.Cells[10].Value.ToString();
                     formcontrato.lbldocumento.Text = dgr.Cells[16].Value.ToString();
                     formcontrato.txtcargo.Text = dgr.Cells[18].Value.ToString();
                     formcontrato.txtpen.Text = dgr.Cells[13].Value.ToString();
-
+                    formcontrato.txtafp.Text = dgr.Cells[14].Value.ToString();
                     formcontrato.ShowDialog();
-
                 }
             }
         }
