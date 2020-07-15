@@ -438,8 +438,12 @@ namespace Presentacion.Vista
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             if (rdnombre.Checked==true) 
-            { 
-                
+            {
+
+            }
+            else if (rddni.Checked==true)
+            {
+
             }
             mostrarEmp(txtBuscar.Text.Trim());
         }
