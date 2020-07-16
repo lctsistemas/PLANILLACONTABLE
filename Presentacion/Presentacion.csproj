@@ -97,6 +97,12 @@
     <Compile Include="Subvista\Vista_empresa.Designer.cs">
       <DependentUpon>Vista_empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subvista\Vista_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subvista\Vista_login.Designer.cs">
+      <DependentUpon>Vista_login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subvista\Vista_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     <Compile Include="Vista\Empresa.Designer.cs">
       <DependentUpon>Empresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Rol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +204,9 @@
     <EmbeddedResource Include="Subvista\Vista_empresa.resx">
       <DependentUpon>Vista_empresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Subvista\Vista_login.resx">
+      <DependentUpon>Vista_login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Subvista\Vista_usuario.resx">
       <DependentUpon>Vista_usuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>

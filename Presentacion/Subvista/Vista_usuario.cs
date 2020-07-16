@@ -67,6 +67,8 @@ namespace Presentacion.Subvista
         {
             frmempresa femp = (frmempresa)Owner;
 
+           
+
             if (dgvvista_user.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 femp.txtiduser.Text = dgvvista_user.CurrentRow.Cells[0].Value.ToString();

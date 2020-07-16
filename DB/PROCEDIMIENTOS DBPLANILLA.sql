@@ -559,6 +559,47 @@ ELSE
 	END
 END
 GO
+--LISTAR POR EMPRESA
+ALTER PROC SP_LISTEMP_POR_USU
+(@codigo_usuario VARCHAR(20))
+AS BEGIN
+SELECT em.id_em_maestra,em.razon_social from Empresa_maestra em
+INNER JOIN Empresa e
+on(e.id_em_maestra=em.id_em_maestra)
+INNER JOIN Usuario u
+on(e.id_usuario=u.id_usuario)
+WHERE u.codigo_usuario=@codigo_usuario
+END
+GO
+
+EXEC SP_LISTEMP_POR_USU 'US001'
+--INICIAR SESION
+GO
+Create Proc IniciarSesion
+@codigo_usuario Varchar(20),
+@Contraseña Varchar(12),
+@Mensaje Varchar(50) Out
+As Begin
+	Declare @Empleado Varchar(50)
+	If(Not Exists(SELECT u.codigo_usuario 
+	from Usuario u
+	WHERE u.codigo_usuario=@codigo_usuario))
+		Set @Mensaje='El Nombre de Usuario no Existe.'
+		Else Begin
+			If(Not Exists(Select contrasena From Usuario Where contrasena=@Contraseña))
+				Set @Mensaje='Su Contraseña es Incorrecta.'
+				Else Begin
+					Set @Empleado=(Select E.Nombres+', '+E.Apellidos From Usuario E Inner Join Usuario U 
+								   On E.IdEmpleado=U.IdEmpleado Where U.Usuario=@Usuario)
+					    Begin
+					Select Usuario,Contraseña From Usuario Where Usuario=@Usuario And Contraseña=@Contraseña
+							Set @Mensaje='Bienvenido Sr(a): '+@Empleado+'.'
+						End
+				  End
+		   End
+   End
+Go
+
 
 CREATE PROC SP_GENERAR_CONTRATO
 (@contrato int output)
