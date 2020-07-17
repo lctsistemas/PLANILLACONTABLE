@@ -55,7 +55,6 @@
             this.panelmedia3.SuspendLayout();
             this.panelmedia2.SuspendLayout();
             this.panelsubmenu.SuspendLayout();
-            this.panelcontent.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -366,7 +365,6 @@
             // panelcontent
             // 
             this.panelcontent.BackColor = System.Drawing.Color.Silver;
-            this.panelcontent.Controls.Add(this.panel1);
             this.panelcontent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelcontent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelcontent.Location = new System.Drawing.Point(230, 0);
@@ -379,7 +377,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(230, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 68);
             this.panel1.TabIndex = 0;
@@ -400,6 +398,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 749);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelcontent);
             this.Controls.Add(this.panelsidemenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -412,7 +411,6 @@
             this.panelmedia3.ResumeLayout(false);
             this.panelmedia2.ResumeLayout(false);
             this.panelsubmenu.ResumeLayout(false);
-            this.panelcontent.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -138,7 +138,7 @@ namespace Presentacion.Vista
             this.tabPage2.Location = new System.Drawing.Point(33, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(744, 420);
+            this.tabPage2.Size = new System.Drawing.Size(735, 417);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gestion Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@ namespace Presentacion.Vista
             this.groupBox2.Controls.Add(this.txttele);
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(732, 344);
+            this.groupBox2.Size = new System.Drawing.Size(723, 344);
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
             // 
@@ -194,7 +194,7 @@ namespace Presentacion.Vista
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Location = new System.Drawing.Point(395, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(337, 344);
+            this.groupBox3.Size = new System.Drawing.Size(328, 344);
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             // 
@@ -580,7 +580,7 @@ namespace Presentacion.Vista
             this.listaEmpleados.Location = new System.Drawing.Point(33, 4);
             this.listaEmpleados.Name = "listaEmpleados";
             this.listaEmpleados.Padding = new System.Windows.Forms.Padding(3);
-            this.listaEmpleados.Size = new System.Drawing.Size(744, 420);
+            this.listaEmpleados.Size = new System.Drawing.Size(735, 419);
             this.listaEmpleados.TabIndex = 0;
             this.listaEmpleados.Text = "Lista Empleados";
             this.listaEmpleados.UseVisualStyleBackColor = true;
@@ -702,7 +702,7 @@ namespace Presentacion.Vista
             this.tabEmpleado.Multiline = true;
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.SelectedIndex = 0;
-            this.tabEmpleado.Size = new System.Drawing.Size(781, 428);
+            this.tabEmpleado.Size = new System.Drawing.Size(772, 427);
             this.tabEmpleado.TabIndex = 40;
             // 
             // tabPage1
@@ -710,7 +710,7 @@ namespace Presentacion.Vista
             this.tabPage1.Location = new System.Drawing.Point(33, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(744, 420);
+            this.tabPage1.Size = new System.Drawing.Size(732, 417);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Registrar Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
