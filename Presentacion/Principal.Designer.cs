@@ -364,12 +364,14 @@
             // 
             // panelcontent
             // 
+            this.panelcontent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcontent.BackColor = System.Drawing.Color.Silver;
-            this.panelcontent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelcontent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelcontent.Location = new System.Drawing.Point(230, 0);
+            this.panelcontent.Location = new System.Drawing.Point(230, 68);
             this.panelcontent.Name = "panelcontent";
-            this.panelcontent.Size = new System.Drawing.Size(670, 749);
+            this.panelcontent.Size = new System.Drawing.Size(670, 681);
             this.panelcontent.TabIndex = 1;
             // 
             // panel1

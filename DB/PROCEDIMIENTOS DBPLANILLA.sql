@@ -559,6 +559,22 @@ ELSE
 	END
 END
 GO
+
+CREATE PROC SP_GENERAR_CONTRATO
+(@contrato int output)
+AS BEGIN
+SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
+IF(@contrato=0)
+	BEGIN
+		SET @contrato=1		
+	END
+ELSE
+	BEGIN
+		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)		
+	END
+END
+GO
+
 --LISTAR POR EMPRESA
 ALTER PROC SP_LISTEMP_POR_USU
 (@codigo_usuario VARCHAR(20))
@@ -573,7 +589,7 @@ END
 GO
 
 EXEC SP_LISTEMP_POR_USU 'US001'
---INICIAR SESION
+--INICIAR SESION 
 GO
 Create Proc IniciarSesion
 @codigo_usuario Varchar(20),
@@ -601,20 +617,7 @@ As Begin
 Go
 
 
-CREATE PROC SP_GENERAR_CONTRATO
-(@contrato int output)
-AS BEGIN
-SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
-IF(@contrato=0)
-	BEGIN
-		SET @contrato=1		
-	END
-ELSE
-	BEGIN
-		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)		
-	END
-END
-GO
+
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
 CREATE PROC SP_LLENAR_CARGO_EMPLEADO
@@ -819,4 +822,19 @@ AS BEGIN
 SELECT * FROM dbo.Contrato c
 END
 GO
+--
+ 
+ ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
+ declare @user varchar(40)='MISHELL DE LA CRUZ'
+ declare @pass varchar(50)='123'
+ select u.id_usuario,u.codigo_usuario,u.referencia,u.contrasena,r.rol from Usuario u join Rol r on u.id_rol=r.id_rol 
+ WHERE (u.codigo_usuario=@user or referencia=@user) and contrasena=@pass
 
+ IF( = )
+ BEGIN
+	
+ END
+ GO
+
+ declare @Nom varchar(54)
+select * from Usuario where codigo_usuario

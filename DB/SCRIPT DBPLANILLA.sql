@@ -168,13 +168,6 @@ go
 alter table Contrato add  descuento money null 
 
 GO
---print year('12/10/2020')
-
---ALTER TABLE Contrato add CUSSP varchar(30) null;
-
---alter table Contrato alter column numero_cuenta varchar(30) null;
-
---ALTER TABLE dbo.contrato add estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
 
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL

@@ -451,6 +451,7 @@
             // 
             // txtafp
             // 
+            this.txtafp.Enabled = false;
             this.txtafp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtafp.Location = new System.Drawing.Point(115, 106);
             this.txtafp.Name = "txtafp";

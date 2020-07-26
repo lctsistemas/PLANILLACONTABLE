@@ -45,7 +45,7 @@
             this.panellogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.panellogin.Location = new System.Drawing.Point(0, 0);
             this.panellogin.Name = "panellogin";
-            this.panellogin.Size = new System.Drawing.Size(374, 50);
+            this.panellogin.Size = new System.Drawing.Size(714, 50);
             this.panellogin.TabIndex = 0;
             // 
             // lblusuario
@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 247);
+            this.ClientSize = new System.Drawing.Size(714, 401);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtempresa);

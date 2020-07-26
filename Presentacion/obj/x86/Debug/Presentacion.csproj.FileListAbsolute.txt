@@ -202,3 +202,6 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoContrato.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Login.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.Vista_login.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.Vista_login.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Login.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoContrato.resources
