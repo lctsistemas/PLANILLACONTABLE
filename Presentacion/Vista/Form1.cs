@@ -90,32 +90,32 @@ namespace Login_inicio
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            if (txtuser.Text != "USUARIO")
-            {
-                if (txtpass.Text != "CONTRASEÑA")
-                {
-                    UserModel us = new UserModel();
-                    var validarLogin = us.LoginUser(txtuser.Text.Trim(), txtpass.Text.Trim());
-                    if (validarLogin)
-                    {
-                        frmprincipal mainmenu = new frmprincipal();
-                        mainmenu.Show();
-                        mainmenu.FormClosed += Logout;//revisar
-                        this.Hide();
-                    }
-                    else
-                    {
-                        msgError("Incorrect username or password entered. \n Please trye again. ");
-                        txtpass.Text="CONTRASEÑA";
-                        txtpass.UseSystemPasswordChar = false;
-                        txtuser.Focus();
-                    }
-                }
-                else
-                    msgError("please enter password");
-            }
-            else
-                msgError("please enter username");
+            //if (txtuser.Text != "USUARIO")
+            //{
+            //    if (txtpass.Text != "CONTRASEÑA")
+            //    {
+            //        UserModel us = new UserModel();
+            //        var validarLogin = us.LoginUser(txtuser.Text.Trim(), txtpass.Text.Trim());
+            //        if (validarLogin)
+            //        {
+            //            frmprincipal mainmenu = new frmprincipal();
+            //            mainmenu.Show();
+            //            mainmenu.FormClosed += Logout;//revisar
+            //            this.Hide();
+            //        }
+            //        else
+            //        {
+            //            msgError("Incorrect username or password entered. \n Please trye again. ");
+            //            txtpass.Text="CONTRASEÑA";
+            //            txtpass.UseSystemPasswordChar = false;
+            //            txtuser.Focus();
+            //        }
+            //    }
+            //    else
+            //        msgError("please enter password");
+            //}
+            //else
+            //    msgError("please enter username");
         }
 
 

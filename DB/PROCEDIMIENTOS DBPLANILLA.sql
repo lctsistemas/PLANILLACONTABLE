@@ -827,14 +827,26 @@ GO
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
  declare @user varchar(40)='MISHELL DE LA CRUZ'
  declare @pass varchar(50)='123'
- select u.id_usuario,u.codigo_usuario,u.referencia,u.contrasena,r.rol from Usuario u join Rol r on u.id_rol=r.id_rol 
+
+ --SELECCIONAR O VALIDAR EL USUARIO Y MOSTRAR LAS EMPRESAS QUE PERTENECEN AL USUARIO.
+
+ select u.id_usuario, u.codigo_usuario,u.referencia,u.contrasena,r.rol from Usuario u join Rol r on u.id_rol=r.id_rol 
  WHERE (u.codigo_usuario=@user or referencia=@user) and contrasena=@pass
 
+
+ declare @usu int=(select Usuario.id_usuario from Usuario where Usuario.id_usuario=3)
+ print @usu
+
+  
  IF( = )
  BEGIN
-	
+	 
  END
  GO
 
- declare @Nom varchar(54)
-select * from Usuario where codigo_usuario
+declare @Nom varchar(54)
+select @Nom=Usuario.referencia, Usuario.contrasena from Usuario join rol on Usuario.id_rol=rol.id_rol where Usuario.id_usuario=2
+select @Nom as [nombre usuario]
+
+ declare @codi int=1
+SELECT * FROM Empresa where id_usuario=@codi
