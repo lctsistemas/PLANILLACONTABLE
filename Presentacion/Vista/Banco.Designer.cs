@@ -40,7 +40,7 @@
             this.btnguardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tablista = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtBanco = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tablista.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -205,15 +205,15 @@
             this.txtcodigo.Size = new System.Drawing.Size(77, 20);
             this.txtcodigo.TabIndex = 65;
             // 
-            // tabControl1
+            // tablista
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 50);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(413, 266);
-            this.tabControl1.TabIndex = 66;
+            this.tablista.Controls.Add(this.tabPage1);
+            this.tablista.Controls.Add(this.tabPage2);
+            this.tablista.Location = new System.Drawing.Point(-1, 50);
+            this.tablista.Name = "tablista";
+            this.tablista.SelectedIndex = 0;
+            this.tablista.Size = new System.Drawing.Size(413, 266);
+            this.tablista.TabIndex = 66;
             // 
             // tabPage1
             // 
@@ -253,9 +253,9 @@
             // 
             this.txtBanco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBanco.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBanco.Location = new System.Drawing.Point(197, 115);
+            this.txtBanco.Location = new System.Drawing.Point(196, 115);
             this.txtBanco.Name = "txtBanco";
-            this.txtBanco.Size = new System.Drawing.Size(102, 25);
+            this.txtBanco.Size = new System.Drawing.Size(148, 25);
             this.txtBanco.TabIndex = 68;
             this.txtBanco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBanco_KeyDown);
             this.txtBanco.Validating += new System.ComponentModel.CancelEventHandler(this.txtBanco_Validating);
@@ -265,7 +265,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
             this.pictureBox2.Location = new System.Drawing.Point(195, 114);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(150, 27);
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
             // 
@@ -308,6 +308,7 @@
             this.dgvBanco.ReadOnly = true;
             this.dgvBanco.Size = new System.Drawing.Size(407, 184);
             this.dgvBanco.TabIndex = 0;
+            this.dgvBanco.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBanco_CellDoubleClick);
             // 
             // Banco
             // 
@@ -315,7 +316,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 315);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tablista);
             this.Name = "Banco";
             this.Text = "Banco";
             this.Load += new System.EventHandler(this.Banco_Load);
@@ -326,7 +327,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tablista.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -346,7 +347,7 @@
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tablista;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox btncerrar;

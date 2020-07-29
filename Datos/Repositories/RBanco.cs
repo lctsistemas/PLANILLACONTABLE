@@ -63,7 +63,25 @@ namespace Datos.Repositories
 
         public int Edit(DBanco entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_UPDATE_BANCO";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
+                    
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                    return result;
+
+                }
+            }
         }
 
         public DataTable GetData(DBanco entiti)

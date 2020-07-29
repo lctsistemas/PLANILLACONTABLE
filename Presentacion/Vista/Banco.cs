@@ -88,12 +88,6 @@ namespace Presentacion.Vista
 
                 result = nbanco.GuardarCambios();
 
-                if (nbanco.state == EntityState.Guardar)
-                    nbanco.Nom_banco = txtBanco.Text.Trim();
-
-
-                result = nbanco.GuardarCambios();
-
                 Messages.M_info(result);
                 if (nbanco.state == EntityState.Guardar)
                 {
@@ -201,6 +195,36 @@ namespace Presentacion.Vista
             else
             {
                 Messages.M_warning("Seleccione un Fila");
+            }
+        }
+
+        
+
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            txtcodigo.Enabled = v;
+            txtBanco.Enabled = v;
+            
+        }
+
+        private void dgvBanco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvBanco.CurrentRow;
+            if (dgvBanco.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nbanco)
+                {
+                    nbanco.state = EntityState.Modificar;
+                    nbanco.IdBanco = Convert.ToInt32(r.Cells[0].Value);//idusuario
+                    txtcodigo.Text = "USER 0" + nbanco.IdBanco;
+                    txtBanco.Text = r.Cells[1].Value.ToString();
+
+                    tablista.SelectedIndex = 0;
+                    Habilitar(true);
+                    ValidateError.validate.Clear();
+                }
+
             }
         }
     }
