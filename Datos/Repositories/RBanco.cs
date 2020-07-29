@@ -74,6 +74,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_UPDATE_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
                     cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
                     
                     result = cmd.ExecuteNonQuery();

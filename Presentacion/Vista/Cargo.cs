@@ -179,12 +179,14 @@ namespace Presentacion.Vista
         private void txtnom_cargo_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.Text(e, txtdescrip);
+            Keypress.SoloLetras(e);
         }
 
 
         private void txtdescrip_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.Button(e, btnguardar);
+
         }
 
         private void txtnom_cargo_TextChanged(object sender, EventArgs e)
@@ -252,6 +254,11 @@ namespace Presentacion.Vista
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Keypress.SoloLetras(e);
         }
     }
 }

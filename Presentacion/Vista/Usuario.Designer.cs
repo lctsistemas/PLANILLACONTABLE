@@ -118,6 +118,7 @@
             this.txtbuscar.Size = new System.Drawing.Size(271, 17);
             this.txtbuscar.TabIndex = 0;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
             // 
             // label19
             // 

@@ -17,6 +17,7 @@ namespace Presentacion.Vista
         private String result;
         Ntipocontrato nTipocont = new Ntipocontrato();
         private Int32 codigo;
+        private Int32 codtipcont;
         public TipoContrato()
         {
             InitializeComponent();
@@ -85,6 +86,22 @@ namespace Presentacion.Vista
             using (nTipocont) { nTipocont.state = EntityState.Guardar; }
             GenerarCodigo();
             limpiar();
+        }
+
+        private void TipoContrato_Load(object sender, EventArgs e)
+        {
+            generarCodigo();
+        }
+
+        private void generarCodigo()
+        {
+            codtipcont = 0;
+
+            using (nTipocont)
+            {
+                codtipcont = nTipocont.Getcodigo();
+                txtcodigo.Text = "TIPOCONT 0" + codtipcont;
+            }
         }
     }
 }

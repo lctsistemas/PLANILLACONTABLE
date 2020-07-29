@@ -299,6 +299,7 @@
             this.txtbuscar.Size = new System.Drawing.Size(208, 22);
             this.txtbuscar.TabIndex = 1;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
             // 
             // btnnuevo
             // 

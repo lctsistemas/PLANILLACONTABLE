@@ -227,5 +227,10 @@ namespace Presentacion.Vista
 
             }
         }
+
+        private void txtBanco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

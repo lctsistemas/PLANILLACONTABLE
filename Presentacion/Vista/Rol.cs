@@ -121,11 +121,9 @@ namespace Presentacion.Vista
             }
         }
 
-
-
-
-
-
-
+        private void txtrol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Keypress.SoloLetras(e);
+        }
     }
 }
