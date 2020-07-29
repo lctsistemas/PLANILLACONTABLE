@@ -50,7 +50,6 @@ namespace Presentacion.Vista
             using (nbanco)
             {
                 codigoban = nbanco.GetCodigo();
-                txtcodigo.Text = "BAN 0" + codigoban;
             }
         }
 
@@ -203,7 +202,6 @@ namespace Presentacion.Vista
         private void Habilitar(bool v)
         {
             btnguardar.Enabled = v;
-            txtcodigo.Enabled = v;
             txtBanco.Enabled = v;
             
         }
@@ -217,7 +215,6 @@ namespace Presentacion.Vista
                 {
                     nbanco.state = EntityState.Modificar;
                     nbanco.IdBanco = Convert.ToInt32(r.Cells[0].Value);//idusuario
-                    txtcodigo.Text = "USER 0" + nbanco.IdBanco;
                     txtBanco.Text = r.Cells[1].Value.ToString();
 
                     tablista.SelectedIndex = 0;

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabtipo = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -43,7 +43,7 @@
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tabtipo.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtipocontrato)).BeginInit();
@@ -55,15 +55,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabtipo
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-4, 54);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(363, 241);
-            this.tabControl1.TabIndex = 0;
+            this.tabtipo.Controls.Add(this.tabPage1);
+            this.tabtipo.Controls.Add(this.tabPage2);
+            this.tabtipo.Location = new System.Drawing.Point(-4, 54);
+            this.tabtipo.Name = "tabtipo";
+            this.tabtipo.SelectedIndex = 0;
+            this.tabtipo.Size = new System.Drawing.Size(400, 257);
+            this.tabtipo.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -74,7 +74,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(355, 215);
+            this.tabPage1.Size = new System.Drawing.Size(392, 231);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestion tipo contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@
             // 
             // txttipo
             // 
-            this.txttipo.Location = new System.Drawing.Point(193, 51);
+            this.txttipo.Location = new System.Drawing.Point(207, 51);
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(100, 20);
             this.txttipo.TabIndex = 1;
@@ -121,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 54);
+            this.label2.Location = new System.Drawing.Point(57, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 0;
@@ -133,7 +133,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(355, 215);
+            this.tabPage2.Size = new System.Drawing.Size(392, 231);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Lista Tipo contrato";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -141,10 +141,11 @@
             // dgvtipocontrato
             // 
             this.dgvtipocontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtipocontrato.Location = new System.Drawing.Point(76, 54);
+            this.dgvtipocontrato.Location = new System.Drawing.Point(3, 39);
             this.dgvtipocontrato.Name = "dgvtipocontrato";
-            this.dgvtipocontrato.Size = new System.Drawing.Size(245, 159);
+            this.dgvtipocontrato.Size = new System.Drawing.Size(381, 189);
             this.dgvtipocontrato.TabIndex = 0;
+            this.dgvtipocontrato.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipocontrato_CellDoubleClick);
             // 
             // panel1
             // 
@@ -158,7 +159,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 50);
+            this.panel1.Size = new System.Drawing.Size(396, 50);
             this.panel1.TabIndex = 1;
             // 
             // btncerrar
@@ -166,7 +167,7 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(318, 14);
+            this.btncerrar.Location = new System.Drawing.Point(355, 14);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -178,7 +179,7 @@
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(246, 14);
+            this.btnminimizar.Location = new System.Drawing.Point(283, 14);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +192,7 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
-            this.btnmaximizar.Location = new System.Drawing.Point(282, 14);
+            this.btnmaximizar.Location = new System.Drawing.Point(319, 14);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -203,7 +204,7 @@
             this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnrestaurar.Enabled = false;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(283, 14);
+            this.btnrestaurar.Location = new System.Drawing.Point(320, 14);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,13 +236,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 293);
+            this.ClientSize = new System.Drawing.Size(396, 309);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabtipo);
             this.Name = "TipoContrato";
             this.Text = "TipoContrato";
             this.Load += new System.EventHandler(this.TipoContrato_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabtipo.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -259,7 +260,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabtipo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;

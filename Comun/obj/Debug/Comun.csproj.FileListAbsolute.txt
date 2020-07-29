@@ -1,0 +1,5 @@
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\Comun.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\Comun.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.pdb

@@ -31,7 +31,6 @@ namespace Presentacion.Vista
             using (nTipocont)
             {
                 codigo = nTipocont.Getcodigo();
-                txtcodigo.Text = "USER 0" + codigo;
             }
         }
 
@@ -57,7 +56,6 @@ namespace Presentacion.Vista
             {
                 if (nTipocont.state == EntityState.Guardar)
                 {
-                    nTipocont.id_tcontrato = Convert.ToInt32(txtcodigo.Text);
                     nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
                     ShowTipoContrato();
 
@@ -100,7 +98,24 @@ namespace Presentacion.Vista
             using (nTipocont)
             {
                 codtipcont = nTipocont.Getcodigo();
-                txtcodigo.Text = "TIPOCONT 0" + codtipcont;
+            }
+        }
+
+        private void dgvtipocontrato_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvtipocontrato.CurrentRow;
+            if (dgvtipocontrato.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nTipocont)
+                {
+                    nTipocont.state = EntityState.Modificar;
+                    nTipocont.id_tcontrato = Convert.ToInt32(r.Cells[0].Value);//idusuario
+                    txttipo.Text = r.Cells[1].Value.ToString();
+
+                    tabtipo.SelectedIndex = 0;
+                    ValidateError.validate.Clear();
+                }
+
             }
         }
     }
