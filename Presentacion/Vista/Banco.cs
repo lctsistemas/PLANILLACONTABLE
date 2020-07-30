@@ -50,7 +50,6 @@ namespace Presentacion.Vista
             using (nbanco)
             {
                 codigoban = nbanco.GetCodigo();
-                txtcodigo.Text = "BAN 0" + codigoban;
             }
         }
 
@@ -84,12 +83,6 @@ namespace Presentacion.Vista
                 if (nbanco.state == EntityState.Guardar)
                     nbanco.IdBanco = codigoban;
                 nbanco.Nom_banco = txtBanco.Text.Trim();
-
-
-                result = nbanco.GuardarCambios();
-
-                if (nbanco.state == EntityState.Guardar)
-                    nbanco.Nom_banco = txtBanco.Text.Trim();
 
 
                 result = nbanco.GuardarCambios();
@@ -202,6 +195,39 @@ namespace Presentacion.Vista
             {
                 Messages.M_warning("Seleccione un Fila");
             }
+        }
+
+        
+
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            txtBanco.Enabled = v;
+            
+        }
+
+        private void dgvBanco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvBanco.CurrentRow;
+            if (dgvBanco.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nbanco)
+                {
+                    nbanco.state = EntityState.Modificar;
+                    nbanco.IdBanco = Convert.ToInt32(r.Cells[0].Value);//idusuario
+                    txtBanco.Text = r.Cells[1].Value.ToString();
+
+                    tablista.SelectedIndex = 0;
+                    Habilitar(true);
+                    ValidateError.validate.Clear();
+                }
+
+            }
+        }
+
+        private void txtBanco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

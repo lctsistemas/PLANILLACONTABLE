@@ -40,6 +40,11 @@ namespace Negocio.Models
                     mensaje = ban.mensaje;
                     break;
 
+                case EntityState.Modificar:
+                    RBanco.Edit(ban);
+                    mensaje = "Successfully Edited!";
+                    break;
+
                 case EntityState.Remover:
                     RBanco.Delete(ban);
                     mensaje = ban.mensaje;

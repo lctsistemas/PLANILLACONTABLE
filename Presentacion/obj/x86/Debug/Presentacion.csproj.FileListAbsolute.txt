@@ -206,7 +206,14 @@ C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\D
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Login.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoContrato.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Login_inicio.frmlogin.resources
+<<<<<<< HEAD
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Login_inicio.frminicio.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmloin.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Comun.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Comun.pdb
+=======
+C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Subvista.Vista_login.resources
+C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Login_inicio.frmlogin.resources
+C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.Login.resources
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Login_inicio.frmlogin.resources
+>>>>>>> 4496efca2df9ba69dff5b760d53de3a8dd04521a

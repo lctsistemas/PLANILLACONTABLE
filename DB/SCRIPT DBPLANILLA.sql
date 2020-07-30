@@ -25,6 +25,8 @@ eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado i
 )
 GO
 
+DELETE FROM BANCO;
+
 --TABLA: CARGO
 CREATE TABLE Cargo(
 id_cargo int identity(1,1),

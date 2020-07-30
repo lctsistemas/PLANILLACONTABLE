@@ -205,5 +205,18 @@ namespace Presentacion.Vista
         {
 
         }
+
+        private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Keypress.SoloNumeros(e);
+        }
+
+       
+
+        private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Keypress.SoloLetras(e);
+
+        }
     }
 }

@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Comun\bin\Debug\Comun.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Comun\bin\Debug\Comun.pdb
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Comun\obj\Debug\Comun.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Comun\obj\Debug\Comun.pdb
+=======
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\Comun.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\Comun.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.pdb
+>>>>>>> 4496efca2df9ba69dff5b760d53de3a8dd04521a

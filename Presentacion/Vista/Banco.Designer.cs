@@ -38,9 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tablista = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.txtBanco = new System.Windows.Forms.TextBox();
@@ -54,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tablista.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -73,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(410, 50);
+            this.panel1.Size = new System.Drawing.Size(381, 50);
             this.panel1.TabIndex = 0;
             // 
             // btncerrar
@@ -81,7 +79,7 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(369, 14);
+            this.btncerrar.Location = new System.Drawing.Point(340, 14);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,7 +92,7 @@
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(297, 14);
+            this.btnminimizar.Location = new System.Drawing.Point(268, 14);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +106,7 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
-            this.btnmaximizar.Location = new System.Drawing.Point(333, 14);
+            this.btnmaximizar.Location = new System.Drawing.Point(304, 14);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -121,7 +119,7 @@
             this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnrestaurar.Enabled = false;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(334, 14);
+            this.btnrestaurar.Location = new System.Drawing.Point(305, 14);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -165,7 +163,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(91, 118);
+            this.label3.Location = new System.Drawing.Point(76, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 2;
@@ -180,47 +178,27 @@
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.Location = new System.Drawing.Point(92, 169);
+            this.btnguardar.Location = new System.Drawing.Point(93, 138);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(61, 46);
             this.btnguardar.TabIndex = 63;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // label4
+            // tablista
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(91, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
-            this.label4.TabIndex = 64;
-            this.label4.Text = "CODIGO";
-            // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Enabled = false;
-            this.txtcodigo.Location = new System.Drawing.Point(197, 66);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(77, 20);
-            this.txtcodigo.TabIndex = 65;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 50);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(413, 266);
-            this.tabControl1.TabIndex = 66;
+            this.tablista.Controls.Add(this.tabPage1);
+            this.tablista.Controls.Add(this.tabPage2);
+            this.tablista.Location = new System.Drawing.Point(-1, 50);
+            this.tablista.Name = "tablista";
+            this.tablista.SelectedIndex = 0;
+            this.tablista.Size = new System.Drawing.Size(383, 230);
+            this.tablista.TabIndex = 66;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnNuevo);
-            this.tabPage1.Controls.Add(this.txtcodigo);
             this.tabPage1.Controls.Add(this.btnguardar);
-            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtBanco);
@@ -228,7 +206,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(405, 240);
+            this.tabPage1.Size = new System.Drawing.Size(375, 204);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Gestion Bancos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -242,7 +220,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnNuevo.Location = new System.Drawing.Point(247, 169);
+            this.btnNuevo.Location = new System.Drawing.Point(248, 138);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(61, 46);
             this.btnNuevo.TabIndex = 66;
@@ -253,19 +231,20 @@
             // 
             this.txtBanco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBanco.Font = new System.Drawing.Font("Lucida Sans", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBanco.Location = new System.Drawing.Point(197, 115);
+            this.txtBanco.Location = new System.Drawing.Point(181, 73);
             this.txtBanco.Name = "txtBanco";
-            this.txtBanco.Size = new System.Drawing.Size(102, 25);
+            this.txtBanco.Size = new System.Drawing.Size(148, 25);
             this.txtBanco.TabIndex = 68;
             this.txtBanco.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBanco_KeyDown);
+            this.txtBanco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBanco_KeyPress);
             this.txtBanco.Validating += new System.ComponentModel.CancelEventHandler(this.txtBanco_Validating);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Location = new System.Drawing.Point(195, 114);
+            this.pictureBox2.Location = new System.Drawing.Point(180, 72);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(106, 27);
+            this.pictureBox2.Size = new System.Drawing.Size(150, 27);
             this.pictureBox2.TabIndex = 69;
             this.pictureBox2.TabStop = false;
             // 
@@ -308,14 +287,15 @@
             this.dgvBanco.ReadOnly = true;
             this.dgvBanco.Size = new System.Drawing.Size(407, 184);
             this.dgvBanco.TabIndex = 0;
+            this.dgvBanco.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBanco_CellDoubleClick);
             // 
             // Banco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 315);
+            this.ClientSize = new System.Drawing.Size(381, 276);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tablista);
             this.Name = "Banco";
             this.Text = "Banco";
             this.Load += new System.EventHandler(this.Banco_Load);
@@ -326,7 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tablista.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -344,9 +324,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tablista;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.PictureBox btncerrar;

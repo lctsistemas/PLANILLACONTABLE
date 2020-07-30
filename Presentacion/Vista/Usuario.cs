@@ -300,5 +300,10 @@ namespace Presentacion.Vista
         {
 
         }
+
+        private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Keypress.SoloLetras(e);
+        }
     }
 }

@@ -681,7 +681,7 @@ END;
 GO
 
 --PROCEDIMENTO PARA ELIMINAR BANCO
-ALTER PROC SP_DEL_BANCO(
+CREATE PROC SP_DEL_BANCO(
 @id_banco int,
 @message varchar(100) output
 )

@@ -17,6 +17,7 @@ namespace Presentacion.Vista
         private String result;
         Ntipocontrato nTipocont = new Ntipocontrato();
         private Int32 codigo;
+        private Int32 codtipcont;
         public TipoContrato()
         {
             InitializeComponent();
@@ -30,7 +31,6 @@ namespace Presentacion.Vista
             using (nTipocont)
             {
                 codigo = nTipocont.Getcodigo();
-                txtcodigo.Text = "USER 0" + codigo;
             }
         }
 
@@ -56,10 +56,10 @@ namespace Presentacion.Vista
             {
                 if (nTipocont.state == EntityState.Guardar)
                 {
-                    nTipocont.id_tcontrato = Convert.ToInt32(txtcodigo.Text);
+                    nTipocont.id_tcontrato = codtipcont;
                     nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
                     ShowTipoContrato();
-
+                    result = nTipocont.GuardarCambios();
                     Messages.M_info(result);
                     if (nTipocont.state == EntityState.Guardar)
                     {
@@ -85,6 +85,39 @@ namespace Presentacion.Vista
             using (nTipocont) { nTipocont.state = EntityState.Guardar; }
             GenerarCodigo();
             limpiar();
+        }
+
+        private void TipoContrato_Load(object sender, EventArgs e)
+        {
+            generarCodigo();
+        }
+
+        private void generarCodigo()
+        {
+            codtipcont = 0;
+
+            using (nTipocont)
+            {
+                codtipcont = nTipocont.Getcodigo();
+            }
+        }
+
+        private void dgvtipocontrato_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvtipocontrato.CurrentRow;
+            if (dgvtipocontrato.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nTipocont)
+                {
+                    nTipocont.state = EntityState.Modificar;
+                    nTipocont.id_tcontrato = Convert.ToInt32(r.Cells[0].Value);
+                    txttipo.Text = r.Cells[1].Value.ToString();
+
+                    tabtipo.SelectedIndex = 0;
+                    ValidateError.validate.Clear();
+                }
+
+            }
         }
     }
 }

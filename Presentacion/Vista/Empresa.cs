@@ -343,6 +343,11 @@ namespace Presentacion.Vista
             btnmaximizar.BackColor = Color.FromArgb(31, 97, 141);
         }
 
+        private void txtruc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Keypress.SoloNumeros(e);
+        }
 
+        
     }
 }

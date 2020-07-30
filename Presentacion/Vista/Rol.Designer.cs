@@ -33,10 +33,10 @@
             this.tablista = new System.Windows.Forms.TabPage();
             this.btneliminar = new System.Windows.Forms.Button();
             this.tabgestion = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtrol = new System.Windows.Forms.TextBox();
             this.btnsave = new System.Windows.Forms.Button();
             this.btnnuevo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrol)).BeginInit();
             this.tabrol.SuspendLayout();
@@ -116,6 +116,16 @@
             this.tabgestion.TabIndex = 1;
             this.tabgestion.Text = "GESTION ROL";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Registrar Rol";
+            // 
             // txtrol
             // 
             this.txtrol.BackColor = System.Drawing.SystemColors.Control;
@@ -125,6 +135,7 @@
             this.txtrol.Name = "txtrol";
             this.txtrol.Size = new System.Drawing.Size(202, 16);
             this.txtrol.TabIndex = 4;
+            this.txtrol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrol_KeyPress);
             // 
             // btnsave
             // 
@@ -155,16 +166,6 @@
             this.btnnuevo.TabIndex = 5;
             this.btnnuevo.UseVisualStyleBackColor = false;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Registrar Rol";
             // 
             // label2
             // 

@@ -69,6 +69,7 @@
             this.txtbuscar.Size = new System.Drawing.Size(209, 22);
             this.txtbuscar.TabIndex = 1;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
             // 
             // dgvdocumento
             // 
@@ -242,6 +243,7 @@
             this.txtdocumento.Name = "txtdocumento";
             this.txtdocumento.Size = new System.Drawing.Size(192, 22);
             this.txtdocumento.TabIndex = 4;
+            this.txtdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdocumento_KeyPress);
             this.txtdocumento.Validating += new System.ComponentModel.CancelEventHandler(this.txtdocumento_Validating);
             // 
             // txtdescripcion
