@@ -11,6 +11,7 @@ namespace Datos.Repositories
 {
     public class Rtipocontrato : ITipo_contrato
     {
+        Int32 result;
         SqlCommand cmd;
         public int Add(Dtipocontrato entiti)
         {
@@ -39,7 +40,26 @@ namespace Datos.Repositories
         }     
         public int Edit(Dtipocontrato entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_UPDATE_TIP_CONT";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
+                    cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
+
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                    return result;
+
+                }
+            }
         }
         public int Delete(Dtipocontrato entiti)
         {

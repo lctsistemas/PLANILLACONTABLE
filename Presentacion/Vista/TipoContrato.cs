@@ -56,9 +56,10 @@ namespace Presentacion.Vista
             {
                 if (nTipocont.state == EntityState.Guardar)
                 {
+                    nTipocont.id_tcontrato = codtipcont;
                     nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
                     ShowTipoContrato();
-
+                    result = nTipocont.GuardarCambios();
                     Messages.M_info(result);
                     if (nTipocont.state == EntityState.Guardar)
                     {
@@ -109,7 +110,7 @@ namespace Presentacion.Vista
                 using (nTipocont)
                 {
                     nTipocont.state = EntityState.Modificar;
-                    nTipocont.id_tcontrato = Convert.ToInt32(r.Cells[0].Value);//idusuario
+                    nTipocont.id_tcontrato = Convert.ToInt32(r.Cells[0].Value);
                     txttipo.Text = r.Cells[1].Value.ToString();
 
                     tabtipo.SelectedIndex = 0;

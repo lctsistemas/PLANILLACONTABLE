@@ -43,6 +43,13 @@ namespace Negocio.Models
                     mensaje = dtipocontrato.Mensaje;
 
                     break;
+
+                case EntityState.Modificar:
+
+                    tcontrato_repository.Edit(dtipocontrato);
+                    mensaje = "Successfully Edited!";
+
+                    break;
             }
 
             return mensaje;

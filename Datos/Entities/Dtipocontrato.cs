@@ -8,13 +8,14 @@ namespace Datos.Entities
     public class Dtipocontrato
     {
         private Int32 id_tcontrato;
-        private String tipo_contrato;
-        private String mensaje;
+        private string tipo_contrato;
+        private string mensaje;
 
-        public Dtipocontrato(int id_tcontrato, string tipo_contrato)
+        public Dtipocontrato(int id_tcontrato, string tipo_contrato,string mensaje)
         {
             this.id_tcontrato = id_tcontrato;
             this.tipo_contrato = tipo_contrato;
+            this.mensaje = mensaje;
         }
 
         public Dtipocontrato()
@@ -22,10 +23,11 @@ namespace Datos.Entities
 
         }
 
-        public int Id_tcontrato { get => id_tcontrato; set => id_tcontrato = value; }
-        public string Tipo_contrato { get => tipo_contrato; set => tipo_contrato = value; }
+        public int Id_tcontrato { get; set ; }
+        public string Tipo_contrato { get ; set ; }
         
-        public String Mensaje { get => mensaje; set => mensaje = value; }
+        public string Mensaje { get ; set ; }
+        
 
     }
 }

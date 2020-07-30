@@ -143,7 +143,7 @@
             this.dgvtipocontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvtipocontrato.Location = new System.Drawing.Point(3, 39);
             this.dgvtipocontrato.Name = "dgvtipocontrato";
-            this.dgvtipocontrato.Size = new System.Drawing.Size(381, 189);
+            this.dgvtipocontrato.Size = new System.Drawing.Size(381, 226);
             this.dgvtipocontrato.TabIndex = 0;
             this.dgvtipocontrato.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipocontrato_CellDoubleClick);
             // 
