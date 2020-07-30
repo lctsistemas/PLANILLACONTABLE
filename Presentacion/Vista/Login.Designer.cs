@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Vista
 {
-    partial class Login
+    partial class frmloin
     {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +115,7 @@
             this.btnusuario.UseVisualStyleBackColor = true;
             this.btnusuario.Click += new System.EventHandler(this.BTNBUSCAR_Click);
             // 
-            // Login
+            // frmloin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +129,7 @@
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.panellogin);
-            this.Name = "Login";
+            this.Name = "frmloin";
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();

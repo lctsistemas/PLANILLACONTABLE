@@ -51,10 +51,13 @@
             this.panelcontent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblusuario = new System.Windows.Forms.Label();
+            this.lblrol = new System.Windows.Forms.Label();
             this.panelsidemenu.SuspendLayout();
             this.panelmedia3.SuspendLayout();
             this.panelmedia2.SuspendLayout();
             this.panelsubmenu.SuspendLayout();
+            this.panelogo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -356,6 +359,8 @@
             // 
             // panelogo
             // 
+            this.panelogo.Controls.Add(this.lblrol);
+            this.panelogo.Controls.Add(this.lblusuario);
             this.panelogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelogo.Location = new System.Drawing.Point(0, 0);
             this.panelogo.Name = "panelogo";
@@ -395,6 +400,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA DE PLANILLAS";
             // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.ForeColor = System.Drawing.Color.White;
+            this.lblusuario.Location = new System.Drawing.Point(12, 8);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(46, 17);
+            this.lblusuario.TabIndex = 0;
+            this.lblusuario.Text = "label2";
+            // 
+            // lblrol
+            // 
+            this.lblrol.AutoSize = true;
+            this.lblrol.ForeColor = System.Drawing.Color.White;
+            this.lblrol.Location = new System.Drawing.Point(12, 36);
+            this.lblrol.Name = "lblrol";
+            this.lblrol.Size = new System.Drawing.Size(46, 17);
+            this.lblrol.TabIndex = 0;
+            this.lblrol.Text = "label2";
+            // 
             // frmprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,6 +438,8 @@
             this.panelmedia3.ResumeLayout(false);
             this.panelmedia2.ResumeLayout(false);
             this.panelsubmenu.ResumeLayout(false);
+            this.panelogo.ResumeLayout(false);
+            this.panelogo.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -444,6 +471,8 @@
         private System.Windows.Forms.Panel panelcontent;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblrol;
+        private System.Windows.Forms.Label lblusuario;
     }
 }
 

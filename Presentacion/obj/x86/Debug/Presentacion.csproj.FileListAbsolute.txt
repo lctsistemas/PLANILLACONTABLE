@@ -206,3 +206,7 @@ C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\D
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Login.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoContrato.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Login_inicio.frmlogin.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Login_inicio.frminicio.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmloin.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Comun.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Comun.pdb

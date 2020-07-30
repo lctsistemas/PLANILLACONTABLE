@@ -1,4 +1,5 @@
-﻿using Presentacion.Vista;
+﻿using Comun.Cache;
+using Presentacion.Vista;
 using System;
 using System.Windows.Forms;
 
@@ -100,7 +101,13 @@ namespace Presentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CargarDatos();
+        }
 
+        private void CargarDatos()
+        {
+            lblusuario.Text = UserCache.NombreUser;
+            lblrol.Text = UserCache.RolUser;
         }
 
         //ABRIR FORMULARIO

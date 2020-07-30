@@ -825,28 +825,35 @@ GO
 --
  
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
- declare @user varchar(40)='MISHELL DE LA CRUZ'
- declare @pass varchar(50)='123'
-
- --SELECCIONAR O VALIDAR EL USUARIO Y MOSTRAR LAS EMPRESAS QUE PERTENECEN AL USUARIO.
-
- select u.id_usuario, u.codigo_usuario,u.referencia,u.contrasena,r.rol from Usuario u join Rol r on u.id_rol=r.id_rol 
+ 
+ --PROCEDIMIENTO LOGIN USUARIO
+ ALTER PROC SP_LOGIN_USUARIO
+ @user varchar(50),
+ @pass varchar(10)
+ AS BEGIN
+ select u.id_usuario, u.codigo_usuario,u.referencia,r.rol from Usuario u join Rol r on u.id_rol=r.id_rol 
  WHERE (u.codigo_usuario=@user or referencia=@user) and contrasena=@pass
-
-
- declare @usu int=(select Usuario.id_usuario from Usuario where Usuario.id_usuario=3)
- print @usu
-
-  
- IF( = )
- BEGIN
-	 
  END
  GO
 
-declare @Nom varchar(54)
-select @Nom=Usuario.referencia, Usuario.contrasena from Usuario join rol on Usuario.id_rol=rol.id_rol where Usuario.id_usuario=2
-select @Nom as [nombre usuario]
 
- declare @codi int=1
-SELECT * FROM Empresa where id_usuario=@codi
+ -- SEGUN EL CODIGO DE USUARIO MOSTRAR LAS EMPRESAS QUE EL USUARIO TIENE A CARGO TAMBIEN LAS SUCURSALES.
+ALTER PROC SP_EMPRESAS_USUARIO
+@codigo_user int
+AS BEGIN
+SELECT em.razon_social AS SUCURSAL, em.localidad AS [LOCALIDAD SUCURSAL],
+(SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA,
+(SELECT ema.localidad FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS [LOCALIDAD EMPRESA]
+FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maestra right join 
+dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
+END
+GO
+
+select *from Usuario
+
+
+
+
+
+
+

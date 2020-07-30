@@ -1,6 +1,6 @@
 ﻿namespace Login_inicio
 {
-    partial class frmlogin
+    partial class frminicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frminicio));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvempresa = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,19 +43,31 @@
             this.btnminimizar = new System.Windows.Forms.Label();
             this.lblerror = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvempresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panel2.Controls.Add(this.dgvempresa);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 344);
-            this.panel2.TabIndex = 1;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.TabIndex = 11;
+            // 
+            // dgvempresa
+            // 
+            this.dgvempresa.AllowUserToAddRows = false;
+            this.dgvempresa.AllowUserToDeleteRows = false;
+            this.dgvempresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvempresa.Location = new System.Drawing.Point(2, 101);
+            this.dgvempresa.Name = "dgvempresa";
+            this.dgvempresa.ReadOnly = true;
+            this.dgvempresa.Size = new System.Drawing.Size(245, 170);
+            this.dgvempresa.TabIndex = 17;
             // 
             // pictureBox2
             // 
@@ -74,7 +87,7 @@
             this.label1.Location = new System.Drawing.Point(287, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(427, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 4;
             this.label1.Text = "______________________________________________________________________";
             // 
             // label2
@@ -85,7 +98,7 @@
             this.label2.Location = new System.Drawing.Point(287, 190);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(427, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 5;
             this.label2.Text = "______________________________________________________________________";
             // 
             // txtuser
@@ -124,12 +137,14 @@
             this.label3.Location = new System.Drawing.Point(449, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 33);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 12;
             this.label3.Text = "LOGIN";
             // 
             // btnlogin
             // 
             this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnlogin.FlatAppearance.BorderSize = 0;
             this.btnlogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -159,6 +174,7 @@
             // lblcerrar
             // 
             this.lblcerrar.AutoSize = true;
+            this.lblcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblcerrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcerrar.ForeColor = System.Drawing.Color.DimGray;
             this.lblcerrar.Location = new System.Drawing.Point(749, 5);
@@ -186,14 +202,14 @@
             this.lblerror.BackColor = System.Drawing.Color.Transparent;
             this.lblerror.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerror.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblerror.Location = new System.Drawing.Point(287, 218);
+            this.lblerror.Location = new System.Drawing.Point(287, 214);
             this.lblerror.Name = "lblerror";
             this.lblerror.Size = new System.Drawing.Size(36, 17);
-            this.lblerror.TabIndex = 2;
+            this.lblerror.TabIndex = 10;
             this.lblerror.Text = "error";
             this.lblerror.Visible = false;
             // 
-            // frmlogin
+            // frminicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,13 +227,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmlogin";
+            this.Name = "frminicio";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.Text = "login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frminicio_FormClosing);
+            this.Load += new System.EventHandler(this.frminicio_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frminicio_MouseDown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvempresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -238,6 +257,7 @@
         private System.Windows.Forms.Label lblcerrar;
         private System.Windows.Forms.Label btnminimizar;
         private System.Windows.Forms.Label lblerror;
+        private System.Windows.Forms.DataGridView dgvempresa;
     }
 }
 

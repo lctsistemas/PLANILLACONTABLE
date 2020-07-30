@@ -9,24 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Negocio;
+using Negocio.Models;
+using System.Collections;
+using Presentacion;
+using Presentacion.Helps;
 
 namespace Login_inicio
 {
-    public partial class frmlogin : Form
+    public partial class frminicio : Form
     {
-        public frmlogin()
+        public frminicio()
         {
             InitializeComponent();
+        }                   
+
+        private void Ocultarcolumna()
+        {
+            dgvempresa.Columns[1].Visible = false;
+            dgvempresa.Columns[3].Visible = false;
         }
-
-        //PARA MOVER EL FORMULARIO
-        [DllImport("user32.Dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.Dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-
         private void txtuser_Enter(object sender, EventArgs e)
         {
             if (txtuser.Text.Equals("USUARIO"))
@@ -75,47 +76,40 @@ namespace Login_inicio
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle,0x112,0xf012,0);
-        }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
+        
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            //if (txtuser.Text != "USUARIO")
-            //{
-            //    if (txtpass.Text != "CONTRASEÑA")
-            //    {
-            //        UserModel us = new UserModel();
-            //        var validarLogin = us.LoginUser(txtuser.Text.Trim(), txtpass.Text.Trim());
-            //        if (validarLogin)
-            //        {
-            //            frmprincipal mainmenu = new frmprincipal();
-            //            mainmenu.Show();
-            //            mainmenu.FormClosed += Logout;//revisar
-            //            this.Hide();
-            //        }
-            //        else
-            //        {
-            //            msgError("Incorrect username or password entered. \n Please trye again. ");
-            //            txtpass.Text="CONTRASEÑA";
-            //            txtpass.UseSystemPasswordChar = false;
-            //            txtuser.Focus();
-            //        }
-            //    }
-            //    else
-            //        msgError("please enter password");
-            //}
-            //else
-            //    msgError("please enter username");
+            if (txtuser.Text != "USUARIO")
+            {
+                if (txtpass.Text != "CONTRASEÑA")
+                {
+                    Nlogin nl = new Nlogin();
+                    ArrayList dt =new ArrayList();
+                    var validarLogin = nl.Login(txtuser.Text.Trim(), txtpass.Text.Trim(), dt);
+                    if (validarLogin)
+                    {
+                        dgvempresa.DataSource = (object) dt;
+                        Ocultarcolumna();
+                        //LLENA LA EMPRESA
+                        //frmprincipal mainmenu = new frmprincipal();
+                        //mainmenu.Show();
+                        //mainmenu.FormClosed += Logout;//revisar
+                        //this.Hide();
+
+                    }
+                    else
+                    {
+                        msgError("Incorrect username or password entered. \n Please trye again. ");
+                        txtpass.Text = "CONTRASEÑA";
+                        txtpass.UseSystemPasswordChar = false;
+                        txtuser.Focus();
+                    }
+                }
+                else
+                    msgError("please enter password");
+            }
+            else
+                msgError("please enter username");
         }
 
 
@@ -134,6 +128,22 @@ namespace Login_inicio
             lblerror.Visible = false;
             this.Show();
             txtuser.Focus();
+        }
+
+        private void frminicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.Dispose(); no funciona cuando hay application.exit();
+        }
+
+        private void frminicio_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void frminicio_Load(object sender, EventArgs e)
+        {
+            //Ocultarcolumna();
         }
     }
 }

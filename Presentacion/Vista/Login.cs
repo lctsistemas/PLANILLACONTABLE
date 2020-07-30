@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class Login : Form
+    public partial class frmloin : Form
     {
-        public Login()
+        public frmloin()
         {
             InitializeComponent();
         }

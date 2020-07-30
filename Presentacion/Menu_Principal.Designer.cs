@@ -334,7 +334,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1200, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1188, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
@@ -344,7 +344,7 @@
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.icon_minimizar;
-            this.btnminimizar.Location = new System.Drawing.Point(1109, 15);
+            this.btnminimizar.Location = new System.Drawing.Point(1097, 15);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(20, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -358,7 +358,7 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.icon_maximizar;
-            this.btnmaximizar.Location = new System.Drawing.Point(1135, 15);
+            this.btnmaximizar.Location = new System.Drawing.Point(1123, 15);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(20, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -371,7 +371,7 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.icon_cerrar2;
-            this.btncerrar.Location = new System.Drawing.Point(1163, 15);
+            this.btncerrar.Location = new System.Drawing.Point(1151, 15);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(20, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -396,7 +396,7 @@
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Enabled = false;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.icon_restaurar;
-            this.btnrestaurar.Location = new System.Drawing.Point(1135, 15);
+            this.btnrestaurar.Location = new System.Drawing.Point(1123, 15);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(20, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -407,10 +407,9 @@
             // panelContenedor
             // 
             this.panelContenedor.Controls.Add(this.BarraTitulo);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1200, 611);
+            this.panelContenedor.Size = new System.Drawing.Size(1188, 582);
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
