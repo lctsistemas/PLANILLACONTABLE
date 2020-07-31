@@ -11,7 +11,7 @@ namespace Negocio.Models
 {
     public class Nlogin
     {
-        public bool Login(string user, string pass, ArrayList dt)
+        public bool Login(string user, string pass, DataTable dt)
         {
             return new Rlogin().Login(user,pass, dt);
         }

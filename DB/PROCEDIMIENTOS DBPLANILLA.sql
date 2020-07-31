@@ -841,19 +841,14 @@ GO
 ALTER PROC SP_EMPRESAS_USUARIO
 @codigo_user int
 AS BEGIN
-SELECT em.razon_social AS SUCURSAL, em.localidad AS [LOCALIDAD SUCURSAL],
-(SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA,
-(SELECT ema.localidad FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS [LOCALIDAD EMPRESA]
-FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maestra right join 
+SELECT (SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA, 
+e.id_em_maestra AS [codigo_empresa],
+(SELECT ema.localidad FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS [LOCALIDAD_EMPRESA],
+em.razon_social AS SUCURSAL,s.id_em_maestra AS[codigo_sucursal], em.localidad AS [LOCALIDAD_SUCURSAL]
+FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maestra  right join 
 dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
 END
 GO
 
-select *from Usuario
-
-
-
-
-
-
-
+select *from Empresa_maestra
+select * from Usuario

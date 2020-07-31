@@ -11,7 +11,7 @@ namespace Datos.Repositories
 {
     public class Rlogin
     {
-        public bool Login(string user, string pass, ArrayList dt)
+        public bool Login(string user, string pass, DataTable dt)
         {
             using (SqlConnection cn=RConexion.Getconectar())
             {
@@ -38,25 +38,28 @@ namespace Datos.Repositories
 
                         //SI TIENES FILAS, ENTONCES LISTAR EMPRESA
                         dr.Close();
-                        //empresa = new ArrayList();
-                        //SqlDataAdapter da = new SqlDataAdapter();
+                        
                         using (SqlCommand cmd1 = new SqlCommand())
                         {
                             cmd1.Connection = cn;
                             cmd1.CommandText = "SP_EMPRESAS_USUARIO";
                             cmd1.Parameters.AddWithValue("@codigo_user", UserCache.IdUser);
                             cmd1.CommandType = CommandType.StoredProcedure;
-                            SqlDataReader reader = cmd1.ExecuteReader();
-                            if (reader.HasRows)
+                            //SqlDataReader reader = cmd1.ExecuteReader();
+                            //if (reader.HasRows)
+                            //{
+                            //    foreach (var item in reader)
+                            //    {
+                            //        dt.Add(item);
+                            //    }
+                            //}
+                            //reader.Close();
+
+                            using (SqlDataAdapter da = new SqlDataAdapter())
                             {
-                                foreach (var item in reader)
-                                {
-                                    dt.Add(item);
-                                }
+                                da.SelectCommand = cmd1;
+                                da.Fill(dt);
                             }
-                            //da.SelectCommand = cmd1;
-                            
-                            
                         }
                         return true;
                     }

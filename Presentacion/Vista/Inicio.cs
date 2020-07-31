@@ -17,17 +17,16 @@ using Presentacion.Helps;
 namespace Login_inicio
 {
     public partial class frminicio : Form
-    {
+    {       
+        ListViewGroup empresa = new ListViewGroup("EMPRESA", HorizontalAlignment.Center);
+        ListViewGroup sucursal = new ListViewGroup("SUCURSAL", HorizontalAlignment.Center);
         public frminicio()
         {
             InitializeComponent();
+           
         }                   
 
-        private void Ocultarcolumna()
-        {
-            dgvempresa.Columns[1].Visible = false;
-            dgvempresa.Columns[3].Visible = false;
-        }
+       
         private void txtuser_Enter(object sender, EventArgs e)
         {
             if (txtuser.Text.Equals("USUARIO"))
@@ -76,30 +75,67 @@ namespace Login_inicio
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        //PROPIEDADES DE LISTVIEW
+        private void Properties_listview()
+        {
+            lstlista.Columns.Clear();
+            lstlista.Items.Clear();
+            lstlista.View = View.Details;
+            lstlista.GridLines = true;
+            
+            lstlista.FullRowSelect = false;
+            lstlista.Scrollable = true;
+            lstlista.HideSelection = false;
+
+            //agregamos columnas
+            lstlista.Columns.Add("SUCURSAL",200,HorizontalAlignment.Left);
+            lstlista.Columns.Add("EMPRESA",200,HorizontalAlignment.Left);
+        }
         
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            lstlista.Items.Clear();
             if (txtuser.Text != "USUARIO")
             {
                 if (txtpass.Text != "CONTRASEÑA")
                 {
                     Nlogin nl = new Nlogin();
-                    ArrayList dt =new ArrayList();
+                    DataTable dt =new DataTable();
                     var validarLogin = nl.Login(txtuser.Text.Trim(), txtpass.Text.Trim(), dt);
                     if (validarLogin)
                     {
-                        dgvempresa.DataSource = (object) dt;
-                        Ocultarcolumna();
+                        //dgvempresa.DataSource = dt;
+                        //Ocultarcolumna();
                         //LLENA LA EMPRESA
                         //frmprincipal mainmenu = new frmprincipal();
                         //mainmenu.Show();
                         //mainmenu.FormClosed += Logout;//revisar
                         //this.Hide();
 
+                        //llenar listview
+                        foreach (DataRow item in dt.Rows)
+                        {
+                            lstlista.Items.Add(new ListViewItem(item["EMPRESA"].ToString(), empresa));
+                            lstlista.Items.Add(new ListViewItem(item["SUCURSAL"].ToString(), sucursal));
+                            
+
+                            //agregamos esos grupos.
+                            
+                            //lstlista.Groups.Add(carnes);
+
+                            //ListViewItem fila;
+                            //fila = lstlista.Items.Add(item["SUCURSAL"].ToString()); //sucursal razon social
+                            //fila.SubItems.Add(item["codigo_sucursal"].ToString()); //sucursal razon social
+                            // fila.SubItems.Add(item["LOCALIDAD_SUCURSAL"].ToString()); //sucursal razon social
+                            //fila.SubItems.Add(item["EMPRESA"].ToString()); //sucursal razon social
+                            // fila.SubItems.Add(item["codigo_empresa"].ToString()); //sucursal razon social
+                            //fila.SubItems.Add(item["LOCALIDAD_EMPRESA"].ToString()); //sucursal razon social
+                        }
+
                     }
                     else
                     {
-                        msgError("Incorrect username or password entered. \n Please trye again. ");
+                        msgError("Incorrect username or password entered. \n Please try again. ");
                         txtpass.Text = "CONTRASEÑA";
                         txtpass.UseSystemPasswordChar = false;
                         txtuser.Focus();
@@ -144,6 +180,9 @@ namespace Login_inicio
         private void frminicio_Load(object sender, EventArgs e)
         {
             //Ocultarcolumna();
+            //Properties_listview();            
+            lstlista.Groups.Add(empresa);
+            lstlista.Groups.Add(sucursal);
         }
     }
 }
