@@ -48,16 +48,20 @@
             this.btnsucursal = new System.Windows.Forms.Button();
             this.btnmedia = new System.Windows.Forms.Button();
             this.panelogo = new System.Windows.Forms.Panel();
+            this.lblrol = new System.Windows.Forms.Label();
+            this.lblusuario = new System.Windows.Forms.Label();
             this.panelcontent = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblusuario = new System.Windows.Forms.Label();
-            this.lblrol = new System.Windows.Forms.Label();
+            this.lblempresa = new System.Windows.Forms.Label();
+            this.lbllocalidad = new System.Windows.Forms.Label();
+            this.lblidempresa = new System.Windows.Forms.Label();
+            this.lblperiodo = new System.Windows.Forms.Label();
             this.panelsidemenu.SuspendLayout();
             this.panelmedia3.SuspendLayout();
             this.panelmedia2.SuspendLayout();
             this.panelsubmenu.SuspendLayout();
-            this.panelogo.SuspendLayout();
+            this.panelcontent.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -359,13 +363,33 @@
             // 
             // panelogo
             // 
-            this.panelogo.Controls.Add(this.lblrol);
-            this.panelogo.Controls.Add(this.lblusuario);
             this.panelogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelogo.Location = new System.Drawing.Point(0, 0);
             this.panelogo.Name = "panelogo";
             this.panelogo.Size = new System.Drawing.Size(230, 68);
             this.panelogo.TabIndex = 0;
+            // 
+            // lblrol
+            // 
+            this.lblrol.AutoSize = true;
+            this.lblrol.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblrol.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblrol.Location = new System.Drawing.Point(30, 46);
+            this.lblrol.Name = "lblrol";
+            this.lblrol.Size = new System.Drawing.Size(47, 17);
+            this.lblrol.TabIndex = 0;
+            this.lblrol.Text = "label2";
+            // 
+            // lblusuario
+            // 
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblusuario.Location = new System.Drawing.Point(30, 18);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(47, 17);
+            this.lblusuario.TabIndex = 0;
+            this.lblusuario.Text = "label2";
             // 
             // panelcontent
             // 
@@ -373,6 +397,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcontent.BackColor = System.Drawing.Color.Silver;
+            this.panelcontent.Controls.Add(this.lblperiodo);
+            this.panelcontent.Controls.Add(this.lblidempresa);
+            this.panelcontent.Controls.Add(this.lbllocalidad);
+            this.panelcontent.Controls.Add(this.lblempresa);
+            this.panelcontent.Controls.Add(this.lblrol);
+            this.panelcontent.Controls.Add(this.lblusuario);
             this.panelcontent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelcontent.Location = new System.Drawing.Point(230, 68);
             this.panelcontent.Name = "panelcontent";
@@ -400,25 +430,49 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA DE PLANILLAS";
             // 
-            // lblusuario
+            // lblempresa
             // 
-            this.lblusuario.AutoSize = true;
-            this.lblusuario.ForeColor = System.Drawing.Color.White;
-            this.lblusuario.Location = new System.Drawing.Point(12, 8);
-            this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(46, 17);
-            this.lblusuario.TabIndex = 0;
-            this.lblusuario.Text = "label2";
+            this.lblempresa.AutoSize = true;
+            this.lblempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblempresa.Location = new System.Drawing.Point(30, 73);
+            this.lblempresa.Name = "lblempresa";
+            this.lblempresa.Size = new System.Drawing.Size(47, 17);
+            this.lblempresa.TabIndex = 1;
+            this.lblempresa.Text = "label2";
             // 
-            // lblrol
+            // lbllocalidad
             // 
-            this.lblrol.AutoSize = true;
-            this.lblrol.ForeColor = System.Drawing.Color.White;
-            this.lblrol.Location = new System.Drawing.Point(12, 36);
-            this.lblrol.Name = "lblrol";
-            this.lblrol.Size = new System.Drawing.Size(46, 17);
-            this.lblrol.TabIndex = 0;
-            this.lblrol.Text = "label2";
+            this.lbllocalidad.AutoSize = true;
+            this.lbllocalidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllocalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lbllocalidad.Location = new System.Drawing.Point(30, 100);
+            this.lbllocalidad.Name = "lbllocalidad";
+            this.lbllocalidad.Size = new System.Drawing.Size(47, 17);
+            this.lbllocalidad.TabIndex = 1;
+            this.lbllocalidad.Text = "label2";
+            // 
+            // lblidempresa
+            // 
+            this.lblidempresa.AutoSize = true;
+            this.lblidempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidempresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblidempresa.Location = new System.Drawing.Point(30, 126);
+            this.lblidempresa.Name = "lblidempresa";
+            this.lblidempresa.Size = new System.Drawing.Size(47, 17);
+            this.lblidempresa.TabIndex = 1;
+            this.lblidempresa.Text = "label2";
+            // 
+            // lblperiodo
+            // 
+            this.lblperiodo.AutoSize = true;
+            this.lblperiodo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblperiodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblperiodo.Location = new System.Drawing.Point(30, 150);
+            this.lblperiodo.Name = "lblperiodo";
+            this.lblperiodo.Size = new System.Drawing.Size(47, 17);
+            this.lblperiodo.TabIndex = 1;
+            this.lblperiodo.Text = "label2";
             // 
             // frmprincipal
             // 
@@ -438,8 +492,8 @@
             this.panelmedia3.ResumeLayout(false);
             this.panelmedia2.ResumeLayout(false);
             this.panelsubmenu.ResumeLayout(false);
-            this.panelogo.ResumeLayout(false);
-            this.panelogo.PerformLayout();
+            this.panelcontent.ResumeLayout(false);
+            this.panelcontent.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -473,6 +527,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblrol;
         private System.Windows.Forms.Label lblusuario;
+        private System.Windows.Forms.Label lblidempresa;
+        private System.Windows.Forms.Label lbllocalidad;
+        private System.Windows.Forms.Label lblempresa;
+        private System.Windows.Forms.Label lblperiodo;
     }
 }
 

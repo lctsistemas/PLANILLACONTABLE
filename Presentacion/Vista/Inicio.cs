@@ -13,6 +13,7 @@ using Negocio.Models;
 using System.Collections;
 using Presentacion;
 using Presentacion.Helps;
+using Comun.Cache;
 
 namespace Login_inicio
 {
@@ -20,6 +21,7 @@ namespace Login_inicio
     {
         Nlogin nlo;
         List<object> lis_empresa;
+        bool activo = false;
 
         public frminicio()
         {
@@ -109,22 +111,15 @@ namespace Login_inicio
                             {
                                 dgvlogin.DataSource = lis_empresa;
                                 Ocultarcolumna();
-                            }
-                                
-
-
-                            
-                            //Ocultarcolumna();
-                            //LLENA LA EMPRESA
-                            //frmprincipal mainmenu = new frmprincipal();
-                            //mainmenu.Show();
-                            //mainmenu.FormClosed += Logout;//revisar
-                            //this.Hide();
-
-
-
+                                if (activo)
+                                {
+                                    frmprincipal mainmenu = new frmprincipal();
+                                    mainmenu.Show();
+                                    mainmenu.FormClosed += Logout;//revisar
+                                    this.Hide();
+                                }
+                            }                                                        
                             msgError("");
-
                         }
                         else
                         {
@@ -133,9 +128,7 @@ namespace Login_inicio
                             txtpass.UseSystemPasswordChar = false;
                             txtuser.Focus();
                         }
-
-                    }                                                           
-                    
+                    }                                                                               
                 }
                 else
                     msgError("please enter password");
@@ -154,9 +147,10 @@ namespace Login_inicio
         //cerrar sesion
         private void Logout(object sender, FormClosedEventArgs e)
         {
-            txtuser.Text = "USUARIO";
-            txtpass.Text = "CONTRASEÑA";
-            txtpass.UseSystemPasswordChar = false;
+            //txtuser.Text = "USUARIO";
+            //txtpass.Text = "CONTRASEÑA";
+            //txtpass.UseSystemPasswordChar = false;
+            activo = false;
             lblerror.Visible = false;
             this.Show();
             txtuser.Focus();
@@ -170,8 +164,8 @@ namespace Login_inicio
             dgvlogin.Columns[2].Visible = false;
             dgvlogin.Columns[4].Visible = false;
             dgvlogin.Columns[5].Visible = false;
-
         }
+
         private void frminicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             //this.Dispose(); no funciona cuando hay application.exit();
@@ -190,13 +184,36 @@ namespace Login_inicio
         
         private void dgvlogin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            activo = false;
             if (dgvlogin.Columns[e.ColumnIndex].Name == "EMPRESA")
             {
-                Messages.M_info("es empresa");
-            }else if (dgvlogin.Columns[e.ColumnIndex].Name == "SUCURSAL")
-            {
-                Messages.M_info("es sucursal");
+                UserCache.Empresa = dgvlogin.CurrentRow.Cells[0].Value.ToString();
+                UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[1].Value);
+                UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[2].Value.ToString();
+                UserCache.Periodo = numeric_periodo.Value.ToString();
+                activo = true;
             }
+            else if (dgvlogin.Columns[e.ColumnIndex].Name == "SUCURSAL")
+            {
+                try
+                {
+                    UserCache.Empresa = dgvlogin.CurrentRow.Cells[3].Value.ToString();
+                    UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[4].Value);
+                    UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[5].Value.ToString();
+                    UserCache.Periodo = numeric_periodo.Value.ToString();
+                    activo = true;
+                }
+                catch (Exception)
+                {
+                    activo = false;
+                    Messages.M_error("Seleccione Una Empresa.");
+                }
+            }
+        }
+
+        private void numeric_periodo_ValueChanged(object sender, EventArgs e)
+        {
+            UserCache.Periodo = numeric_periodo.Value.ToString();
         }
     }
 }

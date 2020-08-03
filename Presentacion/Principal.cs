@@ -18,7 +18,6 @@ namespace Presentacion
             panelsubmenu.Visible = false;
             panelmedia2.Visible = false;
             panelmedia3.Visible = false;
-
         }
 
         private void hidemenu()
@@ -41,8 +40,6 @@ namespace Presentacion
             }
             else
                 submenu.Visible = false;
-
-
         }
 
         private void btnmedia_Click(object sender, EventArgs e)
@@ -84,9 +81,6 @@ namespace Presentacion
             hidemenu();
         }
 
-
-
-
         private void button11_Click(object sender, EventArgs e)
         {
             /*other codigo*/
@@ -108,6 +102,10 @@ namespace Presentacion
         {
             lblusuario.Text = UserCache.NombreUser;
             lblrol.Text = UserCache.RolUser;
+            lblempresa.Text = UserCache.Empresa;
+            lbllocalidad.Text = UserCache.Localidad_empresa;
+            lblperiodo.Text = UserCache.Periodo;
+            lblidempresa.Text = UserCache.Codigo_empresa.ToString();
         }
 
         //ABRIR FORMULARIO
@@ -124,9 +122,8 @@ namespace Presentacion
             // childform.Dock = DockStyle.Fill;
             panelcontent.Controls.Add(childform);
             panelcontent.Tag = childform;//esta sobre el control
-            //childform.BringToFront();//indica que el formulario llamado esta frente al logo que exite
+            childform.BringToFront();//indica que el formulario llamado esta frente al logo que exite
             childform.Show();
-
         }
 
         private void btnsucursal_Click(object sender, EventArgs e)
