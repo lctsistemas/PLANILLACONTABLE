@@ -11,7 +11,7 @@ namespace Datos.Repositories
 {
     public class Rlogin
     {
-        public bool Login(string user, string pass, DataTable dt)
+        public bool Login(string user, string pass)
         {
             using (SqlConnection cn=RConexion.Getconectar())
             {
@@ -33,34 +33,8 @@ namespace Datos.Repositories
                             UserCache.CodigoUser = dr.GetString(1);
                             UserCache.NombreUser = dr.GetString(2);
                             UserCache.RolUser = dr.GetString(3);     
-                        }
-
-
-                        //SI TIENES FILAS, ENTONCES LISTAR EMPRESA
-                        dr.Close();
-                        
-                        using (SqlCommand cmd1 = new SqlCommand())
-                        {
-                            cmd1.Connection = cn;
-                            cmd1.CommandText = "SP_EMPRESAS_USUARIO";
-                            cmd1.Parameters.AddWithValue("@codigo_user", UserCache.IdUser);
-                            cmd1.CommandType = CommandType.StoredProcedure;
-                            //SqlDataReader reader = cmd1.ExecuteReader();
-                            //if (reader.HasRows)
-                            //{
-                            //    foreach (var item in reader)
-                            //    {
-                            //        dt.Add(item);
-                            //    }
-                            //}
-                            //reader.Close();
-
-                            using (SqlDataAdapter da = new SqlDataAdapter())
-                            {
-                                da.SelectCommand = cmd1;
-                                da.Fill(dt);
-                            }
-                        }
+                        }                        
+                        dr.Close();                                               
                         return true;
                     }
                     else
@@ -68,5 +42,37 @@ namespace Datos.Repositories
                 }
             }
         }
+
+        public bool Business(List<object> lista)
+        {
+            bool valor=false;
+            using (SqlConnection cn = RConexion.Getconectar())
+            {
+                cn.Open();               
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cn;
+                    cmd.CommandText = "SP_EMPRESAS_USUARIO";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@codigo_user", UserCache.IdUser);                  
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        foreach (var item in reader)                    
+                            lista.Add(item);
+                        
+                        valor = true;
+                    }
+                    else                 
+                        valor = false;
+                    
+                    reader.Close();
+                }
+            }
+            return valor;
+        }
+
     }
 }

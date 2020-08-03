@@ -9,12 +9,21 @@ using System.Data;
 
 namespace Negocio.Models
 {
-    public class Nlogin
+    public class Nlogin:IDisposable
     {
-        public bool Login(string user, string pass, DataTable dt)
+        public bool Login(string user, string pass)
         {
-            return new Rlogin().Login(user,pass, dt);
+            return new Rlogin().Login(user,pass);
         }
 
+        public bool Business(List<object> li)
+        {
+            return new Rlogin().Business(li);
+        }
+
+        public void Dispose()
+        {
+           // throw new NotImplementedException();
+        }
     }
 }

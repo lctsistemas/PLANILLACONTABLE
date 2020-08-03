@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -38,7 +40,8 @@
             this.lblcerrar = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.Label();
             this.lblerror = new System.Windows.Forms.Label();
-            this.lstlista = new System.Windows.Forms.ListView();
+            this.dgvlogin = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +49,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(24, 106);
+            this.label1.Location = new System.Drawing.Point(24, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(427, 13);
             this.label1.TabIndex = 4;
@@ -57,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(24, 195);
+            this.label2.Location = new System.Drawing.Point(24, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(427, 13);
             this.label2.TabIndex = 5;
@@ -69,7 +72,7 @@
             this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtuser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuser.ForeColor = System.Drawing.Color.DimGray;
-            this.txtuser.Location = new System.Drawing.Point(27, 90);
+            this.txtuser.Location = new System.Drawing.Point(27, 104);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(424, 20);
             this.txtuser.TabIndex = 1;
@@ -83,7 +86,7 @@
             this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpass.ForeColor = System.Drawing.Color.DimGray;
-            this.txtpass.Location = new System.Drawing.Point(27, 180);
+            this.txtpass.Location = new System.Drawing.Point(27, 194);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(424, 20);
             this.txtpass.TabIndex = 2;
@@ -112,9 +115,9 @@
             this.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogin.ForeColor = System.Drawing.Color.LightGray;
-            this.btnlogin.Location = new System.Drawing.Point(56, 432);
+            this.btnlogin.Location = new System.Drawing.Point(38, 441);
             this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(361, 40);
+            this.btnlogin.Size = new System.Drawing.Size(400, 40);
             this.btnlogin.TabIndex = 3;
             this.btnlogin.Text = "&ACCEDER";
             this.btnlogin.UseVisualStyleBackColor = false;
@@ -164,38 +167,55 @@
             this.lblerror.BackColor = System.Drawing.Color.Transparent;
             this.lblerror.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerror.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblerror.Location = new System.Drawing.Point(24, 219);
+            this.lblerror.Location = new System.Drawing.Point(24, 233);
             this.lblerror.Name = "lblerror";
             this.lblerror.Size = new System.Drawing.Size(36, 17);
             this.lblerror.TabIndex = 10;
             this.lblerror.Text = "error";
             this.lblerror.Visible = false;
             // 
-            // lstlista
+            // dgvlogin
             // 
-            this.lstlista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.lstlista.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstlista.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lstlista.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstlista.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lstlista.FullRowSelect = true;
-            this.lstlista.GridLines = true;
-            this.lstlista.HideSelection = false;
-            this.lstlista.Location = new System.Drawing.Point(56, 260);
-            this.lstlista.Name = "lstlista";
-            this.lstlista.Size = new System.Drawing.Size(361, 166);
-            this.lstlista.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lstlista.TabIndex = 13;
-            this.lstlista.UseCompatibleStateImageBehavior = false;
-            this.lstlista.View = System.Windows.Forms.View.Tile;
+            this.dgvlogin.AllowUserToAddRows = false;
+            this.dgvlogin.AllowUserToDeleteRows = false;
+            this.dgvlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dgvlogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvlogin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvlogin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvlogin.ColumnHeadersHeight = 30;
+            this.dgvlogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvlogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgvlogin.EnableHeadersVisualStyles = false;
+            this.dgvlogin.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvlogin.Location = new System.Drawing.Point(38, 279);
+            this.dgvlogin.Name = "dgvlogin";
+            this.dgvlogin.ReadOnly = true;
+            this.dgvlogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvlogin.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvlogin.Size = new System.Drawing.Size(400, 153);
+            this.dgvlogin.TabIndex = 15;
+            this.dgvlogin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlogin_CellClick);
             // 
             // frminicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(485, 513);
-            this.Controls.Add(this.lstlista);
+            this.ClientSize = new System.Drawing.Size(482, 513);
+            this.Controls.Add(this.dgvlogin);
             this.Controls.Add(this.btnminimizar);
             this.Controls.Add(this.lblcerrar);
             this.Controls.Add(this.linkpass);
@@ -214,6 +234,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frminicio_FormClosing);
             this.Load += new System.EventHandler(this.frminicio_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frminicio_MouseDown);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +251,7 @@
         private System.Windows.Forms.Label lblcerrar;
         private System.Windows.Forms.Label btnminimizar;
         private System.Windows.Forms.Label lblerror;
-        private System.Windows.Forms.ListView lstlista;
+        private System.Windows.Forms.DataGridView dgvlogin;
     }
 }
 

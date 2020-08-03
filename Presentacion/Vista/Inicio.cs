@@ -17,15 +17,14 @@ using Presentacion.Helps;
 namespace Login_inicio
 {
     public partial class frminicio : Form
-    {       
-        ListViewGroup empresa = new ListViewGroup("EMPRESA", HorizontalAlignment.Center);
-        ListViewGroup sucursal = new ListViewGroup("SUCURSAL", HorizontalAlignment.Center);
+    {
+        Nlogin nlo;
+        List<object> lis_empresa;
+
         public frminicio()
         {
-            InitializeComponent();
-           
+            InitializeComponent();           
         }                   
-
        
         private void txtuser_Enter(object sender, EventArgs e)
         {
@@ -78,68 +77,65 @@ namespace Login_inicio
         //PROPIEDADES DE LISTVIEW
         private void Properties_listview()
         {
-            lstlista.Columns.Clear();
+            /*lstlista.Columns.Clear();
             lstlista.Items.Clear();
             lstlista.View = View.Details;
             lstlista.GridLines = true;
             
             lstlista.FullRowSelect = false;
             lstlista.Scrollable = true;
-            lstlista.HideSelection = false;
+            lstlista.HideSelection = false;*/
 
             //agregamos columnas
-            lstlista.Columns.Add("SUCURSAL",200,HorizontalAlignment.Left);
-            lstlista.Columns.Add("EMPRESA",200,HorizontalAlignment.Left);
+
+            /*lstlista.Columns.Add("SUCURSAL",200,HorizontalAlignment.Left);
+            lstlista.Columns.Add("EMPRESA",200,HorizontalAlignment.Left);*/
         }
         
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            lstlista.Items.Clear();
+            
             if (txtuser.Text != "USUARIO")
             {
                 if (txtpass.Text != "CONTRASEÑA")
                 {
-                    Nlogin nl = new Nlogin();
-                    DataTable dt =new DataTable();
-                    var validarLogin = nl.Login(txtuser.Text.Trim(), txtpass.Text.Trim(), dt);
-                    if (validarLogin)
+                    using (nlo=new Nlogin())
                     {
-                        //dgvempresa.DataSource = dt;
-                        //Ocultarcolumna();
-                        //LLENA LA EMPRESA
-                        //frmprincipal mainmenu = new frmprincipal();
-                        //mainmenu.Show();
-                        //mainmenu.FormClosed += Logout;//revisar
-                        //this.Hide();
-
-                        //llenar listview
-                        foreach (DataRow item in dt.Rows)
+                        lis_empresa = new List<object>();
+                        bool validarLogin = nlo.Login(txtuser.Text.Trim(), txtpass.Text.Trim());
+                        if (validarLogin)
                         {
-                            lstlista.Items.Add(new ListViewItem(item["EMPRESA"].ToString(), empresa));
-                            lstlista.Items.Add(new ListViewItem(item["SUCURSAL"].ToString(), sucursal));
-                            
+                            if (nlo.Business(lis_empresa))
+                            {
+                                dgvlogin.DataSource = lis_empresa;
+                                Ocultarcolumna();
+                            }
+                                
 
-                            //agregamos esos grupos.
-                            
-                            //lstlista.Groups.Add(carnes);
 
-                            //ListViewItem fila;
-                            //fila = lstlista.Items.Add(item["SUCURSAL"].ToString()); //sucursal razon social
-                            //fila.SubItems.Add(item["codigo_sucursal"].ToString()); //sucursal razon social
-                            // fila.SubItems.Add(item["LOCALIDAD_SUCURSAL"].ToString()); //sucursal razon social
-                            //fila.SubItems.Add(item["EMPRESA"].ToString()); //sucursal razon social
-                            // fila.SubItems.Add(item["codigo_empresa"].ToString()); //sucursal razon social
-                            //fila.SubItems.Add(item["LOCALIDAD_EMPRESA"].ToString()); //sucursal razon social
+                            
+                            //Ocultarcolumna();
+                            //LLENA LA EMPRESA
+                            //frmprincipal mainmenu = new frmprincipal();
+                            //mainmenu.Show();
+                            //mainmenu.FormClosed += Logout;//revisar
+                            //this.Hide();
+
+
+
+                            msgError("");
+
+                        }
+                        else
+                        {
+                            msgError("Incorrect username or password entered. \n Please try again. ");
+                            txtpass.Text = "CONTRASEÑA";
+                            txtpass.UseSystemPasswordChar = false;
+                            txtuser.Focus();
                         }
 
-                    }
-                    else
-                    {
-                        msgError("Incorrect username or password entered. \n Please try again. ");
-                        txtpass.Text = "CONTRASEÑA";
-                        txtpass.UseSystemPasswordChar = false;
-                        txtuser.Focus();
-                    }
+                    }                                                           
+                    
                 }
                 else
                     msgError("please enter password");
@@ -166,6 +162,16 @@ namespace Login_inicio
             txtuser.Focus();
         }
 
+        private void Ocultarcolumna()
+        {
+            dgvlogin.Columns[0].Width = 200;
+            dgvlogin.Columns[3].Width = 200;
+            dgvlogin.Columns[1].Visible = false;
+            dgvlogin.Columns[2].Visible = false;
+            dgvlogin.Columns[4].Visible = false;
+            dgvlogin.Columns[5].Visible = false;
+
+        }
         private void frminicio_FormClosing(object sender, FormClosingEventArgs e)
         {
             //this.Dispose(); no funciona cuando hay application.exit();
@@ -180,9 +186,17 @@ namespace Login_inicio
         private void frminicio_Load(object sender, EventArgs e)
         {
             //Ocultarcolumna();
-            //Properties_listview();            
-            lstlista.Groups.Add(empresa);
-            lstlista.Groups.Add(sucursal);
+        }
+        
+        private void dgvlogin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvlogin.Columns[e.ColumnIndex].Name == "EMPRESA")
+            {
+                Messages.M_info("es empresa");
+            }else if (dgvlogin.Columns[e.ColumnIndex].Name == "SUCURSAL")
+            {
+                Messages.M_info("es sucursal");
+            }
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panellogin = new System.Windows.Forms.Panel();
             this.lblusuario = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,15 +37,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnusuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // panellogin
-            // 
-            this.panellogin.BackColor = System.Drawing.Color.SteelBlue;
-            this.panellogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panellogin.Location = new System.Drawing.Point(0, 0);
-            this.panellogin.Name = "panellogin";
-            this.panellogin.Size = new System.Drawing.Size(714, 50);
-            this.panellogin.TabIndex = 0;
             // 
             // lblusuario
             // 
@@ -128,7 +118,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtusuario);
             this.Controls.Add(this.lblusuario);
-            this.Controls.Add(this.panellogin);
             this.Name = "frmloin";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -137,8 +126,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panellogin;
         private System.Windows.Forms.Label lblusuario;
         private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.Label label1;

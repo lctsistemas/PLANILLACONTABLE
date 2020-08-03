@@ -850,5 +850,5 @@ dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
 END
 GO
 
-select *from Empresa_maestra
+select * from Empresa_maestra
 select * from Usuario
