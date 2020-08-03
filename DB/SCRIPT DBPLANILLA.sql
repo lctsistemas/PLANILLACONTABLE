@@ -87,10 +87,11 @@ localidad varchar(50) not null,
 direccion nvarchar(250) not null,
 domicilio_fiscal nvarchar(250) not null,
 ruc char(11) not null,
-regimen varchar(30) not null,
+regimen varchar(80) not null,
 estado_eliminado varchar(15) not null
 )
 GO
+alter table Empresa_maestra alter column regimen varchar(80) not null
 
 CREATE TABLE Empresa(
 id_empresa int identity(1,1),
