@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.lblcerrar = new System.Windows.Forms.Label();
-            this.btnminimizar = new System.Windows.Forms.Label();
+            this.lblminimizar = new System.Windows.Forms.Label();
             this.lblerror = new System.Windows.Forms.Label();
             this.dgvlogin = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -128,28 +128,34 @@
             // 
             // lblcerrar
             // 
-            this.lblcerrar.AutoSize = true;
             this.lblcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblcerrar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcerrar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcerrar.ForeColor = System.Drawing.Color.DimGray;
             this.lblcerrar.Location = new System.Drawing.Point(447, 9);
             this.lblcerrar.Name = "lblcerrar";
-            this.lblcerrar.Size = new System.Drawing.Size(26, 25);
+            this.lblcerrar.Size = new System.Drawing.Size(28, 26);
             this.lblcerrar.TabIndex = 7;
             this.lblcerrar.Text = "X";
+            this.lblcerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblcerrar.Click += new System.EventHandler(this.lblcerrar_Click);
+            this.lblcerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseDown);
+            this.lblcerrar.MouseLeave += new System.EventHandler(this.lblcerrar_MouseLeave);
+            this.lblcerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseMove);
             // 
-            // btnminimizar
+            // lblminimizar
             // 
-            this.btnminimizar.AutoSize = true;
-            this.btnminimizar.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimizar.ForeColor = System.Drawing.Color.DimGray;
-            this.btnminimizar.Location = new System.Drawing.Point(406, 9);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(33, 25);
-            this.btnminimizar.TabIndex = 7;
-            this.btnminimizar.Text = "▬";
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.lblminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblminimizar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblminimizar.ForeColor = System.Drawing.Color.DimGray;
+            this.lblminimizar.Location = new System.Drawing.Point(416, 9);
+            this.lblminimizar.Name = "lblminimizar";
+            this.lblminimizar.Size = new System.Drawing.Size(28, 26);
+            this.lblminimizar.TabIndex = 7;
+            this.lblminimizar.Text = "▬";
+            this.lblminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.lblminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblminimizar_MouseDown);
+            this.lblminimizar.MouseLeave += new System.EventHandler(this.lblminimizar_MouseLeave);
+            this.lblminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblminimizar_MouseMove);
             // 
             // lblerror
             // 
@@ -172,14 +178,14 @@
             this.dgvlogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvlogin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvlogin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvlogin.ColumnHeadersHeight = 30;
             this.dgvlogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvlogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -190,11 +196,11 @@
             this.dgvlogin.ReadOnly = true;
             this.dgvlogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvlogin.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvlogin.Size = new System.Drawing.Size(400, 153);
             this.dgvlogin.TabIndex = 15;
             this.dgvlogin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlogin_CellClick);
@@ -248,7 +254,7 @@
             this.Controls.Add(this.numeric_periodo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvlogin);
-            this.Controls.Add(this.btnminimizar);
+            this.Controls.Add(this.lblminimizar);
             this.Controls.Add(this.lblcerrar);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.label3);
@@ -281,7 +287,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Label lblcerrar;
-        private System.Windows.Forms.Label btnminimizar;
+        private System.Windows.Forms.Label lblminimizar;
         private System.Windows.Forms.Label lblerror;
         private System.Windows.Forms.DataGridView dgvlogin;
         private System.Windows.Forms.PictureBox pictureBox1;

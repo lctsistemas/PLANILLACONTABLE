@@ -144,8 +144,8 @@ namespace Presentacion.Vista
         private void frmsucursal_Load(object sender, EventArgs e)
         {
             txtidempresa.Visible = false;
-            Tooltip.Title(txtbuscar, "Buscar por Razón Social o Codigo");
-            Tooltip.Title(btnempresa, "Seleccione la Empresa Principal");
+            Tooltip.Title(txtbuscar, "Buscar por Razón Social o Codigo",true);
+            Tooltip.Title(btnempresa, "Seleccione la Empresa Principal",true);
         }
 
         private void dgvsucursal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
