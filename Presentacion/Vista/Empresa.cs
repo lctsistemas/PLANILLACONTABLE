@@ -168,8 +168,8 @@ namespace Presentacion.Vista
         {
             txtusuario.Enabled = false;
             txtiduser.Visible = false;
-            Tooltip.Title(btnusuario, "Seleccione Usuario");
-            Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa");
+            Tooltip.Title(btnusuario, "Seleccione Usuario",true);
+            Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa",true);
             CargarRegimen();
         }
 

@@ -73,7 +73,7 @@ namespace Presentacion.Vista
         private void frmdocumento_Load(object sender, EventArgs e)
         {
             Tabla();
-            Tooltip.Title(txtbuscar, "Buscar por documento");
+            Tooltip.Title(txtbuscar, "Buscar por documento",true);
             Habilitar(false);
         }
         //NUEVO

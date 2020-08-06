@@ -60,7 +60,7 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar, "Buscar por Nombre Usuario");
+            Tooltip.Title(txtbuscar, "Buscar por Nombre Usuario",true);
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

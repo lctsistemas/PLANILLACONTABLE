@@ -119,8 +119,8 @@ namespace Presentacion.Vista
         //LOAD
         private void frmusuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(btnrol, "Registrar Rol");
-            Tooltip.Title(txtbuscar, "Buscar por nombre usuario");
+            Tooltip.Title(btnrol, "Registrar Rol",true);
+            Tooltip.Title(txtbuscar, "Buscar por nombre usuario",true);
             Tabla();
             Habilitar(false);
             cborol.Text = "";
