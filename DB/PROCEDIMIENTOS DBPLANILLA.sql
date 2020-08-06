@@ -827,7 +827,7 @@ GO
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
  
  --PROCEDIMIENTO LOGIN USUARIO
- ALTER PROC SP_LOGIN_USUARIO
+ CREATE PROC SP_LOGIN_USUARIO
  @user varchar(50),
  @pass varchar(10)
  AS BEGIN
@@ -838,7 +838,7 @@ GO
 
 
  -- SEGUN EL CODIGO DE USUARIO MOSTRAR LAS EMPRESAS QUE EL USUARIO TIENE A CARGO TAMBIEN LAS SUCURSALES.
-ALTER PROC SP_EMPRESAS_USUARIO
+CREATE PROC SP_EMPRESAS_USUARIO
 @codigo_user int
 AS BEGIN
 SELECT (SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA, 
