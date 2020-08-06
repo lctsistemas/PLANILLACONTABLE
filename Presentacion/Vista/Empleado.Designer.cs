@@ -119,6 +119,7 @@ namespace Presentacion.Vista
             this.dgvempleado.Size = new System.Drawing.Size(731, 293);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
+            this.dgvempleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellContentClick);
             this.dgvempleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellDoubleClick);
             // 
             // CONTRATO
@@ -138,7 +139,7 @@ namespace Presentacion.Vista
             this.tabPage2.Location = new System.Drawing.Point(33, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(735, 417);
+            this.tabPage2.Size = new System.Drawing.Size(735, 419);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gestion Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -710,7 +711,7 @@ namespace Presentacion.Vista
             this.tabPage1.Location = new System.Drawing.Point(33, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 417);
+            this.tabPage1.Size = new System.Drawing.Size(735, 419);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Registrar Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;

@@ -21,7 +21,7 @@ namespace Presentacion.Vista
             MostrarDocumento();
             MostrarAFP();
             MostrarEmpresa();
-            mostrarEmp("");
+            mostrarEmp(UserCache.NombreUser);
 
         }
         //GENERAR CODIGO
@@ -705,6 +705,11 @@ namespace Presentacion.Vista
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvempleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
