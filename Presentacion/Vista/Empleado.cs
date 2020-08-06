@@ -21,7 +21,7 @@ namespace Presentacion.Vista
             MostrarDocumento();
             MostrarAFP();
             MostrarEmpresa();
-            mostrarEmp(UserCache.NombreUser);
+            mostrarEmp("");
 
         }
         //GENERAR CODIGO
@@ -347,6 +347,7 @@ namespace Presentacion.Vista
             //cmbcar.SelectedItem = null;
             //cmbafp.SelectedItem = null;
             txtestado.Text = "ACTIVO";
+            lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
         private void btnguardar_Click_1(object sender, EventArgs e)
@@ -710,6 +711,15 @@ namespace Presentacion.Vista
         private void dgvempleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cbxempresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(cbxempresa.Text))
+            {
+
+            }else
+            lblem.Text = cbxempresa.SelectedValue.ToString();
         }
     }
 }
