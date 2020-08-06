@@ -37,7 +37,7 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@id_afp", SqlDbType.Int).Value = entiti.Id_afp;
                     cmd.Parameters.Add("@id_documento", SqlDbType.Int).Value = entiti.Id_doc;
                     cmd.Parameters.Add("@id_cargo", SqlDbType.Int).Value = entiti.Id_cargo;
-                    cmd.Parameters.Add("@id_empresa_maestra", SqlDbType.Int).Value = entiti.Id_emp_maestra;
+                    cmd.Parameters.Add("@id_empresa_maestra", SqlDbType.Int).Value = entiti.Id_emp_maestra;//aqui pudes llamar ese id que esta en cache o si no.
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();

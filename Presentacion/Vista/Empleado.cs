@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
@@ -403,7 +404,7 @@ namespace Presentacion.Vista
                 nEmpleado.Id_afp = Convert.ToInt32(cmbafp.SelectedValue);
                 nEmpleado.Id_doc = Convert.ToInt32(cmbtipdoc.SelectedValue);
                 nEmpleado.Id_cargo = Convert.ToInt32(cmbcar.SelectedValue);
-                nEmpleado.Id_emp_maestra = Convert.ToInt32(cbxempresa.SelectedValue);
+                nEmpleado.Id_emp_maestra = UserCache.Codigo_empresa;  //Convert.ToInt32(cbxempresa.SelectedValue);
 
                 result = nEmpleado.GuardarCambios();
 
