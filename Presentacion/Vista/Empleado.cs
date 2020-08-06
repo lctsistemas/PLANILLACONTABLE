@@ -332,6 +332,9 @@ namespace Presentacion.Vista
             cbxgene.Items.Add("Masculino");
             cbxgene.Items.Add("Femenino");
 
+            cmbestado.Items.Add("Activo");
+            cmbestado.Items.Add("Sesado");
+
             cmbcar.Text = "";
             cmbcar.SelectedValue = 0;
 
@@ -400,7 +403,9 @@ namespace Presentacion.Vista
                 nEmpleado.Telefono = txttele.Text.Trim();
                 nEmpleado.Num_doc = txtnumdoc.Text;
 
-                nEmpleado.Estado = txtestado.Text.Trim();
+                //nEmpleado.Estado = txtestado.Text.Trim();
+                nEmpleado.Estado = cmbestado.SelectedItem.ToString();
+
 
                 nEmpleado.Id_afp = Convert.ToInt32(cmbafp.SelectedValue);
                 nEmpleado.Id_doc = Convert.ToInt32(cmbtipdoc.SelectedValue);

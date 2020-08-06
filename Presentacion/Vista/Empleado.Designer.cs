@@ -92,6 +92,7 @@ namespace Presentacion.Vista
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.lblem = new System.Windows.Forms.Label();
+            this.cmbestado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -184,6 +185,7 @@ namespace Presentacion.Vista
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.cmbestado);
             this.groupBox3.Controls.Add(this.lblem);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label6);
@@ -816,6 +818,14 @@ namespace Presentacion.Vista
             this.lblem.TabIndex = 75;
             this.lblem.Text = "label13";
             // 
+            // cmbestado
+            // 
+            this.cmbestado.FormattingEnabled = true;
+            this.cmbestado.Location = new System.Drawing.Point(169, 160);
+            this.cmbestado.Name = "cmbestado";
+            this.cmbestado.Size = new System.Drawing.Size(112, 21);
+            this.cmbestado.TabIndex = 76;
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -913,5 +923,6 @@ namespace Presentacion.Vista
         private DataGridViewButtonColumn CONTRATO;
         private Label lblem;
         private Label label13;
+        private ComboBox cmbestado;
     }
 }
