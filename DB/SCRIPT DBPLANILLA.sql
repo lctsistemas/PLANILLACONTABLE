@@ -228,3 +228,13 @@ ALTER TABLE Contrato ADD CONSTRAINT Fk_CTipo_Contrato FOREIGN KEY(id_tipo_contra
 ALTER AUTHORIZATION ON DATABASE::Planilla_lct TO[SA]
 GO
 
+alter table Empresa drop constraint FK_id_Emaestra
+alter table Sucursal drop constraint FK_idEmaestra
+alter table Sucursal drop constraint FK_idempresa
+alter table empleado drop constraint FK_EempresaM
+alter table Empresa drop constraint FK_idusuario
+alter table Empresa drop constraint UNQ_cod_em
+go
+truncate table empresa_maestra
+drop table empresa
+delete from Empleado
