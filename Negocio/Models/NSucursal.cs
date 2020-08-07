@@ -15,7 +15,7 @@ namespace Negocio
         List<NSucursal> list_sucursal;
         //public int idempresa_maestra { get; set; }
         public String estado { get; set; }
-        public Int32 sidemp_maestra { get; set; }
+        public Int32 eidemp_maestra { get; set; }
         //public Int32 sidsucursal { get; set; }
         public Int32 sidempresa { get; set; }
         public String scodigo_sucursal { get; set; }
@@ -53,7 +53,7 @@ namespace Negocio
                 de.Localidad = localidad;
 
                 de.Scodigo_sucursal = scodigo_sucursal;
-                de.Sidem_maestra = sidemp_maestra;
+                de.Eidemp_maestra = eidemp_maestra;
                 de.Sid_empresa = sidempresa;
 
                 switch (state)
@@ -97,7 +97,7 @@ namespace Negocio
                     list_sucursal.Add(new NSucursal
                     {
                         estado = item[0].ToString(),
-                        sidemp_maestra = Convert.ToInt32(item[1]),
+                        eidemp_maestra = Convert.ToInt32(item[1]),
                         sidempresa = Convert.ToInt32(item[2]),
                         scodigo_sucursal = item[3].ToString(),
                         razon_social = item[4].ToString(),

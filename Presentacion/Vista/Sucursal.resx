@@ -117,6 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtbuscar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 11.25pt</value>
+  </data>
+  <data name="txtbuscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 34</value>
+  </data>
+  <data name="txtbuscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 19</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtbuscar.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.Name" xml:space="preserve">
+    <value>txtbuscar</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btneliminar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -124,14 +150,12 @@
   <data name="btneliminar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btneliminar.Location" type="System.Drawing.Point, System.Drawing">
     <value>679, 18</value>
   </data>
   <data name="btneliminar.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 46</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btneliminar.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -145,13 +169,46 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;btneliminar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 11.25pt</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lbltotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbltotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="lbltotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -160,7 +217,7 @@
     <value>521, 34</value>
   </data>
   <data name="lbltotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 18</value>
+    <value>53, 20</value>
   </data>
   <data name="lbltotal.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -178,7 +235,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;lbltotal.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="dgvsucursal.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 72</value>
@@ -199,58 +256,34 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;dgvsucursal.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
-  <data name="txtbuscar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="txtbuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 17</value>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 44</value>
   </data>
-  <data name="txtbuscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 17</value>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 16</value>
   </data>
-  <data name="txtbuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
-  <data name="&gt;&gt;txtbuscar.Name" xml:space="preserve">
-    <value>txtbuscar</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>__________________________________________________________________</value>
   </data>
-  <data name="&gt;&gt;txtbuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
   </data>
-  <data name="&gt;&gt;txtbuscar.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtbuscar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 18</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 48</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>BUSCAR</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>tablista_empresa</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="tablista_empresa.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 31</value>
@@ -286,7 +319,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnnuevo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 19</value>
+    <value>412, 349</value>
   </data>
   <data name="btnnuevo.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 46</value>
@@ -301,7 +334,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnnuevo.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+    <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;btnnuevo.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -313,7 +346,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnguardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 19</value>
+    <value>207, 349</value>
   </data>
   <data name="btnguardar.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 46</value>
@@ -328,37 +361,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnguardar.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+    <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;btnguardar.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 334</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 73</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>CONTROLES</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>tabgestion_empresa</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnempresa.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -391,16 +397,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;btnempresa.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtregimen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtregimen.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 239</value>
   </data>
   <data name="txtregimen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 24</value>
+    <value>310, 26</value>
   </data>
   <data name="txtregimen.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -415,16 +421,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtregimen.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtusuario.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtusuario.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 280</value>
   </data>
   <data name="txtusuario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 24</value>
+    <value>310, 26</value>
   </data>
   <data name="txtusuario.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -439,7 +445,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtusuario.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="txtidempresa.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
@@ -466,16 +472,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtidempresa.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtruc.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtruc.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 199</value>
   </data>
   <data name="txtruc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 24</value>
+    <value>162, 26</value>
   </data>
   <data name="txtruc.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -493,16 +499,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtruc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtdomicilio.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtdomicilio.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 165</value>
   </data>
   <data name="txtdomicilio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 24</value>
+    <value>376, 26</value>
   </data>
   <data name="txtdomicilio.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -517,16 +523,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtdomicilio.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtdireccion.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtdireccion.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 127</value>
   </data>
   <data name="txtdireccion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 24</value>
+    <value>376, 26</value>
   </data>
   <data name="txtdireccion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -541,16 +547,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtdireccion.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtlocalidad.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtlocalidad.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 91</value>
   </data>
   <data name="txtlocalidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 24</value>
+    <value>376, 26</value>
   </data>
   <data name="txtlocalidad.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -565,16 +571,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtlocalidad.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txtrazon_social.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtrazon_social.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 56</value>
   </data>
   <data name="txtrazon_social.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 24</value>
+    <value>376, 26</value>
   </data>
   <data name="txtrazon_social.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -589,16 +595,16 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtrazon_social.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="txtcodigo_sucursal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+    <value>Century Gothic, 11.25pt</value>
   </data>
   <data name="txtcodigo_sucursal.Location" type="System.Drawing.Point, System.Drawing">
     <value>187, 22</value>
   </data>
   <data name="txtcodigo_sucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 24</value>
+    <value>133, 26</value>
   </data>
   <data name="txtcodigo_sucursal.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -613,13 +619,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtcodigo_sucursal.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -628,7 +634,7 @@
     <value>33, 283</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 16</value>
+    <value>61, 17</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -646,13 +652,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -661,7 +667,7 @@
     <value>33, 91</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 16</value>
+    <value>83, 17</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -679,13 +685,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -694,7 +700,7 @@
     <value>33, 27</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 16</value>
+    <value>125, 17</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -712,13 +718,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -727,7 +733,7 @@
     <value>33, 56</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 16</value>
+    <value>102, 17</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -745,13 +751,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -760,7 +766,7 @@
     <value>33, 130</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 16</value>
+    <value>82, 17</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -778,13 +784,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -793,7 +799,7 @@
     <value>33, 244</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 16</value>
+    <value>65, 17</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -811,13 +817,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -826,7 +832,7 @@
     <value>33, 168</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 16</value>
+    <value>122, 17</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -844,13 +850,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -859,7 +865,7 @@
     <value>33, 207</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 16</value>
+    <value>35, 17</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -877,7 +883,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="tabgestion_empresa.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 31</value>

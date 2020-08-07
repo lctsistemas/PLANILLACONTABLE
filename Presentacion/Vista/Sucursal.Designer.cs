@@ -34,10 +34,7 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.lbltotal = new System.Windows.Forms.Label();
             this.dgvsucursal = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tabgestion_empresa = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnempresa = new System.Windows.Forms.Button();
@@ -59,24 +56,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelsucursal = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tapsucursal.SuspendLayout();
             this.tablista_empresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsucursal)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.tabgestion_empresa.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panelsucursal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tapsucursal
@@ -92,10 +90,12 @@
             // tablista_empresa
             // 
             this.tablista_empresa.BackColor = System.Drawing.SystemColors.Window;
+            this.tablista_empresa.Controls.Add(this.txtbuscar);
             this.tablista_empresa.Controls.Add(this.btneliminar);
+            this.tablista_empresa.Controls.Add(this.label11);
             this.tablista_empresa.Controls.Add(this.lbltotal);
             this.tablista_empresa.Controls.Add(this.dgvsucursal);
-            this.tablista_empresa.Controls.Add(this.groupBox1);
+            this.tablista_empresa.Controls.Add(this.label9);
             this.tablista_empresa.ForeColor = System.Drawing.SystemColors.WindowText;
             resources.ApplyResources(this.tablista_empresa, "tablista_empresa");
             this.tablista_empresa.Name = "tablista_empresa";
@@ -122,31 +122,18 @@
             this.dgvsucursal.AllowUserToAddRows = false;
             this.dgvsucursal.AllowUserToDeleteRows = false;
             this.dgvsucursal.AllowUserToOrderColumns = true;
+            this.dgvsucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvsucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgvsucursal, "dgvsucursal");
             this.dgvsucursal.Name = "dgvsucursal";
             this.dgvsucursal.ReadOnly = true;
             this.dgvsucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellDoubleClick);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtbuscar);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtbuscar, "txtbuscar");
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
-            // 
             // tabgestion_empresa
             // 
             this.tabgestion_empresa.BackColor = System.Drawing.SystemColors.Window;
-            this.tabgestion_empresa.Controls.Add(this.groupBox2);
+            this.tabgestion_empresa.Controls.Add(this.btnnuevo);
+            this.tabgestion_empresa.Controls.Add(this.btnguardar);
             this.tabgestion_empresa.Controls.Add(this.btnempresa);
             this.tabgestion_empresa.Controls.Add(this.txtregimen);
             this.tabgestion_empresa.Controls.Add(this.txtusuario);
@@ -168,19 +155,11 @@
             resources.ApplyResources(this.tabgestion_empresa, "tabgestion_empresa");
             this.tabgestion_empresa.Name = "tabgestion_empresa";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnnuevo);
-            this.groupBox2.Controls.Add(this.btnguardar);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
             // btnnuevo
             // 
             this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
             this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnnuevo.FlatAppearance.BorderSize = 0;
             this.btnnuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnnuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
@@ -322,6 +301,13 @@
             this.panelsucursal.Name = "panelsucursal";
             this.panelsucursal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelsucursal_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // label10
             // 
             resources.ApplyResources(this.label10, "label10");
@@ -373,12 +359,24 @@
             this.btnrestaurar.MouseLeave += new System.EventHandler(this.btnrestaurar_MouseLeave);
             this.btnrestaurar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnrestaurar_MouseMove);
             // 
-            // pictureBox1
+            // txtbuscar
             // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txtbuscar, "txtbuscar");
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Name = "label9";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Name = "label11";
             // 
             // frmsucursal
             // 
@@ -394,18 +392,15 @@
             this.tablista_empresa.ResumeLayout(false);
             this.tablista_empresa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsucursal)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabgestion_empresa.ResumeLayout(false);
             this.tabgestion_empresa.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.panelsucursal.ResumeLayout(false);
             this.panelsucursal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -417,10 +412,7 @@
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.DataGridView dgvsucursal;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.TabPage tabgestion_empresa;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnempresa;
@@ -448,5 +440,8 @@
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
     }
 }

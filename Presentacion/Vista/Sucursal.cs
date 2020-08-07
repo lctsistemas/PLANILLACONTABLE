@@ -18,7 +18,7 @@ namespace Presentacion.Vista
             InitializeComponent();
             To_disable(false);
             Show_sucursal("");
-            Tabla();
+            //Tabla();
         }
 
         //METODO INSTANCE QUE CONTENGA EL FORMULARIO PARA PODER ACCEDER MEDIANTE OTRO FORMULARIO
@@ -158,7 +158,7 @@ namespace Presentacion.Vista
                 {
                     nsu.state = EntityState.Modificar;
 
-                    nsu.sidemp_maestra = Convert.ToInt32(ro.Cells[1].Value);
+                    nsu.eidemp_maestra = Convert.ToInt32(ro.Cells[1].Value);
                     txtidempresa.Text = ro.Cells[2].Value.ToString();
                     txtcodigo_sucursal.Text = ro.Cells[3].Value.ToString();
                     txtrazon_social.Text = ro.Cells[4].Value.ToString();
@@ -189,7 +189,7 @@ namespace Presentacion.Vista
                     using (nsu)
                     {
                         nsu.state = EntityState.Remover;
-                        nsu.sidemp_maestra = Convert.ToInt32(dgvsucursal.CurrentRow.Cells[1].Value);
+                        nsu.eidemp_maestra = Convert.ToInt32(dgvsucursal.CurrentRow.Cells[1].Value);
                         result = nsu.SaveChanges();
                         if (result.Contains("ACCESO"))
                         {

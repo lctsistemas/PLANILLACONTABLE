@@ -37,7 +37,6 @@
             this.dgvempresa = new System.Windows.Forms.DataGridView();
             this.tabgestion_empresa = new System.Windows.Forms.TabPage();
             this.txtiduser = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.cboregimen = new System.Windows.Forms.ComboBox();
@@ -68,7 +67,6 @@
             this.tablista_empresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempresa)).BeginInit();
             this.tabgestion_empresa.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -170,8 +168,9 @@
             // tabgestion_empresa
             // 
             this.tabgestion_empresa.BackColor = System.Drawing.SystemColors.Window;
+            this.tabgestion_empresa.Controls.Add(this.btnnuevo);
+            this.tabgestion_empresa.Controls.Add(this.btnguardar);
             this.tabgestion_empresa.Controls.Add(this.txtiduser);
-            this.tabgestion_empresa.Controls.Add(this.groupBox2);
             this.tabgestion_empresa.Controls.Add(this.cboregimen);
             this.tabgestion_empresa.Controls.Add(this.btnusuario);
             this.tabgestion_empresa.Controls.Add(this.txtusuario);
@@ -203,19 +202,6 @@
             this.txtiduser.Size = new System.Drawing.Size(40, 22);
             this.txtiduser.TabIndex = 14;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnnuevo);
-            this.groupBox2.Controls.Add(this.btnguardar);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.groupBox2.Location = new System.Drawing.Point(36, 305);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(527, 73);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "CONTROLES";
-            // 
             // btnnuevo
             // 
             this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
@@ -225,7 +211,7 @@
             this.btnnuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnnuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnnuevo.Location = new System.Drawing.Point(313, 21);
+            this.btnnuevo.Location = new System.Drawing.Point(403, 325);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(64, 46);
             this.btnnuevo.TabIndex = 0;
@@ -241,7 +227,7 @@
             this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.Location = new System.Drawing.Point(123, 21);
+            this.btnguardar.Location = new System.Drawing.Point(213, 325);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(64, 46);
             this.btnguardar.TabIndex = 0;
@@ -550,7 +536,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvempresa)).EndInit();
             this.tabgestion_empresa.ResumeLayout(false);
             this.tabgestion_empresa.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -581,7 +566,6 @@
         private System.Windows.Forms.TextBox txtdireccion;
         private System.Windows.Forms.TextBox txtrazon_social;
         private System.Windows.Forms.TextBox txtcodigo_empresa;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnusuario;

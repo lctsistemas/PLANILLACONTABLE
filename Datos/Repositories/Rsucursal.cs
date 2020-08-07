@@ -82,7 +82,7 @@ namespace Datos.Repositories
 
                         cmd1.Parameters.Add("@cod_sucursal", SqlDbType.VarChar, 8).Value = entiti.Scodigo_sucursal;
                         cmd1.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Sid_empresa;
-                        cmd1.Parameters.Add("@id_emmaestra", SqlDbType.Int).Value = entiti.Sidem_maestra;
+                        cmd1.Parameters.Add("@id_emmaestra", SqlDbType.Int).Value = entiti.Eidemp_maestra;
                         result = cmd.ExecuteNonQuery();
 
                         if (result > 0)

@@ -321,7 +321,7 @@ UPDATE dbo.Sucursal SET codigo_sucursal=@cod_sucursal, id_empresa=@id_empresa
 WHERE id_em_maestra=@id_emmaestra
 END
 GO
-
+select * from sucursal s join Empresa_maestra e on e.id_em_maestra=s.id_em_maestra
 --REMOVE EMPRESA MAESTRA
 CREATE PROC SP_REMOVE_EMPRESA
 @id_maestra int,
@@ -587,7 +587,7 @@ on(e.id_usuario=u.id_usuario)
 WHERE u.codigo_usuario=@codigo_usuario
 END
 GO
-
+/*
 EXEC SP_LISTEMP_POR_USU 'US001'
 --INICIAR SESION 
 GO
@@ -615,9 +615,7 @@ As Begin
 		   End
    End
 Go
-
-
-
+*/
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
 CREATE PROC SP_LLENAR_CARGO_EMPLEADO
