@@ -73,3 +73,5 @@ C:\Users\juan\Source\Repos\Planillalct\Datos\bin\Debug\Datos.pdb
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Comun.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Comun.pdb
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\juan\Source\Repos\Planillalct\Datos\bin\Debug\Comun.dll
+C:\Users\juan\Source\Repos\Planillalct\Datos\bin\Debug\Comun.pdb
