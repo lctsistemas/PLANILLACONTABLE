@@ -212,6 +212,7 @@ END
 GO
 
 --MOSTRAR EMPLEADO 
+
 ALTER PROC SP_SHOW_EMP
 @codigo_empresa int
 AS BEGIN 
@@ -226,7 +227,7 @@ ON(c.id_cargo=e.id_cargo)
 INNER JOIN Empresa_maestra em
 ON(em.id_em_maestra=e.id_em_maestra)
 WHERE e.eliminado_estado='NO ANULADO' and 
-e.id_em_maestra=@codigo_empresa
+e.id_em_maestra=@codigo_empresa 
 /*(e.nombre_empleado like @search+'%'
 or e.ape_paterno 
 like @search+'%') */
@@ -234,14 +235,38 @@ ORDER BY e.id_empleado DESC
 END
 GO
 
+CREATE VIEW vista_empleado
+As(
+SELECT top(200) e.id_empleado, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
+e.nacionalidad,e.tipo_genero,e.direccion,e.telefono,e.numero_documento,e.estado,a.id_afp,e.tipo_pension ,a.nombre_afp as 'Tipo de AFP',
+t.id_documento,t.nombre as 'DOCUMENTO',c.id_cargo,c.nombre_cargo AS 'CARGO',em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Tipo_documento t 
+on(t.id_documento=e.id_documento)
+left JOIN Afp a
+ON(a.id_afp=e.id_afp)
+INNER JOIN Cargo c
+ON(c.id_cargo=e.id_cargo)
+INNER JOIN Empresa_maestra em
+ON(em.id_em_maestra=e.id_em_maestra)
+WHERE e.eliminado_estado='NO ANULADO' 
+)
+go
 
+alter proc SP_SHOW_EMP_DNI
+@codigo_empresa int,
+@search varchar(20)
+AS BEGIN
+	select empresa from vista_empleado where id_em_maestra=@codigo_empresa and numero_documento like @search +'%'
+END
+
+GO
+----and e.id_em_maestra=@codigo_empresa
 /*     EMPRESA AND SUCURSAL      */
-CREATE PROC SP_INSERT_EMPRESA_MAESTRA
+alter PROC SP_INSERT_EMPRESA_MAESTRA
 @razon_social varchar(50),
 @direccion nvarchar(250),
 @domicilio nvarchar(250),
 @ruc char(11),
-@regimen varchar(50),
+@regimen varchar(80),
 @localidad varchar(50) 
 AS BEGIN
 INSERT INTO dbo.Empresa_maestra(razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
