@@ -203,6 +203,9 @@ ALTER TABLE Cargo ADD CONSTRAINT PK_idcargo PRIMARY KEY(id_cargo)
 ALTER TABLE Tipo_documento ADD CONSTRAINT PK_tdocumento PRIMARY KEY(id_documento)
 ALTER TABLE Afp ADD CONSTRAINT PK_idafp PRIMARY KEY(id_afp)
 	--FOREIGN KEY: EMPLEADO CON  CARGO, TIPO DOCUMENTO, AFP, EMPRESA
+
+
+
 ALTER TABLE Empleado ADD CONSTRAINT FK_EempresaM FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 Alter TABLE	Empleado ADD CONSTRAINT FK_Eidcargo FOREIGN KEY(id_cargo)REFERENCES Cargo
 Alter TABLE	Empleado ADD CONSTRAINT FK_Eiddocumento FOREIGN KEY(id_documento)REFERENCES Tipo_documento
@@ -225,3 +228,13 @@ ALTER TABLE Contrato ADD CONSTRAINT Fk_CTipo_Contrato FOREIGN KEY(id_tipo_contra
 ALTER AUTHORIZATION ON DATABASE::Planilla_lct TO[SA]
 GO
 
+alter table Empresa drop constraint FK_id_Emaestra
+alter table Sucursal drop constraint FK_idEmaestra
+alter table Sucursal drop constraint FK_idempresa
+alter table empleado drop constraint FK_EempresaM
+alter table Empresa drop constraint FK_idusuario
+alter table Empresa drop constraint UNQ_cod_em
+go
+truncate table empresa_maestra
+drop table empresa
+delete from Empleado

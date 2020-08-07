@@ -25,6 +25,19 @@ namespace Presentacion.Vista
             Tabla();
         }
 
+        private bool Validar_campo()
+        {
+            if (string.IsNullOrEmpty(txttipo.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void GenerarCodigo()
         {
             codigo = 0;
@@ -50,6 +63,12 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+
+            if (Validar_campo())
+            {
+                Messages.M_warning("Ingrese un tipo de contrato  por favor");
+                return;
+            }
             result = "";
 
             using (nTipocont)
@@ -65,6 +84,8 @@ namespace Presentacion.Vista
                     {
                         GenerarCodigo();
                         limpiar();
+                        ShowTipoContrato();
+
                     }
                 }
             }
@@ -76,8 +97,13 @@ namespace Presentacion.Vista
             dgvtipocontrato.Columns[0].HeaderText = "CODIGO";
             dgvtipocontrato.Columns[0].Width = 50;
 
-            dgvtipocontrato.Columns[1].HeaderText = "ACCESO USUARIO";
+            dgvtipocontrato.Columns[1].HeaderText = "TIPO CONTRATO";
             dgvtipocontrato.Columns[1].Width = 150;
+
+            dgvtipocontrato.Columns[2].HeaderText = "TIPO CONTRATO";
+            dgvtipocontrato.Columns[2].Width = 150;
+            dgvtipocontrato.Columns[2].Visible = false;
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -118,6 +144,11 @@ namespace Presentacion.Vista
                 }
 
             }
+        }
+
+        private void txttipo_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txttipo, "Campo requerido");
         }
     }
 }

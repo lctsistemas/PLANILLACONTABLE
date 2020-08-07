@@ -45,20 +45,30 @@ namespace Datos.Repositories
             {
                 cnn.Open();
                 cmd = null;
-                using (cmd = new SqlCommand())
+
+                try
                 {
-                    cmd.Connection = cnn;
-                    cmd.CommandText = "SP_UPDATE_TIP_CONT";
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (cmd = new SqlCommand())
+                    {
+                        cmd.Connection = cnn;
+                        cmd.CommandText = "SP_UPDATE_TIP_CONT";
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
-                    cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
+                        cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
+                        cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
 
-                    result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    return result;
+                        result = cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                       
 
+                    }
                 }
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+                return result;
+
             }
         }
         public int Delete(Dtipocontrato entiti)

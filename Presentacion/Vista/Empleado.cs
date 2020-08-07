@@ -170,7 +170,6 @@ namespace Presentacion.Vista
             txtnac.Enabled = v;
             cmbafp.Enabled = v;
             cmbcar.Enabled = v;
-            cbxempresa.Enabled = v;
             btnguardar.Enabled = v;
         }
 
@@ -209,9 +208,7 @@ namespace Presentacion.Vista
         {
             using (nEmpleado)
             {
-                cbxempresa.DataSource = nEmpleado.Mostrar_Empresa();
-                cbxempresa.DisplayMember = "razon_social";
-                cbxempresa.ValueMember = "id_em_maestra";
+               
             }
 
         }
@@ -241,8 +238,7 @@ namespace Presentacion.Vista
             cmbtipdoc.SelectedValue = 0;
             cmbcar.Text = "";
             cmbcar.SelectedValue = 0;
-            cbxempresa.Text = "";
-            cbxempresa.SelectedValue = 0;
+           
             cmbafp.Text = "";
             cmbafp.SelectedValue = 0;
             txtnac.Text = String.Empty;
@@ -259,7 +255,6 @@ namespace Presentacion.Vista
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApePat.Text) ||
                 string.IsNullOrEmpty(txtApeMat.Text) || string.IsNullOrEmpty(txttele.Text) ||
                 string.IsNullOrEmpty(cmbtipdoc.Text) || string.IsNullOrEmpty(cmbcar.Text) ||
-                string.IsNullOrEmpty(cbxempresa.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtdire.Text) ||
                 string.IsNullOrEmpty(txtnumdoc.Text) ||
                 string.IsNullOrEmpty(cbxpen.Text) || string.IsNullOrEmpty(cbxgene.Text))
@@ -296,7 +291,7 @@ namespace Presentacion.Vista
                     txttele.Text = r.Cells[9].Value.ToString();
 
                     txtnumdoc.Text = r.Cells[10].Value.ToString();
-                    txtestado.Text = r.Cells[11].Value.ToString();
+                    cmbestado.Text = r.Cells[11].Value.ToString();
                     cbxpen.Text = r.Cells[13].Value.ToString();
                     if (cbxpen.Text == "A.F.P")
                     {
@@ -311,8 +306,8 @@ namespace Presentacion.Vista
                     cmbcar.SelectedValue = r.Cells[17].Value.ToString();
                     cmbcar.Text = r.Cells[18].Value.ToString();
 
-                    cbxempresa.SelectedValue = r.Cells[19].Value.ToString();
-                    cbxempresa.Text = r.Cells[20].Value.ToString();
+                    //cbxempresa.SelectedValue = r.Cells[19].Value.ToString();
+                    //cbxempresa.Text = r.Cells[20].Value.ToString();
                     tabEmpleado.SelectedIndex = 1;
                     Habilitar(true);
                     Habilitar_doc(true);
@@ -332,21 +327,21 @@ namespace Presentacion.Vista
             cbxgene.Items.Add("Masculino");
             cbxgene.Items.Add("Femenino");
 
+            cmbestado.Items.Add("Activo");
+            cmbestado.Items.Add("Sesado");
+
             cmbcar.Text = "";
             cmbcar.SelectedValue = 0;
 
-            cbxempresa.Text = "";
-            cbxempresa.SelectedValue = 0;
+            
             Tabla();
             Habilitar_afp(false);
             Habilitar(false);
             txtcodigo.Enabled = false;
-            txtestado.Enabled = false;
+            //txtestado.Enabled = false;
             txtnumdoc.Enabled = false;
-            //cmbtipdoc.SelectedItem = null;
-            //cmbcar.SelectedItem = null;
-            //cmbafp.SelectedItem = null;
-            txtestado.Text = "ACTIVO";
+            
+            lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
         private void btnguardar_Click_1(object sender, EventArgs e)
@@ -399,7 +394,9 @@ namespace Presentacion.Vista
                 nEmpleado.Telefono = txttele.Text.Trim();
                 nEmpleado.Num_doc = txtnumdoc.Text;
 
-                nEmpleado.Estado = txtestado.Text.Trim();
+                //nEmpleado.Estado = txtestado.Text.Trim();
+                nEmpleado.Estado = cmbestado.SelectedItem.ToString();
+
 
                 nEmpleado.Id_afp = Convert.ToInt32(cmbafp.SelectedValue);
                 nEmpleado.Id_doc = Convert.ToInt32(cmbtipdoc.SelectedValue);
@@ -603,10 +600,7 @@ namespace Presentacion.Vista
             ValidateError.Validate_combo(cmbcar, "Campo requerido");
         }
 
-        private void cbxempresa_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_combo(cbxempresa, "Campo requerido");
-        }
+        
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
@@ -706,5 +700,12 @@ namespace Presentacion.Vista
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dgvempleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
     }
 }
