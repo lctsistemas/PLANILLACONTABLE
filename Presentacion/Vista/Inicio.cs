@@ -194,6 +194,7 @@ namespace Login_inicio
                 UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[1].Value);
                 UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[2].Value.ToString();
                 UserCache.Periodo = numeric_periodo.Value.ToString();
+                UserCache.Empresa_Sucursal = "EMPRESA";
                 activo = true;
             }
             else if (dgvlogin.Columns[e.ColumnIndex].Name == "SUCURSAL")
@@ -204,6 +205,7 @@ namespace Login_inicio
                     UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[4].Value);
                     UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[5].Value.ToString();
                     UserCache.Periodo = numeric_periodo.Value.ToString();
+                    UserCache.Empresa_Sucursal = "SUCURSAL";
                     activo = true;
                 }
                 catch (Exception)

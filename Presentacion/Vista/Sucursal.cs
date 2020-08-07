@@ -18,7 +18,7 @@ namespace Presentacion.Vista
             InitializeComponent();
             To_disable(false);
             Show_sucursal("");
-            //Tabla();
+            Tabla();
         }
 
         //METODO INSTANCE QUE CONTENGA EL FORMULARIO PARA PODER ACCEDER MEDIANTE OTRO FORMULARIO
@@ -58,7 +58,7 @@ namespace Presentacion.Vista
             dgvsucursal.Columns[2].Width = 30;
             dgvsucursal.Columns[2].Visible = false;
 
-            dgvsucursal.Columns[3].HeaderText = "CODIGO SUCURSAL";
+            dgvsucursal.Columns[3].HeaderText = "CODIGO";
             dgvsucursal.Columns[3].Width = 100;
 
             dgvsucursal.Columns[4].HeaderText = "RAZON SOCIAL";

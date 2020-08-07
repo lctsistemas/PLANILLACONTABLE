@@ -213,7 +213,7 @@ GO
 
 --MOSTRAR EMPLEADO 
 ALTER PROC SP_SHOW_EMP
-@search varchar(50)
+@codigo_empresa int
 AS BEGIN 
 SELECT top(200) e.id_empleado, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
 e.nacionalidad,e.tipo_genero,e.direccion,e.telefono,e.numero_documento,e.estado,a.id_afp,e.tipo_pension ,a.nombre_afp as 'Tipo de AFP',
@@ -225,10 +225,11 @@ INNER JOIN Cargo c
 ON(c.id_cargo=e.id_cargo)
 INNER JOIN Empresa_maestra em
 ON(em.id_em_maestra=e.id_em_maestra)
-WHERE e.eliminado_estado='NO ANULADO' and
-(e.nombre_empleado like @search+'%'
+WHERE e.eliminado_estado='NO ANULADO' and 
+e.id_em_maestra=@codigo_empresa
+/*(e.nombre_empleado like @search+'%'
 or e.ape_paterno 
-like @search+'%') 
+like @search+'%') */
 ORDER BY e.id_empleado DESC
 END
 GO
@@ -848,5 +849,5 @@ dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
 END
 GO
 
-select * from Usuario
+select * from Contrato
 select * from Usuario

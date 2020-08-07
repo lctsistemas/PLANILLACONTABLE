@@ -51,18 +51,18 @@
             this.lblrol = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.panelcontent = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblempresa = new System.Windows.Forms.Label();
-            this.lbllocalidad = new System.Windows.Forms.Label();
-            this.lblidempresa = new System.Windows.Forms.Label();
             this.lblperiodo = new System.Windows.Forms.Label();
+            this.lblidempresa = new System.Windows.Forms.Label();
+            this.lbllocalidad = new System.Windows.Forms.Label();
+            this.lblempresa = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelsidemenu.SuspendLayout();
             this.panelmedia3.SuspendLayout();
             this.panelmedia2.SuspendLayout();
             this.panelsubmenu.SuspendLayout();
+            this.panelogo.SuspendLayout();
             this.panelcontent.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelsidemenu
@@ -363,6 +363,7 @@
             // 
             // panelogo
             // 
+            this.panelogo.Controls.Add(this.pictureBox1);
             this.panelogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelogo.Location = new System.Drawing.Point(0, 0);
             this.panelogo.Name = "panelogo";
@@ -393,9 +394,6 @@
             // 
             // panelcontent
             // 
-            this.panelcontent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcontent.BackColor = System.Drawing.Color.Silver;
             this.panelcontent.Controls.Add(this.lblperiodo);
             this.panelcontent.Controls.Add(this.lblidempresa);
@@ -403,65 +401,12 @@
             this.panelcontent.Controls.Add(this.lblempresa);
             this.panelcontent.Controls.Add(this.lblrol);
             this.panelcontent.Controls.Add(this.lblusuario);
+            this.panelcontent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelcontent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelcontent.Location = new System.Drawing.Point(230, 68);
+            this.panelcontent.Location = new System.Drawing.Point(230, 0);
             this.panelcontent.Name = "panelcontent";
-            this.panelcontent.Size = new System.Drawing.Size(670, 681);
+            this.panelcontent.Size = new System.Drawing.Size(670, 749);
             this.panelcontent.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(230, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(670, 68);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(195, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SISTEMA DE PLANILLAS";
-            // 
-            // lblempresa
-            // 
-            this.lblempresa.AutoSize = true;
-            this.lblempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblempresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.lblempresa.Location = new System.Drawing.Point(30, 73);
-            this.lblempresa.Name = "lblempresa";
-            this.lblempresa.Size = new System.Drawing.Size(47, 17);
-            this.lblempresa.TabIndex = 1;
-            this.lblempresa.Text = "label2";
-            // 
-            // lbllocalidad
-            // 
-            this.lbllocalidad.AutoSize = true;
-            this.lbllocalidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllocalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.lbllocalidad.Location = new System.Drawing.Point(30, 100);
-            this.lbllocalidad.Name = "lbllocalidad";
-            this.lbllocalidad.Size = new System.Drawing.Size(47, 17);
-            this.lbllocalidad.TabIndex = 1;
-            this.lbllocalidad.Text = "label2";
-            // 
-            // lblidempresa
-            // 
-            this.lblidempresa.AutoSize = true;
-            this.lblidempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidempresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.lblidempresa.Location = new System.Drawing.Point(30, 126);
-            this.lblidempresa.Name = "lblidempresa";
-            this.lblidempresa.Size = new System.Drawing.Size(47, 17);
-            this.lblidempresa.TabIndex = 1;
-            this.lblidempresa.Text = "label2";
             // 
             // lblperiodo
             // 
@@ -474,28 +419,73 @@
             this.lblperiodo.TabIndex = 1;
             this.lblperiodo.Text = "label2";
             // 
+            // lblidempresa
+            // 
+            this.lblidempresa.AutoSize = true;
+            this.lblidempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidempresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblidempresa.Location = new System.Drawing.Point(30, 126);
+            this.lblidempresa.Name = "lblidempresa";
+            this.lblidempresa.Size = new System.Drawing.Size(47, 17);
+            this.lblidempresa.TabIndex = 1;
+            this.lblidempresa.Text = "label2";
+            // 
+            // lbllocalidad
+            // 
+            this.lbllocalidad.AutoSize = true;
+            this.lbllocalidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllocalidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lbllocalidad.Location = new System.Drawing.Point(30, 100);
+            this.lbllocalidad.Name = "lbllocalidad";
+            this.lbllocalidad.Size = new System.Drawing.Size(47, 17);
+            this.lbllocalidad.TabIndex = 1;
+            this.lbllocalidad.Text = "label2";
+            // 
+            // lblempresa
+            // 
+            this.lblempresa.AutoSize = true;
+            this.lblempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblempresa.Location = new System.Drawing.Point(30, 73);
+            this.lblempresa.Name = "lblempresa";
+            this.lblempresa.Size = new System.Drawing.Size(47, 17);
+            this.lblempresa.TabIndex = 1;
+            this.lblempresa.Text = "label2";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logoweb_2_300x76;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 749);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelcontent);
             this.Controls.Add(this.panelsidemenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmprincipal";
+            this.Text = "SISTEMA DE PLANILLA 1.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelsidemenu.ResumeLayout(false);
             this.panelmedia3.ResumeLayout(false);
             this.panelmedia2.ResumeLayout(false);
             this.panelsubmenu.ResumeLayout(false);
+            this.panelogo.ResumeLayout(false);
             this.panelcontent.ResumeLayout(false);
             this.panelcontent.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -523,14 +513,13 @@
         private System.Windows.Forms.Button btnmedia;
         private System.Windows.Forms.Panel panelogo;
         private System.Windows.Forms.Panel panelcontent;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblrol;
         private System.Windows.Forms.Label lblusuario;
         private System.Windows.Forms.Label lblidempresa;
         private System.Windows.Forms.Label lbllocalidad;
         private System.Windows.Forms.Label lblempresa;
         private System.Windows.Forms.Label lblperiodo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

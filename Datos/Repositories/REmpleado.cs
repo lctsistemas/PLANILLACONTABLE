@@ -133,7 +133,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SHOW_EMP";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@search", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
+                    cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;
 
                     da.SelectCommand = cmd;
 

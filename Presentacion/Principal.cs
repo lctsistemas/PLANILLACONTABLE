@@ -102,7 +102,7 @@ namespace Presentacion
         {
             lblusuario.Text = UserCache.NombreUser;
             lblrol.Text = UserCache.RolUser;
-            lblempresa.Text = UserCache.Empresa;
+            lblempresa.Text =UserCache.Empresa_Sucursal+":  "+ UserCache.Empresa;
             lbllocalidad.Text = UserCache.Localidad_empresa;
             lblperiodo.Text = UserCache.Periodo;
             lblidempresa.Text = UserCache.Codigo_empresa.ToString();

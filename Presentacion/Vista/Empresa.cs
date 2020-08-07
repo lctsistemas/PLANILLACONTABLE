@@ -51,7 +51,7 @@ namespace Presentacion.Vista
             dgvempresa.Columns[4].Width = 30;
             dgvempresa.Columns[4].Visible = false;
 
-            dgvempresa.Columns[5].HeaderText = "CODIGO EMPRESA";
+            dgvempresa.Columns[5].HeaderText = "CODIGO";
             dgvempresa.Columns[5].Width = 100;
 
             dgvempresa.Columns[6].HeaderText = "RAZON SOCIAL";

@@ -19,9 +19,8 @@ namespace Presentacion.Vista
             InitializeComponent();
             Mostrar_cargo();
             MostrarDocumento();
-            MostrarAFP();
-            MostrarEmpresa();
-            mostrarEmp("");
+            MostrarAFP();            
+            mostrarEmp();
 
         }
         //GENERAR CODIGO
@@ -104,8 +103,8 @@ namespace Presentacion.Vista
             dgvempleado.Columns[19].Width = 70;
             dgvempleado.Columns[19].Visible = false;
 
-            dgvempleado.Columns[20].HeaderText = "EMPRESA";
-            dgvempleado.Columns[20].Width = 100;
+            dgvempleado.Columns[20].HeaderText = UserCache.Empresa_Sucursal;
+            dgvempleado.Columns[20].Width = 250;
         }
 
         //HABILITAR CAMPO AFP
@@ -203,22 +202,14 @@ namespace Presentacion.Vista
             }
 
         }
+        
 
-        private void MostrarEmpresa()
-        {
-            using (nEmpleado)
-            {
-               
-            }
-
-        }
-
-        private void mostrarEmp(String datos)
+        private void mostrarEmp()
         {
             using (nEmpleado)
             {
                 //nEmpleado.Nom_emp = datos;
-                dgvempleado.DataSource = nEmpleado.GetData(datos);
+                dgvempleado.DataSource = nEmpleado.GetData(UserCache.Codigo_empresa);
                 lblcantidad_registro.Text = "TOTAL REGISTRO:  " + dgvempleado.Rows.Count;
             }
         }
@@ -418,7 +409,7 @@ namespace Presentacion.Vista
                 }
 
             }
-            mostrarEmp("");
+            mostrarEmp();
         
             GenerateCodigo();
 
@@ -443,7 +434,7 @@ namespace Presentacion.Vista
             {
 
             }
-            mostrarEmp(txtBuscar.Text.Trim());
+           
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -599,9 +590,7 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_combo(cmbcar, "Campo requerido");
         }
-
         
-
         private void btneliminar_Click(object sender, EventArgs e)
         {
             result = "";
@@ -616,7 +605,7 @@ namespace Presentacion.Vista
                         nEmpleado.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
                         result = nEmpleado.GuardarCambios();
                         Messages.M_info(result);
-                        mostrarEmp("");
+                        mostrarEmp();
                         btnguardar.Enabled = false;
                     }
                 }
@@ -626,8 +615,6 @@ namespace Presentacion.Vista
                 Messages.M_warning("Seleccione un Fila");
             }
         }
-
-
 
         private void Empleado_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -660,7 +647,6 @@ namespace Presentacion.Vista
             btnmaximizar.Visible = true;
         }
 
-
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -691,21 +677,12 @@ namespace Presentacion.Vista
                 dgvempleado.Columns[0].Visible = false;
         }
 
-        private void txtcodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void dgvempleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+       
         
     }
 }
