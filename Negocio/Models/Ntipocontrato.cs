@@ -19,10 +19,10 @@ namespace Negocio.Models
         private List<Ntipocontrato> list_tcontrato;
         //private String mesage;
         public Int32 id_tcontrato { get; set; }
-        public String tiem_contrato { get; set; }
+        public string tiem_contrato { get; set; }
 
-        public EntityState state;
-        private ITipo_contrato tcontrato_repository;
+        public EntityState state { get; set; }
+        public ITipo_contrato tcontrato_repository;
 
         public Ntipocontrato()
         {

@@ -83,7 +83,7 @@ namespace Presentacion.Subvista
 
         private void Vista_empresa_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar, "Buscar por Empresa");
+            Tooltip.Title(txtbuscar, "Buscar por Empresa",true);
         }
 
         private void dgvvista_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -90,6 +90,9 @@ namespace Presentacion.Vista
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblem = new System.Windows.Forms.Label();
+            this.cmbestado = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,6 +122,7 @@ namespace Presentacion.Vista
             this.dgvempleado.Size = new System.Drawing.Size(731, 293);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
+            this.dgvempleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellContentClick);
             this.dgvempleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellDoubleClick);
             // 
             // CONTRATO
@@ -138,7 +142,7 @@ namespace Presentacion.Vista
             this.tabPage2.Location = new System.Drawing.Point(33, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(735, 417);
+            this.tabPage2.Size = new System.Drawing.Size(735, 419);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gestion Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -181,6 +185,9 @@ namespace Presentacion.Vista
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.cmbestado);
+            this.groupBox3.Controls.Add(this.lblem);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.cbxpen);
             this.groupBox3.Controls.Add(this.cbxempresa);
@@ -233,6 +240,7 @@ namespace Presentacion.Vista
             this.cbxempresa.Name = "cbxempresa";
             this.cbxempresa.Size = new System.Drawing.Size(118, 21);
             this.cbxempresa.TabIndex = 74;
+            this.cbxempresa.SelectedIndexChanged += new System.EventHandler(this.cbxempresa_SelectedIndexChanged);
             this.cbxempresa.Validating += new System.ComponentModel.CancelEventHandler(this.cbxempresa_Validating);
             // 
             // lblempresa
@@ -710,7 +718,7 @@ namespace Presentacion.Vista
             this.tabPage1.Location = new System.Drawing.Point(33, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 417);
+            this.tabPage1.Size = new System.Drawing.Size(735, 419);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Registrar Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -791,6 +799,32 @@ namespace Presentacion.Vista
             this.btnrestaurar.TabIndex = 11;
             this.btnrestaurar.TabStop = false;
             this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(119, 278);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 13);
+            this.label13.TabIndex = 75;
+            this.label13.Text = "lblempre";
+            // 
+            // lblem
+            // 
+            this.lblem.AutoSize = true;
+            this.lblem.Location = new System.Drawing.Point(119, 300);
+            this.lblem.Name = "lblem";
+            this.lblem.Size = new System.Drawing.Size(41, 13);
+            this.lblem.TabIndex = 75;
+            this.lblem.Text = "label13";
+            // 
+            // cmbestado
+            // 
+            this.cmbestado.FormattingEnabled = true;
+            this.cmbestado.Location = new System.Drawing.Point(169, 160);
+            this.cmbestado.Name = "cmbestado";
+            this.cmbestado.Size = new System.Drawing.Size(112, 21);
+            this.cmbestado.TabIndex = 76;
             // 
             // Empleado
             // 
@@ -887,5 +921,8 @@ namespace Presentacion.Vista
         private RadioButton rddni;
         private RadioButton rdnombre;
         private DataGridViewButtonColumn CONTRATO;
+        private Label lblem;
+        private Label label13;
+        private ComboBox cmbestado;
     }
 }

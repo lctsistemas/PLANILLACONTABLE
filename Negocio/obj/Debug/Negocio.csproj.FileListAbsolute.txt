@@ -106,5 +106,5 @@ C:\Users\juan\Source\Repos\Planillalct\Negocio\obj\Debug\Negocio.dll
 C:\Users\juan\Source\Repos\Planillalct\Negocio\obj\Debug\Negocio.pdb
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\bin\Debug\Comun.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Negocio\bin\Debug\Comun.pdb
-C:\Users\juan\Source\Repos\Planillalct\Negocio\bin\Debug\Comun.dll
-C:\Users\juan\Source\Repos\Planillalct\Negocio\bin\Debug\Comun.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Comun.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Negocio\bin\Debug\Comun.pdb

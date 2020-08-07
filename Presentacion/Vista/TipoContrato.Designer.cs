@@ -117,6 +117,7 @@
             this.txttipo.Name = "txttipo";
             this.txttipo.Size = new System.Drawing.Size(100, 20);
             this.txttipo.TabIndex = 1;
+            this.txttipo.Validating += new System.ComponentModel.CancelEventHandler(this.txttipo_Validating);
             // 
             // label2
             // 
@@ -140,10 +141,13 @@
             // 
             // dgvtipocontrato
             // 
+            this.dgvtipocontrato.AllowUserToAddRows = false;
+            this.dgvtipocontrato.AllowUserToDeleteRows = false;
             this.dgvtipocontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtipocontrato.Location = new System.Drawing.Point(3, 39);
+            this.dgvtipocontrato.Location = new System.Drawing.Point(6, 35);
             this.dgvtipocontrato.Name = "dgvtipocontrato";
-            this.dgvtipocontrato.Size = new System.Drawing.Size(381, 226);
+            this.dgvtipocontrato.ReadOnly = true;
+            this.dgvtipocontrato.Size = new System.Drawing.Size(381, 196);
             this.dgvtipocontrato.TabIndex = 0;
             this.dgvtipocontrato.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipocontrato_CellDoubleClick);
             // 

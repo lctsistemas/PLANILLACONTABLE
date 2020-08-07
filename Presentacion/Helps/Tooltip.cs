@@ -17,9 +17,9 @@ namespace Presentacion.Helps
 
         }
 
-        public static void Title(Control ctr, string alert)
+        public static void Title(Control ctr, string alert, bool ballon)
         {
-            t.IsBalloon = true;
+            t.IsBalloon = ballon;
             t.AutomaticDelay = 400;
             t.InitialDelay = 400;
             t.SetToolTip(ctr, alert);

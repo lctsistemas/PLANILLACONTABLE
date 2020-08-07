@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
@@ -331,6 +332,9 @@ namespace Presentacion.Vista
             cbxgene.Items.Add("Masculino");
             cbxgene.Items.Add("Femenino");
 
+            cmbestado.Items.Add("Activo");
+            cmbestado.Items.Add("Sesado");
+
             cmbcar.Text = "";
             cmbcar.SelectedValue = 0;
 
@@ -346,6 +350,7 @@ namespace Presentacion.Vista
             //cmbcar.SelectedItem = null;
             //cmbafp.SelectedItem = null;
             txtestado.Text = "ACTIVO";
+            lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
         private void btnguardar_Click_1(object sender, EventArgs e)
@@ -398,12 +403,14 @@ namespace Presentacion.Vista
                 nEmpleado.Telefono = txttele.Text.Trim();
                 nEmpleado.Num_doc = txtnumdoc.Text;
 
-                nEmpleado.Estado = txtestado.Text.Trim();
+                //nEmpleado.Estado = txtestado.Text.Trim();
+                nEmpleado.Estado = cmbestado.SelectedItem.ToString();
+
 
                 nEmpleado.Id_afp = Convert.ToInt32(cmbafp.SelectedValue);
                 nEmpleado.Id_doc = Convert.ToInt32(cmbtipdoc.SelectedValue);
                 nEmpleado.Id_cargo = Convert.ToInt32(cmbcar.SelectedValue);
-                nEmpleado.Id_emp_maestra = Convert.ToInt32(cbxempresa.SelectedValue);
+                nEmpleado.Id_emp_maestra = UserCache.Codigo_empresa;  //Convert.ToInt32(cbxempresa.SelectedValue);
 
                 result = nEmpleado.GuardarCambios();
 
@@ -704,6 +711,20 @@ namespace Presentacion.Vista
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvempleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbxempresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(cbxempresa.Text))
+            {
+
+            }else
+            lblem.Text = cbxempresa.SelectedValue.ToString();
         }
     }
 }

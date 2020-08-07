@@ -91,7 +91,7 @@ namespace Presentacion.Vista
         private void frmcargo_Load(object sender, EventArgs e)
         {
             Tabla();
-            Tooltip.Title(txtbuscar, "Buscar por cargo");
+            Tooltip.Title(txtbuscar, "Buscar por cargo",true);
             Habilitar(false);
         }
 

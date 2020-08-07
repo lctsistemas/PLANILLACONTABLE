@@ -25,7 +25,10 @@ namespace Login_inicio
 
         public frminicio()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            //Tooltip.Title(lblcerrar,"Cerrar",false);
+            //Tooltip.Title(lblminimizar,"Minimizar",false);
+
         }                   
        
         private void txtuser_Enter(object sender, EventArgs e)
@@ -215,5 +218,41 @@ namespace Login_inicio
         {
             UserCache.Periodo = numeric_periodo.Value.ToString();
         }
+
+        private void lblcerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblcerrar.BackColor = Color.Crimson;
+            lblcerrar.ForeColor = Color.White;
+        }
+
+        private void lblcerrar_MouseLeave(object sender, EventArgs e)
+        {
+            lblcerrar.BackColor = Color.FromArgb(15,15,15);
+            lblcerrar.ForeColor = Color.DimGray;
+        }
+
+        private void lblcerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblcerrar.BackColor = Color.FromArgb(123, 36, 28);
+        }
+
+        private void lblminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblminimizar.BackColor = Color.FromArgb(33, 47, 61);
+            lblminimizar.ForeColor = Color.White;
+        }
+
+        private void lblminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            lblminimizar.BackColor = Color.FromArgb(15, 15, 15);
+            lblminimizar.ForeColor = Color.DimGray;
+        }
+
+        private void lblminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lblminimizar.BackColor = Color.FromArgb(123, 36, 28);
+        }
+
+        
     }
 }
