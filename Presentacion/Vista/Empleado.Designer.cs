@@ -122,7 +122,8 @@ namespace Presentacion.Vista
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvempleado.ColumnHeadersHeight = 30;
+            this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CONTRATO});
             this.dgvempleado.EnableHeadersVisualStyles = false;
