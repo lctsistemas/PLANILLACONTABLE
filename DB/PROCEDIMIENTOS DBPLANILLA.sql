@@ -253,13 +253,15 @@ go
 
 alter proc SP_SHOW_EMP_DNI
 @codigo_empresa int,
-@search varchar(20)
+@search varchar(20),
+@nom varchar(50)
 AS BEGIN
-	select * from vista_empleado where id_em_maestra=@codigo_empresa and numero_documento like @search +'%'
+	select * from vista_empleado where id_em_maestra=@codigo_empresa and numero_documento like @search +'%' and
+	nombre_empleado like @nom +'%'
 END
 
 
-EXEC SP_SHOW_EMP_DNI 4,'7'
+EXEC SP_SHOW_EMP_DNI 3,'','juan'
 
 GO
 ----and e.id_em_maestra=@codigo_empresa
