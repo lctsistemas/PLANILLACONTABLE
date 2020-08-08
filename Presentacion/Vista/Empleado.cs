@@ -430,11 +430,13 @@ namespace Presentacion.Vista
             if (rdnombre.Checked==true)
             {
                 mostrarEmp("",txtBuscar.Text.Trim());
+
             }
             else if (rddni.Checked==true)
             {
                 mostrarEmp(txtBuscar.Text.Trim(),"");
-            }else           
+            }
+            else           
                 mostrarEmp("","");
             
 
@@ -684,7 +686,14 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
-        
+        private void rdnombre_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Focus();
+        }
+
+        private void rddni_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Focus();
+        }
     }
 }

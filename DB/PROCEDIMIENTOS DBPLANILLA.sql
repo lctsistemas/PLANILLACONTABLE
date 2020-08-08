@@ -251,7 +251,7 @@ WHERE e.eliminado_estado='NO ANULADO'
 )
 go
 
-alter proc SP_SHOW_EMP_DNI
+ALTER proc SP_SHOW_EMP_DNI
 @codigo_empresa int,
 @search varchar(20),
 @nom varchar(50)
