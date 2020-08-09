@@ -20,7 +20,7 @@ namespace Presentacion.Vista
             Mostrar_cargo();
             MostrarDocumento();
             MostrarAFP();            
-            mostrarEmp();
+            mostrarEmp("","");
 
         }
         //GENERAR CODIGO
@@ -204,12 +204,12 @@ namespace Presentacion.Vista
         }
         
 
-        private void mostrarEmp()
+        private void mostrarEmp(String datos,String nombre)
         {
             using (nEmpleado)
             {
                 //nEmpleado.Nom_emp = datos;
-                dgvempleado.DataSource = nEmpleado.GetData(UserCache.Codigo_empresa);
+                dgvempleado.DataSource = nEmpleado.GetData(UserCache.Codigo_empresa, datos, nombre);
                 lblcantidad_registro.Text = "TOTAL REGISTRO:  " + dgvempleado.Rows.Count;
             }
         }
@@ -323,7 +323,8 @@ namespace Presentacion.Vista
 
             cmbcar.Text = "";
             cmbcar.SelectedValue = 0;
-
+            //iniciar el radiobutom en dni
+            rddni.Checked = true;
             
             Tabla();
             Habilitar_afp(false);
@@ -409,7 +410,7 @@ namespace Presentacion.Vista
                 }
 
             }
-            mostrarEmp();
+            mostrarEmp("","");
         
             GenerateCodigo();
 
@@ -426,15 +427,20 @@ namespace Presentacion.Vista
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (rdnombre.Checked==true) 
+            if (rdnombre.Checked==true)
             {
+                mostrarEmp("",txtBuscar.Text.Trim());
 
             }
             else if (rddni.Checked==true)
             {
-
+                mostrarEmp(txtBuscar.Text.Trim(),"");
             }
-           
+            else           
+                mostrarEmp("","");
+            
+
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -552,8 +558,6 @@ namespace Presentacion.Vista
         private void txtnumdoc_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtnumdoc, "Campo requerido");
-
-
         }
 
         private void txtdire_Validating(object sender, CancelEventArgs e)
@@ -605,7 +609,7 @@ namespace Presentacion.Vista
                         nEmpleado.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
                         result = nEmpleado.GuardarCambios();
                         Messages.M_info(result);
-                        mostrarEmp();
+                        mostrarEmp("","");
                         btnguardar.Enabled = false;
                     }
                 }
@@ -682,7 +686,14 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
-        
+        private void rdnombre_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Focus();
+        }
+
+        private void rddni_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Focus();
+        }
     }
 }

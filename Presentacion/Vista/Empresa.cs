@@ -105,7 +105,7 @@ namespace Presentacion.Vista
             txtruc.Text = "";
             txtusuario.Text = "";
             cboregimen.Text = null;
-            txtrazon_social.Focus();
+            txtcodigo_empresa.Focus();
         }
         //CARGAR REGIMEN
         private void CargarRegimen()

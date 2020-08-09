@@ -174,10 +174,12 @@ namespace Negocio.Models
 
         //PRUEBA
 
-        public DataTable GetData(Int32 entiti)
+        public DataTable GetData(Int32 entiti,String search, String nombre_empleado) 
         {
             DEmpleado d = new DEmpleado();
             d.Id_emp_maestra = entiti;
+            d.Num_doc = search;
+            d.Nom_emp = nombre_empleado;
             using (var dt = Rempleado.GetData(d))
             {
                 return dt;

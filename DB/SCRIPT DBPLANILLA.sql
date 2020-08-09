@@ -168,7 +168,9 @@ estado varchar(30) check(estado in ('ANULADO','NO ANULADO'))
 )
 go
 
-alter table Contrato add  descuento money null 
+alter table Contrato alter column descuento money 
+alter table Contrato add  asignacion_familiar money default 0.00 
+alter table Contrato add  remuneracion_basica money not null
 
 GO
 
@@ -237,4 +239,4 @@ alter table Empresa drop constraint UNQ_cod_em
 go
 truncate table empresa_maestra
 drop table empresa
-delete from Empleado
+delete from Empresa
