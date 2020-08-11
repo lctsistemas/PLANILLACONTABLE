@@ -224,3 +224,5 @@ C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Login_inicio.f
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.frmloin.resources
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Comun.dll
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Comun.pdb
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.MainPrincipal.resources
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\PlayerUI.Form1.resources
