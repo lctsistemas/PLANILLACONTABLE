@@ -224,10 +224,9 @@ C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Login_inicio.f
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.frmloin.resources
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Comun.dll
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Comun.pdb
-<<<<<<< HEAD
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\GUI_MODERNISTA.Form1.resources
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Main_Principal.resources
-=======
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.MainPrincipal.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\PlayerUI.Form1.resources
 >>>>>>> 37756a15a8181a2d239b7034b2e195bab6e06b5d
+C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\PlayerUI.Form1.resources

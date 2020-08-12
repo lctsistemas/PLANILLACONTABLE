@@ -93,6 +93,26 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_build_white_18dp21 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_build_white_18dp21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_build_white_18dp22 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_build_white_18dp22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_business_white_18dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_business_white_18dp", resourceCulture);
@@ -243,6 +263,26 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_update_white_18dp1 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_update_white_18dp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_update_white_18dp2 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_update_white_18dp2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar {
             get {
                 object obj = ResourceManager.GetObject("cerrar", resourceCulture);
@@ -296,6 +336,16 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap empleados1 {
             get {
                 object obj = ResourceManager.GetObject("empleados1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap empleados2 {
+            get {
+                object obj = ResourceManager.GetObject("empleados2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +416,26 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap logo_lct_2 {
             get {
                 object obj = ResourceManager.GetObject("logo lct 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_lct1 {
+            get {
+                object obj = ResourceManager.GetObject("logo lct1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_lct2 {
+            get {
+                object obj = ResourceManager.GetObject("logo lct2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
