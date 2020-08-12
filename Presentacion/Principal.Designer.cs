@@ -48,6 +48,7 @@
             this.btnsucursal = new System.Windows.Forms.Button();
             this.btnmedia = new System.Windows.Forms.Button();
             this.panelogo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblrol = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.panelcontent = new System.Windows.Forms.Panel();
@@ -55,14 +56,13 @@
             this.lblidempresa = new System.Windows.Forms.Label();
             this.lbllocalidad = new System.Windows.Forms.Label();
             this.lblempresa = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelsidemenu.SuspendLayout();
             this.panelmedia3.SuspendLayout();
             this.panelmedia2.SuspendLayout();
             this.panelsubmenu.SuspendLayout();
             this.panelogo.SuspendLayout();
-            this.panelcontent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelcontent.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelsidemenu
@@ -290,7 +290,7 @@
             this.btncargo.Location = new System.Drawing.Point(0, 120);
             this.btncargo.Name = "btncargo";
             this.btncargo.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btncargo.Size = new System.Drawing.Size(230, 40);
+            this.btncargo.Size = new System.Drawing.Size(230, 36);
             this.btncargo.TabIndex = 1;
             this.btncargo.Text = "&Cargo";
             this.btncargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -369,6 +369,18 @@
             this.panelogo.Name = "panelogo";
             this.panelogo.Size = new System.Drawing.Size(230, 68);
             this.panelogo.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logoweb_2_300x76;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // lblrol
             // 
@@ -452,18 +464,6 @@
             this.lblempresa.TabIndex = 1;
             this.lblempresa.Text = "label2";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logoweb_2_300x76;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 68);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -483,9 +483,9 @@
             this.panelmedia2.ResumeLayout(false);
             this.panelsubmenu.ResumeLayout(false);
             this.panelogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelcontent.ResumeLayout(false);
             this.panelcontent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

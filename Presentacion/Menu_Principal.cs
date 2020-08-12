@@ -106,7 +106,7 @@ namespace Presentacion
 
         private void btnmedia_Click(object sender, EventArgs e)
         {
-            showmenu(panelsubmenu);
+            panelsubmenu.Visible = true;
         }
 
         private void btnmedia2_Click(object sender, EventArgs e)
@@ -126,6 +126,13 @@ namespace Presentacion
             ocultarpanel();
         }
 
+<<<<<<< HEAD
         
+=======
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panelsubmenu.Visible = false;
+        }
+>>>>>>> 37756a15a8181a2d239b7034b2e195bab6e06b5d
     }
 }
