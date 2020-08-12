@@ -92,6 +92,7 @@
             this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnreportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreportes.ForeColor = System.Drawing.Color.White;
+            this.btnreportes.Image = global::Presentacion.Properties.Resources.reportes;
             this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnreportes.Location = new System.Drawing.Point(0, 582);
             this.btnreportes.Name = "btnreportes";
@@ -316,6 +317,7 @@
             // 
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.cerrar1;
             this.btncerrar.Location = new System.Drawing.Point(646, 12);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(20, 20);
@@ -328,6 +330,7 @@
             // 
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
             this.btnminimizar.Location = new System.Drawing.Point(594, 12);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(20, 20);
@@ -341,7 +344,8 @@
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
-            this.btnmaximizar.Location = new System.Drawing.Point(620, 12);
+            this.btnmaximizar.Image = global::Presentacion.Properties.Resources.maxi;
+            this.btnmaximizar.Location = new System.Drawing.Point(620, 13);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(20, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -353,6 +357,7 @@
             this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Enabled = false;
+            this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
             this.btnrestaurar.Location = new System.Drawing.Point(620, 12);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(20, 20);
@@ -417,6 +422,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(250, 62);
