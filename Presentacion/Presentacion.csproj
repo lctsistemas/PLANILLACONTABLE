@@ -65,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helps\WindowsMove.cs" />
+    <Compile Include="Main_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_Principal.Designer.cs">
+      <DependentUpon>Main_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <Compile Include="Vista\Usuario.Designer.cs">
       <DependentUpon>Usuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Main_Principal.resx">
+      <DependentUpon>Main_Principal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu_Principal.resx">
       <DependentUpon>Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
