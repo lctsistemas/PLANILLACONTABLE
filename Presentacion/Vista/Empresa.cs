@@ -134,7 +134,7 @@ namespace Presentacion.Vista
                 ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();
                 ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
                 result = ne.SaveChanges();
-                if (result.Contains("CODIGO"))
+                if (result.Contains("¡Codigo"))
                 {
                     Messages.M_error(result);
                 }

@@ -49,7 +49,7 @@ namespace Negocio.Models
                 de.Domicilio = domicilio;
                 de.Ruc = ruc;
                 de.Regimen = regimen;
-                de.Localidad = localidad;
+                de.Localidad = localidad;                
 
                 de.Ecodigo_empresa = ecodigo_empresa;
                 de.Eidusuario = eidusuario;

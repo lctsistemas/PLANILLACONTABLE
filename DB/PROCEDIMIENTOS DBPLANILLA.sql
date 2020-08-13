@@ -251,7 +251,7 @@ WHERE e.eliminado_estado='NO ANULADO'
 )
 go
 
-ALTER proc SP_SHOW_EMP_DNI
+CREATE proc SP_SHOW_EMP_DNI
 @codigo_empresa int,
 @search varchar(20),
 @nom varchar(50)
@@ -259,62 +259,63 @@ AS BEGIN
 	select * from vista_empleado where id_em_maestra=@codigo_empresa and numero_documento like @search +'%' and
 	nombre_empleado like @nom +'%'
 END
-
+GO
 
 EXEC SP_SHOW_EMP_DNI 3,'','juan'
 
 GO
 ----and e.id_em_maestra=@codigo_empresa
 /*     EMPRESA AND SUCURSAL      */
-alter PROC SP_INSERT_EMPRESA_MAESTRA
+ALTER PROC SP_INSERT_EMPRESA_MAESTRA
 @razon_social varchar(50),
 @direccion nvarchar(250),
 @domicilio nvarchar(250),
 @ruc char(11),
 @regimen varchar(80),
-@localidad varchar(50) 
-AS BEGIN
-INSERT INTO dbo.Empresa_maestra(razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
-VALUES(@razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
-END
-GO
-
-CREATE PROC SP_EMPRESA
-@cod_empresa varchar(8),
-@id_usuario int,
+@localidad varchar(50),
+@cod_empresa_validar varchar(50),
 @mesage varchar(100) output
 AS BEGIN
-IF(EXISTS(SELECT e.codigo_empresa FROM dbo.Empresa e WHERE e.codigo_empresa=@cod_empresa))
+IF(EXISTS(SELECT codigo_empresa FROM Empresa WHERE codigo_empresa=@cod_empresa_validar))
 	BEGIN
-		SET @mesage='CODIGO YA EXISTE'
+		set @mesage='¡Codigo Empresa Ya Exite!'
+	END
+ELSE IF(EXISTS(SELECT codigo_sucursal FROM Sucursal WHERE codigo_sucursal=@cod_empresa_validar))
+	BEGIN
+		set @mesage='¡Codigo Sucursal Ya Exite!'
 	END
 ELSE
 	BEGIN
-		INSERT INTO dbo.Empresa(codigo_empresa,id_em_maestra,id_usuario)VALUES
-		(@cod_empresa,(SELECT TOP(1)id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_usuario)
-		SET @mesage='¡GUARDADO CORRECTAMENTE!'
+		INSERT INTO dbo.Empresa_maestra(razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
+		VALUES(@razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
+		set @mesage='¡Registro Exitosamente!'
 	END
+END
+GO
+
+select * from Empresa_maestra order by id_em_maestra desc
+select * from Sucursal order by id_sucursal desc
+
+CREATE PROC SP_INSERT_EMPRESA
+@cod_empresa varchar(8),
+@id_usuario int
+AS BEGIN
+INSERT INTO dbo.Empresa(codigo_empresa,id_em_maestra,id_usuario)VALUES
+(@cod_empresa,(SELECT TOP(1)id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_usuario)		
 END
 GO
 
 --INSERT SUCURSAL
-CREATE PROC SP_SUCURSAL
+CREATE PROC SP_INSERT_SUCURSAL
 @cod_sucursal varchar(8),
-@id_empresa int,
-@mesage varchar(100) output
+@id_empresa int
 AS BEGIN
-IF(EXISTS(SELECT S.codigo_sucursal FROM Sucursal s WHERE S.codigo_sucursal=@cod_sucursal))
-	BEGIN
-		SET @mesage='CODIGO YA EXITE'
-	END
-ELSE
-	BEGIN
-		INSERT INTO dbo.Sucursal(codigo_sucursal,id_em_maestra,id_empresa)VALUES
-		(@cod_sucursal,(SELECT TOP(1) id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_empresa)
-		SET @mesage='¡SUCCESSFULLY RECORD!'
-	END
+INSERT INTO dbo.Sucursal(codigo_sucursal,id_em_maestra,id_empresa)VALUES
+(@cod_sucursal,(SELECT TOP(1) id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_empresa)		
 END
 GO
+
+--DROP PROCEDURE SP_EMPRESA
 
 --UPDATE EMPRESA MAESTRA
 CREATE PROC SP_UPDATE_EMPRESAMAESTRA
@@ -352,7 +353,7 @@ UPDATE dbo.Sucursal SET codigo_sucursal=@cod_sucursal, id_empresa=@id_empresa
 WHERE id_em_maestra=@id_emmaestra
 END
 GO
-select * from sucursal s join Empresa_maestra e on e.id_em_maestra=s.id_em_maestra
+
 --REMOVE EMPRESA MAESTRA
 CREATE PROC SP_REMOVE_EMPRESA
 @id_maestra int,

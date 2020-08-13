@@ -28,22 +28,23 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@ruc", SqlDbType.Char, 11).Value = entiti.Ruc;
                     cmd.Parameters.Add("@regimen", SqlDbType.VarChar, 50).Value = entiti.Regimen;
                     cmd.Parameters.Add("@localidad", SqlDbType.VarChar, 50).Value = entiti.Localidad;
+                    cmd.Parameters.Add("@cod_empresa_validar", SqlDbType.VarChar, 50).Value = entiti.Scodigo_sucursal;
+                    cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
 
                     using (SqlCommand cmd1 = new SqlCommand())
                     {
                         cmd1.Connection = conn;
-                        cmd1.CommandText = "SP_SUCURSAL";
+                        cmd1.CommandText = "SP_INSERT_SUCURSAL";
                         cmd1.CommandType = CommandType.StoredProcedure;
 
                         cmd1.Parameters.Add("@cod_sucursal", SqlDbType.VarChar, 8).Value = entiti.Scodigo_sucursal;
-                        cmd1.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Sid_empresa;
-                        cmd1.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                        cmd1.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Sid_empresa;                        
                         result = cmd.ExecuteNonQuery();
+                        entiti.mesages = cmd.Parameters["@mesage"].Value.ToString();
 
                         if (result > 0)
                         {
-                            result = cmd1.ExecuteNonQuery();
-                            entiti.mesages = cmd1.Parameters["@mesage"].Value.ToString();
+                            result = cmd1.ExecuteNonQuery();                            
                         }
                         cmd.Parameters.Clear();
                         cmd1.Parameters.Clear();

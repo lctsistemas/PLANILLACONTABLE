@@ -129,7 +129,7 @@ namespace Presentacion.Vista
                 nsu.scodigo_sucursal = txtcodigo_sucursal.Text.Trim().ToUpper();
                 nsu.sidempresa = Convert.ToInt32(txtidempresa.Text.Trim());
                 result = nsu.SaveChanges();
-                if (result.Contains("CODIGO"))
+                if (result.Contains("¡Codigo"))
                 {
                     Messages.M_error(result);
                 }

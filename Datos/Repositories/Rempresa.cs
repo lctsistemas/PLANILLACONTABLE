@@ -33,32 +33,28 @@ namespace Datos.Repositories
                         cmd.Parameters.Add("@ruc", SqlDbType.Char, 11).Value = entiti.Ruc;
                         cmd.Parameters.Add("@regimen", SqlDbType.VarChar, 50).Value = entiti.Regimen;
                         cmd.Parameters.Add("@localidad", SqlDbType.VarChar, 50).Value = entiti.Localidad;
-
+                        cmd.Parameters.Add("@cod_empresa_validar", SqlDbType.VarChar, 50).Value = entiti.Ecodigo_empresa;
+                        cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                         using (SqlCommand cmd1 = new SqlCommand())
                         {
                             cmd1.Connection = conn;
-                            cmd1.CommandText = "SP_EMPRESA";
+                            cmd1.CommandText = "SP_INSERT_EMPRESA";
                             cmd1.CommandType = CommandType.StoredProcedure;
 
                             cmd1.Parameters.Add("@cod_empresa", SqlDbType.VarChar, 8).Value = entiti.Ecodigo_empresa;
                             cmd1.Parameters.Add("@id_usuario", SqlDbType.Int).Value = entiti.Eidusuario;
-                            cmd1.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                             result = cmd.ExecuteNonQuery();
+                            entiti.mesages = cmd.Parameters["@mesage"].Value.ToString();
 
                             if (result > 0)
                             {
-                                result = cmd1.ExecuteNonQuery();
-                                entiti.mesages = cmd1.Parameters["@mesage"].Value.ToString();
+                                result = cmd1.ExecuteNonQuery();                               
                             }
-
-
                             cmd.Parameters.Clear();
                             cmd1.Parameters.Clear();
                         }
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
