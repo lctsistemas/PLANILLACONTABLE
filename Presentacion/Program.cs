@@ -18,7 +18,7 @@ namespace Presentacion
             Application.SetCompatibleTextRenderingDefault(false);
 
            
-            Application.Run(new Main_Principal());
+            Application.Run(new frminicio());
 
         }
     }

@@ -261,6 +261,18 @@ AS BEGIN
 END
 GO
 
+CREATE FUNCTION FUN_SHOW_DNI(@codigo_empresa int, @search varchar(20),@nom varchar(50))
+RETURNS varchar(20)
+begin 
+	declare @resultado decimal(10,2)
+		set @resultado=(@valor1+@valor2)/2.0
+	return @resultado
+end
+
+select dbo.FUN_SHOW_DNI(5,6) as promedio
+
+go
+
 EXEC SP_SHOW_EMP_DNI 3,'','juan'
 
 GO

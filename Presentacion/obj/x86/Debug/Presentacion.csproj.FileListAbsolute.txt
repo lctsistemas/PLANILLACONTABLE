@@ -232,3 +232,4 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Playe
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\PlayerUI.Form1.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Main_Principal.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\PlayerUI.Form1.resources
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Main_Principal.resources
