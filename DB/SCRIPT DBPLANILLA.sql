@@ -207,6 +207,24 @@ id_meses int not null,
 tipo_falta varchar
 )
 
+CREATE TABLE cts(
+id_cts int identity(1,1),
+id_periodo int not null,
+f_inicial date,
+f_final date,
+f_pago date
+)
+
+CREATE TABLE Gratificaciones(
+id_grati int identity(1,1),
+id_periodo int not null,
+f_inicial date,
+f_final date,
+f_pago date
+)
+
+
+
 CREATE TABLE cts_manto(
 id_cts_manto int identity(1,1),
 id_meses int not null,
