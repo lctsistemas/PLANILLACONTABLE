@@ -58,43 +58,41 @@ namespace Presentacion
         private void btndoc_Click(object sender, EventArgs e)
         {
             openchildform(new frmdocumento());
-            hideSubmenu();
         }
 
         private void btnempresa_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openchildform(new frmempresa());
         }
 
         private void btncargo_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openchildform(new frmcargo());
         }
 
         private void btnsucursal_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openchildform(new frmsucursal());
 
         }
 
         private void btnafp_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openchildform(new frmafp());
         }
 
         private void btnonp_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
         }
 
         private void btnusuario_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openchildform(new frmusuario());
         }
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            hideSubmenu();
+            openchildform(new Empleado());
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -107,35 +105,7 @@ namespace Presentacion
             showSubMenu(panelregistro);
         }
 
-        private void btnrestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnrestaurar.Visible = true;
-            btnmaximizar.Visible = false;
-        }
-
-        private void btnminimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void btnmaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnrestaurar.Visible = true;
-            btnmaximizar.Visible = false;
-        }
-
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+      
 
         private Form activeForm = null;
         private void openchildform(Form chilform)
@@ -143,6 +113,7 @@ namespace Presentacion
             if (activeForm != null)
             {
                 activeForm.Close();
+            }
                 activeForm = chilform;
                 chilform.TopLevel = false;
                 chilform.FormBorderStyle = FormBorderStyle.None;
@@ -152,7 +123,48 @@ namespace Presentacion
                 chilform.BringToFront();
                 chilform.Show();
 
-            }
+            
+        }
+
+        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnmini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncerrar2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+            
+        }
+
+        private void btnmaxi_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnrestaurar.Visible = true;
+            btnmaximizar.Visible = false;
+        }
+
+        private void btnres_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = true;
+            btnmaximizar.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openchildform(new Banco());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openchildform(new TipoContrato());
         }
     }
 }
