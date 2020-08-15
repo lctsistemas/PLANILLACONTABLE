@@ -293,8 +293,6 @@ ELSE
 END
 GO
 
-select * from Empresa_maestra order by id_em_maestra desc
-select * from Sucursal order by id_sucursal desc
 
 CREATE PROC SP_INSERT_EMPRESA
 @cod_empresa varchar(8),
@@ -562,7 +560,7 @@ ELSE
 END
 GO
 
-alter PROC SP_GENERAR_BANCO
+CREATE PROC SP_GENERAR_BANCO
 (@Banco int output)
 AS BEGIN
 SET @Banco=(SELECT count(b.id_banco) FROM Banco b)
@@ -687,7 +685,7 @@ GO
 
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
-alter PROC SP_INSERT_BANCO(
+CREATE PROC SP_INSERT_BANCO(
 @id_banco int,
 @nombre_banco varchar(25),
 @mensaje varchar(100) output
@@ -698,7 +696,6 @@ AS BEGIN
 END
 GO
 
-sp_insert_banco 6,'gnb'
 
 --PROCEDIMENTO PARA ACTUALIZAR BANCO
 CREATE PROC SP_UPDATE_BANCO(
@@ -731,7 +728,7 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
-alter PROC SP_SHOW_BANCO(
+CREATE PROC SP_SHOW_BANCO(
 @search varchar(50)
 )
 AS BEGIN 

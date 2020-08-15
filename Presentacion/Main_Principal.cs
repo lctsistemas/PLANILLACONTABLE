@@ -92,7 +92,7 @@ namespace Presentacion
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            openchildform(new Empleado());
+            openchildform(new frmempleado());
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)

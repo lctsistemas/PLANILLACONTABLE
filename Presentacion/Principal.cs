@@ -153,7 +153,7 @@ namespace Presentacion
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            openchilform(new Empleado());
+            openchilform(new frmempleado());
         }
     }
 }
