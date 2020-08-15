@@ -174,6 +174,92 @@ alter table Contrato add  remuneracion_basica money not null
 
 GO
 
+--Meses_maestra
+CREATE TABLE Meses_maestra(
+id_meses_maestra int identity(1,1),
+id_periodo int not null,
+Enero decimal(10,2),
+Febrero decimal(10,2),
+Marzo decimal(10,2),
+Abril decimal(10,2),
+Mayo decimal(10,2),
+Junio decimal(10,2),
+Julio decimal(10,2),
+Agosto decimal(10,2),
+Septiembre decimal(10,2),
+Octubre decimal(10,2),
+Noviembre decimal(10,2),
+Diciembre decimal(10,2),
+num_meses int,
+num_dias int
+)
+
+CREATE TABLE Grati_manto(
+id_grati int identity(1,1),
+id_meses int not null,
+remuneracion decimal(10,2),
+bonificacion decimal(10,2)
+)
+
+CREATE TABLE Faltas(
+id_falta int identity(1,1),
+id_meses int not null,
+tipo_falta varchar
+)
+
+CREATE TABLE cts(
+id_cts int identity(1,1),
+id_periodo int not null,
+f_inicial date,
+f_final date,
+f_pago date
+)
+
+CREATE TABLE Gratificaciones(
+id_grati int identity(1,1),
+id_periodo int not null,
+f_inicial date,
+f_final date,
+f_pago date
+)
+
+
+
+CREATE TABLE cts_manto(
+id_cts_manto int identity(1,1),
+id_meses int not null,
+id_periodo int not null
+)
+
+CREATE TABLE Descuentos(
+id_descuentos int identity(1,1),
+prestamos decimal(10,2),
+renta_quinta decimal(10,2),
+desc_judicial decimal(10,2),
+otros_descuentos decimal(10,2)
+)
+
+CREATE TABLE Periodo(
+id_periodo int identity(1,1),
+id_empresa int not null,
+periodo int not null,
+id_meses int not null
+)
+
+--PRIMARY KEY
+alter table Grati_manto ADD CONSTRAINT Pk_id_grati_manto PRIMARY KEY(id_grati)
+alter table Meses_maestra ADD CONSTRAINT pk_id_meses_m PRIMARY KEY(id_meses_maestra)
+alter table Faltas ADD CONSTRAINT pk_id_falta PRIMARY KEY(id_falta)
+alter table cts_manto ADD CONSTRAINT pk_cts_manto PRIMARY KEY(id_cts_manto)
+alter table Descuentos ADD CONSTRAINT pk_id_desc PRIMARY KEY(id_descuentos)
+alter table Periodo ADD CONSTRAINT pk_id_periodo PRIMARY KEY(id_periodo)
+
+--FOREIGN KEY 
+ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
+ALTER TABLE Faltas ADD CONSTRAINT FK_id_MesFalta FOREIGN KEY(id_meses)REFERENCES Meses_maestra
+ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCES Meses_maestra
+
+
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL
 	--PRIMARY KEY
