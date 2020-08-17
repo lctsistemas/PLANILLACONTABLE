@@ -97,6 +97,8 @@ namespace Presentacion.Vista
         {
             btncerrar.BackColor = Color.FromArgb(205, 97, 85);
         }
+
+        
     }
 
 }

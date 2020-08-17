@@ -1,6 +1,7 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 namespace Datos.Repositories
@@ -8,6 +9,7 @@ namespace Datos.Repositories
     public class Rcargo : IRepository
     {
         Int32 result = 0;
+
         public int Add(Dcargo entiti)
         {
             result = 0;
@@ -99,10 +101,7 @@ namespace Datos.Repositories
                         cmd.Parameters.Clear();
                         return dt;
                     }
-
-
                 }
-
             }
         }
     }

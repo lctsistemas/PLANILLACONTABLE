@@ -82,5 +82,15 @@ namespace Presentacion.Subvista
         {
             Vista_user(txtbuscar.Text.Trim());
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmvista_usuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

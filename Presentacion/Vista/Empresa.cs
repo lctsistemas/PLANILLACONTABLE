@@ -159,8 +159,14 @@ namespace Presentacion.Vista
             //TIENE QUE SER OTRA MANERA ESTO.
             frmvista_usuario f_vist = new frmvista_usuario();
             this.AddOwnedForm(f_vist);
-            f_vist.StartPosition = FormStartPosition.CenterParent;
-            f_vist.ShowDialog();
+           f_vist.FormBorderStyle = FormBorderStyle.None;
+            f_vist.TopLevel = false;//como ventana nivel superior
+           f_vist.Dock=DockStyle.Fill;
+            this.Controls.Add(f_vist);
+            this.Tag = f_vist;//datos sobre el control
+            f_vist.BringToFront();
+            //f_vist.StartPosition = FormStartPosition.CenterParent;
+            f_vist.Show();
 
         }
 
