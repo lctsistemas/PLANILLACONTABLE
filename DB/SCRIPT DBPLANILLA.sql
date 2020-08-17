@@ -173,7 +173,11 @@ GO
 
 --Meses_maestra
 CREATE TABLE Meses_maestra(
+<<<<<<< HEAD
 id_meses_maestra int,
+=======
+id_meses_maestra int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_periodo int not null,
 Enero decimal(10,2) null,
 Febrero decimal(10,2)null,
@@ -192,7 +196,11 @@ num_dias int null
 )
 --drop table Meses_maestra
 CREATE TABLE Grati_manto(
+<<<<<<< HEAD
 id_grati int,
+=======
+id_grati int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_meses int not null,
 remuneracion decimal(10,2),
 bonificacion decimal(10,2)
@@ -200,13 +208,21 @@ bonificacion decimal(10,2)
 
 drop table Grati_manto
 CREATE TABLE Faltas(
+<<<<<<< HEAD
 id_falta int,
+=======
+id_falta int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_meses int not null,
 tipo_falta varchar(100)
 )
 
 CREATE TABLE cts(
+<<<<<<< HEAD
 id_cts int,
+=======
+id_cts int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_periodo int not null,
 f_inicial date,
 f_final date,
@@ -214,7 +230,11 @@ f_pago date
 )
 
 CREATE TABLE Gratificaciones(
+<<<<<<< HEAD
 id_grati int,
+=======
+id_grati int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_periodo int not null,
 f_inicial date,
 f_final date,
@@ -222,13 +242,21 @@ f_pago date
 )
 
 CREATE TABLE cts_manto(
+<<<<<<< HEAD
 id_cts_manto int,
+=======
+id_cts_manto int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_meses int not null,
 id_periodo int not null
 )
 
 CREATE TABLE Descuentos(
+<<<<<<< HEAD
 id_descuentos int,
+=======
+id_descuentos int not null,
+>>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 prestamos decimal(10,2),
 renta_quinta decimal(10,2),
 desc_judicial decimal(10,2),
@@ -236,12 +264,17 @@ otros_descuentos decimal(10,2)
 )
 
 CREATE TABLE Periodo(
-id_periodo int identity(1,1),
+id_periodo int not null,
 id_empresa int not null,
 periodo int not null,
-id_meses int not null
+id_meses int not null,
+id_mes int not null
 )
 
+CREATE TABLE Mes(
+id_mes int not null,
+nombre_mes varchar(20) not null
+)
 --PRIMARY KEY
 alter table Grati_manto ADD CONSTRAINT Pk_id_grati_manto PRIMARY KEY(id_grati)
 alter table Meses_maestra ADD CONSTRAINT pk_id_meses_m PRIMARY KEY(id_meses_maestra)
@@ -249,12 +282,14 @@ alter table Faltas ADD CONSTRAINT pk_id_falta PRIMARY KEY(id_falta)
 alter table cts_manto ADD CONSTRAINT pk_cts_manto PRIMARY KEY(id_cts_manto)
 alter table Descuentos ADD CONSTRAINT pk_id_desc PRIMARY KEY(id_descuentos)
 alter table Periodo ADD CONSTRAINT pk_id_periodo PRIMARY KEY(id_periodo)
+alter table Mes ADD CONSTRAINT pk_id_mes PRIMARY KEY(id_mes)
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
 ALTER TABLE Faltas ADD CONSTRAINT FK_id_MesFalta FOREIGN KEY(id_meses)REFERENCES Meses_maestra
 ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCES Meses_maestra
-
+ALTER TABLE Periodo ADD CONSTRAINT fk_id_MesPeriodo FOREIGN KEY(id_meses) REFERENCES Meses_maestra
+ALTER TABLE Periodo ADD CONSTRAINT fk_id_mesper FOREIGN KEY(id_mes) REFERENCES Mes
 
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL

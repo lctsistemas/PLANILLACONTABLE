@@ -139,7 +139,7 @@ namespace Presentacion
 
         private void btncerrar2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
             
         }
 
