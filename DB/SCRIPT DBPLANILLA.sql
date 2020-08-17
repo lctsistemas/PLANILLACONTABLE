@@ -25,8 +25,6 @@ eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado i
 )
 GO
 
-DELETE FROM BANCO;
-
 --TABLA: CARGO
 CREATE TABLE Cargo(
 id_cargo int identity(1,1),
@@ -91,7 +89,7 @@ regimen varchar(80) not null,
 estado_eliminado varchar(15) not null
 )
 GO
-alter table Empresa_maestra alter column regimen varchar(80) not null
+--alter table Empresa_maestra alter column regimen varchar(80) not null
 
 CREATE TABLE Empresa(
 id_empresa int identity(1,1),
@@ -171,44 +169,44 @@ go
 alter table Contrato alter column descuento money 
 alter table Contrato add  asignacion_familiar money default 0.00 
 alter table Contrato add  remuneracion_basica money not null
-
 GO
 
 --Meses_maestra
 CREATE TABLE Meses_maestra(
-id_meses_maestra int identity(1,1),
+id_meses_maestra int,
 id_periodo int not null,
-Enero decimal(10,2),
-Febrero decimal(10,2),
-Marzo decimal(10,2),
-Abril decimal(10,2),
-Mayo decimal(10,2),
-Junio decimal(10,2),
-Julio decimal(10,2),
-Agosto decimal(10,2),
-Septiembre decimal(10,2),
-Octubre decimal(10,2),
-Noviembre decimal(10,2),
-Diciembre decimal(10,2),
-num_meses int,
-num_dias int
+Enero decimal(10,2) null,
+Febrero decimal(10,2)null,
+Marzo decimal(10,2)null,
+Abril decimal(10,2)null,
+Mayo decimal(10,2)null,
+Junio decimal(10,2)null,
+Julio decimal(10,2)null,
+Agosto decimal(10,2)null,
+Septiembre decimal(10,2)null,
+Octubre decimal(10,2)null,
+Noviembre decimal(10,2)null,
+Diciembre decimal(10,2)null,
+num_meses int null,
+num_dias int null
 )
-
+--drop table Meses_maestra
 CREATE TABLE Grati_manto(
-id_grati int identity(1,1),
+id_grati int,
 id_meses int not null,
 remuneracion decimal(10,2),
 bonificacion decimal(10,2)
 )
 
+drop table Grati_manto
 CREATE TABLE Faltas(
-id_falta int identity(1,1),
+id_falta int,
 id_meses int not null,
-tipo_falta varchar
+tipo_falta varchar(100)
 )
 
 CREATE TABLE cts(
-id_cts int identity(1,1),
+id_cts int,
 id_periodo int not null,
 f_inicial date,
 f_final date,
@@ -216,23 +214,21 @@ f_pago date
 )
 
 CREATE TABLE Gratificaciones(
-id_grati int identity(1,1),
+id_grati int,
 id_periodo int not null,
 f_inicial date,
 f_final date,
 f_pago date
 )
 
-
-
 CREATE TABLE cts_manto(
-id_cts_manto int identity(1,1),
+id_cts_manto int,
 id_meses int not null,
 id_periodo int not null
 )
 
 CREATE TABLE Descuentos(
-id_descuentos int identity(1,1),
+id_descuentos int,
 prestamos decimal(10,2),
 renta_quinta decimal(10,2),
 desc_judicial decimal(10,2),
@@ -292,8 +288,6 @@ ALTER TABLE Tipo_documento ADD CONSTRAINT PK_tdocumento PRIMARY KEY(id_documento
 ALTER TABLE Afp ADD CONSTRAINT PK_idafp PRIMARY KEY(id_afp)
 	--FOREIGN KEY: EMPLEADO CON  CARGO, TIPO DOCUMENTO, AFP, EMPRESA
 
-
-
 ALTER TABLE Empleado ADD CONSTRAINT FK_EempresaM FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 Alter TABLE	Empleado ADD CONSTRAINT FK_Eidcargo FOREIGN KEY(id_cargo)REFERENCES Cargo
 Alter TABLE	Empleado ADD CONSTRAINT FK_Eiddocumento FOREIGN KEY(id_documento)REFERENCES Tipo_documento
@@ -304,7 +298,6 @@ GO
 ALTER TABLE Contrato ADD CONSTRAINT PK_idcontrato PRIMARY KEY(id_contrato)
 ALTER TABLE Banco ADD CONSTRAINT PK_idbanco PRIMARY KEY(id_banco)
 ALTER TABLE Tipo_Contrato ADD CONSTRAINT PK_id_tipo_contrato PRIMARY KEY(id_tipo_contrato)
-
 
 --FOREIGN KEY CONTRATO CON BANCO, TIPO_CONTRATO, EMPLEADO
 ALTER TABLE Contrato ADD CONSTRAINT FK_Cbanco FOREIGN KEY(id_banco) REFERENCES Banco
