@@ -209,14 +209,21 @@ namespace Presentacion.Vista
             }
         }
 
-        private void btnempresa_Click_1(object sender, EventArgs e)
+        private void btnempresa_Click(object sender, EventArgs e)
         {
-            using (frmvista_empresa f_vist = new frmvista_empresa())
-            {
-                this.AddOwnedForm(f_vist);
-                f_vist.StartPosition = FormStartPosition.CenterParent;
-                f_vist.ShowDialog();
-            }
+            //using (frmvista_empresa f_vist = new frmvista_empresa())
+            //{
+                frmvista_empresa f_vist = new frmvista_empresa();
+                this.AddOwnedForm(f_vist);              
+                f_vist.FormBorderStyle = FormBorderStyle.None;
+                f_vist.TopLevel = false;//como ventana nivel superior
+                f_vist.Dock = DockStyle.Fill;
+                this.Controls.Add(f_vist);
+                this.Tag = f_vist;//datos sobre el control
+                f_vist.BringToFront();
+                //f_vist.StartPosition = FormStartPosition.CenterParent;
+                f_vist.Show();
+            //}
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)

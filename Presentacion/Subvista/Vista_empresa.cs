@@ -2,6 +2,7 @@
 using Presentacion.Helps;
 using Presentacion.Vista;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Subvista
@@ -49,7 +50,7 @@ namespace Presentacion.Subvista
             dgvvista_emp.Columns[4].Visible = false;
 
             dgvvista_emp.Columns[5].HeaderText = "CODIGO EMPRESA";
-            dgvvista_emp.Columns[5].Width = 65;
+            dgvvista_emp.Columns[5].Width = 80;
 
             dgvvista_emp.Columns[6].HeaderText = "RAZON SOCIAL";
             dgvvista_emp.Columns[6].Width = 350;
@@ -84,6 +85,7 @@ namespace Presentacion.Subvista
         private void Vista_empresa_Load(object sender, EventArgs e)
         {
             Tooltip.Title(txtbuscar, "Buscar por Empresa",true);
+            txtbuscar.Focus();
         }
 
         private void dgvvista_emp_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -107,6 +109,26 @@ namespace Presentacion.Subvista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             this.Llenar_empresa(txtbuscar.Text.Trim());
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmvista_empresa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Transparent;
         }
     }
 }

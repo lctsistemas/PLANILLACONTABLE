@@ -215,7 +215,7 @@
             resources.ApplyResources(this.btnempresa, "btnempresa");
             this.btnempresa.Name = "btnempresa";
             this.btnempresa.UseVisualStyleBackColor = true;
-            this.btnempresa.Click += new System.EventHandler(this.btnempresa_Click_1);
+            this.btnempresa.Click += new System.EventHandler(this.btnempresa_Click);
             // 
             // txtregimen
             // 
@@ -358,9 +358,11 @@
             this.dgvsucursal.AllowUserToAddRows = false;
             this.dgvsucursal.AllowUserToDeleteRows = false;
             this.dgvsucursal.AllowUserToOrderColumns = true;
+            this.dgvsucursal.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvsucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvsucursal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvsucursal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
@@ -378,12 +380,12 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvsucursal.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DimGray;
             this.dgvsucursal.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvsucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellDoubleClick);
             // 

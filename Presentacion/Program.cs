@@ -15,9 +15,15 @@ namespace Presentacion
         static void Main()
         {
             Application.EnableVisualStyles();
+<<<<<<< HEAD
             Application.SetCompatibleTextRenderingDefault(false);
            
             Application.Run(new Main_Principal());
+=======
+            Application.SetCompatibleTextRenderingDefault(false);         
+            Application.Run(new frmprincipal());
+
+>>>>>>> a6af058c3fe3d4b96dadbea62cddc5fbab151bce
         }
     }
 }

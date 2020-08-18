@@ -2,8 +2,7 @@
 using Presentacion.Helps;
 using Presentacion.Vista;
 using System;
-
-
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Subvista
@@ -61,6 +60,7 @@ namespace Presentacion.Subvista
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
             Tooltip.Title(txtbuscar, "Buscar por Nombre Usuario",true);
+            txtbuscar.Focus();
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -81,16 +81,26 @@ namespace Presentacion.Subvista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             Vista_user(txtbuscar.Text.Trim());
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        }        
 
         private void frmvista_usuario_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Transparent;
         }
     }
 }
