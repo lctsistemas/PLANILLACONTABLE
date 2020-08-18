@@ -40,17 +40,22 @@ descripcion nvarchar(100) null
 )
 GO
 CREATE TABLE RegimenPensionario(
-
+codigo_regimen int not null,
+decripcion_corta varchar(30) null,
+descripcion varchar(100) not null,
+tipo_regimen varchar(30)not null
 )
+
 --TABLA: AFP
 CREATE TABLE ComisionAfp(
 id_afp int identity(1,1),
-nombre_afp varchar(30) not null,
+codigo_regimen int not null,
 comision decimal(4,2)not null,
-comision_anual decimal(4,2)not null,
-prima_seguros decimal(4,2)not null,
-aportes_fondo_pensiones decimal(4,2)not null,
-remu_maxi_asegurable decimal(8,2)           
+flujo decimal(4,2)not null,
+saldo decimal(4,2)not null,
+seguro decimal(4,2)not null,
+aporte decimal(4,2)not null,
+tope  decimal(8,2)not null
 )
 GO
 
@@ -221,7 +226,7 @@ f_pago date
 )
 
 CREATE TABLE cts_manto(
-id_cts_manto int,
+id_cts_manto int not null,
 id_meses int not null,
 id_periodo int not null
 )
@@ -246,23 +251,48 @@ CREATE TABLE Mes(
 id_mes int not null,
 nombre_mes varchar(20) not null
 )
+
 GO
+
+CREATE TABLE Planilla(
+id_planilla int not null,
+id_tipo_planilla int not null,
+id_periodo int not null,
+fecha_pago date,
+dias_mes int,
+horas_mes int,
+remu_basica decimal(10,2),
+asig_familiar decimal(10,2),
+tope_horario_nocturno int
+)
+
+CREATE TABLE tipo_planilla(
+id_tipo_planilla int not null,
+nombre_planilla varchar(30) 
+)
 
 --PRIMARY KEY
 alter table Grati_manto ADD CONSTRAINT Pk_id_grati_manto PRIMARY KEY(id_grati)
 alter table Meses_maestra ADD CONSTRAINT pk_id_meses_m PRIMARY KEY(id_meses_maestra)
 alter table Faltas ADD CONSTRAINT pk_id_falta PRIMARY KEY(id_falta)
+alter table cts ADD CONSTRAINT pk_id_cts PRIMARY KEY(id_cts)
+alter table Gratificaciones ADD CONSTRAINT pk_id_grati PRIMARY KEY(id_grati)
 alter table cts_manto ADD CONSTRAINT pk_cts_manto PRIMARY KEY(id_cts_manto)
 alter table Descuentos ADD CONSTRAINT pk_id_desc PRIMARY KEY(id_descuentos)
 alter table Periodo ADD CONSTRAINT pk_id_periodo PRIMARY KEY(id_periodo)
 alter table Mes ADD CONSTRAINT pk_id_mes PRIMARY KEY(id_mes)
+alter table Planilla ADD CONSTRAINT pk_id_planilla PRIMARY KEY(id_planilla)
+alter table tipo_planilla ADD CONSTRAINT pk_idTipo_planilla PRIMARY KEY(id_tipo_planilla)
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
 ALTER TABLE Faltas ADD CONSTRAINT FK_id_MesFalta FOREIGN KEY(id_meses)REFERENCES Meses_maestra
+ALTER TABLE cts ADD CONSTRAINT FK_id_PerCts FOREIGN KEY(id_periodo)REFERENCES Periodo
+ALTER TABLE Gratificaciones ADD CONSTRAINT FK_id_PerGrati FOREIGN KEY(id_periodo)REFERENCES Periodo
 ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCES Meses_maestra
 ALTER TABLE Periodo ADD CONSTRAINT fk_id_MesPeriodo FOREIGN KEY(id_meses) REFERENCES Meses_maestra
 ALTER TABLE Periodo ADD CONSTRAINT fk_id_mesper FOREIGN KEY(id_mes) REFERENCES Mes
+ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_planilla) REFERENCES tipo_planilla
 
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL
