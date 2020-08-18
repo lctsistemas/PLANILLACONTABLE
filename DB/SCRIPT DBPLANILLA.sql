@@ -39,19 +39,28 @@ nombre varchar(50) not null,
 descripcion nvarchar(100) null
 )
 GO
+CREATE TABLE RegimenPensionario(
+codigo_regimen int not null,
+decripcion_corta varchar(30) null,
+descripcion varchar(100) not null,
+tipo_regimen varchar(30)not null
+)
 
 --TABLA: AFP
-CREATE TABLE Afp(
+CREATE TABLE ComisionAfp(
 id_afp int identity(1,1),
-nombre_afp varchar(30) not null,
+codigo_regimen int not null,
 comision decimal(4,2)not null,
-comision_anual decimal(4,2)not null,
-prima_seguros decimal(4,2)not null,
-aportes_fondo_pensiones decimal(4,2)not null,
-remu_maxi_asegurable decimal(8,2)           
+flujo decimal(4,2)not null,
+saldo decimal(4,2)not null,
+seguro decimal(4,2)not null,
+aporte decimal(4,2)not null,
+tope  decimal(8,2)not null
 )
 GO
 
+DROP TABLE Afp
+GO
 INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
 VALUES('HABITAT FLUJO',1.47,1.25,1.35,10.0,9707.03)
 
@@ -166,10 +175,6 @@ estado varchar(30) check(estado in ('ANULADO','NO ANULADO'))
 )
 go
 
-alter table Contrato alter column descuento money 
-alter table Contrato add  asignacion_familiar money default 0.00 
-alter table Contrato add  remuneracion_basica money not null
-GO
 
 --Meses_maestra
 CREATE TABLE Meses_maestra(
@@ -198,7 +203,6 @@ remuneracion decimal(10,2),
 bonificacion decimal(10,2)
 )
 
-drop table Grati_manto
 CREATE TABLE Faltas(
 id_falta int not null,
 id_meses int not null,
@@ -247,6 +251,8 @@ CREATE TABLE Mes(
 id_mes int not null,
 nombre_mes varchar(20) not null
 )
+
+GO
 
 CREATE TABLE Planilla(
 id_planilla int not null,
