@@ -39,9 +39,11 @@ nombre varchar(50) not null,
 descripcion nvarchar(100) null
 )
 GO
+CREATE TABLE RegimenPensionario(
 
+)
 --TABLA: AFP
-CREATE TABLE Afp(
+CREATE TABLE ComisionAfp(
 id_afp int identity(1,1),
 nombre_afp varchar(30) not null,
 comision decimal(4,2)not null,
@@ -52,6 +54,8 @@ remu_maxi_asegurable decimal(8,2)
 )
 GO
 
+DROP TABLE Afp
+GO
 INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
 VALUES('HABITAT FLUJO',1.47,1.25,1.35,10.0,9707.03)
 
@@ -166,18 +170,10 @@ estado varchar(30) check(estado in ('ANULADO','NO ANULADO'))
 )
 go
 
-alter table Contrato alter column descuento money 
-alter table Contrato add  asignacion_familiar money default 0.00 
-alter table Contrato add  remuneracion_basica money not null
-GO
 
 --Meses_maestra
 CREATE TABLE Meses_maestra(
-<<<<<<< HEAD
-id_meses_maestra int,
-=======
 id_meses_maestra int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_periodo int not null,
 Enero decimal(10,2) null,
 Febrero decimal(10,2)null,
@@ -196,33 +192,20 @@ num_dias int null
 )
 --drop table Meses_maestra
 CREATE TABLE Grati_manto(
-<<<<<<< HEAD
-id_grati int,
-=======
 id_grati int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_meses int not null,
 remuneracion decimal(10,2),
 bonificacion decimal(10,2)
 )
 
-drop table Grati_manto
 CREATE TABLE Faltas(
-<<<<<<< HEAD
-id_falta int,
-=======
 id_falta int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_meses int not null,
 tipo_falta varchar(100)
 )
 
 CREATE TABLE cts(
-<<<<<<< HEAD
-id_cts int,
-=======
 id_cts int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_periodo int not null,
 f_inicial date,
 f_final date,
@@ -230,11 +213,7 @@ f_pago date
 )
 
 CREATE TABLE Gratificaciones(
-<<<<<<< HEAD
-id_grati int,
-=======
 id_grati int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_periodo int not null,
 f_inicial date,
 f_final date,
@@ -242,21 +221,13 @@ f_pago date
 )
 
 CREATE TABLE cts_manto(
-<<<<<<< HEAD
 id_cts_manto int,
-=======
-id_cts_manto int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 id_meses int not null,
 id_periodo int not null
 )
 
 CREATE TABLE Descuentos(
-<<<<<<< HEAD
-id_descuentos int,
-=======
 id_descuentos int not null,
->>>>>>> e2c7c0e5ddaca8ef63baf584e348423a05a8cf86
 prestamos decimal(10,2),
 renta_quinta decimal(10,2),
 desc_judicial decimal(10,2),
@@ -275,6 +246,8 @@ CREATE TABLE Mes(
 id_mes int not null,
 nombre_mes varchar(20) not null
 )
+GO
+
 --PRIMARY KEY
 alter table Grati_manto ADD CONSTRAINT Pk_id_grati_manto PRIMARY KEY(id_grati)
 alter table Meses_maestra ADD CONSTRAINT pk_id_meses_m PRIMARY KEY(id_meses_maestra)
