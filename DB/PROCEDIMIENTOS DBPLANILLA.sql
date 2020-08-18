@@ -261,15 +261,14 @@ AS BEGIN
 END
 GO
 
-CREATE FUNCTION FUN_SHOW_DNI(@codigo_empresa int, @search varchar(20),@nom varchar(50))
+create FUNCTION FUN_SHOW_DNI(@codigo_empresa int, @search varchar(20),@nom varchar(50))
 RETURNS varchar(20)
 begin 
-	declare @resultado decimal(10,2)
-		set @resultado=(@valor1+@valor2)/2.0
-	return @resultado
+	 
+	return (select nombre_empleado from vista_empleado)
 end
 
-select dbo.FUN_SHOW_DNI(5,6) as promedio
+select dbo.FUN_SHOW_DNI (3,'','juan')
 
 go
 
