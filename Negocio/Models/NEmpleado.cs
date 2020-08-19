@@ -4,6 +4,8 @@ using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 namespace Negocio.Models
 {
@@ -186,5 +188,28 @@ namespace Negocio.Models
             }
 
         }
+
+        public bool ListaEmpleado(List<object> list, NEmpleado entity)
+        {
+            DEmpleado de = new DEmpleado();
+            de.Id_emp_maestra = entity.Id_emp_maestra; 
+            de.Num_doc = entity.Num_doc;
+            de.Nom_emp = entity.Nom_emp;
+            
+            return new REmpleado().ListaEmpleado(list, de);
+        }
+
+        //public List<NEmpleado> GetAll(Int32 entiti, String search, String nombre_empleado)
+        //{
+        //    DEmpleado de = new DEmpleado();
+        //    de.Id_emp_maestra = entiti;
+        //    de.Num_doc = search;
+        //    de.Nom_emp = nombre_empleado;
+
+        //    using (DataTable dt = Rempleado.GetData(de))
+        //    {
+
+        //    }
+        //}
     }
 }

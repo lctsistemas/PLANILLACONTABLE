@@ -255,6 +255,9 @@ namespace Login_inicio
             lblminimizar.BackColor = Color.FromArgb(123, 36, 28);
         }
 
-        
+        private void txtuser_TextChanged(object sender, EventArgs e)
+        {
+            activo = false;
+        }
     }
 }

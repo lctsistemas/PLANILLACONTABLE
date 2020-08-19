@@ -1,8 +1,10 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace Datos.Repositories
 {
@@ -148,6 +150,43 @@ namespace Datos.Repositories
                     }
                 }
             }
+        }
+       
+        public bool ListaEmpleado(List<object> list, DEmpleado entity)
+        {
+            bool valor = false; 
+            using (SqlConnection cn = RConexion.Getconectar())
+            {
+                cn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cn;
+                    cmd.CommandText = "SP_SHOW_EMP_DNI";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entity.Id_emp_maestra;
+                    cmd.Parameters.Add("@dni", SqlDbType.VarChar, 20).Value = entity.Num_doc;
+                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entity.Nom_emp;
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {                       
+                        foreach (var item in reader)
+                            list.Add(item);
+
+                        valor = true;
+                    }
+                    else
+                    {
+                        valor = false;
+                    }
+
+                    reader.Close();
+                }
+
+            }
+            return valor;
         }
     }
 }

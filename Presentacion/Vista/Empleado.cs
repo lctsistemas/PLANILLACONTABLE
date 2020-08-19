@@ -3,6 +3,8 @@ using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -13,6 +15,7 @@ namespace Presentacion.Vista
     {
         String result;
         NEmpleado nEmpleado = new NEmpleado();
+        List<object> list;
         private Int32 codigoemp;
         public frmempleado()
         {
@@ -37,8 +40,8 @@ namespace Presentacion.Vista
 
         private void Tabla()
         {
-            //dgvempleado.Columns[0].HeaderText = "CONTRATO";
-            //dgvempleado.Columns[0].Width = 50;
+            dgvempleado.Columns[0].HeaderText = "CONTRATO";
+            dgvempleado.Columns[0].Width = 50;
             dgvempleado.Columns[0].Visible = false;
 
             dgvempleado.Columns[1].HeaderText = "CODIGO";//codigo empleado
@@ -204,12 +207,17 @@ namespace Presentacion.Vista
         }
         
 
-        private void mostrarEmp(String datos,String nombre)
+        private void mostrarEmp(String numdoc,String nombre)
         {
             using (nEmpleado)
             {
                 //nEmpleado.Nom_emp = datos;
-                dgvempleado.DataSource = nEmpleado.GetData(UserCache.Codigo_empresa, datos, nombre);
+                list = new List<object>();
+                nEmpleado.Id_emp_maestra = UserCache.Codigo_empresa;
+                nEmpleado.Num_doc = numdoc;
+                nEmpleado.Nom_emp = nombre;
+                nEmpleado.ListaEmpleado(list, nEmpleado);
+                dgvempleado.DataSource = list;
                 lblcantidad_registro.Text = "TOTAL REGISTRO:  " + dgvempleado.Rows.Count;
             }
         }
@@ -323,7 +331,7 @@ namespace Presentacion.Vista
             //iniciar el radiobutom en dni
             rddni.Checked = true;
             
-            Tabla();
+            //Tabla();
             Habilitar_afp(false);
             Habilitar(false);
             txtcodigo.Enabled = false;

@@ -251,12 +251,12 @@ WHERE e.eliminado_estado='NO ANULADO'
 )
 go
 
-CREATE proc SP_SHOW_EMP_DNI
+alter proc SP_SHOW_EMP_DNI
 @codigo_empresa int,
-@search varchar(20),
+@dni varchar(20),
 @nom varchar(50)
 AS BEGIN
-	select * from vista_empleado where id_em_maestra=@codigo_empresa and numero_documento like @search +'%' and
+	select * from vista_empleado where id_em_maestra=@codigo_empresa and numero_documento like @dni +'%' and
 	nombre_empleado like @nom +'%'
 END
 GO
@@ -314,6 +314,7 @@ INSERT INTO dbo.Empresa(codigo_empresa,id_em_maestra,id_usuario)VALUES
 END
 GO
 
+
 --INSERT SUCURSAL
 CREATE PROC SP_INSERT_SUCURSAL
 @cod_sucursal varchar(8),
@@ -324,7 +325,7 @@ INSERT INTO dbo.Sucursal(codigo_sucursal,id_em_maestra,id_empresa)VALUES
 END
 GO
 
---DROP PROCEDURE SP_EMPRESA
+--DROP PROCEDURE SP_SUCURSAL
 
 --UPDATE EMPRESA MAESTRA
 CREATE PROC SP_UPDATE_EMPRESAMAESTRA
@@ -881,9 +882,12 @@ e.id_em_maestra AS [codigo_empresa],
 (SELECT ema.localidad FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS [LOCALIDAD_EMPRESA],
 em.razon_social AS SUCURSAL,s.id_em_maestra AS[codigo_sucursal], em.localidad AS [LOCALIDAD_SUCURSAL]
 FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maestra  right join 
-dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
+dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario= 3  @codigo_user
 END
 GO
 
 select * from Contrato
 select * from Usuario
+Select * from Empresa_maestra
+select * from Empresa
+select * from Sucursal
