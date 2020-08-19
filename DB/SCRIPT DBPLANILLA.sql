@@ -39,14 +39,27 @@ nombre varchar(50) not null,
 descripcion nvarchar(100) null
 )
 GO
+<<<<<<< HEAD
 CREATE TABLE RegimenPensionario(
 codigo_regimen int not null,
+=======
+
+--TABLA: REGIMEN PENSIONARIO
+CREATE TABLE RegimenPensionario(
+codigo_regimen int identity(1,1),
+>>>>>>> MCarlos
 decripcion_corta varchar(30) null,
 descripcion varchar(100) not null,
 tipo_regimen varchar(30)not null
 )
+<<<<<<< HEAD
 
 --TABLA: AFP
+=======
+GO
+
+--TABLA: COMISION AFP
+>>>>>>> MCarlos
 CREATE TABLE ComisionAfp(
 id_afp int identity(1,1),
 codigo_regimen int not null,
