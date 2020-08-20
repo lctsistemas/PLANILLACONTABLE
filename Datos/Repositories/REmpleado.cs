@@ -170,7 +170,7 @@ namespace Datos.Repositories
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    if (reader.Read())
+                    if (reader.HasRows)
                     {                       
                         foreach (var item in reader)
                             list.Add(item);

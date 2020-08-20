@@ -272,7 +272,7 @@ select dbo.FUN_SHOW_DNI (3,'','juan')
 
 go
 
-EXEC SP_SHOW_EMP_DNI 3,'','juan'
+EXEC SP_SHOW_EMP_DNI 6,'P',''
 
 GO
 ----and e.id_em_maestra=@codigo_empresa

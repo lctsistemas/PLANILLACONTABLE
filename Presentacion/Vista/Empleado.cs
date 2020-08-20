@@ -41,7 +41,7 @@ namespace Presentacion.Vista
         private void Tabla()
         {
             dgvempleado.Columns[0].HeaderText = "CONTRATO";
-            dgvempleado.Columns[0].Width = 50;
+            dgvempleado.Columns[0].Width = 100;
             dgvempleado.Columns[0].Visible = false;
 
             dgvempleado.Columns[1].HeaderText = "CODIGO";//codigo empleado
@@ -331,7 +331,7 @@ namespace Presentacion.Vista
             //iniciar el radiobutom en dni
             rddni.Checked = true;
             
-            //Tabla();
+            Tabla();
             Habilitar_afp(false);
             Habilitar(false);
             txtcodigo.Enabled = false;
@@ -420,7 +420,6 @@ namespace Presentacion.Vista
             if (rdnombre.Checked==true)
             {
                 mostrarEmp("",txtBuscar.Text.Trim());
-
             }
             else if (rddni.Checked==true)
             {

@@ -246,8 +246,7 @@ CREATE TABLE Periodo(
 id_periodo int not null,
 id_empresa int not null,
 periodo int not null,
-id_meses int not null,
-id_mes int not null
+id_meses int not null
 )
 
 CREATE TABLE Mes(

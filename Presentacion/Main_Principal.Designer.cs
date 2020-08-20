@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Principal));
             this.PanelSideMenu = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnreportes = new System.Windows.Forms.Button();
             this.panelregistro = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnempleado = new System.Windows.Forms.Button();
             this.btnusuario = new System.Windows.Forms.Button();
             this.btnregistro = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.btnafp = new System.Windows.Forms.Button();
             this.btnactualizar = new System.Windows.Forms.Button();
             this.panelSubMenuMedia = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnsucursal = new System.Windows.Forms.Button();
             this.btncargo = new System.Windows.Forms.Button();
             this.btnempresa = new System.Windows.Forms.Button();
@@ -55,15 +57,13 @@
             this.btnmini = new System.Windows.Forms.PictureBox();
             this.btnmaxi = new System.Windows.Forms.PictureBox();
             this.btncerrar2 = new System.Windows.Forms.PictureBox();
+            this.btnres = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
-            this.btnres = new System.Windows.Forms.PictureBox();
             this.panelchildform = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -75,11 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaxi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnres)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelSideMenu
@@ -99,22 +99,6 @@
             this.PanelSideMenu.Name = "PanelSideMenu";
             this.PanelSideMenu.Size = new System.Drawing.Size(250, 662);
             this.PanelSideMenu.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.Location = new System.Drawing.Point(12, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 120);
-            this.panel9.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel2.Location = new System.Drawing.Point(12, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 120);
-            this.panel2.TabIndex = 10;
             // 
             // btnreportes
             // 
@@ -147,6 +131,50 @@
             this.panelregistro.Name = "panelregistro";
             this.panelregistro.Size = new System.Drawing.Size(250, 130);
             this.panelregistro.TabIndex = 8;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel9.Location = new System.Drawing.Point(12, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(5, 120);
+            this.panel9.TabIndex = 10;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 90);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 30);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Tipo Contrato";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 60);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 30);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Banco";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnempleado
             // 
@@ -291,6 +319,14 @@
             this.panelSubMenuMedia.Name = "panelSubMenuMedia";
             this.panelSubMenuMedia.Size = new System.Drawing.Size(250, 133);
             this.panelSubMenuMedia.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel2.Location = new System.Drawing.Point(12, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 120);
+            this.panel2.TabIndex = 10;
             // 
             // btnsucursal
             // 
@@ -471,6 +507,20 @@
             this.btncerrar2.TabStop = false;
             this.btncerrar2.Click += new System.EventHandler(this.btncerrar2_Click);
             // 
+            // btnres
+            // 
+            this.btnres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnres.Image = ((System.Drawing.Image)(resources.GetObject("btnres.Image")));
+            this.btnres.Location = new System.Drawing.Point(599, 6);
+            this.btnres.Name = "btnres";
+            this.btnres.Size = new System.Drawing.Size(25, 25);
+            this.btnres.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnres.TabIndex = 3;
+            this.btnres.TabStop = false;
+            this.btnres.Visible = false;
+            this.btnres.Click += new System.EventHandler(this.btnres_Click);
+            // 
             // btncerrar
             // 
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -521,20 +571,6 @@
             this.btnrestaurar.TabIndex = 6;
             this.btnrestaurar.TabStop = false;
             // 
-            // btnres
-            // 
-            this.btnres.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnres.Image = ((System.Drawing.Image)(resources.GetObject("btnres.Image")));
-            this.btnres.Location = new System.Drawing.Point(599, 6);
-            this.btnres.Name = "btnres";
-            this.btnres.Size = new System.Drawing.Size(25, 25);
-            this.btnres.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnres.TabIndex = 3;
-            this.btnres.TabStop = false;
-            this.btnres.Visible = false;
-            this.btnres.Click += new System.EventHandler(this.btnres_Click);
-            // 
             // panelchildform
             // 
             this.panelchildform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
@@ -552,42 +588,6 @@
             this.panel3.Size = new System.Drawing.Size(678, 100);
             this.panel3.TabIndex = 10;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 60);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 30);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Banco";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 30);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Tipo Contrato";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Main_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,6 +598,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.PanelSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
             this.Name = "Main_Principal";
             this.Text = "Main_Principal";
             this.Load += new System.EventHandler(this.Main_Principal_Load);
@@ -612,11 +613,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaxi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnres)).EndInit();
             this.ResumeLayout(false);
 
         }
