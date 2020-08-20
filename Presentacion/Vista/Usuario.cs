@@ -2,6 +2,8 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,6 +13,7 @@ namespace Presentacion.Vista
     public partial class frmusuario : Form
     {
         private Nusuario nu = new Nusuario();
+        
         private String result;
         private Int32 codigo;
 
@@ -38,7 +41,7 @@ namespace Presentacion.Vista
             using (nu)
             {
                 nu.nombre_refe = data;
-                dgvusuario.DataSource = nu.Getall();
+                dgvusuario.DataSource= nu.Getall();
                 lbltotal.Text = "RECORD: " + dgvusuario.RowCount;
             }
         }
@@ -191,7 +194,8 @@ namespace Presentacion.Vista
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            ShowUser(txtbuscar.Text.Trim());
+            // ShowUser(txtbuscar.Text.Trim());
+            dgvusuario.DataSource = nu.Search(txtbuscar.Text.Trim());
         }
         //DATAGRIDVIEW
         private void dgvusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -251,13 +255,11 @@ namespace Presentacion.Vista
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void frmusuario_FormClosing(object sender, FormClosingEventArgs e)
@@ -278,28 +280,7 @@ namespace Presentacion.Vista
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(245, 183, 177);
-        }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void USUARIO_Click(object sender, EventArgs e)
-        {
-
-        }
+        }              
 
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -4,8 +4,10 @@ using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Security.Cryptography;
 
 namespace Negocio.Models
 {
@@ -82,13 +84,33 @@ namespace Negocio.Models
                         codigo_usu = item[1].ToString(),
                         nombre_refe = item[2].ToString(),
                         password = item[3].ToString(),
-                        idrol = Convert.ToInt32(item[4]),
+                        idrol = Convert.ToInt32(item[4]),   
                         name_rol = item[5].ToString()
                     });
                 }
                 return list_usu;
             }
         }
+
+        //public static bool Contains(this string target, string value, StringComparison comparison)
+        //{
+        //    return target.IndexOf(value, comparison) >= 0;
+        //}
+
+        //METODO PARA FILTRAR
+        public IEnumerable<Nusuario> Search(string filter)
+        {
+         //return list_usu.FindAll(e => e.codigo_usu.Contains(filter) || e.nombre_refe.Contains(filter));
+          //return list_usu.FindAll(e => e.nombre_refe.Contains(filter, StringComparer.CurrentCultureIgnoreCase);
+          //PARA FILTRAR IGNORANDO LAS MAYUSCULAS.
+          return  list_usu.FindAll(e => e.nombre_refe.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >=0  || e.codigo_usu.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+
+           // return list_usu.FindAll(e => e.Contains(filter, StringComparison.OrdinalIgnoreCase));
+
+        }
+
+
+
         //GENERAR CODIGO USUARIO
         public int Getcodigo()
         {
@@ -96,6 +118,7 @@ namespace Negocio.Models
         }
 
 
+        
         public void Dispose()
         {
             //throw new NotImplementedException();

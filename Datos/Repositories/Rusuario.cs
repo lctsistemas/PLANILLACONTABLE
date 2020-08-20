@@ -1,6 +1,8 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -84,7 +86,6 @@ namespace Datos.Repositories
                     entiti.mesage = cmd.Parameters["@mesage"].Value.ToString();
                     cmd.Parameters.Clear();
                     return resul;
-
                 }
             }
         }
@@ -116,6 +117,10 @@ namespace Datos.Repositories
 
             }
         }
+
+
+        // MOSTRAR DATOS
+       
         //...
     }
 }

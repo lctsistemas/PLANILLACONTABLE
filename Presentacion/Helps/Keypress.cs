@@ -74,7 +74,7 @@ namespace Presentacion.Helps
                 }
                 else if (Char.IsSeparator(e.KeyChar))
                 {
-                    e.Handled = true;
+                    e.Handled = false;
                 }
                 else
                 {

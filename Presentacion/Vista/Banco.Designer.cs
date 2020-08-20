@@ -285,7 +285,7 @@
             this.dgvBanco.Location = new System.Drawing.Point(0, 56);
             this.dgvBanco.Name = "dgvBanco";
             this.dgvBanco.ReadOnly = true;
-            this.dgvBanco.Size = new System.Drawing.Size(407, 184);
+            this.dgvBanco.Size = new System.Drawing.Size(366, 136);
             this.dgvBanco.TabIndex = 0;
             this.dgvBanco.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBanco_CellDoubleClick);
             // 

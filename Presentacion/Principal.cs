@@ -96,6 +96,7 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarDatos();
+            this.Text = UserCache.NombreUser +"  |   "+lblempresa.Text;
         }
 
         private void CargarDatos()
@@ -118,8 +119,8 @@ namespace Presentacion
             }
             activefor = childform;
             childform.TopLevel = false;
-            //childform.FormBorderStyle = FormBorderStyle.None;
-            // childform.Dock = DockStyle.Fill;
+            childform.FormBorderStyle = FormBorderStyle.None;
+            childform.Dock = DockStyle.Fill;
             panelcontent.Controls.Add(childform);
             panelcontent.Tag = childform;//esta sobre el control
             childform.BringToFront();//indica que el formulario llamado esta frente al logo que exite
