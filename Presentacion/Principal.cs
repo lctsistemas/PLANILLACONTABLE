@@ -156,5 +156,7 @@ namespace Presentacion
         {
             openchilform(new frmempleado());
         }
+
+        
     }
 }

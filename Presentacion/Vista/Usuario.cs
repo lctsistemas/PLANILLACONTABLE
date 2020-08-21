@@ -22,7 +22,7 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
             ShowRol();
-            ShowUser("");
+            ShowUser();
         }
         //MOSTRAR ROL
         private void ShowRol()
@@ -36,13 +36,12 @@ namespace Presentacion.Vista
         }
 
         //MOSTRAR USUARIO
-        private void ShowUser(string data)
+        private void ShowUser()
         {
             using (nu)
-            {
-                nu.nombre_refe = data;
+            {                
                 dgvusuario.DataSource= nu.Getall();
-                lbltotal.Text = "RECORD: " + dgvusuario.RowCount;
+                lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
             }
         }
 
@@ -83,19 +82,7 @@ namespace Presentacion.Vista
             dgvusuario.Columns[6].HeaderText = "STATE";
             dgvusuario.Columns[6].Width = 50;
             dgvusuario.Columns[6].Visible = false;
-        }
-        //VALIDAR CONTROLES
-        private bool Validar()
-        {
-            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text)
-                || String.IsNullOrWhiteSpace(txtpassword.Text) || cborol.Text.Equals(""))
-            {
-                ValidateChildren();
-                return true;
-            }
-            else
-                return false;
-        }
+        }        
 
         //HABILITAR CONTROLES
         private void Habilitar(bool v)
@@ -123,7 +110,7 @@ namespace Presentacion.Vista
         private void frmusuario_Load(object sender, EventArgs e)
         {
             Tooltip.Title(btnrol, "Registrar Rol",true);
-            Tooltip.Title(txtbuscar, "Buscar por nombre usuario",true);
+            Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo",true);
             Tabla();
             Habilitar(false);
             cborol.Text = "";
@@ -137,22 +124,8 @@ namespace Presentacion.Vista
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
             ShowRol();
-        }
-        //VALIDACIONES A TEXTBOXES
-        private void txtacceso_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtacceso, "Campo requerido");
-        }
-
-        private void txtnom_usuario_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtnom_usuario, "Campo requerido");
-        }
-
-        private void txtpassword_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtpassword, "Campo requerido");
-        }
+        }       
+       
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
         {
@@ -164,38 +137,40 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (Validar())
-                return;
-
             result = "";
             using (nu)
             {
                 if (nu.state == EntityState.Guardar)
-                    nu.idusuario = codigo;
+                    nu.Idusuario = codigo;
 
-                nu.codigo_usu = txtacceso.Text.Trim().ToUpper();
-                nu.nombre_refe = txtnom_usuario.Text.Trim().ToUpper();
-                nu.password = txtpassword.Text.Trim();
-                nu.idrol = Convert.ToInt32(cborol.SelectedValue);
-                result = nu.SaveChanges();
-                ShowUser("");
-                Messages.M_info(result);
-                if (nu.state == EntityState.Guardar)
+                nu.Codigo_usu = txtacceso.Text.Trim().ToUpper();
+                nu.Nombre_refe = txtnom_usuario.Text.Trim().ToUpper();
+                nu.Password = txtpassword.Text.Trim();
+                nu.Idrol = Convert.ToInt32(cborol.SelectedValue);
+
+                bool valida = new ValidacionDatos(nu).Validate();
+                if (valida)
                 {
-                    GenerarCodigo();
-                    limpiar();
+                    result = nu.SaveChanges();
+                    ShowUser();
+                    Messages.M_info(result);
+                    if (nu.state == EntityState.Guardar)
+                    {
+                        GenerarCodigo();
+                        limpiar();
+                    }
                 }
 
+                
             }
         }
-
-
 
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             // ShowUser(txtbuscar.Text.Trim());
             dgvusuario.DataSource = nu.Search(txtbuscar.Text.Trim());
+            lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
         }
         //DATAGRIDVIEW
         private void dgvusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -206,8 +181,8 @@ namespace Presentacion.Vista
                 using (nu)
                 {
                     nu.state = EntityState.Modificar;
-                    nu.idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario
-                    txtcodigo.Text = "USER 0" + nu.idusuario;
+                    nu.Idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario
+                    txtcodigo.Text = "USER 0" + nu.Idusuario;
                     txtacceso.Text = r.Cells[1].Value.ToString();//codigo acceso
                     txtnom_usuario.Text = r.Cells[2].Value.ToString();//referencia
                     txtpassword.Text = r.Cells[3].Value.ToString();//contrasena
@@ -217,7 +192,6 @@ namespace Presentacion.Vista
                     Habilitar(true);
                     ValidateError.validate.Clear();
                 }
-
             }
         }
         //REMOVER BUTTON
@@ -232,45 +206,29 @@ namespace Presentacion.Vista
                     using (nu)
                     {
                         nu.state = EntityState.Remover;
-                        nu.idusuario = Convert.ToInt32(dgvusuario.CurrentRow.Cells[0].Value);//idusuario
+                        nu.Idusuario = Convert.ToInt32(dgvusuario.CurrentRow.Cells[0].Value);//idusuario
                         result = nu.SaveChanges();
                         Messages.M_info(result);
-                        ShowUser("");
+                        ShowUser();
                         btnguardar.Enabled = false;
                     }
                 }
-
             }
             else
             {
                 Messages.M_warning("Seleccione un Fila");
             }
-        }
-
-        private void cborol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }      
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnminimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
+        }       
 
         private void frmusuario_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
-        }
-
-        private void btncerrar_MouseHover(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
+        }       
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
@@ -285,6 +243,11 @@ namespace Presentacion.Vista
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.SoloLetras(e);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
         }
     }
 }

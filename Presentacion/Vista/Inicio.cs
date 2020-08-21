@@ -98,7 +98,8 @@ namespace Login_inicio
         }
         
         private void btnlogin_Click(object sender, EventArgs e)
-        {
+        {            
+            //lis_empresa.Clear();
             
             if (txtuser.Text != "USUARIO")
             {
@@ -114,6 +115,7 @@ namespace Login_inicio
                             {
                                 dgvlogin.DataSource = lis_empresa;
                                 Ocultarcolumna();
+                                BloquearAcceso(true);
                                 if (activo)
                                 {
                                     frmprincipal mainmenu = new frmprincipal();
@@ -126,7 +128,7 @@ namespace Login_inicio
                         }
                         else
                         {
-                            msgError("Incorrect username or password entered. \n Please try again. ");
+                            msgError("Incorrecto Nombre Usuario o Contraseña. \n Por favor Intente de Nuevo. ");
                             txtpass.Text = "CONTRASEÑA";
                             txtpass.UseSystemPasswordChar = false;
                             txtuser.Focus();
@@ -255,6 +257,21 @@ namespace Login_inicio
             lblminimizar.BackColor = Color.FromArgb(123, 36, 28);
         }
 
-        
+        private void txtuser_TextChanged(object sender, EventArgs e)
+        {
+            activo = false;
+            BloquearAcceso(false);
+        }
+
+        private void txtpass_TextChanged(object sender, EventArgs e)
+        {
+            activo = false;
+            BloquearAcceso(false);
+        }
+
+        private void BloquearAcceso(bool val)
+        {
+            dgvlogin.Enabled = val;
+        }
     }
 }

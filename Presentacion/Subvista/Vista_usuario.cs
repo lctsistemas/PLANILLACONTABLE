@@ -22,7 +22,7 @@ namespace Presentacion.Subvista
         {
             using (nu)
             {
-                nu.nombre_refe = arg;
+                nu.Nombre_refe = arg;
                 dgvvista_user.DataSource = nu.Getall();
                 lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
             }
