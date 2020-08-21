@@ -180,21 +180,12 @@
     <Compile Include="Vista\Inicio.designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Vista\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Manto_Regimen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Manto_Regimen.Designer.cs">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> MCarlos
     <Compile Include="Vista\Rol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,15 +266,9 @@
     <EmbeddedResource Include="Vista\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Vista\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> MCarlos
     <EmbeddedResource Include="Vista\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>
     </EmbeddedResource>

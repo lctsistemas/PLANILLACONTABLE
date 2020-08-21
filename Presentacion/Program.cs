@@ -16,12 +16,8 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new Manto_Regimen());
 
-=======
-            Application.Run(new frminicio());
->>>>>>> MCarlos
         }
     }
 }
