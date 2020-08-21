@@ -2,6 +2,7 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -193,6 +194,7 @@ namespace Presentacion.Vista
         {
             ShowUser(txtbuscar.Text.Trim());
         }
+
         //DATAGRIDVIEW
         private void dgvusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
