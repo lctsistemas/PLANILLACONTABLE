@@ -52,6 +52,8 @@
             this.lblrol = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.panelcontent = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblperiodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
             this.lbllocalidad = new System.Windows.Forms.Label();
@@ -63,6 +65,7 @@
             this.panelogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelcontent.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelsidemenu
@@ -407,6 +410,7 @@
             // panelcontent
             // 
             this.panelcontent.BackColor = System.Drawing.Color.Silver;
+            this.panelcontent.Controls.Add(this.statusStrip1);
             this.panelcontent.Controls.Add(this.lblperiodo);
             this.panelcontent.Controls.Add(this.lblidempresa);
             this.panelcontent.Controls.Add(this.lbllocalidad);
@@ -414,11 +418,27 @@
             this.panelcontent.Controls.Add(this.lblrol);
             this.panelcontent.Controls.Add(this.lblusuario);
             this.panelcontent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelcontent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelcontent.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelcontent.Location = new System.Drawing.Point(230, 0);
             this.panelcontent.Name = "panelcontent";
             this.panelcontent.Size = new System.Drawing.Size(670, 749);
             this.panelcontent.TabIndex = 1;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(670, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "HORA    12:45 08 PM";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(94, 17);
+            this.toolStripStatusLabel1.Text = "HORA   23:45  23";
             // 
             // lblperiodo
             // 
@@ -486,6 +506,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelcontent.ResumeLayout(false);
             this.panelcontent.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -520,6 +542,8 @@
         private System.Windows.Forms.Label lblempresa;
         private System.Windows.Forms.Label lblperiodo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

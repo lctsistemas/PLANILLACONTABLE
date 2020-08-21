@@ -15,7 +15,6 @@ namespace Presentacion
         static void Main()
         {
             Application.EnableVisualStyles();
-
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Manto_Regimen());
 
