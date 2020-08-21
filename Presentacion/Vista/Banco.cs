@@ -61,6 +61,7 @@ namespace Presentacion.Vista
                 try
                 {
                     dgvBanco.DataSource = nbanco.Listar();
+                    lbltotal.Text = "RECORD: " + dgvBanco.RowCount;
 
                 }
                 catch (Exception e)
@@ -228,6 +229,11 @@ namespace Presentacion.Vista
         private void txtBanco_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            ShowBanco(txtbuscar.Text.Trim());
         }
     }
 }

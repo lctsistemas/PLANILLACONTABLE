@@ -184,6 +184,12 @@
     <Compile Include="Vista\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Manto_Regimen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Manto_Regimen.Designer.cs">
+      <DependentUpon>Manto_Regimen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Rol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Manto_Regimen.resx">
+      <DependentUpon>Manto_Regimen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>

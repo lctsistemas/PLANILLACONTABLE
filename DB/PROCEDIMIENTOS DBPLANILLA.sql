@@ -617,6 +617,183 @@ ELSE
 END
 GO
 
+--GENERAR CODIGO MESES_MAESTRA
+CREATE PROC SP_GENERAR_MESESMAESTRA
+(@mesesm int output)
+AS BEGIN
+SET @mesesm=(SELECT count(mm.id_meses_maestra) FROM dbo.Meses_maestra mm)
+IF(@mesesm=0)
+	BEGIN
+		SET @mesesm=1		
+	END
+ELSE
+	BEGIN
+		SET @mesesm=(SELECT count(mm.id_meses_maestra) FROM dbo.Meses_maestra mm)		
+	END
+END
+GO
+
+--GENERAR CODIGO GRATI_MANTO
+CREATE PROC SP_GENERAR_GRATIMANTO
+(@gratimant int output)
+AS BEGIN
+SET @gratimant=(SELECT count(gm.id_grati) FROM dbo.Grati_manto gm)
+IF(@gratimant=0)
+	BEGIN
+		SET @gratimant=1		
+	END
+ELSE
+	BEGIN
+		SET @gratimant=(SELECT count(gm.id_grati) FROM dbo.Grati_manto gm)		
+	END
+END
+GO
+
+--GENERAR CODIGO FALTAS
+CREATE PROC SP_GENERAR_FALTAS
+(@faltas int output)
+AS BEGIN
+SET @faltas=(SELECT count(f.id_falta) FROM dbo.Faltas f)
+IF(@faltas=0)
+	BEGIN
+		SET @faltas=1		
+	END
+ELSE
+	BEGIN
+		SET @faltas=(SELECT count(f.id_falta) FROM dbo.Faltas f)
+	END
+END
+GO
+
+--GENERAR CODIGO CTS
+CREATE PROC SP_GENERAR_CTS
+(@cts int output)
+AS BEGIN
+SET @cts=(SELECT count(ct.id_cts) FROM dbo.cts ct)
+IF(@cts=0)
+	BEGIN
+		SET @cts=1		
+	END
+ELSE
+	BEGIN
+		SET @cts=(SELECT count(ct.id_cts) FROM dbo.cts ct)
+	END
+END
+GO
+
+--GENERAR CODIGO GRATIFICACIONES
+CREATE PROC SP_GENERAR_GRATI
+(@grati int output)
+AS BEGIN
+SET @grati=(SELECT count(g.id_grati) FROM dbo.Gratificaciones g)
+IF(@grati=0)
+	BEGIN
+		SET @grati=1		
+	END
+ELSE
+	BEGIN
+		SET @grati=(SELECT count(g.id_grati) FROM dbo.Gratificaciones g)
+	END
+END
+GO
+
+--GENERAR CODIGO CTS_MANTO
+CREATE PROC SP_GENERAR_CTSMANTO
+(@ctsmanto int output)
+AS BEGIN
+SET @ctsmanto=(SELECT count(cm.id_cts_manto) FROM dbo.cts_manto cm)
+IF(@ctsmanto=0)
+	BEGIN
+		SET @ctsmanto=1		
+	END
+ELSE
+	BEGIN
+		SET @ctsmanto=(SELECT count(cm.id_cts_manto) FROM dbo.cts_manto cm)
+	END
+END
+GO
+
+--GENERAR CODIGO Descuentos
+CREATE PROC SP_GENERAR_Descuentos
+(@desc int output)
+AS BEGIN
+SET @desc=(SELECT count(d.id_descuentos) FROM dbo.Descuentos d)
+IF(@desc=0)
+	BEGIN
+		SET @desc=1		
+	END
+ELSE
+	BEGIN
+		SET @desc=(SELECT count(d.id_descuentos) FROM dbo.Descuentos d)
+	END
+END
+GO
+
+--GENERAR CODIGO PERIODO
+CREATE PROC SP_GENERAR_Periodo
+(@periodo int output)
+AS BEGIN
+SET @periodo=(SELECT count(pe.id_periodo) FROM dbo.Periodo pe)
+IF(@periodo=0)
+	BEGIN
+		SET @periodo=1		
+	END
+ELSE
+	BEGIN
+		SET @periodo=(SELECT count(pe.id_periodo) FROM dbo.Periodo pe)
+	END
+END
+GO
+
+--GENERAR CODIGO MES
+CREATE PROC SP_GENERAR_Mes
+(@Mes int output)
+AS BEGIN
+SET @Mes=(SELECT count(mes.id_mes) FROM dbo.Mes mes)
+IF(@Mes=0)
+	BEGIN
+		SET @Mes=1		
+	END
+ELSE
+	BEGIN
+		SET @Mes=(SELECT count(mes.id_mes) FROM dbo.Mes mes)
+	END
+END
+GO
+
+--GENERAR CODIGO Planilla
+CREATE PROC SP_GENERAR_Planilla
+(@plani int output)
+AS BEGIN
+SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
+IF(@plani=0)
+	BEGIN
+		SET @plani=1		
+	END
+ELSE
+	BEGIN
+		SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
+	END
+END
+GO
+
+--GENERAR CODIGO Tipo Planilla
+CREATE PROC SP_GENERAR_TipoPlanilla
+(@tipoPlan int output)
+AS BEGIN
+SET @tipoPlan=(SELECT count(tp.id_tipo_planilla) FROM dbo.tipo_planilla tp)
+IF(@tipoPlan=0)
+	BEGIN
+		SET @tipoPlan=1		
+	END
+ELSE
+	BEGIN
+		SET @tipoPlan=(SELECT count(tp.id_tipo_planilla) FROM dbo.tipo_planilla tp)
+	END
+END
+GO
+
+
 --LISTAR POR EMPRESA
 ALTER PROC SP_LISTEMP_POR_USU
 (@codigo_usuario VARCHAR(20))

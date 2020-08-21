@@ -31,8 +31,6 @@
             this.tabuser = new System.Windows.Forms.TabControl();
             this.tablista = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.btnremover = new System.Windows.Forms.Button();
             this.dgvusuario = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
@@ -57,6 +55,8 @@
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.tabuser.SuspendLayout();
             this.tablista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuario)).BeginInit();
@@ -108,26 +108,6 @@
             this.label6.Size = new System.Drawing.Size(104, 16);
             this.label6.TabIndex = 87;
             this.label6.Text = "Buscar Usuario";
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.Location = new System.Drawing.Point(10, 26);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(271, 17);
-            this.txtbuscar.TabIndex = 0;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
-            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 29);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(281, 34);
-            this.label19.TabIndex = 86;
-            this.label19.Text = "_______________________________________\r\n\r\n";
             // 
             // btnremover
             // 
@@ -428,6 +408,26 @@
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(281, 34);
+            this.label19.TabIndex = 86;
+            this.label19.Text = "_______________________________________\r\n\r\n";
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.Location = new System.Drawing.Point(10, 26);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(271, 17);
+            this.txtbuscar.TabIndex = 0;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
+            // 
             // frmusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +465,6 @@
         private System.Windows.Forms.TabPage tablista;
         private System.Windows.Forms.Button btnremover;
         private System.Windows.Forms.DataGridView dgvusuario;
-        private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.TabPage tabgestion;
         private System.Windows.Forms.Panel panel1;
@@ -488,7 +487,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label USUARIO;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.Label label19;
     }
 }
