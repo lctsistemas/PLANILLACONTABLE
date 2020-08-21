@@ -95,6 +95,7 @@
             this.txtpass.Size = new System.Drawing.Size(424, 20);
             this.txtpass.TabIndex = 2;
             this.txtpass.Text = "CONTRASEÑA";
+            this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             this.txtpass.Enter += new System.EventHandler(this.txtpass_Enter);
             this.txtpass.Leave += new System.EventHandler(this.txtpass_Leave);
             // 
@@ -163,8 +164,8 @@
             this.lblerror.AutoSize = true;
             this.lblerror.BackColor = System.Drawing.Color.Transparent;
             this.lblerror.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblerror.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblerror.Location = new System.Drawing.Point(24, 232);
+            this.lblerror.ForeColor = System.Drawing.Color.Crimson;
+            this.lblerror.Location = new System.Drawing.Point(29, 232);
             this.lblerror.Name = "lblerror";
             this.lblerror.Size = new System.Drawing.Size(36, 17);
             this.lblerror.TabIndex = 10;

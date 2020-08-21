@@ -1,6 +1,8 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -84,7 +86,6 @@ namespace Datos.Repositories
                     entiti.mesage = cmd.Parameters["@mesage"].Value.ToString();
                     cmd.Parameters.Clear();
                     return resul;
-
                 }
             }
         }
@@ -101,14 +102,11 @@ namespace Datos.Repositories
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_USER";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@search", SqlDbType.VarChar, 50).Value = entiti.Nombre_refe;
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
                     {
-                        da.Fill(dt);
-                        cmd.Parameters.Clear();
+                        da.Fill(dt);                     
                         da.Dispose();
                         return dt;
                     }
@@ -116,6 +114,10 @@ namespace Datos.Repositories
 
             }
         }
+
+
+        // MOSTRAR DATOS
+       
         //...
     }
 }

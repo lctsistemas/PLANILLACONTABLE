@@ -261,16 +261,6 @@ AS BEGIN
 END
 GO
 
-create FUNCTION FUN_SHOW_DNI(@codigo_empresa int, @search varchar(20),@nom varchar(50))
-RETURNS varchar(20)
-begin 
-	 
-	return (select nombre_empleado from vista_empleado)
-end
-
-select dbo.FUN_SHOW_DNI (3,'','juan')
-
-go
 
 EXEC SP_SHOW_EMP_DNI 6,'P',''
 
@@ -488,12 +478,10 @@ END
 GO
 
 --MOSTRAR USUARIO
-CREATE PROC SP_SHOW_USER
-@search varchar(50)
+ALTER PROC SP_SHOW_USER
 AS BEGIN	
 SELECT u.id_usuario, u.codigo_usuario, u.referencia, u.contrasena, u.id_rol, r.rol FROM 
-dbo.Usuario u join Rol r on u.id_rol=r.id_rol WHERE u.referencia like @search+'%' 
-ORDER BY u.id_usuario DESC
+dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
 
@@ -617,6 +605,7 @@ ELSE
 END
 GO
 
+<<<<<<< HEAD
 --GENERAR CODIGO MESES_MAESTRA
 CREATE PROC SP_GENERAR_MESESMAESTRA
 (@mesesm int output)
@@ -792,6 +781,8 @@ ELSE
 	END
 END
 GO
+=======
+>>>>>>> MCarlos
 
 
 --LISTAR POR EMPRESA

@@ -253,7 +253,6 @@ CREATE TABLE Mes(
 id_mes int not null,
 nombre_mes varchar(20) not null
 )
-
 GO
 
 CREATE TABLE Planilla(
@@ -358,4 +357,20 @@ alter table Empresa drop constraint UNQ_cod_em
 go
 truncate table empresa_maestra
 drop table empresa
-delete from Empresa
+
+--TABLA PRUEBA CREAR
+
+SELECT * INTO Usuario_copy FROM dbo.Usuario
+
+select * from dbo.Usuario_copy
+drop table dbo.Usuario_copy
+GO
+
+ALTER PROC SP_SHOW_USER_COPY
+@search varchar(50)
+AS BEGIN	
+SELECT u.id_usuario, u.codigo_usuario, u.referencia FROM 
+dbo.Usuario_copy u  WHERE u.referencia like @search+'%' 
+ORDER BY u.id_usuario DESC
+END
+GO

@@ -727,7 +727,7 @@ namespace Presentacion.Vista
             this.tabEmpleado.Controls.Add(this.tabPage2);
             this.tabEmpleado.Controls.Add(this.tabPage1);
             this.tabEmpleado.ItemSize = new System.Drawing.Size(89, 29);
-            this.tabEmpleado.Location = new System.Drawing.Point(1, 48);
+            this.tabEmpleado.Location = new System.Drawing.Point(1, 50);
             this.tabEmpleado.Multiline = true;
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.SelectedIndex = 0;
@@ -739,7 +739,7 @@ namespace Presentacion.Vista
             this.tabPage1.Location = new System.Drawing.Point(33, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(735, 419);
+            this.tabPage1.Size = new System.Drawing.Size(772, 418);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Registrar Contrato";
             this.tabPage1.UseVisualStyleBackColor = true;
