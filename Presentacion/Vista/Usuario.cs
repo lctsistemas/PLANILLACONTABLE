@@ -160,15 +160,13 @@ namespace Presentacion.Vista
                         limpiar();
                     }
                 }
-
-                
             }
         }
 
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            // ShowUser(txtbuscar.Text.Trim());
+            
             dgvusuario.DataSource = nu.Search(txtbuscar.Text.Trim());
             lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
         }

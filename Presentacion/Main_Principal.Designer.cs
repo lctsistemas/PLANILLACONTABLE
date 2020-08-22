@@ -64,11 +64,9 @@
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.panelchildform = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
-=======
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
->>>>>>> MCarlos
+
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -85,11 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
-<<<<<<< HEAD
-=======
             this.panel3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
->>>>>>> MCarlos
             this.SuspendLayout();
             // 
             // PanelSideMenu
@@ -599,8 +594,6 @@
             this.panel3.Size = new System.Drawing.Size(678, 88);
             this.panel3.TabIndex = 10;
             // 
-<<<<<<< HEAD
-=======
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -617,7 +610,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(46, 17);
             this.toolStripStatusLabel1.Text = "HORA: ";
             // 
->>>>>>> MCarlos
             // Main_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -648,13 +640,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
-<<<<<<< HEAD
-=======
+
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
->>>>>>> MCarlos
             this.ResumeLayout(false);
 
         }
