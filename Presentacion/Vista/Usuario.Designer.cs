@@ -34,12 +34,12 @@
             this.tabuser = new System.Windows.Forms.TabControl();
             this.tablista = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
+
             this.btnremover = new System.Windows.Forms.Button();
-=======
+
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
->>>>>>> MCarlos
+
             this.dgvusuario = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.tabgestion = new System.Windows.Forms.TabPage();
@@ -59,13 +59,12 @@
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
+
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
+         //   this.label19 = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
-=======
->>>>>>> MCarlos
+
             this.tabuser.SuspendLayout();
             this.tablista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuario)).BeginInit();
@@ -116,7 +115,7 @@
             this.label6.TabIndex = 87;
             this.label6.Text = "Buscar Usuario";
             // 
-<<<<<<< HEAD
+
             // btnremover
             // 
             this.btnremover.BackColor = System.Drawing.Color.SteelBlue;
@@ -131,7 +130,7 @@
             this.btnremover.TabIndex = 1;
             this.btnremover.UseVisualStyleBackColor = false;
             this.btnremover.Click += new System.EventHandler(this.btnremover_Click);
-=======
+
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -152,7 +151,7 @@
             this.label19.Size = new System.Drawing.Size(281, 17);
             this.label19.TabIndex = 86;
             this.label19.Text = "_______________________________________";
->>>>>>> MCarlos
+
             // 
             // dgvusuario
             // 
