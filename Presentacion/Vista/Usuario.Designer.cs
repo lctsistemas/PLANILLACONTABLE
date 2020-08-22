@@ -34,12 +34,21 @@
             this.tabuser = new System.Windows.Forms.TabControl();
             this.tablista = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
 
             this.btnremover = new System.Windows.Forms.Button();
 
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
 
+=======
+<<<<<<< HEAD
+            this.btnremover = new System.Windows.Forms.Button();
+=======
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+>>>>>>> MCarlos
+>>>>>>> 6911d979ce4446f9ed2fb6d30bcddcbca3eb9110
             this.dgvusuario = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.tabgestion = new System.Windows.Forms.TabPage();
@@ -59,12 +68,21 @@
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 6911d979ce4446f9ed2fb6d30bcddcbca3eb9110
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
          //   this.label19 = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> MCarlos
+>>>>>>> 6911d979ce4446f9ed2fb6d30bcddcbca3eb9110
             this.tabuser.SuspendLayout();
             this.tablista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuario)).BeginInit();
@@ -115,7 +133,11 @@
             this.label6.TabIndex = 87;
             this.label6.Text = "Buscar Usuario";
             // 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 6911d979ce4446f9ed2fb6d30bcddcbca3eb9110
             // btnremover
             // 
             this.btnremover.BackColor = System.Drawing.Color.SteelBlue;
@@ -130,7 +152,11 @@
             this.btnremover.TabIndex = 1;
             this.btnremover.UseVisualStyleBackColor = false;
             this.btnremover.Click += new System.EventHandler(this.btnremover_Click);
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 6911d979ce4446f9ed2fb6d30bcddcbca3eb9110
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -151,7 +177,11 @@
             this.label19.Size = new System.Drawing.Size(281, 17);
             this.label19.TabIndex = 86;
             this.label19.Text = "_______________________________________";
+<<<<<<< HEAD
 
+=======
+>>>>>>> MCarlos
+>>>>>>> 6911d979ce4446f9ed2fb6d30bcddcbca3eb9110
             // 
             // dgvusuario
             // 
