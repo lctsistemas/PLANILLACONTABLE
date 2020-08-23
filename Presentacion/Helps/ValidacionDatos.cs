@@ -33,8 +33,7 @@ namespace Presentacion.Helps
                 foreach (ValidationResult item in resuts)
                 {
                     message += item.ErrorMessage + "\n";
-                }
-                //MessageBox.Show(message, "Warnig");
+                }                
                 ctr.Text = message;
             }
             else
@@ -50,8 +49,7 @@ namespace Presentacion.Helps
                 {
                     message += item.ErrorMessage + "\n";
                 }
-                Messages.M_warning(message);
-               
+                Messages.M_warning(message);               
             }            
             return valid;
         }

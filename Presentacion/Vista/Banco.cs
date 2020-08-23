@@ -22,6 +22,7 @@ namespace Presentacion.Vista
         {
             dgvBanco.Columns[0].HeaderText = "CODIGO";
             dgvBanco.Columns[0].Width = 50;
+            dgvBanco.Columns[0].Visible = false;
 
             dgvBanco.Columns[1].HeaderText = "BANCO";
             dgvBanco.Columns[1].Width = 150;
@@ -53,11 +54,11 @@ namespace Presentacion.Vista
             }
         }
 
-        private void ShowBanco(String data)
+        private void ShowBanco()
         {
             using (nbanco)
             {
-                nbanco.Nom_banco = data;
+                
                 try
                 {
                     dgvBanco.DataSource = nbanco.Listar();
@@ -75,9 +76,6 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (Validar())
-                return;
-
             result = "";
             using (nbanco)
             {
@@ -85,16 +83,21 @@ namespace Presentacion.Vista
                     nbanco.IdBanco = codigoban;
                 nbanco.Nom_banco = txtBanco.Text.Trim();
 
-
-                result = nbanco.GuardarCambios();
-
-                Messages.M_info(result);
-                if (nbanco.state == EntityState.Guardar)
+                bool validar = new ValidacionDatos(nbanco).Validate();
+                if (validar)
                 {
-                    generarCodigo();
-                    limpiar();
+                    result = nbanco.GuardarCambios();
+
+                    Messages.M_info(result);
+
+                    if (nbanco.state == EntityState.Guardar)
+                    {
+                        generarCodigo();
+                        limpiar();
+                    }
                 }
-                ShowBanco("");
+
+                ShowBanco();
             }
         }
 
@@ -133,7 +136,7 @@ namespace Presentacion.Vista
 
         private void Banco_Load(object sender, EventArgs e)
         {
-            ShowBanco("");
+            ShowBanco();
             generarCodigo();
             Tabla();
         }
@@ -186,7 +189,7 @@ namespace Presentacion.Vista
                         nbanco.IdBanco = Convert.ToInt32(dgvBanco.CurrentRow.Cells[0].Value);//idusuario
                         result = nbanco.GuardarCambios();
                         Messages.M_info(result);
-                        ShowBanco("");
+                        ShowBanco();
                         btnguardar.Enabled = false;
                     }
                 }
@@ -233,7 +236,13 @@ namespace Presentacion.Vista
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            ShowBanco(txtbuscar.Text.Trim());
+           dgvBanco.DataSource= nbanco.Search(txtbuscar.Text.Trim());
+         
+        }
+
+        private void dgvBanco_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

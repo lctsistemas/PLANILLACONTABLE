@@ -32,9 +32,11 @@ namespace Datos.Contract
     public interface IBanco : IGenerict<DBanco>
     {
     }
+    public interface IRegimen : IGenerict<DRegimen> { }
 
     public interface IContrato : IGenerict<Dcontrato>
     {
     }
     public interface ITipo_contrato : IGenerict<Dtipocontrato> { }
+
 }

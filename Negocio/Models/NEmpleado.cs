@@ -6,6 +6,7 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 namespace Negocio.Models
 {
@@ -21,6 +22,7 @@ namespace Negocio.Models
         public String Nacionalidad { get; set; }
         public String Tipo_genero { get; set; }
         public String Direccion { get; set; }
+        [RegularExpression("([0-9]+)", ErrorMessage = "identification number must be only numbers")]
         public String Telefono { get; set; }
         public String Num_doc { get; set; }
         public String Estado { get; set; }
@@ -198,6 +200,11 @@ namespace Negocio.Models
             
             return new REmpleado().ListaEmpleado(list, de);
         }
+
+        /*public IEnumerable<NEmpleado> Search(String filter)
+        {
+            return listaemp.FindAll(e => e.Num_doc.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+        }*/
 
         //public List<NEmpleado> GetAll(Int32 entiti, String search, String nombre_empleado)
         //{

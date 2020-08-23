@@ -35,12 +35,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbxregimen = new System.Windows.Forms.ComboBox();
+            this.btnagregar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -119,30 +119,33 @@
             this.label4.TabIndex = 75;
             this.label4.Text = "Regimen :";
             // 
-            // comboBox1
+            // cbxregimen
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(266, 236);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 76;
+            this.cbxregimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxregimen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbxregimen.FormattingEnabled = true;
+            this.cbxregimen.Location = new System.Drawing.Point(266, 236);
+            this.cbxregimen.Name = "cbxregimen";
+            this.cbxregimen.Size = new System.Drawing.Size(100, 21);
+            this.cbxregimen.TabIndex = 76;
             // 
-            // button2
+            // btnagregar
             // 
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(70, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 34);
-            this.button2.TabIndex = 70;
-            this.button2.Text = "Agregar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnagregar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnagregar.FlatAppearance.BorderSize = 0;
+            this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnagregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnagregar.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
+            this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnagregar.Location = new System.Drawing.Point(70, 15);
+            this.btnagregar.Name = "btnagregar";
+            this.btnagregar.Size = new System.Drawing.Size(107, 34);
+            this.btnagregar.TabIndex = 70;
+            this.btnagregar.Text = "Agregar";
+            this.btnagregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnagregar.UseVisualStyleBackColor = false;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
             // textBox1
             // 
@@ -151,22 +154,22 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 77;
             // 
-            // button1
+            // btnguardar
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(194, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 34);
-            this.button1.TabIndex = 69;
-            this.button1.Text = "Guardar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(194, 15);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(108, 34);
+            this.btnguardar.TabIndex = 69;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnguardar.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
@@ -175,22 +178,22 @@
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 78;
             // 
-            // button3
+            // btneliminar
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(323, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 34);
-            this.button3.TabIndex = 71;
-            this.button3.Text = "Eliminar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.Location = new System.Drawing.Point(323, 15);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(108, 34);
+            this.btneliminar.TabIndex = 71;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btneliminar.UseVisualStyleBackColor = false;
             // 
             // textBox3
             // 
@@ -202,12 +205,12 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btneliminar);
             this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnguardar);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.btnagregar);
+            this.panel1.Controls.Add(this.cbxregimen);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
@@ -226,6 +229,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Manto_Regimen";
             this.Text = "Manto_Regimen";
+            this.Load += new System.EventHandler(this.Manto_Regimen_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -242,12 +246,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbxregimen;
+        private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;

@@ -43,10 +43,9 @@ END
 GO
 
 --SHOW CARGO
-CREATE PROC SP_SELECT_CARGO 
-@nom varchar(40)
+alter PROC SP_SELECT_CARGO 
 AS BEGIN
-SELECT * FROM Cargo where nombre_cargo like @nom+'%' order by id_cargo desc
+SELECT * FROM Cargo order by id_cargo asc
 END
 GO
 
@@ -905,11 +904,9 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
-CREATE PROC SP_SHOW_BANCO(
-@search varchar(50)
-)
+alter PROC SP_SHOW_BANCO
 AS BEGIN 
-SELECT b.id_banco,b.nombre_banco from Banco b where b.nombre_banco like @search+'%'; 
+SELECT b.id_banco,b.nombre_banco from Banco b; 
 END;
 GO
 

@@ -99,14 +99,11 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SHOW_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@search", SqlDbType.VarChar, 50).Value = entiti.Nom_banco;
-
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
                     {
-                        da.Fill(dt);
-                        cmd.Parameters.Clear();
+                        da.Fill(dt);                      
                         da.Dispose();
                         return dt;
                     }

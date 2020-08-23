@@ -25,17 +25,17 @@ namespace Presentacion.Vista
         public frmcargo()
         {
             InitializeComponent();
-            ShowCargo("");
+            ShowCargo();
             this.FormBorderStyle = FormBorderStyle.None;
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
         //METODO MOSTRAR
-        private void ShowCargo(string data)
+        private void ShowCargo()
         {
 
             using (nc)
             {
-                nc.nombre_cargo = data;
+               
                 dgvcargo.DataSource = nc.Getall();
                 lbltotal.Text = "TOTAL REGISTRO: " + dgvcargo.Rows.Count;
             }
@@ -98,16 +98,21 @@ namespace Presentacion.Vista
         //GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (Validar())
-                return;
+           
 
             using (nc)
             {
                 nc.nombre_cargo = txtnom_cargo.Text.Trim().ToUpper();
                 nc.descripcion = txtdescrip.Text.Trim().ToUpper();
-                result = nc.SaveChanges();
-                ShowCargo("");
-                Messages.M_info(result);
+
+                bool valida = new ValidacionDatos(nc).Validate();
+                if (valida)
+                {
+                    result = nc.SaveChanges();
+                    ShowCargo();
+                    Messages.M_info(result);
+                }
+                   
             }
         }
 
@@ -122,7 +127,8 @@ namespace Presentacion.Vista
         //CHANGE BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            ShowCargo(txtbuscar.Text.Trim());
+            dgvcargo.DataSource = nc.Search(txtbuscar.Text.Trim());
+           
         }
         //DELETE
         private void btneliminar_Click(object sender, EventArgs e)
@@ -138,7 +144,7 @@ namespace Presentacion.Vista
                         nc.state = EntityState.Remover;
                         nc.idcargo = Convert.ToInt32(dgvcargo.CurrentRow.Cells[0].Value);
                         result = nc.SaveChanges();
-                        ShowCargo("");
+                        ShowCargo();
                         Messages.M_info(result);
                     }
                 }

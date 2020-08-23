@@ -53,6 +53,7 @@
     <Compile Include="Entities\Dcontrato.cs" />
     <Compile Include="Entities\DEmpleado.cs" />
     <Compile Include="Entities\DempresaMaestra.cs" />
+    <Compile Include="Entities\DRegimen.cs" />
     <Compile Include="Entities\Drol.cs" />
     <Compile Include="Entities\Dtipocontrato.cs" />
     <Compile Include="Entities\DtipoDocumento.cs" />

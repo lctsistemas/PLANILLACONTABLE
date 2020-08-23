@@ -148,7 +148,7 @@ namespace Presentacion.Vista
                 nu.Password = txtpassword.Text.Trim();
                 nu.Idrol = Convert.ToInt32(cborol.SelectedValue);
 
-                bool valida = new ValidacionDatos(nu).Validate();
+                bool valida = new ValidacionDatos(nu).Validate(lblerror);
                 if (valida)
                 {
                     result = nu.SaveChanges();

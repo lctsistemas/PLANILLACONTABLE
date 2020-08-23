@@ -16,5 +16,16 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
         }
+
+        private void Manto_Regimen_Load(object sender, EventArgs e)
+        {
+            cbxregimen.Items.Add("S.N.P");
+            cbxregimen.Items.Add("S.P.P");
+        }
+
+        private void btnagregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

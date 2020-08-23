@@ -5,8 +5,8 @@ namespace Datos.Entities
     public class DBanco
     {
         private int idBanco;
-
         private string nom_banco;
+        public string mensaje { get; set; } 
 
         public DBanco()
         {
@@ -14,15 +14,29 @@ namespace Datos.Entities
 
         public DBanco(int idBanco, string nom_banco)
         {
-            this.idBanco = idBanco;
-            this.nom_banco = nom_banco;
+            this.IdBanco = idBanco;
+            this.Nom_banco = nom_banco;
 
         }
 
-        public int IdBanco { get; set; }
-        public string Nom_banco { get; set; }
+        public int IdBanco
+        {
+            get {return idBanco;}
 
-        public String mensaje { get; set; }
-        public string Cod_banco { get ; set ; }
+            set{idBanco = value;}
+        }
+
+        public string Nom_banco
+        {
+            get
+            {
+                return nom_banco;
+            }
+
+            set
+            {
+                nom_banco = value;
+            }
+        }
     }
 }

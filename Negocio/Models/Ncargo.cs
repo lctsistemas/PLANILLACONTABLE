@@ -4,14 +4,22 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace Negocio.Models
 {
     public class Ncargo : IDisposable
     {
+        private List<Ncargo> listacargo;
         public int idcargo { get; set; }
+        [Required(ErrorMessage = "El campo Cargo es obligatorio.")]
+        [StringLength(maximumLength: 40, MinimumLength = 4, ErrorMessage = "Campo Cargo de 4 caracteres como minimo.")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Cargo solo permite letras.")]
         public string nombre_cargo { get; set; }
+
+        [Required(ErrorMessage = "El campo Descripcion es obligatorio.")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo descripcion solo permite letras.")]
         public string descripcion { get; set; }
 
         public EntityState state { private get; set; }//esto me muestra en datagridview->then ponemos private
@@ -69,12 +77,10 @@ namespace Negocio.Models
 
         public List<Ncargo> Getall()
         {
-            Dcargo dc = new Dcargo();
-            dc.Nombre_cargo = nombre_cargo;
-            using (var dt = cargo_repository.GetData(dc))
+            using (var dt = cargo_repository.GetData(null))
             {
 
-                List<Ncargo> listacargo = new List<Ncargo>();
+                 listacargo = new List<Ncargo>();
 
                 foreach (DataRow item in dt.Rows)
                 {
@@ -88,6 +94,12 @@ namespace Negocio.Models
                 }
                 return listacargo;
             }
+        }
+
+        public IEnumerable<Ncargo> Search(string filter)
+        {
+            
+            return listacargo.FindAll(e => e.nombre_cargo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
 
