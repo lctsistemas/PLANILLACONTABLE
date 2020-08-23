@@ -49,6 +49,7 @@ tipo_regimen varchar(30)not null
 )
 GO
 
+
 --TABLA: COMISION AFP
 CREATE TABLE ComisionAfp(
 id_afp int identity(1,1),

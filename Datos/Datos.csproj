@@ -65,6 +65,7 @@
     <Compile Include="KeyAutomatic\Kdocumento_emp.cs" />
     <Compile Include="KeyAutomatic\KEmpleado.cs" />
     <Compile Include="KeyAutomatic\KEmpresa.cs" />
+    <Compile Include="KeyAutomatic\KRegimen.cs" />
     <Compile Include="KeyAutomatic\Ktipocontrato.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Repositories\REmpleado.cs" />
     <Compile Include="Repositories\Rempresa.cs" />
     <Compile Include="Repositories\Rlogin.cs" />
+    <Compile Include="Repositories\RRegimen.cs" />
     <Compile Include="Repositories\Rrol.cs" />
     <Compile Include="Repositories\Rsucursal.cs" />
     <Compile Include="Repositories\Rtipocontrato.cs" />

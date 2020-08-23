@@ -37,11 +37,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cbxregimen = new System.Windows.Forms.ComboBox();
             this.btnagregar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.btneliminar = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtdescCorta = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -142,17 +142,19 @@
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(107, 34);
             this.btnagregar.TabIndex = 70;
-            this.btnagregar.Text = "Agregar";
+            this.btnagregar.Text = "Nuevo";
             this.btnagregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnagregar.UseVisualStyleBackColor = false;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // textBox1
+            // txtcodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(266, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 77;
+            this.txtcodigo.Enabled = false;
+            this.txtcodigo.Location = new System.Drawing.Point(266, 79);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtcodigo.TabIndex = 77;
+            this.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnguardar
             // 
@@ -170,13 +172,14 @@
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // textBox2
+            // txtdescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(266, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 78;
+            this.txtdescripcion.Location = new System.Drawing.Point(266, 130);
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtdescripcion.TabIndex = 78;
             // 
             // btneliminar
             // 
@@ -195,20 +198,20 @@
             this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btneliminar.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // txtdescCorta
             // 
-            this.textBox3.Location = new System.Drawing.Point(266, 183);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 79;
+            this.txtdescCorta.Location = new System.Drawing.Point(266, 183);
+            this.txtdescCorta.Name = "txtdescCorta";
+            this.txtdescCorta.Size = new System.Drawing.Size(100, 20);
+            this.txtdescCorta.TabIndex = 79;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtdescCorta);
             this.panel1.Controls.Add(this.btneliminar);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtdescripcion);
             this.panel1.Controls.Add(this.btnguardar);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtcodigo);
             this.panel1.Controls.Add(this.btnagregar);
             this.panel1.Controls.Add(this.cbxregimen);
             this.panel1.Controls.Add(this.label4);
@@ -248,11 +251,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxregimen;
         private System.Windows.Forms.Button btnagregar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtdescripcion;
         private System.Windows.Forms.Button btneliminar;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtdescCorta;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
