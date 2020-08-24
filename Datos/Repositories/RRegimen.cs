@@ -27,10 +27,9 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_ADD_REGIMEN";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = entiti.Codigo_regimen;
                     cmd.Parameters.Add("@descripcion_corta", SqlDbType.VarChar, 30).Value = entiti.Descripcion_corta;
                     cmd.Parameters.Add("@descripcion", SqlDbType.VarChar, 100).Value = entiti.Descripcion;
-                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar, 30).Value = entiti.Tipo_regimen;
+                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar,30).Value = entiti.Tipo_regimen;
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
 
                     result = cmd.ExecuteNonQuery();

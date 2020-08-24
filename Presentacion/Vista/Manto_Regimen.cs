@@ -16,7 +16,6 @@ namespace Presentacion.Vista
     public partial class Manto_Regimen : Form
     {
         String result;
-        Int32 codigo;
         private NRegimen nr=new NRegimen();
         public Manto_Regimen()
         {
@@ -27,23 +26,12 @@ namespace Presentacion.Vista
         {
             cbxregimen.Items.Add("S.N.P");
             cbxregimen.Items.Add("S.P.P");
-            GenerarCodigo();
         }
 
-        private void GenerarCodigo()
-        {
-            codigo = 0;
-            using (nr)
-            {
-                codigo = nr.Getcodigo();
-                txtcodigo.Text = "USER 0" + codigo;
-            }
-        }
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
             using (nr) { nr.state = EntityState.Guardar; }
-            GenerarCodigo();
             Habilitar(true);
             limpiar();
         }
@@ -54,7 +42,6 @@ namespace Presentacion.Vista
             txtdescCorta.Text = String.Empty;
             cbxregimen.Text = "";
             cbxregimen.SelectedValue = 0;
-            txtcodigo.Focus();
         }
 
         private void Habilitar(bool v)
@@ -73,14 +60,14 @@ namespace Presentacion.Vista
             {
                 if (nr.state == EntityState.Guardar)
                 {
-                    nr.Codigo_Regimen = codigo;
-                    nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
                     nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
-                    nr.Tipo_regimen = Convert.ToInt32(cbxregimen.SelectedValue);
+                    nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
 
                     bool valida = new ValidacionDatos(nr).Validate();
                     if (valida)
                     {
+                        if (String.IsNullOrEmpty(cbxregimen.SelectedItem.ToString().Trim()))
+                            return;
                         result = nr.GuardarCambios();
                         Messages.M_info(result);
                         if (nr.state == EntityState.Guardar)

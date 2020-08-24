@@ -49,6 +49,7 @@ tipo_regimen varchar(30)not null
 )
 GO
 
+EXEC sp_RENAME 'RegimenPensionario.decripcion_corta', 'descripcion_corta', 'COLUMN'
 
 --TABLA: COMISION AFP
 CREATE TABLE ComisionAfp(

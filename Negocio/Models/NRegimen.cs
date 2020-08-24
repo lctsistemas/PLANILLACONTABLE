@@ -27,7 +27,7 @@ namespace Negocio.Models
         public String Descripcion { get; set; }
 
         [Required(ErrorMessage = "El campo Tipo de regimen es obligatorio.")]
-        public Int32 Tipo_regimen { get; set; }
+        public String Tipo_regimen { get; set; }
 
         public EntityState state { get; set; }
 

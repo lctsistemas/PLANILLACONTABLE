@@ -1069,15 +1069,14 @@ GO
 
 --PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
 ALTER PROCEDURE SP_ADD_REGIMEN(
-@codigo_regimen int,
-@decripcion_corta varchar(30),
+@descripcion_corta varchar(30),
 @descripcion varchar(100),
 @tipo_regimen varchar(30),
 @mensaje varchar(100) output
 )
 AS BEGIN
-INSERT INTO RegimenPensionario(codigo_regimen,decripcion_corta,descripcion,tipo_regimen)
-VALUES(@codigo_regimen,@descripcion,@decripcion_corta,@tipo_regimen)
+INSERT INTO RegimenPensionario(descripcion_corta,descripcion,tipo_regimen)
+VALUES(@descripcion,@descripcion_corta,@tipo_regimen)
 SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
 END
 GO

@@ -11,7 +11,7 @@ namespace Datos.Entities
         private int codigo_regimen;
         private String descripcion_corta;
         private String descripcion;
-        private Int32 tipo_regimen;
+        private String tipo_regimen;
         public String mensaje { get; set; }
         public int Codigo_regimen
         {
@@ -52,7 +52,7 @@ namespace Datos.Entities
             }
         }
 
-        public Int32 Tipo_regimen
+        public String Tipo_regimen
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Datos.Entities
             }
         }
 
-        public DRegimen(int codigo_regimen, string descripcion_corta, string descripcion, Int32 tipo_regimen)
+        public DRegimen(int codigo_regimen, string descripcion_corta, string descripcion, String tipo_regimen)
         {
             this.Codigo_regimen = codigo_regimen;
             this.Descripcion_corta = descripcion_corta;

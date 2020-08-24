@@ -33,11 +33,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxregimen = new System.Windows.Forms.ComboBox();
             this.btnagregar = new System.Windows.Forms.Button();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
             this.btnguardar = new System.Windows.Forms.Button();
             this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.btneliminar = new System.Windows.Forms.Button();
@@ -55,7 +53,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(495, 62);
+            this.panel2.Size = new System.Drawing.Size(467, 62);
             this.panel2.TabIndex = 81;
             // 
             // pictureBox4
@@ -83,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 130);
+            this.label2.Location = new System.Drawing.Point(104, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 73;
@@ -93,27 +91,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 181);
+            this.label3.Location = new System.Drawing.Point(104, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 20);
             this.label3.TabIndex = 74;
             this.label3.Text = "Descripcion Corta :";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "Codigo :";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(97, 236);
+            this.label4.Location = new System.Drawing.Point(104, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 75;
@@ -124,7 +112,7 @@
             this.cbxregimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxregimen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxregimen.FormattingEnabled = true;
-            this.cbxregimen.Location = new System.Drawing.Point(266, 236);
+            this.cbxregimen.Location = new System.Drawing.Point(273, 187);
             this.cbxregimen.Name = "cbxregimen";
             this.cbxregimen.Size = new System.Drawing.Size(100, 21);
             this.cbxregimen.TabIndex = 76;
@@ -133,6 +121,8 @@
             // 
             this.btnagregar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnagregar.FlatAppearance.BorderSize = 0;
+            this.btnagregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnagregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnagregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnagregar.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -147,19 +137,12 @@
             this.btnagregar.UseVisualStyleBackColor = false;
             this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Enabled = false;
-            this.txtcodigo.Location = new System.Drawing.Point(266, 79);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtcodigo.TabIndex = 77;
-            this.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -176,7 +159,7 @@
             // 
             // txtdescripcion
             // 
-            this.txtdescripcion.Location = new System.Drawing.Point(266, 130);
+            this.txtdescripcion.Location = new System.Drawing.Point(273, 81);
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtdescripcion.TabIndex = 78;
@@ -185,6 +168,8 @@
             // 
             this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
             this.btneliminar.FlatAppearance.BorderSize = 0;
+            this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneliminar.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -200,7 +185,7 @@
             // 
             // txtdescCorta
             // 
-            this.txtdescCorta.Location = new System.Drawing.Point(266, 183);
+            this.txtdescCorta.Location = new System.Drawing.Point(273, 134);
             this.txtdescCorta.Name = "txtdescCorta";
             this.txtdescCorta.Size = new System.Drawing.Size(100, 20);
             this.txtdescCorta.TabIndex = 79;
@@ -211,23 +196,21 @@
             this.panel1.Controls.Add(this.btneliminar);
             this.panel1.Controls.Add(this.txtdescripcion);
             this.panel1.Controls.Add(this.btnguardar);
-            this.panel1.Controls.Add(this.txtcodigo);
             this.panel1.Controls.Add(this.btnagregar);
             this.panel1.Controls.Add(this.cbxregimen);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(1, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(495, 297);
+            this.panel1.Size = new System.Drawing.Size(467, 266);
             this.panel1.TabIndex = 80;
             // 
             // Manto_Regimen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 362);
+            this.ClientSize = new System.Drawing.Size(470, 325);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Manto_Regimen";
@@ -247,11 +230,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbxregimen;
         private System.Windows.Forms.Button btnagregar;
-        private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.TextBox txtdescripcion;
         private System.Windows.Forms.Button btneliminar;
