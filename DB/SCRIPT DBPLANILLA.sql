@@ -113,6 +113,7 @@ id_em_maestra int not null,
 id_usuario int not null
 )
 GO
+SELECT * FROM Empresa
 
 CREATE TABLE Sucursal(
 id_sucursal int identity(1,1),

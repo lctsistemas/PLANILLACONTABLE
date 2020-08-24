@@ -80,20 +80,6 @@ namespace Presentacion.Vista
 
         }
 
-        //VALIDAR CONTROLES
-        private bool Validar()
-        {
-            if (String.IsNullOrWhiteSpace(txtcodigo_empresa.Text) || String.IsNullOrWhiteSpace(txtrazon_social.Text)
-                || String.IsNullOrWhiteSpace(txtdireccion.Text) || String.IsNullOrWhiteSpace(txtdomicilio.Text)
-                || String.IsNullOrWhiteSpace(txtruc.Text) || String.IsNullOrWhiteSpace(txtusuario.Text)
-                || cboregimen.Text.Equals(""))
-            {
-                ValidateChildren();
-                return true;
-            }
-            else
-                return false;
-        }
         //METODO LIMPIAR
         private void Limpiar()
         {
@@ -117,10 +103,7 @@ namespace Presentacion.Vista
         }
         //BOTON GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
-        {
-            if (Validar())
-                return;
-
+        {            
             result = "";
             using (ne)
             {
@@ -128,22 +111,35 @@ namespace Presentacion.Vista
                 ne.direccion = txtdireccion.Text.Trim().ToUpper();
                 ne.domicilio = txtdomicilio.Text.Trim().ToUpper();
                 ne.ruc = txtruc.Text.Trim();
-                ne.regimen = cboregimen.SelectedItem.ToString();
-                ne.localidad = txtlocalidad.Text.Trim().ToUpper();
-
-                ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();
-                ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
-                result = ne.SaveChanges();
-                if (result.Contains("¡Codigo"))
-                {
-                    Messages.M_error(result);
-                }
+                if (String.IsNullOrWhiteSpace(cboregimen.Text))
+                    ne.regimen = "";
                 else
-                {
-                    Messages.M_info(result);
-                    Show_empresa("");
-                }
+                    ne.regimen = cboregimen.SelectedItem.ToString();
 
+                ne.localidad = txtlocalidad.Text.Trim().ToUpper();
+                ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();
+                if (!string.IsNullOrEmpty(txtiduser.Text))
+                    ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
+                else
+                    ne.eidusuario = -1;
+
+                bool valida = new ValidacionDatos(ne).Validate();
+                if (valida)
+                {
+                    if (string.IsNullOrEmpty(txtiduser.Text))
+                        return;
+
+                        result = ne.SaveChanges();
+                    if (result.Contains("¡Codigo"))
+                    {
+                        Messages.M_error(result);
+                    }
+                    else
+                    {
+                        Messages.M_info(result);
+                        Show_empresa("");
+                    } 
+                }
             }
         }
 
@@ -159,15 +155,14 @@ namespace Presentacion.Vista
             //TIENE QUE SER OTRA MANERA ESTO.
             frmvista_usuario f_vist = new frmvista_usuario();
             this.AddOwnedForm(f_vist);
-           f_vist.FormBorderStyle = FormBorderStyle.None;
+            f_vist.FormBorderStyle = FormBorderStyle.None;
             f_vist.TopLevel = false;//como ventana nivel superior
-           f_vist.Dock=DockStyle.Fill;
+            f_vist.Dock=DockStyle.Fill;
             this.Controls.Add(f_vist);
             this.Tag = f_vist;//datos sobre el control
             f_vist.BringToFront();
             //f_vist.StartPosition = FormStartPosition.CenterParent;
             f_vist.Show();
-
         }
 
         private void frmempresa_Load(object sender, EventArgs e)

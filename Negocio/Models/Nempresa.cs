@@ -5,6 +5,8 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.ComponentModel.DataAnnotations;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Negocio.Models
 {
@@ -14,20 +16,55 @@ namespace Negocio.Models
         List<Nempresa> list_emp;
         public int idempresa_maestra { get; set; }
         public String estado { get; set; }
+
+        [Display(Name ="Usuario")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El campo Usuario es obligatorio.")]
         public Int32 eidusuario { get; set; }
+
         public Int32 eidemp_maestra { get; set; }//campo de tabla empresa
         public Int32 eidempresa { get; set; }
+
+
+        [Display(Name ="Código Empresa")]
+        [Required]
         public String ecodigo_empresa { get; set; }
+
+
+        [Display(Name = "Razón Social")]
+        [Required]
+        [RegularExpression("^[a-zA-Z. ]+$")]
         public String razon_social { get; set; }
+
+
+        [Display(Name ="Localidad")]
+        [Required]
         public String localidad { get; set; }
+
+
+        [Display(Name ="Dirección")]
+        [Required]
         public String direccion { get; set; }
+
+
+        [Display(Name = "Domicilio")]
+        [Required]
         public String domicilio { get; set; }
+
+
+        [Display(Name ="Ruc")]
+        [Required]
+        [RegularExpression("([0-9]+)")]
+        [StringLength(maximumLength:11,MinimumLength =11)]
         public String ruc { get; set; }
-        public String regimen { get; set; }
-        public String usuario { get; set; }
+
+        
+        [Required]
+        [Display(Name = "Regimen")]
+        public string regimen { get; set; }
+
+        public string usuario { get; set; }
+
         public String search { get; set; }//para buscar los datos       
-
-
         public EntityState state { private get; set; }
         private IEmpresa_maestra empre_reposi;
 
