@@ -6,6 +6,7 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,23 @@ namespace Negocio.Models
             return mensaje;
         }
 
+        public List<NRegimen> Getall()
+        {
+            using (var dt= regimen.GetData(null))
+            {
+                list_regimen = new List<NRegimen>();
+                foreach (DataRow item in dt.Rows)
+                {
+                    list_regimen.Add(new NRegimen()
+                    {
+                        Descripcion = item[1].ToString(),
+                        Descripcion_corta = item[2].ToString(),
+                        Tipo_regimen = item[3].ToString()
+                    });
+                }
+                return list_regimen;
+            }
+        }
         public void Dispose()
         {
            // throw new NotImplementedException();

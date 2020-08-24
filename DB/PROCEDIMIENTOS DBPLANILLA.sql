@@ -1068,7 +1068,7 @@ END
 GO
 
 --PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
-ALTER PROCEDURE SP_ADD_REGIMEN(
+CREATE PROCEDURE SP_ADD_REGIMEN(
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
 @tipo_regimen varchar(30),
@@ -1080,6 +1080,13 @@ VALUES(@descripcion,@descripcion_corta,@tipo_regimen)
 SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
 END
 GO
+
+CREATE PROC SP_SHOW_REGIMEN
+AS BEGIN 
+SELECT r.descripcion,r.descripcion_corta,r.tipo_regimen from RegimenPensionario r; 
+END;
+GO
+
 
 select * from Contrato
 select * from Usuario

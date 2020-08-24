@@ -43,7 +43,7 @@ GO
 --TABLA: REGIMEN PENSIONARIO
 CREATE TABLE RegimenPensionario(
 codigo_regimen int identity(1,1),
-decripcion_corta varchar(30) null,
+descripcion_corta varchar(30) null,
 descripcion varchar(100) not null,
 tipo_regimen varchar(30)not null
 )

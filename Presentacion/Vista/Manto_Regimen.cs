@@ -53,6 +53,14 @@ namespace Presentacion.Vista
 
         }
 
+        private void ShowUser()
+        {
+            using (nr)
+            {
+                dgvregimen.DataSource = nr.Getall();
+            }
+        }
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
             result = "";
@@ -62,6 +70,7 @@ namespace Presentacion.Vista
                 {
                     nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
                     nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
+                    nr.Tipo_regimen = cbxregimen.Text.Trim();
 
                     bool valida = new ValidacionDatos(nr).Validate();
                     if (valida)
