@@ -1081,9 +1081,9 @@ SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
 END
 GO
 
-alter PROCEDURE SP_SHOW_REGIMEN
+ALTER PROCEDURE SP_SHOW_REGIMEN
 AS BEGIN 
-SELECT r.descripcion,r.descripcion_corta,r.tipo_regimen from RegimenPensionario r; 
+SELECT r.codigo_regimen,r.descripcion,r.descripcion_corta,r.tipo_regimen from RegimenPensionario r; 
 END;
 GO
 

@@ -24,6 +24,7 @@ namespace Presentacion.Vista
 
         private void Manto_Regimen_Load(object sender, EventArgs e)
         {
+            //Tabla();
             cbxregimen.Items.Add("S.N.P");
             cbxregimen.Items.Add("S.P.P");
             ShowRegimen();
@@ -33,9 +34,10 @@ namespace Presentacion.Vista
         private void btnagregar_Click(object sender, EventArgs e)
         {
             using (nr) { nr.state = EntityState.Guardar; }
+            
             Habilitar(true);
             limpiar();
-            Tabla();
+            
         }
 
         private void limpiar()
@@ -52,22 +54,25 @@ namespace Presentacion.Vista
             txtdescripcion.Enabled = v;
             txtdescCorta.Enabled = v;
             cbxregimen.Enabled = v;
-
+            txtdescripcion.Focus();
         }
 
         private void Tabla()
         {
-            dgvregimen.Columns[0].HeaderText = "CODIGO";
-            dgvregimen.Columns[0].Width = 50;
-            dgvregimen.Columns[0].Visible = false;
+            dgvregimen.Columns[0].HeaderText = "codigo";
+            dgvregimen.Columns[0].Width = 100;
 
-            dgvregimen.Columns[1].HeaderText = "ACCESO USUARIO";
+            dgvregimen.Columns[1].HeaderText = "DESCRIPCION";
             dgvregimen.Columns[1].Width = 150;
 
-            dgvregimen.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvregimen.Columns[2].Width = 250;
+            dgvregimen.Columns[2].HeaderText = "DESCRIPCION CORTA";
+            dgvregimen.Columns[2].Width = 100;
 
-            
+            dgvregimen.Columns[3].HeaderText = "TIPO REGIMEN";
+            dgvregimen.Columns[3].Width = 100;
+
+           
+
         }
 
         private void ShowRegimen()
@@ -95,12 +100,36 @@ namespace Presentacion.Vista
                         if (String.IsNullOrEmpty(cbxregimen.SelectedItem.ToString().Trim()))
                             return;
                         result = nr.GuardarCambios();
+                        ShowRegimen();
                         Messages.M_info(result);
                         if (nr.state == EntityState.Guardar)
                         {
                             limpiar();
                         }
                     }
+                }
+            }
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvregimen.DataSource = nr.Search(txtbuscar.Text.Trim());
+        }
+
+        private void dgvregimen_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvregimen.CurrentRow;
+
+            if (dgvregimen.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nr)
+                {
+                    nr.state = EntityState.Modificar;
+                    nr.Codigo_Regimen = Convert.ToInt32(r.Cells[0].Value);
+                    txtdescripcion.Text = Convert.ToString(r.Cells[1].Value);
+                    txtdescCorta.Text = Convert.ToString(r.Cells[2].Value);
+                    cbxregimen.Text = r.Cells[3].Value.ToString();
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
                 }
             }
         }

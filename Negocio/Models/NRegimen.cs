@@ -77,9 +77,10 @@ namespace Negocio.Models
                 {
                     list_regimen.Add(new NRegimen()
                     {
-                        Descripcion = item[0].ToString(),
-                        Descripcion_corta = item[1].ToString(),
-                        Tipo_regimen = item[2].ToString()
+                        Codigo_Regimen= Convert.ToInt32(item[0]),
+                        Descripcion = Convert.ToString(item[1]),
+                        Descripcion_corta = Convert.ToString(item[2]),
+                        Tipo_regimen = Convert.ToString(item[3])
                     });
                 }
                 return list_regimen;
@@ -88,6 +89,11 @@ namespace Negocio.Models
         public void Dispose()
         {
            // throw new NotImplementedException();
+        }
+
+        public IEnumerable<NRegimen> Search(string filter)
+        {
+            return list_regimen.FindAll(e => e.Descripcion.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         public int Getcodigo()

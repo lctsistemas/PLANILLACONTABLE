@@ -52,10 +52,9 @@ namespace Datos.Repositories
 
         public DataTable GetData(DRegimen entiti)
         {
-            using (SqlConnection cnn = RConexion.Getconectar())
+            using (var cnn = RConexion.Getconectar())
             {
                 cnn.Open();
-                cmd = null;
                 SqlDataAdapter da = new SqlDataAdapter();
                 using (cmd = new SqlCommand())
                 {
