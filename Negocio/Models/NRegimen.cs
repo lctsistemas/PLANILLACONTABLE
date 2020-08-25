@@ -77,9 +77,9 @@ namespace Negocio.Models
                 {
                     list_regimen.Add(new NRegimen()
                     {
-                        Descripcion = item[1].ToString(),
-                        Descripcion_corta = item[2].ToString(),
-                        Tipo_regimen = item[3].ToString()
+                        Descripcion = item[0].ToString(),
+                        Descripcion_corta = item[1].ToString(),
+                        Tipo_regimen = item[2].ToString()
                     });
                 }
                 return list_regimen;

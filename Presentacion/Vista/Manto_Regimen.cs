@@ -26,6 +26,7 @@ namespace Presentacion.Vista
         {
             cbxregimen.Items.Add("S.N.P");
             cbxregimen.Items.Add("S.P.P");
+            ShowRegimen();
         }
 
 
@@ -34,6 +35,7 @@ namespace Presentacion.Vista
             using (nr) { nr.state = EntityState.Guardar; }
             Habilitar(true);
             limpiar();
+            Tabla();
         }
 
         private void limpiar()
@@ -53,7 +55,22 @@ namespace Presentacion.Vista
 
         }
 
-        private void ShowUser()
+        private void Tabla()
+        {
+            dgvregimen.Columns[0].HeaderText = "CODIGO";
+            dgvregimen.Columns[0].Width = 50;
+            dgvregimen.Columns[0].Visible = false;
+
+            dgvregimen.Columns[1].HeaderText = "ACCESO USUARIO";
+            dgvregimen.Columns[1].Width = 150;
+
+            dgvregimen.Columns[2].HeaderText = "NOMBRE USUARIO";
+            dgvregimen.Columns[2].Width = 250;
+
+            
+        }
+
+        private void ShowRegimen()
         {
             using (nr)
             {

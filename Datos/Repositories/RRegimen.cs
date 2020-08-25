@@ -52,7 +52,27 @@ namespace Datos.Repositories
 
         public DataTable GetData(DRegimen entiti)
         {
-            throw new NotImplementedException();
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                SqlDataAdapter da = new SqlDataAdapter();
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_SHOW_REGIMEN";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = cmd;
+
+                    using (DataTable dt = new DataTable())
+                    {
+                        da.Fill(dt);
+                        da.Dispose();
+                        return dt;
+                    }
+                }
+
+            }
         }
     }
 }

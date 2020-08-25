@@ -1081,11 +1081,13 @@ SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
 END
 GO
 
-CREATE PROC SP_SHOW_REGIMEN
+alter PROCEDURE SP_SHOW_REGIMEN
 AS BEGIN 
 SELECT r.descripcion,r.descripcion_corta,r.tipo_regimen from RegimenPensionario r; 
 END;
 GO
+
+exec sp_show_regimen;
 
 
 select * from Contrato
