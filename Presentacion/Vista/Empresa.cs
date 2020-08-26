@@ -16,15 +16,15 @@ namespace Presentacion.Vista
         public frmempresa()
         {
             InitializeComponent();
-            Show_empresa("");
+            Show_empresa();
             Tabla();
         }
 
-        private void Show_empresa(String buscar)
+        private void Show_empresa()
         {
             using (ne)
             {
-                ne.search = buscar;
+             
                 dgvempresa.DataSource = ne.Getall();
                 lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
             }
@@ -75,7 +75,7 @@ namespace Presentacion.Vista
             dgvempresa.Columns[12].HeaderText = "USUARIO";
             dgvempresa.Columns[12].Width = 270;
 
-            dgvempresa.Columns[13].Visible = false;
+            //dgvempresa.Columns[13].Visible = false;
             //dgvempresa.Columns[12].Visible = false;
 
         }
@@ -137,7 +137,7 @@ namespace Presentacion.Vista
                     else
                     {
                         Messages.M_info(result);
-                        Show_empresa("");
+                        Show_empresa();
                     } 
                 }
             }
@@ -172,41 +172,11 @@ namespace Presentacion.Vista
             Tooltip.Title(btnusuario, "Seleccione Usuario",true);
             Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa",true);
             CargarRegimen();
-        }
-
-        private void txtcodigo_empresa_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtcodigo_empresa, "Ingrese Codigo");
-        }
-
-        private void txtrazon_social_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtrazon_social, "Ingrese Razon Social");
-        }
-
-        private void txtdireccion_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtdireccion, "Ingrese Dirección");
-        }
-
-        private void txtdomicilio_Validated(object sender, EventArgs e)
-        {
-            ValidateError.Validate_text(txtdomicilio, "Ingrese Domicilio");
-        }
-
-        private void txtruc_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtruc, "Ingrese Ruc");
-        }
-
-        private void cboregimen_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_combo(cboregimen, "Seleccione Regimen");
-        }
+        }     
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            Show_empresa(txtbuscar.Text.Trim());
+            dgvempresa.DataSource = ne.Search(txtbuscar.Text.Trim());
         }
 
         private void dgvempresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -253,7 +223,7 @@ namespace Presentacion.Vista
                         else
                         {
                             Messages.M_info(result);
-                            Show_empresa("");
+                            Show_empresa();
                         }
                     }
                 }

@@ -13,7 +13,7 @@ namespace Negocio.Models
     public class Nempresa : IDisposable
     {
         String mensaje;
-        List<Nempresa> list_emp;
+        List<Nempresa> list_empresa;
         public int idempresa_maestra { get; set; }
         public String estado { get; set; }
 
@@ -64,7 +64,6 @@ namespace Negocio.Models
 
         public string usuario { get; set; }
 
-        public String search { get; set; }//para buscar los datos       
         public EntityState state { private get; set; }
         private IEmpresa_maestra empre_reposi;
 
@@ -124,15 +123,13 @@ namespace Negocio.Models
 
         //METODO SHOW EMPRESA
         public List<Nempresa> Getall()
-        {
-            DempresaMaestra dem = new DempresaMaestra();
-            dem.search = search;
-            using (DataTable dt = empre_reposi.GetData(dem))
+        {           
+            using (DataTable dt = empre_reposi.GetData(null))
             {
-                list_emp = new List<Nempresa>();
+                list_empresa = new List<Nempresa>();
                 foreach (DataRow item in dt.Rows)
                 {
-                    list_emp.Add(new Nempresa()
+                    list_empresa.Add(new Nempresa()
                     {
                         idempresa_maestra = Convert.ToInt32(item[0]),//idempresa maestra
                         estado = item[1].ToString(),//estado
@@ -149,13 +146,19 @@ namespace Negocio.Models
                         usuario = item[12].ToString()
                     });
                 }
-                return list_emp;
+                return list_empresa;
             }
+        }
+
+        //METODO PARA FILTRAR
+        public IEnumerable<Nempresa> Search(string filter)
+        {
+            return list_empresa.FindAll(e => e.razon_social.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);//|| e.codigo_usu.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);            
         }
 
         public void Dispose()
         {
-            // throw new NotImplementedException();
+            
         }
     }
 }
