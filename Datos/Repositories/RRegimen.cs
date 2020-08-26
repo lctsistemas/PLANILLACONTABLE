@@ -42,19 +42,56 @@ namespace Datos.Repositories
 
         public int Delete(DRegimen entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection conn = RConexion.Getconectar())
+            {
+                conn.Open();
+                using (SqlCommand cmd=new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_DELETE_REGIMEN";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = entiti.Codigo_regimen;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    result = cmd.ExecuteNonQuery();
+                    entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+                    cmd.Parameters.Clear();
+                    return result;
+                }
+            }
         }
 
         public int Edit(DRegimen entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection conect = RConexion.Getconectar())
+            {
+                conect.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conect;
+                    cmd.CommandText = "SP_UPDATE_REGIMEN";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@descripcion_corta", SqlDbType.VarChar, 40).Value = entiti.Descripcion_corta;
+                    cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
+                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar,30).Value = entiti.Tipo_regimen;
+                    cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = entiti.Codigo_regimen;
+                    result = cmd.ExecuteNonQuery();
+
+                    cmd.Parameters.Clear();
+                    return result;
+                }
+            }
         }
 
         public DataTable GetData(DRegimen entiti)
         {
-            using (var cnn = RConexion.Getconectar())
+            using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
+                cmd = null;
                 SqlDataAdapter da = new SqlDataAdapter();
                 using (cmd = new SqlCommand())
                 {

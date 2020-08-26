@@ -1085,6 +1085,27 @@ SELECT r.codigo_regimen,r.descripcion,r.descripcion_corta,r.tipo_regimen from Re
 END;
 GO
 
+alter PROC SP_UPDATE_REGIMEN
+@codigo_regimen int,
+@descripcion_corta varchar(30),
+@descripcion varchar(100),
+@tipo_regimen varchar(30)
+AS BEGIN
+UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
+END
+GO
+
+alter PROC SP_DELETE_REGIMEN
+@codigo_regimen int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
+SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
+END
+GO
+
+exec SP_UPDATE_REGIMEN 1,'er','E' ,'S.N.P';
+
 exec sp_show_regimen;
 
 
