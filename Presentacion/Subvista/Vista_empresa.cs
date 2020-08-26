@@ -12,15 +12,14 @@ namespace Presentacion.Subvista
         public frmvista_empresa()
         {
             InitializeComponent();
-            Llenar_empresa("");
+            Llenar_empresa();
             Tabla();
         }
         //SHOW EMPRESA
-        private void Llenar_empresa(String txt)
+        private void Llenar_empresa()
         {
             using (Nempresa ne = new Nempresa())
-            {
-                ne.search = txt;
+            {                
                 dgvvista_emp.DataSource = ne.Getall();
                 lbltotal.Text = "Total Registro: " + dgvvista_emp.RowCount;
             }
@@ -104,12 +103,7 @@ namespace Presentacion.Subvista
                 su.txtusuario.Text = ro.Cells[12].Value.ToString();
                 this.Close();
             }
-        }
-
-        private void txtbuscar_TextChanged(object sender, EventArgs e)
-        {
-            this.Llenar_empresa(txtbuscar.Text.Trim());
-        }
+        }      
 
         private void btncerrar_Click(object sender, EventArgs e)
         {

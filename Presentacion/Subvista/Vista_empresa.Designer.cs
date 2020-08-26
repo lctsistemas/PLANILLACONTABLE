@@ -52,8 +52,7 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(298, 16);
             this.txtbuscar.TabIndex = 0;
-            this.txtbuscar.WordWrap = false;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.WordWrap = false;            
             // 
             // dgvvista_emp
             // 
