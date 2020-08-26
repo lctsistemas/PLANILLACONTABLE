@@ -389,7 +389,6 @@ GO
 
 --PROCEDIMIENTO MOSTRAR EMPRESA
 ALTER PROC SP_SHOW_EMPRESA
-@search varchar(50)
 AS BEGIN
 SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social,em.localidad,
 direccion, domicilio_fiscal, em.ruc, em.regimen, u.referencia
