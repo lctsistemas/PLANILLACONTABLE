@@ -17,7 +17,7 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
             To_disable(false);
-            Show_sucursal("");
+            Show_sucursal();
             Tabla();
         }
 
@@ -32,11 +32,10 @@ namespace Presentacion.Vista
         }
 
         //MOSTRAR SUCURSAL
-        private void Show_sucursal(String buscar)
+        private void Show_sucursal()
         {
             using (nsu)
-            {
-                nsu.search = buscar;
+            {             
                 dgvsucursal.DataSource = nsu.Getall();
                 lbltotal.Text = "Registro Total: " + dgvsucursal.Rows.Count;
             }
@@ -136,7 +135,7 @@ namespace Presentacion.Vista
                 else
                 {
                     Messages.M_info(result);
-                    Show_sucursal("");
+                    Show_sucursal();
                 }
             }
         }
@@ -176,7 +175,7 @@ namespace Presentacion.Vista
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            Show_sucursal(txtbuscar.Text.Trim());
+            
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -198,7 +197,7 @@ namespace Presentacion.Vista
                         else
                         {
                             Messages.M_info(result);
-                            Show_sucursal("");
+                            Show_sucursal();
                         }
                     }
                 }

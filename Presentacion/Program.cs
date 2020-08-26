@@ -17,7 +17,6 @@ namespace Presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Manto_Regimen());
-
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Presentacion.Helps
             valid = Validator.TryValidateObject(instance, context, resuts, true);//le enviamos true para que valide todos los datos
         }
 
-        //VALIDAMOS 
+        //VALIDAMOS        
         public bool Validate(Control ctr)
         {
             if (valid == false)
@@ -33,7 +33,8 @@ namespace Presentacion.Helps
                 foreach (ValidationResult item in resuts)
                 {
                     message += item.ErrorMessage + "\n";
-                }                
+
+                }
                 ctr.Text = message;
             }
             else
@@ -49,10 +50,11 @@ namespace Presentacion.Helps
                 {
                     message += item.ErrorMessage + "\n";
                 }
-                Messages.M_warning(message);               
-            }            
+                Messages.M_warning(message);
+
+            }
             return valid;
         }
-
+                      
     }
 }

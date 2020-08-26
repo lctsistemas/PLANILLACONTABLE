@@ -16,15 +16,15 @@ namespace Presentacion.Vista
         public frmempresa()
         {
             InitializeComponent();
-            Show_empresa("");
+            Show_empresa();
             Tabla();
         }
 
-        private void Show_empresa(String buscar)
+        private void Show_empresa()
         {
             using (ne)
             {
-                ne.search = buscar;
+             
                 dgvempresa.DataSource = ne.Getall();
                 lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
             }
@@ -75,25 +75,11 @@ namespace Presentacion.Vista
             dgvempresa.Columns[12].HeaderText = "USUARIO";
             dgvempresa.Columns[12].Width = 270;
 
-            dgvempresa.Columns[13].Visible = false;
+            //dgvempresa.Columns[13].Visible = false;
             //dgvempresa.Columns[12].Visible = false;
 
         }
 
-        //VALIDAR CONTROLES
-        private bool Validar()
-        {
-            if (String.IsNullOrWhiteSpace(txtcodigo_empresa.Text) || String.IsNullOrWhiteSpace(txtrazon_social.Text)
-                || String.IsNullOrWhiteSpace(txtdireccion.Text) || String.IsNullOrWhiteSpace(txtdomicilio.Text)
-                || String.IsNullOrWhiteSpace(txtruc.Text) || String.IsNullOrWhiteSpace(txtusuario.Text)
-                || cboregimen.Text.Equals(""))
-            {
-                ValidateChildren();
-                return true;
-            }
-            else
-                return false;
-        }
         //METODO LIMPIAR
         private void Limpiar()
         {
@@ -117,10 +103,7 @@ namespace Presentacion.Vista
         }
         //BOTON GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
-        {
-            if (Validar())
-                return;
-
+        {            
             result = "";
             using (ne)
             {
@@ -128,22 +111,35 @@ namespace Presentacion.Vista
                 ne.direccion = txtdireccion.Text.Trim().ToUpper();
                 ne.domicilio = txtdomicilio.Text.Trim().ToUpper();
                 ne.ruc = txtruc.Text.Trim();
-                ne.regimen = cboregimen.SelectedItem.ToString();
-                ne.localidad = txtlocalidad.Text.Trim().ToUpper();
-
-                ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();
-                ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
-                result = ne.SaveChanges();
-                if (result.Contains("¡Codigo"))
-                {
-                    Messages.M_error(result);
-                }
+                if (String.IsNullOrWhiteSpace(cboregimen.Text))
+                    ne.regimen = "";
                 else
-                {
-                    Messages.M_info(result);
-                    Show_empresa("");
-                }
+                    ne.regimen = cboregimen.SelectedItem.ToString();
 
+                ne.localidad = txtlocalidad.Text.Trim().ToUpper();
+                ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();
+                if (!string.IsNullOrEmpty(txtiduser.Text))
+                    ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
+                else
+                    ne.eidusuario = -1;
+
+                bool valida = new ValidacionDatos(ne).Validate();
+                if (valida)
+                {
+                    if (string.IsNullOrEmpty(txtiduser.Text))
+                        return;
+
+                        result = ne.SaveChanges();
+                    if (result.Contains("¡Codigo"))
+                    {
+                        Messages.M_error(result);
+                    }
+                    else
+                    {
+                        Messages.M_info(result);
+                        Show_empresa();
+                    } 
+                }
             }
         }
 
@@ -159,15 +155,14 @@ namespace Presentacion.Vista
             //TIENE QUE SER OTRA MANERA ESTO.
             frmvista_usuario f_vist = new frmvista_usuario();
             this.AddOwnedForm(f_vist);
-           f_vist.FormBorderStyle = FormBorderStyle.None;
+            f_vist.FormBorderStyle = FormBorderStyle.None;
             f_vist.TopLevel = false;//como ventana nivel superior
-           f_vist.Dock=DockStyle.Fill;
+            f_vist.Dock=DockStyle.Fill;
             this.Controls.Add(f_vist);
             this.Tag = f_vist;//datos sobre el control
             f_vist.BringToFront();
             //f_vist.StartPosition = FormStartPosition.CenterParent;
             f_vist.Show();
-
         }
 
         private void frmempresa_Load(object sender, EventArgs e)
@@ -177,41 +172,11 @@ namespace Presentacion.Vista
             Tooltip.Title(btnusuario, "Seleccione Usuario",true);
             Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa",true);
             CargarRegimen();
-        }
-
-        private void txtcodigo_empresa_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtcodigo_empresa, "Ingrese Codigo");
-        }
-
-        private void txtrazon_social_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtrazon_social, "Ingrese Razon Social");
-        }
-
-        private void txtdireccion_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtdireccion, "Ingrese Dirección");
-        }
-
-        private void txtdomicilio_Validated(object sender, EventArgs e)
-        {
-            ValidateError.Validate_text(txtdomicilio, "Ingrese Domicilio");
-        }
-
-        private void txtruc_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtruc, "Ingrese Ruc");
-        }
-
-        private void cboregimen_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_combo(cboregimen, "Seleccione Regimen");
-        }
+        }     
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            Show_empresa(txtbuscar.Text.Trim());
+            dgvempresa.DataSource = ne.Search(txtbuscar.Text.Trim());
         }
 
         private void dgvempresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -258,7 +223,7 @@ namespace Presentacion.Vista
                         else
                         {
                             Messages.M_info(result);
-                            Show_empresa("");
+                            Show_empresa();
                         }
                     }
                 }

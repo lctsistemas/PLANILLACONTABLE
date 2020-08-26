@@ -298,7 +298,7 @@
             this.cboregimen.Name = "cboregimen";
             this.cboregimen.Size = new System.Drawing.Size(310, 25);
             this.cboregimen.TabIndex = 8;
-            this.cboregimen.Validating += new System.ComponentModel.CancelEventHandler(this.cboregimen_Validating);
+        
             // 
             // btnusuario
             // 
@@ -336,7 +336,6 @@
             this.txtruc.TabIndex = 7;
             this.txtruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtruc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtruc_KeyPress);
-            this.txtruc.Validating += new System.ComponentModel.CancelEventHandler(this.txtruc_Validating);
             // 
             // txtdomicilio
             // 
@@ -345,7 +344,6 @@
             this.txtdomicilio.Name = "txtdomicilio";
             this.txtdomicilio.Size = new System.Drawing.Size(376, 23);
             this.txtdomicilio.TabIndex = 6;
-            this.txtdomicilio.Validated += new System.EventHandler(this.txtdomicilio_Validated);
             // 
             // txtdireccion
             // 
@@ -354,7 +352,6 @@
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(376, 23);
             this.txtdireccion.TabIndex = 5;
-            this.txtdireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtdireccion_Validating);
             // 
             // txtlocalidad
             // 
@@ -363,7 +360,6 @@
             this.txtlocalidad.Name = "txtlocalidad";
             this.txtlocalidad.Size = new System.Drawing.Size(376, 23);
             this.txtlocalidad.TabIndex = 4;
-            this.txtlocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.txtrazon_social_Validating);
             // 
             // txtrazon_social
             // 
@@ -372,7 +368,6 @@
             this.txtrazon_social.Name = "txtrazon_social";
             this.txtrazon_social.Size = new System.Drawing.Size(376, 23);
             this.txtrazon_social.TabIndex = 3;
-            this.txtrazon_social.Validating += new System.ComponentModel.CancelEventHandler(this.txtrazon_social_Validating);
             // 
             // txtcodigo_empresa
             // 
@@ -382,7 +377,6 @@
             this.txtcodigo_empresa.Size = new System.Drawing.Size(133, 23);
             this.txtcodigo_empresa.TabIndex = 2;
             this.txtcodigo_empresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtcodigo_empresa.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_empresa_Validating);
             // 
             // label8
             // 

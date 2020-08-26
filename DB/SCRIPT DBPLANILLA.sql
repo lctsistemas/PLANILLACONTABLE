@@ -53,18 +53,21 @@ EXEC sp_RENAME 'RegimenPensionario.decripcion_corta', 'descripcion_corta', 'COLU
 
 --TABLA: COMISION AFP
 CREATE TABLE ComisionAfp(
-id_afp int identity(1,1),
+idcomision int identity(1,1),
+comision decimal(4,2) null,
+flujo decimal(4,2) null,
+saldo decimal(4,2) null,
+seguro decimal(4,2) null,
+aporte decimal(4,2) null,
+tope  decimal(8,2) null,
 codigo_regimen int not null,
-comision decimal(4,2)not null,
-flujo decimal(4,2)not null,
-saldo decimal(4,2)not null,
-seguro decimal(4,2)not null,
-aporte decimal(4,2)not null,
-tope  decimal(8,2)not null
+idmes int not null,
+idperiodo int not null
 )
 GO
 
-DROP TABLE Afp
+select * from dbo.ComisionAfp
+DROP TABLE ComisionAfp
 GO
 INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
 VALUES('HABITAT FLUJO',1.47,1.25,1.35,10.0,9707.03)
@@ -112,6 +115,7 @@ id_em_maestra int not null,
 id_usuario int not null
 )
 GO
+SELECT * FROM Empresa
 
 CREATE TABLE Sucursal(
 id_sucursal int identity(1,1),
@@ -245,14 +249,12 @@ otros_descuentos decimal(10,2)
 )
 
 CREATE TABLE Periodo(
-id_periodo int not null,
-id_empresa int not null,
+id_periodo int identity(1,1),
 periodo int not null,
-id_meses int not null
 )
 
 CREATE TABLE Mes(
-id_mes int not null,
+id_mes int identity(1,1),
 nombre_mes varchar(20) not null
 )
 GO
@@ -286,6 +288,8 @@ alter table Periodo ADD CONSTRAINT pk_id_periodo PRIMARY KEY(id_periodo)
 alter table Mes ADD CONSTRAINT pk_id_mes PRIMARY KEY(id_mes)
 alter table Planilla ADD CONSTRAINT pk_id_planilla PRIMARY KEY(id_planilla)
 alter table tipo_planilla ADD CONSTRAINT pk_idTipo_planilla PRIMARY KEY(id_tipo_planilla)
+alter table ComisionAfp ADD CONSTRAINT pk_comision PRIMARY KEY(idcomision)
+alter table RegimenPensionario ADD CONSTRAINT pk_idregimen PRIMARY KEY(codigo_regimen)
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
@@ -296,6 +300,12 @@ ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCE
 ALTER TABLE Periodo ADD CONSTRAINT fk_id_MesPeriodo FOREIGN KEY(id_meses) REFERENCES Meses_maestra
 ALTER TABLE Periodo ADD CONSTRAINT fk_id_mesper FOREIGN KEY(id_mes) REFERENCES Mes
 ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_planilla) REFERENCES tipo_planilla
+
+ALTER TABLE ComisionAfp ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
+ALTER TABLE ComisionAfp ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
+ALTER TABLE ComisionAfp ADD CONSTRAINT fk_repension FOREIGN KEY(codigo_regimen) REFERENCES Mes
+
+
 
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL

@@ -86,10 +86,8 @@ namespace Negocio
 
         //DATOS DE TABLA SUCURSAL
         public List<NSucursal> Getall()
-        {
-            DempresaMaestra dem = new DempresaMaestra();
-            dem.search = search;
-            using (DataTable dt = sucursal_reposi.GetData(dem))
+        {       
+            using (DataTable dt = sucursal_reposi.GetData(null))
             {
                 list_sucursal = new List<NSucursal>();
                 foreach (DataRow item in dt.Rows)

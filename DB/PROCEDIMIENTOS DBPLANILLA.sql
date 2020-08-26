@@ -388,14 +388,12 @@ END
 GO
 
 --PROCEDIMIENTO MOSTRAR EMPRESA
-CREATE PROC SP_SHOW_EMPRESA
-@search varchar(50)
+ALTER PROC SP_SHOW_EMPRESA
 AS BEGIN
 SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social,em.localidad,
 direccion, domicilio_fiscal, em.ruc, em.regimen, u.referencia
 FROM dbo.Empresa_maestra em right join dbo.Empresa e on em.id_em_maestra=e.id_em_maestra join dbo.Usuario u 
-on e.id_usuario=u.id_usuario WHERE em.estado_eliminado ='NO ANULADO' AND (em.razon_social like @search+'%' or e.codigo_empresa like @search+'%')
-ORDER BY e.id_empresa DESC
+on e.id_usuario=u.id_usuario WHERE em.estado_eliminado ='NO ANULADO' ORDER BY e.id_empresa DESC
 END
 GO
 

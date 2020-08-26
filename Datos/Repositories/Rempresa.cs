@@ -141,15 +141,12 @@ namespace Datos.Repositories
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_EMPRESA";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@search", SqlDbType.VarChar, 50).Value = entiti.search;
+                    cmd.CommandType = CommandType.StoredProcedure;                    
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
                     {
-                        da.Fill(dt);
-                        cmd.Parameters.Clear();
+                        da.Fill(dt);                        
                         da.Dispose();
                         return dt;
                     }

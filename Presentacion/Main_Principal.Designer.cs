@@ -640,7 +640,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
-
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
