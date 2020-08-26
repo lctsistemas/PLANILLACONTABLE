@@ -34,12 +34,8 @@
             this.tabuser = new System.Windows.Forms.TabControl();
             this.tablista = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.btnremover = new System.Windows.Forms.Button();
-=======
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
->>>>>>> MCarlos
             this.dgvusuario = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
             this.tabgestion = new System.Windows.Forms.TabPage();
@@ -59,18 +55,15 @@
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
-=======
->>>>>>> MCarlos
             this.tabuser.SuspendLayout();
             this.tablista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuario)).BeginInit();
             this.tabgestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabuser
@@ -116,22 +109,6 @@
             this.label6.TabIndex = 87;
             this.label6.Text = "Buscar Usuario";
             // 
-<<<<<<< HEAD
-            // btnremover
-            // 
-            this.btnremover.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnremover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnremover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnremover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnremover.ForeColor = System.Drawing.Color.White;
-            this.btnremover.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
-            this.btnremover.Location = new System.Drawing.Point(442, 9);
-            this.btnremover.Name = "btnremover";
-            this.btnremover.Size = new System.Drawing.Size(70, 43);
-            this.btnremover.TabIndex = 1;
-            this.btnremover.UseVisualStyleBackColor = false;
-            this.btnremover.Click += new System.EventHandler(this.btnremover_Click);
-=======
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -152,7 +129,6 @@
             this.label19.Size = new System.Drawing.Size(281, 17);
             this.label19.TabIndex = 86;
             this.label19.Text = "_______________________________________";
->>>>>>> MCarlos
             // 
             // dgvusuario
             // 
@@ -235,7 +211,6 @@
             this.lblerror.Size = new System.Drawing.Size(36, 17);
             this.lblerror.TabIndex = 10;
             this.lblerror.Text = "Error";
-            this.lblerror.Visible = false;
             // 
             // btnrol
             // 
@@ -355,14 +330,13 @@
             // 
             this.btnremover.BackColor = System.Drawing.Color.SteelBlue;
             this.btnremover.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnremover.FlatAppearance.BorderSize = 0;
             this.btnremover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnremover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnremover.ForeColor = System.Drawing.Color.White;
             this.btnremover.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
-            this.btnremover.Location = new System.Drawing.Point(121, 3);
+            this.btnremover.Location = new System.Drawing.Point(114, 4);
             this.btnremover.Name = "btnremover";
-            this.btnremover.Size = new System.Drawing.Size(35, 30);
+            this.btnremover.Size = new System.Drawing.Size(70, 28);
             this.btnremover.TabIndex = 1;
             this.btnremover.UseVisualStyleBackColor = false;
             this.btnremover.Click += new System.EventHandler(this.btnremover_Click);
@@ -376,9 +350,9 @@
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp1;
-            this.btnnuevo.Location = new System.Drawing.Point(9, 3);
+            this.btnnuevo.Location = new System.Drawing.Point(24, 4);
             this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.Size = new System.Drawing.Size(35, 30);
+            this.btnnuevo.Size = new System.Drawing.Size(35, 28);
             this.btnnuevo.TabIndex = 6;
             this.btnnuevo.UseVisualStyleBackColor = false;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
@@ -394,7 +368,7 @@
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp2;
             this.btnguardar.Location = new System.Drawing.Point(65, 3);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(35, 30);
+            this.btnguardar.Size = new System.Drawing.Size(35, 29);
             this.btnguardar.TabIndex = 5;
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnguardar.UseVisualStyleBackColor = false;
@@ -416,25 +390,21 @@
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
-            // label19
+            // btnminimizar
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(7, 29);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(281, 34);
-            this.label19.TabIndex = 86;
-            this.label19.Text = "_______________________________________\r\n\r\n";
+            this.btnminimizar.Location = new System.Drawing.Point(0, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(100, 50);
+            this.btnminimizar.TabIndex = 0;
+            this.btnminimizar.TabStop = false;
             // 
-            // txtbuscar
+            // pictureBox2
             // 
-            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.Location = new System.Drawing.Point(10, 26);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(271, 17);
-            this.txtbuscar.TabIndex = 0;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
-            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // frmusuario
             // 
@@ -460,6 +430,8 @@
             this.tabgestion.ResumeLayout(false);
             this.tabgestion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,18 +458,13 @@
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.PictureBox btncerrar;
-<<<<<<< HEAD
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label USUARIO;
+        //private System.Windows.Forms.PictureBox pictureBox4;
+        //private System.Windows.Forms.Label USUARIO;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Label label19;
-=======
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblerror;
->>>>>>> MCarlos
     }
 }

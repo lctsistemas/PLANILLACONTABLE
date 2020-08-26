@@ -260,8 +260,6 @@ namespace Login_inicio
         private void txtuser_TextChanged(object sender, EventArgs e)
         {
             activo = false;
-<<<<<<< HEAD
-=======
             BloquearAcceso(false);
         }
 
@@ -274,7 +272,7 @@ namespace Login_inicio
         private void BloquearAcceso(bool val)
         {
             dgvlogin.Enabled = val;
->>>>>>> MCarlos
+
         }
     }
 }

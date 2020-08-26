@@ -148,7 +148,7 @@ namespace Presentacion.Vista
                 nu.Password = txtpassword.Text.Trim();
                 nu.Idrol = Convert.ToInt32(cborol.SelectedValue);
 
-                bool valida = new ValidacionDatos(nu).Validate();
+                bool valida = new ValidacionDatos(nu).Validate(lblerror);
                 if (valida)
                 {
                     if (String.IsNullOrEmpty(cborol.SelectedText))
@@ -162,15 +162,13 @@ namespace Presentacion.Vista
                         limpiar();
                     }
                 }
-
-                
             }
         }
 
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            // ShowUser(txtbuscar.Text.Trim());
+            
             dgvusuario.DataSource = nu.Search(txtbuscar.Text.Trim());
             lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
         }

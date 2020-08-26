@@ -43,10 +43,9 @@ END
 GO
 
 --SHOW CARGO
-CREATE PROC SP_SELECT_CARGO 
-@nom varchar(40)
+alter PROC SP_SELECT_CARGO 
 AS BEGIN
-SELECT * FROM Cargo where nombre_cargo like @nom+'%' order by id_cargo desc
+SELECT * FROM Cargo order by id_cargo asc
 END
 GO
 
@@ -615,7 +614,7 @@ IF(@mesesm=0)
 	END
 ELSE
 	BEGIN
-		SET @mesesm=(SELECT count(mm.id_meses_maestra) FROM dbo.Meses_maestra mm)		
+		SET @mesesm=(SELECT MAX(mm.id_meses_maestra)+1 FROM dbo.Meses_maestra mm)		
 	END
 END
 GO
@@ -631,7 +630,7 @@ IF(@gratimant=0)
 	END
 ELSE
 	BEGIN
-		SET @gratimant=(SELECT count(gm.id_grati) FROM dbo.Grati_manto gm)		
+		SET @gratimant=(SELECT MAX(gm.id_grati)+1 FROM dbo.Grati_manto gm)		
 	END
 END
 GO
@@ -647,7 +646,7 @@ IF(@faltas=0)
 	END
 ELSE
 	BEGIN
-		SET @faltas=(SELECT count(f.id_falta) FROM dbo.Faltas f)
+		SET @faltas=(SELECT MAX(f.id_falta)+1 FROM dbo.Faltas f)
 	END
 END
 GO
@@ -663,7 +662,7 @@ IF(@cts=0)
 	END
 ELSE
 	BEGIN
-		SET @cts=(SELECT count(ct.id_cts) FROM dbo.cts ct)
+		SET @cts=(SELECT MAX(c.id_cts)+1 FROM dbo.cts c)
 	END
 END
 GO
@@ -679,7 +678,7 @@ IF(@grati=0)
 	END
 ELSE
 	BEGIN
-		SET @grati=(SELECT count(g.id_grati) FROM dbo.Gratificaciones g)
+		SET @grati=(SELECT MAX(c.id_grati)+1 FROM dbo.Gratificaciones c)
 	END
 END
 GO
@@ -695,7 +694,7 @@ IF(@ctsmanto=0)
 	END
 ELSE
 	BEGIN
-		SET @ctsmanto=(SELECT count(cm.id_cts_manto) FROM dbo.cts_manto cm)
+		SET @ctsmanto=(SELECT MAX(cm.id_cts_manto)+1 FROM dbo.cts_manto cm)
 	END
 END
 GO
@@ -711,7 +710,7 @@ IF(@desc=0)
 	END
 ELSE
 	BEGIN
-		SET @desc=(SELECT count(d.id_descuentos) FROM dbo.Descuentos d)
+		SET @desc=(SELECT MAX(d.id_descuentos)+1 FROM dbo.Descuentos d)
 	END
 END
 GO
@@ -727,7 +726,7 @@ IF(@periodo=0)
 	END
 ELSE
 	BEGIN
-		SET @periodo=(SELECT count(pe.id_periodo) FROM dbo.Periodo pe)
+		SET @periodo=(SELECT MAX(pe.id_periodo)+1 FROM dbo.Periodo pe)
 	END
 END
 GO
@@ -743,7 +742,7 @@ IF(@Mes=0)
 	END
 ELSE
 	BEGIN
-		SET @Mes=(SELECT count(mes.id_mes) FROM dbo.Mes mes)
+		SET @Mes=(SELECT MAX(mes.id_mes)+1 FROM dbo.Mes mes)
 	END
 END
 GO
@@ -759,7 +758,7 @@ IF(@plani=0)
 	END
 ELSE
 	BEGIN
-		SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
+		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)
 	END
 END
 GO
@@ -775,10 +774,26 @@ IF(@tipoPlan=0)
 	END
 ELSE
 	BEGIN
-		SET @tipoPlan=(SELECT count(tp.id_tipo_planilla) FROM dbo.tipo_planilla tp)
+		SET @tipoPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM dbo.tipo_planilla tp)
 	END
 END
 GO
+
+--GENERAR CODIGO REGIMEN
+
+CREATE PROC SP_GENERAR_REGIMEN
+(@regimen int output)
+AS BEGIN
+SET @regimen=(SELECT count(r.codigo_regimen) FROM RegimenPensionario r)
+IF(@regimen=0)
+	BEGIN
+		SET @regimen=1
+	END
+ELSE
+	BEGIN
+		SET @regimen=(SELECT MAX(r.codigo_regimen)+1 FROM dbo.RegimenPensionario r)
+	END
+END
 =======
 >>>>>>> MCarlos
 
@@ -903,11 +918,9 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
-CREATE PROC SP_SHOW_BANCO(
-@search varchar(50)
-)
+alter PROC SP_SHOW_BANCO
 AS BEGIN 
-SELECT b.id_banco,b.nombre_banco from Banco b where b.nombre_banco like @search+'%'; 
+SELECT b.id_banco,b.nombre_banco from Banco b; 
 END;
 GO
 
@@ -1051,6 +1064,29 @@ FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maes
 dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario= 3  @codigo_user
 END
 GO
+
+--PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
+CREATE PROCEDURE SP_ADD_REGIMEN(
+@descripcion_corta varchar(30),
+@descripcion varchar(100),
+@tipo_regimen varchar(30),
+@mensaje varchar(100) output
+)
+AS BEGIN
+INSERT INTO RegimenPensionario(descripcion_corta,descripcion,tipo_regimen)
+VALUES(@descripcion,@descripcion_corta,@tipo_regimen)
+SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
+END
+GO
+
+ALTER PROCEDURE SP_SHOW_REGIMEN
+AS BEGIN 
+SELECT r.codigo_regimen,r.descripcion,r.descripcion_corta,r.tipo_regimen from RegimenPensionario r; 
+END;
+GO
+
+exec sp_show_regimen;
+
 
 select * from Contrato
 select * from Usuario

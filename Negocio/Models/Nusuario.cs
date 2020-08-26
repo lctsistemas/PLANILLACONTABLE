@@ -26,23 +26,26 @@ namespace Negocio.Models
 
         private IUsuario usu_repository;
 
-        public int Idusuario { get => idusuario; set => idusuario = value; }
+        public int Idusuario { get { return idusuario; }  set { idusuario = value; } }             
 
         [Required(ErrorMessage = "El campo Codigo Acceso es obligatorio.")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Codigo Acceso solo permite letras.")]
         [StringLength(maximumLength:10,MinimumLength=4, ErrorMessage = "Campo Codigo Acceso debe ser 10 digitos maximo y 4 minimo.")]
-        public string Codigo_usu { get => codigo_usu; set => codigo_usu = value; }
+        public string Codigo_usu { get { return codigo_usu; } set { codigo_usu = value; } }
 
         [Required(ErrorMessage = "El campo Nombre Usuario es obligatorio.")]
         [RegularExpression("^[a-zA-Z ]+$",ErrorMessage = "El campo Nombre Usuario se permite solo letras.")]
-        public string Nombre_refe { get => nombre_refe; set => nombre_refe = value; }
+        public string Nombre_refe { get { return nombre_refe; } set { nombre_refe = value; } }
 
         [Required(ErrorMessage = "El campo Contraseña es obligatorio.")]
-        public string Password { get => password; set => password = value; }
+        public string Password { get { return password; } set { password = value; } }
 
         [Required(ErrorMessage = "Seleccione Rol para el Usuario obligatorio.")]
-        public int Idrol { get => idrol; set => idrol = value; }
+        public int Idrol { get { return idrol; } set { idrol = value; } }
 
-      
+        //[RegularExpression("([0-9]+)", ErrorMessage = "identification number must be only numbers")]
+        //[EmailAddress]
+
         public String name_rol { get; set; }        
         public EntityState state { get; set; }
 
@@ -71,7 +74,7 @@ namespace Negocio.Models
                         break;
                     case EntityState.Modificar:
                         usu_repository.Edit(du);
-                        mesage = "Successfully Edited!";
+                        mesage = "¡Editado Correctamente!";
                         break;
                     case EntityState.Remover:
                         usu_repository.Delete(du);
@@ -112,10 +115,12 @@ namespace Negocio.Models
             }
         }
 
-        //public static bool Contains(this string target, string value, StringComparison comparison)
-        //{
-        //    return target.IndexOf(value, comparison) >= 0;
-        //}
+       
+
+        /*public static bool Contains(this string target, string value, StringComparison comparison)
+        {
+            return target.IndexOf(value, comparison) >= 0;
+        }*/
 
         //METODO PARA FILTRAR
         public IEnumerable<Nusuario> Search(string filter)
@@ -124,7 +129,7 @@ namespace Negocio.Models
           //return list_usu.FindAll(e => e.nombre_refe.Contains(filter, StringComparer.CurrentCultureIgnoreCase);
           //PARA FILTRAR IGNORANDO LAS MAYUSCULAS.
           return  list_usu.FindAll(e => e.nombre_refe.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >=0  || e.codigo_usu.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
-           // return list_usu.FindAll(e => e.Contains(filter, StringComparison.OrdinalIgnoreCase));
+            //return list_usu.FindAll(e => e.Contains(filter, StringComparison.OrdinalIgnoreCase));
         }
 
 

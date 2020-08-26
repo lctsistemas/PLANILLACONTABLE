@@ -91,14 +91,12 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SELECT_CARGO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 40).Value = entiti.Nombre_cargo;
                     da.SelectCommand = cmd;
 
                     using (var dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        cmd.Parameters.Clear();
+                        da.Dispose();                        
                         return dt;
                     }
                 }

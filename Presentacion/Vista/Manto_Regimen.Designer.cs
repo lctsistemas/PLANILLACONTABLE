@@ -28,24 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cbxregimen = new System.Windows.Forms.ComboBox();
+            this.btnagregar = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.txtdescCorta = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dgvregimen = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvregimen)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -55,7 +60,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(495, 62);
+            this.panel2.Size = new System.Drawing.Size(703, 62);
             this.panel2.TabIndex = 81;
             // 
             // pictureBox4
@@ -73,7 +78,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(132, 20);
+            this.label5.Location = new System.Drawing.Point(233, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 23);
             this.label5.TabIndex = 0;
@@ -83,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(97, 130);
+            this.label2.Location = new System.Drawing.Point(365, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 73;
@@ -93,144 +98,201 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 181);
+            this.label3.Location = new System.Drawing.Point(365, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 20);
             this.label3.TabIndex = 74;
             this.label3.Text = "Descripcion Corta :";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(97, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.TabIndex = 72;
-            this.label1.Text = "Codigo :";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(97, 236);
+            this.label4.Location = new System.Drawing.Point(365, 244);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 75;
             this.label4.Text = "Regimen :";
             // 
-            // comboBox1
+            // cbxregimen
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(266, 236);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 76;
+            this.cbxregimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxregimen.FormattingEnabled = true;
+            this.cbxregimen.Location = new System.Drawing.Point(534, 244);
+            this.cbxregimen.Name = "cbxregimen";
+            this.cbxregimen.Size = new System.Drawing.Size(100, 21);
+            this.cbxregimen.TabIndex = 76;
             // 
-            // button2
+            // btnagregar
             // 
-            this.button2.BackColor = System.Drawing.Color.SteelBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(70, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(107, 34);
-            this.button2.TabIndex = 70;
-            this.button2.Text = "Agregar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnagregar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnagregar.FlatAppearance.BorderSize = 0;
+            this.btnagregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnagregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnagregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnagregar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnagregar.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
+            this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnagregar.Location = new System.Drawing.Point(326, 72);
+            this.btnagregar.Name = "btnagregar";
+            this.btnagregar.Size = new System.Drawing.Size(107, 34);
+            this.btnagregar.TabIndex = 70;
+            this.btnagregar.Text = "Nuevo";
+            this.btnagregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnagregar.UseVisualStyleBackColor = false;
+            this.btnagregar.Click += new System.EventHandler(this.btnagregar_Click);
             // 
-            // textBox1
+            // btnguardar
             // 
-            this.textBox1.Location = new System.Drawing.Point(266, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 77;
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(450, 72);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(108, 34);
+            this.btnguardar.TabIndex = 69;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // button1
+            // txtdescripcion
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(194, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 34);
-            this.button1.TabIndex = 69;
-            this.button1.Text = "Guardar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.txtdescripcion.Location = new System.Drawing.Point(534, 138);
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.Size = new System.Drawing.Size(100, 20);
+            this.txtdescripcion.TabIndex = 78;
             // 
-            // textBox2
+            // btneliminar
             // 
-            this.textBox2.Location = new System.Drawing.Point(266, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 78;
+            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
+            this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.Location = new System.Drawing.Point(579, 72);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(108, 34);
+            this.btneliminar.TabIndex = 71;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btneliminar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // txtdescCorta
             // 
-            this.button3.BackColor = System.Drawing.Color.SteelBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(323, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 34);
-            this.button3.TabIndex = 71;
-            this.button3.Text = "Eliminar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(266, 183);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 79;
+            this.txtdescCorta.Location = new System.Drawing.Point(534, 191);
+            this.txtdescCorta.Name = "txtdescCorta";
+            this.txtdescCorta.Size = new System.Drawing.Size(100, 20);
+            this.txtdescCorta.TabIndex = 79;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtbuscar);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.dgvregimen);
+            this.panel1.Controls.Add(this.txtdescCorta);
+            this.panel1.Controls.Add(this.btneliminar);
+            this.panel1.Controls.Add(this.txtdescripcion);
+            this.panel1.Controls.Add(this.btnguardar);
+            this.panel1.Controls.Add(this.btnagregar);
+            this.panel1.Controls.Add(this.cbxregimen);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(1, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(495, 297);
+            this.panel1.Size = new System.Drawing.Size(703, 362);
             this.panel1.TabIndex = 80;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.Location = new System.Drawing.Point(22, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(122, 20);
+            this.label6.TabIndex = 89;
+            this.label6.Text = "Buscar regimen";
+            // 
+            // txtbuscar
+            // 
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.Location = new System.Drawing.Point(26, 30);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(271, 19);
+            this.txtbuscar.TabIndex = 87;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.DimGray;
+            this.label19.Location = new System.Drawing.Point(23, 40);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(241, 13);
+            this.label19.TabIndex = 88;
+            this.label19.Text = "_______________________________________";
+            // 
+            // dgvregimen
+            // 
+            this.dgvregimen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvregimen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvregimen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvregimen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvregimen.ColumnHeadersHeight = 30;
+            this.dgvregimen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvregimen.EnableHeadersVisualStyles = false;
+            this.dgvregimen.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvregimen.Location = new System.Drawing.Point(11, 69);
+            this.dgvregimen.Name = "dgvregimen";
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvregimen.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvregimen.Size = new System.Drawing.Size(286, 271);
+            this.dgvregimen.TabIndex = 80;
+            this.dgvregimen.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimen_CellDoubleClick);
             // 
             // Manto_Regimen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 362);
+            this.ClientSize = new System.Drawing.Size(703, 424);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "Manto_Regimen";
             this.Text = "Manto_Regimen";
+            this.Load += new System.EventHandler(this.Manto_Regimen_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvregimen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,17 +302,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cbxregimen;
+        private System.Windows.Forms.Button btnagregar;
+        private System.Windows.Forms.Button btnguardar;
+        private System.Windows.Forms.TextBox txtdescripcion;
+        private System.Windows.Forms.Button btneliminar;
+        private System.Windows.Forms.TextBox txtdescCorta;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.DataGridView dgvregimen;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label6;
     }
 }

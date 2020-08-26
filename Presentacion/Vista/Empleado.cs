@@ -331,7 +331,7 @@ namespace Presentacion.Vista
             //iniciar el radiobutom en dni
             rddni.Checked = true;
             
-            Tabla();
+            //Tabla();
             Habilitar_afp(false);
             Habilitar(false);
             txtcodigo.Enabled = false;
@@ -417,7 +417,7 @@ namespace Presentacion.Vista
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if (rdnombre.Checked==true)
+            /*if (rdnombre.Checked==true)
             {
                 mostrarEmp("",txtBuscar.Text.Trim());
             }
@@ -426,11 +426,13 @@ namespace Presentacion.Vista
                 mostrarEmp(txtBuscar.Text.Trim(),"");
             }
             else           
-                mostrarEmp("","");
+                mostrarEmp("","");*/
+
+            //dgvempleado.DataSource = nEmpleado.Search(txtBuscar.Text.Trim());
             
 
-
         }
+
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

@@ -33,6 +33,7 @@ namespace Presentacion.Helps
                 foreach (ValidationResult item in resuts)
                 {
                     message += item.ErrorMessage + "\n";
+
                 }
                 ctr.Text = message;
             }
@@ -54,8 +55,6 @@ namespace Presentacion.Helps
             }
             return valid;
         }
-
-       
-
+                      
     }
 }

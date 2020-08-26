@@ -5,6 +5,7 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace Negocio.Models
@@ -12,12 +13,17 @@ namespace Negocio.Models
     public class NBanco : IDisposable
     {
         String mensaje;
+        
+    
+        public Int32 IdBanco { get; set; }
 
-        public int IdBanco { get; set; }
-        public string Nom_banco { get; set; }
+        [Required(ErrorMessage = "El campo Nombre de Banco es obligatorio.")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Nombre de Banco solo permite letras.")]
+        public String Nom_banco { get; set; }
 
         public EntityState state { get; set; }
 
+        
         public IBanco RBanco;
 
         private List<NBanco> list_banco;
@@ -66,10 +72,8 @@ namespace Negocio.Models
 
         public List<NBanco> Listar()
         {
-            DBanco dbanco = new DBanco();
-            dbanco.Nom_banco = Nom_banco;
-
-            using (DataTable dt = RBanco.GetData(dbanco))
+            
+            using (DataTable dt = RBanco.GetData(null))
             {
                 list_banco = new List<NBanco>();
                 foreach (DataRow item in dt.Rows)
@@ -85,6 +89,11 @@ namespace Negocio.Models
 
             }
 
+        }
+
+        public IEnumerable<NBanco> Search(string filter)
+        {
+            return list_banco.FindAll(e => e.Nom_banco.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }
