@@ -1,13 +1,6 @@
 ﻿using Presentacion.Vista;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -105,7 +98,7 @@ namespace Presentacion
             showSubMenu(panelregistro);
         }
 
-      
+
 
         private Form activeForm = null;
         private void openchildform(Form chilform)
@@ -114,16 +107,16 @@ namespace Presentacion
             {
                 activeForm.Close();
             }
-                activeForm = chilform;
-                chilform.TopLevel = false;
-                chilform.FormBorderStyle = FormBorderStyle.None;
-                chilform.Dock = DockStyle.Fill;
-                panelchildform.Controls.Add(chilform);
-                panelchildform.Tag = chilform;
-                chilform.BringToFront();
-                chilform.Show();
+            activeForm = chilform;
+            chilform.TopLevel = false;
+            chilform.FormBorderStyle = FormBorderStyle.None;
+            chilform.Dock = DockStyle.Fill;
+            panelchildform.Controls.Add(chilform);
+            panelchildform.Tag = chilform;
+            chilform.BringToFront();
+            chilform.Show();
 
-            
+
         }
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -140,7 +133,7 @@ namespace Presentacion
         private void btncerrar2_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+
         }
 
         private void btnmaxi_Click(object sender, EventArgs e)
