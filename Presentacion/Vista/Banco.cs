@@ -81,8 +81,8 @@ namespace Presentacion.Vista
             {
                 if (nbanco.state == EntityState.Guardar)
                     nbanco.IdBanco = codigoban;
-                nbanco.Nom_banco = txtBanco.Text.Trim();
 
+                nbanco.Nom_banco = txtBanco.Text.Trim();
                 bool validar = new ValidacionDatos(nbanco).Validate();
                 if (validar)
                 {

@@ -97,10 +97,9 @@ END
 GO
 
 --SHOW DOCUMENTO
-CREATE PROC SP_SELECT_DOCUMENTO 
-@nom varchar(50)
+alter PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
-SELECT * FROM Tipo_documento where nombre like @nom+'%' order by id_documento desc
+SELECT * FROM Tipo_documento order by id_documento desc
 END
 GO
 
@@ -716,6 +715,7 @@ END
 GO
 
 --GENERAR CODIGO PERIODO
+/*
 CREATE PROC SP_GENERAR_Periodo
 (@periodo int output)
 AS BEGIN
@@ -730,7 +730,8 @@ ELSE
 	END
 END
 GO
-
+*/
+/*
 --GENERAR CODIGO MES
 CREATE PROC SP_GENERAR_Mes
 (@Mes int output)
@@ -746,7 +747,7 @@ ELSE
 	END
 END
 GO
-
+*/
 --GENERAR CODIGO Planilla
 CREATE PROC SP_GENERAR_Planilla
 (@plani int output)
@@ -941,31 +942,16 @@ GO
 --sp_rename 'Tipo_contrato.tiempo_contato','tiempo_contrato'
 
 --PROCEDIMIENTO PARA ACTUALIZAR TIPO CONTRATO 
-CREATE PROC SP_UPDATE_TIP_CONT(
+alter PROC SP_UPDATE_TIP_CONT(
 @id_tip_cont int,
-@tiempo_contrato varchar(30)
+@tipo_contrato varchar(30)
 )
 AS BEGIN 
-UPDATE Tipo_contrato SET tiempo_contrato=@tiempo_contrato where id_tipo_contrato=@id_tip_cont
+UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipo_contrato=@id_tip_cont
 END;
 GO
 
---PROCEDIMIENTO PARA ELIMINAR TIPO CONTRATO
---CREATE PROC SP_DEL_TIP_CONT(
---@id_tip_cont int,
---@message varchar(100) output
---)
---AS BEGIN
---IF(EXISTS(SELECT t.id_tipo_contrato from Tipo_contrato t join Contrato c on(c.id_banco=t.id_tipo_contrato) where c.id_tipo_contrato=@id_tip_cont))
---	BEGIN
---		DECLARE @tipo_contrato varchar(20);
---		SET @tipo_contrato=(SELECT t.tiempo_contrato from Tipo_contrato t WHERE b.id_banco=@id_banco)
---		SET @message='EL BANCO ('+@cod_banco+') ESTA SIENDO USADO'  
---	END
---ELSE
---DELETE FROM Tipo_contrato WHERE id_tipo_contrato=@id_tip_cont
---END;
---GO
+exec SP_UPDATE_TIP_CONT 1 ,'Contrato Indefinidos'
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
 CREATE PROC SP_SHOW_TIP_CONT

@@ -16,8 +16,8 @@ namespace Presentacion.Vista
     {
         private String result;
         Ntipocontrato nTipocont = new Ntipocontrato();
-        private Int32 codigo;
-        private Int32 codtipcont;
+        //private Int32 codigo;
+        //private Int32 codtipcont;
         public TipoContrato()
         {
             InitializeComponent();
@@ -36,16 +36,7 @@ namespace Presentacion.Vista
             {
                 return false;
             }
-        }
-
-        private void GenerarCodigo()
-        {
-            codigo = 0;
-            using (nTipocont)
-            {
-                codigo = nTipocont.Getcodigo();
-            }
-        }
+        }       
 
         private void ShowTipoContrato()
         {
@@ -59,6 +50,7 @@ namespace Presentacion.Vista
         private void limpiar()
         {
             txttipo.Text = String.Empty;
+            using (nTipocont) { nTipocont.state = EntityState.Guardar; }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -73,21 +65,18 @@ namespace Presentacion.Vista
 
             using (nTipocont)
             {
-                if (nTipocont.state == EntityState.Guardar)
-                {
-                    nTipocont.id_tcontrato = codtipcont;
-                    nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
-                    ShowTipoContrato();
-                    result = nTipocont.GuardarCambios();
-                    Messages.M_info(result);
-                    if (nTipocont.state == EntityState.Guardar)
-                    {
-                        GenerarCodigo();
-                        limpiar();
-                        ShowTipoContrato();
 
-                    }
-                }
+                if(nTipocont.state == EntityState.Guardar)
+                    nTipocont.id_tcontrato = nTipocont.Getcodigo();
+
+                nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
+                    
+                result = nTipocont.GuardarCambios();
+                ShowTipoContrato();
+                Messages.M_info(result);
+                    
+                limpiar();                                                              
+
             }
         }
 
@@ -109,24 +98,16 @@ namespace Presentacion.Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             using (nTipocont) { nTipocont.state = EntityState.Guardar; }
-            GenerarCodigo();
+            
             limpiar();
         }
 
         private void TipoContrato_Load(object sender, EventArgs e)
         {
-            generarCodigo();
+           
         }
 
-        private void generarCodigo()
-        {
-            codtipcont = 0;
-
-            using (nTipocont)
-            {
-                codtipcont = nTipocont.Getcodigo();
-            }
-        }
+        
 
         private void dgvtipocontrato_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

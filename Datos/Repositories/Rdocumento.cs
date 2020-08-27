@@ -94,7 +94,6 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SELECT_DOCUMENTO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nombre_documento;
                     da.SelectCommand = cmd;
                     using (DataTable dt = new DataTable())
                     {

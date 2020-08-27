@@ -4,6 +4,7 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace Negocio.Models
@@ -12,6 +13,10 @@ namespace Negocio.Models
     {
         private string mensaje;
         public int iddocumento { get; set; }
+
+        [Display(Name = "Documento")]
+        [Required]
+        [RegularExpression("^[a-zA-Z ]+$")]
         public string nombre_documento { get; set; }
         public string descripcion { get; set; }
         public EntityState state { private get; set; }
@@ -84,6 +89,11 @@ namespace Negocio.Models
                 }
                 return listadocu;
             }
+        }
+
+        public IEnumerable<Ndocumento> Search(string filter)
+        {
+            return listadocu.FindAll(e => e.nombre_documento.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
         //...
 

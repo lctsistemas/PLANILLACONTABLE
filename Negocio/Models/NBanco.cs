@@ -17,7 +17,10 @@ namespace Negocio.Models
     
         public Int32 IdBanco { get; set; }
 
-        [Required(ErrorMessage = "El campo Nombre de Banco es obligatorio.")]
+
+        //[Required(ErrorMessage = "El campo Nombre de Banco es obligatorio.")]
+        [Display(Name = "Nombre Banco")]
+        [Required]
         [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Nombre de Banco solo permite letras.")]
         public String Nom_banco { get; set; }
 

@@ -42,7 +42,7 @@ namespace Presentacion.Vista
             dgvdocumento.Columns[2].Width = 250;
         }
         //VALIDAR CONTROLES
-        private bool Validar()
+        /*private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtdocumento.Text))
             {
@@ -51,7 +51,7 @@ namespace Presentacion.Vista
             }
             else
                 return false;
-        }
+        }*/
 
         //HABILITAR CONTROLES
         private void Habilitar(bool v)
@@ -88,17 +88,18 @@ namespace Presentacion.Vista
         //SAVE CHANGE
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            result = "";
-            if (Validar())
-                return;
-
+            
             using (nd)
             {
                 nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
                 nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
-                result = nd.SaveChanges();
-                ShowDocument("");
-                Messages.M_info(result);
+                bool validar = new ValidacionDatos(nd).Validate();
+                if (validar)
+                {
+                    result = nd.SaveChanges();
+                    ShowDocument("");
+                    Messages.M_info(result);
+                }
             }
         }
         //VALIATE
@@ -109,7 +110,7 @@ namespace Presentacion.Vista
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            ShowDocument(txtbuscar.Text.Trim());
+            dgvdocumento.DataSource = nd.Search(txtbuscar.Text.Trim());
         }
 
         //TABLA
