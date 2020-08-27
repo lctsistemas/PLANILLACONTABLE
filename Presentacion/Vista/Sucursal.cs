@@ -175,7 +175,8 @@ namespace Presentacion.Vista
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            
+            dgvsucursal.DataSource = nsu.Search(txtbuscar.Text.Trim());
+            lbltotal.Text = "Registro Total: " + dgvsucursal.Rows.Count;
         }
 
         private void btneliminar_Click(object sender, EventArgs e)

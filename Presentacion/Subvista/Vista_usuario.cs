@@ -9,20 +9,20 @@ namespace Presentacion.Subvista
 {
     public partial class frmvista_usuario : Form
     {
-        Nusuario nu = new Nusuario();
+        Nusuario nu;
         public frmvista_usuario()
         {
             InitializeComponent();
-            Vista_user("");
+            Vista_user();
             Tabla();
         }
 
 
-        private void Vista_user(String arg)
+        private void Vista_user()
         {
-            using (nu)
+            using (nu = new Nusuario())
             {
-                nu.Nombre_refe = arg;
+                
                 dgvvista_user.DataSource = nu.Getall();
                 lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
             }
@@ -59,29 +59,26 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar, "Buscar por Nombre Usuario",true);
+            Tooltip.Title(txtbuscar, "Buscar por nombre usuario",true);
             txtbuscar.Focus();
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmempresa femp = (frmempresa)Owner;
-
-           
-
+            frmempresa femp = (frmempresa)Owner;           
             if (dgvvista_user.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 femp.txtiduser.Text = dgvvista_user.CurrentRow.Cells[0].Value.ToString();
                 femp.txtusuario.Text = dgvvista_user.CurrentRow.Cells[2].Value.ToString();
                 this.Close();
             }
-
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-            Vista_user(txtbuscar.Text.Trim());
-        }        
+            dgvvista_user.DataSource = nu.Search(txtbuscar.Text.Trim());
+            lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
+        }
 
         private void frmvista_usuario_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -112,12 +112,17 @@ namespace Negocio
             }
         }
 
+        //METODO PARA FILTRAR REGISTRO
+        public IEnumerable<NSucursal> Search(string filter)
+        {
+            return list_sucursal.FindAll(e => e.razon_social.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);            
+        }
 
 
 
         public void Dispose()
         {
-            //throw new NotImplementedException();
+           
         }
     }
 }

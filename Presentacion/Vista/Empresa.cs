@@ -75,9 +75,6 @@ namespace Presentacion.Vista
             dgvempresa.Columns[12].HeaderText = "USUARIO";
             dgvempresa.Columns[12].Width = 270;
 
-            //dgvempresa.Columns[13].Visible = false;
-            //dgvempresa.Columns[12].Visible = false;
-
         }
 
         //METODO LIMPIAR
