@@ -250,25 +250,36 @@ otros_descuentos decimal(10,2)
 
 CREATE TABLE Periodo(
 id_periodo int identity(1,1),
+--id_empresa int, ver si id_empresa ira en esta tabla
 periodo int not null,
 )
 
+INSERT INTO Periodo(periodo) values('2018');
+INSERT INTO Periodo(periodo) values('2019');
+INSERT INTO Periodo(periodo) values('2020');
+
+
 CREATE TABLE Mes(
 id_mes int identity(1,1),
-nombre_mes varchar(20) not null
+nombre_mes varchar(20) not null,
+id_periodo int,
+--id_empresa int
 )
 GO
+
+INSERT INTO Mes(nombre_mes,id_periodo,id_empresa) values('Julio',1,7);
 
 CREATE TABLE Planilla(
 id_planilla int not null,
 id_tipo_planilla int not null,
-id_periodo int not null,
+/*id_periodo int not null,*/
+id_mes int not null,
 fecha_pago date,
 dias_mes int,
 horas_mes int,
 remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
-tope_horario_nocturno int
+tope_horario_nocturno int,
 )
 
 CREATE TABLE tipo_planilla(
