@@ -1094,6 +1094,32 @@ exec SP_UPDATE_REGIMEN 1,'er','E' ,'S.N.P';
 
 exec sp_show_regimen;
 
+--PROCEDIMIENTO PARA INSERTAR PLANILLA
+
+CREATE PROC SP_INSERT_PLANILLA
+(@id_planilla int,
+@id_tipo_planilla varchar(20),
+@id_mes varchar(50),
+@fecha_pago date,
+@dias_mes int,
+@horas_mes int,
+@remu_basica decimal(10,2),
+@asig_familiar decimal(10,2),
+@tope_horario_nocturno int,
+@mesage varchar(100) output)
+AS BEGIN
+IF(EXISTS(SELECT p.id_mes FROM dbo.Planilla p inner join  WHERE p.id_mes=@id_mes))
+	BEGIN
+	SET @mesage= 'PERIODO ('+@id_mes+' ) SE ENCUENTRA REGISTRADO'
+	END
+ELSE
+	BEGIN
+	INSERT INTO dbo.Planilla(id_planilla, id_tipo_planilla, id_mes, fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla, @id_tipo_planilla, @id_mes, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	SET @mesage= 'PLANILLA REGISTRADO'
+	END
+END
+GO
 
 select * from Contrato
 select * from Usuario
