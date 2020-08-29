@@ -111,14 +111,14 @@ id_rol int identity(1,1),
 rol varchar(30)not null
 )
 GO
-
+SELECT * FROM Periodo
 --BANCO
 CREATE TABLE Banco(
 id_banco int not null, 
 nombre_banco varchar(25) not null
 )
 GO
-
+select * from tipo_contrato
 INSERT INTO Banco VALUES(1,'Banco Continental');
 INSERT INTO Banco VALUES(2,'Bcp');
 INSERT INTO Banco VALUES(3,'Scotiabank');
@@ -126,12 +126,13 @@ INSERT INTO Banco VALUES(4,'Interbank');
 
 --TIPO DE CONTRATO 
 CREATE TABLE Tipo_contrato(
-id_tipo_contrato int not null,
+id_tipocontrato int not null,
 tiempo_contrato varchar(30) not null
 )
 GO
+drop table Tipo_contrato
 --INSERTAR TIPO CONTRATO
-INSERT INTO dbo.Tipo_contrato(id_tipo_contrato,tiempo_contrato)
+INSERT INTO dbo.Tipo_contrato(id_tipocontrato,tiempo_contrato)
 VALUES(1,'Contrato Indefinido'),(2,'Contrato a Tiempo Parcial'),
 (3,'Contrato Temporal')
 GO
@@ -140,21 +141,22 @@ GO
 CREATE TABLE Contrato(
 id_contrato int not null,
 id_empleado int not null,
-id_banco int not null,
-id_tipo_contrato int not null,
+id_banco int null,
+id_tipocontrato int not null,
 fecha_inicio date not null,
 fecha_fin date null,
 numero_cuenta varchar(30) null,
 remuneracion_basica money not null,
-asignacion_familiar money default (0.00),
-descuento money default(0.00),
+asignacion_familiar money default (0.00) null,
+regimen_salud varchar(80)not null,
+tipo_pago varchar(30) not null,
+periodicidad varchar(70)not null,
 tipo_moneda varchar(10) not null,
-cts nvarchar(50) null,
+cuenta_cts nvarchar(50) null,
 CUSSP varchar(30) null,
 estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
 )
-go
-
+GO
 
 --Meses_maestra
 CREATE TABLE Meses_maestra(

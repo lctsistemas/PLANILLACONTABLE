@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -20,10 +21,10 @@ namespace Presentacion.Vista
         public frmempleado()
         {
             InitializeComponent();
-            Mostrar_cargo();
-            MostrarDocumento();
-            MostrarAFP();            
-            mostrarEmp("","");
+           // Mostrar_cargo();
+            //MostrarDocumento();
+            //MostrarAFP();            
+            //mostrarEmp("","");
 
         }
         //GENERAR CODIGO
@@ -32,12 +33,27 @@ namespace Presentacion.Vista
             codigoemp = 0;
             using (nEmpleado)
             {
-                codigoemp = nEmpleado.GetCodigo();
-                txtcodigo.Text = "EMP 0" + codigoemp;
+                codigoemp = nEmpleado.GetCodigo();                
             }
         }
 
+        //METODO DE INICIALIZACION
+        private void Initialize()
+        {
+            String[] tpago = {"EFECTIVO","DEPOSITO EN CUENTA","OTROS" };
+            cbotipopago.Items.AddRange(tpago);
 
+            cboregimensalud.Items.Add("ESSALUD REGULAR");
+
+            String[] periodicidad = {"MENSUAL","QUINCENAL","SEMANAL","DIARIO","OTROS"};
+            cboperiodicidad.Items.AddRange(periodicidad);
+
+            String[] genero = { "MASCULINO","FEMENINO"};
+            cbxgene.Items.AddRange(genero);
+
+            String[] estado = { "ACTIVO", "CESADO" };
+            cmbestado.Items.AddRange(estado);
+        }
         private void Tabla()
         {
             dgvempleado.Columns[0].HeaderText = "CONTRATO";
@@ -108,14 +124,7 @@ namespace Presentacion.Vista
 
             dgvempleado.Columns[20].HeaderText = UserCache.Empresa_Sucursal;
             dgvempleado.Columns[20].Width = 250;
-        }
-
-        //HABILITAR CAMPO AFP
-        private void Habilitar_afp(bool v)
-        {
-            cmbafp.Visible = v;
-            lblafp.Visible = v;
-        }
+        }              
 
         private void Habilitar_doc(bool v)
         {
@@ -162,8 +171,7 @@ namespace Presentacion.Vista
         {
             txtNombre.Enabled = v;
             txtApePat.Enabled = v;
-            txtApeMat.Enabled = v;
-            cbxpen.Enabled = v;
+            txtApeMat.Enabled = v;           
             cbxgene.Enabled = v;
             cmbtipdoc.Enabled = v;
             txtdire.Enabled = v;
@@ -228,9 +236,7 @@ namespace Presentacion.Vista
             txtNombre.Text = String.Empty;
             txtApeMat.Text = String.Empty;
             txtApePat.Text = String.Empty;
-            txttele.Text = String.Empty;
-            cbxpen.Text = "";
-            cbxpen.SelectedValue = 0;
+            txttele.Text = String.Empty;            
             cbxgene.Text = "";
             cbxgene.SelectedValue = 0;
             cmbtipdoc.Text = "";
@@ -255,8 +261,7 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(txtApeMat.Text) || string.IsNullOrEmpty(txttele.Text) ||
                 string.IsNullOrEmpty(cmbtipdoc.Text) || string.IsNullOrEmpty(cmbcar.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtdire.Text) ||
-                string.IsNullOrEmpty(txtnumdoc.Text) ||
-                string.IsNullOrEmpty(cbxpen.Text) || string.IsNullOrEmpty(cbxgene.Text))
+                string.IsNullOrEmpty(txtnumdoc.Text) ||string.IsNullOrEmpty(cbxgene.Text))
             {
                 ValidateChildren();
                 return true;
@@ -291,12 +296,12 @@ namespace Presentacion.Vista
 
                     txtnumdoc.Text = r.Cells[10].Value.ToString();
                     cmbestado.Text = r.Cells[11].Value.ToString();
-                    cbxpen.Text = r.Cells[13].Value.ToString();
-                    if (cbxpen.Text == "A.F.P")
-                    {
+                    
+                    
+                    
                         cmbafp.SelectedValue = r.Cells[12].Value.ToString();
                         cmbafp.Text = r.Cells[14].Value.ToString();
-                    }
+                    
 
                     cmbtipdoc.SelectedValue = r.Cells[15].Value.ToString();
                     cmbtipdoc.Text = (r.Cells[16].Value.ToString());
@@ -315,29 +320,10 @@ namespace Presentacion.Vista
 
         }
         private void Empleado_Load(object sender, EventArgs e)
-        {
-            cbxpen.Items.Add("O.N.P");
-            cbxpen.Items.Add("A.F.P");
-
-
-            cbxgene.Items.Add("Masculino");
-            cbxgene.Items.Add("Femenino");
-
-            cmbestado.Items.Add("Activo");
-            cmbestado.Items.Add("Cesado");
-
-            cmbcar.Text = "";
-            cmbcar.SelectedValue = 0;
-            //iniciar el radiobutom en dni
-            rddni.Checked = true;
+        {                       
+            Initialize();
             
-            //Tabla();
-            Habilitar_afp(false);
-            Habilitar(false);
-            txtcodigo.Enabled = false;
-            txtnumdoc.Enabled = false;
-            
-            lblem.Text = UserCache.Codigo_empresa.ToString();
+            //lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
         private void btnguardar_Click_1(object sender, EventArgs e)
@@ -378,7 +364,7 @@ namespace Presentacion.Vista
                 nEmpleado.Ape_mat = txtApeMat.Text.Trim();                
                 nEmpleado.Fec_nac = Convert.ToDateTime(dtfecha.Value);
 
-                nEmpleado.Tip_pension = cbxpen.SelectedItem.ToString();
+               // nEmpleado.Tip_pension = cbxpen.SelectedItem.ToString();
                 nEmpleado.Tipo_genero = cbxgene.SelectedItem.ToString();
                 nEmpleado.Nacionalidad = txtnac.Text.Trim();                
                 nEmpleado.Direccion = txtdire.Text.Trim();
@@ -407,28 +393,11 @@ namespace Presentacion.Vista
             }
             mostrarEmp("","");        
             GenerateCodigo();
-        }
-
-        private void btnmensaje_Click_1(object sender, EventArgs e)
-        {
-            Messages.M_info("" + txtNombre.Text.ToString());
-        }
-
+        }        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            /*if (rdnombre.Checked==true)
-            {
-                mostrarEmp("",txtBuscar.Text.Trim());
-            }
-            else if (rddni.Checked==true)
-            {
-                mostrarEmp(txtBuscar.Text.Trim(),"");
-            }
-            else           
-                mostrarEmp("","");*/
-
-            //dgvempleado.DataSource = nEmpleado.Search(txtBuscar.Text.Trim());
+            
             
 
         }
@@ -441,20 +410,7 @@ namespace Presentacion.Vista
 
             Habilitar(true);
             limpiar();
-        }
-
-        private void cbxpen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbxpen.SelectedItem.ToString() == "A.F.P")
-            {
-                Habilitar_afp(true);
-            }
-
-            else
-            {
-                Habilitar_afp(false);
-            }
-        }
+        }       
 
         private void cmbtipdoc_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -574,7 +530,7 @@ namespace Presentacion.Vista
 
         private void cbxpen_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_combo(cbxpen, "Campo requerido");
+           //ValidateError.Validate_combo(cbxpen, "Campo requerido");
         }
 
         private void cmbcar_Validating(object sender, CancelEventArgs e)
@@ -643,46 +599,21 @@ namespace Presentacion.Vista
 
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
             {
-                if (dgvempleado.Columns[e.ColumnIndex].Name == "CONTRATO")
-                {
-                    using (frmcontrato formcontrato = new frmcontrato())
-                    {
-                        DataGridViewRow dgr = dgvempleado.CurrentRow;
-                        formcontrato.txtid_empleado.Text = dgr.Cells[1].Value.ToString();
-                        string last_name = dgr.Cells[2].Value.ToString() + " " + dgr.Cells[3].Value.ToString() + " " + dgr.Cells[4].Value.ToString();
-                        formcontrato.txtnombre.Text = last_name;
-                        formcontrato.txtdocumento.Text = dgr.Cells[10].Value.ToString();
-                        formcontrato.lbldocumento.Text = dgr.Cells[16].Value.ToString();
-                        formcontrato.txtcargo.Text = dgr.Cells[18].Value.ToString();
-                        formcontrato.txtpen.Text = dgr.Cells[13].Value.ToString();
-                        formcontrato.txtafp.Text = dgr.Cells[14].Value.ToString();
-                        formcontrato.ShowDialog();
-                    }                    
-                }
+                
             }
         }
 
-        private void chkcontrato_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkcontrato.Checked == true)
-                dgvempleado.Columns[0].Visible = true;
-            else
-                dgvempleado.Columns[0].Visible = false;
-        }
+      
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void rdnombre_Click(object sender, EventArgs e)
+        private void linkpagina_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            txtBuscar.Focus();
-        }
-
-        private void rddni_Click(object sender, EventArgs e)
-        {
-            txtBuscar.Focus();
+            //Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
+            Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
         }
     }
 }

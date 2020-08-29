@@ -169,8 +169,8 @@ END
 GO
 
 
---ELIMINAR EMPLEADO
-CREATE PROC SP_ELIM_EMPL
+--ELIMINAR EMPLEADO ---> MODIFICAR
+CREATE PROC SP_ELIM_EMPLEADO
 (@id_emp int)
 AS BEGIN 
 UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
@@ -198,8 +198,7 @@ END
 GO
 
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
---procedimientos contrato 
-CREATE PROCEDURE SP_INSERT_CONTRATO
+ALTER PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
 @id_empleado int,
 @id_banco int,
@@ -209,15 +208,19 @@ CREATE PROCEDURE SP_INSERT_CONTRATO
 @num_cuenta varchar(30),
 @remu_basica money,
 @asig_fami money,
-@descuento money,
+@regimen_salud varchar(80),
+@tipo_pago varchar(30),
+@periodicidad varchar(70),
 @tipo_modeda varchar(10),
-@cts nvarchar(50),
-@cussp nvarchar(100))
+@cuenta_cts nvarchar(50),
+@cussp nvarchar(30))
 AS BEGIN
-INSERT INTO dbo.Contrato(id_contrato,id_empleado,id_banco,id_tipo_contrato,fecha_inicio,
-fecha_fin,numero_cuenta,remuneracion_basica,asignacion_familiar,descuento,tipo_moneda,cts,cussp,estado)
-VALUES(@id_contrato,@id_empleado,@id_banco,@id_tcontrato,@fecha_inicio,@fecha_fin, @num_cuenta,
-@remu_basica,@asig_fami,@descuento,@tipo_modeda,@cts,@cussp,'NO ANULADO')
+INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
+fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, regimen_salud, tipo_pago, 
+periodicidad, tipo_moneda, cuenta_cts, cussp, estado)
+VALUES(@id_contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
+@id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @regimen_salud, @tipo_pago, 
+@periodicidad, @tipo_modeda, @cuenta_cts, @cussp,'NO ANULADO')
 END
 GO
 

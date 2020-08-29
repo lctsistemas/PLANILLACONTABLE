@@ -70,13 +70,13 @@ GO
 --TABLA: Contrato, Banco y Tipo_contrato 
 ALTER TABLE Contrato ADD CONSTRAINT PK_idcontrato PRIMARY KEY(id_contrato)
 ALTER TABLE Banco ADD CONSTRAINT PK_idbanco PRIMARY KEY(id_banco)
-ALTER TABLE Tipo_Contrato ADD CONSTRAINT PK_id_tipo_contrato PRIMARY KEY(id_tipo_contrato)
+ALTER TABLE Tipo_Contrato ADD CONSTRAINT PK_idtcontrato PRIMARY KEY(id_tipocontrato)
 
 --FOREIGN KEY CONTRATO CON BANCO, TIPO_CONTRATO, EMPLEADO
 ALTER TABLE Contrato ADD CONSTRAINT FK_Cbanco FOREIGN KEY(id_banco) REFERENCES Banco
 ALTER TABLE Contrato ADD CONSTRAINT FK_CEmpleado FOREIGN KEY(id_empleado) REFERENCES Empleado
 --ALTER TABLE Contrato ADD CONSTRAINT FK_CBanco FOREIGN KEY(id_banco) REFERENCES Banco
-ALTER TABLE Contrato ADD CONSTRAINT Fk_CTipo_Contrato FOREIGN KEY(id_tipo_contrato) REFERENCES Tipo_Contrato 
+ALTER TABLE Contrato ADD CONSTRAINT Fk_CTipo_Contrato FOREIGN KEY(id_tipocontrato) REFERENCES Tipo_Contrato 
 
 --DIAGRAMA
 ALTER AUTHORIZATION ON DATABASE::Planilla_lct TO[SA]
