@@ -243,3 +243,5 @@ C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\D
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources
+C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources

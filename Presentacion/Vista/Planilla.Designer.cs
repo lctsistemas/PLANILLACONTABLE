@@ -31,8 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxmes = new System.Windows.Forms.ComboBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -52,11 +54,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
@@ -90,13 +90,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "MES :";
             // 
-            // comboBox1
+            // cbxmes
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(195, 60);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cbxmes.FormattingEnabled = true;
+            this.cbxmes.Location = new System.Drawing.Point(195, 60);
+            this.cbxmes.Name = "cbxmes";
+            this.cbxmes.Size = new System.Drawing.Size(100, 21);
+            this.cbxmes.TabIndex = 3;
             // 
             // shapeContainer1
             // 
@@ -112,6 +112,24 @@
             this.shapeContainer1.Size = new System.Drawing.Size(389, 601);
             this.shapeContainer1.TabIndex = 4;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape5
+            // 
+            this.lineShape5.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lineShape5.Name = "lineShape5";
+            this.lineShape5.X1 = 0;
+            this.lineShape5.X2 = 390;
+            this.lineShape5.Y1 = 503;
+            this.lineShape5.Y2 = 503;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.BorderColor = System.Drawing.SystemColors.ButtonShadow;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = -1;
+            this.lineShape4.X2 = 389;
+            this.lineShape4.Y1 = 414;
+            this.lineShape4.Y2 = 414;
             // 
             // lineShape3
             // 
@@ -276,15 +294,6 @@
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 20;
             // 
-            // lineShape4
-            // 
-            this.lineShape4.BorderColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = -1;
-            this.lineShape4.X2 = 389;
-            this.lineShape4.Y1 = 414;
-            this.lineShape4.Y2 = 414;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -317,15 +326,6 @@
             this.checkBox3.TabIndex = 23;
             this.checkBox3.Text = "Calcular Aportes";
             this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // lineShape5
-            // 
-            this.lineShape5.BorderColor = System.Drawing.SystemColors.ButtonShadow;
-            this.lineShape5.Name = "lineShape5";
-            this.lineShape5.X1 = 0;
-            this.lineShape5.X2 = 390;
-            this.lineShape5.Y1 = 503;
-            this.lineShape5.Y2 = 503;
             // 
             // checkBox4
             // 
@@ -403,7 +403,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxmes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
@@ -421,7 +421,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxmes;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;

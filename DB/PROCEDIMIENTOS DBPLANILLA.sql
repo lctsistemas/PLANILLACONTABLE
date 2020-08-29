@@ -1108,11 +1108,6 @@ CREATE PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output)
 AS BEGIN
-IF(EXISTS(SELECT p.id_mes FROM dbo.Planilla p inner join  WHERE p.id_mes=@id_mes))
-	BEGIN
-	SET @mesage= 'PERIODO ('+@id_mes+' ) SE ENCUENTRA REGISTRADO'
-	END
-ELSE
 	BEGIN
 	INSERT INTO dbo.Planilla(id_planilla, id_tipo_planilla, id_mes, fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
 	(@id_planilla, @id_tipo_planilla, @id_mes, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)

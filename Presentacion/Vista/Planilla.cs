@@ -15,6 +15,13 @@ namespace Presentacion.Vista
         public Planilla()
         {
             InitializeComponent();
+            Initialize();
+        }
+
+        private void Initialize() {
+            String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            //string m=mes[0];
+            cbxmes.Items.AddRange(mes);
         }
     }
 }
