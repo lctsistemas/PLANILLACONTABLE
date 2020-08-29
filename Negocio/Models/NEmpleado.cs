@@ -99,26 +99,6 @@ namespace Negocio.Models
             return mensaje;
         }
 
-        public DataTable Mostrar_car_empleado()
-        {
-            return new Kcargo_empleado().Mostrar_car_empleado();
-        }
-
-        public DataTable Mostrar_TipoDocumento()
-        {
-            return new Kdocumento_emp().MostrarDocumentoEmp();
-        }
-
-        public DataTable Mostrar_AFP()
-        {
-            return new KAFP().Mostrar_Afp();
-        }
-
-        public DataTable Mostrar_Empresa()
-        {
-            return new KEmpresa().MostrarEmpresa();
-        }
-
         public int GetCodigo()
         {
             return new KEmpleado().GetCodigo();

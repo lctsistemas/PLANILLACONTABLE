@@ -92,19 +92,14 @@ namespace Datos.Repositories
                 {
                     cmd.Connection = conect;
                     cmd.CommandText = "SP_SELECT_DOCUMENTO";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nombre_documento;
+                    cmd.CommandType = CommandType.StoredProcedure;                   
                     da.SelectCommand = cmd;
                     using (DataTable dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        cmd.Parameters.Clear();
+                        da.Dispose();                        
                         return dt;
                     }
-
-
                 }
 
             }

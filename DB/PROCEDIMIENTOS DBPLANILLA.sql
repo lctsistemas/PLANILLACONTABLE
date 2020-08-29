@@ -45,15 +45,11 @@ GO
 --SHOW CARGO
 alter PROC SP_SELECT_CARGO 
 AS BEGIN
-SELECT * FROM Cargo order by id_cargo asc
+SELECT id_cargo, nombre_cargo, descripcion 
+FROM Cargo order by id_cargo asc
 END
 GO
 
-declare @codigo int, @ncargo varchar(30)
-set @codigo=8
-set @ncargo='LIMPIEZA'
-UPDATE Cargo SET  id_cargo=@codigo WHERE nombre_cargo=@ncargo
-GO
 
 /*    PROCEDIMIENTO TIPO DE DOCUMENTO     */
 
@@ -97,10 +93,10 @@ END
 GO
 
 --SHOW DOCUMENTO
-CREATE PROC SP_SELECT_DOCUMENTO 
-@nom varchar(50)
+ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
-SELECT * FROM Tipo_documento where nombre like @nom+'%' order by id_documento desc
+SELECT id_documento,nombre,descripcion FROM 
+Tipo_documento  order by id_documento desc
 END
 GO
 
@@ -793,39 +789,7 @@ ELSE
 END
 GO
 
-
---LISTAR POR EMPRESA
-ALTER PROC SP_LISTEMP_POR_USU
-(@codigo_usuario VARCHAR(20))
-AS BEGIN
-SELECT em.id_em_maestra,em.razon_social from Empresa_maestra em
-INNER JOIN Empresa e
-on(e.id_em_maestra=em.id_em_maestra)
-INNER JOIN Usuario u
-on(e.id_usuario=u.id_usuario)
-WHERE u.codigo_usuario=@codigo_usuario
-END
-GO
-
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-CREATE PROC SP_LLENAR_CARGO_EMPLEADO
-AS BEGIN
-SELECT id_cargo, nombre_cargo FROM Cargo
-END
-GO
-
-create PROC SP_LLENAR_DOCUMENTO_EMPLEADO
-AS BEGIN
-SELECT id_documento,nombre, descripcion FROM tipo_documento
-END
-GO
-
-CREATE PROC SP_LLEN_AFP
-AS BEGIN 
-SELECT  a.id_afp,a.nombre_afp,a.comision,a.comision_anual,a.prima_seguros,a.aportes_fondo_pensiones,a.remu_maxi_asegurable
-FROM Afp a
-END
-GO
 
 CREATE PROC SP_EMPR
 AS BEGIN
@@ -967,14 +931,14 @@ FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maes
 dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
 END
 GO
+------------------------------------------------------FIN LOGIN ---------------------------------------------------------------------
 
 --PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
 CREATE PROCEDURE SP_ADD_REGIMEN(
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
-@tipo_regimen varchar(30),
-@mensaje varchar(100) output
-)
+@tipo_regimen varchar(10),
+@mensaje varchar(100) output)
 AS BEGIN
 INSERT INTO RegimenPensionario(descripcion_corta,descripcion,tipo_regimen)
 VALUES(@descripcion,@descripcion_corta,@tipo_regimen)
@@ -982,14 +946,12 @@ SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
 END
 GO
 
-ALTER PROCEDURE SP_SHOW_REGIMEN
+CREATE PROCEDURE SP_SHOW_REGIMENPENSIONARIO
 AS BEGIN 
-SELECT r.codigo_regimen,r.descripcion,r.descripcion_corta,r.tipo_regimen from RegimenPensionario r; 
-END;
+SELECT r.codigo_regimen,r.descripcion,r.descripcion_corta,r.tipo_regimen 
+from RegimenPensionario r
+END
 GO
-
-exec sp_show_regimen;
-
 
 select * from Contrato
 select * from Usuario

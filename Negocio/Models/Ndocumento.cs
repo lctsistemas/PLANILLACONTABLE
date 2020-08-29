@@ -66,10 +66,8 @@ namespace Negocio.Models
         }
         //METODO MOSTRAR
         public List<Ndocumento> Getall()
-        {
-            DtipoDocumento rt = new DtipoDocumento();
-            rt.Nombre_documento = nombre_documento;
-            using (var dt = docu_repsository.GetData(rt))
+        {           
+            using (var dt = docu_repsository.GetData(null))
             {
                 listadocu = new List<Ndocumento>();
                 foreach (DataRow item in dt.Rows)
@@ -79,7 +77,6 @@ namespace Negocio.Models
                         iddocumento = Convert.ToInt32(item[0]),
                         nombre_documento = item[1].ToString(),
                         descripcion = item[2].ToString()
-
                     });
                 }
                 return listadocu;

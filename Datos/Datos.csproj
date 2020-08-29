@@ -58,13 +58,9 @@
     <Compile Include="Entities\Dtipocontrato.cs" />
     <Compile Include="Entities\DtipoDocumento.cs" />
     <Compile Include="Entities\Dusuario.cs" />
-    <Compile Include="KeyAutomatic\KAFP.cs" />
     <Compile Include="KeyAutomatic\KBanco.cs" />
     <Compile Include="KeyAutomatic\Kcontrato.cs" />
-    <Compile Include="KeyAutomatic\Kcargo_empleado.cs" />
-    <Compile Include="KeyAutomatic\Kdocumento_emp.cs" />
     <Compile Include="KeyAutomatic\KEmpleado.cs" />
-    <Compile Include="KeyAutomatic\KEmpresa.cs" />
     <Compile Include="KeyAutomatic\KRegimen.cs" />
     <Compile Include="KeyAutomatic\Ktipocontrato.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />
