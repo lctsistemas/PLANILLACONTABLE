@@ -39,4 +39,7 @@ namespace Datos.Contract
     }
     public interface ITipo_contrato : IGenerict<Dtipocontrato> { }
 
+    public interface IPlanilla : IGenerict<DPlanilla> { }
+
+
 }

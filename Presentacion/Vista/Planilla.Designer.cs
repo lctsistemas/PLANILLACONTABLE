@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numyear = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxmes = new System.Windows.Forms.ComboBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -40,27 +40,27 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpinicial = new System.Windows.Forms.DateTimePicker();
+            this.dtpfinal = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtpago = new System.Windows.Forms.TextBox();
+            this.txtdia = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtremu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtasig = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txthora = new System.Windows.Forms.TextBox();
+            this.txttope = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numyear)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,12 +73,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "AÑO :";
             // 
-            // numericUpDown1
+            // numyear
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(195, 22);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.numyear.Location = new System.Drawing.Point(195, 22);
+            this.numyear.Name = "numyear";
+            this.numyear.Size = new System.Drawing.Size(60, 20);
+            this.numyear.TabIndex = 1;
             // 
             // label2
             // 
@@ -178,19 +178,19 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Fecha Final :";
             // 
-            // dateTimePicker1
+            // dtpinicial
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(195, 110);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpinicial.Location = new System.Drawing.Point(195, 110);
+            this.dtpinicial.Name = "dtpinicial";
+            this.dtpinicial.Size = new System.Drawing.Size(100, 20);
+            this.dtpinicial.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // dtpfinal
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(195, 148);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.dtpfinal.Location = new System.Drawing.Point(195, 148);
+            this.dtpfinal.Name = "dtpfinal";
+            this.dtpfinal.Size = new System.Drawing.Size(100, 20);
+            this.dtpfinal.TabIndex = 8;
             // 
             // label5
             // 
@@ -212,19 +212,19 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Dias :";
             // 
-            // textBox1
+            // txtpago
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtpago.Location = new System.Drawing.Point(195, 194);
+            this.txtpago.Name = "txtpago";
+            this.txtpago.Size = new System.Drawing.Size(100, 20);
+            this.txtpago.TabIndex = 11;
             // 
-            // textBox2
+            // txtdia
             // 
-            this.textBox2.Location = new System.Drawing.Point(195, 228);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtdia.Location = new System.Drawing.Point(195, 228);
+            this.txtdia.Name = "txtdia";
+            this.txtdia.Size = new System.Drawing.Size(100, 20);
+            this.txtdia.TabIndex = 12;
             // 
             // label7
             // 
@@ -236,12 +236,12 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Rem. Basica :";
             // 
-            // textBox3
+            // txtremu
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 307);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 14;
+            this.txtremu.Location = new System.Drawing.Point(195, 307);
+            this.txtremu.Name = "txtremu";
+            this.txtremu.Size = new System.Drawing.Size(100, 20);
+            this.txtremu.TabIndex = 14;
             // 
             // label8
             // 
@@ -253,12 +253,12 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Asig. Familiar :";
             // 
-            // textBox4
+            // txtasig
             // 
-            this.textBox4.Location = new System.Drawing.Point(195, 346);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtasig.Location = new System.Drawing.Point(195, 346);
+            this.txtasig.Name = "txtasig";
+            this.txtasig.Size = new System.Drawing.Size(100, 20);
+            this.txtasig.TabIndex = 16;
             // 
             // label9
             // 
@@ -280,19 +280,19 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Horas :";
             // 
-            // textBox5
+            // txthora
             // 
-            this.textBox5.Location = new System.Drawing.Point(195, 269);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 19;
+            this.txthora.Location = new System.Drawing.Point(195, 269);
+            this.txthora.Name = "txthora";
+            this.txthora.Size = new System.Drawing.Size(100, 20);
+            this.txthora.TabIndex = 19;
             // 
-            // textBox6
+            // txttope
             // 
-            this.textBox6.Location = new System.Drawing.Point(195, 382);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 20;
+            this.txttope.Location = new System.Drawing.Point(195, 382);
+            this.txttope.Name = "txttope";
+            this.txttope.Size = new System.Drawing.Size(100, 20);
+            this.txttope.TabIndex = 20;
             // 
             // checkBox1
             // 
@@ -356,6 +356,7 @@
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnagregar
             // 
@@ -387,30 +388,30 @@
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txttope);
+            this.Controls.Add(this.txthora);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtasig);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtremu);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtdia);
+            this.Controls.Add(this.txtpago);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpfinal);
+            this.Controls.Add(this.dtpinicial);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxmes);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numyear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.Name = "Planilla";
             this.Text = "Planilla";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numyear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,7 +420,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numyear;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxmes;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
@@ -427,22 +428,22 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpinicial;
+        private System.Windows.Forms.DateTimePicker dtpfinal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtpago;
+        private System.Windows.Forms.TextBox txtdia;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtremu;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtasig;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txthora;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txttope;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;

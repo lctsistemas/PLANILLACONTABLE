@@ -290,9 +290,9 @@ INSERT INTO Mes(nombre_mes,id_periodo) values('Julio',2);
 
 CREATE TABLE Planilla(
 id_planilla int not null,
-id_tipo_planilla int not null,
-id_periodo int not null,'2019'
-id_mes int not null,
+--id_tipo_planilla int not null, ver si ira id_tipo_planilla
+id_periodo int not null,
+--id_mes int not null,
 fecha_pago date,
 dias_mes int,
 horas_mes int,
