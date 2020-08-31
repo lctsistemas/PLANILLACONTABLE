@@ -29,6 +29,16 @@ namespace Negocio.Models
             get; set;
         }
 
+        public DateTime Fecha_inicial
+        {
+            get; set;
+        }
+
+        public DateTime Fecha_final
+        {
+            get; set;
+        }
+
         public DateTime Fecha_pago
         {
             get; set;
@@ -44,12 +54,12 @@ namespace Negocio.Models
             get; set;
         }
 
-        public decimal Remu_basica
+        public Decimal Remu_basica
         {
             get; set;
         }
 
-        public decimal Asig_familiar
+        public Decimal Asig_familiar
         {
             get; set;
         }
@@ -64,7 +74,7 @@ namespace Negocio.Models
 
         public IPlanilla rplanilla;
 
-        private List<NBanco> list_banco;
+        //private List<NBanco> list_banco;
 
         public NPlanilla()
         {
@@ -75,8 +85,10 @@ namespace Negocio.Models
         {
             DPlanilla pla = new DPlanilla();
             pla.Id_planilla = Id_planilla;
-            pla.Id_tipo_planilla = Id_tipo_planilla;
+            //pla.Id_tipo_planilla = Id_tipo_planilla;
             pla.Id_periodo = Id_periodo;
+            pla.Fecha_inicial = Fecha_inicial;
+            pla.Fecha_final = Fecha_final;
             pla.Fecha_pago = Fecha_pago;
             pla.Dias_mes = Dias_mes;
             pla.Horas_mes = Horas_mes;

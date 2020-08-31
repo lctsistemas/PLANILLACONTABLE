@@ -966,10 +966,13 @@ exec sp_show_regimen;
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 
-create PROC SP_INSERT_PLANILLA
+alter PROC SP_INSERT_PLANILLA
 (@id_planilla int,
-@id_tipo_planilla varchar(20),
+--@id_tipo_planilla varchar(20),
+@id_periodo int,
 --@id_mes varchar(50),
+@fecha_inicial date,
+@fecha_final date,
 @fecha_pago date,
 @dias_mes int,
 @horas_mes int,
@@ -979,8 +982,8 @@ create PROC SP_INSERT_PLANILLA
 @mesage varchar(100) output)
 AS BEGIN
 	BEGIN
-	INSERT INTO dbo.Planilla(id_planilla, id_tipo_planilla, fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla, @id_tipo_planilla, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	INSERT INTO dbo.Planilla(id_planilla, id_periodo, fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla,@id_periodo,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
 	SET @mesage= 'PLANILLA REGISTRADO'
 	END
 END

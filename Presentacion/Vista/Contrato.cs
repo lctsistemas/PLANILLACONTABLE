@@ -9,7 +9,7 @@ namespace Presentacion.Vista
     public partial class frmcontrato : Form
     {
         NContrato ncontrato = new NContrato();
-        Ntipocontrato ntcontrato;
+        //Ntipocontrato ntcontrato;
         String result;
         public frmcontrato()
         {

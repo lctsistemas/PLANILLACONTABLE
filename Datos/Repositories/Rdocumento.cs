@@ -92,12 +92,10 @@ namespace Datos.Repositories
                 {
                     cmd.Connection = conect;
                     cmd.CommandText = "SP_SELECT_DOCUMENTO";
-<<<<<<< HEAD
+
                     cmd.CommandType = CommandType.StoredProcedure;
 
-=======
                     cmd.CommandType = CommandType.StoredProcedure;                   
->>>>>>> MCarlos
                     da.SelectCommand = cmd;
                     using (DataTable dt = new DataTable())
                     {

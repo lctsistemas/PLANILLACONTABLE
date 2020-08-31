@@ -157,6 +157,10 @@ namespace Presentacion
             openchilform(new frmempleado());
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openchilform(new Planilla());
+
+        }
     }
 }

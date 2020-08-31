@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace Presentacion.Vista
             String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
             //string m=mes[0];
             cbxmes.Items.AddRange(mes);
+            
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -35,13 +37,15 @@ namespace Presentacion.Vista
             {
                 //np.Id_planilla = txtdescCorta.Text.Trim().ToUpper();
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
-                np.Id_periodo = Convert.ToInt32(numyear.Text.ToString());
-                np.Fecha_pago = Convert.ToDateTime(txtpago.Text.Trim());
+                np.Id_periodo = Convert.ToInt32(UserCache.Periodo);
+                np.Fecha_inicial = Convert.ToDateTime(dtpinicial.Text.Trim());
+                np.Fecha_final = Convert.ToDateTime(dtpfinal.Text.Trim());
+                np.Fecha_pago = Convert.ToDateTime(dtppago.Text.Trim());
                 np.Dias_mes =Convert.ToInt32(txtdia.Text.Trim());
                 np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());
                 np.Remu_basica = Convert.ToDecimal(txtremu.Text.Trim());
-                np.Asig_familiar = Convert.ToDecimal(txttope.Text.Trim());
-                np.Tope_horario_nocturno = Convert.ToInt32(txttope);
+                np.Asig_familiar = Convert.ToDecimal(txtasig.Text.Trim());
+                np.Tope_horario_nocturno = Convert.ToInt32(txttope.Text.ToString());
 
 
                 bool valida = new ValidacionDatos(np).Validate();
@@ -56,6 +60,13 @@ namespace Presentacion.Vista
             }
         }
 
+        private void Planilla_Load(object sender, EventArgs e)
+        {
+            if (UserCache.Periodo != null)
+            {
+                numyear.Value = Convert.ToInt32(UserCache.Periodo);
 
+            }
+        }
     }
 }

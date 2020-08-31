@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelsidemenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnmedia4 = new System.Windows.Forms.Button();
             this.panelmedia3 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             // 
             this.panelsidemenu.AutoScroll = true;
             this.panelsidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.panelsidemenu.Controls.Add(this.button1);
             this.panelsidemenu.Controls.Add(this.btnmedia4);
             this.panelsidemenu.Controls.Add(this.panelmedia3);
             this.panelsidemenu.Controls.Add(this.btnmedia3);
@@ -85,6 +87,22 @@
             this.panelsidemenu.Name = "panelsidemenu";
             this.panelsidemenu.Size = new System.Drawing.Size(230, 749);
             this.panelsidemenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Location = new System.Drawing.Point(0, 700);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(230, 45);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "&PLANILLA";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnmedia4
             // 
@@ -544,6 +562,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

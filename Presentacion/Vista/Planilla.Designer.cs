@@ -44,7 +44,6 @@
             this.dtpfinal = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtpago = new System.Windows.Forms.TextBox();
             this.txtdia = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtremu = new System.Windows.Forms.TextBox();
@@ -60,6 +59,7 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
+            this.dtppago = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numyear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,10 +75,26 @@
             // 
             // numyear
             // 
+            this.numyear.Enabled = false;
             this.numyear.Location = new System.Drawing.Point(195, 22);
+            this.numyear.Maximum = new decimal(new int[] {
+            2030,
+            0,
+            0,
+            0});
+            this.numyear.Minimum = new decimal(new int[] {
+            2019,
+            0,
+            0,
+            0});
             this.numyear.Name = "numyear";
             this.numyear.Size = new System.Drawing.Size(60, 20);
             this.numyear.TabIndex = 1;
+            this.numyear.Value = new decimal(new int[] {
+            2019,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -211,13 +227,6 @@
             this.label6.Size = new System.Drawing.Size(44, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Dias :";
-            // 
-            // txtpago
-            // 
-            this.txtpago.Location = new System.Drawing.Point(195, 194);
-            this.txtpago.Name = "txtpago";
-            this.txtpago.Size = new System.Drawing.Size(100, 20);
-            this.txtpago.TabIndex = 11;
             // 
             // txtdia
             // 
@@ -377,11 +386,19 @@
             this.btnagregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnagregar.UseVisualStyleBackColor = false;
             // 
+            // dtppago
+            // 
+            this.dtppago.Location = new System.Drawing.Point(195, 194);
+            this.dtppago.Name = "dtppago";
+            this.dtppago.Size = new System.Drawing.Size(100, 20);
+            this.dtppago.TabIndex = 73;
+            // 
             // Planilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 601);
+            this.Controls.Add(this.dtppago);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.checkBox4);
@@ -397,7 +414,6 @@
             this.Controls.Add(this.txtremu);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtdia);
-            this.Controls.Add(this.txtpago);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpfinal);
@@ -409,8 +425,10 @@
             this.Controls.Add(this.numyear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
+            this.MaximizeBox = false;
             this.Name = "Planilla";
             this.Text = "Planilla";
+            this.Load += new System.EventHandler(this.Planilla_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numyear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -433,7 +451,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private System.Windows.Forms.TextBox txtpago;
         private System.Windows.Forms.TextBox txtdia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtremu;
@@ -451,5 +468,6 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnagregar;
+        private System.Windows.Forms.DateTimePicker dtppago;
     }
 }
