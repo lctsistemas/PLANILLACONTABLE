@@ -86,10 +86,7 @@ namespace Negocio.Models
 
         }
 
-        public DataTable MostrarBanco()
-        {
-            return new Kcontrato().MostrarBanco();
-        }
+       
 
         //CODIGO AUTO GENERADO
         public int Getcodigo()

@@ -96,7 +96,7 @@ GO
 ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
 SELECT id_documento,nombre,descripcion FROM 
-Tipo_documento  order by id_documento desc
+Tipo_documento 
 END
 GO
 
@@ -800,12 +800,6 @@ on(em.id_em_maestra=e.id_em_maestra)
 END
 GO
 
-CREATE PROC SP_LLENAR_BANCO
-AS BEGIN
-SELECT id_banco, nombre_banco FROM Banco
-END
-GO
-
 --PROCEDIMENTO PARA REGISTRAR BANCO
 CREATE PROC SP_INSERT_BANCO(
 @id_banco int,
@@ -850,13 +844,13 @@ END
 GO
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
-alter PROC SP_SHOW_BANCO
+ALTER PROC SP_SHOW_BANCO
 AS BEGIN 
 SELECT b.id_banco,b.nombre_banco from Banco b; 
 END;
 GO
 
---EXEC SP_SHOW_BANCO 'B';
+EXEC SP_SHOW_BANCO
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
 CREATE PROC SP_INSERT_TIP_CONT(
@@ -900,9 +894,9 @@ GO
 --GO
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
-CREATE PROC SP_SHOW_TIP_CONT
+ALTER PROC SP_SHOW_TIP_CONT
 AS BEGIN 
-SELECT id_tipo_contrato, tiempo_contrato from Tipo_contrato;
+SELECT id_tipocontrato, tiempo_contrato from Tipo_contrato;
 END
 GO
 

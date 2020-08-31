@@ -56,7 +56,6 @@ namespace Negocio.Models
                     mensaje = ban.mensaje;
                     break;
             }
-
             return mensaje;
         }
 
@@ -70,7 +69,7 @@ namespace Negocio.Models
         }
 
 
-        public List<NBanco> Listar()
+        public List<NBanco> Getall()
         {
             
             using (DataTable dt = RBanco.GetData(null))
@@ -84,11 +83,8 @@ namespace Negocio.Models
                         Nom_banco = item[1].ToString()
                     });
                 }
-
                 return list_banco;
-
             }
-
         }
 
         public IEnumerable<NBanco> Search(string filter)

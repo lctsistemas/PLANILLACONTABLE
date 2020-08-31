@@ -61,8 +61,8 @@ namespace Presentacion.Vista
                 
                 try
                 {
-                    dgvBanco.DataSource = nbanco.Listar();
-                    lbltotal.Text = "RECORD: " + dgvBanco.RowCount;
+                    dgvBanco.DataSource = nbanco.Getall();
+                    lbltotal.Text = "Registro total:  " + dgvBanco.RowCount;
 
                 }
                 catch (Exception e)

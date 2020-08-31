@@ -23,6 +23,8 @@ namespace Presentacion.Vista
             Mostrar_documento();
             Mostrar_cargo();
             Mostrar_regimenpensionario();
+            Mostar_banco();
+            Mostar_tcontrato();
 
         }        
        
@@ -44,6 +46,7 @@ namespace Presentacion.Vista
             String[] estado = { "ACTIVO", "CESADO" };
             cmbestado.Items.AddRange(estado);
         }
+
         private void Tabla()
         {
             dgvempleado.Columns[0].HeaderText = "CONTRATO";
@@ -156,7 +159,6 @@ namespace Presentacion.Vista
             return true;
         }
 
-
         private void Habilitar(bool v)
         {
             txtNombre.Enabled = v;
@@ -206,6 +208,26 @@ namespace Presentacion.Vista
         {           
         }
 
+        //MOSTRAR PARA CONTRATO
+        private void Mostar_banco()
+        {
+            using (NBanco nb=new NBanco())
+            {
+                cbobanco.DataSource = nb.Getall();
+                cbobanco.DisplayMember = "Nom_banco";
+                cbobanco.ValueMember = "IdBanco";
+            }
+        }
+
+        private void Mostar_tcontrato()
+        {
+            using (Ntipocontrato ntc=new Ntipocontrato())
+            {
+                cbotipocontra.DataSource = ntc.MostrarTcontrato();
+                cbotipocontra.DisplayMember = "tiem_contrato";
+                cbotipocontra.ValueMember = "id_tcontrato";
+            }
+        }
         private void limpiar()
         {
             txtNombre.Text = String.Empty;

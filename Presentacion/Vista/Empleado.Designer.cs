@@ -33,9 +33,9 @@ namespace Presentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@ namespace Presentacion.Vista
             this.cboregimensalud = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtremune = new System.Windows.Forms.TextBox();
-            this.cmbtipcont = new System.Windows.Forms.ComboBox();
+            this.cbotipocontra = new System.Windows.Forms.ComboBox();
             this.lblremu = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -68,7 +68,7 @@ namespace Presentacion.Vista
             this.cbotipopago = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtid_empleado = new System.Windows.Forms.TextBox();
-            this.cmbbanco = new System.Windows.Forms.ComboBox();
+            this.cbobanco = new System.Windows.Forms.ComboBox();
             this.lblcts = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtcts = new System.Windows.Forms.TextBox();
@@ -140,14 +140,14 @@ namespace Presentacion.Vista
             this.dgvempleado.AllowUserToOrderColumns = true;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempleado.EnableHeadersVisualStyles = false;
@@ -155,17 +155,17 @@ namespace Presentacion.Vista
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvempleado.RowHeadersWidth = 30;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvempleado.Size = new System.Drawing.Size(193, 449);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
@@ -374,7 +374,7 @@ namespace Presentacion.Vista
             this.groupBox5.Controls.Add(this.cboregimensalud);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txtremune);
-            this.groupBox5.Controls.Add(this.cmbtipcont);
+            this.groupBox5.Controls.Add(this.cbotipocontra);
             this.groupBox5.Controls.Add(this.lblremu);
             this.groupBox5.Controls.Add(this.label6);
             this.groupBox5.Location = new System.Drawing.Point(12, 100);
@@ -435,15 +435,15 @@ namespace Presentacion.Vista
             this.txtremune.Size = new System.Drawing.Size(140, 22);
             this.txtremune.TabIndex = 25;
             // 
-            // cmbtipcont
+            // cbotipocontra
             // 
-            this.cmbtipcont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbtipcont.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbtipcont.FormattingEnabled = true;
-            this.cmbtipcont.Location = new System.Drawing.Point(13, 49);
-            this.cmbtipcont.Name = "cmbtipcont";
-            this.cmbtipcont.Size = new System.Drawing.Size(140, 25);
-            this.cmbtipcont.TabIndex = 33;
+            this.cbotipocontra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbotipocontra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotipocontra.FormattingEnabled = true;
+            this.cbotipocontra.Location = new System.Drawing.Point(13, 49);
+            this.cbotipocontra.Name = "cbotipocontra";
+            this.cbotipocontra.Size = new System.Drawing.Size(140, 25);
+            this.cbotipocontra.TabIndex = 33;
             // 
             // lblremu
             // 
@@ -476,7 +476,7 @@ namespace Presentacion.Vista
             this.groupBox4.Controls.Add(this.cbotipopago);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.txtid_empleado);
-            this.groupBox4.Controls.Add(this.cmbbanco);
+            this.groupBox4.Controls.Add(this.cbobanco);
             this.groupBox4.Controls.Add(this.lblcts);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.txtcts);
@@ -547,15 +547,15 @@ namespace Presentacion.Vista
             this.txtid_empleado.TabIndex = 44;
             this.txtid_empleado.Visible = false;
             // 
-            // cmbbanco
+            // cbobanco
             // 
-            this.cmbbanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbbanco.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbbanco.FormattingEnabled = true;
-            this.cmbbanco.Location = new System.Drawing.Point(385, 39);
-            this.cmbbanco.Name = "cmbbanco";
-            this.cmbbanco.Size = new System.Drawing.Size(140, 25);
-            this.cmbbanco.TabIndex = 38;
+            this.cbobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbobanco.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbobanco.FormattingEnabled = true;
+            this.cbobanco.Location = new System.Drawing.Point(385, 39);
+            this.cbobanco.Name = "cbobanco";
+            this.cbobanco.Size = new System.Drawing.Size(140, 25);
+            this.cbobanco.TabIndex = 38;
             // 
             // lblcts
             // 
@@ -1201,7 +1201,7 @@ namespace Presentacion.Vista
         private Label label7;
         private TextBox txttele;
         private TabControl tabEmpleado;
-        private ComboBox cmbtipcont;
+        private ComboBox cbotipocontra;
         private Label label6;
         private Label lblfechafin;
         private Label lblfechaini;
@@ -1220,7 +1220,7 @@ namespace Presentacion.Vista
         private ComboBox cmbmoneda;
         private Label lbltipomoneda;
         private Label label19;
-        private ComboBox cmbbanco;
+        private ComboBox cbobanco;
         private Label label20;
         private TextBox txtnum_cuenta;
         private LinkLabel linkpagina;
