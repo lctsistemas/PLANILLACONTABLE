@@ -52,9 +52,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -144,12 +147,6 @@
     <Compile Include="Vista\Cargo.Designer.cs">
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Contrato.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Contrato.Designer.cs">
-      <DependentUpon>Contrato.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Documento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +182,12 @@
     </Compile>
     <Compile Include="Vista\Manto_Regimen.Designer.cs">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Planilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Planilla.Designer.cs">
+      <DependentUpon>Planilla.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Rol.cs">
       <SubType>Form</SubType>
@@ -248,9 +251,6 @@
     <EmbeddedResource Include="Vista\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Contrato.resx">
-      <DependentUpon>Contrato.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Documento.resx">
       <DependentUpon>Documento.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Planilla.resx">
+      <DependentUpon>Planilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>

@@ -93,10 +93,16 @@ END
 GO
 
 --SHOW DOCUMENTO
+<<<<<<< HEAD
+alter PROC SP_SELECT_DOCUMENTO 
+AS BEGIN
+SELECT * FROM Tipo_documento order by id_documento desc
+=======
 ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
 SELECT id_documento,nombre,descripcion FROM 
 Tipo_documento 
+>>>>>>> MCarlos
 END
 GO
 
@@ -709,6 +715,7 @@ END
 GO
 
 --GENERAR CODIGO PERIODO
+/*
 CREATE PROC SP_GENERAR_Periodo
 (@periodo int output)
 AS BEGIN
@@ -723,7 +730,8 @@ ELSE
 	END
 END
 GO
-
+*/
+/*
 --GENERAR CODIGO MES
 CREATE PROC SP_GENERAR_Mes
 (@Mes int output)
@@ -739,7 +747,7 @@ ELSE
 	END
 END
 GO
-
+*/
 --GENERAR CODIGO Planilla
 CREATE PROC SP_GENERAR_Planilla
 (@plani int output)
@@ -867,31 +875,16 @@ GO
 --sp_rename 'Tipo_contrato.tiempo_contato','tiempo_contrato'
 
 --PROCEDIMIENTO PARA ACTUALIZAR TIPO CONTRATO 
-CREATE PROC SP_UPDATE_TIP_CONT(
+alter PROC SP_UPDATE_TIP_CONT(
 @id_tip_cont int,
-@tiempo_contrato varchar(30)
+@tipo_contrato varchar(30)
 )
 AS BEGIN 
-UPDATE Tipo_contrato SET tiempo_contrato=@tiempo_contrato where id_tipo_contrato=@id_tip_cont
+UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipo_contrato=@id_tip_cont
 END;
 GO
 
---PROCEDIMIENTO PARA ELIMINAR TIPO CONTRATO
---CREATE PROC SP_DEL_TIP_CONT(
---@id_tip_cont int,
---@message varchar(100) output
---)
---AS BEGIN
---IF(EXISTS(SELECT t.id_tipo_contrato from Tipo_contrato t join Contrato c on(c.id_banco=t.id_tipo_contrato) where c.id_tipo_contrato=@id_tip_cont))
---	BEGIN
---		DECLARE @tipo_contrato varchar(20);
---		SET @tipo_contrato=(SELECT t.tiempo_contrato from Tipo_contrato t WHERE b.id_banco=@id_banco)
---		SET @message='EL BANCO ('+@cod_banco+') ESTA SIENDO USADO'  
---	END
---ELSE
---DELETE FROM Tipo_contrato WHERE id_tipo_contrato=@id_tip_cont
---END;
---GO
+exec SP_UPDATE_TIP_CONT 1 ,'Contrato Indefinidos'
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
 ALTER PROC SP_SHOW_TIP_CONT
@@ -947,6 +940,54 @@ from RegimenPensionario r
 END
 GO
 
+<<<<<<< HEAD
+alter PROC SP_UPDATE_REGIMEN
+@codigo_regimen int,
+@descripcion_corta varchar(30),
+@descripcion varchar(100),
+@tipo_regimen varchar(30)
+AS BEGIN
+UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
+END
+GO
+
+alter PROC SP_DELETE_REGIMEN
+@codigo_regimen int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
+SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
+END
+GO
+
+exec SP_UPDATE_REGIMEN 1,'er','E' ,'S.N.P';
+
+exec sp_show_regimen;
+
+--PROCEDIMIENTO PARA INSERTAR PLANILLA
+
+create PROC SP_INSERT_PLANILLA
+(@id_planilla int,
+@id_tipo_planilla varchar(20),
+--@id_mes varchar(50),
+@fecha_pago date,
+@dias_mes int,
+@horas_mes int,
+@remu_basica decimal(10,2),
+@asig_familiar decimal(10,2),
+@tope_horario_nocturno int,
+@mesage varchar(100) output)
+AS BEGIN
+	BEGIN
+	INSERT INTO dbo.Planilla(id_planilla, id_tipo_planilla, fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla, @id_tipo_planilla, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	SET @mesage= 'PLANILLA REGISTRADO'
+	END
+END
+GO
+
+=======
+>>>>>>> MCarlos
 select * from Contrato
 select * from Usuario
 Select * from Empresa_maestra

@@ -51,6 +51,7 @@
     <Compile Include="Models\NEmpleado.cs" />
     <Compile Include="Models\Nempresa.cs" />
     <Compile Include="Models\Nlogin.cs" />
+    <Compile Include="Models\NPlanilla.cs" />
     <Compile Include="Models\NRegimen.cs" />
     <Compile Include="Models\Nrol.cs" />
     <Compile Include="Models\NSucursal.cs" />

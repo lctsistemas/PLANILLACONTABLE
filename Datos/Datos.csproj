@@ -53,6 +53,7 @@
     <Compile Include="Entities\Dcontrato.cs" />
     <Compile Include="Entities\DEmpleado.cs" />
     <Compile Include="Entities\DempresaMaestra.cs" />
+    <Compile Include="Entities\DPlanilla.cs" />
     <Compile Include="Entities\DRegimen.cs" />
     <Compile Include="Entities\Drol.cs" />
     <Compile Include="Entities\Dtipocontrato.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Repositories\REmpleado.cs" />
     <Compile Include="Repositories\Rempresa.cs" />
     <Compile Include="Repositories\Rlogin.cs" />
+    <Compile Include="Repositories\RPlanilla.cs" />
     <Compile Include="Repositories\RRegimen.cs" />
     <Compile Include="Repositories\Rrol.cs" />
     <Compile Include="Repositories\Rsucursal.cs" />

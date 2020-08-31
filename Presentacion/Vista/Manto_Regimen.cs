@@ -24,10 +24,12 @@ namespace Presentacion.Vista
 
         private void Manto_Regimen_Load(object sender, EventArgs e)
         {
-            //Tabla();
+            
             cbxregimen.Items.Add("S.N.P");
             cbxregimen.Items.Add("S.P.P");
             ShowRegimen();
+            Tabla();
+            Habilitar(false);
         }
 
 
@@ -45,7 +47,8 @@ namespace Presentacion.Vista
             txtdescripcion.Text = String.Empty;
             txtdescCorta.Text = String.Empty;
             cbxregimen.Text = "";
-            cbxregimen.SelectedValue = 0;
+            cbxregimen.Text = null;
+            using (nr) { nr.state = EntityState.Guardar; }
         }
 
         private void Habilitar(bool v)
@@ -61,17 +64,20 @@ namespace Presentacion.Vista
         {
             dgvregimen.Columns[0].HeaderText = "codigo";
             dgvregimen.Columns[0].Width = 100;
+            dgvregimen.Columns[0].Visible = false;
 
             dgvregimen.Columns[1].HeaderText = "DESCRIPCION";
             dgvregimen.Columns[1].Width = 150;
 
             dgvregimen.Columns[2].HeaderText = "DESCRIPCION CORTA";
-            dgvregimen.Columns[2].Width = 100;
+            dgvregimen.Columns[2].Width = 150;
 
             dgvregimen.Columns[3].HeaderText = "TIPO REGIMEN";
             dgvregimen.Columns[3].Width = 100;
 
-           
+            dgvregimen.Columns[4].HeaderText = "";
+            dgvregimen.Columns[4].Width = 100;
+            dgvregimen.Columns[4].Visible = false;
 
         }
 
@@ -87,9 +93,7 @@ namespace Presentacion.Vista
         {
             result = "";
             using (nr)
-            {
-                if (nr.state == EntityState.Guardar)
-                {
+            {                               
                     nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
                     nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
                     nr.Tipo_regimen = cbxregimen.Text.Trim();
@@ -100,14 +104,12 @@ namespace Presentacion.Vista
                         if (String.IsNullOrEmpty(cbxregimen.SelectedItem.ToString().Trim()))
                             return;
                         result = nr.GuardarCambios();
-                        ShowRegimen();
-                        Messages.M_info(result);
-                        if (nr.state == EntityState.Guardar)
-                        {
+                        
+                        Messages.M_info(result);                        
                             limpiar();
-                        }
                     }
-                }
+               
+                ShowRegimen();
             }
         }
 
@@ -119,7 +121,7 @@ namespace Presentacion.Vista
         private void dgvregimen_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvregimen.CurrentRow;
-
+            Habilitar(true);
             if (dgvregimen.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 using (nr)
@@ -129,8 +131,33 @@ namespace Presentacion.Vista
                     txtdescripcion.Text = Convert.ToString(r.Cells[1].Value);
                     txtdescCorta.Text = Convert.ToString(r.Cells[2].Value);
                     cbxregimen.Text = r.Cells[3].Value.ToString();
-                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER                    
                 }
+            }
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (dgvregimen.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                if (r == DialogResult.Yes)
+                {
+                    using (nr)
+                    {
+                        nr.state = EntityState.Remover;
+                        nr.Codigo_Regimen = Convert.ToInt32(dgvregimen.CurrentRow.Cells[0].Value);
+                        result = nr.GuardarCambios();
+                        ShowRegimen();
+                        Messages.M_info(result);
+                    }
+                }
+
+            }
+            else
+            {
+                Messages.M_warning("Seleccione una fila de la tabla");
             }
         }
     }

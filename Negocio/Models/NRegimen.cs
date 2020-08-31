@@ -58,6 +58,14 @@ namespace Negocio.Models
                         regimen.Add(dr);
                         mensaje = dr.mensaje;
                         break;
+                    case EntityState.Modificar:
+                        regimen.Edit(dr);
+                        mensaje = "Editado correctamente";
+                        break;
+                    case EntityState.Remover:
+                        regimen.Delete(dr);
+                        mensaje = dr.mensaje;
+                        break;
                 }
             }
             catch(Exception ex)
@@ -70,7 +78,7 @@ namespace Negocio.Models
 
         public List<NRegimen> Getall()
         {
-            using (var dt= regimen.GetData(null))
+            using (DataTable dt = regimen.GetData(null))
             {
                 list_regimen = new List<NRegimen>();
                 foreach (DataRow item in dt.Rows)
@@ -78,9 +86,9 @@ namespace Negocio.Models
                     list_regimen.Add(new NRegimen()
                     {
                         Codigo_Regimen= Convert.ToInt32(item[0]),
-                        Descripcion = Convert.ToString(item[1]),
-                        Descripcion_corta = Convert.ToString(item[2]),
-                        Tipo_regimen = Convert.ToString(item[3])
+                        Descripcion = item[1].ToString(),
+                        Descripcion_corta = item[2].ToString(),
+                        Tipo_regimen = item[3].ToString()
                     });
                 }
                 return list_regimen;
