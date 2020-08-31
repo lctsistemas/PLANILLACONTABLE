@@ -117,6 +117,12 @@
     <Compile Include="Subvista\Vista_login.Designer.cs">
       <DependentUpon>Vista_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Subvista\Vista_SBS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subvista\Vista_SBS.Designer.cs">
+      <DependentUpon>Vista_SBS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subvista\Vista_usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Subvista\Vista_login.resx">
       <DependentUpon>Vista_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subvista\Vista_SBS.resx">
+      <DependentUpon>Vista_SBS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subvista\Vista_usuario.resx">
       <DependentUpon>Vista_usuario.cs</DependentUpon>

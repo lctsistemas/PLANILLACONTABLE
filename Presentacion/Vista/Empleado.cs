@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -14,29 +15,37 @@ namespace Presentacion.Vista
     public partial class frmempleado : Form
     {
         String result;
-        NEmpleado nEmpleado = new NEmpleado();
-        List<object> list;
-        private Int32 codigoemp;
+        NEmpleado nEmpleado;                
+
         public frmempleado()
         {
             InitializeComponent();
+            Mostrar_documento();
             Mostrar_cargo();
-            MostrarDocumento();
-            MostrarAFP();            
-            mostrarEmp("","");
+            Mostrar_regimenpensionario();
+            Mostar_banco();
+            Mostar_tcontrato();
 
-        }
-        //GENERAR CODIGO
-        private void GenerateCodigo()
+        }        
+       
+
+        //METODO DE INICIALIZACION PARA CONTRATO
+        private void Initialize()
         {
-            codigoemp = 0;
-            using (nEmpleado)
-            {
-                codigoemp = nEmpleado.GetCodigo();
-                txtcodigo.Text = "EMP 0" + codigoemp;
-            }
-        }
+            String[] tpago = {"EFECTIVO","DEPOSITO EN CUENTA","OTROS" };
+            cbotipopago.Items.AddRange(tpago);
 
+            cboregimensalud.Items.Add("ESSALUD REGULAR");
+
+            String[] periodicidad = {"MENSUAL","QUINCENAL","SEMANAL","DIARIO","OTROS"};
+            cboperiodicidad.Items.AddRange(periodicidad);
+
+            String[] genero = { "MASCULINO","FEMENINO"};
+            cbxgene.Items.AddRange(genero);
+
+            String[] estado = { "ACTIVO", "CESADO" };
+            cmbestado.Items.AddRange(estado);
+        }
 
         private void Tabla()
         {
@@ -108,14 +117,7 @@ namespace Presentacion.Vista
 
             dgvempleado.Columns[20].HeaderText = UserCache.Empresa_Sucursal;
             dgvempleado.Columns[20].Width = 250;
-        }
-
-        //HABILITAR CAMPO AFP
-        private void Habilitar_afp(bool v)
-        {
-            cmbafp.Visible = v;
-            lblafp.Visible = v;
-        }
+        }              
 
         private void Habilitar_doc(bool v)
         {
@@ -145,7 +147,7 @@ namespace Presentacion.Vista
 
         private bool ValidarPasa()
         {
-            if (cmbtipdoc.SelectedItem.ToString() == "Pasaporte")
+            if (cbotipo_documento.SelectedItem.ToString() == "Pasaporte")
             {
                 if (txtnumdoc.Text.Trim().Length != 9)
                 {
@@ -157,86 +159,87 @@ namespace Presentacion.Vista
             return true;
         }
 
-
         private void Habilitar(bool v)
         {
             txtNombre.Enabled = v;
             txtApePat.Enabled = v;
-            txtApeMat.Enabled = v;
-            cbxpen.Enabled = v;
+            txtApeMat.Enabled = v;           
             cbxgene.Enabled = v;
-            cmbtipdoc.Enabled = v;
+            cbotipo_documento.Enabled = v;
             txtdire.Enabled = v;
             txttele.Enabled = v;
             dtfecha.Enabled = v;
             txtnac.Enabled = v;
             cmbafp.Enabled = v;
-            cmbcar.Enabled = v;
+            cbocar.Enabled = v;
             btnguardar.Enabled = v;
         }
 
         private void Mostrar_cargo()
         {
-            using (nEmpleado)
+            using (Ncargo nca = new Ncargo())
             {
-                cmbcar.DataSource = nEmpleado.Mostrar_car_empleado();
-                cmbcar.DisplayMember = "nombre_cargo";
-                cmbcar.ValueMember = "id_cargo";
+                cbocar.DataSource = nca.Getall();
+                cbocar.DisplayMember = "nombre_cargo";
+                cbocar.ValueMember = "idcargo";
             }
         }
 
-        private void MostrarDocumento()
+        private void Mostrar_regimenpensionario()
         {
-            using (nEmpleado)
+            using (NRegimen nre= new NRegimen())
             {
-                cmbtipdoc.DataSource = nEmpleado.Mostrar_TipoDocumento();
-                cmbtipdoc.DisplayMember = "nombre";
-                cmbtipdoc.ValueMember = "id_documento";
+                cmbafp.DataSource = nre.Getall();
+                cmbafp.DisplayMember = "Descripcion";
+                cmbafp.ValueMember = "Codigo_Regimen";
             }
         }
 
-        private void MostrarAFP()
+        private void Mostrar_documento()
         {
-            using (nEmpleado)
+            using (Ndocumento ndo=new Ndocumento())
             {
-                cmbafp.DataSource = nEmpleado.Mostrar_AFP();
-                cmbafp.DisplayMember = "nombre_afp";
-                cmbafp.ValueMember = "id_afp";
+                cbotipo_documento.DataSource = ndo.Getall();
+                cbotipo_documento.DisplayMember = "nombre_documento";
+                cbotipo_documento.ValueMember = "iddocumento";
             }
-
         }
-        
+        private void mostrarEmp()
+        {           
+        }
 
-        private void mostrarEmp(String numdoc,String nombre)
+        //MOSTRAR PARA CONTRATO
+        private void Mostar_banco()
         {
-            using (nEmpleado)
+            using (NBanco nb=new NBanco())
             {
-                //nEmpleado.Nom_emp = datos;
-                list = new List<object>();
-                nEmpleado.Id_emp_maestra = UserCache.Codigo_empresa;
-                nEmpleado.Num_doc = numdoc;
-                nEmpleado.Nom_emp = nombre;
-                nEmpleado.ListaEmpleado(list, nEmpleado);
-                dgvempleado.DataSource = list;
-                lblcantidad_registro.Text = "TOTAL REGISTRO:  " + dgvempleado.Rows.Count;
+                cbobanco.DataSource = nb.Getall();
+                cbobanco.DisplayMember = "Nom_banco";
+                cbobanco.ValueMember = "IdBanco";
             }
         }
 
-
+        private void Mostar_tcontrato()
+        {
+            using (Ntipocontrato ntc=new Ntipocontrato())
+            {
+                cbotipocontra.DataSource = ntc.MostrarTcontrato();
+                cbotipocontra.DisplayMember = "tiem_contrato";
+                cbotipocontra.ValueMember = "id_tcontrato";
+            }
+        }
         private void limpiar()
         {
             txtNombre.Text = String.Empty;
             txtApeMat.Text = String.Empty;
             txtApePat.Text = String.Empty;
-            txttele.Text = String.Empty;
-            cbxpen.Text = "";
-            cbxpen.SelectedValue = 0;
+            txttele.Text = String.Empty;            
             cbxgene.Text = "";
             cbxgene.SelectedValue = 0;
-            cmbtipdoc.Text = "";
-            cmbtipdoc.SelectedValue = 0;
-            cmbcar.Text = "";
-            cmbcar.SelectedValue = 0;
+            cbotipo_documento.Text = "";
+            cbotipo_documento.SelectedValue = 0;
+            cbocar.Text = "";
+            cbocar.SelectedValue = 0;
            
             cmbafp.Text = "";
             cmbafp.SelectedValue = 0;
@@ -253,10 +256,9 @@ namespace Presentacion.Vista
         {
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApePat.Text) ||
                 string.IsNullOrEmpty(txtApeMat.Text) || string.IsNullOrEmpty(txttele.Text) ||
-                string.IsNullOrEmpty(cmbtipdoc.Text) || string.IsNullOrEmpty(cmbcar.Text) ||
+                string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocar.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtdire.Text) ||
-                string.IsNullOrEmpty(txtnumdoc.Text) ||
-                string.IsNullOrEmpty(cbxpen.Text) || string.IsNullOrEmpty(cbxgene.Text))
+                string.IsNullOrEmpty(txtnumdoc.Text) ||string.IsNullOrEmpty(cbxgene.Text))
             {
                 ValidateChildren();
                 return true;
@@ -273,7 +275,7 @@ namespace Presentacion.Vista
 
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                using (nEmpleado)
+                using (nEmpleado = new NEmpleado())
                 {
                     nEmpleado.state = EntityState.Modificar;
                     nEmpleado.Id_empleado = Convert.ToInt32(r.Cells[1].Value);
@@ -291,53 +293,27 @@ namespace Presentacion.Vista
 
                     txtnumdoc.Text = r.Cells[10].Value.ToString();
                     cmbestado.Text = r.Cells[11].Value.ToString();
-                    cbxpen.Text = r.Cells[13].Value.ToString();
-                    if (cbxpen.Text == "A.F.P")
-                    {
-                        cmbafp.SelectedValue = r.Cells[12].Value.ToString();
-                        cmbafp.Text = r.Cells[14].Value.ToString();
-                    }
+                                                            
+                    cmbafp.SelectedValue = r.Cells[12].Value.ToString();
+                    cmbafp.Text = r.Cells[14].Value.ToString();                    
 
-                    cmbtipdoc.SelectedValue = r.Cells[15].Value.ToString();
-                    cmbtipdoc.Text = (r.Cells[16].Value.ToString());
+                    cbotipo_documento.SelectedValue = r.Cells[15].Value.ToString();
+                    cbotipo_documento.Text = (r.Cells[16].Value.ToString());
 
-                    cmbcar.SelectedValue = r.Cells[17].Value.ToString();
-                    cmbcar.Text = r.Cells[18].Value.ToString();
+                    cbocar.SelectedValue = r.Cells[17].Value.ToString();
+                    cbocar.Text = r.Cells[18].Value.ToString();
                   
                     tabEmpleado.SelectedIndex = 1;
                     Habilitar(true);
                     Habilitar_doc(true);
                     ValidateError.validate.Clear();
-
-
                 }
             }
-
         }
         private void Empleado_Load(object sender, EventArgs e)
-        {
-            cbxpen.Items.Add("O.N.P");
-            cbxpen.Items.Add("A.F.P");
-
-
-            cbxgene.Items.Add("Masculino");
-            cbxgene.Items.Add("Femenino");
-
-            cmbestado.Items.Add("Activo");
-            cmbestado.Items.Add("Cesado");
-
-            cmbcar.Text = "";
-            cmbcar.SelectedValue = 0;
-            //iniciar el radiobutom en dni
-            rddni.Checked = true;
-            
-            //Tabla();
-            Habilitar_afp(false);
-            Habilitar(false);
-            txtcodigo.Enabled = false;
-            txtnumdoc.Enabled = false;
-            
-            lblem.Text = UserCache.Codigo_empresa.ToString();
+        {                       
+            Initialize();            
+            //lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
         private void btnguardar_Click_1(object sender, EventArgs e)
@@ -371,14 +347,13 @@ namespace Presentacion.Vista
             using (nEmpleado)
             {
                 if (nEmpleado.state == EntityState.Guardar)
-                    nEmpleado.Id_empleado = codigoemp;
+                    //nEmpleado.Id_empleado = ;
 
                 nEmpleado.Nom_emp = txtNombre.Text.Trim();
                 nEmpleado.Ape_pat = txtApePat.Text.Trim();
                 nEmpleado.Ape_mat = txtApeMat.Text.Trim();                
                 nEmpleado.Fec_nac = Convert.ToDateTime(dtfecha.Value);
-
-                nEmpleado.Tip_pension = cbxpen.SelectedItem.ToString();
+          
                 nEmpleado.Tipo_genero = cbxgene.SelectedItem.ToString();
                 nEmpleado.Nacionalidad = txtnac.Text.Trim();                
                 nEmpleado.Direccion = txtdire.Text.Trim();
@@ -387,8 +362,8 @@ namespace Presentacion.Vista
 
                 nEmpleado.Estado = cmbestado.SelectedItem.ToString();
                 nEmpleado.Id_afp = Convert.ToInt32(cmbafp.SelectedValue);
-                nEmpleado.Id_doc = Convert.ToInt32(cmbtipdoc.SelectedValue);
-                nEmpleado.Id_cargo = Convert.ToInt32(cmbcar.SelectedValue);
+                nEmpleado.Id_doc = Convert.ToInt32(cbotipo_documento.SelectedValue);
+                nEmpleado.Id_cargo = Convert.ToInt32(cbocar.SelectedValue);
                 nEmpleado.Id_emp_maestra = UserCache.Codigo_empresa; 
 
                 result = nEmpleado.GuardarCambios();
@@ -405,30 +380,12 @@ namespace Presentacion.Vista
                 }
 
             }
-            mostrarEmp("","");        
-            GenerateCodigo();
-        }
-
-        private void btnmensaje_Click_1(object sender, EventArgs e)
-        {
-            Messages.M_info("" + txtNombre.Text.ToString());
-        }
-
+           
+        }        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            /*if (rdnombre.Checked==true)
-            {
-                mostrarEmp("",txtBuscar.Text.Trim());
-            }
-            else if (rddni.Checked==true)
-            {
-                mostrarEmp(txtBuscar.Text.Trim(),"");
-            }
-            else           
-                mostrarEmp("","");*/
-
-            //dgvempleado.DataSource = nEmpleado.Search(txtBuscar.Text.Trim());
+            
             
 
         }
@@ -437,28 +394,15 @@ namespace Presentacion.Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             using (nEmpleado) { nEmpleado.state = EntityState.Guardar; }
-            GenerateCodigo();
+      
 
             Habilitar(true);
             limpiar();
-        }
-
-        private void cbxpen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbxpen.SelectedItem.ToString() == "A.F.P")
-            {
-                Habilitar_afp(true);
-            }
-
-            else
-            {
-                Habilitar_afp(false);
-            }
-        }
+        }       
 
         private void cmbtipdoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbtipdoc.Text == "")
+            if (cbotipo_documento.Text == "")
             {
                 Habilitar_doc(false);
             }
@@ -468,7 +412,7 @@ namespace Presentacion.Vista
                 txtnumdoc.Focus();
             }
 
-            if (cmbtipdoc.SelectedIndex == 0)
+            if (cbotipo_documento.SelectedIndex == 0)
             {
                 txtnumdoc.MaxLength = 8;
 
@@ -477,7 +421,7 @@ namespace Presentacion.Vista
                     txtnumdoc.Focus();
                 }
             }
-            else if (cmbtipdoc.SelectedIndex == 1)
+            else if (cbotipo_documento.SelectedIndex == 1)
             {
                 txtnumdoc.MaxLength = 11;
                 if (txtnumdoc.Text != "")
@@ -486,7 +430,7 @@ namespace Presentacion.Vista
                     txtnumdoc.Focus();
                 }
             }
-            else if (cmbtipdoc.SelectedIndex == 2)
+            else if (cbotipo_documento.SelectedIndex == 2)
             {
                 txtnumdoc.MaxLength = 9;
                 if (txtnumdoc.Text != "")
@@ -569,17 +513,17 @@ namespace Presentacion.Vista
 
         private void cmbtipdoc_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_combo(cmbtipdoc, "Campo requerido");
+            ValidateError.Validate_combo(cbotipo_documento, "Campo requerido");
         }
 
         private void cbxpen_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_combo(cbxpen, "Campo requerido");
+           //ValidateError.Validate_combo(cbxpen, "Campo requerido");
         }
 
         private void cmbcar_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_combo(cmbcar, "Campo requerido");
+            ValidateError.Validate_combo(cbocar, "Campo requerido");
         }
         
         private void btneliminar_Click(object sender, EventArgs e)
@@ -595,8 +539,7 @@ namespace Presentacion.Vista
                         nEmpleado.state = EntityState.Remover;
                         nEmpleado.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
                         result = nEmpleado.GuardarCambios();
-                        Messages.M_info(result);
-                        mostrarEmp("","");
+                        Messages.M_info(result);                 
                         btnguardar.Enabled = false;
                     }
                 }
@@ -643,46 +586,21 @@ namespace Presentacion.Vista
 
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
             {
-                if (dgvempleado.Columns[e.ColumnIndex].Name == "CONTRATO")
-                {
-                    using (frmcontrato formcontrato = new frmcontrato())
-                    {
-                        DataGridViewRow dgr = dgvempleado.CurrentRow;
-                        formcontrato.txtid_empleado.Text = dgr.Cells[1].Value.ToString();
-                        string last_name = dgr.Cells[2].Value.ToString() + " " + dgr.Cells[3].Value.ToString() + " " + dgr.Cells[4].Value.ToString();
-                        formcontrato.txtnombre.Text = last_name;
-                        formcontrato.txtdocumento.Text = dgr.Cells[10].Value.ToString();
-                        formcontrato.lbldocumento.Text = dgr.Cells[16].Value.ToString();
-                        formcontrato.txtcargo.Text = dgr.Cells[18].Value.ToString();
-                        formcontrato.txtpen.Text = dgr.Cells[13].Value.ToString();
-                        formcontrato.txtafp.Text = dgr.Cells[14].Value.ToString();
-                        formcontrato.ShowDialog();
-                    }                    
-                }
+                
             }
         }
 
-        private void chkcontrato_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkcontrato.Checked == true)
-                dgvempleado.Columns[0].Visible = true;
-            else
-                dgvempleado.Columns[0].Visible = false;
-        }
+      
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void rdnombre_Click(object sender, EventArgs e)
+        private void linkpagina_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            txtBuscar.Focus();
-        }
-
-        private void rddni_Click(object sender, EventArgs e)
-        {
-            txtBuscar.Focus();
+            //Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
+            Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
         }
     }
 }

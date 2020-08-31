@@ -14,30 +14,9 @@ namespace Presentacion.Vista
         public frmcontrato()
         {
             InitializeComponent();
-            Mostrar_banco();
-            Mostrar_tcontrato();
+           
         }
-        
-        private void Mostrar_banco()
-        {
-            using (ncontrato)
-            {
-                cmbbanco.DataSource = ncontrato.MostrarBanco();
-                cmbbanco.DisplayMember = "nombre_banco";
-                cmbbanco.ValueMember = "id_banco";
-            }
-        }
-
-        private void Mostrar_tcontrato()
-        {
-            using ( ntcontrato=new Ntipocontrato())
-            {
-                cmbtipcont.DataSource = ntcontrato.MostrarTcontrato();
-                cmbtipcont.DisplayMember = "tiem_contrato";
-                cmbtipcont.ValueMember = "id_tcontrato";
-            }                
-        }
-
+                    
         private void btnguardar_Click(object sender, EventArgs e)
         {
             using (ncontrato)

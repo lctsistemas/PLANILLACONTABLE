@@ -37,16 +37,59 @@ namespace Presentacion.Vista
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
-            this.CONTRATO = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.lblcantidad_registro = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.lblbuscar = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.paneltitulo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btnmaximizar = new System.Windows.Forms.PictureBox();
+            this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.txtasig = new System.Windows.Forms.TextBox();
+            this.lblasig = new System.Windows.Forms.Label();
+            this.cboregimensalud = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtremune = new System.Windows.Forms.TextBox();
+            this.cbotipocontra = new System.Windows.Forms.ComboBox();
+            this.lblremu = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cboperiodicidad = new System.Windows.Forms.ComboBox();
+            this.txtnum_cuenta = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cbotipopago = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtid_empleado = new System.Windows.Forms.TextBox();
+            this.cbobanco = new System.Windows.Forms.ComboBox();
+            this.lblcts = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtcts = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cmbmoneda = new System.Windows.Forms.ComboBox();
+            this.lbltipomoneda = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtfecha_fin = new System.Windows.Forms.MaskedTextBox();
+            this.linkpagina = new System.Windows.Forms.LinkLabel();
+            this.txtcussp = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dtinicio = new System.Windows.Forms.DateTimePicker();
+            this.lblfechaini = new System.Windows.Forms.Label();
+            this.lblfechafin = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbestado = new System.Windows.Forms.ComboBox();
             this.lblem = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbxpen = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
-            this.cmbcar = new System.Windows.Forms.ComboBox();
+            this.cbocar = new System.Windows.Forms.ComboBox();
             this.cmbafp = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -54,7 +97,7 @@ namespace Presentacion.Vista
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbtipdoc = new System.Windows.Forms.ComboBox();
+            this.cbotipo_documento = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,38 +115,22 @@ namespace Presentacion.Vista
             this.txtdire = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txttele = new System.Windows.Forms.TextBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnguardar = new System.Windows.Forms.Button();
-            this.listaEmpleados = new System.Windows.Forms.TabPage();
-            this.rddni = new System.Windows.Forms.RadioButton();
-            this.rdnombre = new System.Windows.Forms.RadioButton();
-            this.chkcontrato = new System.Windows.Forms.CheckBox();
-            this.lblcantidad_registro = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btneliminar = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabEmpleado = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.paneltitulo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.btnmaximizar = new System.Windows.Forms.PictureBox();
-            this.btnrestaurar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.listaEmpleados.SuspendLayout();
-            this.tabEmpleado.SuspendLayout();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tabEmpleado.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvempleado
@@ -123,10 +150,8 @@ namespace Presentacion.Vista
             this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvempleado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CONTRATO});
             this.dgvempleado.EnableHeadersVisualStyles = false;
-            this.dgvempleado.Location = new System.Drawing.Point(3, 77);
+            this.dgvempleado.Location = new System.Drawing.Point(3, 89);
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -141,29 +166,559 @@ namespace Presentacion.Vista
             this.dgvempleado.RowHeadersWidth = 30;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
             this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvempleado.Size = new System.Drawing.Size(766, 293);
+            this.dgvempleado.Size = new System.Drawing.Size(193, 449);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
             this.dgvempleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellDoubleClick);
             // 
-            // CONTRATO
+            // btnNuevo
             // 
-            this.CONTRATO.HeaderText = "CONTRATO";
-            this.CONTRATO.Name = "CONTRATO";
-            this.CONTRATO.ReadOnly = true;
-            this.CONTRATO.Text = "Registrar";
-            this.CONTRATO.UseColumnTextForButtonValue = true;
-            this.CONTRATO.Width = 80;
+            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
+            this.btnNuevo.Location = new System.Drawing.Point(265, 55);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(47, 27);
+            this.btnNuevo.TabIndex = 64;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
+            this.btnguardar.Location = new System.Drawing.Point(205, 55);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(52, 27);
+            this.btnguardar.TabIndex = 62;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click_1);
+            // 
+            // lblcantidad_registro
+            // 
+            this.lblcantidad_registro.AutoSize = true;
+            this.lblcantidad_registro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcantidad_registro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblcantidad_registro.Location = new System.Drawing.Point(202, 541);
+            this.lblcantidad_registro.Name = "lblcantidad_registro";
+            this.lblcantidad_registro.Size = new System.Drawing.Size(33, 16);
+            this.lblcantidad_registro.TabIndex = 82;
+            this.lblcantidad_registro.Text = "total";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Location = new System.Drawing.Point(4, 66);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 17);
+            this.label17.TabIndex = 81;
+            this.label17.Text = "Buscar:";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(59, 66);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(133, 16);
+            this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
+            this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp;
+            this.btneliminar.Location = new System.Drawing.Point(318, 55);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(52, 27);
+            this.btneliminar.TabIndex = 64;
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // lblbuscar
+            // 
+            this.lblbuscar.AutoSize = true;
+            this.lblbuscar.ForeColor = System.Drawing.Color.DimGray;
+            this.lblbuscar.Location = new System.Drawing.Point(56, 72);
+            this.lblbuscar.Name = "lblbuscar";
+            this.lblbuscar.Size = new System.Drawing.Size(139, 13);
+            this.lblbuscar.TabIndex = 85;
+            this.lblbuscar.Text = "______________________\r\n";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label16.AutoEllipsis = true;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(396, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(196, 24);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "COLABORADORES";
+            // 
+            // paneltitulo
+            // 
+            this.paneltitulo.BackColor = System.Drawing.Color.SteelBlue;
+            this.paneltitulo.Controls.Add(this.pictureBox1);
+            this.paneltitulo.Controls.Add(this.btncerrar);
+            this.paneltitulo.Controls.Add(this.label16);
+            this.paneltitulo.Controls.Add(this.btnminimizar);
+            this.paneltitulo.Controls.Add(this.btnmaximizar);
+            this.paneltitulo.Controls.Add(this.btnrestaurar);
+            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneltitulo.Location = new System.Drawing.Point(0, 0);
+            this.paneltitulo.Name = "paneltitulo";
+            this.paneltitulo.Size = new System.Drawing.Size(988, 50);
+            this.paneltitulo.TabIndex = 81;
+            this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
+            this.btncerrar.Location = new System.Drawing.Point(949, 3);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 20);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncerrar.TabIndex = 8;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
+            this.btnminimizar.Location = new System.Drawing.Point(877, 3);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnminimizar.TabIndex = 9;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            // 
+            // btnmaximizar
+            // 
+            this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmaximizar.Enabled = false;
+            this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
+            this.btnmaximizar.Location = new System.Drawing.Point(913, 3);
+            this.btnmaximizar.Name = "btnmaximizar";
+            this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
+            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnmaximizar.TabIndex = 10;
+            this.btnmaximizar.TabStop = false;
+            this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
+            // 
+            // btnrestaurar
+            // 
+            this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
+            this.btnrestaurar.Location = new System.Drawing.Point(788, 3);
+            this.btnrestaurar.Name = "btnrestaurar";
+            this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
+            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrestaurar.TabIndex = 11;
+            this.btnrestaurar.TabStop = false;
+            this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 37);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(778, 408);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Registrar Contrato";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.txtasig);
+            this.groupBox5.Controls.Add(this.lblasig);
+            this.groupBox5.Controls.Add(this.cboregimensalud);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Controls.Add(this.txtremune);
+            this.groupBox5.Controls.Add(this.cbotipocontra);
+            this.groupBox5.Controls.Add(this.lblremu);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(12, 100);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(755, 107);
+            this.groupBox5.TabIndex = 49;
+            this.groupBox5.TabStop = false;
+            // 
+            // txtasig
+            // 
+            this.txtasig.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtasig.Location = new System.Drawing.Point(554, 52);
+            this.txtasig.Name = "txtasig";
+            this.txtasig.Size = new System.Drawing.Size(128, 22);
+            this.txtasig.TabIndex = 27;
+            // 
+            // lblasig
+            // 
+            this.lblasig.AutoSize = true;
+            this.lblasig.BackColor = System.Drawing.Color.Transparent;
+            this.lblasig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblasig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblasig.ForeColor = System.Drawing.Color.DimGray;
+            this.lblasig.Location = new System.Drawing.Point(551, 32);
+            this.lblasig.Name = "lblasig";
+            this.lblasig.Size = new System.Drawing.Size(131, 17);
+            this.lblasig.TabIndex = 24;
+            this.lblasig.Text = "Asignación familiar";
+            // 
+            // cboregimensalud
+            // 
+            this.cboregimensalud.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboregimensalud.DropDownWidth = 138;
+            this.cboregimensalud.FormattingEnabled = true;
+            this.cboregimensalud.Location = new System.Drawing.Point(210, 49);
+            this.cboregimensalud.Name = "cboregimensalud";
+            this.cboregimensalud.Size = new System.Drawing.Size(138, 25);
+            this.cboregimensalud.TabIndex = 45;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.DimGray;
+            this.label13.Location = new System.Drawing.Point(207, 29);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 17);
+            this.label13.TabIndex = 23;
+            this.label13.Text = "Régimen de salud";
+            // 
+            // txtremune
+            // 
+            this.txtremune.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtremune.Location = new System.Drawing.Point(385, 52);
+            this.txtremune.Name = "txtremune";
+            this.txtremune.Size = new System.Drawing.Size(140, 22);
+            this.txtremune.TabIndex = 25;
+            // 
+            // cbotipocontra
+            // 
+            this.cbotipocontra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbotipocontra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotipocontra.FormattingEnabled = true;
+            this.cbotipocontra.Location = new System.Drawing.Point(13, 49);
+            this.cbotipocontra.Name = "cbotipocontra";
+            this.cbotipocontra.Size = new System.Drawing.Size(140, 25);
+            this.cbotipocontra.TabIndex = 33;
+            // 
+            // lblremu
+            // 
+            this.lblremu.BackColor = System.Drawing.Color.Transparent;
+            this.lblremu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblremu.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblremu.ForeColor = System.Drawing.Color.DimGray;
+            this.lblremu.Location = new System.Drawing.Point(382, 15);
+            this.lblremu.Name = "lblremu";
+            this.lblremu.Size = new System.Drawing.Size(114, 34);
+            this.lblremu.TabIndex = 22;
+            this.lblremu.Text = "Remuneración básica inicial";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(10, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 17);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Tipo de contrato";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.cboperiodicidad);
+            this.groupBox4.Controls.Add(this.txtnum_cuenta);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.cbotipopago);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.txtid_empleado);
+            this.groupBox4.Controls.Add(this.cbobanco);
+            this.groupBox4.Controls.Add(this.lblcts);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.txtcts);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.cmbmoneda);
+            this.groupBox4.Controls.Add(this.lbltipomoneda);
+            this.groupBox4.Location = new System.Drawing.Point(12, 213);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(755, 144);
+            this.groupBox4.TabIndex = 48;
+            this.groupBox4.TabStop = false;
+            // 
+            // cboperiodicidad
+            // 
+            this.cboperiodicidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboperiodicidad.FormattingEnabled = true;
+            this.cboperiodicidad.Location = new System.Drawing.Point(554, 39);
+            this.cboperiodicidad.Name = "cboperiodicidad";
+            this.cboperiodicidad.Size = new System.Drawing.Size(144, 25);
+            this.cboperiodicidad.TabIndex = 48;
+            // 
+            // txtnum_cuenta
+            // 
+            this.txtnum_cuenta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnum_cuenta.Location = new System.Drawing.Point(167, 43);
+            this.txtnum_cuenta.Name = "txtnum_cuenta";
+            this.txtnum_cuenta.Size = new System.Drawing.Size(181, 22);
+            this.txtnum_cuenta.TabIndex = 36;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.DimGray;
+            this.label22.Location = new System.Drawing.Point(551, 19);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(161, 17);
+            this.label22.TabIndex = 46;
+            this.label22.Text = "Periodicidad de ingreso";
+            // 
+            // cbotipopago
+            // 
+            this.cbotipopago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbotipopago.DropDownWidth = 150;
+            this.cbotipopago.FormattingEnabled = true;
+            this.cbotipopago.Location = new System.Drawing.Point(12, 40);
+            this.cbotipopago.Name = "cbotipopago";
+            this.cbotipopago.Size = new System.Drawing.Size(121, 25);
+            this.cbotipopago.TabIndex = 47;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.DimGray;
+            this.label20.Location = new System.Drawing.Point(164, 19);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(131, 17);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "Número de cuenta";
+            // 
+            // txtid_empleado
+            // 
+            this.txtid_empleado.Location = new System.Drawing.Point(557, 103);
+            this.txtid_empleado.Name = "txtid_empleado";
+            this.txtid_empleado.Size = new System.Drawing.Size(29, 23);
+            this.txtid_empleado.TabIndex = 44;
+            this.txtid_empleado.Visible = false;
+            // 
+            // cbobanco
+            // 
+            this.cbobanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbobanco.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbobanco.FormattingEnabled = true;
+            this.cbobanco.Location = new System.Drawing.Point(385, 39);
+            this.cbobanco.Name = "cbobanco";
+            this.cbobanco.Size = new System.Drawing.Size(140, 25);
+            this.cbobanco.TabIndex = 38;
+            // 
+            // lblcts
+            // 
+            this.lblcts.AutoSize = true;
+            this.lblcts.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcts.ForeColor = System.Drawing.Color.DimGray;
+            this.lblcts.Location = new System.Drawing.Point(164, 85);
+            this.lblcts.Name = "lblcts";
+            this.lblcts.Size = new System.Drawing.Size(79, 17);
+            this.lblcts.TabIndex = 43;
+            this.lblcts.Text = "Cuenta cts";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.DimGray;
+            this.label21.Location = new System.Drawing.Point(10, 19);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(95, 17);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "Tipo de pago";
+            // 
+            // txtcts
+            // 
+            this.txtcts.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcts.Location = new System.Drawing.Point(167, 105);
+            this.txtcts.Name = "txtcts";
+            this.txtcts.Size = new System.Drawing.Size(318, 22);
+            this.txtcts.TabIndex = 42;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.DimGray;
+            this.label19.Location = new System.Drawing.Point(382, 19);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(49, 17);
+            this.label19.TabIndex = 39;
+            this.label19.Text = "Banco";
+            // 
+            // cmbmoneda
+            // 
+            this.cmbmoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbmoneda.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbmoneda.FormattingEnabled = true;
+            this.cmbmoneda.Items.AddRange(new object[] {
+            "SOLES ",
+            "DOLARES"});
+            this.cmbmoneda.Location = new System.Drawing.Point(12, 103);
+            this.cmbmoneda.Name = "cmbmoneda";
+            this.cmbmoneda.Size = new System.Drawing.Size(121, 25);
+            this.cmbmoneda.TabIndex = 41;
+            // 
+            // lbltipomoneda
+            // 
+            this.lbltipomoneda.AutoSize = true;
+            this.lbltipomoneda.BackColor = System.Drawing.Color.Transparent;
+            this.lbltipomoneda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbltipomoneda.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltipomoneda.ForeColor = System.Drawing.Color.DimGray;
+            this.lbltipomoneda.Location = new System.Drawing.Point(10, 83);
+            this.lbltipomoneda.Name = "lbltipomoneda";
+            this.lbltipomoneda.Size = new System.Drawing.Size(115, 17);
+            this.lbltipomoneda.TabIndex = 40;
+            this.lbltipomoneda.Text = "Tipo de moneda";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtfecha_fin);
+            this.groupBox1.Controls.Add(this.linkpagina);
+            this.groupBox1.Controls.Add(this.txtcussp);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.dtinicio);
+            this.groupBox1.Controls.Add(this.lblfechaini);
+            this.groupBox1.Controls.Add(this.lblfechafin);
+            this.groupBox1.Location = new System.Drawing.Point(9, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(755, 88);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtfecha_fin
+            // 
+            this.txtfecha_fin.Location = new System.Drawing.Point(189, 44);
+            this.txtfecha_fin.Mask = "00/00/0000";
+            this.txtfecha_fin.Name = "txtfecha_fin";
+            this.txtfecha_fin.Size = new System.Drawing.Size(128, 23);
+            this.txtfecha_fin.TabIndex = 46;
+            this.txtfecha_fin.ValidatingType = typeof(System.DateTime);
+            // 
+            // linkpagina
+            // 
+            this.linkpagina.AutoSize = true;
+            this.linkpagina.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkpagina.Location = new System.Drawing.Point(574, 49);
+            this.linkpagina.Name = "linkpagina";
+            this.linkpagina.Size = new System.Drawing.Size(89, 17);
+            this.linkpagina.TabIndex = 34;
+            this.linkpagina.TabStop = true;
+            this.linkpagina.Text = "Consulta SBS";
+            this.linkpagina.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkpagina_LinkClicked);
+            // 
+            // txtcussp
+            // 
+            this.txtcussp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcussp.Location = new System.Drawing.Point(353, 46);
+            this.txtcussp.Name = "txtcussp";
+            this.txtcussp.Size = new System.Drawing.Size(197, 22);
+            this.txtcussp.TabIndex = 33;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.DimGray;
+            this.label18.Location = new System.Drawing.Point(350, 26);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(66, 17);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "N° CUSSP";
+            // 
+            // dtinicio
+            // 
+            this.dtinicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtinicio.Location = new System.Drawing.Point(16, 44);
+            this.dtinicio.Name = "dtinicio";
+            this.dtinicio.Size = new System.Drawing.Size(114, 23);
+            this.dtinicio.TabIndex = 28;
+            // 
+            // lblfechaini
+            // 
+            this.lblfechaini.AutoSize = true;
+            this.lblfechaini.BackColor = System.Drawing.Color.Transparent;
+            this.lblfechaini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblfechaini.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechaini.ForeColor = System.Drawing.Color.DimGray;
+            this.lblfechaini.Location = new System.Drawing.Point(13, 24);
+            this.lblfechaini.Name = "lblfechaini";
+            this.lblfechaini.Size = new System.Drawing.Size(106, 17);
+            this.lblfechaini.TabIndex = 29;
+            this.lblfechaini.Text = "Fecha de inicio";
+            // 
+            // lblfechafin
+            // 
+            this.lblfechafin.AutoSize = true;
+            this.lblfechafin.BackColor = System.Drawing.Color.Transparent;
+            this.lblfechafin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblfechafin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechafin.ForeColor = System.Drawing.Color.DimGray;
+            this.lblfechafin.Location = new System.Drawing.Point(186, 26);
+            this.lblfechafin.Name = "lblfechafin";
+            this.lblfechafin.Size = new System.Drawing.Size(66, 17);
+            this.lblfechafin.TabIndex = 30;
+            this.lblfechafin.Text = "Fecha fin";
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.btnNuevo);
-            this.tabPage2.Controls.Add(this.btnguardar);
-            this.tabPage2.Location = new System.Drawing.Point(33, 4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 37);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(772, 418);
+            this.tabPage2.Size = new System.Drawing.Size(778, 408);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Gestion Empleados";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -178,7 +733,7 @@ namespace Presentacion.Vista
             this.groupBox2.Controls.Add(this.txtcodigo);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.cmbtipdoc);
+            this.groupBox2.Controls.Add(this.cbotipo_documento);
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label2);
@@ -199,7 +754,7 @@ namespace Presentacion.Vista
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 344);
+            this.groupBox2.Size = new System.Drawing.Size(766, 375);
             this.groupBox2.TabIndex = 77;
             this.groupBox2.TabStop = false;
             // 
@@ -209,18 +764,16 @@ namespace Presentacion.Vista
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.cmbestado);
             this.groupBox3.Controls.Add(this.lblem);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.cbxpen);
             this.groupBox3.Controls.Add(this.lblafp);
-            this.groupBox3.Controls.Add(this.cmbcar);
+            this.groupBox3.Controls.Add(this.cbocar);
             this.groupBox3.Controls.Add(this.cmbafp);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(426, 1);
+            this.groupBox3.Location = new System.Drawing.Point(502, 1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(334, 343);
+            this.groupBox3.Size = new System.Drawing.Size(264, 374);
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             // 
@@ -229,7 +782,7 @@ namespace Presentacion.Vista
             this.cmbestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbestado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Location = new System.Drawing.Point(44, 161);
+            this.cmbestado.Location = new System.Drawing.Point(50, 170);
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(133, 25);
             this.cmbestado.TabIndex = 76;
@@ -238,77 +791,50 @@ namespace Presentacion.Vista
             // 
             this.lblem.AutoSize = true;
             this.lblem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblem.Location = new System.Drawing.Point(53, 236);
+            this.lblem.Location = new System.Drawing.Point(61, 293);
             this.lblem.Name = "lblem";
             this.lblem.Size = new System.Drawing.Size(52, 17);
             this.lblem.TabIndex = 75;
             this.lblem.Text = "label13";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(41, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 17);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Tipo pension";
-            // 
-            // cbxpen
-            // 
-            this.cbxpen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxpen.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbxpen.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxpen.FormattingEnabled = true;
-            this.cbxpen.Location = new System.Drawing.Point(44, 44);
-            this.cbxpen.Name = "cbxpen";
-            this.cbxpen.Size = new System.Drawing.Size(133, 25);
-            this.cbxpen.TabIndex = 60;
-            this.cbxpen.SelectedIndexChanged += new System.EventHandler(this.cbxpen_SelectedIndexChanged);
-            this.cbxpen.Validating += new System.ComponentModel.CancelEventHandler(this.cbxpen_Validating);
-            // 
             // lblafp
             // 
             this.lblafp.AutoSize = true;
             this.lblafp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblafp.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblafp.Location = new System.Drawing.Point(189, 22);
+            this.lblafp.ForeColor = System.Drawing.Color.DimGray;
+            this.lblafp.Location = new System.Drawing.Point(45, 32);
             this.lblafp.Name = "lblafp";
-            this.lblafp.Size = new System.Drawing.Size(31, 17);
+            this.lblafp.Size = new System.Drawing.Size(143, 17);
             this.lblafp.TabIndex = 67;
-            this.lblafp.Text = "AFP";
+            this.lblafp.Text = "Regimen Pensionario";
             // 
-            // cmbcar
+            // cbocar
             // 
-            this.cmbcar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbcar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbcar.FormattingEnabled = true;
-            this.cmbcar.Location = new System.Drawing.Point(44, 103);
-            this.cmbcar.Name = "cmbcar";
-            this.cmbcar.Size = new System.Drawing.Size(133, 25);
-            this.cmbcar.TabIndex = 62;
-            this.cmbcar.Validating += new System.ComponentModel.CancelEventHandler(this.cmbcar_Validating);
+            this.cbocar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbocar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbocar.FormattingEnabled = true;
+            this.cbocar.Location = new System.Drawing.Point(48, 109);
+            this.cbocar.Name = "cbocar";
+            this.cbocar.Size = new System.Drawing.Size(133, 25);
+            this.cbocar.TabIndex = 62;
+            this.cbocar.Validating += new System.ComponentModel.CancelEventHandler(this.cmbcar_Validating);
             // 
             // cmbafp
             // 
             this.cmbafp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbafp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbafp.FormattingEnabled = true;
-            this.cmbafp.Items.AddRange(new object[] {
-            "Profuturo",
-            "Habitat"});
-            this.cmbafp.Location = new System.Drawing.Point(192, 44);
+            this.cmbafp.Location = new System.Drawing.Point(48, 53);
             this.cmbafp.Name = "cmbafp";
-            this.cmbafp.Size = new System.Drawing.Size(112, 25);
+            this.cmbafp.Size = new System.Drawing.Size(133, 25);
             this.cmbafp.TabIndex = 61;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label15.Location = new System.Drawing.Point(47, 84);
+            this.label15.ForeColor = System.Drawing.Color.DimGray;
+            this.label15.Location = new System.Drawing.Point(47, 93);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(50, 17);
             this.label15.TabIndex = 71;
@@ -318,8 +844,8 @@ namespace Presentacion.Vista
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label12.Location = new System.Drawing.Point(51, 141);
+            this.label12.ForeColor = System.Drawing.Color.DimGray;
+            this.label12.Location = new System.Drawing.Point(47, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 60;
@@ -329,7 +855,7 @@ namespace Presentacion.Vista
             // 
             this.dtfecha.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(169, 221);
+            this.dtfecha.Location = new System.Drawing.Point(190, 234);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(121, 22);
             this.dtfecha.TabIndex = 57;
@@ -337,9 +863,9 @@ namespace Presentacion.Vista
             // txtcodigo
             // 
             this.txtcodigo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigo.Location = new System.Drawing.Point(11, 45);
+            this.txtcodigo.Location = new System.Drawing.Point(13, 54);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(105, 22);
+            this.txtcodigo.Size = new System.Drawing.Size(131, 22);
             this.txtcodigo.TabIndex = 66;
             this.txtcodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -347,8 +873,8 @@ namespace Presentacion.Vista
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(9, 263);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(12, 272);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 50;
@@ -358,29 +884,29 @@ namespace Presentacion.Vista
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(8, 82);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(8, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 40;
             this.label1.Text = "Nombre ";
             // 
-            // cmbtipdoc
+            // cbotipo_documento
             // 
-            this.cmbtipdoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbtipdoc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbtipdoc.FormattingEnabled = true;
-            this.cmbtipdoc.Location = new System.Drawing.Point(168, 44);
-            this.cmbtipdoc.Name = "cmbtipdoc";
-            this.cmbtipdoc.Size = new System.Drawing.Size(123, 25);
-            this.cmbtipdoc.TabIndex = 52;
-            this.cmbtipdoc.SelectedIndexChanged += new System.EventHandler(this.cmbtipdoc_SelectedIndexChanged);
-            this.cmbtipdoc.Validating += new System.ComponentModel.CancelEventHandler(this.cmbtipdoc_Validating);
+            this.cbotipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbotipo_documento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotipo_documento.FormattingEnabled = true;
+            this.cbotipo_documento.Location = new System.Drawing.Point(190, 54);
+            this.cbotipo_documento.Name = "cbotipo_documento";
+            this.cbotipo_documento.Size = new System.Drawing.Size(123, 25);
+            this.cbotipo_documento.TabIndex = 52;
+            this.cbotipo_documento.SelectedIndexChanged += new System.EventHandler(this.cmbtipdoc_SelectedIndexChanged);
+            this.cbotipo_documento.Validating += new System.ComponentModel.CancelEventHandler(this.cmbtipdoc_Validating);
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(11, 103);
+            this.txtNombre.Location = new System.Drawing.Point(11, 115);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(131, 22);
             this.txtNombre.TabIndex = 41;
@@ -392,8 +918,8 @@ namespace Presentacion.Vista
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(9, 23);
+            this.label11.ForeColor = System.Drawing.Color.DimGray;
+            this.label11.Location = new System.Drawing.Point(10, 31);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 17);
             this.label11.TabIndex = 65;
@@ -403,8 +929,8 @@ namespace Presentacion.Vista
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(9, 142);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(9, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 17);
             this.label2.TabIndex = 42;
@@ -415,7 +941,7 @@ namespace Presentacion.Vista
             this.cbxgene.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxgene.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxgene.FormattingEnabled = true;
-            this.cbxgene.Location = new System.Drawing.Point(12, 282);
+            this.cbxgene.Location = new System.Drawing.Point(12, 294);
             this.cbxgene.Name = "cbxgene";
             this.cbxgene.Size = new System.Drawing.Size(130, 25);
             this.cbxgene.TabIndex = 49;
@@ -424,7 +950,7 @@ namespace Presentacion.Vista
             // txtApePat
             // 
             this.txtApePat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApePat.Location = new System.Drawing.Point(13, 162);
+            this.txtApePat.Location = new System.Drawing.Point(13, 174);
             this.txtApePat.Name = "txtApePat";
             this.txtApePat.Size = new System.Drawing.Size(129, 22);
             this.txtApePat.TabIndex = 43;
@@ -435,8 +961,8 @@ namespace Presentacion.Vista
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(9, 203);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(9, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 17);
             this.label3.TabIndex = 44;
@@ -446,8 +972,8 @@ namespace Presentacion.Vista
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(308, 22);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(340, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 17);
             this.label10.TabIndex = 58;
@@ -456,7 +982,7 @@ namespace Presentacion.Vista
             // txtApeMat
             // 
             this.txtApeMat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeMat.Location = new System.Drawing.Point(12, 222);
+            this.txtApeMat.Location = new System.Drawing.Point(12, 234);
             this.txtApeMat.Name = "txtApeMat";
             this.txtApeMat.Size = new System.Drawing.Size(130, 22);
             this.txtApeMat.TabIndex = 45;
@@ -466,10 +992,10 @@ namespace Presentacion.Vista
             // txtnumdoc
             // 
             this.txtnumdoc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnumdoc.Location = new System.Drawing.Point(297, 44);
+            this.txtnumdoc.Location = new System.Drawing.Point(343, 57);
             this.txtnumdoc.MaxLength = 8;
             this.txtnumdoc.Name = "txtnumdoc";
-            this.txtnumdoc.Size = new System.Drawing.Size(105, 22);
+            this.txtnumdoc.Size = new System.Drawing.Size(123, 22);
             this.txtnumdoc.TabIndex = 53;
             this.txtnumdoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnumdoc_KeyPress);
             this.txtnumdoc.Validating += new System.ComponentModel.CancelEventHandler(this.txtnumdoc_Validating);
@@ -478,8 +1004,8 @@ namespace Presentacion.Vista
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label14.Location = new System.Drawing.Point(167, 22);
+            this.label14.ForeColor = System.Drawing.Color.DimGray;
+            this.label14.Location = new System.Drawing.Point(187, 31);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(137, 17);
             this.label14.TabIndex = 69;
@@ -489,8 +1015,8 @@ namespace Presentacion.Vista
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(165, 202);
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(189, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 17);
             this.label5.TabIndex = 47;
@@ -500,8 +1026,8 @@ namespace Presentacion.Vista
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(167, 263);
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(191, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 17);
             this.label4.TabIndex = 48;
@@ -510,7 +1036,7 @@ namespace Presentacion.Vista
             // txtnac
             // 
             this.txtnac.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnac.Location = new System.Drawing.Point(168, 282);
+            this.txtnac.Location = new System.Drawing.Point(190, 294);
             this.txtnac.Name = "txtnac";
             this.txtnac.Size = new System.Drawing.Size(121, 22);
             this.txtnac.TabIndex = 59;
@@ -521,19 +1047,19 @@ namespace Presentacion.Vista
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(165, 81);
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(189, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 51;
-            this.label8.Text = "Direccion";
+            this.label8.Text = "Dirección";
             // 
             // txtdire
             // 
             this.txtdire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdire.Location = new System.Drawing.Point(168, 104);
+            this.txtdire.Location = new System.Drawing.Point(190, 115);
             this.txtdire.Name = "txtdire";
-            this.txtdire.Size = new System.Drawing.Size(233, 22);
+            this.txtdire.Size = new System.Drawing.Size(274, 22);
             this.txtdire.TabIndex = 54;
             this.txtdire.Validating += new System.ComponentModel.CancelEventHandler(this.txtdire_Validating);
             // 
@@ -541,8 +1067,8 @@ namespace Presentacion.Vista
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(171, 141);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(191, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 53;
@@ -551,7 +1077,7 @@ namespace Presentacion.Vista
             // txttele
             // 
             this.txttele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttele.Location = new System.Drawing.Point(168, 160);
+            this.txttele.Location = new System.Drawing.Point(190, 174);
             this.txttele.MaxLength = 9;
             this.txttele.Name = "txttele";
             this.txttele.Size = new System.Drawing.Size(123, 22);
@@ -559,275 +1085,36 @@ namespace Presentacion.Vista
             this.txttele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttele_KeyPress);
             this.txttele.Validating += new System.ComponentModel.CancelEventHandler(this.txttele_Validating);
             // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnNuevo.Location = new System.Drawing.Point(408, 362);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(61, 46);
-            this.btnNuevo.TabIndex = 64;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.Location = new System.Drawing.Point(247, 362);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(61, 46);
-            this.btnguardar.TabIndex = 62;
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click_1);
-            // 
-            // listaEmpleados
-            // 
-            this.listaEmpleados.Controls.Add(this.rddni);
-            this.listaEmpleados.Controls.Add(this.rdnombre);
-            this.listaEmpleados.Controls.Add(this.chkcontrato);
-            this.listaEmpleados.Controls.Add(this.lblcantidad_registro);
-            this.listaEmpleados.Controls.Add(this.label17);
-            this.listaEmpleados.Controls.Add(this.txtBuscar);
-            this.listaEmpleados.Controls.Add(this.btneliminar);
-            this.listaEmpleados.Controls.Add(this.dgvempleado);
-            this.listaEmpleados.Controls.Add(this.label19);
-            this.listaEmpleados.Location = new System.Drawing.Point(33, 4);
-            this.listaEmpleados.Name = "listaEmpleados";
-            this.listaEmpleados.Padding = new System.Windows.Forms.Padding(3);
-            this.listaEmpleados.Size = new System.Drawing.Size(772, 418);
-            this.listaEmpleados.TabIndex = 0;
-            this.listaEmpleados.Text = "Lista Empleados";
-            this.listaEmpleados.UseVisualStyleBackColor = true;
-            // 
-            // rddni
-            // 
-            this.rddni.AutoSize = true;
-            this.rddni.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rddni.Location = new System.Drawing.Point(562, 43);
-            this.rddni.Name = "rddni";
-            this.rddni.Size = new System.Drawing.Size(47, 21);
-            this.rddni.TabIndex = 86;
-            this.rddni.TabStop = true;
-            this.rddni.Text = "DNI";
-            this.rddni.UseVisualStyleBackColor = true;
-            this.rddni.Click += new System.EventHandler(this.rddni_Click);
-            // 
-            // rdnombre
-            // 
-            this.rdnombre.AutoSize = true;
-            this.rdnombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdnombre.Location = new System.Drawing.Point(461, 43);
-            this.rdnombre.Name = "rdnombre";
-            this.rdnombre.Size = new System.Drawing.Size(76, 21);
-            this.rdnombre.TabIndex = 86;
-            this.rdnombre.TabStop = true;
-            this.rdnombre.Text = "NOMBRE";
-            this.rdnombre.UseVisualStyleBackColor = true;
-            this.rdnombre.Click += new System.EventHandler(this.rdnombre_Click);
-            // 
-            // chkcontrato
-            // 
-            this.chkcontrato.Appearance = System.Windows.Forms.Appearance.Button;
-            this.chkcontrato.AutoSize = true;
-            this.chkcontrato.FlatAppearance.BorderSize = 0;
-            this.chkcontrato.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkcontrato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chkcontrato.Location = new System.Drawing.Point(15, 382);
-            this.chkcontrato.Name = "chkcontrato";
-            this.chkcontrato.Size = new System.Drawing.Size(68, 26);
-            this.chkcontrato.TabIndex = 83;
-            this.chkcontrato.Text = "Contrato";
-            this.chkcontrato.UseVisualStyleBackColor = true;
-            this.chkcontrato.CheckedChanged += new System.EventHandler(this.chkcontrato_CheckedChanged);
-            // 
-            // lblcantidad_registro
-            // 
-            this.lblcantidad_registro.AutoSize = true;
-            this.lblcantidad_registro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcantidad_registro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblcantidad_registro.Location = new System.Drawing.Point(559, 387);
-            this.lblcantidad_registro.Name = "lblcantidad_registro";
-            this.lblcantidad_registro.Size = new System.Drawing.Size(33, 16);
-            this.lblcantidad_registro.TabIndex = 82;
-            this.lblcantidad_registro.Text = "total";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label17.Location = new System.Drawing.Point(16, 25);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(54, 16);
-            this.label17.TabIndex = 81;
-            this.label17.Text = "BUSCAR";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(20, 47);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(355, 16);
-            this.txtBuscar.TabIndex = 0;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp;
-            this.btneliminar.Location = new System.Drawing.Point(703, 20);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(61, 48);
-            this.btneliminar.TabIndex = 64;
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 55);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(373, 13);
-            this.label19.TabIndex = 85;
-            this.label19.Text = "_____________________________________________________________\r\n";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label16.AutoEllipsis = true;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(308, 20);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(196, 24);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "COLABORADORES";
-            // 
             // tabEmpleado
             // 
-            this.tabEmpleado.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabEmpleado.Controls.Add(this.listaEmpleados);
             this.tabEmpleado.Controls.Add(this.tabPage2);
             this.tabEmpleado.Controls.Add(this.tabPage1);
-            this.tabEmpleado.ItemSize = new System.Drawing.Size(89, 29);
-            this.tabEmpleado.Location = new System.Drawing.Point(1, 50);
+            this.tabEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabEmpleado.ItemSize = new System.Drawing.Size(89, 33);
+            this.tabEmpleado.Location = new System.Drawing.Point(198, 89);
             this.tabEmpleado.Multiline = true;
             this.tabEmpleado.Name = "tabEmpleado";
+            this.tabEmpleado.Padding = new System.Drawing.Point(20, 3);
+            this.tabEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabEmpleado.SelectedIndex = 0;
-            this.tabEmpleado.Size = new System.Drawing.Size(809, 426);
+            this.tabEmpleado.Size = new System.Drawing.Size(786, 449);
             this.tabEmpleado.TabIndex = 40;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(33, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(772, 418);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Registrar Contrato";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // paneltitulo
-            // 
-            this.paneltitulo.BackColor = System.Drawing.Color.SteelBlue;
-            this.paneltitulo.Controls.Add(this.pictureBox1);
-            this.paneltitulo.Controls.Add(this.btncerrar);
-            this.paneltitulo.Controls.Add(this.label16);
-            this.paneltitulo.Controls.Add(this.btnminimizar);
-            this.paneltitulo.Controls.Add(this.btnmaximizar);
-            this.paneltitulo.Controls.Add(this.btnrestaurar);
-            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneltitulo.Location = new System.Drawing.Point(0, 0);
-            this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(812, 50);
-            this.paneltitulo.TabIndex = 81;
-            this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(773, 3);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 20);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 8;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // btnminimizar
-            // 
-            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(701, 3);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnminimizar.TabIndex = 9;
-            this.btnminimizar.TabStop = false;
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
-            // 
-            // btnmaximizar
-            // 
-            this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmaximizar.Enabled = false;
-            this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
-            this.btnmaximizar.Location = new System.Drawing.Point(737, 3);
-            this.btnmaximizar.Name = "btnmaximizar";
-            this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
-            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnmaximizar.TabIndex = 10;
-            this.btnmaximizar.TabStop = false;
-            this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
-            // 
-            // btnrestaurar
-            // 
-            this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(698, 3);
-            this.btnrestaurar.Name = "btnrestaurar";
-            this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
-            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnrestaurar.TabIndex = 11;
-            this.btnrestaurar.TabStop = false;
-            this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
             // 
             // frmempleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 475);
+            this.ClientSize = new System.Drawing.Size(988, 565);
             this.Controls.Add(this.paneltitulo);
+            this.Controls.Add(this.lblcantidad_registro);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.tabEmpleado);
+            this.Controls.Add(this.btnguardar);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.dgvempleado);
+            this.Controls.Add(this.btneliminar);
+            this.Controls.Add(this.lblbuscar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmempleado";
@@ -835,14 +1122,6 @@ namespace Presentacion.Vista
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Empleado_FormClosing);
             this.Load += new System.EventHandler(this.Empleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.listaEmpleados.ResumeLayout(false);
-            this.listaEmpleados.PerformLayout();
-            this.tabEmpleado.ResumeLayout(false);
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -850,7 +1129,21 @@ namespace Presentacion.Vista
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tabEmpleado.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -860,60 +1153,84 @@ namespace Presentacion.Vista
 
         #endregion
         private System.Windows.Forms.DataGridView dgvempleado;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtcodigo;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.TextBox txtnumdoc;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbxgene;
-        private System.Windows.Forms.TextBox txttele;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtdire;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtnac;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtApeMat;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtApePat;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage listaEmpleados;
-        private System.Windows.Forms.TabControl tabEmpleado;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.ComboBox cmbtipdoc;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dtfecha;
         private Label label17;
         private TextBox txtBuscar;
         private Label label16;
-        private TabPage tabPage1;
         private Label lblcantidad_registro;
-        private CheckBox chkcontrato;
         private PictureBox btncerrar;
         private PictureBox btnminimizar;
         private PictureBox btnmaximizar;
-        private Label label19;
+        private Label lblbuscar;
         private Panel paneltitulo;
+        private PictureBox btnrestaurar;
+        private PictureBox pictureBox1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private GroupBox groupBox2;
         private GroupBox groupBox3;
-        private Label label6;
-        private ComboBox cbxpen;
+        private ComboBox cmbestado;
+        private Label lblem;
         private Label lblafp;
-        private ComboBox cmbcar;
+        private ComboBox cbocar;
         private ComboBox cmbafp;
         private Label label15;
         private Label label12;
-        private PictureBox btnrestaurar;
-        private PictureBox pictureBox1;
-        private RadioButton rddni;
-        private RadioButton rdnombre;
-        private DataGridViewButtonColumn CONTRATO;
-        private Label lblem;
-        private ComboBox cmbestado;
+        private DateTimePicker dtfecha;
+        private TextBox txtcodigo;
+        private Label label9;
+        private Label label1;
+        private ComboBox cbotipo_documento;
+        private TextBox txtNombre;
+        private Label label11;
+        private Label label2;
+        private ComboBox cbxgene;
+        private TextBox txtApePat;
+        private Label label3;
+        private Label label10;
+        private TextBox txtApeMat;
+        private TextBox txtnumdoc;
+        private Label label14;
+        private Label label5;
+        private Label label4;
+        private TextBox txtnac;
+        private Label label8;
+        private TextBox txtdire;
+        private Label label7;
+        private TextBox txttele;
+        private TabControl tabEmpleado;
+        private ComboBox cbotipocontra;
+        private Label label6;
+        private Label lblfechafin;
+        private Label lblfechaini;
+        private DateTimePicker dtinicio;
+        private Label lblremu;
+        private TextBox txtremune;
+        private Label label13;
+        private Label lblasig;
+        private TextBox txtasig;
+        private GroupBox groupBox1;
+        public TextBox txtcussp;
+        private Label label18;
+        public TextBox txtid_empleado;
+        private Label lblcts;
+        private TextBox txtcts;
+        private ComboBox cmbmoneda;
+        private Label lbltipomoneda;
+        private Label label19;
+        private ComboBox cbobanco;
+        private Label label20;
+        private TextBox txtnum_cuenta;
+        private LinkLabel linkpagina;
+        private ComboBox cbotipopago;
+        private Label label22;
+        private Label label21;
+        private ComboBox cboregimensalud;
+        private GroupBox groupBox5;
+        private GroupBox groupBox4;
+        private ComboBox cboperiodicidad;
+        private MaskedTextBox txtfecha_fin;
     }
 }

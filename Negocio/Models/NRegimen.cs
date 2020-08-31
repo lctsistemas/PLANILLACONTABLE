@@ -96,9 +96,10 @@ namespace Negocio.Models
         }
         public void Dispose()
         {
-           // throw new NotImplementedException();
+           
         }
 
+        //METODO PARA FILTRAR.
         public IEnumerable<NRegimen> Search(string filter)
         {
             return list_regimen.FindAll(e => e.Descripcion.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);

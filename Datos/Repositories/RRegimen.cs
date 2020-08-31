@@ -96,7 +96,7 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SP_SHOW_REGIMEN";
+                    cmd.CommandText = "SP_SHOW_REGIMENPENSIONARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 

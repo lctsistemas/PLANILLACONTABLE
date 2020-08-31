@@ -167,8 +167,7 @@ namespace Presentacion.Vista
 
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
-        {
-            
+        {            
             dgvusuario.DataSource = nu.Search(txtbuscar.Text.Trim());
             lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
         }
