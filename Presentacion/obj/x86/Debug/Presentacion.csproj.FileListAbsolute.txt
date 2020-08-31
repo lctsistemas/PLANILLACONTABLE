@@ -240,12 +240,12 @@ C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.V
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmempleado.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Manto_Regimen.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Manto_Regimen.resources
-<<<<<<< HEAD
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources
-=======
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.frmvista_sbs.resources
 >>>>>>> MCarlos
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
