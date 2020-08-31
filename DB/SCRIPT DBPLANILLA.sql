@@ -293,6 +293,7 @@ id_planilla int not null,
 --id_tipo_planilla int not null, ver si ira id_tipo_planilla
 id_periodo int not null,
 --id_mes int not null,
+fecha_inicial date,
 fecha_pago date,
 dias_mes int,
 horas_mes int,
