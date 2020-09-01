@@ -25,8 +25,7 @@ namespace Datos.Contract
     }
 
     public interface IEmpleado : IGenerict<DEmpleado>
-    {
-        bool ListaEmpleado(List<object> list, DEmpleado entity);
+    {       
     }
 
     public interface IBanco : IGenerict<DBanco>

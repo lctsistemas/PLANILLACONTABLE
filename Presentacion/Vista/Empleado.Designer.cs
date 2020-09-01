@@ -33,9 +33,9 @@ namespace Presentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@ namespace Presentacion.Vista
             this.label21 = new System.Windows.Forms.Label();
             this.txtcts = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.cmbmoneda = new System.Windows.Forms.ComboBox();
+            this.cbotipo_moneda = new System.Windows.Forms.ComboBox();
             this.lbltipomoneda = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtfecha_fin = new System.Windows.Forms.MaskedTextBox();
@@ -86,11 +86,12 @@ namespace Presentacion.Vista
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtidempresa = new System.Windows.Forms.TextBox();
             this.cmbestado = new System.Windows.Forms.ComboBox();
             this.lblem = new System.Windows.Forms.Label();
             this.lblafp = new System.Windows.Forms.Label();
             this.cbocar = new System.Windows.Forms.ComboBox();
-            this.cmbafp = new System.Windows.Forms.ComboBox();
+            this.cbore_pensionario = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dtfecha = new System.Windows.Forms.DateTimePicker();
@@ -140,14 +141,14 @@ namespace Presentacion.Vista
             this.dgvempleado.AllowUserToOrderColumns = true;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempleado.EnableHeadersVisualStyles = false;
@@ -155,17 +156,17 @@ namespace Presentacion.Vista
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvempleado.RowHeadersWidth = 30;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvempleado.Size = new System.Drawing.Size(193, 449);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
@@ -203,7 +204,7 @@ namespace Presentacion.Vista
             this.btnguardar.Size = new System.Drawing.Size(52, 27);
             this.btnguardar.TabIndex = 62;
             this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click_1);
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // lblcantidad_registro
             // 
@@ -481,7 +482,7 @@ namespace Presentacion.Vista
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.txtcts);
             this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.cmbmoneda);
+            this.groupBox4.Controls.Add(this.cbotipo_moneda);
             this.groupBox4.Controls.Add(this.lbltipomoneda);
             this.groupBox4.Location = new System.Drawing.Point(12, 213);
             this.groupBox4.Name = "groupBox4";
@@ -597,18 +598,18 @@ namespace Presentacion.Vista
             this.label19.TabIndex = 39;
             this.label19.Text = "Banco";
             // 
-            // cmbmoneda
+            // cbotipo_moneda
             // 
-            this.cmbmoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbmoneda.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbmoneda.FormattingEnabled = true;
-            this.cmbmoneda.Items.AddRange(new object[] {
+            this.cbotipo_moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbotipo_moneda.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbotipo_moneda.FormattingEnabled = true;
+            this.cbotipo_moneda.Items.AddRange(new object[] {
             "SOLES ",
             "DOLARES"});
-            this.cmbmoneda.Location = new System.Drawing.Point(12, 103);
-            this.cmbmoneda.Name = "cmbmoneda";
-            this.cmbmoneda.Size = new System.Drawing.Size(121, 25);
-            this.cmbmoneda.TabIndex = 41;
+            this.cbotipo_moneda.Location = new System.Drawing.Point(12, 103);
+            this.cbotipo_moneda.Name = "cbotipo_moneda";
+            this.cbotipo_moneda.Size = new System.Drawing.Size(121, 25);
+            this.cbotipo_moneda.TabIndex = 41;
             // 
             // lbltipomoneda
             // 
@@ -762,11 +763,12 @@ namespace Presentacion.Vista
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.txtidempresa);
             this.groupBox3.Controls.Add(this.cmbestado);
             this.groupBox3.Controls.Add(this.lblem);
             this.groupBox3.Controls.Add(this.lblafp);
             this.groupBox3.Controls.Add(this.cbocar);
-            this.groupBox3.Controls.Add(this.cmbafp);
+            this.groupBox3.Controls.Add(this.cbore_pensionario);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -776,6 +778,13 @@ namespace Presentacion.Vista
             this.groupBox3.Size = new System.Drawing.Size(264, 374);
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
+            // 
+            // txtidempresa
+            // 
+            this.txtidempresa.Location = new System.Drawing.Point(62, 239);
+            this.txtidempresa.Name = "txtidempresa";
+            this.txtidempresa.Size = new System.Drawing.Size(61, 22);
+            this.txtidempresa.TabIndex = 77;
             // 
             // cmbestado
             // 
@@ -819,15 +828,15 @@ namespace Presentacion.Vista
             this.cbocar.TabIndex = 62;
             this.cbocar.Validating += new System.ComponentModel.CancelEventHandler(this.cmbcar_Validating);
             // 
-            // cmbafp
+            // cbore_pensionario
             // 
-            this.cmbafp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbafp.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbafp.FormattingEnabled = true;
-            this.cmbafp.Location = new System.Drawing.Point(48, 53);
-            this.cmbafp.Name = "cmbafp";
-            this.cmbafp.Size = new System.Drawing.Size(133, 25);
-            this.cmbafp.TabIndex = 61;
+            this.cbore_pensionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbore_pensionario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbore_pensionario.FormattingEnabled = true;
+            this.cbore_pensionario.Location = new System.Drawing.Point(48, 53);
+            this.cbore_pensionario.Name = "cbore_pensionario";
+            this.cbore_pensionario.Size = new System.Drawing.Size(133, 25);
+            this.cbore_pensionario.TabIndex = 61;
             // 
             // label15
             // 
@@ -1175,7 +1184,7 @@ namespace Presentacion.Vista
         private Label lblem;
         private Label lblafp;
         private ComboBox cbocar;
-        private ComboBox cmbafp;
+        private ComboBox cbore_pensionario;
         private Label label15;
         private Label label12;
         private DateTimePicker dtfecha;
@@ -1217,7 +1226,7 @@ namespace Presentacion.Vista
         public TextBox txtid_empleado;
         private Label lblcts;
         private TextBox txtcts;
-        private ComboBox cmbmoneda;
+        private ComboBox cbotipo_moneda;
         private Label lbltipomoneda;
         private Label label19;
         private ComboBox cbobanco;
@@ -1232,5 +1241,6 @@ namespace Presentacion.Vista
         private GroupBox groupBox4;
         private ComboBox cboperiodicidad;
         private MaskedTextBox txtfecha_fin;
+        private TextBox txtidempresa;
     }
 }

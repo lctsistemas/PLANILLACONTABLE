@@ -15,7 +15,7 @@ namespace Presentacion.Vista
     public partial class frmempleado : Form
     {
         String result;
-        NEmpleado nEmpleado;                
+        NEmpleado emple_contra;                
 
         public frmempleado()
         {
@@ -170,7 +170,7 @@ namespace Presentacion.Vista
             txttele.Enabled = v;
             dtfecha.Enabled = v;
             txtnac.Enabled = v;
-            cmbafp.Enabled = v;
+            cbore_pensionario.Enabled = v;
             cbocar.Enabled = v;
             btnguardar.Enabled = v;
         }
@@ -189,9 +189,9 @@ namespace Presentacion.Vista
         {
             using (NRegimen nre= new NRegimen())
             {
-                cmbafp.DataSource = nre.Getall();
-                cmbafp.DisplayMember = "Descripcion";
-                cmbafp.ValueMember = "Codigo_Regimen";
+                cbore_pensionario.DataSource = nre.Getall();
+                cbore_pensionario.DisplayMember = "Descripcion";
+                cbore_pensionario.ValueMember = "Codigo_Regimen";
             }
         }
 
@@ -241,8 +241,8 @@ namespace Presentacion.Vista
             cbocar.Text = "";
             cbocar.SelectedValue = 0;
            
-            cmbafp.Text = "";
-            cmbafp.SelectedValue = 0;
+            cbore_pensionario.Text = "";
+            cbore_pensionario.SelectedValue = 0;
             txtnac.Text = String.Empty;
             txtdire.Text = String.Empty;
             txtnumdoc.Text = String.Empty;
@@ -255,10 +255,10 @@ namespace Presentacion.Vista
         private bool Validar_campos()
         {
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApePat.Text) ||
-                string.IsNullOrEmpty(txtApeMat.Text) || string.IsNullOrEmpty(txttele.Text) ||
+                string.IsNullOrEmpty(txtApeMat.Text) || 
                 string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocar.Text) ||
-                string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtdire.Text) ||
-                string.IsNullOrEmpty(txtnumdoc.Text) ||string.IsNullOrEmpty(cbxgene.Text))
+                string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtnumdoc.Text) ||
+                string.IsNullOrEmpty(cbxgene.Text))
             {
                 ValidateChildren();
                 return true;
@@ -275,10 +275,10 @@ namespace Presentacion.Vista
 
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                using (nEmpleado = new NEmpleado())
+                using (emple_contra = new NEmpleado())
                 {
-                    nEmpleado.state = EntityState.Modificar;
-                    nEmpleado.Id_empleado = Convert.ToInt32(r.Cells[1].Value);
+                    emple_contra.state = EntityState.Modificar;
+                    emple_contra.Id_empleado = Convert.ToInt32(r.Cells[1].Value);
 
                     txtcodigo.Text = "EMP 0" + r.Cells[1].Value.ToString();
                     txtNombre.Text = r.Cells[2].Value.ToString();
@@ -294,8 +294,8 @@ namespace Presentacion.Vista
                     txtnumdoc.Text = r.Cells[10].Value.ToString();
                     cmbestado.Text = r.Cells[11].Value.ToString();
                                                             
-                    cmbafp.SelectedValue = r.Cells[12].Value.ToString();
-                    cmbafp.Text = r.Cells[14].Value.ToString();                    
+                    cbore_pensionario.SelectedValue = r.Cells[12].Value.ToString();
+                    cbore_pensionario.Text = r.Cells[14].Value.ToString();                    
 
                     cbotipo_documento.SelectedValue = r.Cells[15].Value.ToString();
                     cbotipo_documento.Text = (r.Cells[16].Value.ToString());
@@ -316,7 +316,7 @@ namespace Presentacion.Vista
             //lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
-        private void btnguardar_Click_1(object sender, EventArgs e)
+        private void btnguardar_Click(object sender, EventArgs e)
         {
             if (Validar_campos())
             {
@@ -344,31 +344,46 @@ namespace Presentacion.Vista
 
 
             result = "";
-            using (nEmpleado)
+            using (emple_contra=new NEmpleado())
             {
-                if (nEmpleado.state == EntityState.Guardar)
-                    //nEmpleado.Id_empleado = ;
+                if (emple_contra.state == EntityState.Guardar)
+                    emple_contra.Id_empleado = emple_contra.GetCodigo_empleado();
+                //EMPLEADO
+                emple_contra.Codigo = txtcodigo.Text.Trim();
+                emple_contra.Nom_emp = txtNombre.Text.Trim();
+                emple_contra.Ape_pat = txtApePat.Text.Trim();
+                emple_contra.Ape_mat = txtApeMat.Text.Trim();                
+                emple_contra.Fec_nac = Convert.ToDateTime(dtfecha.Value);
+                emple_contra.Nacionalidad = txtnac.Text.Trim();
+                emple_contra.Tipo_genero = cbxgene.SelectedItem.ToString();                            
+                emple_contra.Direccion = txtdire.Text.Trim();
+                emple_contra.Telefono = txttele.Text.Trim();
+                emple_contra.Num_doc = txtnumdoc.Text;
+                emple_contra.Estado = cmbestado.SelectedItem.ToString();
+                emple_contra.Codigo_regimen = Convert.ToInt32(cbore_pensionario.SelectedValue);
+                emple_contra.Id_doc = Convert.ToInt32(cbotipo_documento.SelectedValue);
+                emple_contra.Id_cargo = Convert.ToInt32(cbocar.SelectedValue);
+                emple_contra.Id_emp_maestra = int.Parse(txtidempresa.Text); //UserCache.Codigo_empresa; 
 
-                nEmpleado.Nom_emp = txtNombre.Text.Trim();
-                nEmpleado.Ape_pat = txtApePat.Text.Trim();
-                nEmpleado.Ape_mat = txtApeMat.Text.Trim();                
-                nEmpleado.Fec_nac = Convert.ToDateTime(dtfecha.Value);
-          
-                nEmpleado.Tipo_genero = cbxgene.SelectedItem.ToString();
-                nEmpleado.Nacionalidad = txtnac.Text.Trim();                
-                nEmpleado.Direccion = txtdire.Text.Trim();
-                nEmpleado.Telefono = txttele.Text.Trim();
-                nEmpleado.Num_doc = txtnumdoc.Text;
+                //CONTRATO
+                emple_contra.cid_contrato= emple_contra.Getcodigo_contrato();
+                emple_contra.cid_banco = int.Parse(cbobanco.SelectedValue.ToString());
+                emple_contra.cid_tcontrato = int.Parse(cbotipocontra.SelectedValue.ToString());
+                emple_contra.cfecha_inicio = DateTime.Parse(dtinicio.Value.ToString());
+                emple_contra.cfecha_fin = DateTime.Parse(txtfecha_fin.Text);
+                emple_contra.cnum_cuenta = txtnum_cuenta.Text.Trim();
+                emple_contra.cremu_basica =decimal.Parse(txtremune.Text);
+                emple_contra.casig_fami = decimal.Parse(txtasig.Text);
+                emple_contra.cregimen_salud = cboregimensalud.SelectedItem.ToString();
+                emple_contra.ctipo_pago = cbotipopago.SelectedItem.ToString();
+                emple_contra.ctipo_moneda = cbotipo_moneda.SelectedItem.ToString();
+                emple_contra.cperiodicidad = cboperiodicidad.SelectedItem.ToString();
+                emple_contra.ccts = txtcts.Text.Trim();
+                emple_contra.ccussp = txtcussp.Text.Trim();
 
-                nEmpleado.Estado = cmbestado.SelectedItem.ToString();
-                nEmpleado.Id_afp = Convert.ToInt32(cmbafp.SelectedValue);
-                nEmpleado.Id_doc = Convert.ToInt32(cbotipo_documento.SelectedValue);
-                nEmpleado.Id_cargo = Convert.ToInt32(cbocar.SelectedValue);
-                nEmpleado.Id_emp_maestra = UserCache.Codigo_empresa; 
+                result = emple_contra.GuardarCambios();
 
-                result = nEmpleado.GuardarCambios();
-
-                if(result.Contains("YA SE ENCUENTRA REGISTRADO"))
+                if(result.Contains("ya se encuentra registrado"))
                 {
                     Messages.M_warning(result);                   
                 }
@@ -393,7 +408,7 @@ namespace Presentacion.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            using (nEmpleado) { nEmpleado.state = EntityState.Guardar; }
+            using (emple_contra) { emple_contra.state = EntityState.Guardar; }
       
 
             Habilitar(true);
@@ -534,11 +549,11 @@ namespace Presentacion.Vista
                 DialogResult re = Messages.M_question("¿Deseas eliminar al empleado?");
                 if (re == DialogResult.Yes)
                 {
-                    using (nEmpleado)
+                    using (emple_contra)
                     {
-                        nEmpleado.state = EntityState.Remover;
-                        nEmpleado.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
-                        result = nEmpleado.GuardarCambios();
+                        emple_contra.state = EntityState.Remover;
+                        emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
+                        result = emple_contra.GuardarCambios();
                         Messages.M_info(result);                 
                         btnguardar.Enabled = false;
                     }

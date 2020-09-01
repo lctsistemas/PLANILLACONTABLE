@@ -120,13 +120,6 @@ VALUES('PROFUTURO MIXTA',0.67,1.20,1.35,10.0,9707.03)
 GO
 
 
-
-
-
-
-
-
-
 GO
 --TABLA PRUEBA CREAR
 
@@ -144,3 +137,6 @@ dbo.Usuario_copy u  WHERE u.referencia like @search+'%'
 ORDER BY u.id_usuario DESC
 END
 GO
+
+select * FROM empleado
+select * FROM Contrato

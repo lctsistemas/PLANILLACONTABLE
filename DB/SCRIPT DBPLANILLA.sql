@@ -156,10 +156,11 @@ tipo_pago varchar(30) not null,
 periodicidad varchar(70)not null,
 tipo_moneda varchar(10) not null,
 cuenta_cts nvarchar(50) null,
-CUSSP varchar(30) null,
+CUSSP varchar(70) null,
 estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
 )
 GO
+alter table dbo.contrato alter column cussp varchar(70) null
 
 --Meses_maestra
 CREATE TABLE Meses_maestra(
