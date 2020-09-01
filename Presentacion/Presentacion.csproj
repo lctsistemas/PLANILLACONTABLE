@@ -189,6 +189,12 @@
     <Compile Include="Vista\Planilla.Designer.cs">
       <DependentUpon>Planilla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Planilla_Manto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Planilla_Manto.Designer.cs">
+      <DependentUpon>Planilla_Manto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Rol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Planilla.resx">
       <DependentUpon>Planilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Planilla_Manto.resx">
+      <DependentUpon>Planilla_Manto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>

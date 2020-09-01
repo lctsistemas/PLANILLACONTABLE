@@ -40,8 +40,6 @@
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpinicial = new System.Windows.Forms.DateTimePicker();
-            this.dtpfinal = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtdia = new System.Windows.Forms.TextBox();
@@ -60,6 +58,8 @@
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
             this.dtppago = new System.Windows.Forms.DateTimePicker();
+            this.dtpini = new System.Windows.Forms.DateTimePicker();
+            this.dtpfin = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numyear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,20 +193,6 @@
             this.label4.Size = new System.Drawing.Size(90, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Fecha Final :";
-            // 
-            // dtpinicial
-            // 
-            this.dtpinicial.Location = new System.Drawing.Point(195, 110);
-            this.dtpinicial.Name = "dtpinicial";
-            this.dtpinicial.Size = new System.Drawing.Size(100, 20);
-            this.dtpinicial.TabIndex = 7;
-            // 
-            // dtpfinal
-            // 
-            this.dtpfinal.Location = new System.Drawing.Point(195, 148);
-            this.dtpfinal.Name = "dtpfinal";
-            this.dtpfinal.Size = new System.Drawing.Size(100, 20);
-            this.dtpfinal.TabIndex = 8;
             // 
             // label5
             // 
@@ -388,16 +374,39 @@
             // 
             // dtppago
             // 
+            this.dtppago.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtppago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtppago.Location = new System.Drawing.Point(195, 194);
             this.dtppago.Name = "dtppago";
-            this.dtppago.Size = new System.Drawing.Size(100, 20);
+            this.dtppago.Size = new System.Drawing.Size(100, 22);
             this.dtppago.TabIndex = 73;
+            // 
+            // dtpini
+            // 
+            this.dtpini.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpini.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpini.Location = new System.Drawing.Point(195, 107);
+            this.dtpini.Name = "dtpini";
+            this.dtpini.Size = new System.Drawing.Size(100, 22);
+            this.dtpini.TabIndex = 76;
+            // 
+            // dtpfin
+            // 
+            this.dtpfin.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpfin.Location = new System.Drawing.Point(195, 148);
+            this.dtpfin.Name = "dtpfin";
+            this.dtpfin.Size = new System.Drawing.Size(100, 22);
+            this.dtpfin.TabIndex = 77;
+            this.dtpfin.ValueChanged += new System.EventHandler(this.dtpfin_ValueChanged);
             // 
             // Planilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 601);
+            this.Controls.Add(this.dtpfin);
+            this.Controls.Add(this.dtpini);
             this.Controls.Add(this.dtppago);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.btnagregar);
@@ -416,8 +425,6 @@
             this.Controls.Add(this.txtdia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dtpfinal);
-            this.Controls.Add(this.dtpinicial);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxmes);
@@ -446,8 +453,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpinicial;
-        private System.Windows.Forms.DateTimePicker dtpfinal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
@@ -469,5 +474,7 @@
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnagregar;
         private System.Windows.Forms.DateTimePicker dtppago;
+        private System.Windows.Forms.DateTimePicker dtpini;
+        private System.Windows.Forms.DateTimePicker dtpfin;
     }
 }

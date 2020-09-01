@@ -247,9 +247,8 @@ C:\Users\juan\Source\Repos\Planillalct\Presentacion\bin\Debug\Microsoft.VisualBa
 C:\Users\juan\Source\Repos\Planillalct\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.frmvista_sbs.resources
 >>>>>>> MCarlos
-<<<<<<< HEAD
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.frmvista_sbs.resources
-=======
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 >>>>>>> ddadd6181db422d25343eb35860ad50401db70fd
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla_Manto.resources

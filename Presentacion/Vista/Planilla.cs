@@ -28,6 +28,19 @@ namespace Presentacion.Vista
             //string m=mes[0];
             cbxmes.Items.AddRange(mes);
             
+
+
+
+        }
+
+        private static Planilla instance;
+
+        public static Planilla GetInstance()
+        {
+            if (instance == null)
+                instance = new Planilla();
+
+            return instance;
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -38,8 +51,8 @@ namespace Presentacion.Vista
                 //np.Id_planilla = txtdescCorta.Text.Trim().ToUpper();
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
                 np.Id_periodo = Convert.ToInt32(UserCache.Periodo);
-                np.Fecha_inicial = Convert.ToDateTime(dtpinicial.Text.Trim());
-                np.Fecha_final = Convert.ToDateTime(dtpfinal.Text.Trim());
+                np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());
+                np.Fecha_final = Convert.ToDateTime(dtpfin.Text.Trim());
                 np.Fecha_pago = Convert.ToDateTime(dtppago.Text.Trim());
                 np.Dias_mes =Convert.ToInt32(txtdia.Text.Trim());
                 np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());
@@ -67,6 +80,14 @@ namespace Presentacion.Vista
                 numyear.Value = Convert.ToInt32(UserCache.Periodo);
 
             }
+        }
+        
+
+        private void dtpfin_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime datefin;
+            datefin = dtpfin.Value;
+            txtdia.Text = datefin.Day.ToString();
         }
     }
 }
