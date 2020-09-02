@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Presentacion.Vista
 {
     public partial class Planilla_Manto : Form
     {
+        private NPlanilla np = new NPlanilla();
         public Planilla_Manto()
         {
             InitializeComponent();
@@ -32,6 +34,14 @@ namespace Presentacion.Vista
             Planilla fr = Planilla.GetInstance();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
+        }
+
+        private void ShowRegimen()
+        {
+            using (np)
+            {
+               // dgvplanilla.DataSource = np.Getall();
+            }
         }
 
         private void btncerrar_Click(object sender, EventArgs e)

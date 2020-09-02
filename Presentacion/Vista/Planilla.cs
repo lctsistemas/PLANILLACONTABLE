@@ -27,8 +27,10 @@ namespace Presentacion.Vista
             String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
             //string m=mes[0];
             cbxmes.Items.AddRange(mes);
-            
 
+            txtremu.Text = "930.00";
+            txtasig.Text = "93.00";
+            txttope.Text = "1200";
 
 
         }
@@ -88,6 +90,12 @@ namespace Presentacion.Vista
             DateTime datefin;
             datefin = dtpfin.Value;
             txtdia.Text = datefin.Day.ToString();
+            Int32 horas_mes = datefin.Day * 8;
+           
+            
+            txthora.Text= Convert.ToString(horas_mes);
+
+            
         }
     }
 }
