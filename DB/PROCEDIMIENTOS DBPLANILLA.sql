@@ -22,7 +22,6 @@ UPDATE Cargo SET nombre_cargo=@nom, descripcion=@descripcion WHERE id_cargo=@idc
 END
 GO
 
-
 --DELETE CARGO
 CREATE PROC SP_DELETE_CARGO
 @idcargo int,
@@ -174,28 +173,36 @@ UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
 END
 GO
 
-/*--MOSTRAR EMPLEADO 
+--MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 ALTER PROC SP_SHOW_EMP
 @codigo_empresa int
 AS BEGIN 
-SELECT top(200) e.id_empleado, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
-e.nacionalidad,e.tipo_genero,e.direccion,e.telefono,e.numero_documento,e.estado, t.id_documento,t.nombre as 'DOCUMENTO',
-c.id_cargo,c.nombre_cargo AS 'CARGO',em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Tipo_documento t 
-on(t.id_documento=e.id_documento)
-left JOIN Afp a
-ON(a.id_afp=e.id_afp)
-INNER JOIN Cargo c
-ON(c.id_cargo=e.id_cargo)
-INNER JOIN Empresa_maestra em
-ON(em.id_em_maestra=e.id_em_maestra)
-WHERE e.eliminado_estado='NO ANULADO' and 
-e.id_em_maestra=@codigo_empresa 
+SELECT e.id_empleado, e.ape_paterno, e.ape_materno, e.nombre_empleado,
+em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Empresa_maestra em 
+on(e.id_em_maestra=em.id_em_maestra) WHERE e.eliminado_estado='NO ANULADO' AND e.id_em_maestra=@codigo_empresa 
 ORDER BY e.id_empleado DESC
 END
 GO
-*/
+
+CREATE PROC SP_SHOW_EMPLEADO_RELACIONES
+@codigo_empleado int
+AS BEGIN 
+SELECT e.id_empleado, e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
+e.nacionalidad, e.tipo_genero, e.direccion, e.telefono, e.numero_documento, e.estado, e.codigo_regimen, 
+r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, co.id_banco, b.nombre_banco,
+co.id_tipocontrato, ti.tiempo_contrato, co.fecha_inicio, co.fecha_fin, co.numero_cuenta, 
+co.remuneracion_basica, co.asignacion_familiar, co.regimen_salud, co.tipo_pago, co.periodicidad, 
+co.tipo_moneda, co.cuenta_cts, co.cussp 
+FROM Empleado e JOIN RegimenPensionario r on(e.codigo_regimen = r.codigo_regimen) JOIN Tipo_documento t
+on(e.id_documento = t.id_documento) JOIN Cargo c on(e.id_cargo = c.id_cargo) JOIN Contrato co
+on(e.id_empleado = co.id_empleado) JOIN Banco b on(b.id_banco = co.id_banco) JOIN Tipo_contrato ti
+on(co.id_tipocontrato = ti.id_tipocontrato) WHERE e.id_empleado=@codigo_empleado
+END
+GO
+
 
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
+
 ALTER PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
 @id_banco int,
@@ -220,7 +227,6 @@ VALUES(@id_contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_emplead
 @periodicidad, @tipo_modeda, @cuenta_cts, @cussp,'NO ANULADO')
 END
 GO
-
 
 --UPDATE EMPLEADO.
 ALTER PROCEDURE SP_UPDATE_CONTRATO

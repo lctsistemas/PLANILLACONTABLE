@@ -133,7 +133,7 @@ id_tipocontrato int not null,
 tiempo_contrato varchar(30) not null
 )
 GO
-SELECT * FROM Banco
+
 --INSERTAR TIPO CONTRATO
 INSERT INTO dbo.Tipo_contrato(id_tipocontrato,tiempo_contrato)
 VALUES(1,'Contrato Indefinido'),(2,'Contrato a Tiempo Parcial'),
@@ -156,7 +156,7 @@ tipo_pago varchar(30) not null,
 periodicidad varchar(70)not null,
 tipo_moneda varchar(10) not null,
 cuenta_cts nvarchar(50) null,
-CUSSP varchar(70) null,
+cussp varchar(70) null,
 estado varchar(30) check(estado in ('ANULADO','NO ANULADO')) 
 )
 GO

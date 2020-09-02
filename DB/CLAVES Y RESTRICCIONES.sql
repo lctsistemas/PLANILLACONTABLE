@@ -85,13 +85,13 @@ GO
 --INSERTAR REGISTRO EN LAS TABLAS
 
 INSERT INTO RegimenPensionario(descripcion_corta, descripcion,tipo_regimen) VALUES
-('HM','HABITAT MIXTA','SPP'),('MF','HABITAT FLUJO','SPP'),
-('IM','INTEGRA MIXTA','SPP'),('MF','HABITAT FLUJO','SPP'),
-('PM','PRIMA MIXTA','SPP'),('MF','PRIMA FLUJO','SPP'),
+('HM','HABITAT MIXTA','SPP'),('HF','HABITAT FLUJO','SPP'),
+('IM','INTEGRA MIXTA','SPP'),('IF','INTEGRA FLUJO','SPP'),
+('PM','PRIMA MIXTA','SPP'),('PF','PRIMA FLUJO','SPP'),
 ('PRM','PROFUTURO MIXTA','SPP'),('PRF','PROFUTURO FLUJO','SPP'),
 ('O.N.P','DECRETO LEY 19990-ONP','SNP')
 GO
-SELECT * FROM RegimenPensionario r
+
 
 --'HABITAT FLUJO'
 INSERT INTO ComisionesPension(codigo_regimen,comision,saldo,seguro,aporte,tope)
@@ -129,14 +129,21 @@ select * from dbo.Usuario_copy
 drop table dbo.Usuario_copy
 GO
 
-ALTER PROC SP_SHOW_USER_COPY
-@search varchar(50)
-AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario, u.referencia FROM 
-dbo.Usuario_copy u  WHERE u.referencia like @search+'%' 
-ORDER BY u.id_usuario DESC
-END
-GO
+go
 
-select * FROM empleado
+create table ejemplo(
+id int identity (1,1) primary key,
+nom varchar(20),
+fecha date null
+)
+
+drop table ejemplo
+alter table ejemplo add constraint df_fecha default('01-01-1900') for fecha
+
+insert into ejemplo(nom) values('caro')
+
+select * FROM Empleado
 select * FROM Contrato
+delete from Empleado  where id_empleado <> 1
+select * from RegimenPensionario
+

@@ -15,7 +15,7 @@ namespace Presentacion.Vista
     public partial class frmempleado : Form
     {
         String result;
-        NEmpleado emple_contra;                
+        NEmpleado emple_contra =new  NEmpleado();
 
         public frmempleado()
         {
@@ -49,74 +49,44 @@ namespace Presentacion.Vista
 
         private void Tabla()
         {
-            dgvempleado.Columns[0].HeaderText = "CONTRATO";
-            dgvempleado.Columns[0].Width = 100;
-            dgvempleado.Columns[0].Visible = false;
-
-            dgvempleado.Columns[1].HeaderText = "CODIGO";//codigo empleado
-            dgvempleado.Columns[1].Width = 50;
+            dgvempleado.Columns[0].HeaderText = "ID EMPLEADO";         
+            dgvempleado.Columns[0].Visible = false;               
             dgvempleado.Columns[1].Visible = false;
-
-            dgvempleado.Columns[2].HeaderText = "NOMBRE";
-            dgvempleado.Columns[2].Width = 100;
-
-            dgvempleado.Columns[3].HeaderText = "APELLIDO PATERNO";
-            dgvempleado.Columns[3].Width = 100;
-
-            dgvempleado.Columns[4].HeaderText = "APELLIDO MATERNO";
-            dgvempleado.Columns[4].Width = 100;
-
-            dgvempleado.Columns[5].HeaderText = "FECHA NACIMIENTO";
-            dgvempleado.Columns[5].Width = 100;
-
-            dgvempleado.Columns[6].HeaderText = "NACIONALIDAD";
-            dgvempleado.Columns[6].Width = 100;
-
-            dgvempleado.Columns[7].HeaderText = "GENERO";
-            dgvempleado.Columns[7].Width = 80;
-
-            dgvempleado.Columns[8].HeaderText = "DIRECCION";
-            dgvempleado.Columns[8].Width = 250;
-
-            dgvempleado.Columns[9].HeaderText = "TELEFONO";
-            dgvempleado.Columns[9].Width = 80;
-
-            dgvempleado.Columns[10].HeaderText = "N° DOCUMENTO";
-            dgvempleado.Columns[10].Width = 100;
-
-            dgvempleado.Columns[11].HeaderText = "ESTADO";
-            dgvempleado.Columns[11].Width = 80;
-
-            dgvempleado.Columns[12].HeaderText = "ID AFP";
-            dgvempleado.Columns[12].Width = 100;
+            dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES";
+            dgvempleado.Columns[2].Width = 211;
+            dgvempleado.Columns[3].Visible = false;
+            dgvempleado.Columns[4].Visible = false;
+            dgvempleado.Columns[5].Visible = false;
+            dgvempleado.Columns[6].Visible = false;
+            dgvempleado.Columns[7].Visible = false;
+            dgvempleado.Columns[8].Visible = false;
+            dgvempleado.Columns[9].Visible = false;
+            dgvempleado.Columns[10].Visible = false;
+            dgvempleado.Columns[11].Visible = false;
             dgvempleado.Columns[12].Visible = false;
-
-            dgvempleado.Columns[13].HeaderText = "TIPO PENSION";
-            dgvempleado.Columns[13].Width = 80;
-
-            dgvempleado.Columns[14].HeaderText = "TIPO AFP";
-            dgvempleado.Columns[14].Width = 100;
-
-            dgvempleado.Columns[15].HeaderText = "ID DOCUMENTO";
-            dgvempleado.Columns[15].Width = 100;
+            dgvempleado.Columns[13].Visible = false;
+            dgvempleado.Columns[14].Visible = false;
             dgvempleado.Columns[15].Visible = false;
-
-            dgvempleado.Columns[16].HeaderText = "DOCUMENTO";
-            dgvempleado.Columns[16].Width = 90;
-
-            dgvempleado.Columns[17].HeaderText = "ID CARGO";
-            dgvempleado.Columns[17].Width = 70;
+            dgvempleado.Columns[16].HeaderText = "ID EMPRESA MAESTRA";
+            dgvempleado.Columns[16].Visible = false;
+            dgvempleado.Columns[17].HeaderText = "EMPRESA";
             dgvempleado.Columns[17].Visible = false;
-
-            dgvempleado.Columns[18].HeaderText = "CARGO";
-            dgvempleado.Columns[18].Width = 150;
-
-            dgvempleado.Columns[19].HeaderText = "ID EMPRESA";
-            dgvempleado.Columns[19].Width = 70;
+            dgvempleado.Columns[18].Visible = false;
             dgvempleado.Columns[19].Visible = false;
-
-            dgvempleado.Columns[20].HeaderText = UserCache.Empresa_Sucursal;
-            dgvempleado.Columns[20].Width = 250;
+            dgvempleado.Columns[20].Visible = false;
+            dgvempleado.Columns[21].Visible = false;
+            dgvempleado.Columns[22].Visible = false;
+            dgvempleado.Columns[23].Visible = false;
+            dgvempleado.Columns[24].Visible = false;
+            dgvempleado.Columns[25].Visible = false;
+            dgvempleado.Columns[26].Visible = false;
+            dgvempleado.Columns[27].Visible = false;
+            dgvempleado.Columns[28].Visible = false;
+            dgvempleado.Columns[29].Visible = false;
+            dgvempleado.Columns[30].Visible = false;         
+            dgvempleado.Columns[31].Visible = false;         
+            dgvempleado.Columns[32].Visible = false;         
+            dgvempleado.Columns[33].Visible = false;         
         }              
 
         private void Habilitar_doc(bool v)
@@ -153,8 +123,6 @@ namespace Presentacion.Vista
                 {
                     return false;
                 }
-
-
             }
             return true;
         }
@@ -205,7 +173,13 @@ namespace Presentacion.Vista
             }
         }
         private void mostrarEmp()
-        {           
+        {
+            using (emple_contra=new NEmpleado())
+            {
+                emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
+                dgvempleado.DataSource = emple_contra.listar_empleado();
+                lblcantidad_registro.Text ="Registro:  "+ dgvempleado.RowCount;
+            }
         }
 
         //MOSTRAR PARA CONTRATO
@@ -312,7 +286,10 @@ namespace Presentacion.Vista
         }
         private void Empleado_Load(object sender, EventArgs e)
         {                       
-            Initialize();            
+            Initialize();
+            UserCache.Codigo_empresa = 2;
+            mostrarEmp();
+            Tabla();
             //lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
@@ -324,11 +301,11 @@ namespace Presentacion.Vista
                 return;
             }
 
-            if (btnValidar_telefono() == false)
-            {
-                Messages.M_warning("El Teléfono debe tener 9 dígitos");
-                return;
-            }
+            //if (btnValidar_telefono() == false)
+            //{
+            //    Messages.M_warning("El Teléfono debe tener 9 dígitos");
+            //    return;
+            //}
 
             if (Validar_DNI() == false)
             {
@@ -344,7 +321,7 @@ namespace Presentacion.Vista
 
 
             result = "";
-            using (emple_contra=new NEmpleado())
+            using (emple_contra)
             {
                 if (emple_contra.state == EntityState.Guardar)
                     emple_contra.Id_empleado = emple_contra.GetCodigo_empleado();
@@ -366,11 +343,18 @@ namespace Presentacion.Vista
                 emple_contra.Id_emp_maestra = int.Parse(txtidempresa.Text); //UserCache.Codigo_empresa; 
 
                 //CONTRATO
-                emple_contra.cid_contrato= emple_contra.Getcodigo_contrato();
+                if(emple_contra.state==EntityState.Guardar)
+                    emple_contra.cid_contrato = emple_contra.Getcodigo_contrato();
+
                 emple_contra.cid_banco = int.Parse(cbobanco.SelectedValue.ToString());
                 emple_contra.cid_tcontrato = int.Parse(cbotipocontra.SelectedValue.ToString());
                 emple_contra.cfecha_inicio = DateTime.Parse(dtinicio.Value.ToString());
-                emple_contra.cfecha_fin = DateTime.Parse(txtfecha_fin.Text);
+
+                if (txtfecha_fin.Text == "  /  /")                                 
+                    emple_contra.cfecha_fin = new DateTime(1900, 01, 01);                                   
+                else
+                    emple_contra.cfecha_fin = DateTime.Parse(txtfecha_fin.Text);
+
                 emple_contra.cnum_cuenta = txtnum_cuenta.Text.Trim();
                 emple_contra.cremu_basica =decimal.Parse(txtremune.Text);
                 emple_contra.casig_fami = decimal.Parse(txtasig.Text);
@@ -385,32 +369,20 @@ namespace Presentacion.Vista
 
                 if(result.Contains("ya se encuentra registrado"))
                 {
-                    Messages.M_warning(result);                   
+                    Messages.M_warning(result);           
                 }
                 else
                 {
+                    mostrarEmp();
                     Messages.M_info(result);
                     limpiar();
-
                 }
-
-            }
-           
-        }        
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            
-            
-
-        }
-
+            }           
+        }               
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            using (emple_contra) { emple_contra.state = EntityState.Guardar; }
-      
-
+            using (emple_contra) { emple_contra.state = EntityState.Guardar; }      
             Habilitar(true);
             limpiar();
         }       
@@ -529,17 +501,7 @@ namespace Presentacion.Vista
         private void cmbtipdoc_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_combo(cbotipo_documento, "Campo requerido");
-        }
-
-        private void cbxpen_Validating(object sender, CancelEventArgs e)
-        {
-           //ValidateError.Validate_combo(cbxpen, "Campo requerido");
-        }
-
-        private void cmbcar_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_combo(cbocar, "Campo requerido");
-        }
+        }      
         
         private void btneliminar_Click(object sender, EventArgs e)
         {
@@ -598,15 +560,12 @@ namespace Presentacion.Vista
 
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
             {
                 
             }
         }
-
       
-
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -616,6 +575,15 @@ namespace Presentacion.Vista
         {
             //Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
             Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
+        }
+
+        private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            using (emple_contra)
+            {
+                dgvempleado.DataSource = emple_contra.Search(txtbuscar.Text.Trim());
+                lblcantidad_registro.Text = "Registro:  " + dgvempleado.RowCount;
+            }  
         }
     }
 }

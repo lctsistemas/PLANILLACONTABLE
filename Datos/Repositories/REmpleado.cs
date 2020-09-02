@@ -178,13 +178,9 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SP_SHOW_EMP_DNI";
+                    cmd.CommandText = "SP_SHOW_EMP";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;
-                    cmd.Parameters.Add("@search", SqlDbType.VarChar,20).Value = entiti.Num_doc;
-                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
-
+                    cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;                               
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
