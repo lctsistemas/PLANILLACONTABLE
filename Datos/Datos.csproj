@@ -62,6 +62,7 @@
     <Compile Include="KeyAutomatic\KBanco.cs" />
     <Compile Include="KeyAutomatic\Kcontrato.cs" />
     <Compile Include="KeyAutomatic\KEmpleado.cs" />
+    <Compile Include="KeyAutomatic\KPlanilla.cs" />
     <Compile Include="KeyAutomatic\KRegimen.cs" />
     <Compile Include="KeyAutomatic\Ktipocontrato.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />

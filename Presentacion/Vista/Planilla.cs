@@ -17,10 +17,20 @@ namespace Presentacion.Vista
     {
         String result;
         private NPlanilla np = new NPlanilla();
+        private Int32 codigo;
         public Planilla()
         {
             InitializeComponent();
             Initialize();
+        }
+
+        private void GenerarCodigo()
+        {
+            codigo = 0;
+            using (np)
+            {
+                codigo = np.GetCodigo();
+            }
         }
 
         private void Initialize() {
@@ -50,6 +60,7 @@ namespace Presentacion.Vista
             result = "";
             using (np)
             {
+                np.Id_planilla = codigo;
                 //np.Id_planilla = txtdescCorta.Text.Trim().ToUpper();
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
                 np.Id_periodo = Convert.ToInt32(UserCache.Periodo);
@@ -72,6 +83,8 @@ namespace Presentacion.Vista
                     Messages.M_info(result);
                 }
 
+                GenerarCodigo();
+
             }
         }
 
@@ -82,6 +95,7 @@ namespace Presentacion.Vista
                 numyear.Value = Convert.ToInt32(UserCache.Periodo);
 
             }
+            GenerarCodigo();
         }
         
 
@@ -97,5 +111,7 @@ namespace Presentacion.Vista
 
             
         }
+
+        
     }
 }

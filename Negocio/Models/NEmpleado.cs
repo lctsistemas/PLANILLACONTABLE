@@ -101,7 +101,7 @@ namespace Negocio.Models
 
         public int GetCodigo()
         {
-            return new KEmpleado().GetCodigo();
+            return new KPlanilla().GetCodigo();
         }
 
         public void Dispose()

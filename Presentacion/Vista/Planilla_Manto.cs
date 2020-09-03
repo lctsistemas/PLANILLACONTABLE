@@ -36,13 +36,6 @@ namespace Presentacion.Vista
             fr.ShowDialog();
         }
 
-        private void ShowRegimen()
-        {
-            using (np)
-            {
-               // dgvplanilla.DataSource = np.Getall();
-            }
-        }
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
@@ -62,6 +55,20 @@ namespace Presentacion.Vista
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private void ShowPlanilla()
+        {
+            using (np)
+            {
+                dgvplanilla.DataSource = np.Getall();
+                label1.Text = "Total Registro  " + dgvplanilla.RowCount;
+            }
+        }
+
+        private void Planilla_Manto_Load(object sender, EventArgs e)
+        {
+            ShowPlanilla();
         }
     }
 }

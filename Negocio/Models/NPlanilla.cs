@@ -1,5 +1,6 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
+using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
@@ -87,6 +88,7 @@ namespace Negocio.Models
         {
             DPlanilla pla = new DPlanilla();
             //pla.Id_tipo_planilla = Id_tipo_planilla;
+            pla.Id_planilla = Id_planilla;
             pla.Id_periodo = Id_periodo;
             pla.Fecha_inicial = Fecha_inicial;
             pla.Fecha_final = Fecha_final;
@@ -109,7 +111,7 @@ namespace Negocio.Models
 
             return mensaje;
         }
-        /*
+        
         public List<NPlanilla> Getall()
         {
             using (DataTable dt = rplanilla.GetData(null))
@@ -120,18 +122,28 @@ namespace Negocio.Models
                     list_planilla.Add(new NPlanilla()
                     {
                         Id_periodo = Convert.ToInt32(item[0]),
-                        Descripcion = item[1].ToString(),
-                        Descripcion_corta = item[2].ToString(),
-                        Tipo_regimen = item[3].ToString()
+                        Fecha_inicial = Convert.ToDateTime(item[1]),
+                        Fecha_final = Convert.ToDateTime(item[2]),
+                        Fecha_pago = Convert.ToDateTime(item[3]),
+                        Dias_mes= Convert.ToInt32(item[4]),
+                        Horas_mes = Convert.ToInt32(item[5]),
+                        Remu_basica = Convert.ToDecimal(item[6]),
+                        Asig_familiar = Convert.ToDecimal(item[7]),
+                        Tope_horario_nocturno = Convert.ToInt32(item[8])
                     });
                 }
-                return list_regimen;
+                return list_planilla;
             }
-        }*/
+        }
 
         public void Dispose()
         {
             //throw new NotImplementedException();
         }
+        public int GetCodigo()
+        {
+            return new KPlanilla().GetCodigo();
+        }
+
     }
 }
