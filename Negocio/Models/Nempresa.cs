@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
+
 
 namespace Negocio.Models
 {

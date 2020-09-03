@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Models\NBanco.cs" />
     <Compile Include="Models\Ncargo.cs" />
-    <Compile Include="Models\NContrato.cs" />
     <Compile Include="Models\Ndocumento.cs" />
     <Compile Include="Models\NEmpleado.cs" />
     <Compile Include="Models\Nempresa.cs" />
