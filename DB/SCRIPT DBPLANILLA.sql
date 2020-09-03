@@ -1,6 +1,6 @@
 CREATE DATABASE Planilla_lct
-use Planilla_lct
-
+use master
+drop database Planilla_lct
 GO
 
 --TABLA: EMPLEADO
@@ -277,7 +277,7 @@ dias_mes int,
 horas_mes int,
 remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
-tope_horario_nocturno int,
+tope_horario_nocturno int
 
 )
 
