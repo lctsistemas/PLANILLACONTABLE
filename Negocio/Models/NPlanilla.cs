@@ -74,7 +74,7 @@ namespace Negocio.Models
 
 
         public IPlanilla rplanilla;
-        private List<NPlanilla> list_planilla;
+       // private List<NPlanilla> list_planilla;
 
         //private List<NBanco> list_banco;
 

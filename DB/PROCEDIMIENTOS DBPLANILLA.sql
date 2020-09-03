@@ -941,7 +941,7 @@ from RegimenPensionario r
 END
 GO
 
-<<<<<<< HEAD
+
 alter PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
@@ -1015,8 +1015,6 @@ AS BEGIN
 END
 GO
 
-=======
->>>>>>> MCarlos
 select * from Contrato
 select * from Usuario
 Select * from Empresa_maestra
