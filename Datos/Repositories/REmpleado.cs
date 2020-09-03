@@ -123,8 +123,6 @@ namespace Datos.Repositories
 
                 try
                 {
-
-
                     using (cmd = new SqlCommand())
                     {
                         cmd.Connection = conn;
@@ -196,7 +194,28 @@ namespace Datos.Repositories
 
         public DataTable GetData(Dcontrato entiti)
         {
-            throw new NotImplementedException();
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                SqlDataAdapter da = new SqlDataAdapter();
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_SHOW_EMPLEADO_CONTRATO";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@codigo_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
+                    da.SelectCommand = cmd;
+
+                    using (DataTable dt = new DataTable())
+                    {
+                        da.Fill(dt);
+                        cmd.Parameters.Clear();
+                        da.Dispose();
+                        return dt;
+                    }
+                }
+            }
         }
     }
 }

@@ -184,10 +184,10 @@ ORDER BY e.id_empleado DESC
 END
 GO
 
-CREATE PROC SP_SHOW_EMPLEADO_RELACIONES
+CREATE PROC SP_SHOW_EMPLEADO_CONTRATO
 @codigo_empleado int
 AS BEGIN 
-SELECT e.id_empleado, e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
+SELECT e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
 e.nacionalidad, e.tipo_genero, e.direccion, e.telefono, e.numero_documento, e.estado, e.codigo_regimen, 
 r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, co.id_banco, b.nombre_banco,
 co.id_tipocontrato, ti.tiempo_contrato, co.fecha_inicio, co.fecha_fin, co.numero_cuenta, 

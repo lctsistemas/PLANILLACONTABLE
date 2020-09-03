@@ -12,7 +12,7 @@ namespace Negocio.Models
     public class NEmpleado : IDisposable
     {
         string mensaje;
-        List<NEmpleado> listaemp;
+        List<NEmpleado> listaemp;        
         public Int32 Id_empleado { get; set; }
         public String Codigo { get; set; }    
         public String Nom_emp { get; set; }
@@ -147,7 +147,7 @@ namespace Negocio.Models
         }
 
 
-        public List<NEmpleado> listar_empleado()
+        public IEnumerable<NEmpleado> listar_empleado()
         {
             DEmpleado de = new DEmpleado();
 
@@ -175,8 +175,14 @@ namespace Negocio.Models
             return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);            
 
         }
-      
 
+        //CONTRATO
+        public DataTable ListaEmple_total(NEmpleado entiti)
+        {
+            Dcontrato dcon = new Dcontrato();
+            dcon.Id_empleado = entiti.Id_empleado;
+            return new REmpleado().GetData(dcon);
+        }
         public void Dispose()
         {
             //throw new NotImplementedException();

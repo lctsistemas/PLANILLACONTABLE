@@ -33,9 +33,9 @@ namespace Presentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -67,7 +67,6 @@ namespace Presentacion.Vista
             this.label22 = new System.Windows.Forms.Label();
             this.cbotipopago = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtid_empleado = new System.Windows.Forms.TextBox();
             this.cbobanco = new System.Windows.Forms.ComboBox();
             this.lblcts = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -87,10 +86,9 @@ namespace Presentacion.Vista
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtidempresa = new System.Windows.Forms.TextBox();
-            this.cmbestado = new System.Windows.Forms.ComboBox();
-            this.lblem = new System.Windows.Forms.Label();
+            this.cboestado = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
-            this.cbocar = new System.Windows.Forms.ComboBox();
+            this.cbocargo = new System.Windows.Forms.ComboBox();
             this.cbore_pensionario = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -102,7 +100,7 @@ namespace Presentacion.Vista
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbxgene = new System.Windows.Forms.ComboBox();
+            this.cbogenero = new System.Windows.Forms.ComboBox();
             this.txtApePat = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -142,14 +140,14 @@ namespace Presentacion.Vista
             this.dgvempleado.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempleado.EnableHeadersVisualStyles = false;
@@ -157,18 +155,18 @@ namespace Presentacion.Vista
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvempleado.RowHeadersWidth = 22;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvempleado.Size = new System.Drawing.Size(233, 449);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
@@ -478,7 +476,6 @@ namespace Presentacion.Vista
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.cbotipopago);
             this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.txtid_empleado);
             this.groupBox4.Controls.Add(this.cbobanco);
             this.groupBox4.Controls.Add(this.lblcts);
             this.groupBox4.Controls.Add(this.label21);
@@ -541,14 +538,6 @@ namespace Presentacion.Vista
             this.label20.Size = new System.Drawing.Size(131, 17);
             this.label20.TabIndex = 37;
             this.label20.Text = "Número de cuenta";
-            // 
-            // txtid_empleado
-            // 
-            this.txtid_empleado.Location = new System.Drawing.Point(557, 103);
-            this.txtid_empleado.Name = "txtid_empleado";
-            this.txtid_empleado.Size = new System.Drawing.Size(29, 23);
-            this.txtid_empleado.TabIndex = 44;
-            this.txtid_empleado.Visible = false;
             // 
             // cbobanco
             // 
@@ -739,7 +728,7 @@ namespace Presentacion.Vista
             this.groupBox2.Controls.Add(this.txtNombre);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.cbxgene);
+            this.groupBox2.Controls.Add(this.cbogenero);
             this.groupBox2.Controls.Add(this.txtApePat);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label10);
@@ -765,10 +754,9 @@ namespace Presentacion.Vista
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txtidempresa);
-            this.groupBox3.Controls.Add(this.cmbestado);
-            this.groupBox3.Controls.Add(this.lblem);
+            this.groupBox3.Controls.Add(this.cboestado);
             this.groupBox3.Controls.Add(this.lblafp);
-            this.groupBox3.Controls.Add(this.cbocar);
+            this.groupBox3.Controls.Add(this.cbocargo);
             this.groupBox3.Controls.Add(this.cbore_pensionario);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.label12);
@@ -787,25 +775,15 @@ namespace Presentacion.Vista
             this.txtidempresa.Size = new System.Drawing.Size(61, 22);
             this.txtidempresa.TabIndex = 77;
             // 
-            // cmbestado
+            // cboestado
             // 
-            this.cmbestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbestado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbestado.FormattingEnabled = true;
-            this.cmbestado.Location = new System.Drawing.Point(50, 170);
-            this.cmbestado.Name = "cmbestado";
-            this.cmbestado.Size = new System.Drawing.Size(133, 25);
-            this.cmbestado.TabIndex = 76;
-            // 
-            // lblem
-            // 
-            this.lblem.AutoSize = true;
-            this.lblem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblem.Location = new System.Drawing.Point(61, 293);
-            this.lblem.Name = "lblem";
-            this.lblem.Size = new System.Drawing.Size(52, 17);
-            this.lblem.TabIndex = 75;
-            this.lblem.Text = "label13";
+            this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboestado.FormattingEnabled = true;
+            this.cboestado.Location = new System.Drawing.Point(50, 170);
+            this.cboestado.Name = "cboestado";
+            this.cboestado.Size = new System.Drawing.Size(133, 25);
+            this.cboestado.TabIndex = 76;
             // 
             // lblafp
             // 
@@ -818,15 +796,15 @@ namespace Presentacion.Vista
             this.lblafp.TabIndex = 67;
             this.lblafp.Text = "Regimen Pensionario";
             // 
-            // cbocar
+            // cbocargo
             // 
-            this.cbocar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbocar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbocar.FormattingEnabled = true;
-            this.cbocar.Location = new System.Drawing.Point(48, 109);
-            this.cbocar.Name = "cbocar";
-            this.cbocar.Size = new System.Drawing.Size(158, 25);
-            this.cbocar.TabIndex = 62;
+            this.cbocargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbocargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbocargo.FormattingEnabled = true;
+            this.cbocargo.Location = new System.Drawing.Point(48, 109);
+            this.cbocargo.Name = "cbocargo";
+            this.cbocargo.Size = new System.Drawing.Size(158, 25);
+            this.cbocargo.TabIndex = 62;
             // 
             // cbore_pensionario
             // 
@@ -948,16 +926,16 @@ namespace Presentacion.Vista
             this.label2.TabIndex = 42;
             this.label2.Text = "Apellido paterno";
             // 
-            // cbxgene
+            // cbogenero
             // 
-            this.cbxgene.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxgene.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxgene.FormattingEnabled = true;
-            this.cbxgene.Location = new System.Drawing.Point(12, 294);
-            this.cbxgene.Name = "cbxgene";
-            this.cbxgene.Size = new System.Drawing.Size(130, 25);
-            this.cbxgene.TabIndex = 49;
-            this.cbxgene.Validating += new System.ComponentModel.CancelEventHandler(this.cbxgene_Validating);
+            this.cbogenero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbogenero.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbogenero.FormattingEnabled = true;
+            this.cbogenero.Location = new System.Drawing.Point(12, 294);
+            this.cbogenero.Name = "cbogenero";
+            this.cbogenero.Size = new System.Drawing.Size(130, 25);
+            this.cbogenero.TabIndex = 49;
+            this.cbogenero.Validating += new System.ComponentModel.CancelEventHandler(this.cbxgene_Validating);
             // 
             // txtApePat
             // 
@@ -1183,10 +1161,9 @@ namespace Presentacion.Vista
         private TabPage tabPage2;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
-        private ComboBox cmbestado;
-        private Label lblem;
+        private ComboBox cboestado;
         private Label lblafp;
-        private ComboBox cbocar;
+        private ComboBox cbocargo;
         private ComboBox cbore_pensionario;
         private Label label15;
         private Label label12;
@@ -1198,7 +1175,7 @@ namespace Presentacion.Vista
         private TextBox txtNombre;
         private Label label11;
         private Label label2;
-        private ComboBox cbxgene;
+        private ComboBox cbogenero;
         private TextBox txtApePat;
         private Label label3;
         private Label label10;
@@ -1226,7 +1203,6 @@ namespace Presentacion.Vista
         private GroupBox groupBox1;
         public TextBox txtcussp;
         private Label label18;
-        public TextBox txtid_empleado;
         private Label lblcts;
         private TextBox txtcts;
         private ComboBox cbotipo_moneda;
