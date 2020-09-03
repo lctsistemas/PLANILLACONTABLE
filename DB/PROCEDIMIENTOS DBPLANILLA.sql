@@ -941,7 +941,7 @@ from RegimenPensionario r
 END
 GO
 
-<<<<<<< HEAD
+
 alter PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
@@ -967,10 +967,13 @@ exec sp_show_regimen;
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 
-create PROC SP_INSERT_PLANILLA
+alter PROC SP_INSERT_PLANILLA
 (@id_planilla int,
-@id_tipo_planilla varchar(20),
+--@id_tipo_planilla varchar(20),
+@id_periodo int,
 --@id_mes varchar(50),
+@fecha_inicial date,
+@fecha_final date,
 @fecha_pago date,
 @dias_mes int,
 @horas_mes int,
@@ -980,15 +983,38 @@ create PROC SP_INSERT_PLANILLA
 @mesage varchar(100) output)
 AS BEGIN
 	BEGIN
-	INSERT INTO dbo.Planilla(id_planilla, id_tipo_planilla, fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla, @id_tipo_planilla, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	INSERT INTO dbo.Planilla(fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
 	SET @mesage= 'PLANILLA REGISTRADO'
 	END
 END
 GO
 
-=======
->>>>>>> MCarlos
+
+CREATE PROC SP_INSERT_PLANILLA
+(@id_planilla int,
+--@id_tipo_planilla varchar(20),
+@id_periodo int,
+--@id_mes varchar(50),
+@fecha_inicial date,
+@fecha_final date,
+@fecha_pago date,
+@dias_mes int,
+@horas_mes int,
+@remu_basica decimal(10,2),
+@asig_familiar decimal(10,2),
+@tope_horario_nocturno int,
+@mesage varchar(100) output)
+AS BEGIN
+	BEGIN
+	SELECT pe.periodo, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
+	FROM Planilla p 
+	inner join Periodo pe
+	on(p.id_periodo=p.id_periodo)
+	END
+END
+GO
+
 select * from Contrato
 select * from Usuario
 Select * from Empresa_maestra

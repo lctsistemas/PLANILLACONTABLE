@@ -271,13 +271,14 @@ id_planilla int not null,
 id_periodo int not null,
 --id_mes int not null,
 fecha_inicial date,
+fecha_final date,
 fecha_pago date,
 dias_mes int,
 horas_mes int,
 remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
 tope_horario_nocturno int,
-idcategoria
+
 )
 
 CREATE TABLE tipo_planilla(

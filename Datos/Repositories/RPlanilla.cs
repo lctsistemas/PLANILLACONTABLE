@@ -26,12 +26,15 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_INSERT_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
 
+                    // cmd.Parameters.Add("@id_tipo_planilla", SqlDbType.Int).Value = entiti.Id_tipo_planilla;
                     cmd.Parameters.Add("@id_planilla", SqlDbType.Int).Value = entiti.Id_planilla;
-                    cmd.Parameters.Add("@id_tipo_planilla", SqlDbType.Int).Value = entiti.Id_tipo_planilla;
+                    cmd.Parameters.Add("@id_periodo", SqlDbType.Int).Value = entiti.Id_periodo;
+                    cmd.Parameters.Add("@fecha_inicial", SqlDbType.Date).Value = entiti.Fecha_inicial;
+                    cmd.Parameters.Add("@fecha_final", SqlDbType.Date).Value = entiti.Fecha_final;
                     cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
                     cmd.Parameters.Add("@dias_mes", SqlDbType.Int).Value = entiti.Dias_mes;
                     cmd.Parameters.Add("@horas_mes", SqlDbType.Int).Value = entiti.Horas_mes;
-                    cmd.Parameters.Add("@remu_basica", SqlDbType.Decimal).Value = entiti.Dias_mes;
+                    cmd.Parameters.Add("@remu_basica", SqlDbType.Decimal).Value = entiti.Remu_basica;
                     cmd.Parameters.Add("@asig_familiar", SqlDbType.Decimal).Value = entiti.Asig_familiar;
                     cmd.Parameters.Add("@tope_horario_nocturno", SqlDbType.Int).Value = entiti.Tope_horario_nocturno;
 
