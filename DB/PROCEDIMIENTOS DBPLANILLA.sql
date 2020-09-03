@@ -22,7 +22,6 @@ UPDATE Cargo SET nombre_cargo=@nom, descripcion=@descripcion WHERE id_cargo=@idc
 END
 GO
 
-
 --DELETE CARGO
 CREATE PROC SP_DELETE_CARGO
 @idcargo int,
@@ -93,16 +92,10 @@ END
 GO
 
 --SHOW DOCUMENTO
-<<<<<<< HEAD
-alter PROC SP_SELECT_DOCUMENTO 
-AS BEGIN
-SELECT * FROM Tipo_documento order by id_documento desc
-=======
 ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
 SELECT id_documento,nombre,descripcion FROM 
 Tipo_documento 
->>>>>>> MCarlos
 END
 GO
 
@@ -114,7 +107,7 @@ ALTER PROC SP_AGR_EMPL
 @ape_pat varchar(50),
 @ape_mat varchar(50),
 @fec_nac date,
-@nacion varchar(30),
+@nacionalidad varchar(30),
 @tip_ge varchar(12),
 @direccion varchar(250),
 @telefono varchar(15),
@@ -128,19 +121,20 @@ ALTER PROC SP_AGR_EMPL
 AS BEGIN 
 IF(EXISTS(SELECT e.numero_documento FROM Empleado e WHERE e.numero_documento=@num_doc))
 	BEGIN 
-	SET @mensaje ='EL NUMERO DE DOCUMENTO ('+@num_doc+') YA SE ENCUENTRA REGISTRADO'
+	SET @mensaje ='El número de documento ('+@num_doc+') ya se encuentra registrado'
 	END
 ELSE 
 	BEGIN
 		INSERT INTO dbo.Empleado(id_empleado,codigo,nombre_empleado, ape_paterno, ape_materno, fecha_nacimiento, nacionalidad, 
 		tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra, eliminado_estado) 
-		VALUES (@id_empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacion, @tip_ge, @direccion, @telefono, @num_doc, @estado,
+		VALUES (@id_empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
 		@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, 'NO ANULADO')
-		SET @mensaje= '¡EMPLEADO REGISTRADO CORRECTAMENTE!'
+		SET @mensaje= '¡Empleado registrado correctamente!'
 	END	
 END
 GO
 
+select * from Empleado
 --EXEC SP_AGR_EMPL 7,'Pedro','Solorzano','Baldoceda','O.N.P','31-12-2020','Peru','Masculino','Jr. Direccion 1','956324466',
 --09645645','ACTIVO',1,1,4,1;
 go
@@ -179,30 +173,38 @@ UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
 END
 GO
 
---MOSTRAR EMPLEADO 
+--MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 ALTER PROC SP_SHOW_EMP
 @codigo_empresa int
 AS BEGIN 
-SELECT top(200) e.id_empleado, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
-e.nacionalidad,e.tipo_genero,e.direccion,e.telefono,e.numero_documento,e.estado, t.id_documento,t.nombre as 'DOCUMENTO',
-c.id_cargo,c.nombre_cargo AS 'CARGO',em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Tipo_documento t 
-on(t.id_documento=e.id_documento)
-left JOIN Afp a
-ON(a.id_afp=e.id_afp)
-INNER JOIN Cargo c
-ON(c.id_cargo=e.id_cargo)
-INNER JOIN Empresa_maestra em
-ON(em.id_em_maestra=e.id_em_maestra)
-WHERE e.eliminado_estado='NO ANULADO' and 
-e.id_em_maestra=@codigo_empresa 
+SELECT e.id_empleado, e.ape_paterno, e.ape_materno, e.nombre_empleado,
+em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Empresa_maestra em 
+on(e.id_em_maestra=em.id_em_maestra) WHERE e.eliminado_estado='NO ANULADO' AND e.id_em_maestra=@codigo_empresa 
 ORDER BY e.id_empleado DESC
 END
 GO
 
+CREATE PROC SP_SHOW_EMPLEADO_CONTRATO
+@codigo_empleado int
+AS BEGIN 
+SELECT e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
+e.nacionalidad, e.tipo_genero, e.direccion, e.telefono, e.numero_documento, e.estado, e.codigo_regimen, 
+r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, co.id_banco, b.nombre_banco,
+co.id_tipocontrato, ti.tiempo_contrato, co.fecha_inicio, co.fecha_fin, co.numero_cuenta, 
+co.remuneracion_basica, co.asignacion_familiar, co.regimen_salud, co.tipo_pago, co.periodicidad, 
+co.tipo_moneda, co.cuenta_cts, co.cussp 
+FROM Empleado e JOIN RegimenPensionario r on(e.codigo_regimen = r.codigo_regimen) JOIN Tipo_documento t
+on(e.id_documento = t.id_documento) JOIN Cargo c on(e.id_cargo = c.id_cargo) JOIN Contrato co
+on(e.id_empleado = co.id_empleado) JOIN Banco b on(b.id_banco = co.id_banco) JOIN Tipo_contrato ti
+on(co.id_tipocontrato = ti.id_tipocontrato) WHERE e.id_empleado=@codigo_empleado
+END
+GO
+
+
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
+
 ALTER PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
-@id_empleado int,
 @id_banco int,
 @id_tcontrato int,
 @fecha_inicio date,
@@ -215,17 +217,16 @@ ALTER PROCEDURE SP_INSERT_CONTRATO
 @periodicidad varchar(70),
 @tipo_modeda varchar(10),
 @cuenta_cts nvarchar(50),
-@cussp nvarchar(30))
+@cussp nvarchar(70))
 AS BEGIN
 INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
 fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, regimen_salud, tipo_pago, 
-periodicidad, tipo_moneda, cuenta_cts, cussp, estado)
+periodicidad, tipo_moneda, cuenta_cts, CUSSP, estado)
 VALUES(@id_contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
 @id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @regimen_salud, @tipo_pago, 
 @periodicidad, @tipo_modeda, @cuenta_cts, @cussp,'NO ANULADO')
 END
 GO
-
 
 --UPDATE EMPLEADO.
 ALTER PROCEDURE SP_UPDATE_CONTRATO
