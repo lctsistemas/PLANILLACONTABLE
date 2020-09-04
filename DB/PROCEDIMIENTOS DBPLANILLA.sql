@@ -934,7 +934,7 @@ exec sp_show_regimen;
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 
 alter PROC SP_INSERT_PLANILLA
-(@id_planilla int,
+@id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
 --@id_mes varchar(50),
@@ -946,16 +946,16 @@ alter PROC SP_INSERT_PLANILLA
 @remu_basica decimal(10,2),
 @asig_familiar decimal(10,2),
 @tope_horario_nocturno int,
-@mesage varchar(100) output)
+@mesage varchar(100) output
 AS BEGIN
-	BEGIN
 	INSERT INTO dbo.Planilla(id_planilla,id_periodo,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
 	(@id_planilla,@id_periodo,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
 	SET @mesage= 'PLANILLA REGISTRADO'
-	END
+	
 END
 GO
 
+exec SP_INSERT_PLANILLA 1,2,'2020/07/01','2020/07/30','2020/07/30',30,248,930.00,93.00,1200
 
 create PROC SP_SHOW_PLANILLA
 AS BEGIN
@@ -967,7 +967,6 @@ AS BEGIN
 GO
 
 
-<<<<<<< HEAD
 exec SP_SHOW_PLANILLA
 
 select * from Periodo
@@ -975,14 +974,12 @@ select * from Planilla
 Select * from Empresa_maestra
 select * from Empresa
 select * from Sucursal
-=======
+go
+
 /*   SCRIP PARA PERIODO       */
-CREATE PROC SP_SHOW_PERIODO
+alter PROC SP_SHOW_PERIODO
 AS BEGIN
-	SELECT periodo FROM dbo.Periodo
+	SELECT periodo FROM dbo.Periodo order by id_periodo desc
 END
 GO
 
-
-
->>>>>>> MCarlos

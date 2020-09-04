@@ -134,6 +134,7 @@ namespace Login_inicio
                                     mainmenu.FormClosed += Logout;//revisar
                                     this.Hide();
                                 }
+                               
                             }                                                        
                             msgError("");
                         }
@@ -196,8 +197,20 @@ namespace Login_inicio
         private void frminicio_Load(object sender, EventArgs e)
         {
             //Ocultarcolumna();
+
+
+            YearNow();
         }
-        
+
+        private void YearNow()
+        {
+            DateTime fechaActual = DateTime.Now;
+
+            dudperiodo.Text = fechaActual.Year.ToString();
+
+
+        }
+
         private void dgvlogin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             activo = false;
@@ -206,7 +219,13 @@ namespace Login_inicio
                 UserCache.Empresa = dgvlogin.CurrentRow.Cells[0].Value.ToString();
                 UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[1].Value);
                 UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[2].Value.ToString();
-                //UserCache.Periodo = numeric_periodo.Value.ToString();
+                if (dudperiodo.SelectedItem != null)
+                {
+                    UserCache.Periodo = dudperiodo.SelectedItem.ToString();
+
+                }
+                
+                UserCache.idperiodo = Idperiodo();
                 UserCache.Empresa_Sucursal = "EMPRESA";
                 activo = true;
             }
@@ -217,7 +236,8 @@ namespace Login_inicio
                     UserCache.Empresa = dgvlogin.CurrentRow.Cells[3].Value.ToString();
                     UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[4].Value);
                     UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[5].Value.ToString();
-                    //UserCache.Periodo = numeric_periodo.Value.ToString();
+                    UserCache.Periodo = dudperiodo.SelectedItem.ToString();
+                    UserCache.idperiodo = Idperiodo();
                     UserCache.Empresa_Sucursal = "SUCURSAL";
                     activo = true;
                 }
@@ -280,14 +300,15 @@ namespace Login_inicio
             dgvlogin.Enabled = val;
 
         }
+      
 
-        private void dudperiodo_SelectedItemChanged(object sender, EventArgs e)
+        private int Idperiodo()
         {
-            //UserCache.Periodo = 
             int index = dudperiodo.SelectedIndex;
             int id_periodo = (index + 1);
-            lblperiodo.Text ="Periodo:  "+ dudperiodo.SelectedItem;
-            lblidperiodo.Text = "id periodo:  " + id_periodo;
+            return id_periodo;
         }
+
+       
     }
 }

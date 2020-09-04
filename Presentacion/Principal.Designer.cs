@@ -59,6 +59,7 @@
             this.lblidempresa = new System.Windows.Forms.Label();
             this.lbllocalidad = new System.Windows.Forms.Label();
             this.lblempresa = new System.Windows.Forms.Label();
+            this.lblid_periodo = new System.Windows.Forms.Label();
             this.panelsidemenu.SuspendLayout();
             this.panelmedia3.SuspendLayout();
             this.panelmedia2.SuspendLayout();
@@ -429,6 +430,7 @@
             // 
             this.panelcontent.BackColor = System.Drawing.Color.Silver;
             this.panelcontent.Controls.Add(this.statusStrip1);
+            this.panelcontent.Controls.Add(this.lblid_periodo);
             this.panelcontent.Controls.Add(this.lblperiodo);
             this.panelcontent.Controls.Add(this.lblidempresa);
             this.panelcontent.Controls.Add(this.lbllocalidad);
@@ -502,6 +504,17 @@
             this.lblempresa.TabIndex = 1;
             this.lblempresa.Text = "label2";
             // 
+            // lblid_periodo
+            // 
+            this.lblid_periodo.AutoSize = true;
+            this.lblid_periodo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid_periodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.lblid_periodo.Location = new System.Drawing.Point(30, 177);
+            this.lblid_periodo.Name = "lblid_periodo";
+            this.lblid_periodo.Size = new System.Drawing.Size(47, 17);
+            this.lblid_periodo.TabIndex = 1;
+            this.lblid_periodo.Text = "label2";
+            // 
             // frmprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -563,6 +576,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblid_periodo;
     }
 }
 

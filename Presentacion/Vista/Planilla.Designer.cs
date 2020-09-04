@@ -60,6 +60,7 @@
             this.dtppago = new System.Windows.Forms.DateTimePicker();
             this.dtpini = new System.Windows.Forms.DateTimePicker();
             this.dtpfin = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numyear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -400,11 +401,21 @@
             this.dtpfin.TabIndex = 77;
             this.dtpfin.ValueChanged += new System.EventHandler(this.dtpfin_ValueChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(273, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "label11";
+            // 
             // Planilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 601);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.dtpfin);
             this.Controls.Add(this.dtpini);
             this.Controls.Add(this.dtppago);
@@ -476,5 +487,6 @@
         private System.Windows.Forms.DateTimePicker dtppago;
         private System.Windows.Forms.DateTimePicker dtpini;
         private System.Windows.Forms.DateTimePicker dtpfin;
+        private System.Windows.Forms.Label label11;
     }
 }

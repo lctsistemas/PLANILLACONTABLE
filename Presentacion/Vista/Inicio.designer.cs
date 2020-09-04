@@ -229,9 +229,7 @@
             this.dudperiodo.ReadOnly = true;
             this.dudperiodo.Size = new System.Drawing.Size(101, 22);
             this.dudperiodo.TabIndex = 17;
-            this.dudperiodo.Text = "Periodo";
             this.dudperiodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.dudperiodo.SelectedItemChanged += new System.EventHandler(this.dudperiodo_SelectedItemChanged);
             // 
             // lblperiodo
             // 

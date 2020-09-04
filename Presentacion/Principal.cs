@@ -106,6 +106,7 @@ namespace Presentacion
             lblempresa.Text =UserCache.Empresa_Sucursal+":  "+ UserCache.Empresa;
             lbllocalidad.Text = UserCache.Localidad_empresa;
             lblperiodo.Text = UserCache.Periodo;
+            lblid_periodo.Text = UserCache.idperiodo.ToString();
             lblidempresa.Text = UserCache.Codigo_empresa.ToString();
         }
 
