@@ -227,7 +227,6 @@ otros_descuentos decimal(10,2)
 
 CREATE TABLE Periodo(
 id_periodo int identity(1,1),
---id_empresa int, ver si id_empresa ira en esta tabla
 periodo int not null,
 )
 

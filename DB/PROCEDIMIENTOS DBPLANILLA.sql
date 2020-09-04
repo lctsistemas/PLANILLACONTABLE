@@ -967,7 +967,7 @@ exec sp_show_regimen;
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 
-create PROC SP_INSERT_PLANILLA
+alter PROC SP_INSERT_PLANILLA
 (@id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
@@ -1003,8 +1003,8 @@ GO
 
 exec SP_SHOW_PLANILLA
 
-select * from Contrato
-select * from Usuario
+select * from Periodo
+select * from Planilla
 Select * from Empresa_maestra
 select * from Empresa
 select * from Sucursal
