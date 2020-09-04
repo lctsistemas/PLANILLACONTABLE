@@ -254,9 +254,6 @@ GO
 --enero
 /*
 diciembre
-
-
-
 */
 select * from mes
 /*

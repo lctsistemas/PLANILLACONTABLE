@@ -41,10 +41,11 @@
             this.lblerror = new System.Windows.Forms.Label();
             this.dgvlogin = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.numeric_periodo = new System.Windows.Forms.NumericUpDown();
+            this.dudperiodo = new System.Windows.Forms.DomainUpDown();
+            this.lblperiodo = new System.Windows.Forms.Label();
+            this.lblidperiodo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_periodo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -217,35 +218,40 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // numeric_periodo
+            // dudperiodo
             // 
-            this.numeric_periodo.AutoSize = true;
-            this.numeric_periodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.numeric_periodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numeric_periodo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numeric_periodo.ForeColor = System.Drawing.Color.White;
-            this.numeric_periodo.Location = new System.Drawing.Point(172, 443);
-            this.numeric_periodo.Maximum = new decimal(new int[] {
-            2030,
-            0,
-            0,
-            0});
-            this.numeric_periodo.Minimum = new decimal(new int[] {
-            2019,
-            0,
-            0,
-            0});
-            this.numeric_periodo.Name = "numeric_periodo";
-            this.numeric_periodo.ReadOnly = true;
-            this.numeric_periodo.Size = new System.Drawing.Size(120, 22);
-            this.numeric_periodo.TabIndex = 16;
-            this.numeric_periodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numeric_periodo.Value = new decimal(new int[] {
-            2019,
-            0,
-            0,
-            0});
-            this.numeric_periodo.ValueChanged += new System.EventHandler(this.numeric_periodo_ValueChanged);
+            this.dudperiodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.dudperiodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dudperiodo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dudperiodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dudperiodo.Location = new System.Drawing.Point(191, 444);
+            this.dudperiodo.Name = "dudperiodo";
+            this.dudperiodo.ReadOnly = true;
+            this.dudperiodo.Size = new System.Drawing.Size(101, 22);
+            this.dudperiodo.TabIndex = 17;
+            this.dudperiodo.Text = "Periodo";
+            this.dudperiodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dudperiodo.SelectedItemChanged += new System.EventHandler(this.dudperiodo_SelectedItemChanged);
+            // 
+            // lblperiodo
+            // 
+            this.lblperiodo.AutoSize = true;
+            this.lblperiodo.ForeColor = System.Drawing.Color.White;
+            this.lblperiodo.Location = new System.Drawing.Point(53, 435);
+            this.lblperiodo.Name = "lblperiodo";
+            this.lblperiodo.Size = new System.Drawing.Size(35, 13);
+            this.lblperiodo.TabIndex = 18;
+            this.lblperiodo.Text = "label4";
+            // 
+            // lblidperiodo
+            // 
+            this.lblidperiodo.AutoSize = true;
+            this.lblidperiodo.ForeColor = System.Drawing.Color.White;
+            this.lblidperiodo.Location = new System.Drawing.Point(53, 453);
+            this.lblidperiodo.Name = "lblidperiodo";
+            this.lblidperiodo.Size = new System.Drawing.Size(35, 13);
+            this.lblidperiodo.TabIndex = 18;
+            this.lblidperiodo.Text = "label4";
             // 
             // frminicio
             // 
@@ -253,7 +259,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(482, 524);
-            this.Controls.Add(this.numeric_periodo);
+            this.Controls.Add(this.lblidperiodo);
+            this.Controls.Add(this.lblperiodo);
+            this.Controls.Add(this.dudperiodo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvlogin);
             this.Controls.Add(this.lblminimizar);
@@ -275,7 +283,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frminicio_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numeric_periodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +300,9 @@
         private System.Windows.Forms.Label lblerror;
         private System.Windows.Forms.DataGridView dgvlogin;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.NumericUpDown numeric_periodo;
+        private System.Windows.Forms.DomainUpDown dudperiodo;
+        private System.Windows.Forms.Label lblperiodo;
+        private System.Windows.Forms.Label lblidperiodo;
     }
 }
 
