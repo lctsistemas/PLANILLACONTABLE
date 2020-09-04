@@ -121,4 +121,23 @@ GO
 
 
 GO
+<<<<<<< HEAD
+=======
+
+select * from Periodo
+
+go
+--TABLA PRUEBA CREAR
+
+create table ejemplo(
+id int identity (1,1) primary key,
+nom varchar(20),
+fecha date null
+)
+
+drop table ejemplo
+alter table ejemplo add constraint df_fecha default('01-01-1900') for fecha
+
+insert into ejemplo(nom) values('carlos')
+>>>>>>> MCarlos
 

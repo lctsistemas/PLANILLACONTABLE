@@ -74,5 +74,33 @@ namespace Datos.Repositories
             return valor;
         }
 
+        //LLENAR PERIODO
+        public List<int> Mostrar_periodo()
+        {  
+            List<int> lista_periodo = new List<int>();
+            using (SqlConnection cn = RConexion.Getconectar())
+            {
+                cn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cn;
+                    cmd.CommandText = "SP_SHOW_PERIODO";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    SqlDataReader reader = cmd.ExecuteReader();                    
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            lista_periodo.Add(reader.GetInt32(0));
+                        }
+                                       
+                    }
+                    reader.Close();
+                }
+            }
+            return lista_periodo;
+        }
+
     }
 }
