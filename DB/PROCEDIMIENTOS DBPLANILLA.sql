@@ -715,40 +715,6 @@ ELSE
 END
 GO
 
---GENERAR CODIGO PERIODO
-/*
-CREATE PROC SP_GENERAR_Periodo
-(@periodo int output)
-AS BEGIN
-SET @periodo=(SELECT count(pe.id_periodo) FROM dbo.Periodo pe)
-IF(@periodo=0)
-	BEGIN
-		SET @periodo=1		
-	END
-ELSE
-	BEGIN
-		SET @periodo=(SELECT MAX(pe.id_periodo)+1 FROM dbo.Periodo pe)
-	END
-END
-GO
-*/
-/*
---GENERAR CODIGO MES
-CREATE PROC SP_GENERAR_Mes
-(@Mes int output)
-AS BEGIN
-SET @Mes=(SELECT count(mes.id_mes) FROM dbo.Mes mes)
-IF(@Mes=0)
-	BEGIN
-		SET @Mes=1		
-	END
-ELSE
-	BEGIN
-		SET @Mes=(SELECT MAX(mes.id_mes)+1 FROM dbo.Mes mes)
-	END
-END
-GO
-*/
 --GENERAR CODIGO Planilla
 CREATE PROC SP_GENERAR_Planilla
 (@plani int output)
@@ -1015,8 +981,13 @@ AS BEGIN
 END
 GO
 
-select * from Contrato
-select * from Usuario
-Select * from Empresa_maestra
-select * from Empresa
-select * from Sucursal
+
+/*   SCRIP PARA PERIODO       */
+CREATE PROC SP_SHOW_PERIODO
+AS BEGIN
+	SELECT periodo FROM dbo.Periodo
+END
+GO
+
+
+

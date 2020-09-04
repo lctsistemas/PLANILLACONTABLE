@@ -121,15 +121,11 @@ GO
 
 
 GO
---TABLA PRUEBA CREAR
 
-SELECT * INTO Usuario_copy FROM dbo.Usuario
-
-select * from dbo.Usuario_copy
-drop table dbo.Usuario_copy
-GO
+select * from Periodo
 
 go
+--TABLA PRUEBA CREAR
 
 create table ejemplo(
 id int identity (1,1) primary key,
@@ -140,10 +136,5 @@ fecha date null
 drop table ejemplo
 alter table ejemplo add constraint df_fecha default('01-01-1900') for fecha
 
-insert into ejemplo(nom) values('caro')
-
-select * FROM Empleado
-select * FROM Contrato
-delete from Empleado  where id_empleado <> 1
-select * from RegimenPensionario
+insert into ejemplo(nom) values('carlos')
 
