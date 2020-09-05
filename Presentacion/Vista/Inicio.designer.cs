@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtuser = new System.Windows.Forms.TextBox();
@@ -41,11 +41,10 @@
             this.lblerror = new System.Windows.Forms.Label();
             this.dgvlogin = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dudperiodo = new System.Windows.Forms.DomainUpDown();
-            this.lblperiodo = new System.Windows.Forms.Label();
-            this.lblidperiodo = new System.Windows.Forms.Label();
+            this.numeric_periodo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_periodo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,11 +102,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(185, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 36);
+            this.label3.Size = new System.Drawing.Size(105, 36);
             this.label3.TabIndex = 12;
             this.label3.Text = "LOGIN";
             // 
@@ -181,14 +180,14 @@
             this.dgvlogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvlogin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvlogin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvlogin.ColumnHeadersHeight = 30;
             this.dgvlogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvlogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -199,11 +198,11 @@
             this.dgvlogin.ReadOnly = true;
             this.dgvlogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvlogin.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvlogin.Size = new System.Drawing.Size(400, 153);
             this.dgvlogin.TabIndex = 15;
             this.dgvlogin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlogin_CellClick);
@@ -218,38 +217,33 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // dudperiodo
+            // numeric_periodo
             // 
-            this.dudperiodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.dudperiodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dudperiodo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dudperiodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dudperiodo.Location = new System.Drawing.Point(191, 444);
-            this.dudperiodo.Name = "dudperiodo";
-            this.dudperiodo.ReadOnly = true;
-            this.dudperiodo.Size = new System.Drawing.Size(101, 22);
-            this.dudperiodo.TabIndex = 17;
-            this.dudperiodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblperiodo
-            // 
-            this.lblperiodo.AutoSize = true;
-            this.lblperiodo.ForeColor = System.Drawing.Color.White;
-            this.lblperiodo.Location = new System.Drawing.Point(53, 435);
-            this.lblperiodo.Name = "lblperiodo";
-            this.lblperiodo.Size = new System.Drawing.Size(35, 13);
-            this.lblperiodo.TabIndex = 18;
-            this.lblperiodo.Text = "label4";
-            // 
-            // lblidperiodo
-            // 
-            this.lblidperiodo.AutoSize = true;
-            this.lblidperiodo.ForeColor = System.Drawing.Color.White;
-            this.lblidperiodo.Location = new System.Drawing.Point(53, 453);
-            this.lblidperiodo.Name = "lblidperiodo";
-            this.lblidperiodo.Size = new System.Drawing.Size(35, 13);
-            this.lblidperiodo.TabIndex = 18;
-            this.lblidperiodo.Text = "label4";
+            this.numeric_periodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.numeric_periodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numeric_periodo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeric_periodo.ForeColor = System.Drawing.Color.White;
+            this.numeric_periodo.Location = new System.Drawing.Point(191, 442);
+            this.numeric_periodo.Maximum = new decimal(new int[] {
+            2030,
+            0,
+            0,
+            0});
+            this.numeric_periodo.Minimum = new decimal(new int[] {
+            2019,
+            0,
+            0,
+            0});
+            this.numeric_periodo.Name = "numeric_periodo";
+            this.numeric_periodo.ReadOnly = true;
+            this.numeric_periodo.Size = new System.Drawing.Size(101, 22);
+            this.numeric_periodo.TabIndex = 16;
+            this.numeric_periodo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numeric_periodo.Value = new decimal(new int[] {
+            2019,
+            0,
+            0,
+            0});
             // 
             // frminicio
             // 
@@ -257,9 +251,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(482, 524);
-            this.Controls.Add(this.lblidperiodo);
-            this.Controls.Add(this.lblperiodo);
-            this.Controls.Add(this.dudperiodo);
+            this.Controls.Add(this.numeric_periodo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvlogin);
             this.Controls.Add(this.lblminimizar);
@@ -281,6 +273,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frminicio_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric_periodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,9 +291,7 @@
         private System.Windows.Forms.Label lblerror;
         private System.Windows.Forms.DataGridView dgvlogin;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DomainUpDown dudperiodo;
-        private System.Windows.Forms.Label lblperiodo;
-        private System.Windows.Forms.Label lblidperiodo;
+        private System.Windows.Forms.NumericUpDown numeric_periodo;
     }
 }
 

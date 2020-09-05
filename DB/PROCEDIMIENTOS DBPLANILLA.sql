@@ -927,12 +927,9 @@ SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
 END
 GO
 
-exec SP_UPDATE_REGIMEN 1,'er','E' ,'S.N.P';
 
-exec sp_show_regimen;
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
-
 alter PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
@@ -955,7 +952,6 @@ AS BEGIN
 END
 GO
 
-exec SP_INSERT_PLANILLA 1,2,'2020/07/01','2020/07/30','2020/07/30',30,248,930.00,93.00,1200
 
 create PROC SP_SHOW_PLANILLA
 AS BEGIN
@@ -967,19 +963,12 @@ AS BEGIN
 GO
 
 
-exec SP_SHOW_PLANILLA
-
-select * from Periodo
-select * from Planilla
-Select * from Empresa_maestra
-select * from Empresa
-select * from Sucursal
-go
 
 /*   SCRIP PARA PERIODO       */
-alter PROC SP_SHOW_PERIODO
+ALTER PROC SP_SHOW_PERIODO
+@periodo int,
+@idperiodo int output
 AS BEGIN
-	SELECT periodo FROM dbo.Periodo order by id_periodo desc
+	SET @idperiodo=(SELECT p.id_periodo FROM dbo.Periodo p WHERE p.periodo=@periodo)		
 END
 GO
-

@@ -21,8 +21,6 @@ namespace Comun.Cache
 
         //PERIODO
         public static string Periodo { get; set; }
-        public static Int32 idperiodo { get; set; }
-
-
+        public static int Idperiodo { get; set; }
     }
 }
