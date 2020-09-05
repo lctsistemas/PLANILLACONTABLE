@@ -21,11 +21,12 @@ namespace Negocio.Models
             return new Rlogin().Business(li);
         }
 
-        //MOSTRANDO PERIODO
-        public List<int> Mostrar_periodo()
+        //MOSTRANDO ID PERIODO
+        public int Get_idperiodo(int periodo)
         {
-            return new Rlogin().Mostrar_periodo();
+            return new Rlogin().Get_idperiodo(periodo);
         }
+
         public void Dispose()
         {
            // throw new NotImplementedException();

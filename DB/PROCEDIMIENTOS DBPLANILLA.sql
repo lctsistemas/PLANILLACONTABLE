@@ -966,8 +966,6 @@ AS BEGIN
 	END
 GO
 
-
-<<<<<<< HEAD
 exec SP_SHOW_PLANILLA
 
 select * from Contrato
@@ -975,14 +973,12 @@ select * from Usuario
 Select * from Empresa_maestra
 select * from Empresa
 select * from Sucursal
-=======
+GO
 /*   SCRIP PARA PERIODO       */
-CREATE PROC SP_SHOW_PERIODO
+ALTER PROC SP_SHOW_PERIODO
+@periodo int,
+@idperiodo int output
 AS BEGIN
-	SELECT periodo FROM dbo.Periodo
+	SET @idperiodo=(SELECT p.id_periodo FROM dbo.Periodo p WHERE p.periodo=@periodo)		
 END
 GO
-
-
-
->>>>>>> MCarlos

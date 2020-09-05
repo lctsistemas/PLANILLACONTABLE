@@ -75,9 +75,9 @@ namespace Datos.Repositories
         }
 
         //LLENAR PERIODO
-        public List<int> Mostrar_periodo()
-        {  
-            List<int> lista_periodo = new List<int>();
+        public int Get_idperiodo(int periodo)
+        {
+            Int32 valor=0;
             using (SqlConnection cn = RConexion.Getconectar())
             {
                 cn.Open();
@@ -86,20 +86,16 @@ namespace Datos.Repositories
                     cmd.Connection = cn;
                     cmd.CommandText = "SP_SHOW_PERIODO";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    
-                    SqlDataReader reader = cmd.ExecuteReader();                    
-                    if (reader.HasRows)
-                    {
-                        while (reader.Read())
-                        {
-                            lista_periodo.Add(reader.GetInt32(0));
-                        }
-                                       
-                    }
-                    reader.Close();
+
+                    cmd.Parameters.Add("@periodo", SqlDbType.Int).Value = periodo;
+                    cmd.Parameters.Add("@idperiodo", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();//en este caso nos esta mostrando ExecuteNonQuery = -1 
+
+                   //System.Windows.Forms.MessageBox.Show("executenonquery()=> "+ i);                   
+                    valor = (int)cmd.Parameters["@idperiodo"].Value;                  
                 }
             }
-            return lista_periodo;
+            return valor;
         }
 
     }
