@@ -253,3 +253,4 @@ C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug
 >>>>>>> ddadd6181db422d25343eb35860ad50401db70fd
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla_Manto.resources
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla_Manto.resources
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Prueba.resources

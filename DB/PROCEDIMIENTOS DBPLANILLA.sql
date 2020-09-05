@@ -953,6 +953,24 @@ END
 GO
 
 
+create PROC SP_UPDATE_PLANILLA
+@id_planilla int,
+@id_periodo int,
+@fecha_inicial date,
+@fecha_final date,
+@fecha_pago date,
+@dias_mes int,
+@horas_mes int,
+@remu_basica decimal(10,2),
+@asig_familiar decimal(10,2),
+@tope_horario_nocturno int
+AS BEGIN
+UPDATE Planilla SET id_periodo=@id_periodo, @fecha_inicial=@fecha_inicial, fecha_final=@fecha_final,fecha_pago=@fecha_pago,
+dias_mes=@dias_mes,horas_mes=@horas_mes,remu_basica=@remu_basica,asig_familiar=@asig_familiar
+WHERE id_planilla=@id_planilla
+END
+GO
+
 create PROC SP_SHOW_PLANILLA
 AS BEGIN
 	SELECT pe.periodo, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
@@ -972,3 +990,5 @@ AS BEGIN
 	SET @idperiodo=(SELECT p.id_periodo FROM dbo.Periodo p WHERE p.periodo=@periodo)		
 END
 GO
+
+exec SP_SHOW_PERIODO 1,2019

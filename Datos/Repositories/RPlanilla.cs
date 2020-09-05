@@ -52,7 +52,30 @@ namespace Datos.Repositories
 
         public int Edit(DPlanilla entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_UPDATE_PLANILLA";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_planilla", SqlDbType.VarChar, 20).Value = entiti.Id_planilla;
+                    cmd.Parameters.Add("@id_periodo", SqlDbType.VarChar, 50).Value = entiti.Id_periodo;
+                    cmd.Parameters.Add("@fecha_inicial", SqlDbType.Date).Value = entiti.Fecha_inicial;
+                    cmd.Parameters.Add("@fecha_final", SqlDbType.Date).Value = entiti.Fecha_final;
+                    cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
+                    cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
+
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                    return result;
+
+                }
+            }
         }
 
         public int Delete(DPlanilla entiti)
