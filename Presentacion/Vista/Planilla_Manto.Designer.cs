@@ -39,7 +39,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnmodificar = new System.Windows.Forms.Button();
             this.btnagregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -192,25 +192,26 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnmodificar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::Presentacion.Properties.Resources.baseline_update_white_18dp1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(673, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 34);
-            this.button1.TabIndex = 92;
-            this.button1.Text = "Modificar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnmodificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmodificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.btnmodificar.FlatAppearance.BorderSize = 0;
+            this.btnmodificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnmodificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnmodificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmodificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmodificar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnmodificar.Image = global::Presentacion.Properties.Resources.baseline_update_white_18dp1;
+            this.btnmodificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmodificar.Location = new System.Drawing.Point(673, 126);
+            this.btnmodificar.Name = "btnmodificar";
+            this.btnmodificar.Size = new System.Drawing.Size(133, 34);
+            this.btnmodificar.TabIndex = 92;
+            this.btnmodificar.Text = "Modificar";
+            this.btnmodificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnmodificar.UseVisualStyleBackColor = false;
+            this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // btnagregar
             // 
@@ -239,7 +240,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 469);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnmodificar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.paneltitulo);
             this.Controls.Add(this.dgvplanilla);
@@ -270,7 +271,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button btnagregar;
     }
 }

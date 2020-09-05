@@ -108,5 +108,10 @@ namespace Presentacion.Vista
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnmodificar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

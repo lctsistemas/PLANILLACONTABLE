@@ -68,7 +68,11 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@fecha_inicial", SqlDbType.Date).Value = entiti.Fecha_inicial;
                     cmd.Parameters.Add("@fecha_final", SqlDbType.Date).Value = entiti.Fecha_final;
                     cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
-                    cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
+                    cmd.Parameters.Add("@dias_mes", SqlDbType.Int).Value = entiti.Dias_mes;
+                    cmd.Parameters.Add("@horas_mes", SqlDbType.Int).Value = entiti.Horas_mes;
+                    cmd.Parameters.Add("@remu_basica", SqlDbType.Decimal).Value = entiti.Remu_basica;
+                    cmd.Parameters.Add("@asig_familiar", SqlDbType.Decimal).Value = entiti.Asig_familiar;                   
+                    cmd.Parameters.Add("@tope_horario_nocturno", SqlDbType.Decimal).Value = entiti.Tope_horario_nocturno;
 
                     result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
