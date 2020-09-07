@@ -27,16 +27,17 @@ namespace Presentacion.Vista
             Mostar_banco();
             Mostar_tcontrato();
 
-        }        
-       
+        }
+
 
         //METODO DE INICIALIZACION PARA CONTRATO
         private void Initialize()
         {
-            String[] tpago = {"EFECTIVO","DEPOSITO EN CUENTA","OTROS" };
+            String[] tpago = { "EFECTIVO", "DEPOSITO EN CUENTA", "OTROS" };
             cbotipopago.Items.AddRange(tpago);
 
-            cboregimensalud.Items.Add("ESSALUD REGULAR");
+            String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
+            cboregimensalud.Items.AddRange(regimen_salud);
 
             String[] periodicidad = {"MENSUAL","QUINCENAL","SEMANAL","DIARIO","OTROS"};
             cboperiodicidad.Items.AddRange(periodicidad);
@@ -336,9 +337,10 @@ namespace Presentacion.Vista
             result = "";
             using (emple_contra)
             {
+                //EMPLEADO
                 if (emple_contra.state == EntityState.Guardar)
                     emple_contra.Id_empleado = emple_contra.GetCodigo_empleado();
-                //EMPLEADO
+                
                 emple_contra.Codigo = txtcodigo.Text.Trim();
                 emple_contra.Nom_emp = txtNombre.Text.Trim();
                 emple_contra.Ape_pat = txtApePat.Text.Trim();
@@ -395,7 +397,7 @@ namespace Presentacion.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            //using (emple_contra) { emple_contra.state = EntityState.Guardar; }      
+            using (emple_contra) { emple_contra.state = EntityState.Guardar; }      
             //Habilitar(true);
              limpiar();
         }       
@@ -577,6 +579,7 @@ namespace Presentacion.Vista
             {
                 using (emple_contra)
                 {
+                    emple_contra.state = EntityState.Modificar;
                     emple_contra.Id_empleado =Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
                     DataRow dr = emple_contra.ListaEmple_total(emple_contra).Rows[0];
                     txtcodigo.Text = dr["codigo"].ToString();
@@ -604,14 +607,13 @@ namespace Presentacion.Vista
                     //txtfecha_fin.Text= dr["fecha_fin"].ToString();
                     txtnum_cuenta.Text = dr["numero_cuenta"].ToString();
                     txtremune.Text =Convert.ToDecimal(dr["remuneracion_basica"]).ToString("0.00");
-                    txtasig.Text = dr["asignacion_familiar"].ToString();
+                    txtasig.Text = Convert.ToDecimal(dr["asignacion_familiar"]).ToString("0.00");
                     cboregimensalud.Text = dr["regimen_salud"].ToString();
                     cbotipopago.Text = dr["tipo_pago"].ToString();
                     cboperiodicidad.Text = dr["periodicidad"].ToString();
                     cbotipo_moneda.Text = dr["tipo_moneda"].ToString();
                     txtcts.Text = dr["cuenta_cts"].ToString();
                     txtcussp.Text = dr["cussp"].ToString();
-
                 }
             }
         }
