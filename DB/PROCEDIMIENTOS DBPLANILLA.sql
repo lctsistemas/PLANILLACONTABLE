@@ -956,22 +956,14 @@ GO
 
 alter PROC SP_UPDATE_PLANILLA
 @id_planilla int,
-@mes varchar(20),
-@id_periodo int,
-@fecha_inicial date,
-@fecha_final date,
-@fecha_pago date,
-@dias_mes int,
-@horas_mes int,
-@remu_basica decimal(10,2),
-@asig_familiar decimal(10,2),
-@tope_horario_nocturno int
+@fecha_pago date
 AS BEGIN
-UPDATE Planilla SET id_periodo=@id_periodo,mes=@mes, @fecha_inicial=@fecha_inicial, fecha_final=@fecha_final,fecha_pago=@fecha_pago,
-dias_mes=@dias_mes,horas_mes=@horas_mes,remu_basica=@remu_basica,asig_familiar=@asig_familiar
+UPDATE Planilla SET fecha_pago=@fecha_pago
 WHERE id_planilla=@id_planilla
 END
 GO
+
+exec SP_UPDATE_PLANILLA 2,'2020/10/29'
 
 alter PROC SP_SHOW_PLANILLA
 AS BEGIN
