@@ -183,6 +183,12 @@
     <Compile Include="Vista\Manto_Regimen.Designer.cs">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\ModificarPlanilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ModificarPlanilla.Designer.cs">
+      <DependentUpon>ModificarPlanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Planilla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ModificarPlanilla.resx">
+      <DependentUpon>ModificarPlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Planilla.resx">
       <DependentUpon>Planilla.cs</DependentUpon>

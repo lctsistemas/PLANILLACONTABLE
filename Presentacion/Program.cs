@@ -17,11 +17,9 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Planilla_Manto());
-=======
-            Application.Run(new frmempleado());
->>>>>>> MCarlos
+
+            Application.Run(new frminicio());
+
 
         }
     }

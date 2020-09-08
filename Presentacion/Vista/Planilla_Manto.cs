@@ -57,11 +57,10 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[0].Width = 50;
             dgvplanilla.Columns[0].Visible = false;
 
-            dgvplanilla.Columns[1].HeaderText = "idTipoPlanilla";
-            dgvplanilla.Columns[1].Width = 50;
-            dgvplanilla.Columns[1].Visible = false;
+            dgvplanilla.Columns[1].HeaderText = "PERIODO";
+            dgvplanilla.Columns[1].Width = 100;
 
-            dgvplanilla.Columns[2].HeaderText = "PERIODO";
+            dgvplanilla.Columns[2].HeaderText = "MES";
             dgvplanilla.Columns[2].Width = 100;
 
             dgvplanilla.Columns[3].HeaderText = "FECHA INICIAL";
@@ -95,6 +94,8 @@ namespace Presentacion.Vista
             Planilla fr = Planilla.GetInstance();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
+            ShowPlanilla();
+
         }
 
         private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
@@ -111,7 +112,15 @@ namespace Presentacion.Vista
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
+            frmModificarPlanilla formodi = new frmModificarPlanilla();
 
+
+            formodi.lblper.Text= dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
+            formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
+
+            formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[5].Value.ToString();//fecha pago
+            formodi.StartPosition = FormStartPosition.CenterParent;
+            formodi.ShowDialog();
         }
     }
 }
