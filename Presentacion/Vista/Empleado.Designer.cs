@@ -33,9 +33,9 @@ namespace Presentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
@@ -140,14 +140,14 @@ namespace Presentacion.Vista
             this.dgvempleado.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempleado.EnableHeadersVisualStyles = false;
@@ -155,18 +155,18 @@ namespace Presentacion.Vista
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvempleado.RowHeadersWidth = 22;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvempleado.Size = new System.Drawing.Size(233, 449);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
@@ -399,7 +399,7 @@ namespace Presentacion.Vista
             this.lblasig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblasig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblasig.ForeColor = System.Drawing.Color.DimGray;
-            this.lblasig.Location = new System.Drawing.Point(551, 32);
+            this.lblasig.Location = new System.Drawing.Point(551, 29);
             this.lblasig.Name = "lblasig";
             this.lblasig.Size = new System.Drawing.Size(131, 17);
             this.lblasig.TabIndex = 24;
@@ -412,7 +412,7 @@ namespace Presentacion.Vista
             this.cboregimensalud.FormattingEnabled = true;
             this.cboregimensalud.Location = new System.Drawing.Point(201, 49);
             this.cboregimensalud.Name = "cboregimensalud";
-            this.cboregimensalud.Size = new System.Drawing.Size(138, 25);
+            this.cboregimensalud.Size = new System.Drawing.Size(148, 25);
             this.cboregimensalud.TabIndex = 45;
             // 
             // label13
@@ -438,7 +438,7 @@ namespace Presentacion.Vista
             // 
             // cbotipocontra
             // 
-            this.cbotipocontra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbotipocontra.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbotipocontra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotipocontra.FormattingEnabled = true;
             this.cbotipocontra.Location = new System.Drawing.Point(13, 49);
@@ -501,9 +501,9 @@ namespace Presentacion.Vista
             // txtnum_cuenta
             // 
             this.txtnum_cuenta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnum_cuenta.Location = new System.Drawing.Point(167, 43);
+            this.txtnum_cuenta.Location = new System.Drawing.Point(185, 43);
             this.txtnum_cuenta.Name = "txtnum_cuenta";
-            this.txtnum_cuenta.Size = new System.Drawing.Size(181, 22);
+            this.txtnum_cuenta.Size = new System.Drawing.Size(170, 22);
             this.txtnum_cuenta.TabIndex = 36;
             // 
             // label22
@@ -524,7 +524,7 @@ namespace Presentacion.Vista
             this.cbotipopago.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbotipopago.Location = new System.Drawing.Point(12, 40);
             this.cbotipopago.Name = "cbotipopago";
-            this.cbotipopago.Size = new System.Drawing.Size(121, 25);
+            this.cbotipopago.Size = new System.Drawing.Size(141, 25);
             this.cbotipopago.TabIndex = 47;
             // 
             // label20
@@ -534,7 +534,7 @@ namespace Presentacion.Vista
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.DimGray;
-            this.label20.Location = new System.Drawing.Point(164, 19);
+            this.label20.Location = new System.Drawing.Point(182, 19);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(131, 17);
             this.label20.TabIndex = 37;
@@ -555,7 +555,7 @@ namespace Presentacion.Vista
             this.lblcts.AutoSize = true;
             this.lblcts.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcts.ForeColor = System.Drawing.Color.DimGray;
-            this.lblcts.Location = new System.Drawing.Point(164, 85);
+            this.lblcts.Location = new System.Drawing.Point(182, 83);
             this.lblcts.Name = "lblcts";
             this.lblcts.Size = new System.Drawing.Size(79, 17);
             this.lblcts.TabIndex = 43;
@@ -574,7 +574,7 @@ namespace Presentacion.Vista
             // txtcts
             // 
             this.txtcts.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcts.Location = new System.Drawing.Point(167, 105);
+            this.txtcts.Location = new System.Drawing.Point(185, 105);
             this.txtcts.Name = "txtcts";
             this.txtcts.Size = new System.Drawing.Size(318, 22);
             this.txtcts.TabIndex = 42;
@@ -771,7 +771,7 @@ namespace Presentacion.Vista
             // 
             // txtidempresa
             // 
-            this.txtidempresa.Location = new System.Drawing.Point(62, 239);
+            this.txtidempresa.Location = new System.Drawing.Point(58, 239);
             this.txtidempresa.Name = "txtidempresa";
             this.txtidempresa.Size = new System.Drawing.Size(61, 22);
             this.txtidempresa.TabIndex = 77;
@@ -781,7 +781,7 @@ namespace Presentacion.Vista
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboestado.FormattingEnabled = true;
-            this.cboestado.Location = new System.Drawing.Point(50, 170);
+            this.cboestado.Location = new System.Drawing.Point(46, 170);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(133, 25);
             this.cboestado.TabIndex = 76;
@@ -791,7 +791,7 @@ namespace Presentacion.Vista
             this.lblafp.AutoSize = true;
             this.lblafp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblafp.ForeColor = System.Drawing.Color.DimGray;
-            this.lblafp.Location = new System.Drawing.Point(45, 32);
+            this.lblafp.Location = new System.Drawing.Point(41, 32);
             this.lblafp.Name = "lblafp";
             this.lblafp.Size = new System.Drawing.Size(143, 17);
             this.lblafp.TabIndex = 67;
@@ -802,9 +802,9 @@ namespace Presentacion.Vista
             this.cbocargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbocargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbocargo.FormattingEnabled = true;
-            this.cbocargo.Location = new System.Drawing.Point(48, 109);
+            this.cbocargo.Location = new System.Drawing.Point(44, 109);
             this.cbocargo.Name = "cbocargo";
-            this.cbocargo.Size = new System.Drawing.Size(158, 25);
+            this.cbocargo.Size = new System.Drawing.Size(173, 25);
             this.cbocargo.TabIndex = 62;
             // 
             // cbore_pensionario
@@ -815,9 +815,9 @@ namespace Presentacion.Vista
             this.cbore_pensionario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbore_pensionario.FormattingEnabled = true;
             this.cbore_pensionario.IntegralHeight = false;
-            this.cbore_pensionario.Location = new System.Drawing.Point(48, 53);
+            this.cbore_pensionario.Location = new System.Drawing.Point(44, 53);
             this.cbore_pensionario.Name = "cbore_pensionario";
-            this.cbore_pensionario.Size = new System.Drawing.Size(158, 25);
+            this.cbore_pensionario.Size = new System.Drawing.Size(173, 25);
             this.cbore_pensionario.TabIndex = 61;
             // 
             // label15
@@ -825,7 +825,7 @@ namespace Presentacion.Vista
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(47, 93);
+            this.label15.Location = new System.Drawing.Point(43, 93);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(50, 17);
             this.label15.TabIndex = 71;
@@ -836,7 +836,7 @@ namespace Presentacion.Vista
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(47, 153);
+            this.label12.Location = new System.Drawing.Point(43, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 60;

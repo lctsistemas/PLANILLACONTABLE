@@ -36,7 +36,7 @@ namespace Negocio.Models
 
         //METODOS SET AND GET DE CONTRATO
         public Int32 cid_contrato { get; set; }
-        public Int32 cid_empleado { get; set; }
+        public Int32 cid_empleado { get; set; }//eliminar
         public Int32 cid_banco { get; set; }
         public Int32 cid_tcontrato { get; set; }
         public DateTime cfecha_inicio { get; set; }
@@ -90,6 +90,7 @@ namespace Negocio.Models
                 dcon.Id_contrato = cid_contrato;
                 dcon.Id_banco = cid_banco;
                 dcon.Id_tcontrato = cid_tcontrato;
+                dcon.Id_empleado = Id_empleado;
                 dcon.Fecha_inicio = cfecha_inicio;
                 dcon.Fecha_fin = cfecha_fin;
                 dcon.Num_cuenta = cnum_cuenta;
@@ -112,7 +113,9 @@ namespace Negocio.Models
                         break;
 
                     case EntityState.Modificar:
-                        Rempleado.Edit(emp);
+                        if(Rempleado.Edit(emp) > 0)
+                            rcontrato.Edit(dcon);
+
                         mensaje = "¡Editado correctamente!";
                         break;
 
@@ -138,7 +141,7 @@ namespace Negocio.Models
 
         public int GetCodigo_empleado()
         {
-            return new KPlanilla().GetCodigo();
+            return new KEmpleado().GetCodigo();
         }
 
         public int Getcodigo_contrato()
@@ -172,8 +175,7 @@ namespace Negocio.Models
         
         public IEnumerable<NEmpleado> Search(String filter)
         {
-            return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);            
-
+            return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         //CONTRATO

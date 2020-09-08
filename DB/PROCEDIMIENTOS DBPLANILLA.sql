@@ -134,10 +134,6 @@ ELSE
 END
 GO
 
-select * from Empleado
---EXEC SP_AGR_EMPL 7,'Pedro','Solorzano','Baldoceda','O.N.P','31-12-2020','Peru','Masculino','Jr. Direccion 1','956324466',
---09645645','ACTIVO',1,1,4,1;
-go
 
 ALTER PROC SP_UPDATE_EMPLEADO
 (@codigo varchar(20),
@@ -145,7 +141,7 @@ ALTER PROC SP_UPDATE_EMPLEADO
 @ape_pat varchar(50),
 @ape_mat varchar(50),
 @fec_nac date,
-@nacion varchar(30),
+@nacionalidad varchar(30),
 @tip_ge varchar(12),
 @direccion varchar(250),
 @telefono varchar(15),
@@ -154,13 +150,12 @@ ALTER PROC SP_UPDATE_EMPLEADO
 @codigo_regimen int,
 @id_documento int,
 @id_cargo int,
-@id_empresa_maestra int,
 @id_empleado int)
 AS BEGIN 
- UPDATE Empleado SET nombre_empleado=@nom_emp,ape_paterno=@ape_pat, ape_materno=@ape_mat,
- fecha_nacimiento=@fec_nac, nacionalidad=@nacion, tipo_genero=@tip_ge, direccion=@direccion,
+ UPDATE Empleado SET codigo=@codigo, nombre_empleado=@nom_emp, ape_paterno=@ape_pat, ape_materno=@ape_mat,
+ fecha_nacimiento=@fec_nac, nacionalidad=@nacionalidad, tipo_genero=@tip_ge, direccion=@direccion,
  telefono=@telefono, numero_documento=@num_doc, estado=@estado ,codigo_regimen=@codigo_regimen,
- id_documento=@id_documento, id_cargo=@id_cargo, id_em_maestra=@id_empresa_maestra WHERE id_empleado=@id_empleado
+ id_documento=@id_documento, id_cargo=@id_cargo WHERE id_empleado=@id_empleado
 END
 GO
 
@@ -221,32 +216,36 @@ ALTER PROCEDURE SP_INSERT_CONTRATO
 AS BEGIN
 INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
 fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, regimen_salud, tipo_pago, 
-periodicidad, tipo_moneda, cuenta_cts, CUSSP, estado)
+periodicidad, tipo_moneda, cuenta_cts, cussp)
 VALUES(@id_contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
 @id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @regimen_salud, @tipo_pago, 
-@periodicidad, @tipo_modeda, @cuenta_cts, @cussp,'NO ANULADO')
+@periodicidad, @tipo_modeda, @cuenta_cts, @cussp)
 END
 GO
 
+
 --UPDATE EMPLEADO.
 ALTER PROCEDURE SP_UPDATE_CONTRATO
-(@id_empleado int,
-@id_banco int,
+(@id_banco int,
 @id_tcontrato int,
 @fecha_inicio date,
 @fecha_fin date,
 @num_cuenta varchar(30),
 @remu_basica money,
 @asig_fami money,
-@descuento money,
+@regimen_salud varchar(80),
+@tipo_pago varchar(30),
+@periodicidad varchar(70),
 @tipo_modeda varchar(10),
-@cts nvarchar(50),
-@id_contrato int)
+@cuenta_cts nvarchar(50),
+@cussp nvarchar(70),
+@id_empleado int)
 AS BEGIN
-UPDATE dbo.Contrato SET id_empleado=@id_empleado, id_banco=@id_banco, 
-id_tipo_contrato=@id_tcontrato,fecha_inicio=@fecha_inicio, fecha_fin=@fecha_fin,
-numero_cuenta=@num_cuenta, remuneracion_basica=@remu_basica, asignacion_familiar=@asig_fami,
-descuento=@descuento,tipo_moneda=@tipo_modeda, cts=@cts WHERE id_contrato=@id_contrato
+UPDATE Contrato SET id_banco=@id_banco, id_tipocontrato=@id_tcontrato, fecha_inicio=@fecha_inicio,
+fecha_fin=@fecha_fin, numero_cuenta=@num_cuenta, remuneracion_basica=@remu_basica, 
+asignacion_familiar=@asig_fami, regimen_salud=@regimen_salud, tipo_pago=@tipo_pago, 
+periodicidad=@periodicidad, tipo_moneda=@tipo_modeda, cuenta_cts=@cuenta_cts, cussp=@cussp 
+WHERE id_empleado=@id_empleado
 END
 GO
 
