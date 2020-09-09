@@ -64,20 +64,36 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_UPDATE_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_planilla", SqlDbType.VarChar, 20).Value = entiti.Id_planilla;
+                    cmd.Parameters.Add("@id_planilla", SqlDbType.Int).Value = entiti.Id_planilla;
                     cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
                    
-                    result = cmd.ExecuteNonQuery();
+                    result = cmd.ExecuteNonQuery();                 
                     cmd.Parameters.Clear();
                     return result;
-
                 }
             }
         }
 
         public int Delete(DPlanilla entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection conn = RConexion.Getconectar())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_DELETE_PLANILLA";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@idplanilla", SqlDbType.Int).Value = entiti.Id_planilla;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    result = cmd.ExecuteNonQuery();
+                    entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+                    cmd.Parameters.Clear();
+                    return result;
+                }
+            }
         }
 
         public DataTable GetData(DPlanilla entiti)

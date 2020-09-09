@@ -85,7 +85,6 @@ namespace Presentacion.Vista
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtidempresa = new System.Windows.Forms.TextBox();
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
             this.cbocargo = new System.Windows.Forms.ComboBox();
@@ -115,6 +114,7 @@ namespace Presentacion.Vista
             this.label7 = new System.Windows.Forms.Label();
             this.txttele = new System.Windows.Forms.TextBox();
             this.tabEmpleado = new System.Windows.Forms.TabControl();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).BeginInit();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -170,7 +170,6 @@ namespace Presentacion.Vista
             this.dgvempleado.Size = new System.Drawing.Size(233, 449);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
-            this.dgvempleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellDoubleClick);
             // 
             // btnNuevo
             // 
@@ -754,7 +753,7 @@ namespace Presentacion.Vista
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.txtidempresa);
+            this.groupBox3.Controls.Add(this.linkLabel1);
             this.groupBox3.Controls.Add(this.cboestado);
             this.groupBox3.Controls.Add(this.lblafp);
             this.groupBox3.Controls.Add(this.cbocargo);
@@ -763,25 +762,18 @@ namespace Presentacion.Vista
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(502, 1);
+            this.groupBox3.Location = new System.Drawing.Point(483, 1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(246, 374);
+            this.groupBox3.Size = new System.Drawing.Size(265, 374);
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
-            // 
-            // txtidempresa
-            // 
-            this.txtidempresa.Location = new System.Drawing.Point(58, 239);
-            this.txtidempresa.Name = "txtidempresa";
-            this.txtidempresa.Size = new System.Drawing.Size(61, 22);
-            this.txtidempresa.TabIndex = 77;
             // 
             // cboestado
             // 
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboestado.FormattingEnabled = true;
-            this.cboestado.Location = new System.Drawing.Point(46, 170);
+            this.cboestado.Location = new System.Drawing.Point(18, 170);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(133, 25);
             this.cboestado.TabIndex = 76;
@@ -791,7 +783,7 @@ namespace Presentacion.Vista
             this.lblafp.AutoSize = true;
             this.lblafp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblafp.ForeColor = System.Drawing.Color.DimGray;
-            this.lblafp.Location = new System.Drawing.Point(41, 32);
+            this.lblafp.Location = new System.Drawing.Point(13, 32);
             this.lblafp.Name = "lblafp";
             this.lblafp.Size = new System.Drawing.Size(143, 17);
             this.lblafp.TabIndex = 67;
@@ -802,7 +794,7 @@ namespace Presentacion.Vista
             this.cbocargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbocargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbocargo.FormattingEnabled = true;
-            this.cbocargo.Location = new System.Drawing.Point(44, 109);
+            this.cbocargo.Location = new System.Drawing.Point(16, 109);
             this.cbocargo.Name = "cbocargo";
             this.cbocargo.Size = new System.Drawing.Size(173, 25);
             this.cbocargo.TabIndex = 62;
@@ -815,7 +807,7 @@ namespace Presentacion.Vista
             this.cbore_pensionario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbore_pensionario.FormattingEnabled = true;
             this.cbore_pensionario.IntegralHeight = false;
-            this.cbore_pensionario.Location = new System.Drawing.Point(44, 53);
+            this.cbore_pensionario.Location = new System.Drawing.Point(16, 53);
             this.cbore_pensionario.Name = "cbore_pensionario";
             this.cbore_pensionario.Size = new System.Drawing.Size(173, 25);
             this.cbore_pensionario.TabIndex = 61;
@@ -825,7 +817,7 @@ namespace Presentacion.Vista
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(43, 93);
+            this.label15.Location = new System.Drawing.Point(15, 93);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(50, 17);
             this.label15.TabIndex = 71;
@@ -836,7 +828,7 @@ namespace Presentacion.Vista
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(43, 153);
+            this.label12.Location = new System.Drawing.Point(15, 153);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 60;
@@ -1091,6 +1083,16 @@ namespace Presentacion.Vista
             this.tabEmpleado.Size = new System.Drawing.Size(768, 449);
             this.tabEmpleado.TabIndex = 40;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(195, 112);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(47, 16);
+            this.linkLabel1.TabIndex = 77;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Nuevo";
+            // 
             // frmempleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1221,6 +1223,6 @@ namespace Presentacion.Vista
         private GroupBox groupBox4;
         private ComboBox cboperiodicidad;
         private MaskedTextBox txtfecha_fin;
-        private TextBox txtidempresa;
+        private LinkLabel linkLabel1;
     }
 }

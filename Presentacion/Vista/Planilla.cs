@@ -38,6 +38,15 @@ namespace Presentacion.Vista
             //string m=mes[0];
             cbxmes.Items.AddRange(mes);
 
+            Planilla_Manto planilla = new Planilla_Manto();
+
+            //cbxmes.SelectedItem = mes.ElementAt(0);
+
+            if (planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString() != ""){
+                cbxmes.SelectedItem = planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
+
+            }
+
             txtremu.Text = "930.00";
             txtasig.Text = "93.00";
             txttope.Text = "1200";

@@ -115,6 +115,10 @@ namespace Negocio.Models
                     break;
                 case EntityState.Modificar:
                     rplanilla.Edit(pla);
+                    mensaje = "Editado correctamente";
+                    break;
+                case EntityState.Remover:
+                    rplanilla.Delete(pla);
                     mensaje = pla.mensaje;
                     break;
 

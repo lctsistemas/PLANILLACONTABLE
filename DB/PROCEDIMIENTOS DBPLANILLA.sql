@@ -907,7 +907,7 @@ END
 GO
 
 
-alter PROC SP_UPDATE_REGIMEN
+CREATE PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
@@ -917,7 +917,7 @@ UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, descripcion=
 END
 GO
 
-alter PROC SP_DELETE_REGIMEN
+CREATE PROC SP_DELETE_REGIMEN
 @codigo_regimen int,
 @mensaje varchar(100) output
 AS BEGIN
@@ -972,6 +972,15 @@ AS BEGIN
 	inner join Periodo pe
 	on(pe.id_periodo=p.id_periodo)
 	END
+GO
+
+CREATE PROC SP_DELETE_PLANILLA
+@idplanilla int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from Planilla where id_planilla=@idplanilla
+SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
+END
 GO
 
 

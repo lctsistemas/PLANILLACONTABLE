@@ -256,55 +256,13 @@ namespace Presentacion.Vista
             }
         }
 
-        private void dgvempleado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow r = dgvempleado.CurrentRow;
-
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
-            {
-                using (emple_contra = new NEmpleado())
-                {
-                    emple_contra.state = EntityState.Modificar;
-                    emple_contra.Id_empleado = Convert.ToInt32(r.Cells[1].Value);
-
-                    txtcodigo.Text = "EMP 0" + r.Cells[1].Value.ToString();
-                    txtNombre.Text = r.Cells[2].Value.ToString();
-                    txtApePat.Text = r.Cells[3].Value.ToString();
-                    txtApeMat.Text = r.Cells[4].Value.ToString();
-
-                    dtfecha.Value = Convert.ToDateTime(r.Cells[5].Value.ToString());
-                    txtnac.Text = r.Cells[6].Value.ToString();
-                    cbogenero.Text = r.Cells[7].Value.ToString();
-                    txtdire.Text = r.Cells[8].Value.ToString();
-                    txttele.Text = r.Cells[9].Value.ToString();
-
-                    txtnumdoc.Text = r.Cells[10].Value.ToString();
-                    cboestado.Text = r.Cells[11].Value.ToString();
-                                                            
-                    cbore_pensionario.SelectedValue = r.Cells[12].Value.ToString();
-                    cbore_pensionario.Text = r.Cells[14].Value.ToString();                    
-
-                    cbotipo_documento.SelectedValue = r.Cells[15].Value.ToString();
-                    cbotipo_documento.Text = (r.Cells[16].Value.ToString());
-
-                    cbocargo.SelectedValue = r.Cells[17].Value.ToString();
-                    cbocargo.Text = r.Cells[18].Value.ToString();
-                  
-                    tabEmpleado.SelectedIndex = 1;
-                    Habilitar(true);
-                    Habilitar_doc(true);
-                    ValidateError.validate.Clear();
-                }
-            }
-        }
+        
         private void Empleado_Load(object sender, EventArgs e)
         {                       
-            Initialize();
-            UserCache.Codigo_empresa = 2;           
+            Initialize();                  
             mostrarEmpleado();
             Tabla();
-            Bloquear_controles();
-            //lblem.Text = UserCache.Codigo_empresa.ToString();
+            Bloquear_controles();           
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -355,7 +313,7 @@ namespace Presentacion.Vista
                 emple_contra.Codigo_regimen = Convert.ToInt32(cbore_pensionario.SelectedValue);
                 emple_contra.Id_doc = Convert.ToInt32(cbotipo_documento.SelectedValue);
                 emple_contra.Id_cargo = Convert.ToInt32(cbocargo.SelectedValue);
-                emple_contra.Id_emp_maestra = int.Parse(txtidempresa.Text); //UserCache.Codigo_empresa; 
+                emple_contra.Id_emp_maestra = UserCache.Codigo_empresa; 
 
                 //CONTRATO
                 if(emple_contra.state==EntityState.Guardar)

@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Presentacion.Vista
 {
     public partial class Planilla_Manto : Form
     {
+        String result;
         private NPlanilla np = new NPlanilla();
         public Planilla_Manto()
         {
@@ -112,8 +114,8 @@ namespace Presentacion.Vista
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {
+            np.state = EntityState.Modificar;
             frmModificarPlanilla formodi = new frmModificarPlanilla();
-
 
             formodi.lblper.Text= dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
             formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
@@ -121,6 +123,32 @@ namespace Presentacion.Vista
             formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[5].Value.ToString();//fecha pago
             formodi.StartPosition = FormStartPosition.CenterParent;
             formodi.ShowDialog();
+            ShowPlanilla();
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (dgvplanilla.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                if (r == DialogResult.Yes)
+                {
+                    using (np)
+                    {
+                        np.state = EntityState.Remover;
+                        np.Id_planilla = Convert.ToInt32(dgvplanilla.CurrentRow.Cells[0].Value);
+                        result = np.GuardarCambios();
+                        ShowPlanilla();
+                        Messages.M_info(result);
+                    }
+                }
+
+            }
+            else
+            {
+                Messages.M_warning("Seleccione una fila de la tabla");
+            }
         }
     }
 }

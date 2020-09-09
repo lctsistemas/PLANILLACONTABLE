@@ -42,13 +42,13 @@
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvcargo = new System.Windows.Forms.DataGridView();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.dgvcargo = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.barratitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,8 +57,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbltotal
@@ -251,56 +251,6 @@
             this.panel1.Size = new System.Drawing.Size(228, 298);
             this.panel1.TabIndex = 16;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dgvcargo);
-            this.panel3.Controls.Add(this.txtbuscar);
-            this.panel3.Location = new System.Drawing.Point(326, 59);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 298);
-            this.panel3.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(20, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "BUSCAR";
-            // 
-            // dgvcargo
-            // 
-            this.dgvcargo.AllowUserToAddRows = false;
-            this.dgvcargo.AllowUserToDeleteRows = false;
-            this.dgvcargo.AllowUserToOrderColumns = true;
-            this.dgvcargo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvcargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvcargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcargo.Location = new System.Drawing.Point(13, 41);
-            this.dgvcargo.MultiSelect = false;
-            this.dgvcargo.Name = "dgvcargo";
-            this.dgvcargo.ReadOnly = true;
-            this.dgvcargo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvcargo.RowHeadersWidth = 30;
-            this.dgvcargo.Size = new System.Drawing.Size(295, 242);
-            this.dgvcargo.TabIndex = 0;
-            this.dgvcargo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcargo_CellDoubleClick);
-            // 
-            // txtbuscar
-            // 
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.Location = new System.Drawing.Point(98, 13);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(208, 22);
-            this.txtbuscar.TabIndex = 1;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
-            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
-            // 
             // btnnuevo
             // 
             this.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue;
@@ -352,6 +302,56 @@
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
+            // txtbuscar
+            // 
+            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.Location = new System.Drawing.Point(98, 13);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(208, 22);
+            this.txtbuscar.TabIndex = 1;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
+            // 
+            // dgvcargo
+            // 
+            this.dgvcargo.AllowUserToAddRows = false;
+            this.dgvcargo.AllowUserToDeleteRows = false;
+            this.dgvcargo.AllowUserToOrderColumns = true;
+            this.dgvcargo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvcargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvcargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcargo.Location = new System.Drawing.Point(13, 41);
+            this.dgvcargo.MultiSelect = false;
+            this.dgvcargo.Name = "dgvcargo";
+            this.dgvcargo.ReadOnly = true;
+            this.dgvcargo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvcargo.RowHeadersWidth = 30;
+            this.dgvcargo.Size = new System.Drawing.Size(295, 242);
+            this.dgvcargo.TabIndex = 0;
+            this.dgvcargo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcargo_CellDoubleClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(20, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "BUSCAR";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.dgvcargo);
+            this.panel3.Controls.Add(this.txtbuscar);
+            this.panel3.Location = new System.Drawing.Point(326, 59);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(321, 298);
+            this.panel3.TabIndex = 15;
+            // 
             // frmcargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,9 +374,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,16 +392,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dgvcargo;
-        private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.Panel barratitulo;
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvcargo;
+        private System.Windows.Forms.TextBox txtbuscar;
     }
 }
