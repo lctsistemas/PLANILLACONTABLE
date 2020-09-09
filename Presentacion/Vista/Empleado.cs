@@ -299,12 +299,10 @@ namespace Presentacion.Vista
         }
         private void Empleado_Load(object sender, EventArgs e)
         {                       
-            Initialize();
-            UserCache.Codigo_empresa = 2;           
+            Initialize();             
             mostrarEmpleado();
             Tabla();
             Bloquear_controles();
-            //lblem.Text = UserCache.Codigo_empresa.ToString();
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -355,7 +353,7 @@ namespace Presentacion.Vista
                 emple_contra.Codigo_regimen = Convert.ToInt32(cbore_pensionario.SelectedValue);
                 emple_contra.Id_doc = Convert.ToInt32(cbotipo_documento.SelectedValue);
                 emple_contra.Id_cargo = Convert.ToInt32(cbocargo.SelectedValue);
-                emple_contra.Id_emp_maestra = int.Parse(txtidempresa.Text); //UserCache.Codigo_empresa; 
+                emple_contra.Id_emp_maestra = UserCache.Codigo_empresa; 
 
                 //CONTRATO
                 if(emple_contra.state==EntityState.Guardar)

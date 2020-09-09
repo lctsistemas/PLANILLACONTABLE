@@ -128,6 +128,22 @@ namespace Presentacion
             childform.Show();
         }
 
+        private void openchilform2(Form childform)
+        {
+            if (activefor != null)
+            {
+                activefor.Close();
+            }
+            activefor = childform;
+            childform.TopLevel = false;
+            //childform.FormBorderStyle = FormBorderStyle.None;
+            //childform.Dock = DockStyle.Fill;
+            panelcontent.Controls.Add(childform);
+            panelcontent.Tag = childform;//esta sobre el control
+            //childform.BringToFront();//indica que el formulario llamado esta frente al logo que exite
+            childform.Show();
+        }
+
         private void btnsucursal_Click(object sender, EventArgs e)
         {
             openchilform(new frmsucursal());
@@ -155,7 +171,7 @@ namespace Presentacion
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            openchilform(new frmempleado());
+            openchilform2(new frmempleado());
         }
 
         private void button1_Click(object sender, EventArgs e)
