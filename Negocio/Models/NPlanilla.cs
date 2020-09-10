@@ -6,19 +6,16 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Models
 {
-    public class NPlanilla:IDisposable
+    public class NPlanilla : IDisposable
     {
         String mensaje;
         public int Id_planilla
         {
             get; set;
-            
+
         }
 
         /*public int Id_tipo_planilla
@@ -26,7 +23,7 @@ namespace Negocio.Models
             get; set;
         }*/
 
-        
+
 
         public int Id_periodo
         {
@@ -106,7 +103,7 @@ namespace Negocio.Models
             pla.Remu_basica = Remu_basica;
             pla.Asig_familiar = Asig_familiar;
             pla.Tope_horario_nocturno = Tope_horario_nocturno;
-            
+
             switch (state)
             {
                 case EntityState.Guardar:
@@ -126,7 +123,7 @@ namespace Negocio.Models
 
             return mensaje;
         }
-        
+
         public List<NPlanilla> Getall()
         {
             using (DataTable dt = rplanilla.GetData(null))
@@ -142,7 +139,7 @@ namespace Negocio.Models
                         Fecha_inicial = Convert.ToDateTime(item[3]),
                         Fecha_final = Convert.ToDateTime(item[4]),
                         Fecha_pago = Convert.ToDateTime(item[5]),
-                        Dias_mes= Convert.ToInt32(item[6]),
+                        Dias_mes = Convert.ToInt32(item[6]),
                         Horas_mes = Convert.ToInt32(item[7]),
                         Remu_basica = Convert.ToDecimal(item[8]),
                         Asig_familiar = Convert.ToDecimal(item[9]),

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.Windows.Forms;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Comun.Comunicacion
 {
-    public class Request:Apirest,IDisposable
-    {      
+    public class Request : Apirest, IDisposable
+    {
         //CONSUMIR API POR METODO POST
 
         public void Solicitar(Dapi txtdni)
@@ -18,7 +13,7 @@ namespace Comun.Comunicacion
             {
                 dni = txtdni.dni
             };
-                      
+
             string json = JsonConvert.SerializeObject(da);
             string autoriza = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1OTk2ODEzMjYsImlzcyI6ImxvY2FsaG9zdCIsInVzZXJfaWQiOjE5MX0.blDMomNOj1zIgjVuRrBroWl01zCPW0rm4D5uaD-emVU";
             dynamic respuesta = Post("http://servicio.dayangels.com/api/reniec/dni", json, autoriza);
@@ -36,7 +31,7 @@ namespace Comun.Comunicacion
 
         public void Dispose()
         {
-           //throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

@@ -86,7 +86,7 @@ namespace Negocio
 
         //DATOS DE TABLA SUCURSAL
         public List<NSucursal> Getall()
-        {       
+        {
             using (DataTable dt = sucursal_reposi.GetData(null))
             {
                 list_sucursal = new List<NSucursal>();
@@ -115,14 +115,14 @@ namespace Negocio
         //METODO PARA FILTRAR REGISTRO
         public IEnumerable<NSucursal> Search(string filter)
         {
-            return list_sucursal.FindAll(e => e.razon_social.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);            
+            return list_sucursal.FindAll(e => e.razon_social.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
 
 
         public void Dispose()
         {
-           
+
         }
     }
 }

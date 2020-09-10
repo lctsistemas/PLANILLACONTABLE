@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Negocio.Models;
+﻿using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
+using System;
+using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
     public partial class Manto_Regimen : Form
     {
         String result;
-        private NRegimen nr=new NRegimen();
+        private NRegimen nr = new NRegimen();
         public Manto_Regimen()
         {
             InitializeComponent();
@@ -24,7 +17,7 @@ namespace Presentacion.Vista
 
         private void Manto_Regimen_Load(object sender, EventArgs e)
         {
-            
+
             cbxregimen.Items.Add("S.N.P");
             cbxregimen.Items.Add("S.P.P");
             ShowRegimen();
@@ -36,10 +29,10 @@ namespace Presentacion.Vista
         private void btnagregar_Click(object sender, EventArgs e)
         {
             using (nr) { nr.state = EntityState.Guardar; }
-            
+
             Habilitar(true);
             limpiar();
-            
+
         }
 
         private void limpiar()
@@ -93,22 +86,22 @@ namespace Presentacion.Vista
         {
             result = "";
             using (nr)
-            {                               
-                    nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
-                    nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
-                    nr.Tipo_regimen = cbxregimen.Text.Trim();
+            {
+                nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
+                nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
+                nr.Tipo_regimen = cbxregimen.Text.Trim();
 
-                    bool valida = new ValidacionDatos(nr).Validate();
-                    if (valida)
-                    {
-                        if (String.IsNullOrEmpty(cbxregimen.SelectedItem.ToString().Trim()))
-                            return;
-                        result = nr.GuardarCambios();
-                        
-                        Messages.M_info(result);                        
-                            limpiar();
-                    }
-               
+                bool valida = new ValidacionDatos(nr).Validate();
+                if (valida)
+                {
+                    if (String.IsNullOrEmpty(cbxregimen.SelectedItem.ToString().Trim()))
+                        return;
+                    result = nr.GuardarCambios();
+
+                    Messages.M_info(result);
+                    limpiar();
+                }
+
                 ShowRegimen();
             }
         }

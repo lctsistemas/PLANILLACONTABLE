@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using Datos.Repositories;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Datos.Entities;
-using Datos.Repositories;
-using System.Data;
 
 namespace Negocio.Models
 {
-    public class Nlogin:IDisposable
+    public class Nlogin : IDisposable
     {
         public bool Login(string user, string pass)
         {
-            return new Rlogin().Login(user,pass);
+            return new Rlogin().Login(user, pass);
         }
 
         public bool Business(List<object> li)
@@ -29,7 +24,7 @@ namespace Negocio.Models
 
         public void Dispose()
         {
-           // throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
     }
 }

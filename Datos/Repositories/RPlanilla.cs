@@ -1,16 +1,12 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Repositories
 {
-    public class RPlanilla: IPlanilla
+    public class RPlanilla : IPlanilla
     {
         Int32 result;
         SqlCommand cmd;
@@ -66,8 +62,8 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@id_planilla", SqlDbType.Int).Value = entiti.Id_planilla;
                     cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
-                   
-                    result = cmd.ExecuteNonQuery();                 
+
+                    result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                     return result;
                 }

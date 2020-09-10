@@ -96,14 +96,14 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            this.Text = UserCache.NombreUser +"  |   "+lblempresa.Text;
+            this.Text = UserCache.NombreUser + "  |   " + lblempresa.Text;
         }
 
         private void CargarDatos()
         {
             lblusuario.Text = UserCache.NombreUser;
             lblrol.Text = UserCache.RolUser;
-            lblempresa.Text =UserCache.Empresa_Sucursal+":  "+ UserCache.Empresa;
+            lblempresa.Text = UserCache.Empresa_Sucursal + ":  " + UserCache.Empresa;
             lbllocalidad.Text = UserCache.Localidad_empresa;
             lblperiodo.Text = UserCache.Periodo;
             lblid_periodo.Text = UserCache.Idperiodo.ToString();

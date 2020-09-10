@@ -13,7 +13,7 @@ namespace Datos.Entities
         private String num_cuenta;
         private Decimal remu_basica;
         private Decimal asig_fami;
-        private String regimen_salud; 
+        private String regimen_salud;
         private String tipo_pago;
         private String periodicidad;
         private String tipo_moneda;

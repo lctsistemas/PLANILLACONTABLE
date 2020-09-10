@@ -1,12 +1,10 @@
-﻿using System;
-
-namespace Datos.Entities
+﻿namespace Datos.Entities
 {
     public class DBanco
     {
         private int idBanco;
         private string nom_banco;
-        public string mensaje { get; set; } 
+        public string mensaje { get; set; }
 
         public DBanco()
         {
@@ -21,9 +19,9 @@ namespace Datos.Entities
 
         public int IdBanco
         {
-            get {return idBanco;}
+            get { return idBanco; }
 
-            set{idBanco = value;}
+            set { idBanco = value; }
         }
 
         public string Nom_banco

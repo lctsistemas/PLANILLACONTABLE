@@ -7,13 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Models
 {
-    public class NRegimen:IDisposable
+    public class NRegimen : IDisposable
     {
         String mensaje;
 
@@ -68,7 +65,7 @@ namespace Negocio.Models
                         break;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 mensaje = ex.ToString();
             }
@@ -85,7 +82,7 @@ namespace Negocio.Models
                 {
                     list_regimen.Add(new NRegimen()
                     {
-                        Codigo_Regimen= Convert.ToInt32(item[0]),
+                        Codigo_Regimen = Convert.ToInt32(item[0]),
                         Descripcion = item[1].ToString(),
                         Descripcion_corta = item[2].ToString(),
                         Tipo_regimen = item[3].ToString()
@@ -96,7 +93,7 @@ namespace Negocio.Models
         }
         public void Dispose()
         {
-           
+
         }
 
         //METODO PARA FILTRAR.
@@ -107,7 +104,7 @@ namespace Negocio.Models
 
         public int Getcodigo()
         {
-            return new KRegimen().Getcodigo(); 
+            return new KRegimen().Getcodigo();
         }
     }
 }

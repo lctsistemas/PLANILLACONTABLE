@@ -13,7 +13,7 @@ namespace Datos.Entities
         private String ruc;
         private String regimen;
         private String estado;
-        public String mesages { get; set; }      
+        public String mesages { get; set; }
 
         //EMPRESA
         private Int32 eidempresa;

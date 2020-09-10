@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Datos.Contract;
+using Datos.Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
-using Datos.Entities;
 
 namespace Datos.Repositories
 {
@@ -19,14 +16,14 @@ namespace Datos.Repositories
             using (SqlConnection conn = RConexion.Getconectar())
             {
                 conn.Open();
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_INSERT_TIP_CONT";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
-                    cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar,30).Value = entiti.Tipo_contrato;
+                    cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
 
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
 
@@ -37,7 +34,7 @@ namespace Datos.Repositories
 
                 }
             }
-        }     
+        }
         public int Edit(Dtipocontrato entiti)
         {
             result = 0;
@@ -45,21 +42,21 @@ namespace Datos.Repositories
             {
                 cnn.Open();
 
-                    using (SqlCommand cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cnn;
-                        cmd.CommandText = "SP_UPDATE_TIP_CONT";
-                        cmd.CommandType = CommandType.StoredProcedure;
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_UPDATE_TIP_CONT";
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
-                        cmd.Parameters.Add("@tipo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
+                    cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
+                    cmd.Parameters.Add("@tipo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
 
-                        result = cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
 
-                        return result;
-                    }
-                
+                    return result;
+                }
+
 
             }
         }
@@ -73,7 +70,7 @@ namespace Datos.Repositories
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
-                cmd = null;          
+                cmd = null;
                 SqlDataAdapter da = new SqlDataAdapter();
                 using (cmd = new SqlCommand())
                 {

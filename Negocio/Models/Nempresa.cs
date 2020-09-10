@@ -4,8 +4,8 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 
 namespace Negocio.Models
@@ -17,7 +17,7 @@ namespace Negocio.Models
         public int idempresa_maestra { get; set; }
         public String estado { get; set; }
 
-        [Display(Name ="Usuario")]
+        [Display(Name = "Usuario")]
         [RegularExpression("([0-9]+)", ErrorMessage = "El campo Usuario es obligatorio.")]
         public Int32 eidusuario { get; set; }
 
@@ -25,7 +25,7 @@ namespace Negocio.Models
         public Int32 eidempresa { get; set; }
 
 
-        [Display(Name ="Código Empresa")]
+        [Display(Name = "Código Empresa")]
         [Required]
         public String ecodigo_empresa { get; set; }
 
@@ -36,12 +36,12 @@ namespace Negocio.Models
         public String razon_social { get; set; }
 
 
-        [Display(Name ="Localidad")]
+        [Display(Name = "Localidad")]
         [Required]
         public String localidad { get; set; }
 
 
-        [Display(Name ="Dirección")]
+        [Display(Name = "Dirección")]
         [Required]
         public String direccion { get; set; }
 
@@ -51,13 +51,13 @@ namespace Negocio.Models
         public String domicilio { get; set; }
 
 
-        [Display(Name ="Ruc")]
+        [Display(Name = "Ruc")]
         [Required]
         [RegularExpression("([0-9]+)")]
-        [StringLength(maximumLength:11,MinimumLength =11)]
+        [StringLength(maximumLength: 11, MinimumLength = 11)]
         public String ruc { get; set; }
 
-        
+
         [Required]
         [Display(Name = "Regimen")]
         public string regimen { get; set; }
@@ -85,7 +85,7 @@ namespace Negocio.Models
                 de.Domicilio = domicilio;
                 de.Ruc = ruc;
                 de.Regimen = regimen;
-                de.Localidad = localidad;                
+                de.Localidad = localidad;
 
                 de.Ecodigo_empresa = ecodigo_empresa;
                 de.Eidusuario = eidusuario;
@@ -123,7 +123,7 @@ namespace Negocio.Models
 
         //METODO SHOW EMPRESA
         public List<Nempresa> Getall()
-        {           
+        {
             using (DataTable dt = empre_reposi.GetData(null))
             {
                 list_empresa = new List<Nempresa>();
@@ -158,7 +158,7 @@ namespace Negocio.Models
 
         public void Dispose()
         {
-            
+
         }
     }
 }

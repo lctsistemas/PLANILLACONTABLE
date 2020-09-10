@@ -8,7 +8,7 @@ namespace Datos.Entities
         private String codigo;
         private String nom_emp;
         private String ape_pat;
-        private String ape_mat;        
+        private String ape_mat;
         private DateTime fec_nac;
         private String nacionalidad;
         private String tipo_genero;
@@ -28,7 +28,7 @@ namespace Datos.Entities
         public string Codigo { get { return codigo; } set { codigo = value; } }
         public string Nom_emp { get { return nom_emp; } set { nom_emp = value; } }
         public string Ape_pat { get { return ape_pat; } set { ape_pat = value; } }
-        public string Ape_mat { get { return ape_mat; } set { ape_mat = value; } }  
+        public string Ape_mat { get { return ape_mat; } set { ape_mat = value; } }
         public DateTime Fec_nac { get { return fec_nac; } set { fec_nac = value; } }
         public string Nacionalidad { get { return nacionalidad; } set { nacionalidad = value; } }
         public string Tipo_genero { get { return tipo_genero; } set { tipo_genero = value; } }

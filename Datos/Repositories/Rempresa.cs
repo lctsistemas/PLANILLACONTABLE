@@ -48,7 +48,7 @@ namespace Datos.Repositories
 
                             if (result > 0)
                             {
-                                result = cmd1.ExecuteNonQuery();                               
+                                result = cmd1.ExecuteNonQuery();
                             }
                             cmd.Parameters.Clear();
                             cmd1.Parameters.Clear();
@@ -141,12 +141,12 @@ namespace Datos.Repositories
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_EMPRESA";
-                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
                     {
-                        da.Fill(dt);                        
+                        da.Fill(dt);
                         da.Dispose();
                         return dt;
                     }

@@ -22,7 +22,7 @@ namespace Presentacion.Subvista
         {
             using (nu = new Nusuario())
             {
-                
+
                 dgvvista_user.DataSource = nu.Getall();
                 lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
             }
@@ -59,13 +59,13 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar, "Buscar por nombre usuario",true);
+            Tooltip.Title(txtbuscar, "Buscar por nombre usuario", true);
             txtbuscar.Focus();
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmempresa femp = (frmempresa)Owner;           
+            frmempresa femp = (frmempresa)Owner;
             if (dgvvista_user.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 femp.txtiduser.Text = dgvvista_user.CurrentRow.Cells[0].Value.ToString();

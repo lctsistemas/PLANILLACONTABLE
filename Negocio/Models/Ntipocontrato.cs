@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using Datos.Contract;
+﻿using Datos.Contract;
 using Datos.Entities;
 using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
 
 namespace Negocio.Models
@@ -36,7 +34,8 @@ namespace Negocio.Models
             dtipocontrato.Id_tcontrato = id_tcontrato;
             dtipocontrato.Tipo_contrato = tiem_contrato;
 
-            switch (state){
+            switch (state)
+            {
                 case EntityState.Guardar:
 
                     tcontrato_repository.Add(dtipocontrato);

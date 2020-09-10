@@ -2,12 +2,7 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -36,7 +31,7 @@ namespace Presentacion.Vista
             {
                 return false;
             }
-        }       
+        }
 
         private void ShowTipoContrato()
         {
@@ -66,16 +61,16 @@ namespace Presentacion.Vista
             using (nTipocont)
             {
 
-                if(nTipocont.state == EntityState.Guardar)
+                if (nTipocont.state == EntityState.Guardar)
                     nTipocont.id_tcontrato = nTipocont.Getcodigo();
 
                 nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
-                    
+
                 result = nTipocont.GuardarCambios();
                 ShowTipoContrato();
                 Messages.M_info(result);
-                    
-                limpiar();                                                              
+
+                limpiar();
 
             }
         }
@@ -98,16 +93,16 @@ namespace Presentacion.Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             using (nTipocont) { nTipocont.state = EntityState.Guardar; }
-            
+
             limpiar();
         }
 
         private void TipoContrato_Load(object sender, EventArgs e)
         {
-           
+
         }
 
-        
+
 
         private void dgvtipocontrato_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
