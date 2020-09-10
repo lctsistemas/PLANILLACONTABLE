@@ -347,7 +347,7 @@ namespace Presentacion.Vista
             // btnrestaurar
             // 
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(936, 3);
+            this.btnrestaurar.Location = new System.Drawing.Point(990, 3);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1103,7 +1103,7 @@ namespace Presentacion.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 550);
+            this.ClientSize = new System.Drawing.Size(1065, 541);
             this.Controls.Add(this.paneltitulo);
             this.Controls.Add(this.lblcantidad_registro);
             this.Controls.Add(this.btnNuevo);
