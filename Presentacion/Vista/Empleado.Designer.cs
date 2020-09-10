@@ -86,6 +86,7 @@ namespace Presentacion.Vista
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkconsulta = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.linkcargo = new System.Windows.Forms.LinkLabel();
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
             this.cbocargo = new System.Windows.Forms.ComboBox();
@@ -115,7 +116,6 @@ namespace Presentacion.Vista
             this.label7 = new System.Windows.Forms.Label();
             this.txttele = new System.Windows.Forms.TextBox();
             this.tabEmpleado = new System.Windows.Forms.TabControl();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).BeginInit();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -753,21 +753,21 @@ namespace Presentacion.Vista
             // 
             // linkconsulta
             // 
-            this.linkconsulta.AutoSize = true;
             this.linkconsulta.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkconsulta.Location = new System.Drawing.Point(456, 59);
+            this.linkconsulta.Location = new System.Drawing.Point(461, 47);
             this.linkconsulta.Name = "linkconsulta";
-            this.linkconsulta.Size = new System.Drawing.Size(113, 17);
+            this.linkconsulta.Size = new System.Drawing.Size(71, 37);
             this.linkconsulta.TabIndex = 79;
             this.linkconsulta.TabStop = true;
             this.linkconsulta.Text = "Consulta Reniec";
+            this.linkconsulta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.linkconsulta.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkconsulta_LinkClicked);
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.linkLabel1);
+            this.groupBox3.Controls.Add(this.linkcargo);
             this.groupBox3.Controls.Add(this.cboestado);
             this.groupBox3.Controls.Add(this.lblafp);
             this.groupBox3.Controls.Add(this.cbocargo);
@@ -776,11 +776,23 @@ namespace Presentacion.Vista
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(483, 1);
+            this.groupBox3.Location = new System.Drawing.Point(549, 1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(265, 374);
+            this.groupBox3.Size = new System.Drawing.Size(254, 374);
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
+            // 
+            // linkcargo
+            // 
+            this.linkcargo.AutoSize = true;
+            this.linkcargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkcargo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkcargo.Location = new System.Drawing.Point(194, 112);
+            this.linkcargo.Name = "linkcargo";
+            this.linkcargo.Size = new System.Drawing.Size(51, 17);
+            this.linkcargo.TabIndex = 77;
+            this.linkcargo.TabStop = true;
+            this.linkcargo.Text = "Nuevo";
             // 
             // cboestado
             // 
@@ -1100,16 +1112,6 @@ namespace Presentacion.Vista
             this.tabEmpleado.Size = new System.Drawing.Size(823, 449);
             this.tabEmpleado.TabIndex = 40;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(195, 112);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(47, 16);
-            this.linkLabel1.TabIndex = 77;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Nuevo";
-            // 
             // frmempleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1240,10 +1242,8 @@ namespace Presentacion.Vista
         private GroupBox groupBox4;
         private ComboBox cboperiodicidad;
         private MaskedTextBox txtfecha_fin;
-<<<<<<< HEAD
-        private LinkLabel linkLabel1;
-=======
+        private LinkLabel linkcargo;
         private LinkLabel linkconsulta;
->>>>>>> MCarlos
+
     }
 }
