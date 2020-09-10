@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Data;
+using Presentacion.Subvista;
 
 namespace Presentacion.Vista
 {
@@ -596,6 +597,11 @@ namespace Presentacion.Vista
             }  
         }
 
-       
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Vista_cargo fr = Vista_cargo.GetInstance();
+            fr.StartPosition = FormStartPosition.CenterParent;
+            fr.ShowDialog();
+        }
     }
 }

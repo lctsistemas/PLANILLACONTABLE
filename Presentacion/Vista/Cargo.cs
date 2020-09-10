@@ -124,6 +124,9 @@ namespace Presentacion.Vista
             Habilitar(true);
             limpiar();
         }
+
+        
+
         //CHANGE BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {

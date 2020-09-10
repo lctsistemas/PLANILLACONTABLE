@@ -40,12 +40,22 @@ namespace Presentacion.Vista
 
             Planilla_Manto planilla = new Planilla_Manto();
 
-            //cbxmes.SelectedItem = mes.ElementAt(0);
 
-            if (planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString() != ""){
-                cbxmes.SelectedItem = planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
+            DateTime datefin;
+            datefin = dtpfin.Value;
 
-            }
+            DateTime primerDia = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, 1); //obteniendo el ultimo primer del mes
+
+            DateTime ultimoDia = primerDia.AddMonths(1).AddDays(-1);//obteniendo el ultimo dia del mes
+
+            Int32 ultimoDiaInt = ultimoDia.Day;
+
+
+            dtpini.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, 1);
+            dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, ultimoDiaInt);
+            dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
+
+            cbxmes.SelectedItem = mes.ElementAt(datefin.Month);
 
             txtremu.Text = "930.00";
             txtasig.Text = "93.00";

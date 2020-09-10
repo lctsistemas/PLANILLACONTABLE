@@ -105,6 +105,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Subvista\Vista_cargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subvista\Vista_cargo.Designer.cs">
+      <DependentUpon>Vista_cargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subvista\Vista_empresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subvista\Vista_cargo.resx">
+      <DependentUpon>Vista_cargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subvista\Vista_empresa.resx">
       <DependentUpon>Vista_empresa.cs</DependentUpon>
