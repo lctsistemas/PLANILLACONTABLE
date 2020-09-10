@@ -2,13 +2,6 @@
 using Negocio.Models;
 using Presentacion.Helps;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -33,10 +26,21 @@ namespace Presentacion.Vista
             }
         }
 
-        private void Initialize() {
+        private void Initialize()
+        {
             String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
             //string m=mes[0];
             cbxmes.Items.AddRange(mes);
+
+            Planilla_Manto planilla = new Planilla_Manto();
+
+            //cbxmes.SelectedItem = mes.ElementAt(0);
+
+            if (planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString() != "")
+            {
+                cbxmes.SelectedItem = planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
+
+            }
 
             txtremu.Text = "930.00";
             txtasig.Text = "93.00";
@@ -63,12 +67,14 @@ namespace Presentacion.Vista
                 np.Id_planilla = codigo;
                 //np.Id_planilla = txtdescCorta.Text.Trim().ToUpper();
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
-                MessageBox.Show(""+UserCache.Idperiodo);
-                np.Id_periodo =UserCache.Idperiodo;
+                MessageBox.Show("" + UserCache.Idperiodo);
+                np.Id_periodo = UserCache.Idperiodo;
+                np.Mes = cbxmes.SelectedItem.ToString();
+                // = cbxmes.SelectedItem.ToString(); 
                 np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());
                 np.Fecha_final = Convert.ToDateTime(dtpfin.Text.Trim());
                 np.Fecha_pago = Convert.ToDateTime(dtppago.Text.Trim());
-                np.Dias_mes =Convert.ToInt32(txtdia.Text.Trim());
+                np.Dias_mes = Convert.ToInt32(txtdia.Text.Trim());
                 np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());
                 np.Remu_basica = Convert.ToDecimal(txtremu.Text.Trim());
                 np.Asig_familiar = Convert.ToDecimal(txtasig.Text.Trim());
@@ -78,7 +84,7 @@ namespace Presentacion.Vista
                 bool valida = new ValidacionDatos(np).Validate();
                 if (valida)
                 {
-                   
+
                     result = np.GuardarCambios();
 
                     Messages.M_info(result);
@@ -98,7 +104,7 @@ namespace Presentacion.Vista
             }
             GenerarCodigo();
         }
-        
+
 
         private void dtpfin_ValueChanged(object sender, EventArgs e)
         {
@@ -106,13 +112,13 @@ namespace Presentacion.Vista
             datefin = dtpfin.Value;
             txtdia.Text = datefin.Day.ToString();
             Int32 horas_mes = datefin.Day * 8;
-           
-            
-            txthora.Text= Convert.ToString(horas_mes);
 
-            
+
+            txthora.Text = Convert.ToString(horas_mes);
+
+
         }
 
-        
+
     }
 }

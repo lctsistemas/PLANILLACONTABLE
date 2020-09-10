@@ -1,7 +1,4 @@
-﻿using Login_inicio;
-using PlayerUI;
-using Presentacion.Subvista;
-using Presentacion.Vista;
+﻿using Presentacion.Vista;
 using System;
 using System.Windows.Forms;
 

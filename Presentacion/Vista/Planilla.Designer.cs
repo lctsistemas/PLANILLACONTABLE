@@ -109,6 +109,7 @@
             // 
             // cbxmes
             // 
+            this.cbxmes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxmes.FormattingEnabled = true;
             this.cbxmes.Location = new System.Drawing.Point(195, 60);
             this.cbxmes.Name = "cbxmes";

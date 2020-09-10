@@ -12,9 +12,9 @@ namespace Negocio.Models
     public class NEmpleado : IDisposable
     {
         string mensaje;
-        List<NEmpleado> listaemp;        
+        List<NEmpleado> listaemp;
         public Int32 Id_empleado { get; set; }
-        public String Codigo { get; set; }    
+        public String Codigo { get; set; }
         public String Nom_emp { get; set; }
         public String Ape_pat { get; set; }
         public String Ape_mat { get; set; }
@@ -27,7 +27,7 @@ namespace Negocio.Models
         [RegularExpression("([0-9]+)", ErrorMessage = "identification number must be only numbers")]
         public String Telefono { get; set; }
         public String Num_doc { get; set; }
-        public String Estado { get; set; }       
+        public String Estado { get; set; }
         public Int32 Codigo_regimen { get; set; }
         public Int32 Id_doc { get; set; }
         public Int32 Id_cargo { get; set; }
@@ -73,7 +73,7 @@ namespace Negocio.Models
                 emp.Codigo = Codigo;
                 emp.Nom_emp = Nom_emp;
                 emp.Ape_pat = Ape_pat;
-                emp.Ape_mat = Ape_mat;               
+                emp.Ape_mat = Ape_mat;
                 emp.Fec_nac = Fec_nac;
                 emp.Nacionalidad = Nacionalidad;
                 emp.Tipo_genero = Tipo_genero;
@@ -106,14 +106,14 @@ namespace Negocio.Models
                 switch (state)
                 {
                     case EntityState.Guardar:
-                        if(Rempleado.Add(emp) > 0)
-                           rcontrato.Add(dcon);                                                                                               
-                        
+                        if (Rempleado.Add(emp) > 0)
+                            rcontrato.Add(dcon);
+
                         mensaje = emp.mensaje;
                         break;
 
                     case EntityState.Modificar:
-                        if(Rempleado.Edit(emp) > 0)
+                        if (Rempleado.Edit(emp) > 0)
                             rcontrato.Edit(dcon);
 
                         mensaje = "¡Editado correctamente!";
@@ -134,7 +134,7 @@ namespace Negocio.Models
                 ex.ToString();
             }
             finally
-            {}
+            { }
 
             return mensaje;
         }
@@ -164,7 +164,7 @@ namespace Negocio.Models
                     listaemp.Add(new NEmpleado()
                     {
                         Id_empleado = Convert.ToInt32(item[0]),
-                        Nom_emp =(item[1].ToString() +" "+ item[2].ToString() +",  "+ item[3].ToString()),
+                        Nom_emp = (item[1].ToString() + " " + item[2].ToString() + ",  " + item[3].ToString()),
                         Id_emp_maestra = Convert.ToInt32(item[4]),
                         Empresa = item[5].ToString(),
                     });
@@ -172,7 +172,7 @@ namespace Negocio.Models
                 return listaemp;
             }
         }
-        
+
         public IEnumerable<NEmpleado> Search(String filter)
         {
             return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);

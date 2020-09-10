@@ -98,7 +98,7 @@ namespace Datos.Repositories
                     using (DataTable dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();                        
+                        da.Dispose();
                         return dt;
                     }
                 }

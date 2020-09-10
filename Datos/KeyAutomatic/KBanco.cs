@@ -18,9 +18,9 @@ namespace Datos.KeyAutomatic
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_GENERAR_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Banco", SqlDbType.Int).Direction = ParameterDirection.Output;                    
-                    cmd.ExecuteNonQuery();                    
-                    
+                    cmd.Parameters.Add("@Banco", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.ExecuteNonQuery();
+
                     codigo = Convert.ToInt32(cmd.Parameters["@Banco"].Value);
                     cmd.Parameters.Clear();
 

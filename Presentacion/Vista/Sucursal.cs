@@ -35,7 +35,7 @@ namespace Presentacion.Vista
         private void Show_sucursal()
         {
             using (nsu)
-            {             
+            {
                 dgvsucursal.DataSource = nsu.Getall();
                 lbltotal.Text = "Registro Total: " + dgvsucursal.Rows.Count;
             }
@@ -143,8 +143,8 @@ namespace Presentacion.Vista
         private void frmsucursal_Load(object sender, EventArgs e)
         {
             txtidempresa.Visible = false;
-            Tooltip.Title(txtbuscar, "Buscar por Razón Social o Codigo",true);
-            Tooltip.Title(btnempresa, "Seleccione la Empresa Principal",true);
+            Tooltip.Title(txtbuscar, "Buscar por Razón Social o Codigo", true);
+            Tooltip.Title(btnempresa, "Seleccione la Empresa Principal", true);
         }
 
         private void dgvsucursal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -213,16 +213,16 @@ namespace Presentacion.Vista
         {
             //using (frmvista_empresa f_vist = new frmvista_empresa())
             //{
-                frmvista_empresa f_vist = new frmvista_empresa();
-                this.AddOwnedForm(f_vist);              
-                f_vist.FormBorderStyle = FormBorderStyle.None;
-                f_vist.TopLevel = false;//como ventana nivel superior
-                f_vist.Dock = DockStyle.Fill;
-                this.Controls.Add(f_vist);
-                this.Tag = f_vist;//datos sobre el control
-                f_vist.BringToFront();
-                //f_vist.StartPosition = FormStartPosition.CenterParent;
-                f_vist.Show();
+            frmvista_empresa f_vist = new frmvista_empresa();
+            this.AddOwnedForm(f_vist);
+            f_vist.FormBorderStyle = FormBorderStyle.None;
+            f_vist.TopLevel = false;//como ventana nivel superior
+            f_vist.Dock = DockStyle.Fill;
+            this.Controls.Add(f_vist);
+            this.Tag = f_vist;//datos sobre el control
+            f_vist.BringToFront();
+            //f_vist.StartPosition = FormStartPosition.CenterParent;
+            f_vist.Show();
             //}
         }
 

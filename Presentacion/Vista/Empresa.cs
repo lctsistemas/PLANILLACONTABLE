@@ -3,7 +3,6 @@ using Negocio.ValueObjects;
 using Presentacion.Helps;
 using Presentacion.Subvista;
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -24,7 +23,7 @@ namespace Presentacion.Vista
         {
             using (ne)
             {
-             
+
                 dgvempresa.DataSource = ne.Getall();
                 lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
             }
@@ -100,7 +99,7 @@ namespace Presentacion.Vista
         }
         //BOTON GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
-        {            
+        {
             result = "";
             using (ne)
             {
@@ -126,7 +125,7 @@ namespace Presentacion.Vista
                     if (string.IsNullOrEmpty(txtiduser.Text))
                         return;
 
-                        result = ne.SaveChanges();
+                    result = ne.SaveChanges();
                     if (result.Contains("¡Codigo"))
                     {
                         Messages.M_error(result);
@@ -135,7 +134,7 @@ namespace Presentacion.Vista
                     {
                         Messages.M_info(result);
                         Show_empresa();
-                    } 
+                    }
                 }
             }
         }
@@ -154,7 +153,7 @@ namespace Presentacion.Vista
             this.AddOwnedForm(f_vist);
             f_vist.FormBorderStyle = FormBorderStyle.None;
             f_vist.TopLevel = false;//como ventana nivel superior
-            f_vist.Dock=DockStyle.Fill;
+            f_vist.Dock = DockStyle.Fill;
             this.Controls.Add(f_vist);
             this.Tag = f_vist;//datos sobre el control
             f_vist.BringToFront();
@@ -166,10 +165,10 @@ namespace Presentacion.Vista
         {
             txtusuario.Enabled = false;
             txtiduser.Visible = false;
-            Tooltip.Title(btnusuario, "Seleccione Usuario",true);
-            Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa",true);
+            Tooltip.Title(btnusuario, "Seleccione Usuario", true);
+            Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa", true);
             CargarRegimen();
-        }     
+        }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
@@ -316,6 +315,6 @@ namespace Presentacion.Vista
             Keypress.SoloNumeros(e);
         }
 
-        
+
     }
 }

@@ -126,7 +126,7 @@ namespace Presentacion
             ocultarpanel();
         }
 
-        
+
         private void button5_Click(object sender, EventArgs e)
         {
             panelsubmenu.Visible = false;

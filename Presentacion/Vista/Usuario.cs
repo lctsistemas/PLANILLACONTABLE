@@ -2,9 +2,6 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,7 +10,7 @@ namespace Presentacion.Vista
     public partial class frmusuario : Form
     {
         private Nusuario nu = new Nusuario();
-        
+
         private String result;
         private Int32 codigo;
 
@@ -39,8 +36,8 @@ namespace Presentacion.Vista
         private void ShowUser()
         {
             using (nu)
-            {                
-                dgvusuario.DataSource= nu.Getall();
+            {
+                dgvusuario.DataSource = nu.Getall();
                 lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
             }
         }
@@ -82,7 +79,7 @@ namespace Presentacion.Vista
             dgvusuario.Columns[6].HeaderText = "STATE";
             dgvusuario.Columns[6].Width = 50;
             dgvusuario.Columns[6].Visible = false;
-        }        
+        }
 
         //HABILITAR CONTROLES
         private void Habilitar(bool v)
@@ -109,8 +106,8 @@ namespace Presentacion.Vista
         //LOAD
         private void frmusuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(btnrol, "Registrar Rol",true);
-            Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo",true);
+            Tooltip.Title(btnrol, "Registrar Rol", true);
+            Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo", true);
             Tabla();
             Habilitar(false);
             cborol.Text = "";
@@ -124,8 +121,8 @@ namespace Presentacion.Vista
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
             ShowRol();
-        }       
-       
+        }
+
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
         {
@@ -167,7 +164,7 @@ namespace Presentacion.Vista
 
         //BUSCAR
         private void txtbuscar_TextChanged(object sender, EventArgs e)
-        {            
+        {
             dgvusuario.DataSource = nu.Search(txtbuscar.Text.Trim());
             lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
         }
@@ -217,17 +214,17 @@ namespace Presentacion.Vista
             {
                 Messages.M_warning("Seleccione un Fila");
             }
-        }      
+        }
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }       
+        }
 
         private void frmusuario_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
-        }       
+        }
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
@@ -237,7 +234,7 @@ namespace Presentacion.Vista
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(245, 183, 177);
-        }              
+        }
 
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {

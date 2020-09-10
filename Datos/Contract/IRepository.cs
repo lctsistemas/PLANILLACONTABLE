@@ -1,6 +1,4 @@
 ﻿using Datos.Entities;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Datos.Contract
 {
@@ -25,7 +23,7 @@ namespace Datos.Contract
     }
 
     public interface IEmpleado : IGenerict<DEmpleado>
-    {       
+    {
     }
 
     public interface IBanco : IGenerict<DBanco>

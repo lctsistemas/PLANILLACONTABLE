@@ -38,13 +38,13 @@ namespace Datos.Repositories
                         cmd1.CommandType = CommandType.StoredProcedure;
 
                         cmd1.Parameters.Add("@cod_sucursal", SqlDbType.VarChar, 8).Value = entiti.Scodigo_sucursal;
-                        cmd1.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Sid_empresa;                        
+                        cmd1.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Sid_empresa;
                         result = cmd.ExecuteNonQuery();
                         entiti.mesages = cmd.Parameters["@mesage"].Value.ToString();
 
                         if (result > 0)
                         {
-                            result = cmd1.ExecuteNonQuery();                            
+                            result = cmd1.ExecuteNonQuery();
                         }
                         cmd.Parameters.Clear();
                         cmd1.Parameters.Clear();
@@ -128,12 +128,12 @@ namespace Datos.Repositories
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_SUCURSAL";
-                    cmd.CommandType = CommandType.StoredProcedure;                    
+                    cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
                     {
-                        da.Fill(dt);                       
+                        da.Fill(dt);
                         da.Dispose();
                         return dt;
                     }

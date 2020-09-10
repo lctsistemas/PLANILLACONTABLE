@@ -4,11 +4,9 @@ using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using System.Security.Cryptography;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace Negocio.Models
 {
@@ -22,19 +20,19 @@ namespace Negocio.Models
         private String nombre_refe;
         private String password;
         private Int32 idrol;
-        
+
 
         private IUsuario usu_repository;
 
-        public int Idusuario { get { return idusuario; }  set { idusuario = value; } }             
+        public int Idusuario { get { return idusuario; } set { idusuario = value; } }
 
         [Required(ErrorMessage = "El campo Codigo Acceso es obligatorio.")]
         [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Codigo Acceso solo permite letras.")]
-        [StringLength(maximumLength:10,MinimumLength=4, ErrorMessage = "Campo Codigo Acceso debe ser 10 digitos maximo y 4 minimo.")]
+        [StringLength(maximumLength: 10, MinimumLength = 4, ErrorMessage = "Campo Codigo Acceso debe ser 10 digitos maximo y 4 minimo.")]
         public string Codigo_usu { get { return codigo_usu; } set { codigo_usu = value; } }
 
         [Required(ErrorMessage = "El campo Nombre Usuario es obligatorio.")]
-        [RegularExpression("^[a-zA-Z ]+$",ErrorMessage = "El campo Nombre Usuario se permite solo letras.")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Nombre Usuario se permite solo letras.")]
         public string Nombre_refe { get { return nombre_refe; } set { nombre_refe = value; } }
 
         [Required(ErrorMessage = "El campo Contraseña es obligatorio.")]
@@ -46,7 +44,7 @@ namespace Negocio.Models
         //[RegularExpression("([0-9]+)", ErrorMessage = "identification number must be only numbers")]
         //[EmailAddress]
 
-        public String name_rol { get; set; }        
+        public String name_rol { get; set; }
         public EntityState state { get; set; }
 
         public Nusuario()
@@ -95,7 +93,7 @@ namespace Negocio.Models
 
         //METODO SHOW
         public List<Nusuario> Getall()
-        {           
+        {
             using (var dt = usu_repository.GetData(null))
             {
                 list_usu = new List<Nusuario>();
@@ -107,7 +105,7 @@ namespace Negocio.Models
                         codigo_usu = item[1].ToString(),
                         nombre_refe = item[2].ToString(),
                         password = item[3].ToString(),
-                        idrol = Convert.ToInt32(item[4]),   
+                        idrol = Convert.ToInt32(item[4]),
                         name_rol = item[5].ToString()
                     });
                 }
@@ -115,7 +113,7 @@ namespace Negocio.Models
             }
         }
 
-       
+
 
         /*public static bool Contains(this string target, string value, StringComparison comparison)
         {
@@ -125,10 +123,10 @@ namespace Negocio.Models
         //METODO PARA FILTRAR
         public IEnumerable<Nusuario> Search(string filter)
         {
-         //return list_usu.FindAll(e => e.codigo_usu.Contains(filter) || e.nombre_refe.Contains(filter));
-          //return list_usu.FindAll(e => e.nombre_refe.Contains(filter, StringComparer.CurrentCultureIgnoreCase);
-          //PARA FILTRAR IGNORANDO LAS MAYUSCULAS.
-          return  list_usu.FindAll(e => e.nombre_refe.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >=0  || e.codigo_usu.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+            //return list_usu.FindAll(e => e.codigo_usu.Contains(filter) || e.nombre_refe.Contains(filter));
+            //return list_usu.FindAll(e => e.nombre_refe.Contains(filter, StringComparer.CurrentCultureIgnoreCase);
+            //PARA FILTRAR IGNORANDO LAS MAYUSCULAS.
+            return list_usu.FindAll(e => e.nombre_refe.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || e.codigo_usu.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
             //return list_usu.FindAll(e => e.Contains(filter, StringComparison.OrdinalIgnoreCase));
         }
 
@@ -141,7 +139,7 @@ namespace Negocio.Models
         }
 
 
-        
+
         public void Dispose()
         {
             //throw new NotImplementedException();

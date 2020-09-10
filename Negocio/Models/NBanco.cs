@@ -13,8 +13,8 @@ namespace Negocio.Models
     public class NBanco : IDisposable
     {
         String mensaje;
-        
-    
+
+
         public Int32 IdBanco { get; set; }
 
 
@@ -26,7 +26,7 @@ namespace Negocio.Models
 
         public EntityState state { get; set; }
 
-        
+
         public IBanco RBanco;
 
         private List<NBanco> list_banco;
@@ -74,7 +74,7 @@ namespace Negocio.Models
 
         public List<NBanco> Getall()
         {
-            
+
             using (DataTable dt = RBanco.GetData(null))
             {
                 list_banco = new List<NBanco>();

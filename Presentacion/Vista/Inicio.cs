@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using Negocio;
+﻿using Comun.Cache;
 using Negocio.Models;
-using System.Collections;
 using Presentacion;
 using Presentacion.Helps;
-using Comun.Cache;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Login_inicio
 {
@@ -25,11 +17,11 @@ namespace Login_inicio
 
         public frminicio()
         {
-            InitializeComponent();            
+            InitializeComponent();
             //Tooltip.Title(lblcerrar,"Cerrar",false);
             //Tooltip.Title(lblminimizar,"Minimizar",false);
-        }               
-        
+        }
+
         private void txtuser_Enter(object sender, EventArgs e)
         {
             if (txtuser.Text.Equals("USUARIO"))
@@ -95,14 +87,14 @@ namespace Login_inicio
             /*lstlista.Columns.Add("SUCURSAL",200,HorizontalAlignment.Left);
             lstlista.Columns.Add("EMPRESA",200,HorizontalAlignment.Left);*/
         }
-        
+
         private void btnlogin_Click(object sender, EventArgs e)
-        {                                    
+        {
             if (txtuser.Text != "USUARIO")
             {
                 if (txtpass.Text != "CONTRASEÑA")
                 {
-                    using (nlo=new Nlogin())
+                    using (nlo = new Nlogin())
                     {
                         lis_empresa = new List<object>();
                         bool validarLogin = nlo.Login(txtuser.Text.Trim(), txtpass.Text.Trim());
@@ -120,8 +112,8 @@ namespace Login_inicio
                                     mainmenu.FormClosed += Logout;//revisar
                                     this.Hide();
                                 }
-                               
-                            }                                                        
+
+                            }
                             msgError("");
                         }
                         else
@@ -131,7 +123,7 @@ namespace Login_inicio
                             txtpass.UseSystemPasswordChar = false;
                             txtuser.Focus();
                         }
-                    }                                                                               
+                    }
                 }
                 else
                     msgError("please enter password");
@@ -198,7 +190,7 @@ namespace Login_inicio
             {
                 UserCache.Empresa = dgvlogin.CurrentRow.Cells[0].Value.ToString();
                 UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[1].Value);
-                UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[2].Value.ToString();               
+                UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[2].Value.ToString();
                 UserCache.Periodo = numeric_periodo.Value.ToString();
                 UserCache.Idperiodo = Getidperiodo();
                 UserCache.Empresa_Sucursal = "EMPRESA";
@@ -222,7 +214,7 @@ namespace Login_inicio
                     Messages.M_error("Seleccione Una Empresa.");
                 }
             }
-        }        
+        }
 
         private void lblcerrar_MouseMove(object sender, MouseEventArgs e)
         {
@@ -232,7 +224,7 @@ namespace Login_inicio
 
         private void lblcerrar_MouseLeave(object sender, EventArgs e)
         {
-            lblcerrar.BackColor = Color.FromArgb(15,15,15);
+            lblcerrar.BackColor = Color.FromArgb(15, 15, 15);
             lblcerrar.ForeColor = Color.DimGray;
         }
 
@@ -274,17 +266,17 @@ namespace Login_inicio
         {
             dgvlogin.Enabled = val;
         }
-      
+
         //GET ID PERIODO
-       private int Getidperiodo()
+        private int Getidperiodo()
         {
-            int  v2;
-            using (nlo=new Nlogin())
+            int v2;
+            using (nlo = new Nlogin())
             {
                 v2 = nlo.Get_idperiodo((int)numeric_periodo.Value);
-            }                     
-             return v2;
+            }
+            return v2;
         }
-      
+
     }
 }

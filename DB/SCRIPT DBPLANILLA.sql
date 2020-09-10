@@ -264,6 +264,7 @@ CREATE TABLE Planilla(
 id_planilla int not null,
 --id_tipo_planilla int not null, ver si ira id_tipo_planilla
 id_periodo int not null,
+mes varchar(20) not null,
 --id_mes int not null,
 fecha_inicial date,
 fecha_final date,
@@ -275,6 +276,8 @@ asig_familiar decimal(10,2),
 tope_horario_nocturno int
 
 )
+
+alter table Planilla add mes varchar(20);
 
 CREATE TABLE tipo_planilla(
 id_tipo_planilla int not null,

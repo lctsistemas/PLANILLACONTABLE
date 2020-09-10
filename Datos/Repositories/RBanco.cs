@@ -44,7 +44,7 @@ namespace Datos.Repositories
             {
                 conn.Open();
                 cmd = null;
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_DEL_BANCO";
@@ -76,7 +76,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
                     cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
-                    
+
                     result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                     return result;
@@ -103,7 +103,7 @@ namespace Datos.Repositories
 
                     using (DataTable dt = new DataTable())
                     {
-                        da.Fill(dt);                      
+                        da.Fill(dt);
                         da.Dispose();
                         return dt;
                     }

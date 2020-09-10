@@ -1,11 +1,8 @@
-﻿using System;
+﻿using Comun.Cache;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using Comun.Cache;
-using System.Collections;// PARA EL ARRAYLIST
 
 namespace Datos.Repositories
 {
@@ -13,17 +10,17 @@ namespace Datos.Repositories
     {
         public bool Login(string user, string pass)
         {
-            using (SqlConnection cn=RConexion.Getconectar())
+            using (SqlConnection cn = RConexion.Getconectar())
             {
                 cn.Open();
-                using (SqlCommand cmd=new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cn;
                     cmd.CommandText = "SP_LOGIN_USUARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@user",user);
-                    cmd.Parameters.AddWithValue("@pass",pass);
+                    cmd.Parameters.AddWithValue("@user", user);
+                    cmd.Parameters.AddWithValue("@pass", pass);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.HasRows)
                     {
@@ -32,9 +29,9 @@ namespace Datos.Repositories
                             UserCache.IdUser = dr.GetInt32(0);
                             UserCache.CodigoUser = dr.GetString(1);
                             UserCache.NombreUser = dr.GetString(2);
-                            UserCache.RolUser = dr.GetString(3);     
-                        }                        
-                        dr.Close();                                               
+                            UserCache.RolUser = dr.GetString(3);
+                        }
+                        dr.Close();
                         return true;
                     }
                     else
@@ -45,29 +42,29 @@ namespace Datos.Repositories
 
         public bool Business(List<object> lista)
         {
-            bool valor=false;
+            bool valor = false;
             using (SqlConnection cn = RConexion.Getconectar())
             {
-                cn.Open();               
+                cn.Open();
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cn;
                     cmd.CommandText = "SP_EMPRESAS_USUARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@codigo_user", UserCache.IdUser);                  
+                    cmd.Parameters.AddWithValue("@codigo_user", UserCache.IdUser);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     if (reader.HasRows)
                     {
-                        foreach (var item in reader)                    
+                        foreach (var item in reader)
                             lista.Add(item);
-                        
+
                         valor = true;
                     }
-                    else                 
+                    else
                         valor = false;
-                    
+
                     reader.Close();
                 }
             }
@@ -77,7 +74,7 @@ namespace Datos.Repositories
         //LLENAR PERIODO
         public int Get_idperiodo(int periodo)
         {
-            Int32 valor=0;
+            Int32 valor = 0;
             using (SqlConnection cn = RConexion.Getconectar())
             {
                 cn.Open();
@@ -91,8 +88,8 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@idperiodo", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();//en este caso nos esta mostrando ExecuteNonQuery = -1 
 
-                   //System.Windows.Forms.MessageBox.Show("executenonquery()=> "+ i);                   
-                    valor = (int)cmd.Parameters["@idperiodo"].Value;                  
+                    //System.Windows.Forms.MessageBox.Show("executenonquery()=> "+ i);                   
+                    valor = (int)cmd.Parameters["@idperiodo"].Value;
                 }
             }
             return valor;

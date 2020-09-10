@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RestSharp;
+using System;
 using System.Windows.Forms;
 
 namespace Comun.Comunicacion
@@ -37,7 +33,7 @@ namespace Comun.Comunicacion
                 MessageBox.Show(ex.Message);
                 return null;
             }
-        }       
+        }
 
         //POR METODO GET
 

@@ -907,7 +907,7 @@ END
 GO
 
 
-alter PROC SP_UPDATE_REGIMEN
+CREATE PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
@@ -917,7 +917,7 @@ UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, descripcion=
 END
 GO
 
-alter PROC SP_DELETE_REGIMEN
+CREATE PROC SP_DELETE_REGIMEN
 @codigo_regimen int,
 @mensaje varchar(100) output
 AS BEGIN
@@ -933,6 +933,7 @@ alter PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
+@mes varchar(20),
 --@id_mes varchar(50),
 @fecha_inicial date,
 @fecha_final date,
@@ -944,39 +945,42 @@ alter PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	INSERT INTO dbo.Planilla(id_planilla,id_periodo,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla,@id_periodo,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
-	SET @mesage= 'PLANILLA REGISTRADO'
+	INSERT INTO Planilla(id_planilla,id_periodo,mes,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla,@id_periodo,@mes,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'
 	
 END
 GO
 
 
-create PROC SP_UPDATE_PLANILLA
+
+alter PROC SP_UPDATE_PLANILLA
 @id_planilla int,
-@id_periodo int,
-@fecha_inicial date,
-@fecha_final date,
-@fecha_pago date,
-@dias_mes int,
-@horas_mes int,
-@remu_basica decimal(10,2),
-@asig_familiar decimal(10,2),
-@tope_horario_nocturno int
+@fecha_pago date
 AS BEGIN
-UPDATE Planilla SET id_periodo=@id_periodo, @fecha_inicial=@fecha_inicial, fecha_final=@fecha_final,fecha_pago=@fecha_pago,
-dias_mes=@dias_mes,horas_mes=@horas_mes,remu_basica=@remu_basica,asig_familiar=@asig_familiar
+UPDATE Planilla SET fecha_pago=@fecha_pago
 WHERE id_planilla=@id_planilla
 END
 GO
 
-create PROC SP_SHOW_PLANILLA
+exec SP_UPDATE_PLANILLA 2,'2020/10/29'
+
+alter PROC SP_SHOW_PLANILLA
 AS BEGIN
-	SELECT pe.periodo, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
+	SELECT p.id_planilla, pe.periodo,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
 	on(pe.id_periodo=p.id_periodo)
 	END
+GO
+
+CREATE PROC SP_DELETE_PLANILLA
+@idplanilla int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from Planilla where id_planilla=@idplanilla
+SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
+END
 GO
 
 

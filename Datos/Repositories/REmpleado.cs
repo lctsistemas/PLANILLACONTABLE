@@ -1,19 +1,17 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Collections;
 
 namespace Datos.Repositories
 {
-    public class REmpleado : IEmpleado,IContrato
+    public class REmpleado : IEmpleado, IContrato
     {
         Int32 result;
         SqlCommand cmd;
 
-      
+
         //AGREGAR EMPLEADO
         public int Add(DEmpleado entiti)
         {
@@ -22,17 +20,17 @@ namespace Datos.Repositories
             using (SqlConnection connect = RConexion.Getconectar())
             {
                 connect.Open();
-                using ( cmd = new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
                     cmd.CommandText = "SP_AGR_EMPL";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
-                    cmd.Parameters.Add("@codigo", SqlDbType.VarChar,20).Value = entiti.Codigo;
+                    cmd.Parameters.Add("@codigo", SqlDbType.VarChar, 20).Value = entiti.Codigo;
                     cmd.Parameters.Add("@nom_emp", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
                     cmd.Parameters.Add("@ape_pat", SqlDbType.VarChar, 50).Value = entiti.Ape_pat;
-                    cmd.Parameters.Add("@ape_mat", SqlDbType.VarChar, 50).Value = entiti.Ape_mat;               
+                    cmd.Parameters.Add("@ape_mat", SqlDbType.VarChar, 50).Value = entiti.Ape_mat;
                     cmd.Parameters.Add("@fec_nac", SqlDbType.Date).Value = entiti.Fec_nac;
                     cmd.Parameters.Add("@nacionalidad", SqlDbType.VarChar, 30).Value = entiti.Nacionalidad;
                     cmd.Parameters.Add("@tip_ge", SqlDbType.VarChar, 12).Value = entiti.Tipo_genero;
@@ -47,7 +45,7 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();                    
+                    cmd.Parameters.Clear();
                 }
             }
             return result;
@@ -67,27 +65,27 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_INSERT_CONTRATO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;                   
+                    cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;
                     cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.Id_banco;
                     cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
                     cmd.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = entiti.Fecha_inicio;
                     cmd.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = entiti.Fecha_fin;
-                    cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar,30).Value = entiti.Num_cuenta;
+                    cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar, 30).Value = entiti.Num_cuenta;
                     cmd.Parameters.Add("@remu_basica", SqlDbType.Money).Value = entiti.Remu_basica;
                     cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;
-                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar,80).Value = entiti.Regimen_salud;
-                    cmd.Parameters.Add("@tipo_pago", SqlDbType.VarChar,30).Value = entiti.Tipo_pago;
-                    cmd.Parameters.Add("@periodicidad", SqlDbType.VarChar,70).Value = entiti.Periodicidad;
+                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
+                    cmd.Parameters.Add("@tipo_pago", SqlDbType.VarChar, 30).Value = entiti.Tipo_pago;
+                    cmd.Parameters.Add("@periodicidad", SqlDbType.VarChar, 70).Value = entiti.Periodicidad;
                     cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
                     cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
                     cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
 
                     result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();                    
+                    cmd.Parameters.Clear();
                 }
             }
             return result;
-        }        
+        }
 
         //EDITAR EMPLEADO
         public int Edit(DEmpleado entiti)
@@ -126,7 +124,7 @@ namespace Datos.Repositories
                 catch (Exception ex)
                 {
                     System.Windows.Forms.MessageBox.Show(ex.ToString());
-                }                
+                }
             }
             return result;
         }
@@ -161,12 +159,12 @@ namespace Datos.Repositories
                         cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
                         cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
                         cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
-                        result = cmd.ExecuteNonQuery();                        
+                        result = cmd.ExecuteNonQuery();
                     }
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);   
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
                 }
             }
             return result;
@@ -210,7 +208,7 @@ namespace Datos.Repositories
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_EMP";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;                               
+                    cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())

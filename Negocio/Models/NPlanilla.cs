@@ -6,27 +6,31 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Models
 {
-    public class NPlanilla:IDisposable
+    public class NPlanilla : IDisposable
     {
         String mensaje;
         public int Id_planilla
         {
             get; set;
-            
+
         }
 
-        public int Id_tipo_planilla
+        /*public int Id_tipo_planilla
+        {
+            get; set;
+        }*/
+
+
+
+        public int Id_periodo
         {
             get; set;
         }
 
-        public int Id_periodo
+        public String Mes
         {
             get; set;
         }
@@ -90,6 +94,7 @@ namespace Negocio.Models
             //pla.Id_tipo_planilla = Id_tipo_planilla;
             pla.Id_planilla = Id_planilla;
             pla.Id_periodo = Id_periodo;
+            pla.Mes = Mes;
             pla.Fecha_inicial = Fecha_inicial;
             pla.Fecha_final = Fecha_final;
             pla.Fecha_pago = Fecha_pago;
@@ -98,20 +103,27 @@ namespace Negocio.Models
             pla.Remu_basica = Remu_basica;
             pla.Asig_familiar = Asig_familiar;
             pla.Tope_horario_nocturno = Tope_horario_nocturno;
-            
+
             switch (state)
             {
                 case EntityState.Guardar:
                     rplanilla.Add(pla);
                     mensaje = pla.mensaje;
                     break;
+                case EntityState.Modificar:
+                    rplanilla.Edit(pla);
+                    mensaje = "Editado correctamente";
+                    break;
+                case EntityState.Remover:
+                    rplanilla.Delete(pla);
+                    mensaje = pla.mensaje;
+                    break;
 
-                
             }
 
             return mensaje;
         }
-        
+
         public List<NPlanilla> Getall()
         {
             using (DataTable dt = rplanilla.GetData(null))
@@ -121,15 +133,17 @@ namespace Negocio.Models
                 {
                     list_planilla.Add(new NPlanilla()
                     {
-                        Id_periodo = Convert.ToInt32(item[0]),
-                        Fecha_inicial = Convert.ToDateTime(item[1]),
-                        Fecha_final = Convert.ToDateTime(item[2]),
-                        Fecha_pago = Convert.ToDateTime(item[3]),
-                        Dias_mes= Convert.ToInt32(item[4]),
-                        Horas_mes = Convert.ToInt32(item[5]),
-                        Remu_basica = Convert.ToDecimal(item[6]),
-                        Asig_familiar = Convert.ToDecimal(item[7]),
-                        Tope_horario_nocturno = Convert.ToInt32(item[8])
+                        Id_planilla = Convert.ToInt32(item[0]),
+                        Id_periodo = Convert.ToInt32(item[1]),
+                        Mes = (item[2].ToString()),
+                        Fecha_inicial = Convert.ToDateTime(item[3]),
+                        Fecha_final = Convert.ToDateTime(item[4]),
+                        Fecha_pago = Convert.ToDateTime(item[5]),
+                        Dias_mes = Convert.ToInt32(item[6]),
+                        Horas_mes = Convert.ToInt32(item[7]),
+                        Remu_basica = Convert.ToDecimal(item[8]),
+                        Asig_familiar = Convert.ToDecimal(item[9]),
+                        Tope_horario_nocturno = Convert.ToInt32(item[10])
                     });
                 }
                 return list_planilla;

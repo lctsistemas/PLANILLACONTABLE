@@ -1,10 +1,6 @@
 ﻿using Datos.Contract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos.Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -13,7 +9,7 @@ namespace Datos.Repositories
     public class RRegimen : IRegimen
     {
         Int32 result;
-        SqlCommand cmd; 
+        SqlCommand cmd;
         public int Add(DRegimen entiti)
         {
             result = 0;
@@ -21,7 +17,7 @@ namespace Datos.Repositories
             {
                 conn.Open();
                 cmd = null;
-                using (cmd=new SqlCommand())
+                using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_ADD_REGIMEN";
@@ -29,7 +25,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@descripcion_corta", SqlDbType.VarChar, 30).Value = entiti.Descripcion_corta;
                     cmd.Parameters.Add("@descripcion", SqlDbType.VarChar, 100).Value = entiti.Descripcion;
-                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar,30).Value = entiti.Tipo_regimen;
+                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar, 30).Value = entiti.Tipo_regimen;
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
 
                     result = cmd.ExecuteNonQuery();
@@ -46,7 +42,7 @@ namespace Datos.Repositories
             using (SqlConnection conn = RConexion.Getconectar())
             {
                 conn.Open();
-                using (SqlCommand cmd=new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_DELETE_REGIMEN";
@@ -76,7 +72,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@descripcion_corta", SqlDbType.VarChar, 40).Value = entiti.Descripcion_corta;
                     cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
-                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar,30).Value = entiti.Tipo_regimen;
+                    cmd.Parameters.Add("@tipo_regimen", SqlDbType.VarChar, 30).Value = entiti.Tipo_regimen;
                     cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = entiti.Codigo_regimen;
                     result = cmd.ExecuteNonQuery();
 
