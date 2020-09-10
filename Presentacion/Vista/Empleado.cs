@@ -9,6 +9,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Data;
+using Comun.Comunicacion;
+
 
 namespace Presentacion.Vista
 {
@@ -17,10 +19,11 @@ namespace Presentacion.Vista
     {
         String result;
         NEmpleado emple_contra =new  NEmpleado();
-
+       
         public frmempleado()
         {
             InitializeComponent();
+            UserCache.Codigo_empresa = 2;
             Mostrar_documento();
             Mostrar_cargo();
             Mostrar_regimenpensionario();
@@ -262,7 +265,7 @@ namespace Presentacion.Vista
             Initialize();                  
             mostrarEmpleado();
             Tabla();
-            Bloquear_controles();           
+            Bloquear_controles();                      
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -596,6 +599,31 @@ namespace Presentacion.Vista
             }  
         }
 
+        private void txtnumdoc_TextChanged(object sender, EventArgs e)
+        {
+            txtcodigo.Text = txtnumdoc.Text.Trim();
+        }
+
+        private void linkconsulta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dapi da = new Dapi()
+            {
+                dni = txtnumdoc.Text.Trim()
+            };
+
+            using (Request re = new Request()) {
+                re.Solicitar(da);
+                if (RecuperarData.mensaje.Contains("found data"))
+                {
+                    txtNombre.Text = RecuperarData.nombres;
+                    txtApePat.Text = RecuperarData.paterno;
+                    txtApeMat.Text = RecuperarData.materno;
+                }
+                else
+                    Messages.M_error(RecuperarData.mensaje);
+            } 
+            
+        }
        
     }
 }

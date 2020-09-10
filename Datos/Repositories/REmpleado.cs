@@ -161,7 +161,7 @@ namespace Datos.Repositories
                         cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
                         cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
                         cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
-                        result = cmd.ExecuteNonQuery();
+                        result = cmd.ExecuteNonQuery();                        
                     }
                 }
                 catch (Exception ex)

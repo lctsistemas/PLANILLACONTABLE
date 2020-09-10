@@ -78,3 +78,7 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Comun.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\juan\Source\Repos\Planillalct\Datos\bin\Debug\Comun.dll
 C:\Users\juan\Source\Repos\Planillalct\Datos\bin\Debug\Comun.pdb
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.xml
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.xml
