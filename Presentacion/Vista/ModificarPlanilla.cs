@@ -2,13 +2,6 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -23,7 +16,7 @@ namespace Presentacion.Vista
 
         private void frmModificarPlanilla_Load(object sender, EventArgs e)
         {
-                     
+
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -32,7 +25,7 @@ namespace Presentacion.Vista
             {
                 np.state = EntityState.Modificar;
                 np.Fecha_pago = Convert.ToDateTime(txtpago.Text.Trim());
-                string res= np.GuardarCambios();
+                string res = np.GuardarCambios();
                 Messages.M_info(res);
             }
 

@@ -1,7 +1,4 @@
-﻿using Login_inicio;
-using PlayerUI;
-using Presentacion.Subvista;
-using Presentacion.Vista;
+﻿using Presentacion.Vista;
 using System;
 using System.Windows.Forms;
 
@@ -17,10 +14,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            Application.Run(new frminicio());
-
-
+            Application.Run(new frmempleado());
         }
     }
 }

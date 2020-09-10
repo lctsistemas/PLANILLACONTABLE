@@ -35,7 +35,7 @@ namespace Presentacion.Vista
 
             using (nc)
             {
-               
+
                 dgvcargo.DataSource = nc.Getall();
                 lbltotal.Text = "TOTAL REGISTRO: " + dgvcargo.Rows.Count;
             }
@@ -91,14 +91,14 @@ namespace Presentacion.Vista
         private void frmcargo_Load(object sender, EventArgs e)
         {
             Tabla();
-            Tooltip.Title(txtbuscar, "Buscar por cargo",true);
+            Tooltip.Title(txtbuscar, "Buscar por cargo", true);
             Habilitar(false);
         }
 
         //GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
         {
-           
+
 
             using (nc)
             {
@@ -112,7 +112,7 @@ namespace Presentacion.Vista
                     ShowCargo();
                     Messages.M_info(result);
                 }
-                   
+
             }
         }
 
@@ -131,7 +131,7 @@ namespace Presentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvcargo.DataSource = nc.Search(txtbuscar.Text.Trim());
-           
+
         }
         //DELETE
         private void btneliminar_Click(object sender, EventArgs e)

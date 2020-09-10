@@ -58,7 +58,7 @@ namespace Presentacion.Vista
         {
             using (nbanco)
             {
-                
+
                 try
                 {
                     dgvBanco.DataSource = nbanco.Getall();
@@ -132,7 +132,7 @@ namespace Presentacion.Vista
 
         }
 
-        
+
 
         private void Banco_Load(object sender, EventArgs e)
         {
@@ -151,7 +151,7 @@ namespace Presentacion.Vista
         private void BorrarError(TextBox textbox)
         {
             ValidateError.Validate_text(txtBanco, "");
-           
+
         }
 
 
@@ -201,13 +201,13 @@ namespace Presentacion.Vista
             }
         }
 
-        
+
 
         private void Habilitar(bool v)
         {
             btnguardar.Enabled = v;
             txtBanco.Enabled = v;
-            
+
         }
 
         private void dgvBanco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -236,8 +236,8 @@ namespace Presentacion.Vista
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-           dgvBanco.DataSource= nbanco.Search(txtbuscar.Text.Trim());
-         
+            dgvBanco.DataSource = nbanco.Search(txtbuscar.Text.Trim());
+
         }
 
         private void dgvBanco_CellContentClick(object sender, DataGridViewCellEventArgs e)

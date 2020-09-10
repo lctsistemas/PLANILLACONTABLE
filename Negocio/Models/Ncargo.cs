@@ -80,7 +80,7 @@ namespace Negocio.Models
             using (var dt = cargo_repository.GetData(null))
             {
 
-                 listacargo = new List<Ncargo>();
+                listacargo = new List<Ncargo>();
 
                 foreach (DataRow item in dt.Rows)
                 {
@@ -98,7 +98,7 @@ namespace Negocio.Models
 
         public IEnumerable<Ncargo> Search(string filter)
         {
-            
+
             return listacargo.FindAll(e => e.nombre_cargo.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 

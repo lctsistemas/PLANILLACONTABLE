@@ -2,13 +2,6 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -75,7 +68,7 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[5].Width = 120;
 
             dgvplanilla.Columns[6].HeaderText = "DIAS_MES";
-            dgvplanilla.Columns[6].Width =100;
+            dgvplanilla.Columns[6].Width = 100;
 
             dgvplanilla.Columns[7].HeaderText = "HORAS_MES";
             dgvplanilla.Columns[7].Width = 100;
@@ -117,7 +110,7 @@ namespace Presentacion.Vista
             np.state = EntityState.Modificar;
             frmModificarPlanilla formodi = new frmModificarPlanilla();
 
-            formodi.lblper.Text= dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
+            formodi.lblper.Text = dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
             formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
 
             formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[5].Value.ToString();//fecha pago

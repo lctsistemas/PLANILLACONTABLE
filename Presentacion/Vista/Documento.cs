@@ -73,7 +73,7 @@ namespace Presentacion.Vista
         private void frmdocumento_Load(object sender, EventArgs e)
         {
             Tabla();
-            Tooltip.Title(txtbuscar, "Buscar por documento",true);
+            Tooltip.Title(txtbuscar, "Buscar por documento", true);
             Habilitar(false);
         }
         //NUEVO
@@ -88,7 +88,7 @@ namespace Presentacion.Vista
         //SAVE CHANGE
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            
+
             using (nd)
             {
                 nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
@@ -212,7 +212,7 @@ namespace Presentacion.Vista
             Keypress.SoloNumeros(e);
         }
 
-       
+
 
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {

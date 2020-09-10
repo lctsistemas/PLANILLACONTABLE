@@ -71,7 +71,7 @@ namespace Negocio.Models
         }
         //METODO MOSTRAR
         public List<Ndocumento> Getall()
-        {           
+        {
             using (var dt = docu_repsository.GetData(null))
             {
                 listadocu = new List<Ndocumento>();

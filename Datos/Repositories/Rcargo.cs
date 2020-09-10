@@ -1,7 +1,6 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 namespace Datos.Repositories
@@ -96,7 +95,7 @@ namespace Datos.Repositories
                     using (var dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();                        
+                        da.Dispose();
                         return dt;
                     }
                 }

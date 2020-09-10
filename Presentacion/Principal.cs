@@ -96,14 +96,14 @@ namespace Presentacion
         private void Form1_Load(object sender, EventArgs e)
         {
             CargarDatos();
-            this.Text = UserCache.NombreUser +"  |   "+lblempresa.Text;
+            this.Text = UserCache.NombreUser + "  |   " + lblempresa.Text;
         }
 
         private void CargarDatos()
         {
             lblusuario.Text = UserCache.NombreUser;
             lblrol.Text = UserCache.RolUser;
-            lblempresa.Text =UserCache.Empresa_Sucursal+":  "+ UserCache.Empresa;
+            lblempresa.Text = UserCache.Empresa_Sucursal + ":  " + UserCache.Empresa;
             lbllocalidad.Text = UserCache.Localidad_empresa;
             lblperiodo.Text = UserCache.Periodo;
             lblid_periodo.Text = UserCache.Idperiodo.ToString();
@@ -125,6 +125,22 @@ namespace Presentacion
             panelcontent.Controls.Add(childform);
             panelcontent.Tag = childform;//esta sobre el control
             childform.BringToFront();//indica que el formulario llamado esta frente al logo que exite
+            childform.Show();
+        }
+
+        private void openchilform2(Form childform)
+        {
+            if (activefor != null)
+            {
+                activefor.Close();
+            }
+            activefor = childform;
+            childform.TopLevel = false;
+            //childform.FormBorderStyle = FormBorderStyle.None;
+            //childform.Dock = DockStyle.Fill;
+            panelcontent.Controls.Add(childform);
+            panelcontent.Tag = childform;//esta sobre el control
+            //childform.BringToFront();//indica que el formulario llamado esta frente al logo que exite
             childform.Show();
         }
 
@@ -155,7 +171,7 @@ namespace Presentacion
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            openchilform(new frmempleado());
+            openchilform2(new frmempleado());
         }
 
         private void button1_Click(object sender, EventArgs e)

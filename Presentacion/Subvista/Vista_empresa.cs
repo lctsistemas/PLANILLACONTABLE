@@ -20,7 +20,7 @@ namespace Presentacion.Subvista
         private void Llenar_empresa()
         {
             using (ne = new Nempresa())
-            {                
+            {
                 dgvvista_emp.DataSource = ne.Getall();
                 lbltotal.Text = "Total Registro: " + dgvvista_emp.RowCount;
             }
@@ -79,12 +79,12 @@ namespace Presentacion.Subvista
             dgvvista_emp.Columns[12].Visible = false;
 
             //dgvvista_emp.Columns[13].Visible = true;
-           
+
         }
 
         private void Vista_empresa_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar, "Buscar por Empresa",true);
+            Tooltip.Title(txtbuscar, "Buscar por Empresa", true);
             txtbuscar.Focus();
         }
 
@@ -104,7 +104,7 @@ namespace Presentacion.Subvista
                 su.txtusuario.Text = ro.Cells[12].Value.ToString();
                 this.Close();
             }
-        }      
+        }
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
