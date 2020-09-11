@@ -82,3 +82,7 @@ C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\RestSh
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.xml
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.xml
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.xml

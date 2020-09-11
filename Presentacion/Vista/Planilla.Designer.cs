@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.numyear = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxmes = new System.Windows.Forms.ComboBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -60,8 +59,7 @@
             this.dtppago = new System.Windows.Forms.DateTimePicker();
             this.dtpini = new System.Windows.Forms.DateTimePicker();
             this.dtpfin = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numyear)).BeginInit();
+            this.lblyear = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -73,29 +71,6 @@
             this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "AÑO :";
-            // 
-            // numyear
-            // 
-            this.numyear.Enabled = false;
-            this.numyear.Location = new System.Drawing.Point(195, 22);
-            this.numyear.Maximum = new decimal(new int[] {
-            2030,
-            0,
-            0,
-            0});
-            this.numyear.Minimum = new decimal(new int[] {
-            2019,
-            0,
-            0,
-            0});
-            this.numyear.Name = "numyear";
-            this.numyear.Size = new System.Drawing.Size(60, 20);
-            this.numyear.TabIndex = 1;
-            this.numyear.Value = new decimal(new int[] {
-            2019,
-            0,
-            0,
-            0});
             // 
             // label2
             // 
@@ -115,6 +90,7 @@
             this.cbxmes.Name = "cbxmes";
             this.cbxmes.Size = new System.Drawing.Size(100, 21);
             this.cbxmes.TabIndex = 3;
+            this.cbxmes.TextChanged += new System.EventHandler(this.cbxmes_TextChanged);
             // 
             // shapeContainer1
             // 
@@ -402,21 +378,21 @@
             this.dtpfin.TabIndex = 77;
             this.dtpfin.ValueChanged += new System.EventHandler(this.dtpfin_ValueChanged);
             // 
-            // label11
+            // lblyear
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(273, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 78;
-            this.label11.Text = "label11";
+            this.lblyear.AutoSize = true;
+            this.lblyear.Location = new System.Drawing.Point(192, 22);
+            this.lblyear.Name = "lblyear";
+            this.lblyear.Size = new System.Drawing.Size(41, 13);
+            this.lblyear.TabIndex = 78;
+            this.lblyear.Text = "label11";
             // 
             // Planilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 601);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lblyear);
             this.Controls.Add(this.dtpfin);
             this.Controls.Add(this.dtpini);
             this.Controls.Add(this.dtppago);
@@ -441,14 +417,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbxmes);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.numyear);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.MaximizeBox = false;
             this.Name = "Planilla";
             this.Text = "Planilla";
             this.Load += new System.EventHandler(this.Planilla_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numyear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +431,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numyear;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxmes;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
@@ -488,6 +461,6 @@
         private System.Windows.Forms.DateTimePicker dtppago;
         private System.Windows.Forms.DateTimePicker dtpini;
         private System.Windows.Forms.DateTimePicker dtpfin;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblyear;
     }
 }

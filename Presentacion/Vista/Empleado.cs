@@ -8,12 +8,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
-<<<<<<< HEAD
+
 using System.Data;
 using Presentacion.Subvista;
-=======
 
->>>>>>> 5ed618a18f4ad94b0d82fd27a0ed7f336529279d
 
 namespace Presentacion.Vista
 {
@@ -629,14 +627,12 @@ namespace Presentacion.Vista
 
         }
 
-<<<<<<< HEAD
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Vista_cargo fr = Vista_cargo.GetInstance();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
         }
-=======
->>>>>>> 5ed618a18f4ad94b0d82fd27a0ed7f336529279d
+
     }
 }

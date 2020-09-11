@@ -1,4 +1,5 @@
-﻿using Presentacion.Vista;
+﻿using Login_inicio;
+using Presentacion.Vista;
 using System;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmempleado());
+            Application.Run(new frminicio());
         }
     }
 }

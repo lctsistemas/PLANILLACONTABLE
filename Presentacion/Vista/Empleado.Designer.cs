@@ -86,11 +86,10 @@ namespace Presentacion.Vista
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkconsulta = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-<<<<<<< HEAD
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-=======
+
+
             this.linkcargo = new System.Windows.Forms.LinkLabel();
->>>>>>> 5ed618a18f4ad94b0d82fd27a0ed7f336529279d
+
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
             this.cbocargo = new System.Windows.Forms.ComboBox();
@@ -786,18 +785,10 @@ namespace Presentacion.Vista
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             // 
-<<<<<<< HEAD
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(195, 112);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(47, 16);
-            this.linkLabel1.TabIndex = 77;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Nuevo";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-=======
+            
+
             // linkcargo
             // 
             this.linkcargo.AutoSize = true;
@@ -809,7 +800,6 @@ namespace Presentacion.Vista
             this.linkcargo.TabIndex = 77;
             this.linkcargo.TabStop = true;
             this.linkcargo.Text = "Nuevo";
->>>>>>> 5ed618a18f4ad94b0d82fd27a0ed7f336529279d
             // 
             // cboestado
             // 

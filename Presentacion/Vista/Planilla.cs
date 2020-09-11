@@ -2,6 +2,7 @@
 using Negocio.Models;
 using Presentacion.Helps;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -35,14 +36,9 @@ namespace Presentacion.Vista
             Planilla_Manto planilla = new Planilla_Manto();
 
 
-<<<<<<< HEAD
             DateTime datefin;
             datefin = dtpfin.Value;
-=======
-            if (planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString() != "")
-            {
-                cbxmes.SelectedItem = planilla.dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
->>>>>>> 5ed618a18f4ad94b0d82fd27a0ed7f336529279d
+           
 
             DateTime primerDia = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, 1); //obteniendo el ultimo primer del mes
 
@@ -61,8 +57,8 @@ namespace Presentacion.Vista
             txtasig.Text = "93.00";
             txttope.Text = "1200";
 
-
-        }
+            }
+        
 
         private static Planilla instance;
 
@@ -114,7 +110,7 @@ namespace Presentacion.Vista
         {
             if (UserCache.Periodo != null)
             {
-                numyear.Value = Convert.ToInt32(UserCache.Periodo);
+                lblyear.Text = UserCache.Periodo.ToString();
 
             }
             GenerarCodigo();
@@ -134,6 +130,23 @@ namespace Presentacion.Vista
 
         }
 
+        private void cbxmes_TextChanged(object sender, EventArgs e)
+        {
+            DateTime datefin;
+            datefin = dtpfin.Value;
 
+            Int32 mes;
+            mes = Convert.ToInt32(cbxmes.SelectedIndex);
+
+            DateTime primerDia = new DateTime(Convert.ToInt32(UserCache.Periodo), mes+1, 1); //obteniendo el ultimo primer del mes
+
+            DateTime ultimoDia = primerDia.AddMonths(1).AddDays(-1);//obteniendo el ultimo dia del mes
+
+            Int32 ultimoDiaInt = ultimoDia.Day;
+
+            dtpini.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes + 1, 1);
+            dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes+1, ultimoDiaInt);
+            dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes + 1, ultimoDiaInt);
+        }
     }
 }

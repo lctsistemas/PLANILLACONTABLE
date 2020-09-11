@@ -255,12 +255,14 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Planilla_Manto.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Prueba.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmModificarPlanilla.resources
-<<<<<<< HEAD
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.Vista_cargo.resources
-=======
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\RestSharp.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\RestSharp.xml
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmModificarPlanilla.resources
 >>>>>>> 5ed618a18f4ad94b0d82fd27a0ed7f336529279d
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\RestSharp.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\RestSharp.xml
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Newtonsoft.Json.xml
