@@ -9,7 +9,6 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-using System.Data;
 using Presentacion.Subvista;
 
 
@@ -412,7 +411,7 @@ namespace Presentacion.Vista
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Keypress.SoloLetras(e);
+           Keypress.SoloLetras(e);         
         }
 
         private void txtApePat_KeyPress(object sender, KeyPressEventArgs e)
@@ -627,12 +626,32 @@ namespace Presentacion.Vista
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkcargo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Vista_cargo fr = Vista_cargo.GetInstance();
-            fr.StartPosition = FormStartPosition.CenterParent;
-            fr.ShowDialog();
+            contextmenu.Show(cbocargo,0,0);
+            totxtcargo.Focus();
         }
 
+        private void totxtcargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(totxtcargo.Text))
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    using (Ncargo nca = new Ncargo())
+                    {
+                        nca.state = EntityState.Guardar;
+                        nca.nombre_cargo = totxtcargo.Text.Trim();
+                        nca.descripcion = "";
+                        nca.SaveChanges();
+                        
+                    }
+                    totxtcargo.Text = "";
+                    contextmenu.Close();
+                    Mostrar_cargo();
+
+                }
+            }
+        }
     }
 }

@@ -21,15 +21,14 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_REGISTRAR_CARGO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 40).Value = entiti.Nombre_cargo;
-                    cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
+                    cmd.Parameters.AddWithValue("@nom", entiti.Nombre_cargo);
+                    cmd.Parameters.AddWithValue("@descripcion",entiti.Descripcion);
                     result = cmd.ExecuteNonQuery();
 
                     cmd.Parameters.Clear();
                     return result;
                 }
             }
-
         }
 
         public int Edit(Dcargo entiti)

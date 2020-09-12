@@ -82,8 +82,7 @@
             this.txtdescrip.Name = "txtdescrip";
             this.txtdescrip.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtdescrip.Size = new System.Drawing.Size(189, 75);
-            this.txtdescrip.TabIndex = 13;
-            this.txtdescrip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdescrip_KeyPress);
+            this.txtdescrip.TabIndex = 13;            
             // 
             // txtnom_cargo
             // 
@@ -91,8 +90,7 @@
             this.txtnom_cargo.Location = new System.Drawing.Point(16, 32);
             this.txtnom_cargo.Name = "txtnom_cargo";
             this.txtnom_cargo.Size = new System.Drawing.Size(192, 22);
-            this.txtnom_cargo.TabIndex = 12;
-            this.txtnom_cargo.TextChanged += new System.EventHandler(this.txtnom_cargo_TextChanged);
+            this.txtnom_cargo.TabIndex = 12;            
             this.txtnom_cargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnom_cargo_KeyPress);
             this.txtnom_cargo.Validating += new System.ComponentModel.CancelEventHandler(this.txtnom_cargo_Validating);
             // 
@@ -107,8 +105,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 16);
             this.label1.TabIndex = 10;
-            this.label1.Text = "NOMBRE CARGO";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Text = "NOMBRE CARGO";     
             // 
             // label2
             // 
@@ -137,8 +134,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(656, 422);
-            this.panel2.TabIndex = 15;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.TabIndex = 15;            
             // 
             // barratitulo
             // 

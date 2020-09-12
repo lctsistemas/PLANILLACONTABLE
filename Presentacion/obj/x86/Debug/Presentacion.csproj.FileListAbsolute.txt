@@ -266,3 +266,4 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\RestSharp
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\RestSharp.xml
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos\Source\Repos\lctsistemas\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.Vista_cargo.resources
