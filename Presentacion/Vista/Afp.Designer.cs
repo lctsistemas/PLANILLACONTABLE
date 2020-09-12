@@ -29,21 +29,37 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnupdate = new System.Windows.Forms.Button();
             this.cbomes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvcomision = new System.Windows.Forms.DataGridView();
-            this.btnupdate = new System.Windows.Forms.Button();
+            this.paneltitulo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btnmaximizar = new System.Windows.Forms.PictureBox();
+            this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkcomisiones = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).BeginInit();
+            this.paneltitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.linkcomisiones);
+            this.panel1.Controls.Add(this.paneltitulo);
             this.panel1.Controls.Add(this.btnupdate);
             this.panel1.Controls.Add(this.cbomes);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dgvcomision);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -51,10 +67,19 @@
             this.panel1.Size = new System.Drawing.Size(755, 440);
             this.panel1.TabIndex = 0;
             // 
+            // btnupdate
+            // 
+            this.btnupdate.Location = new System.Drawing.Point(377, 63);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(148, 23);
+            this.btnupdate.TabIndex = 4;
+            this.btnupdate.Text = "&Guardar Cambios";
+            this.btnupdate.UseVisualStyleBackColor = true;
+            // 
             // cbomes
             // 
             this.cbomes.FormattingEnabled = true;
-            this.cbomes.Location = new System.Drawing.Point(117, 84);
+            this.cbomes.Location = new System.Drawing.Point(110, 65);
             this.cbomes.Name = "cbomes";
             this.cbomes.Size = new System.Drawing.Size(125, 21);
             this.cbomes.TabIndex = 3;
@@ -62,25 +87,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 87);
+            this.label2.Location = new System.Drawing.Point(20, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mes devengue: ";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Regimen Pensionario - [comisiones]";
-            // 
             // dgvcomision
             // 
             this.dgvcomision.AllowUserToDeleteRows = false;
             this.dgvcomision.AllowUserToOrderColumns = true;
+            this.dgvcomision.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcomision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvcomision.Location = new System.Drawing.Point(12, 122);
             this.dgvcomision.Name = "dgvcomision";
@@ -89,14 +106,114 @@
             this.dgvcomision.Size = new System.Drawing.Size(731, 255);
             this.dgvcomision.TabIndex = 0;
             // 
-            // btnupdate
+            // paneltitulo
             // 
-            this.btnupdate.Location = new System.Drawing.Point(317, 84);
-            this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(94, 23);
-            this.btnupdate.TabIndex = 4;
-            this.btnupdate.Text = "&Actualizar";
-            this.btnupdate.UseVisualStyleBackColor = true;
+            this.paneltitulo.BackColor = System.Drawing.Color.SteelBlue;
+            this.paneltitulo.Controls.Add(this.pictureBox1);
+            this.paneltitulo.Controls.Add(this.btncerrar);
+            this.paneltitulo.Controls.Add(this.label16);
+            this.paneltitulo.Controls.Add(this.btnminimizar);
+            this.paneltitulo.Controls.Add(this.btnmaximizar);
+            this.paneltitulo.Controls.Add(this.btnrestaurar);
+            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneltitulo.Location = new System.Drawing.Point(0, 0);
+            this.paneltitulo.Name = "paneltitulo";
+            this.paneltitulo.Size = new System.Drawing.Size(755, 50);
+            this.paneltitulo.TabIndex = 91;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
+            this.btncerrar.Location = new System.Drawing.Point(715, 3);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 20);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncerrar.TabIndex = 8;
+            this.btncerrar.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label16.AutoEllipsis = true;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(90, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(196, 24);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "COMISIONES AFP\'S";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
+            this.btnminimizar.Location = new System.Drawing.Point(644, 3);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnminimizar.TabIndex = 9;
+            this.btnminimizar.TabStop = false;
+            // 
+            // btnmaximizar
+            // 
+            this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmaximizar.Enabled = false;
+            this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
+            this.btnmaximizar.Location = new System.Drawing.Point(680, 3);
+            this.btnmaximizar.Name = "btnmaximizar";
+            this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
+            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnmaximizar.TabIndex = 10;
+            this.btnmaximizar.TabStop = false;
+            // 
+            // btnrestaurar
+            // 
+            this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
+            this.btnrestaurar.Location = new System.Drawing.Point(680, 3);
+            this.btnrestaurar.Name = "btnrestaurar";
+            this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
+            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnrestaurar.TabIndex = 11;
+            this.btnrestaurar.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(260, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mes devengue: ";
+            // 
+            // linkcomisiones
+            // 
+            this.linkcomisiones.AutoSize = true;
+            this.linkcomisiones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkcomisiones.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkcomisiones.Location = new System.Drawing.Point(553, 65);
+            this.linkcomisiones.Name = "linkcomisiones";
+            this.linkcomisiones.Size = new System.Drawing.Size(113, 17);
+            this.linkcomisiones.TabIndex = 92;
+            this.linkcomisiones.TabStop = true;
+            this.linkcomisiones.Text = "Comisiones - SBS";
+            this.linkcomisiones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkcomisiones_LinkClicked);
             // 
             // frmafp
             // 
@@ -109,6 +226,13 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).EndInit();
+            this.paneltitulo.ResumeLayout(false);
+            this.paneltitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -119,7 +243,15 @@
         private System.Windows.Forms.DataGridView dgvcomision;
         private System.Windows.Forms.ComboBox cbomes;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.LinkLabel linkcomisiones;
+        private System.Windows.Forms.Panel paneltitulo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.PictureBox btnmaximizar;
+        private System.Windows.Forms.PictureBox btnrestaurar;
+        private System.Windows.Forms.Label label1;
     }
 }

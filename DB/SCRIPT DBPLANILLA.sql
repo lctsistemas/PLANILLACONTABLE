@@ -64,7 +64,7 @@ idperiodo int not null
 )
 GO
 
-
+select * from RegimenPensionario
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
 CREATE TABLE Empresa_maestra(
 id_em_maestra int identity(1,1),
@@ -77,6 +77,7 @@ regimen varchar(80) not null,
 estado_eliminado varchar(15) not null
 )
 GO
+
 --alter table Empresa_maestra alter column regimen varchar(80) not null
 
 CREATE TABLE Empresa(
@@ -95,6 +96,7 @@ id_em_maestra int not null,
 id_empresa int not null
 )
 GO
+
 --TABLA: USUSARIO
 CREATE TABLE Usuario (
 id_usuario int not null,--SERA AUTO INCREMENTABLE, PERO MANUALMENTE
