@@ -32,14 +32,12 @@ namespace Presentacion.Vista
         //METODO MOSTRAR
         private void ShowCargo()
         {
-
             using (nc)
             {
 
                 dgvcargo.DataSource = nc.Getall();
                 lbltotal.Text = "TOTAL REGISTRO: " + dgvcargo.Rows.Count;
             }
-
         }
 
 
@@ -98,8 +96,6 @@ namespace Presentacion.Vista
         //GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
         {
-
-
             using (nc)
             {
                 nc.nombre_cargo = txtnom_cargo.Text.Trim().ToUpper();
@@ -112,7 +108,6 @@ namespace Presentacion.Vista
                     ShowCargo();
                     Messages.M_info(result);
                 }
-
             }
         }
 
@@ -186,24 +181,7 @@ namespace Presentacion.Vista
         {
             Keypress.Text(e, txtdescrip);
             Keypress.SoloLetras(e);
-        }
-
-
-        private void txtdescrip_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Keypress.Button(e, btnguardar);
-
-        }
-
-        private void txtnom_cargo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
@@ -257,11 +235,7 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.FromArgb(245, 183, 177);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+    
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.SoloLetras(e);

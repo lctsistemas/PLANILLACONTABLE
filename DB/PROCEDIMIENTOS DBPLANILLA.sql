@@ -42,10 +42,10 @@ END
 GO
 
 --SHOW CARGO
-alter PROC SP_SELECT_CARGO 
+ALTER PROC SP_SELECT_CARGO 
 AS BEGIN
 SELECT id_cargo, nombre_cargo, descripcion 
-FROM Cargo order by id_cargo asc
+FROM Cargo order by id_cargo desc
 END
 GO
 

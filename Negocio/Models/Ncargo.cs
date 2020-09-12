@@ -13,12 +13,12 @@ namespace Negocio.Models
     {
         private List<Ncargo> listacargo;
         public int idcargo { get; set; }
+
         [Required(ErrorMessage = "El campo Cargo es obligatorio.")]
         [StringLength(maximumLength: 40, MinimumLength = 4, ErrorMessage = "Campo Cargo de 4 caracteres como minimo.")]
         [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Cargo solo permite letras.")]
         public string nombre_cargo { get; set; }
 
-        [Required(ErrorMessage = "El campo Descripcion es obligatorio.")]
         [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo descripcion solo permite letras.")]
         public string descripcion { get; set; }
 
