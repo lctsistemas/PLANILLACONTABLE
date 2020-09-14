@@ -80,6 +80,7 @@ namespace Presentacion.Vista
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
                 MessageBox.Show("" + UserCache.Idperiodo);
                 np.Id_periodo = UserCache.Idperiodo;
+                np.Id_empresa = UserCache.Codigo_empresa;
                 np.Mes = cbxmes.SelectedItem.ToString();
                 // = cbxmes.SelectedItem.ToString(); 
                 np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());

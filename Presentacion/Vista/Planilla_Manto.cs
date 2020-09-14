@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
@@ -25,11 +26,14 @@ namespace Presentacion.Vista
         {
             using (np)
             {
+                np.Id_empresa = UserCache.Codigo_empresa;
+
                 dgvplanilla.DataSource = np.Getall();
             }
         }
 
-        private void btncerrar_Click(object sender, EventArgs e)
+
+private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

@@ -933,6 +933,7 @@ alter PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
+@id_empresa int,
 @mes varchar(20),
 --@id_mes varchar(50),
 @fecha_inicial date,
@@ -945,8 +946,8 @@ alter PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	INSERT INTO Planilla(id_planilla,id_periodo,mes,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla,@id_periodo,@mes,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,mes,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla,@id_periodo,@id_empresa,@mes,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
 	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'
 	
 END
@@ -966,13 +967,15 @@ GO
 exec SP_UPDATE_PLANILLA 2,'2020/10/29'
 
 alter PROC SP_SHOW_PLANILLA
+@codigo_empresa int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
+	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
-	on(pe.id_periodo=p.id_periodo)
+	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa
 	END
 GO
+exec SP_SHOW_PLANILLA 2
 
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,

@@ -30,6 +30,11 @@ namespace Negocio.Models
             get; set;
         }
 
+        public int Id_empresa
+        {
+            get; set;
+        }
+
         public String Mes
         {
             get; set;
@@ -94,6 +99,7 @@ namespace Negocio.Models
             //pla.Id_tipo_planilla = Id_tipo_planilla;
             pla.Id_planilla = Id_planilla;
             pla.Id_periodo = Id_periodo;
+            pla.Id_empresa = Id_empresa;
             pla.Mes = Mes;
             pla.Fecha_inicial = Fecha_inicial;
             pla.Fecha_final = Fecha_final;
@@ -126,6 +132,9 @@ namespace Negocio.Models
 
         public List<NPlanilla> Getall()
         {
+            DPlanilla dp = new DPlanilla();
+
+            dp.Id_empresa = Id_empresa;
             using (DataTable dt = rplanilla.GetData(null))
             {
                 list_planilla = new List<NPlanilla>();
@@ -135,15 +144,16 @@ namespace Negocio.Models
                     {
                         Id_planilla = Convert.ToInt32(item[0]),
                         Id_periodo = Convert.ToInt32(item[1]),
-                        Mes = (item[2].ToString()),
-                        Fecha_inicial = Convert.ToDateTime(item[3]),
-                        Fecha_final = Convert.ToDateTime(item[4]),
-                        Fecha_pago = Convert.ToDateTime(item[5]),
-                        Dias_mes = Convert.ToInt32(item[6]),
-                        Horas_mes = Convert.ToInt32(item[7]),
-                        Remu_basica = Convert.ToDecimal(item[8]),
-                        Asig_familiar = Convert.ToDecimal(item[9]),
-                        Tope_horario_nocturno = Convert.ToInt32(item[10])
+                        Id_empresa = Convert.ToInt32(item[2]),
+                        Mes = (item[3].ToString()),
+                        Fecha_inicial = Convert.ToDateTime(item[4]),
+                        Fecha_final = Convert.ToDateTime(item[5]),
+                        Fecha_pago = Convert.ToDateTime(item[6]),
+                        Dias_mes = Convert.ToInt32(item[7]),
+                        Horas_mes = Convert.ToInt32(item[8]),
+                        Remu_basica = Convert.ToDecimal(item[9]),
+                        Asig_familiar = Convert.ToDecimal(item[10]),
+                        Tope_horario_nocturno = Convert.ToInt32(item[11])
                     });
                 }
                 return list_planilla;
