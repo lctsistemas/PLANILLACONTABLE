@@ -86,3 +86,16 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.xml
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\Datos.pdb
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\Comun.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\Comun.pdb
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\RestSharp.xml
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.pdb

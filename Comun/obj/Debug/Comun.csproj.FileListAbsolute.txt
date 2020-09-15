@@ -27,3 +27,14 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\RestSharp.dll
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\bin\Debug\RestSharp.xml
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CopyComplete
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\bin\Debug\Comun.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\bin\Debug\Comun.pdb
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\bin\Debug\RestSharp.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\bin\Debug\RestSharp.xml
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CopyComplete
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.dll
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.pdb

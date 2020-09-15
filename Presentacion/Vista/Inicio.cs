@@ -112,8 +112,15 @@ namespace Login_inicio
                                     mainmenu.FormClosed += Logout;//revisar
                                     this.Hide();
                                 }
-
                             }
+                            else
+                            {
+                                if (dgvlogin.Rows.Count <= 0)
+                                    Messages.M_warning("No se le asigno empresas. \n Por favor consulte con el\n Administrador");
+                                else
+                                    dgvlogin.DataSource = null;
+                            }
+
                             msgError("");
                         }
                         else
