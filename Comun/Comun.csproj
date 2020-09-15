@@ -54,7 +54,6 @@
     <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Comunicacion\Apirest.cs" />
     <Compile Include="Comunicacion\Dapi.cs" />
-    <Compile Include="Comunicacion\DapiRuc.cs" />
     <Compile Include="Comunicacion\Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

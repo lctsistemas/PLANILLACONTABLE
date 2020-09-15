@@ -19,7 +19,7 @@ namespace Presentacion.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -93,6 +93,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_add_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_add_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_build_white_18dp2 {
             get {
                 object obj = ResourceManager.GetObject("baseline_build_white_18dp2", resourceCulture);
@@ -126,6 +136,36 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap baseline_business_white_18dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_business_white_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_cancel_white_18dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_cancel_white_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_cancel_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_cancel_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_cancel_white_24dp1 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_cancel_white_24dp1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +253,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_delete_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_delete_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_minimize_white_36dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_minimize_white_36dp", resourceCulture);
@@ -256,6 +306,16 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap baseline_save_white_18dp2 {
             get {
                 object obj = ResourceManager.GetObject("baseline_save_white_18dp2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_save_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_save_white_24dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

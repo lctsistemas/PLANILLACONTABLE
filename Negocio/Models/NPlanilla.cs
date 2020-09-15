@@ -135,7 +135,7 @@ namespace Negocio.Models
             DPlanilla dp = new DPlanilla();
 
             dp.Id_empresa = Id_empresa;
-            using (DataTable dt = rplanilla.GetData(null))
+            using (DataTable dt = rplanilla.GetData(dp))
             {
                 list_planilla = new List<NPlanilla>();
                 foreach (DataRow item in dt.Rows)

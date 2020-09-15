@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Comunicacion;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using Presentacion.Subvista;
@@ -11,6 +12,7 @@ namespace Presentacion.Vista
     public partial class frmempresa : Form
     {
         Nempresa ne = new Nempresa();
+        Apirest apirest = new Apirest();
         String result;
         public frmempresa()
         {
@@ -315,6 +317,15 @@ namespace Presentacion.Vista
             Keypress.SoloNumeros(e);
         }
 
+        private void consultaruc_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string ruc = txtruc.Text.Trim();
+            dynamic respuesta = apirest.Get("https://api.sunat.cloud/ruc/" + ruc);
 
+            txtrazon_social.Text = respuesta.razon_social.ToString();
+            txtdomicilio.Text = respuesta.domicilio_fiscal.ToString();
+            mtbfecha.Text = respuesta.fecha_actividad.ToString();
+            condicion.Text= respuesta.contribuyente_condicion.ToString();
+        }
     }
 }

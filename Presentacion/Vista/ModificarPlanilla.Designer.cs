@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label16 = new System.Windows.Forms.Label();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.paneltitulo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,11 +42,11 @@
             this.txtpago = new System.Windows.Forms.MaskedTextBox();
             this.lblper = new System.Windows.Forms.Label();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.btnagregar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             this.SuspendLayout();
@@ -64,18 +64,7 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "MODIFICAR";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnminimizar
-            // 
-            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(212, 13);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnminimizar.TabIndex = 9;
-            this.btnminimizar.TabStop = false;
+            this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label16_MouseDown);
             // 
             // paneltitulo
             // 
@@ -91,6 +80,7 @@
             this.paneltitulo.Name = "paneltitulo";
             this.paneltitulo.Size = new System.Drawing.Size(341, 50);
             this.paneltitulo.TabIndex = 91;
+            this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
             // 
             // pictureBox1
             // 
@@ -107,12 +97,26 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(294, 13);
+            this.btncerrar.Location = new System.Drawing.Point(303, 3);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btncerrar.TabIndex = 8;
             this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
+            this.btnminimizar.Location = new System.Drawing.Point(221, 3);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnminimizar.TabIndex = 9;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
             // 
             // btnmaximizar
             // 
@@ -120,18 +124,20 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
-            this.btnmaximizar.Location = new System.Drawing.Point(253, 13);
+            this.btnmaximizar.Location = new System.Drawing.Point(262, 3);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnmaximizar.TabIndex = 10;
             this.btnmaximizar.TabStop = false;
+            this.btnmaximizar.Click += new System.EventHandler(this.btnmaximizar_Click);
             // 
             // btnrestaurar
             // 
             this.btnrestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnrestaurar.Enabled = false;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(253, 13);
+            this.btnrestaurar.Location = new System.Drawing.Point(262, 3);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,35 +210,36 @@
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnguardar.Location = new System.Drawing.Point(53, 214);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(108, 34);
+            this.btnguardar.Size = new System.Drawing.Size(98, 34);
             this.btnguardar.TabIndex = 99;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // btnagregar
+            // btncancelar
             // 
-            this.btnagregar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnagregar.FlatAppearance.BorderSize = 0;
-            this.btnagregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnagregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnagregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnagregar.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnagregar.Location = new System.Drawing.Point(192, 214);
-            this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(107, 34);
-            this.btnagregar.TabIndex = 100;
-            this.btnagregar.Text = "Cancelar";
-            this.btnagregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnagregar.UseVisualStyleBackColor = false;
+            this.btncancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btncancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btncancelar.Image = global::Presentacion.Properties.Resources.baseline_cancel_white_24dp;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(192, 214);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(107, 34);
+            this.btncancelar.TabIndex = 100;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // frmModificarPlanilla
             // 
@@ -240,7 +247,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(341, 273);
             this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.btnagregar);
+            this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.lblper);
             this.Controls.Add(this.txtpago);
             this.Controls.Add(this.cbxmes);
@@ -248,14 +255,15 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.paneltitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmModificarPlanilla";
             this.Text = "ModificarPlanilla";
             this.Load += new System.EventHandler(this.frmModificarPlanilla_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             this.ResumeLayout(false);
@@ -277,7 +285,7 @@
         public System.Windows.Forms.Label lblpago;
         public System.Windows.Forms.MaskedTextBox txtpago;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.Button btnagregar;
+        private System.Windows.Forms.Button btncancelar;
         public System.Windows.Forms.ComboBox cbxmes;
         public System.Windows.Forms.Label lblper;
     }
