@@ -195,9 +195,7 @@ on(co.id_tipocontrato = ti.id_tipocontrato) WHERE e.id_empleado=@codigo_empleado
 END
 GO
 
-
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
-
 ALTER PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
 @id_banco int,
@@ -266,6 +264,7 @@ SELECT * FROM dbo.Contrato c
 END
 GO
 GO
+
 ----and e.id_em_maestra=@codigo_empresa
 /*     EMPRESA AND SUCURSAL      */
 ALTER PROC SP_INSERT_EMPRESA_MAESTRA
@@ -673,7 +672,7 @@ AS BEGIN
 SET @grati=(SELECT count(g.id_grati) FROM dbo.Gratificaciones g)
 IF(@grati=0)
 	BEGIN
-		SET @grati=1		
+		SET @grati=1
 	END
 ELSE
 	BEGIN
@@ -764,7 +763,6 @@ END
 GO
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-
 CREATE PROC SP_EMPR
 AS BEGIN
 SELECT e.id_em_maestra,em.razon_social
@@ -785,7 +783,6 @@ AS BEGIN
 	SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
 END
 GO
-
 
 --PROCEDIMENTO PARA ACTUALIZAR BANCO
 CREATE PROC SP_UPDATE_BANCO(
@@ -913,7 +910,8 @@ CREATE PROC SP_UPDATE_REGIMEN
 @descripcion varchar(100),
 @tipo_regimen varchar(30)
 AS BEGIN
-UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
+UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, 
+descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
 END
 GO
 
@@ -925,8 +923,6 @@ DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
 SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
 END
 GO
-
-
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 alter PROC SP_INSERT_PLANILLA
@@ -997,4 +993,5 @@ AS BEGIN
 END
 GO
 
-exec SP_SHOW_PERIODO 1,2019
+/*   SCRIP PARA PERIODO       */
+

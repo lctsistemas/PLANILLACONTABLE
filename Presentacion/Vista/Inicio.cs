@@ -107,7 +107,7 @@ namespace Login_inicio
                                 BloquearAcceso(true);
                                 if (activo)
                                 {
-                                    frmprincipal mainmenu = new frmprincipal();
+                                    Main_Principal mainmenu = new Main_Principal();
                                     mainmenu.Show();
                                     mainmenu.FormClosed += Logout;//revisar
                                     this.Hide();

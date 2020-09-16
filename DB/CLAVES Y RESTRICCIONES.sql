@@ -30,8 +30,6 @@ ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) R
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_regpension FOREIGN KEY(codigo_regimen) REFERENCES RegimenPensionario
 
-
-
 --RESTRICCIONES
 --TABLA: EMPRESA MAESTRA, EMPRESA, SUCURSAL
 	--PRIMARY KEY
@@ -124,9 +122,6 @@ GO
 
 
 GO
-<<<<<<< HEAD
-=======
-
 select * from Periodo
 
 go
@@ -142,5 +137,3 @@ drop table ejemplo
 alter table ejemplo add constraint df_fecha default('01-01-1900') for fecha
 
 insert into ejemplo(nom) values('carlos')
->>>>>>> MCarlos
-

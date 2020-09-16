@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Subvista
 {
-    partial class frmvista_sbs
+    partial class Frmvista_sbs
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.webafp = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
-            // webBrowser1
+            // webafp
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(800, 450);
-            this.webBrowser1.TabIndex = 0;
+            this.webafp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.webafp.Location = new System.Drawing.Point(0, 3);
+            this.webafp.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webafp.Name = "webafp";
+            this.webafp.Size = new System.Drawing.Size(800, 444);
+            this.webafp.TabIndex = 1;
+            this.webafp.Url = new System.Uri("", System.UriKind.Relative);
             // 
-            // webBrowser2
-            // 
-            this.webBrowser2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser2.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser2.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser2.Name = "webBrowser2";
-            this.webBrowser2.Size = new System.Drawing.Size(800, 450);
-            this.webBrowser2.TabIndex = 1;
-            this.webBrowser2.Url = new System.Uri("https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx", System.UriKind.Absolute);
-            // 
-            // frmvista_sbs
+            // Frmvista_sbs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.webBrowser2);
-            this.Controls.Add(this.webBrowser1);
-            this.Name = "frmvista_sbs";
+            this.Controls.Add(this.webafp);
+            this.Name = "Frmvista_sbs";
             this.Text = "Vista_SBS";
+            this.Load += new System.EventHandler(this.frmvista_sbs_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.WebBrowser webafp;
     }
 }

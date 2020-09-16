@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Vista
 {
-    partial class frmafp
+    partial class Frmafp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.linkcomisiones = new System.Windows.Forms.LinkLabel();
             this.btnupdate = new System.Windows.Forms.Button();
             this.cbomes = new System.Windows.Forms.ComboBox();
+            this.lblperiodo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvcomision = new System.Windows.Forms.DataGridView();
             this.paneltitulo = new System.Windows.Forms.Panel();
@@ -40,9 +41,6 @@
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkcomisiones = new System.Windows.Forms.LinkLabel();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).BeginInit();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,24 +50,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // linkcomisiones
             // 
-            this.panel1.Controls.Add(this.linkcomisiones);
-            this.panel1.Controls.Add(this.paneltitulo);
-            this.panel1.Controls.Add(this.btnupdate);
-            this.panel1.Controls.Add(this.cbomes);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.dgvcomision);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 440);
-            this.panel1.TabIndex = 0;
+            this.linkcomisiones.AutoSize = true;
+            this.linkcomisiones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkcomisiones.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkcomisiones.Location = new System.Drawing.Point(557, 75);
+            this.linkcomisiones.Name = "linkcomisiones";
+            this.linkcomisiones.Size = new System.Drawing.Size(113, 17);
+            this.linkcomisiones.TabIndex = 92;
+            this.linkcomisiones.TabStop = true;
+            this.linkcomisiones.Text = "Comisiones - SBS";
+            this.linkcomisiones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkcomisiones_LinkClicked);
             // 
             // btnupdate
             // 
-            this.btnupdate.Location = new System.Drawing.Point(377, 63);
+            this.btnupdate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.Location = new System.Drawing.Point(391, 72);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(148, 23);
             this.btnupdate.TabIndex = 4;
@@ -78,18 +75,30 @@
             // 
             // cbomes
             // 
+            this.cbomes.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbomes.FormattingEnabled = true;
-            this.cbomes.Location = new System.Drawing.Point(110, 65);
+            this.cbomes.Location = new System.Drawing.Point(133, 75);
             this.cbomes.Name = "cbomes";
-            this.cbomes.Size = new System.Drawing.Size(125, 21);
+            this.cbomes.Size = new System.Drawing.Size(130, 25);
             this.cbomes.TabIndex = 3;
+            // 
+            // lblperiodo
+            // 
+            this.lblperiodo.AutoSize = true;
+            this.lblperiodo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblperiodo.Location = new System.Drawing.Point(282, 78);
+            this.lblperiodo.Name = "lblperiodo";
+            this.lblperiodo.Size = new System.Drawing.Size(55, 17);
+            this.lblperiodo.TabIndex = 2;
+            this.lblperiodo.Text = "periodo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 68);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.Size = new System.Drawing.Size(103, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Mes devengue: ";
             // 
@@ -99,11 +108,11 @@
             this.dgvcomision.AllowUserToOrderColumns = true;
             this.dgvcomision.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcomision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvcomision.Location = new System.Drawing.Point(12, 122);
+            this.dgvcomision.Location = new System.Drawing.Point(12, 116);
             this.dgvcomision.Name = "dgvcomision";
             this.dgvcomision.RowHeadersVisible = false;
             this.dgvcomision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcomision.Size = new System.Drawing.Size(731, 255);
+            this.dgvcomision.Size = new System.Drawing.Size(716, 282);
             this.dgvcomision.TabIndex = 0;
             // 
             // paneltitulo
@@ -119,7 +128,7 @@
             this.paneltitulo.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo.Name = "paneltitulo";
             this.paneltitulo.Size = new System.Drawing.Size(755, 50);
-            this.paneltitulo.TabIndex = 91;
+            this.paneltitulo.TabIndex = 92;
             // 
             // pictureBox1
             // 
@@ -193,38 +202,21 @@
             this.btnrestaurar.TabIndex = 11;
             this.btnrestaurar.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(260, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mes devengue: ";
-            // 
-            // linkcomisiones
-            // 
-            this.linkcomisiones.AutoSize = true;
-            this.linkcomisiones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkcomisiones.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkcomisiones.Location = new System.Drawing.Point(553, 65);
-            this.linkcomisiones.Name = "linkcomisiones";
-            this.linkcomisiones.Size = new System.Drawing.Size(113, 17);
-            this.linkcomisiones.TabIndex = 92;
-            this.linkcomisiones.TabStop = true;
-            this.linkcomisiones.Text = "Comisiones - SBS";
-            this.linkcomisiones.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkcomisiones_LinkClicked);
-            // 
-            // frmafp
+            // Frmafp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 440);
-            this.Controls.Add(this.panel1);
-            this.Name = "frmafp";
+            this.Controls.Add(this.dgvcomision);
+            this.Controls.Add(this.linkcomisiones);
+            this.Controls.Add(this.paneltitulo);
+            this.Controls.Add(this.btnupdate);
+            this.Controls.Add(this.cbomes);
+            this.Controls.Add(this.lblperiodo);
+            this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Frmafp";
             this.Text = "Afp";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).EndInit();
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
@@ -234,17 +226,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvcomision;
         private System.Windows.Forms.ComboBox cbomes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.LinkLabel linkcomisiones;
+        private System.Windows.Forms.Label lblperiodo;
         private System.Windows.Forms.Panel paneltitulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btncerrar;
@@ -252,6 +244,5 @@
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btnrestaurar;
-        private System.Windows.Forms.Label label1;
     }
 }

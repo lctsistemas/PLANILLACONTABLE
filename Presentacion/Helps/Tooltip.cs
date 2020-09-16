@@ -10,11 +10,10 @@ namespace Presentacion.Helps
         {
             //t.IsBalloon = true;
             //t.ToolTipIcon = ToolTipIcon.None;
-            //t.BackColor =Color.LightCoral;
-            //t.ForeColor = Color.LightBlue;
+            //t.BackColor =Color.SteelBlue;
+            //t.ForeColor = Color.White;
             //t.AutomaticDelay = 400;
             //t.InitialDelay = 400;
-
         }
 
         public static void Title(Control ctr, string alert, bool ballon)
@@ -22,7 +21,7 @@ namespace Presentacion.Helps
             t.IsBalloon = ballon;
             t.AutomaticDelay = 400;
             t.InitialDelay = 400;
-            t.SetToolTip(ctr, alert);
+            t.SetToolTip(ctr, alert);           
         }
     }
 }
