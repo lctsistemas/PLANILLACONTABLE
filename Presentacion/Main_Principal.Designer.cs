@@ -504,8 +504,8 @@
             this.lineuser.BorderColor = System.Drawing.Color.White;
             this.lineuser.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             this.lineuser.Name = "lineuser";
-            this.lineuser.X1 = 38;
-            this.lineuser.X2 = 182;
+            this.lineuser.X1 = 40;
+            this.lineuser.X2 = 184;
             this.lineuser.Y1 = 225;
             this.lineuser.Y2 = 225;
             // 
