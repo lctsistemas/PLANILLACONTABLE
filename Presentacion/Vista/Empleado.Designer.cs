@@ -1104,7 +1104,7 @@ namespace Presentacion.Vista
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(357, 56);
+            this.btnNuevo.Location = new System.Drawing.Point(355, 56);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(86, 27);
             this.btnNuevo.TabIndex = 64;
@@ -1145,7 +1145,7 @@ namespace Presentacion.Vista
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
             this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneliminar.Location = new System.Drawing.Point(462, 55);
+            this.btneliminar.Location = new System.Drawing.Point(458, 56);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(95, 27);
             this.btneliminar.TabIndex = 64;

@@ -64,7 +64,8 @@ idperiodo int not null
 )
 GO
 
-select * from RegimenPensionario
+select *  from ComisionesPension
+delete from ComisionesPension
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
 CREATE TABLE Empresa_maestra(
 id_em_maestra int identity(1,1),

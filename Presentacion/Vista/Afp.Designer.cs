@@ -34,6 +34,11 @@
             this.lblperiodo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvcomision = new System.Windows.Forms.DataGridView();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tope = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paneltitulo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
@@ -41,6 +46,12 @@
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.txtcodigo_regimen = new System.Windows.Forms.TextBox();
+            this.txtidperiodo = new System.Windows.Forms.TextBox();
+            this.txtidmes = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).BeginInit();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +83,7 @@
             this.btnupdate.TabIndex = 4;
             this.btnupdate.Text = "&Guardar Cambios";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // cbomes
             // 
@@ -104,16 +116,48 @@
             // 
             // dgvcomision
             // 
+            this.dgvcomision.AllowUserToAddRows = false;
             this.dgvcomision.AllowUserToDeleteRows = false;
             this.dgvcomision.AllowUserToOrderColumns = true;
             this.dgvcomision.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcomision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvcomision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.comision,
+            this.saldo,
+            this.seguro,
+            this.aporte,
+            this.tope});
             this.dgvcomision.Location = new System.Drawing.Point(12, 116);
             this.dgvcomision.Name = "dgvcomision";
-            this.dgvcomision.RowHeadersVisible = false;
-            this.dgvcomision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcomision.Size = new System.Drawing.Size(716, 282);
+            this.dgvcomision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvcomision.Size = new System.Drawing.Size(716, 213);
             this.dgvcomision.TabIndex = 0;
+            this.dgvcomision.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvcomision_KeyDown);
+            // 
+            // comision
+            // 
+            this.comision.HeaderText = "COMISION";
+            this.comision.Name = "comision";
+            // 
+            // saldo
+            // 
+            this.saldo.HeaderText = "SALDO";
+            this.saldo.Name = "saldo";
+            // 
+            // seguro
+            // 
+            this.seguro.HeaderText = "SEGURO";
+            this.seguro.Name = "seguro";
+            // 
+            // aporte
+            // 
+            this.aporte.HeaderText = "APORTE";
+            this.aporte.Name = "aporte";
+            // 
+            // tope
+            // 
+            this.tope.HeaderText = "TOPE";
+            this.tope.Name = "tope";
             // 
             // paneltitulo
             // 
@@ -151,6 +195,7 @@
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btncerrar.TabIndex = 8;
             this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click_1);
             // 
             // label16
             // 
@@ -202,11 +247,65 @@
             this.btnrestaurar.TabIndex = 11;
             this.btnrestaurar.TabStop = false;
             // 
+            // txtcodigo_regimen
+            // 
+            this.txtcodigo_regimen.Location = new System.Drawing.Point(115, 349);
+            this.txtcodigo_regimen.Name = "txtcodigo_regimen";
+            this.txtcodigo_regimen.Size = new System.Drawing.Size(100, 20);
+            this.txtcodigo_regimen.TabIndex = 93;
+            // 
+            // txtidperiodo
+            // 
+            this.txtidperiodo.Location = new System.Drawing.Point(254, 349);
+            this.txtidperiodo.Name = "txtidperiodo";
+            this.txtidperiodo.Size = new System.Drawing.Size(100, 20);
+            this.txtidperiodo.TabIndex = 93;
+            // 
+            // txtidmes
+            // 
+            this.txtidmes.Location = new System.Drawing.Point(391, 349);
+            this.txtidmes.Name = "txtidmes";
+            this.txtidmes.Size = new System.Drawing.Size(100, 20);
+            this.txtidmes.TabIndex = 93;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(112, 372);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.TabIndex = 94;
+            this.label1.Text = "codigo regimen";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(251, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 94;
+            this.label3.Text = "id periodo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(388, 372);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "id mes";
+            // 
             // Frmafp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 440);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtidmes);
+            this.Controls.Add(this.txtidperiodo);
+            this.Controls.Add(this.txtcodigo_regimen);
             this.Controls.Add(this.dgvcomision);
             this.Controls.Add(this.linkcomisiones);
             this.Controls.Add(this.paneltitulo);
@@ -217,6 +316,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frmafp";
             this.Text = "Afp";
+            this.Load += new System.EventHandler(this.Frmafp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).EndInit();
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
@@ -244,5 +344,16 @@
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btnrestaurar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saldo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seguro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aporte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tope;
+        private System.Windows.Forms.TextBox txtcodigo_regimen;
+        private System.Windows.Forms.TextBox txtidperiodo;
+        private System.Windows.Forms.TextBox txtidmes;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

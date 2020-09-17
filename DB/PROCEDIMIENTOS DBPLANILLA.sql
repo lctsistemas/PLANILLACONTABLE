@@ -883,7 +883,7 @@ END
 GO
 ------------------------------------------------------FIN LOGIN ---------------------------------------------------------------------
 
---PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
+--STAR PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
 CREATE PROCEDURE SP_ADD_REGIMEN(
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
@@ -923,9 +923,27 @@ DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
 SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
 END
 GO
+--END
+
+--STAR PROCEDIMIENTO PARA COMISIONES PENSIONES	
+CREATE PROC SP_SHOWREGIMENparaCOMISIONES
+@tipo_regimen varchar(10)
+AS BEGIN
+SELECT codigo_regimen, descripcion 
+FROM dbo.RegimenPensionario WHERE tipo_regimen = @tipo_regimen
+END
+GO
+
+CREATE PROC SP_SHOW_MES
+AS BEGIN
+SELECT id_mes, nombre_mes FROM Mes
+END
+GO
+--END 
+
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
-alter PROC SP_INSERT_PLANILLA
+CREATE PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
@@ -960,18 +978,18 @@ WHERE id_planilla=@id_planilla
 END
 GO
 
-exec SP_UPDATE_PLANILLA 2,'2020/10/29'
 
+go
 alter PROC SP_SHOW_PLANILLA
 @codigo_empresa int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
+	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
 	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa
 	END
 GO
-exec SP_SHOW_PLANILLA 2
 
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,
@@ -993,5 +1011,5 @@ AS BEGIN
 END
 GO
 
-/*   SCRIP PARA PERIODO       */
+/*   comisiones afp       */
 
