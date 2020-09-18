@@ -117,18 +117,114 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
+  </data>
+  <data name="&gt;&gt;label10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label10.Parent" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnminimizar.Name" xml:space="preserve">
+    <value>btnminimizar</value>
+  </data>
+  <data name="&gt;&gt;btnminimizar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnminimizar.Parent" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;btnminimizar.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnmaximizar.Name" xml:space="preserve">
+    <value>btnmaximizar</value>
+  </data>
+  <data name="&gt;&gt;btnmaximizar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnmaximizar.Parent" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;btnmaximizar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btncerrar.Name" xml:space="preserve">
+    <value>btncerrar</value>
+  </data>
+  <data name="&gt;&gt;btncerrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btncerrar.Parent" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;btncerrar.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnrestaurar.Name" xml:space="preserve">
+    <value>btnrestaurar</value>
+  </data>
+  <data name="&gt;&gt;btnrestaurar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnrestaurar.Parent" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;btnrestaurar.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelsucursal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="panelsucursal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelsucursal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>907, 50</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panelsucursal.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;panelsucursal.Name" xml:space="preserve">
+    <value>panelsucursal</value>
+  </data>
+  <data name="&gt;&gt;panelsucursal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelsucursal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panelsucursal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 5</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 40</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -154,7 +250,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>313, 12</value>
+    <value>72, 9</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>144, 33</value>
@@ -184,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnminimizar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>686, 6</value>
+    <value>794, 6</value>
   </data>
   <data name="btnminimizar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -214,7 +310,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnmaximizar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>722, 6</value>
+    <value>830, 6</value>
   </data>
   <data name="btnmaximizar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -244,7 +340,7 @@
     <value>NoControl</value>
   </data>
   <data name="btncerrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>758, 6</value>
+    <value>866, 6</value>
   </data>
   <data name="btncerrar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -274,7 +370,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnrestaurar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>722, 6</value>
+    <value>830, 6</value>
   </data>
   <data name="btnrestaurar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -300,44 +396,275 @@
   <data name="&gt;&gt;btnrestaurar.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="panelsucursal.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;btnempresa.Name" xml:space="preserve">
+    <value>btnempresa</value>
   </data>
-  <data name="panelsucursal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;btnempresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panelsucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>799, 50</value>
+  <data name="&gt;&gt;btnempresa.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
   </data>
-  <data name="panelsucursal.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;btnempresa.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtregimen.Name" xml:space="preserve">
+    <value>txtregimen</value>
+  </data>
+  <data name="&gt;&gt;txtregimen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtregimen.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtregimen.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.Name" xml:space="preserve">
+    <value>txtusuario</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtusuario.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtidempresa.Name" xml:space="preserve">
+    <value>txtidempresa</value>
+  </data>
+  <data name="&gt;&gt;txtidempresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtidempresa.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtidempresa.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtruc.Name" xml:space="preserve">
+    <value>txtruc</value>
+  </data>
+  <data name="&gt;&gt;txtruc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtruc.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtruc.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtdomicilio.Name" xml:space="preserve">
+    <value>txtdomicilio</value>
+  </data>
+  <data name="&gt;&gt;txtdomicilio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtdomicilio.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtdomicilio.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtdireccion.Name" xml:space="preserve">
+    <value>txtdireccion</value>
+  </data>
+  <data name="&gt;&gt;txtdireccion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtdireccion.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtdireccion.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtlocalidad.Name" xml:space="preserve">
+    <value>txtlocalidad</value>
+  </data>
+  <data name="&gt;&gt;txtlocalidad.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtlocalidad.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtlocalidad.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;panelsucursal.Name" xml:space="preserve">
-    <value>panelsucursal</value>
+  <data name="&gt;&gt;txtrazon_social.Name" xml:space="preserve">
+    <value>txtrazon_social</value>
   </data>
-  <data name="&gt;&gt;panelsucursal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtrazon_social.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panelsucursal.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;txtrazon_social.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
   </data>
-  <data name="&gt;&gt;panelsucursal.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;txtrazon_social.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtcodigo_sucursal.Name" xml:space="preserve">
+    <value>txtcodigo_sucursal</value>
+  </data>
+  <data name="&gt;&gt;txtcodigo_sucursal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtcodigo_sucursal.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtcodigo_sucursal.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="tabgestion_empresa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 31</value>
+  </data>
+  <data name="tabgestion_empresa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabgestion_empresa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>891, 357</value>
+  </data>
+  <data name="tabgestion_empresa.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabgestion_empresa.Text" xml:space="preserve">
+    <value>GESTION  SUCURSAL</value>
+  </data>
+  <data name="&gt;&gt;tabgestion_empresa.Name" xml:space="preserve">
+    <value>tabgestion_empresa</value>
+  </data>
+  <data name="&gt;&gt;tabgestion_empresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabgestion_empresa.Parent" xml:space="preserve">
+    <value>tapsucursal</value>
+  </data>
+  <data name="&gt;&gt;tabgestion_empresa.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btnnuevo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="btnnuevo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnnuevo.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="btnnuevo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnnuevo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>412, 333</value>
+    <value>117, 56</value>
   </data>
   <data name="btnnuevo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 46</value>
+    <value>99, 27</value>
   </data>
   <data name="btnnuevo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="btnnuevo.Text" xml:space="preserve">
+    <value>&amp;Nuevo</value>
+  </data>
+  <data name="btnnuevo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnnuevo.Name" xml:space="preserve">
     <value>btnnuevo</value>
@@ -346,7 +673,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnnuevo.Parent" xml:space="preserve">
-    <value>tabgestion_empresa</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnnuevo.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -354,17 +681,29 @@
   <data name="btnguardar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="btnguardar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnguardar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="btnguardar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnguardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 333</value>
+    <value>12, 56</value>
   </data>
   <data name="btnguardar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 46</value>
+    <value>99, 27</value>
   </data>
   <data name="btnguardar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="btnguardar.Text" xml:space="preserve">
+    <value>&amp;Guardar</value>
+  </data>
+  <data name="btnguardar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;btnguardar.Name" xml:space="preserve">
     <value>btnguardar</value>
@@ -373,10 +712,10 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnguardar.Parent" xml:space="preserve">
-    <value>tabgestion_empresa</value>
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;btnguardar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnempresa.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -388,7 +727,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnempresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>503, 281</value>
+    <value>507, 281</value>
   </data>
   <data name="btnempresa.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 22</value>
@@ -409,7 +748,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;btnempresa.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="txtregimen.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -433,7 +772,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtregimen.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="txtusuario.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -457,13 +796,13 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtusuario.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="txtidempresa.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtidempresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 278</value>
+    <value>578, 280</value>
   </data>
   <data name="txtidempresa.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 23</value>
@@ -484,7 +823,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtidempresa.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="txtruc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -511,7 +850,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtruc.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="txtdomicilio.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -535,7 +874,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtdomicilio.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="txtdireccion.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -559,7 +898,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtdireccion.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="txtlocalidad.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -583,7 +922,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtlocalidad.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="txtrazon_social.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -607,7 +946,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtrazon_social.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="txtcodigo_sucursal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
@@ -634,7 +973,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;txtcodigo_sucursal.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -667,7 +1006,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -700,7 +1039,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -733,7 +1072,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -766,7 +1105,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -799,7 +1138,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -832,7 +1171,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -865,7 +1204,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -898,34 +1237,7 @@
     <value>tabgestion_empresa</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="tabgestion_empresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 31</value>
-  </data>
-  <data name="tabgestion_empresa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabgestion_empresa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>793, 403</value>
-  </data>
-  <data name="tabgestion_empresa.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tabgestion_empresa.Text" xml:space="preserve">
-    <value>GESTION  SUCURSAL</value>
-  </data>
-  <data name="&gt;&gt;tabgestion_empresa.Name" xml:space="preserve">
-    <value>tabgestion_empresa</value>
-  </data>
-  <data name="&gt;&gt;tabgestion_empresa.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabgestion_empresa.Parent" xml:space="preserve">
-    <value>tapsucursal</value>
-  </data>
-  <data name="&gt;&gt;tabgestion_empresa.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>17</value>
   </data>
   <data name="txtbuscar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 11.25pt</value>
@@ -950,33 +1262,6 @@
   </data>
   <data name="&gt;&gt;txtbuscar.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="btneliminar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btneliminar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btneliminar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>679, 18</value>
-  </data>
-  <data name="btneliminar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 46</value>
-  </data>
-  <data name="btneliminar.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btneliminar.Name" xml:space="preserve">
-    <value>btneliminar</value>
-  </data>
-  <data name="&gt;&gt;btneliminar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btneliminar.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;btneliminar.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1009,7 +1294,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lbltotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1021,7 +1306,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbltotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>526, 380</value>
+    <value>698, 44</value>
   </data>
   <data name="lbltotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
@@ -1042,7 +1327,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;lbltotal.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="dgvsucursal.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>30</value>
@@ -1053,8 +1338,11 @@
   <data name="dgvsucursal.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
+  <data name="dgvsucursal.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Horizontal</value>
+  </data>
   <data name="dgvsucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>788, 305</value>
+    <value>883, 257</value>
   </data>
   <data name="dgvsucursal.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1069,7 +1357,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;dgvsucursal.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1099,7 +1387,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tablista_empresa.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 31</value>
@@ -1108,7 +1396,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tablista_empresa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>793, 403</value>
+    <value>891, 357</value>
   </data>
   <data name="tablista_empresa.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1128,6 +1416,45 @@
   <data name="&gt;&gt;tablista_empresa.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btneliminar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btneliminar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btneliminar.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btneliminar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btneliminar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 56</value>
+  </data>
+  <data name="btneliminar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 27</value>
+  </data>
+  <data name="btneliminar.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btneliminar.Text" xml:space="preserve">
+    <value>&amp;Eliminar</value>
+  </data>
+  <data name="btneliminar.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;btneliminar.Name" xml:space="preserve">
+    <value>btneliminar</value>
+  </data>
+  <data name="&gt;&gt;btneliminar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btneliminar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btneliminar.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tapsucursal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
@@ -1135,7 +1462,7 @@
     <value>159, 27</value>
   </data>
   <data name="tapsucursal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, 51</value>
+    <value>2, 89</value>
   </data>
   <data name="tapsucursal.Padding" type="System.Drawing.Point, System.Drawing">
     <value>20, 5</value>
@@ -1144,7 +1471,7 @@
     <value>True</value>
   </data>
   <data name="tapsucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>801, 438</value>
+    <value>899, 392</value>
   </data>
   <data name="tapsucursal.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1159,7 +1486,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tapsucursal.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1168,7 +1495,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>799, 487</value>
+    <value>907, 488</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Sucursal</value>

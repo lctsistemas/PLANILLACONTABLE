@@ -52,6 +52,7 @@ namespace Presentacion.Vista
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
 
             cbxmes.SelectedItem = mes.ElementAt(datefin.Month);
+            
 
             txtremu.Text = "930.00";
             txtasig.Text = "93.00";
@@ -124,11 +125,7 @@ namespace Presentacion.Vista
             datefin = dtpfin.Value;
             txtdia.Text = datefin.Day.ToString();
             Int32 horas_mes = datefin.Day * 8;
-
-
             txthora.Text = Convert.ToString(horas_mes);
-
-
         }
 
         private void cbxmes_TextChanged(object sender, EventArgs e)

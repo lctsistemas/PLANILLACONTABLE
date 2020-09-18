@@ -22,8 +22,7 @@ namespace Presentacion.Vista
 
         public frmempleado()
         {
-            InitializeComponent();
-            UserCache.Codigo_empresa = 2;
+            InitializeComponent();            
             Mostrar_documento();
             Mostrar_cargo();
             Mostrar_regimenpensionario();
@@ -58,7 +57,7 @@ namespace Presentacion.Vista
             dgvempleado.Columns[0].Visible = false;
             dgvempleado.Columns[1].Visible = false;
             dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES";
-            dgvempleado.Columns[2].Width = 211;
+            dgvempleado.Columns[2].Width = 230;
             dgvempleado.Columns[3].Visible = false;
             dgvempleado.Columns[4].Visible = false;
             dgvempleado.Columns[5].Visible = false;

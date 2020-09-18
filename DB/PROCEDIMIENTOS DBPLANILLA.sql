@@ -903,7 +903,6 @@ from RegimenPensionario r
 END
 GO
 
-
 CREATE PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
@@ -922,8 +921,9 @@ AS BEGIN
 DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
 SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
 END
-GO
 --END
+GO
+
 
 --STAR PROCEDIMIENTO PARA COMISIONES PENSIONES	
 CREATE PROC SP_SHOWREGIMENparaCOMISIONES
@@ -939,7 +939,13 @@ AS BEGIN
 SELECT id_mes, nombre_mes FROM Mes
 END
 GO
---END 
+
+CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
+AS BEGIN
+SELECT * FROM dbo.ComisionesPension
+END
+GO
+--END-----
 
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
@@ -960,13 +966,13 @@ CREATE PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,mes,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla,@id_periodo,@id_empresa,@mes,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
-	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'
-	
+	INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,mes,fecha_inicial , fecha_final,fecha_pago, 
+	dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla,@id_periodo,@id_empresa,@mes,@fecha_inicial, @fecha_final, @fecha_pago, 
+	@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
 END
 GO
-
 
 
 alter PROC SP_UPDATE_PLANILLA
@@ -1011,5 +1017,5 @@ AS BEGIN
 END
 GO
 
-/*   comisiones afp       */
+
 

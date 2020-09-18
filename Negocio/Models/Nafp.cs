@@ -47,6 +47,7 @@ namespace Negocio.Models
             }
         }
 
+        #region revisar no sale
         //LLENAR MES
         //public IEnumerable<Nafp> Mostrar_mes()
         //{
@@ -67,8 +68,9 @@ namespace Negocio.Models
 
         //    return lisn;
         //}
-
-        //LLENAR MES
+        #endregion 
+        
+        #region Mostrar mes para afp
         public IEnumerable<Nafp> Mostrar_mes()
         {
             List<Nafp> list_rol = null;
@@ -81,7 +83,7 @@ namespace Negocio.Models
                     {
                         list_rol.Add(new Nafp()
                         {
-                            Idmes = Convert.ToInt32(item[0]),
+                            Idmes=Convert.ToInt32(item[0]),
                             Mes = item[1].ToString()
                         });
                     }                    
@@ -89,6 +91,16 @@ namespace Negocio.Models
             }
             return list_rol;
         }
+        #endregion
+
+        #region mostrar regimen pensionario spp
+        public DataTable Mostrar_regimenPensionario(string tipo_regimen)
+        {
+            //si cambiar el el campo en DB de Regiemen pensiones tambien en datagriview por que esta mostrando la 
+            //propiedad del campo de BD en su celda property.
+            return new Rafp().Mostrar_regimenPensionario(tipo_regimen);
+        }
+        #endregion
 
         public void Dispose()
         {
