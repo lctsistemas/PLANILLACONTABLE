@@ -104,17 +104,7 @@ private void btncerrar_Click(object sender, EventArgs e)
 
         }
 
-        private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void label16_MouseDown(object sender, MouseEventArgs e)
-        {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {

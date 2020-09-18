@@ -161,9 +161,9 @@ namespace Presentacion.Vista
         {
             using (NRegimenSalud nrs = new NRegimenSalud())
             {
-                cbocargo.DataSource = nrs.Getall();
-                cbocargo.DisplayMember = "regimen_salud";
-                cbocargo.ValueMember = "id_regimen_salud";
+                cboregimensalud.DataSource = nrs.Getall();
+                cboregimensalud.DisplayMember = "regimen_salud";
+                cboregimensalud.ValueMember = "id_regimen_salud";
             }
         }
 
@@ -351,18 +351,29 @@ namespace Presentacion.Vista
                 emple_contra.ccts = txtcts.Text.Trim();
                 emple_contra.ccussp = txtcussp.Text.Trim();
 
-                result = emple_contra.GuardarCambios();
+                bool valida = new ValidacionDatos(emple_contra).Validate();
 
-                if (result.Contains("ya se encuentra registrado"))
+
+                if (valida)
                 {
-                    Messages.M_warning(result);
+
+                    result = emple_contra.GuardarCambios();
+
+                    if (result.Contains("ya se encuentra registrado"))
+                    {
+                        Messages.M_warning(result);
+                    }
+                    else
+                    {
+                        mostrarEmpleado();
+                        Messages.M_info(result);
+                        limpiar();
+                    }
                 }
-                else
-                {
-                    mostrarEmpleado();
-                    Messages.M_info(result);
-                    limpiar();
-                }
+
+                
+
+                
             }
         }
 

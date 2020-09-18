@@ -56,9 +56,44 @@ namespace Presentacion.Vista
             }
         }
 
+        private void Tabla()
+        {
+            dgvregimensalud.Columns[0].HeaderText = "Id_regimen_salud";
+            dgvregimensalud.Columns[0].Width = 50;
+            dgvregimensalud.Columns[0].Visible = false;
+
+            dgvregimensalud.Columns[1].HeaderText = "Cod. regimen salud";
+            dgvregimensalud.Columns[1].Width = 150;
+
+            dgvregimensalud.Columns[2].HeaderText = "Regimen Salud";
+            dgvregimensalud.Columns[2].Width = 300;
+
+            dgvregimensalud.Columns[3].HeaderText = "state";
+            dgvregimensalud.Columns[3].Width = 100;
+            dgvregimensalud.Columns[3].Visible = false;
+
+
+
+        }
+
+        private void Showregimensalud()
+        {
+            using (nrs)
+            {
+                dgvregimensalud.DataSource = nrs.Getall();
+            }
+        }
+
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             GenerarCodigo();
+        }
+
+        private void RegimenSalud_Load(object sender, EventArgs e)
+        {
+            Showregimensalud();
+            Tabla();
         }
     }
 }

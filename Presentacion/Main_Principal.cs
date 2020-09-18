@@ -193,5 +193,9 @@ namespace Presentacion
             lblusuario.Visible = true;
         }
 
+        private void btnplanilla_Click(object sender, EventArgs e)
+        {
+            OpenForm<Planilla_Manto>();
+        }
     }
 }

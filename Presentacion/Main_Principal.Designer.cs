@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.PanelSideMenu = new System.Windows.Forms.Panel();
+            this.btnplanilla = new System.Windows.Forms.Button();
             this.btnreportes = new System.Windows.Forms.Button();
             this.panelregistro = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -86,6 +87,7 @@
             // 
             this.PanelSideMenu.AutoScroll = true;
             this.PanelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.PanelSideMenu.Controls.Add(this.btnplanilla);
             this.PanelSideMenu.Controls.Add(this.btnreportes);
             this.PanelSideMenu.Controls.Add(this.panelregistro);
             this.PanelSideMenu.Controls.Add(this.btnregistro);
@@ -99,6 +101,25 @@
             this.PanelSideMenu.Name = "PanelSideMenu";
             this.PanelSideMenu.Size = new System.Drawing.Size(250, 662);
             this.PanelSideMenu.TabIndex = 0;
+            // 
+            // btnplanilla
+            // 
+            this.btnplanilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnplanilla.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnplanilla.FlatAppearance.BorderSize = 0;
+            this.btnplanilla.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnplanilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnplanilla.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnplanilla.ForeColor = System.Drawing.Color.White;
+            this.btnplanilla.Image = global::Presentacion.Properties.Resources.reportes;
+            this.btnplanilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnplanilla.Location = new System.Drawing.Point(0, 746);
+            this.btnplanilla.Name = "btnplanilla";
+            this.btnplanilla.Size = new System.Drawing.Size(233, 45);
+            this.btnplanilla.TabIndex = 10;
+            this.btnplanilla.Text = "Planilla";
+            this.btnplanilla.UseVisualStyleBackColor = false;
+            this.btnplanilla.Click += new System.EventHandler(this.btnplanilla_Click);
             // 
             // btnreportes
             // 
@@ -712,5 +733,6 @@
         private System.Windows.Forms.Label lbllocalidad;
         private System.Windows.Forms.Label lblid_periodo;
         private System.Windows.Forms.Label lblidempresa;
+        private System.Windows.Forms.Button btnplanilla;
     }
 }
