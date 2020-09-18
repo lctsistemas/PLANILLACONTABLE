@@ -29,7 +29,7 @@ namespace Presentacion.Vista
             Mostrar_regimenpensionario();
             Mostar_banco();
             Mostar_tcontrato();
-
+            MostrarRegimenSalud();
         }
 
 
@@ -39,8 +39,8 @@ namespace Presentacion.Vista
             String[] tpago = { "EFECTIVO", "DEPOSITO EN CUENTA", "OTROS" };
             cbotipopago.Items.AddRange(tpago);
 
-            String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
-            cboregimensalud.Items.AddRange(regimen_salud);
+            //String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
+            //cboregimensalud.Items.AddRange(regimen_salud);
 
             String[] periodicidad = { "MENSUAL", "QUINCENAL", "SEMANAL", "DIARIO", "OTROS" };
             cboperiodicidad.Items.AddRange(periodicidad);
@@ -158,6 +158,16 @@ namespace Presentacion.Vista
             }
         }
 
+        private void MostrarRegimenSalud()
+        {
+            using (NRegimenSalud nrs = new NRegimenSalud())
+            {
+                cbocargo.DataSource = nrs.Getall();
+                cbocargo.DisplayMember = "regimen_salud";
+                cbocargo.ValueMember = "id_regimen_salud";
+            }
+        }
+
         private void Mostrar_regimenpensionario()
         {
             using (NRegimen nre = new NRegimen())
@@ -266,6 +276,7 @@ namespace Presentacion.Vista
             mostrarEmpleado();
             Tabla();
             Bloquear_controles();
+            MostrarRegimenSalud();
         }
 
         private void btnguardar_Click(object sender, EventArgs e)

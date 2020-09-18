@@ -53,6 +53,7 @@
     <Compile Include="Models\Nlogin.cs" />
     <Compile Include="Models\NPlanilla.cs" />
     <Compile Include="Models\NRegimen.cs" />
+    <Compile Include="Models\NRegimenSalud.cs" />
     <Compile Include="Models\Nrol.cs" />
     <Compile Include="Models\NSucursal.cs" />
     <Compile Include="Models\Ntipocontrato.cs" />

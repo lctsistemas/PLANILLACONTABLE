@@ -87,6 +87,7 @@ namespace Presentacion
         private void btnsucursal_Click(object sender, EventArgs e)
         {
             OpenForm<frmsucursal>();
+            
         }
 
         private void btnafp_Click(object sender, EventArgs e)

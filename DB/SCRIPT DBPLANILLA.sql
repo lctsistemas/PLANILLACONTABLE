@@ -287,3 +287,19 @@ id_tipo_planilla int not null,
 nombre_planilla varchar(30) 
 )
 
+CREATE TABLE REGIMEN_SALUD(
+id_regimen_salud int not null,
+cod_regi_salud int not null,
+regimen_salud varchar(80)
+);
+
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(2,05,'ESSALUD PENSIONISTAS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
+
+
