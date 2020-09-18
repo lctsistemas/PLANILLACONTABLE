@@ -119,7 +119,7 @@ namespace Presentacion.Vista
                 if (!string.IsNullOrEmpty(txtiduser.Text))
                     ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
                 else
-                    ne.eidusuario = -1;
+                    ne.eidusuario = -1;//para poder validar con dataAnotation
 
                 bool valida = new ValidacionDatos(ne).Validate();
                 if (valida)

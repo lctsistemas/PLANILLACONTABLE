@@ -69,6 +69,7 @@
     <Compile Include="KeyAutomatic\Ktipocontrato.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Rafp.cs" />
     <Compile Include="Repositories\RBanco.cs" />
     <Compile Include="Repositories\Rcargo.cs" />
     <Compile Include="Repositories\RConexion.cs" />
