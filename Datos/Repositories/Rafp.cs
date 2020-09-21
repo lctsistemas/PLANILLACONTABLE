@@ -73,6 +73,7 @@ namespace Datos.Repositories
         }
         #endregion
 
+        //MOSTRAR MES.
         public DataTable Mostrar_mes()
         {
             List<Dafp> lista_mes =new List<Dafp>();
@@ -131,6 +132,36 @@ namespace Datos.Repositories
                             dr.Close();
                         }
                     }                
+                }
+            }
+            return dt;
+        }
+        #endregion
+
+        #region Mostrar comisiones AFP
+        public DataTable Show_comisionafp(Dafp entity)
+        {
+            DataTable dt = null;
+            using (SqlConnection conect = RConexion.Getconectar())
+            {
+                conect.Open();                
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conect;
+                    cmd.CommandText = "SP_SHOW_COMISIONPENSIONES";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idmes",entity.Idmes);
+                    cmd.Parameters.AddWithValue("@idperiodo",entity.Idperiodo);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    using (dt = new DataTable())
+                    {
+                        if (reader.HasRows)
+                        {
+                            dt.Load(reader);
+                            reader.Close();
+                        }                      
+                    }
                 }
             }
             return dt;

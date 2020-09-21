@@ -940,13 +940,17 @@ SELECT id_mes, nombre_mes FROM Mes
 END
 GO
 
-CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
+ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
+@idmes int,
+@idperiodo int
 AS BEGIN
-SELECT * FROM dbo.ComisionesPension
+SELECT  (select descripcion from RegimenPensionario)as AFP, c.comision, c.saldo, c.seguro, c.aporte, c.tope,  
+c.idmes, c.idperiodo FROM dbo.ComisionesPension c
+WHERE c.idmes=2 AND c.idperiodo=1
 END
 GO
 --END-----
-
+GO
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 CREATE PROC SP_INSERT_PLANILLA

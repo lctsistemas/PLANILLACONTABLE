@@ -10,9 +10,10 @@ namespace Negocio.Models
 {
     public class Nafp:IDisposable
     {
+        List<Nafp> list_comisionAfp;
         #region Metodo Set and Get
-        public int Id_comision { get; set; }
-        public int Codigo_regimen { get; set; }
+        public int Id_comision {private get; set; }
+        public int Codigo_regimen {private get; set; }
         public decimal Comision {get; set; }
         public decimal Saldo {get; set; }
         public decimal Seguro { get; set; }
@@ -20,7 +21,7 @@ namespace Negocio.Models
         public decimal Tope {get; set;}
         public int Idmes { get; set; }
         public string Mes { get; set; }
-        public int Idperiodo { get; set; }        
+        public int Idperiodo {private get; set; }        
         #endregion
 
         public void InsertarMassiveData(IEnumerable<Nafp> list)
@@ -101,6 +102,42 @@ namespace Negocio.Models
             return new Rafp().Mostrar_regimenPensionario(tipo_regimen);
         }
         #endregion
+
+        #region Mostrar comisiones AFP
+        public IEnumerable<Nafp> Show_comisionafp()
+        {
+            list_comisionAfp = new List<Nafp>();
+            Dafp daf = new Dafp();            
+            daf.Idmes = Idmes;
+            daf.Idperiodo = Idperiodo;
+           
+            using (DataTable dt = new Rafp().Show_comisionafp(daf) )
+            {                
+                foreach (DataRow item in dt.Rows)
+                {
+                    list_comisionAfp.Add(new Nafp()
+                    {
+                        Comision = Convert.ToDecimal(item[0]),
+                        Saldo = Convert.ToDecimal(item[1]),
+                        Seguro = Convert.ToDecimal(item[2]),
+                        Aporte = Convert.ToDecimal(item[3]),
+                        Tope = Convert.ToDecimal(item[4]),
+                        //Idmes = Convert.ToInt32(item[5]),
+                        //Idperiodo=Convert.ToInt32(item[6])
+                    });
+                }               
+            }
+            return list_comisionAfp;
+        }
+        #endregion
+
+        //FILTAR DATOS POR MES Y PERIODO
+        public IEnumerable<Nusuario> Search(int idmes)
+        {
+            //filtrar lista con datos numericos, averiguar.
+            // return list_comisionAfp.FindAll(e => e.Idmes=);
+            return null;
+        }
 
         public void Dispose()
         {

@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,18 +44,20 @@
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.id_regimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.afp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnbuscar = new System.Windows.Forms.Button();
+            this.dgvregimen = new System.Windows.Forms.DataGridView();
             this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tope = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnbuscar = new System.Windows.Forms.Button();
+            this.id_regimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.afp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).BeginInit();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvregimen)).BeginInit();
             this.SuspendLayout();
             // 
             // linkcomisiones
@@ -129,45 +134,43 @@
             this.dgvcomision.AllowUserToAddRows = false;
             this.dgvcomision.AllowUserToDeleteRows = false;
             this.dgvcomision.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvcomision.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvcomision.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvcomision.BackgroundColor = System.Drawing.Color.White;
             this.dgvcomision.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcomision.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvcomision.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvcomision.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcomision.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcomision.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvcomision.ColumnHeadersHeight = 70;
-            this.dgvcomision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvcomision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_regimen,
-            this.afp,
             this.comision,
             this.saldo,
             this.seguro,
             this.aporte,
             this.tope});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcomision.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvcomision.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvcomision.EnableHeadersVisualStyles = false;
-            this.dgvcomision.Location = new System.Drawing.Point(7, 141);
+            this.dgvcomision.Location = new System.Drawing.Point(204, 141);
             this.dgvcomision.Name = "dgvcomision";
             this.dgvcomision.RowHeadersVisible = false;
+            this.dgvcomision.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvcomision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvcomision.Size = new System.Drawing.Size(927, 310);
+            this.dgvcomision.Size = new System.Drawing.Size(720, 302);
             this.dgvcomision.TabIndex = 0;
             this.dgvcomision.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvcomision_KeyDown);
             // 
@@ -223,48 +226,6 @@
             this.btnminimizar.TabIndex = 9;
             this.btnminimizar.TabStop = false;
             // 
-            // id_regimen
-            // 
-            this.id_regimen.DataPropertyName = "Codigo_Regimen";
-            this.id_regimen.HeaderText = "CODIGO REGIMEN";
-            this.id_regimen.Name = "id_regimen";
-            // 
-            // afp
-            // 
-            this.afp.DataPropertyName = "Descripcion";
-            this.afp.HeaderText = "AFP";
-            this.afp.Name = "afp";
-            // 
-            // comision
-            // 
-            this.comision.HeaderText = "COMISION MIXTA Y SOBRE FLUJO";
-            this.comision.Name = "comision";
-            this.comision.Width = 143;
-            // 
-            // saldo
-            // 
-            this.saldo.HeaderText = "COMISION ANUAL SOBRE SALDO";
-            this.saldo.Name = "saldo";
-            this.saldo.Width = 143;
-            // 
-            // seguro
-            // 
-            this.seguro.HeaderText = "PRIMA DE SEGUROS";
-            this.seguro.Name = "seguro";
-            this.seguro.Width = 144;
-            // 
-            // aporte
-            // 
-            this.aporte.HeaderText = "APORTE OBLIGATORIO AL FONDO DE PENSIONES";
-            this.aporte.Name = "aporte";
-            this.aporte.Width = 143;
-            // 
-            // tope
-            // 
-            this.tope.HeaderText = "REMUNERACION MAXIMA ASEGURABLE";
-            this.tope.Name = "tope";
-            this.tope.Width = 143;
-            // 
             // btnbuscar
             // 
             this.btnbuscar.BackColor = System.Drawing.Color.SteelBlue;
@@ -280,6 +241,94 @@
             this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
+            // dgvregimen
+            // 
+            this.dgvregimen.AllowUserToAddRows = false;
+            this.dgvregimen.AllowUserToDeleteRows = false;
+            this.dgvregimen.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvregimen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvregimen.BackgroundColor = System.Drawing.Color.White;
+            this.dgvregimen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvregimen.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvregimen.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            this.dgvregimen.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvregimen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvregimen.ColumnHeadersHeight = 70;
+            this.dgvregimen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_regimen,
+            this.afp});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvregimen.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvregimen.EnableHeadersVisualStyles = false;
+            this.dgvregimen.Location = new System.Drawing.Point(12, 141);
+            this.dgvregimen.Name = "dgvregimen";
+            this.dgvregimen.RowHeadersVisible = false;
+            this.dgvregimen.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvregimen.Size = new System.Drawing.Size(192, 302);
+            this.dgvregimen.TabIndex = 0;
+            this.dgvregimen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvcomision_KeyDown);
+            // 
+            // comision
+            // 
+            this.comision.DataPropertyName = "Comision";
+            this.comision.HeaderText = "COMISION MIXTA Y SOBRE FLUJO";
+            this.comision.Name = "comision";
+            this.comision.Width = 143;
+            // 
+            // saldo
+            // 
+            this.saldo.DataPropertyName = "Saldo";
+            this.saldo.HeaderText = "COMISION ANUAL SOBRE SALDO";
+            this.saldo.Name = "saldo";
+            this.saldo.Width = 143;
+            // 
+            // seguro
+            // 
+            this.seguro.DataPropertyName = "Seguro";
+            this.seguro.HeaderText = "PRIMA DE SEGUROS";
+            this.seguro.Name = "seguro";
+            this.seguro.Width = 144;
+            // 
+            // aporte
+            // 
+            this.aporte.DataPropertyName = "Aporte";
+            this.aporte.HeaderText = "APORTE OBLIGATORIO AL FONDO DE PENSIONES";
+            this.aporte.Name = "aporte";
+            this.aporte.Width = 143;
+            // 
+            // tope
+            // 
+            this.tope.DataPropertyName = "Tope";
+            this.tope.HeaderText = "REMUNERACION MAXIMA ASEGURABLE";
+            this.tope.Name = "tope";
+            this.tope.Width = 143;
+            // 
+            // id_regimen
+            // 
+            this.id_regimen.DataPropertyName = "Codigo_Regimen";
+            this.id_regimen.HeaderText = "CODIGO REGIMEN";
+            this.id_regimen.Name = "id_regimen";
+            // 
+            // afp
+            // 
+            this.afp.DataPropertyName = "Descripcion";
+            this.afp.HeaderText = "AFP";
+            this.afp.Name = "afp";
+            // 
             // Frmafp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +336,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(946, 488);
             this.Controls.Add(this.btnbuscar);
+            this.Controls.Add(this.dgvregimen);
             this.Controls.Add(this.dgvcomision);
             this.Controls.Add(this.linkcomisiones);
             this.Controls.Add(this.paneltitulo);
@@ -303,6 +353,7 @@
             this.paneltitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvregimen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,13 +370,14 @@
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox btnminimizar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_regimen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn afp;
+        private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn comision;
         private System.Windows.Forms.DataGridViewTextBoxColumn saldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn seguro;
         private System.Windows.Forms.DataGridViewTextBoxColumn aporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn tope;
-        private System.Windows.Forms.Button btnbuscar;
+        private System.Windows.Forms.DataGridView dgvregimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_regimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn afp;
     }
 }
