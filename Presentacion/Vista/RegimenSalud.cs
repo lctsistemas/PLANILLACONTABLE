@@ -121,7 +121,6 @@ namespace Presentacion.Vista
                 {
                     nrs.state = EntityState.Modificar;
                     nrs.Id_regimen_salud = Convert.ToInt32(r.Cells[0].Value);
-                    MessageBox.Show(nrs.Id_regimen_salud.ToString());
 
                     txtcodregsal.Text = Convert.ToString(r.Cells[1].Value);
                     txtregsal.Text = Convert.ToString(r.Cells[2].Value);
