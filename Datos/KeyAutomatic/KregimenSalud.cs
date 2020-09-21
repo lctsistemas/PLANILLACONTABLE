@@ -20,12 +20,12 @@ namespace Datos.KeyAutomatic
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SP_GENERAR_REG_SAL";
+                    cmd.CommandText = "SP_GEN_REG_SALUD";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@regimen_salud", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@reg_salud", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.ExecuteNonQuery();
 
-                    codigo = Convert.ToInt32(cmd.Parameters["@regimen_salud"].Value);
+                    codigo = Convert.ToInt32(cmd.Parameters["@reg_salud"].Value);
                     cmd.Parameters.Clear();
                 }
                 return codigo;

@@ -121,6 +121,7 @@ namespace Presentacion.Vista
                 {
                     nr.state = EntityState.Modificar;
                     nr.Codigo_Regimen = Convert.ToInt32(r.Cells[0].Value);
+                    MessageBox.Show(nr.Codigo_Regimen.ToString());
                     txtdescripcion.Text = Convert.ToString(r.Cells[1].Value);
                     txtdescCorta.Text = Convert.ToString(r.Cells[2].Value);
                     cbxregimen.Text = r.Cells[3].Value.ToString();

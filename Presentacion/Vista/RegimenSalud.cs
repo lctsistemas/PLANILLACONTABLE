@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
@@ -51,8 +52,9 @@ namespace Presentacion.Vista
                     Messages.M_info(result);
                 }
 
-                GenerarCodigo();
-
+                Showregimensalud();
+                limpiar();
+               
             }
         }
 
@@ -87,13 +89,79 @@ namespace Presentacion.Vista
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            using (nrs) { nrs.state = EntityState.Guardar; }
+            Habilitar(true);
+            limpiar();
             GenerarCodigo();
         }
 
         private void RegimenSalud_Load(object sender, EventArgs e)
         {
             Showregimensalud();
+            Habilitar(false);
             Tabla();
+            GenerarCodigo();
+        }
+
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            txtcodregsal.Enabled = v;
+            txtregsal.Enabled = v;
+            txtcodregsal.Focus();
+        }
+
+        private void dgvregimensalud_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvregimensalud.CurrentRow;
+            Habilitar(true);
+            if (dgvregimensalud.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (nrs)
+                {
+                    nrs.state = EntityState.Modificar;
+                    nrs.Id_regimen_salud = Convert.ToInt32(r.Cells[0].Value);
+                    MessageBox.Show(nrs.Id_regimen_salud.ToString());
+
+                    txtcodregsal.Text = Convert.ToString(r.Cells[1].Value);
+                    txtregsal.Text = Convert.ToString(r.Cells[2].Value);
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER                    
+                }
+            }
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (dgvregimensalud.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                if (r == DialogResult.Yes)
+                {
+                    using (nrs)
+                    {
+                        nrs.state = EntityState.Remover;
+                        nrs.Id_regimen_salud = Convert.ToInt32(dgvregimensalud.CurrentRow.Cells[0].Value);
+                        result = nrs.GuardarCambios();
+                        Showregimensalud();
+                        Messages.M_info(result);
+                    }
+                }
+
+            }
+            else
+            {
+                Messages.M_warning("Seleccione una fila de la tabla");
+            }
+            limpiar();
+        }
+
+        private void limpiar()
+        {
+            txtcodregsal.Text = String.Empty;
+            txtregsal.Text = String.Empty;
+
+            using (nrs) { nrs.state = EntityState.Guardar; }
         }
     }
 }

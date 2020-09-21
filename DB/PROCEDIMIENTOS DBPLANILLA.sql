@@ -760,17 +760,17 @@ ELSE
 END
 GO
 ----PROCEDIMIENTOS PARA GENERAR REGIMEN SALUD
-CREATE PROC SP_GEN_REG_SALUD
+ALTER PROC SP_GEN_REG_SALUD
 (@reg_salud int output)
 AS BEGIN
-SET @reg_salud=(SELECT count(rs.regimen_salud) FROM REGIMEN_SALUD rs)
+SET @reg_salud=(SELECT count(rs.id_regimen_salud) FROM REGIMEN_SALUD rs)
 IF(@reg_salud=0)
 	BEGIN
 		SET @reg_salud=1
 	END
 ELSE
 	BEGIN
-		SET @reg_salud=(SELECT MAX(rs.regimen_salud)+1 FROM REGIMEN_SALUD rs)
+		SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
 	END
 END
 GO
@@ -954,6 +954,7 @@ descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codig
 END
 GO
 
+
 CREATE PROC SP_DELETE_REGIMEN
 @codigo_regimen int,
 @mensaje varchar(100) output
@@ -1068,6 +1069,28 @@ AS BEGIN
 INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud)
 VALUES(@id_regimen_salud,@cod_regi_salud,@regimen_salud)
 SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
+END
+GO
+
+CREATE PROC SP_UPDATE_REG_SALUD
+@id_regimen_salud int,
+@cod_regimen_salud int,
+@regimen_salud varchar(80)
+AS BEGIN
+UPDATE REGIMEN_SALUD SET cod_regi_salud=@cod_regimen_salud,regimen_salud=@regimen_salud
+WHERE id_regimen_salud=@id_regimen_salud
+END
+GO
+
+EXEC SP_UPDATE_REG_SALUD 1,4,'ESSALUD AGRARIO/ACUICOLAs'
+GO
+
+CREATE PROC SP_DELETE_REG_SALUD
+@id_regimen_salud int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
+SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
 END
 GO
 
