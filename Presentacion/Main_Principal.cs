@@ -87,6 +87,7 @@ namespace Presentacion
         private void btnsucursal_Click(object sender, EventArgs e)
         {
             OpenForm<frmsucursal>();
+            
         }
 
         private void btnafp_Click(object sender, EventArgs e)
@@ -192,5 +193,9 @@ namespace Presentacion
             lblusuario.Visible = true;
         }
 
+        private void btnplanilla_Click(object sender, EventArgs e)
+        {
+            OpenForm<Planilla_Manto>();
+        }
     }
 }

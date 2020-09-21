@@ -37,13 +37,25 @@ namespace Negocio.Models
         //METODOS SET AND GET DE CONTRATO
         public Int32 cid_contrato { get; set; }
         public Int32 cid_empleado { get; set; }//eliminar
+
+        [Display(Name = "Banco")]
+        [Required]
         public Int32 cid_banco { get; set; }
         public Int32 cid_tcontrato { get; set; }
         public DateTime cfecha_inicio { get; set; }
         public DateTime cfecha_fin { get; set; }
         public String cnum_cuenta { get; set; }
+
+        [Display(Name = "Remuneracion Basica")]
+        [Required]
         public Decimal cremu_basica { get; set; }
+
+        [Display(Name = "Asignacion familiar")]
+        [Required]
         public Decimal casig_fami { get; set; }
+
+        [Display(Name = "Regimen Salud")]
+        [Required]
         public String cregimen_salud { get; set; }
         public String ctipo_pago { get; set; }
         public String cperiodicidad { get; set; }

@@ -38,5 +38,5 @@ namespace Datos.Contract
 
     public interface IPlanilla : IGenerict<DPlanilla> { }
 
-
+    public interface IRegimenSalud : IGenerict<DRegimenSalud> { }
 }

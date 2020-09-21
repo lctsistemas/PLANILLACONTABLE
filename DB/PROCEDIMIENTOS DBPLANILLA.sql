@@ -728,6 +728,21 @@ ELSE
 	END
 END
 GO
+--generar codigo regimen salud
+CREATE PROC SP_GENERAR_REG_SAL
+(@regimen_salud int output)
+AS BEGIN
+SET @regimen_salud=(SELECT count(rs.id_regimen_salud) FROM dbo.REGIMEN_SALUD rs)
+IF(@regimen_salud=0)
+	BEGIN
+		SET @regimen_salud=1		
+	END
+ELSE
+	BEGIN
+		SET @regimen_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM dbo.REGIMEN_SALUD rs)
+	END
+END
+GO
 
 --GENERAR CODIGO Tipo Planilla
 CREATE PROC SP_GENERAR_TipoPlanilla
@@ -741,6 +756,21 @@ IF(@tipoPlan=0)
 ELSE
 	BEGIN
 		SET @tipoPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM dbo.tipo_planilla tp)
+	END
+END
+GO
+----PROCEDIMIENTOS PARA GENERAR REGIMEN SALUD
+CREATE PROC SP_GEN_REG_SALUD
+(@reg_salud int output)
+AS BEGIN
+SET @reg_salud=(SELECT count(rs.regimen_salud) FROM REGIMEN_SALUD rs)
+IF(@reg_salud=0)
+	BEGIN
+		SET @reg_salud=1
+	END
+ELSE
+	BEGIN
+		SET @reg_salud=(SELECT MAX(rs.regimen_salud)+1 FROM REGIMEN_SALUD rs)
 	END
 END
 GO
@@ -771,6 +801,16 @@ INNER JOIN Empresa_maestra em
 on(em.id_em_maestra=e.id_em_maestra)
 END
 GO
+
+----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
+CREATE PROC SP_REG_SALUD
+AS BEGIN
+SELECT rs.id_regimen_salud,rs.regimen_salud
+FROM REGIMEN_SALUD rs
+END
+GO
+
+
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
 CREATE PROC SP_INSERT_BANCO(
@@ -1019,3 +1059,23 @@ GO
 
 
 
+CREATE PROCEDURE SP_ADD_REG_SAL(
+@id_regimen_salud int,
+@cod_regi_salud int,
+@regimen_salud varchar(80),
+@mensaje varchar(100) output)
+AS BEGIN
+INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud)
+VALUES(@id_regimen_salud,@cod_regi_salud,@regimen_salud)
+SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
+END
+GO
+
+CREATE PROC SP_SHOW_REG_SALUD 
+AS BEGIN 
+SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.regimen_salud
+from REGIMEN_SALUD rs
+END
+GO
+
+exec SP_SHOW_REG_SALUD

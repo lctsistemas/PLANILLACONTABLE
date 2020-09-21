@@ -28,7 +28,7 @@ namespace Presentacion.Vista
             Mostrar_regimenpensionario();
             Mostar_banco();
             Mostar_tcontrato();
-
+            MostrarRegimenSalud();
         }
 
 
@@ -38,8 +38,8 @@ namespace Presentacion.Vista
             String[] tpago = { "EFECTIVO", "DEPOSITO EN CUENTA", "OTROS" };
             cbotipopago.Items.AddRange(tpago);
 
-            String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
-            cboregimensalud.Items.AddRange(regimen_salud);
+            //String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
+            //cboregimensalud.Items.AddRange(regimen_salud);
 
             String[] periodicidad = { "MENSUAL", "QUINCENAL", "SEMANAL", "DIARIO", "OTROS" };
             cboperiodicidad.Items.AddRange(periodicidad);
@@ -157,6 +157,16 @@ namespace Presentacion.Vista
             }
         }
 
+        private void MostrarRegimenSalud()
+        {
+            using (NRegimenSalud nrs = new NRegimenSalud())
+            {
+                cboregimensalud.DataSource = nrs.Getall();
+                cboregimensalud.DisplayMember = "regimen_salud";
+                cboregimensalud.ValueMember = "id_regimen_salud";
+            }
+        }
+
         private void Mostrar_regimenpensionario()
         {
             using (NRegimen nre = new NRegimen())
@@ -265,6 +275,7 @@ namespace Presentacion.Vista
             mostrarEmpleado();
             Tabla();
             Bloquear_controles();
+            MostrarRegimenSalud();
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -340,18 +351,29 @@ namespace Presentacion.Vista
                 emple_contra.ccts = txtcts.Text.Trim();
                 emple_contra.ccussp = txtcussp.Text.Trim();
 
-                result = emple_contra.GuardarCambios();
+                bool valida = new ValidacionDatos(emple_contra).Validate();
 
-                if (result.Contains("ya se encuentra registrado"))
+
+                if (valida)
                 {
-                    Messages.M_warning(result);
+
+                    result = emple_contra.GuardarCambios();
+
+                    if (result.Contains("ya se encuentra registrado"))
+                    {
+                        Messages.M_warning(result);
+                    }
+                    else
+                    {
+                        mostrarEmpleado();
+                        Messages.M_info(result);
+                        limpiar();
+                    }
                 }
-                else
-                {
-                    mostrarEmpleado();
-                    Messages.M_info(result);
-                    limpiar();
-                }
+
+                
+
+                
             }
         }
 

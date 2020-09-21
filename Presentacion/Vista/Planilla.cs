@@ -79,7 +79,6 @@ namespace Presentacion.Vista
                 np.Id_planilla = codigo;
                 //np.Id_planilla = txtdescCorta.Text.Trim().ToUpper();
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
-                MessageBox.Show("" + UserCache.Idperiodo);
                 np.Id_periodo = UserCache.Idperiodo;
                 np.Id_empresa = UserCache.Codigo_empresa;
                 np.Mes = cbxmes.SelectedItem.ToString();
@@ -145,6 +144,11 @@ namespace Presentacion.Vista
             dtpini.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes + 1, 1);
             dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes+1, ultimoDiaInt);
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes + 1, ultimoDiaInt);
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
