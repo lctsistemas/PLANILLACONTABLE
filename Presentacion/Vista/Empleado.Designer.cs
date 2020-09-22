@@ -1139,7 +1139,6 @@ namespace Presentacion.Vista
             // 
             this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneliminar.Enabled = false;
             this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
             this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;

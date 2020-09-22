@@ -503,7 +503,7 @@ namespace Presentacion.Vista
         private void btneliminar_Click(object sender, EventArgs e)
         {
             result = "";
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != 0 || dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 DialogResult re = Messages.M_question("¿Deseas eliminar al empleado?");
                 if (re == DialogResult.Yes)
@@ -511,7 +511,7 @@ namespace Presentacion.Vista
                     using (emple_contra)
                     {
                         emple_contra.state = EntityState.Remover;
-                        emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
+                        emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
                         result = emple_contra.GuardarCambios();
                         Messages.M_info(result);
                         btnguardar.Enabled = false;

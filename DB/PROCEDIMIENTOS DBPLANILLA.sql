@@ -161,12 +161,15 @@ GO
 
 
 --ELIMINAR EMPLEADO ---> MODIFICAR
-CREATE PROC SP_ELIM_EMPLEADO
+alter PROC SP_ELIM_EMPLEADO
 (@id_emp int)
 AS BEGIN 
 UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
+DELETE from Contrato where id_empleado=@id_emp;
 END
 GO
+
+EXEC SP_ELIM_EMPLEADO 5
 
 --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 ALTER PROC SP_SHOW_EMP
