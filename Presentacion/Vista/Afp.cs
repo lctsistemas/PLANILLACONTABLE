@@ -44,6 +44,7 @@ namespace Presentacion.Vista
             dgvcomision.Columns["id_regimen"].Visible = false;
             dgvcomision.Columns["afp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvcomision.Columns["afp"].Width = 200;//apf
+            dgvcomision.Columns["afp"].ReadOnly = true;
             dgvcomision.Columns["Id_comision"].Visible = false;
             dgvcomision.Columns["comision"].Width = 130;
             dgvcomision.Columns["saldo"].Width = 130;

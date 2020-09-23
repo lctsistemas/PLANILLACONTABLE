@@ -116,7 +116,7 @@ namespace Negocio.Models
                         Saldo = Convert.ToDecimal(item[4]),
                         Seguro = Convert.ToDecimal(item[5]),
                         Aporte = Convert.ToDecimal(item[6]),
-                        Tope = Convert.ToDecimal(item[7]),
+                        Tope = Convert.ToDecimal(item[7])
                         //Idmes = Convert.ToInt32(item[]),
                         //Idperiodo=Convert.ToInt32(item[])
                     });

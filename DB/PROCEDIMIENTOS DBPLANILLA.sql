@@ -975,7 +975,7 @@ SELECT id_mes, nombre_mes FROM Mes
 END
 GO
 
-ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
+CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
 @idmes int =null,
 @idperiodo int=null
 AS BEGIN
@@ -983,7 +983,7 @@ IF(EXISTS(SELECT co.codigo_regimen FROM ComisionesPension co))
 	BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
+	WHERE (co.idmes=null AND idperiodo=null) AND r.tipo_regimen='SPP'
 	END
 ELSE BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
