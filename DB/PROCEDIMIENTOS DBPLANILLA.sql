@@ -890,7 +890,6 @@ UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipo_contrato=@
 END;
 GO
 
-exec SP_UPDATE_TIP_CONT 1 ,'Contrato Indefinidos'
 
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
 ALTER PROC SP_SHOW_TIP_CONT
@@ -970,27 +969,29 @@ GO
 
 
 --STAR PROCEDIMIENTO PARA COMISIONES PENSIONES	
-CREATE PROC SP_SHOWREGIMENparaCOMISIONES
-@tipo_regimen varchar(10)
-AS BEGIN
-SELECT codigo_regimen, descripcion 
-FROM dbo.RegimenPensionario WHERE tipo_regimen = @tipo_regimen
-END
-GO
-
 CREATE PROC SP_SHOW_MES
 AS BEGIN
 SELECT id_mes, nombre_mes FROM Mes
 END
 GO
 
-CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
+ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
+@idmes int =null,
+@idperiodo int=null
 AS BEGIN
-SELECT * FROM dbo.ComisionesPension
+IF(EXISTS(SELECT co.codigo_regimen FROM ComisionesPension co))
+	BEGIN
+	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
+	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
+	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
+	END
+ELSE BEGIN
+	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
+	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 	WHERE
+	r.tipo_regimen='SPP'
+	END
 END
 GO
---END-----
-
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 CREATE PROC SP_INSERT_PLANILLA

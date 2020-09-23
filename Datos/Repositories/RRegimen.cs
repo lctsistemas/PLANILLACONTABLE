@@ -30,10 +30,10 @@ namespace Datos.Repositories
 
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();
-                    return result;
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
 
         public int Delete(DRegimen entiti)

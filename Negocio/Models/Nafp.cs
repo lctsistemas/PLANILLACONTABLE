@@ -10,9 +10,11 @@ namespace Negocio.Models
 {
     public class Nafp:IDisposable
     {
+        List<Nafp> list_comisionAfp;
         #region Metodo Set and Get
         public int Id_comision { get; set; }
-        public int Codigo_regimen { get; set; }
+        public int Codigo_regimen {get; set; }
+        public string descripcion { get; set; }//nombre afp
         public decimal Comision {get; set; }
         public decimal Saldo {get; set; }
         public decimal Seguro { get; set; }
@@ -20,7 +22,7 @@ namespace Negocio.Models
         public decimal Tope {get; set;}
         public int Idmes { get; set; }
         public string Mes { get; set; }
-        public int Idperiodo { get; set; }        
+        public int Idperiodo {private get; set; }        
         #endregion
 
         public void InsertarMassiveData(IEnumerable<Nafp> list)
@@ -92,15 +94,45 @@ namespace Negocio.Models
             return list_rol;
         }
         #endregion
-
-        #region mostrar regimen pensionario spp
-        public DataTable Mostrar_regimenPensionario(string tipo_regimen)
+      
+        #region Mostrar comisiones AFP
+        public IEnumerable<Nafp> Show_comisionafp()
         {
-            //si cambiar el el campo en DB de Regiemen pensiones tambien en datagriview por que esta mostrando la 
-            //propiedad del campo de BD en su celda property.
-            return new Rafp().Mostrar_regimenPensionario(tipo_regimen);
+            list_comisionAfp = new List<Nafp>();
+            Dafp daf = new Dafp();            
+            daf.Idmes = Idmes;
+            daf.Idperiodo = Idperiodo;
+           
+            using (DataTable dt = new Rafp().Show_comisionafp(daf) )
+            {                
+                foreach (DataRow item in dt.Rows)
+                {
+                    list_comisionAfp.Add(new Nafp()
+                    {
+                        Codigo_regimen= Convert.ToInt32(item[0]),
+                        descripcion = item[1].ToString(),
+                        Id_comision= Convert.ToInt32(item[2]),
+                        Comision = Convert.ToDecimal(item[3]),
+                        Saldo = Convert.ToDecimal(item[4]),
+                        Seguro = Convert.ToDecimal(item[5]),
+                        Aporte = Convert.ToDecimal(item[6]),
+                        Tope = Convert.ToDecimal(item[7]),
+                        //Idmes = Convert.ToInt32(item[]),
+                        //Idperiodo=Convert.ToInt32(item[])
+                    });
+                }               
+            }
+            return list_comisionAfp;
         }
         #endregion
+
+        //FILTRAR DATOS POR MES Y PERIODO
+        public IEnumerable<Nusuario> Search(int idmes)
+        {
+            //filtrar lista con datos numericos, averiguar.
+            // return list_comisionAfp.FindAll(e => e.Idmes=);
+            return null;
+        }
 
         public void Dispose()
         {
