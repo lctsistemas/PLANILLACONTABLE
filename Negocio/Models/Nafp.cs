@@ -12,8 +12,9 @@ namespace Negocio.Models
     {
         List<Nafp> list_comisionAfp;
         #region Metodo Set and Get
-        public int Id_comision {private get; set; }
-        public int Codigo_regimen {private get; set; }
+        public int Id_comision { get; set; }
+        public int Codigo_regimen {get; set; }
+        public string descripcion { get; set; }//nombre afp
         public decimal Comision {get; set; }
         public decimal Saldo {get; set; }
         public decimal Seguro { get; set; }
@@ -93,16 +94,7 @@ namespace Negocio.Models
             return list_rol;
         }
         #endregion
-
-        #region mostrar regimen pensionario spp
-        public DataTable Mostrar_regimenPensionario(string tipo_regimen)
-        {
-            //si cambiar el el campo en DB de Regiemen pensiones tambien en datagriview por que esta mostrando la 
-            //propiedad del campo de BD en su celda property.
-            return new Rafp().Mostrar_regimenPensionario(tipo_regimen);
-        }
-        #endregion
-
+      
         #region Mostrar comisiones AFP
         public IEnumerable<Nafp> Show_comisionafp()
         {
@@ -117,13 +109,16 @@ namespace Negocio.Models
                 {
                     list_comisionAfp.Add(new Nafp()
                     {
-                        Comision = Convert.ToDecimal(item[0]),
-                        Saldo = Convert.ToDecimal(item[1]),
-                        Seguro = Convert.ToDecimal(item[2]),
-                        Aporte = Convert.ToDecimal(item[3]),
-                        Tope = Convert.ToDecimal(item[4]),
-                        //Idmes = Convert.ToInt32(item[5]),
-                        //Idperiodo=Convert.ToInt32(item[6])
+                        Codigo_regimen= Convert.ToInt32(item[0]),
+                        descripcion = item[1].ToString(),
+                        Id_comision= Convert.ToInt32(item[2]),
+                        Comision = Convert.ToDecimal(item[3]),
+                        Saldo = Convert.ToDecimal(item[4]),
+                        Seguro = Convert.ToDecimal(item[5]),
+                        Aporte = Convert.ToDecimal(item[6]),
+                        Tope = Convert.ToDecimal(item[7]),
+                        //Idmes = Convert.ToInt32(item[]),
+                        //Idperiodo=Convert.ToInt32(item[])
                     });
                 }               
             }
@@ -131,7 +126,7 @@ namespace Negocio.Models
         }
         #endregion
 
-        //FILTAR DATOS POR MES Y PERIODO
+        //FILTRAR DATOS POR MES Y PERIODO
         public IEnumerable<Nusuario> Search(int idmes)
         {
             //filtrar lista con datos numericos, averiguar.

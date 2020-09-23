@@ -25,6 +25,7 @@ ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_plani
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFERENCES dbo.periodo
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(id_empresa) REFERENCES dbo.Empresa
 
+TRUNCATE TABLE ComisionesPension
 
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
@@ -93,47 +94,15 @@ INSERT INTO RegimenPensionario(descripcion_corta, descripcion,tipo_regimen) VALU
 ('O.N.P','DECRETO LEY 19990-ONP','SNP')
 GO
 
-
---'HABITAT FLUJO'
-INSERT INTO ComisionesPension(codigo_regimen,comision,saldo,seguro,aporte,tope)
-VALUES(1,1.47,1.25,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('HABITAT MIXTA',0.38,1.25,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('INTEGRA FLUJO',1.47,0.82,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('INTEGRA MIXTA',0.00,0.82,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('PRIMA FLUJO',1.60,1.25,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('PRIMA MIXTA',0.18,1.25,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('PROFUTURO FLUJO',1.69,1.20,1.35,10.0,9707.03)
-
-INSERT INTO Afp(nombre_afp,comision,comision_anual,prima_seguros,aportes_fondo_pensiones,remu_maxi_asegurable)
-VALUES('PROFUTURO MIXTA',0.67,1.20,1.35,10.0,9707.03)
-GO
-
+-- INSERTAR COMISIONES PENSIONES
+INSERT INTO ComisionesPension(codigo_regimen, comision, saldo, seguro, aporte, tope, idmes, idperiodo)VALUES
+(1, 0.38, 1.25, 1.35, 10.00, 9792.61,9, 2),(2, 1.47, 1.25, 1.35, 10.00, 9792.61,9, 2),--HABITAT
+(3, 0.00, 0.82, 1.35, 10.00, 9792.61,9,2),(4, 1.55, 0.82, 1.35, 10.00, 9792.61,9,2),--INTEGRA
+(5, 0.18, 1.25, 1.35, 10.00, 9792.61, 9, 2),(6, 1.60, 1.25, 1.35, 10.00, 9792.61, 9, 2),--PRIMA
+(7, 0.67, 1.20, 1.35, 10.00, 9792.61,9, 2),(8, 1.69, 1.20, 1.35, 10.00, 9792.61,9, 2)--PROFUTURO
 
 GO
-select * from Periodo
 
-go
---TABLA PRUEBA CREAR
 
-create table ejemplo(
-id int identity (1,1) primary key,
-nom varchar(20),
-fecha date null
-)
 
-drop table ejemplo
-alter table ejemplo add constraint df_fecha default('01-01-1900') for fecha
 
-insert into ejemplo(nom) values('carlos')

@@ -106,38 +106,8 @@ namespace Datos.Repositories
                 }
             }
             return dt;
-
         }
-
-        #region Mostrar regimen pensionario ssp
-        public DataTable Mostrar_regimenPensionario(string tipo_regimen)
-        {
-            DataTable dt = null;
-            using (SqlConnection cnn = RConexion.Getconectar())
-            {
-                cnn.Open();                                
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = cnn;
-                    cmd.CommandText = "SP_SHOWREGIMENparaCOMISIONES";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@tipo_regimen", tipo_regimen);
-                    SqlDataReader dr = cmd.ExecuteReader();
-
-                    if (dr.HasRows)
-                    {
-                        using (dt = new DataTable())
-                        {
-                            dt.Load(dr);
-                            dr.Close();
-                        }
-                    }                
-                }
-            }
-            return dt;
-        }
-        #endregion
-
+        
         #region Mostrar comisiones AFP
         public DataTable Show_comisionafp(Dafp entity)
         {

@@ -25,19 +25,9 @@ namespace Presentacion.Vista
                 cbomes.DisplayMember = "Mes";             
                 cbomes.ValueMember = "Idmes";
             }
-        }
-
-        private void Fill_regimenPensionario()
-        {
-            using (nafp = new Nafp())
-            {
-                //ENVIASMOS TIPO DE REGIMEN = SPP
-                dgvregimen.DataSource = nafp.Mostrar_regimenPensionario("SPP");
-            }
-        }
+        }    
 
         //MOSTRAR COMISIONES AFP
-
         private void Fill_comisionafp()
         {
             using (nafp =new Nafp())
@@ -45,23 +35,23 @@ namespace Presentacion.Vista
                 nafp.Idmes = Convert.ToInt32(cbomes.SelectedValue);
                 nafp.Idperiodo = UserCache.Idperiodo;
                 dgvcomision.DataSource = nafp.Show_comisionafp();
-
             }
         }
 
         //EDITAR CELDAS TABLA
         private void Tabla()
         {
-            dgvregimen.Columns["id_regimen"].Visible = false;
-            dgvregimen.Columns["afp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvregimen.Columns["afp"].Width = 200;//apf
+            dgvcomision.Columns["id_regimen"].Visible = false;
+            dgvcomision.Columns["afp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvcomision.Columns["afp"].Width = 200;//apf
+            dgvcomision.Columns["Id_comision"].Visible = false;
             dgvcomision.Columns["comision"].Width = 130;
             dgvcomision.Columns["saldo"].Width = 130;
             dgvcomision.Columns["seguro"].Width = 130;
             dgvcomision.Columns["aporte"].Width = 130;
             dgvcomision.Columns["tope"].Width = 130;
-            dgvcomision.Columns[5].Visible = false;
-            dgvcomision.Columns[6].Visible = false;
+            dgvcomision.Columns[8].Visible = false;
+            dgvcomision.Columns[9].Visible = false;
         }
 
         //MOSTRAR MES INICIAL
@@ -83,19 +73,9 @@ namespace Presentacion.Vista
             //dgvcomision.Rows.Add();
             lblperiodo.Text = "Periodo:  "+ UserCache.Periodo;            
             MesInicial();
-            Fill_comisionafp();
-            Fill_regimenPensionario();
+            Fill_comisionafp();            
             Tabla();
-        }
-
-        private void dgvcomision_KeyDown(object sender, KeyEventArgs e)
-        {
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    dgvcomision.Rows.Add();
-            //    dgvcomision.CurrentCell = dgvcomision.Rows[dgvcomision.Rows.Count - 1].Cells[0];
-            //}
-        }
+        }      
 
         private void btnupdate_Click(object sender, System.EventArgs e)
         {
@@ -108,8 +88,7 @@ namespace Presentacion.Vista
                     {
                         //Cells["id_regimen"] esos nombres estan en: name de las celdas de datagri.
 
-                        //Codigo_regimen = Convert.ToInt32(item.Cells["id_regimen"].Value),
-                        Codigo_regimen = Convert.ToInt32(dgvregimen.CurrentRow.Cells["id_regimen"].Value),
+                        Codigo_regimen = Convert.ToInt32(item.Cells["id_regimen"].Value),                        
                         Comision = Convert.ToDecimal(item.Cells["comision"].Value),
                         Saldo = Convert.ToDecimal(item.Cells["saldo"].Value),
                         Seguro = Convert.ToDecimal(item.Cells["seguro"].Value),
@@ -144,7 +123,7 @@ namespace Presentacion.Vista
         {
             // MessageBox.Show("values "+cbomes.SelectedValue);
             //MessageBox.Show("index  "+cbomes.SelectedIndex);
-           
+            Fill_comisionafp();
 
         }
 
