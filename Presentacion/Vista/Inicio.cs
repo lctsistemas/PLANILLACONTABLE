@@ -285,5 +285,10 @@ namespace Login_inicio
             return v2;
         }
 
+        private void numeric_periodo_ValueChanged(object sender, EventArgs e)
+        {
+            UserCache.Idperiodo=Getidperiodo();
+            UserCache.Periodo = numeric_periodo.Value.ToString();
+        }
     }
 }

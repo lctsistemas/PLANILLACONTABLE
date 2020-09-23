@@ -73,6 +73,7 @@ namespace Datos.Repositories
         }
         #endregion
 
+        //MOSTRAR MES.
         public DataTable Mostrar_mes()
         {
             List<Dafp> lista_mes =new List<Dafp>();
@@ -105,32 +106,32 @@ namespace Datos.Repositories
                 }
             }
             return dt;
-
         }
-
-        #region Mostrar regimen pensionario ssp
-        public DataTable Mostrar_regimenPensionario(string tipo_regimen)
+        
+        #region Mostrar comisiones AFP
+        public DataTable Show_comisionafp(Dafp entity)
         {
             DataTable dt = null;
-            using (SqlConnection cnn = RConexion.Getconectar())
+            using (SqlConnection conect = RConexion.Getconectar())
             {
-                cnn.Open();                                
+                conect.Open();                
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    cmd.Connection = cnn;
-                    cmd.CommandText = "SP_SHOWREGIMENparaCOMISIONES";
+                    cmd.Connection = conect;
+                    cmd.CommandText = "SP_SHOW_COMISIONPENSIONES";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@tipo_regimen", tipo_regimen);
-                    SqlDataReader dr = cmd.ExecuteReader();
 
-                    if (dr.HasRows)
+                    cmd.Parameters.AddWithValue("@idmes",entity.Idmes);
+                    cmd.Parameters.AddWithValue("@idperiodo",entity.Idperiodo);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    using (dt = new DataTable())
                     {
-                        using (dt = new DataTable())
+                        if (reader.HasRows)
                         {
-                            dt.Load(dr);
-                            dr.Close();
-                        }
-                    }                
+                            dt.Load(reader);
+                            reader.Close();
+                        }                      
+                    }
                 }
             }
             return dt;
