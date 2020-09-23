@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
@@ -25,11 +26,13 @@ namespace Presentacion.Vista
         {
             using (np)
             {
+                np.Id_empresa = UserCache.Codigo_empresa;
                 dgvplanilla.DataSource = np.Getall();
             }
         }
 
-        private void btncerrar_Click(object sender, EventArgs e)
+
+private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -55,33 +58,41 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[1].HeaderText = "PERIODO";
             dgvplanilla.Columns[1].Width = 100;
 
-            dgvplanilla.Columns[2].HeaderText = "MES";
+            dgvplanilla.Columns[2].HeaderText = "EMPRESA";
             dgvplanilla.Columns[2].Width = 100;
+            dgvplanilla.Columns[2].Visible = false;
 
-            dgvplanilla.Columns[3].HeaderText = "FECHA INICIAL";
-            dgvplanilla.Columns[3].Width = 120;
+            dgvplanilla.Columns[3].HeaderText = "MES";
+            dgvplanilla.Columns[3].Width = 100;
 
-            dgvplanilla.Columns[4].HeaderText = "FECHA FINAL";
+            dgvplanilla.Columns[4].HeaderText = "FECHA INICIAL";
             dgvplanilla.Columns[4].Width = 120;
 
-            dgvplanilla.Columns[5].HeaderText = "FECHA PAGO";
+            dgvplanilla.Columns[5].HeaderText = "FECHA FINAL";
             dgvplanilla.Columns[5].Width = 120;
 
-            dgvplanilla.Columns[6].HeaderText = "DIAS_MES";
-            dgvplanilla.Columns[6].Width = 100;
+            dgvplanilla.Columns[6].HeaderText = "FECHA PAGO";
+            dgvplanilla.Columns[6].Width = 120;
 
-            dgvplanilla.Columns[7].HeaderText = "HORAS_MES";
+            dgvplanilla.Columns[7].HeaderText = "DIAS_MES";
             dgvplanilla.Columns[7].Width = 100;
 
-            dgvplanilla.Columns[8].HeaderText = "REM. BASICA";
+            dgvplanilla.Columns[8].HeaderText = "HORAS_MES";
             dgvplanilla.Columns[8].Width = 100;
 
-            dgvplanilla.Columns[9].HeaderText = "ASIG. FAMILIAR";
-            dgvplanilla.Columns[9].Width = 130;
+            dgvplanilla.Columns[9].HeaderText = "REM. BASICA";
+            dgvplanilla.Columns[9].Width = 100;
 
-            dgvplanilla.Columns[10].HeaderText = "state";
-            dgvplanilla.Columns[10].Width = 100;
-            dgvplanilla.Columns[10].Visible = false;
+            dgvplanilla.Columns[10].HeaderText = "ASIG. FAMILIAR";
+            dgvplanilla.Columns[10].Width = 130;
+
+            dgvplanilla.Columns[11].HeaderText = "TOPE HORARIO NOCT";
+            dgvplanilla.Columns[11].Width = 150;
+
+            dgvplanilla.Columns[12].HeaderText = "ESTADO";
+            dgvplanilla.Columns[12].Width = 100;
+            dgvplanilla.Columns[12].Visible = false;
+
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
@@ -93,17 +104,7 @@ namespace Presentacion.Vista
 
         }
 
-        private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void label16_MouseDown(object sender, MouseEventArgs e)
-        {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        
 
         private void btnmodificar_Click(object sender, EventArgs e)
         {

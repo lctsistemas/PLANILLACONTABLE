@@ -14,23 +14,23 @@ namespace Presentacion.Helps
 
         }
 
-        public static void Combo(KeyPressEventArgs e, ComboBox cbo)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Tab) || e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                cbo.Focus();
-            }
+        //public static void Combo(KeyPressEventArgs e, ComboBox cbo)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Tab) || e.KeyChar == Convert.ToChar(Keys.Enter))
+        //    {
+        //        cbo.Focus();
+        //    }
 
-        }
+        //}
 
-        public static void Button(KeyPressEventArgs e, Button btn)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Tab))
-            {
-                MessageBox.Show("Enter");//no captura el tap
-            }
+        //public static void Button(KeyPressEventArgs e, Button btn)
+        //{
+        //    if (e.KeyChar == Convert.ToChar(Keys.Tab))
+        //    {
+        //        MessageBox.Show("Enter");//no captura el tap
+        //    }
 
-        }
+        //}
 
         public static void SoloNumeros(KeyPressEventArgs e)
         {

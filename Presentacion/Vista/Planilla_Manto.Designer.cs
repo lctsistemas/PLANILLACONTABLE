@@ -77,7 +77,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             this.dgvplanilla.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvplanilla.Size = new System.Drawing.Size(596, 389);
+            this.dgvplanilla.Size = new System.Drawing.Size(596, 550);
             this.dgvplanilla.TabIndex = 89;
             // 
             // pictureBox1
@@ -107,6 +107,7 @@
             // 
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Enabled = false;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
             this.btnminimizar.Location = new System.Drawing.Point(707, 3);
             this.btnminimizar.Name = "btnminimizar";
@@ -119,8 +120,7 @@
             // btnmaximizar
             // 
             this.btnmaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmaximizar.Enabled = false;
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
             this.btnmaximizar.Location = new System.Drawing.Point(743, 3);
             this.btnmaximizar.Name = "btnmaximizar";
@@ -132,6 +132,8 @@
             // 
             // paneltitulo
             // 
+            this.paneltitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.paneltitulo.BackColor = System.Drawing.Color.SteelBlue;
             this.paneltitulo.Controls.Add(this.pictureBox1);
             this.paneltitulo.Controls.Add(this.btncerrar);
@@ -139,12 +141,10 @@
             this.paneltitulo.Controls.Add(this.btnminimizar);
             this.paneltitulo.Controls.Add(this.btnmaximizar);
             this.paneltitulo.Controls.Add(this.btnrestaurar);
-            this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo.Name = "paneltitulo";
             this.paneltitulo.Size = new System.Drawing.Size(818, 50);
             this.paneltitulo.TabIndex = 90;
-            this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
             // 
             // label16
             // 
@@ -159,7 +159,6 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "PLANILLA DE EMPLEADOS MENSUAL";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label16_MouseDown);
             // 
             // btnrestaurar
             // 
@@ -239,7 +238,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 469);
+            this.ClientSize = new System.Drawing.Size(818, 621);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnmodificar);
             this.Controls.Add(this.btnagregar);
@@ -248,6 +247,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Planilla_Manto";
             this.Text = "Prueba";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Prueba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

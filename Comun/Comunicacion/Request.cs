@@ -29,6 +29,8 @@ namespace Comun.Comunicacion
 
         }
 
+        
+
         public void Dispose()
         {
             //throw new NotImplementedException();

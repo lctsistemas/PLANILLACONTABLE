@@ -64,7 +64,8 @@ idperiodo int not null
 )
 GO
 
-
+select *  from ComisionesPension
+delete from ComisionesPension
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
 CREATE TABLE Empresa_maestra(
 id_em_maestra int identity(1,1),
@@ -77,6 +78,7 @@ regimen varchar(80) not null,
 estado_eliminado varchar(15) not null
 )
 GO
+
 --alter table Empresa_maestra alter column regimen varchar(80) not null
 
 CREATE TABLE Empresa(
@@ -95,6 +97,7 @@ id_em_maestra int not null,
 id_empresa int not null
 )
 GO
+
 --TABLA: USUSARIO
 CREATE TABLE Usuario (
 id_usuario int not null,--SERA AUTO INCREMENTABLE, PERO MANUALMENTE
@@ -264,6 +267,7 @@ CREATE TABLE Planilla(
 id_planilla int not null,
 --id_tipo_planilla int not null, ver si ira id_tipo_planilla
 id_periodo int not null,
+id_empresa int not null,
 mes varchar(20) not null,
 --id_mes int not null,
 fecha_inicial date,
@@ -274,13 +278,29 @@ horas_mes int,
 remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
 tope_horario_nocturno int
-
 )
 
 alter table Planilla add mes varchar(20);
+
 
 CREATE TABLE tipo_planilla(
 id_tipo_planilla int not null,
 nombre_planilla varchar(30) 
 )
+
+CREATE TABLE REGIMEN_SALUD(
+id_regimen_salud int not null,
+cod_regi_salud int not null,
+regimen_salud varchar(80)
+);
+
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(2,05,'ESSALUD PENSIONISTAS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
+
 

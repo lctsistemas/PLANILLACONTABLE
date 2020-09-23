@@ -42,10 +42,10 @@ END
 GO
 
 --SHOW CARGO
-alter PROC SP_SELECT_CARGO 
+ALTER PROC SP_SELECT_CARGO 
 AS BEGIN
 SELECT id_cargo, nombre_cargo, descripcion 
-FROM Cargo order by id_cargo asc
+FROM Cargo order by id_cargo desc
 END
 GO
 
@@ -161,12 +161,15 @@ GO
 
 
 --ELIMINAR EMPLEADO ---> MODIFICAR
-CREATE PROC SP_ELIM_EMPLEADO
+alter PROC SP_ELIM_EMPLEADO
 (@id_emp int)
 AS BEGIN 
 UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
+DELETE from Contrato where id_empleado=@id_emp;
 END
 GO
+
+EXEC SP_ELIM_EMPLEADO 5
 
 --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 ALTER PROC SP_SHOW_EMP
@@ -195,9 +198,7 @@ on(co.id_tipocontrato = ti.id_tipocontrato) WHERE e.id_empleado=@codigo_empleado
 END
 GO
 
-
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
-
 ALTER PROCEDURE SP_INSERT_CONTRATO
 (@id_contrato int,
 @id_banco int,
@@ -266,6 +267,7 @@ SELECT * FROM dbo.Contrato c
 END
 GO
 GO
+
 ----and e.id_em_maestra=@codigo_empresa
 /*     EMPRESA AND SUCURSAL      */
 ALTER PROC SP_INSERT_EMPRESA_MAESTRA
@@ -673,7 +675,7 @@ AS BEGIN
 SET @grati=(SELECT count(g.id_grati) FROM dbo.Gratificaciones g)
 IF(@grati=0)
 	BEGIN
-		SET @grati=1		
+		SET @grati=1
 	END
 ELSE
 	BEGIN
@@ -729,6 +731,21 @@ ELSE
 	END
 END
 GO
+--generar codigo regimen salud
+CREATE PROC SP_GENERAR_REG_SAL
+(@regimen_salud int output)
+AS BEGIN
+SET @regimen_salud=(SELECT count(rs.id_regimen_salud) FROM dbo.REGIMEN_SALUD rs)
+IF(@regimen_salud=0)
+	BEGIN
+		SET @regimen_salud=1		
+	END
+ELSE
+	BEGIN
+		SET @regimen_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM dbo.REGIMEN_SALUD rs)
+	END
+END
+GO
 
 --GENERAR CODIGO Tipo Planilla
 CREATE PROC SP_GENERAR_TipoPlanilla
@@ -742,6 +759,21 @@ IF(@tipoPlan=0)
 ELSE
 	BEGIN
 		SET @tipoPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM dbo.tipo_planilla tp)
+	END
+END
+GO
+----PROCEDIMIENTOS PARA GENERAR REGIMEN SALUD
+ALTER PROC SP_GEN_REG_SALUD
+(@reg_salud int output)
+AS BEGIN
+SET @reg_salud=(SELECT count(rs.id_regimen_salud) FROM REGIMEN_SALUD rs)
+IF(@reg_salud=0)
+	BEGIN
+		SET @reg_salud=1
+	END
+ELSE
+	BEGIN
+		SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
 	END
 END
 GO
@@ -764,7 +796,6 @@ END
 GO
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-
 CREATE PROC SP_EMPR
 AS BEGIN
 SELECT e.id_em_maestra,em.razon_social
@@ -773,6 +804,16 @@ INNER JOIN Empresa_maestra em
 on(em.id_em_maestra=e.id_em_maestra)
 END
 GO
+
+----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
+CREATE PROC SP_REG_SALUD
+AS BEGIN
+SELECT rs.id_regimen_salud,rs.regimen_salud
+FROM REGIMEN_SALUD rs
+END
+GO
+
+
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
 CREATE PROC SP_INSERT_BANCO(
@@ -785,7 +826,6 @@ AS BEGIN
 	SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
 END
 GO
-
 
 --PROCEDIMENTO PARA ACTUALIZAR BANCO
 CREATE PROC SP_UPDATE_BANCO(
@@ -886,7 +926,7 @@ END
 GO
 ------------------------------------------------------FIN LOGIN ---------------------------------------------------------------------
 
---PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
+--STAR PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
 CREATE PROCEDURE SP_ADD_REGIMEN(
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
@@ -906,16 +946,17 @@ from RegimenPensionario r
 END
 GO
 
-
 CREATE PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
 @tipo_regimen varchar(30)
 AS BEGIN
-UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
+UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, 
+descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
 END
 GO
+
 
 CREATE PROC SP_DELETE_REGIMEN
 @codigo_regimen int,
@@ -924,15 +965,39 @@ AS BEGIN
 DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
 SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
 END
+--END
 GO
 
 
+--STAR PROCEDIMIENTO PARA COMISIONES PENSIONES	
+CREATE PROC SP_SHOWREGIMENparaCOMISIONES
+@tipo_regimen varchar(10)
+AS BEGIN
+SELECT codigo_regimen, descripcion 
+FROM dbo.RegimenPensionario WHERE tipo_regimen = @tipo_regimen
+END
+GO
+
+CREATE PROC SP_SHOW_MES
+AS BEGIN
+SELECT id_mes, nombre_mes FROM Mes
+END
+GO
+
+CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
+AS BEGIN
+SELECT * FROM dbo.ComisionesPension
+END
+GO
+--END-----
+
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
-alter PROC SP_INSERT_PLANILLA
+CREATE PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
+@id_empresa int,
 @mes varchar(20),
 --@id_mes varchar(50),
 @fecha_inicial date,
@@ -945,13 +1010,13 @@ alter PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	INSERT INTO Planilla(id_planilla,id_periodo,mes,fecha_inicial , fecha_final,fecha_pago, dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla,@id_periodo,@mes,@fecha_inicial, @fecha_final, @fecha_pago, @dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
-	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'
-	
+	INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,mes,fecha_inicial , fecha_final,fecha_pago, 
+	dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+	(@id_planilla,@id_periodo,@id_empresa,@mes,@fecha_inicial, @fecha_final, @fecha_pago, 
+	@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
+	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
 END
 GO
-
 
 
 alter PROC SP_UPDATE_PLANILLA
@@ -963,14 +1028,16 @@ WHERE id_planilla=@id_planilla
 END
 GO
 
-exec SP_UPDATE_PLANILLA 2,'2020/10/29'
 
+go
 alter PROC SP_SHOW_PLANILLA
+@codigo_empresa int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago, p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
+	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
-	on(pe.id_periodo=p.id_periodo)
+	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa
 	END
 GO
 
@@ -994,4 +1061,47 @@ AS BEGIN
 END
 GO
 
-exec SP_SHOW_PERIODO 1,2019
+
+
+CREATE PROCEDURE SP_ADD_REG_SAL(
+@id_regimen_salud int,
+@cod_regi_salud int,
+@regimen_salud varchar(80),
+@mensaje varchar(100) output)
+AS BEGIN
+INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud)
+VALUES(@id_regimen_salud,@cod_regi_salud,@regimen_salud)
+SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
+END
+GO
+
+CREATE PROC SP_UPDATE_REG_SALUD
+@id_regimen_salud int,
+@cod_regimen_salud int,
+@regimen_salud varchar(80)
+AS BEGIN
+UPDATE REGIMEN_SALUD SET cod_regi_salud=@cod_regimen_salud,regimen_salud=@regimen_salud
+WHERE id_regimen_salud=@id_regimen_salud
+END
+GO
+
+EXEC SP_UPDATE_REG_SALUD 1,4,'ESSALUD AGRARIO/ACUICOLAs'
+GO
+
+CREATE PROC SP_DELETE_REG_SALUD
+@id_regimen_salud int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
+SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
+END
+GO
+
+CREATE PROC SP_SHOW_REG_SALUD 
+AS BEGIN 
+SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.regimen_salud
+from REGIMEN_SALUD rs
+END
+GO
+
+exec SP_SHOW_REG_SALUD

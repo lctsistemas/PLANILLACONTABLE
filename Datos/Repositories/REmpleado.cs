@@ -180,7 +180,7 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SP_ELIM_EMPL";
+                    cmd.CommandText = "SP_ELIM_EMPLEADO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@id_emp", SqlDbType.Int).Value = entiti.Id_empleado;

@@ -54,12 +54,12 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.btnguardar = new System.Windows.Forms.Button();
-            this.btnagregar = new System.Windows.Forms.Button();
             this.dtppago = new System.Windows.Forms.DateTimePicker();
             this.dtpini = new System.Windows.Forms.DateTimePicker();
             this.dtpfin = new System.Windows.Forms.DateTimePicker();
             this.lblyear = new System.Windows.Forms.Label();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.btncancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -311,45 +311,6 @@
             this.checkBox4.Text = "Generar Planilla Por Excel";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(68, 555);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(108, 34);
-            this.btnguardar.TabIndex = 71;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // btnagregar
-            // 
-            this.btnagregar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnagregar.FlatAppearance.BorderSize = 0;
-            this.btnagregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnagregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnagregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnagregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnagregar.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnagregar.Location = new System.Drawing.Point(207, 555);
-            this.btnagregar.Name = "btnagregar";
-            this.btnagregar.Size = new System.Drawing.Size(107, 34);
-            this.btnagregar.TabIndex = 72;
-            this.btnagregar.Text = "Cancelar";
-            this.btnagregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnagregar.UseVisualStyleBackColor = false;
-            // 
             // dtppago
             // 
             this.dtppago.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -387,6 +348,46 @@
             this.lblyear.TabIndex = 78;
             this.lblyear.Text = "label11";
             // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(68, 555);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(108, 34);
+            this.btnguardar.TabIndex = 71;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btncancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btncancelar.Image = global::Presentacion.Properties.Resources.baseline_cancel_white_24dp;
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncancelar.Location = new System.Drawing.Point(207, 555);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Size = new System.Drawing.Size(107, 34);
+            this.btncancelar.TabIndex = 72;
+            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncancelar.UseVisualStyleBackColor = false;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
             // Planilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,7 +398,7 @@
             this.Controls.Add(this.dtpini);
             this.Controls.Add(this.dtppago);
             this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.btnagregar);
+            this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -457,7 +458,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape5;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.Button btnagregar;
+        private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.DateTimePicker dtppago;
         private System.Windows.Forms.DateTimePicker dtpini;
         private System.Windows.Forms.DateTimePicker dtpfin;

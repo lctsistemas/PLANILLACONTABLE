@@ -107,13 +107,20 @@ namespace Login_inicio
                                 BloquearAcceso(true);
                                 if (activo)
                                 {
-                                    frmprincipal mainmenu = new frmprincipal();
+                                    Main_Principal mainmenu = new Main_Principal();
                                     mainmenu.Show();
                                     mainmenu.FormClosed += Logout;//revisar
                                     this.Hide();
                                 }
-
                             }
+                            else
+                            {
+                                if (dgvlogin.Rows.Count <= 0)
+                                    Messages.M_warning("No se le asigno empresas. \n Por favor consulte con el\n Administrador");
+                                else
+                                    dgvlogin.DataSource = null;
+                            }
+
                             msgError("");
                         }
                         else

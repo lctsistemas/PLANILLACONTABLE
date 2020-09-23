@@ -33,20 +33,19 @@ namespace Presentacion.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnguardar = new System.Windows.Forms.Button();
             this.lblcantidad_registro = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
-            this.btneliminar = new System.Windows.Forms.Button();
             this.lblbuscar = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.paneltitulo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
@@ -86,10 +85,7 @@ namespace Presentacion.Vista
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkconsulta = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-
-
             this.linkcargo = new System.Windows.Forms.LinkLabel();
-
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
             this.cbocargo = new System.Windows.Forms.ComboBox();
@@ -119,9 +115,14 @@ namespace Presentacion.Vista
             this.label7 = new System.Windows.Forms.Label();
             this.txttele = new System.Windows.Forms.TextBox();
             this.tabEmpleado = new System.Windows.Forms.TabControl();
+            this.contextmenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ingresarCargoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.totxtcargo = new System.Windows.Forms.ToolStripTextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).BeginInit();
             this.paneltitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
@@ -134,6 +135,7 @@ namespace Presentacion.Vista
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabEmpleado.SuspendLayout();
+            this.contextmenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvempleado
@@ -141,80 +143,58 @@ namespace Presentacion.Vista
             this.dgvempleado.AllowUserToAddRows = false;
             this.dgvempleado.AllowUserToDeleteRows = false;
             this.dgvempleado.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvempleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvempleado.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvempleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvempleado.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvempleado.EnableHeadersVisualStyles = false;
             this.dgvempleado.Location = new System.Drawing.Point(4, 89);
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
-            this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvempleado.RowHeadersWidth = 22;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gray;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvempleado.Size = new System.Drawing.Size(233, 449);
+            this.dgvempleado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvempleado.Size = new System.Drawing.Size(253, 445);
             this.dgvempleado.TabIndex = 18;
             this.dgvempleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempleado_CellClick);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevo.FlatAppearance.BorderSize = 0;
-            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp;
-            this.btnNuevo.Location = new System.Drawing.Point(302, 55);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(47, 27);
-            this.btnNuevo.TabIndex = 64;
-            this.btnNuevo.UseVisualStyleBackColor = false;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.Location = new System.Drawing.Point(242, 55);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(52, 27);
-            this.btnguardar.TabIndex = 62;
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // lblcantidad_registro
             // 
             this.lblcantidad_registro.AutoSize = true;
             this.lblcantidad_registro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcantidad_registro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblcantidad_registro.Location = new System.Drawing.Point(436, 60);
+            this.lblcantidad_registro.Location = new System.Drawing.Point(650, 61);
             this.lblcantidad_registro.Name = "lblcantidad_registro";
             this.lblcantidad_registro.Size = new System.Drawing.Size(37, 17);
             this.lblcantidad_registro.TabIndex = 82;
@@ -242,22 +222,6 @@ namespace Presentacion.Vista
             this.txtbuscar.TabIndex = 0;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btneliminar.FlatAppearance.BorderSize = 0;
-            this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp;
-            this.btneliminar.Location = new System.Drawing.Point(355, 55);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(52, 27);
-            this.btneliminar.TabIndex = 64;
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
             // lblbuscar
             // 
             this.lblbuscar.AutoSize = true;
@@ -275,7 +239,7 @@ namespace Presentacion.Vista
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(434, 20);
+            this.label16.Location = new System.Drawing.Point(12, 9);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(196, 24);
             this.label16.TabIndex = 0;
@@ -284,7 +248,6 @@ namespace Presentacion.Vista
             // paneltitulo
             // 
             this.paneltitulo.BackColor = System.Drawing.Color.SteelBlue;
-            this.paneltitulo.Controls.Add(this.pictureBox1);
             this.paneltitulo.Controls.Add(this.btncerrar);
             this.paneltitulo.Controls.Add(this.label16);
             this.paneltitulo.Controls.Add(this.btnminimizar);
@@ -293,26 +256,16 @@ namespace Presentacion.Vista
             this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(1065, 50);
+            this.paneltitulo.Size = new System.Drawing.Size(1084, 50);
             this.paneltitulo.TabIndex = 81;
             this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
             // 
             // btncerrar
             // 
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(1026, 3);
+            this.btncerrar.Location = new System.Drawing.Point(1045, 3);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -325,7 +278,7 @@ namespace Presentacion.Vista
             this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(954, 3);
+            this.btnminimizar.Location = new System.Drawing.Point(973, 3);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -339,7 +292,7 @@ namespace Presentacion.Vista
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Enabled = false;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp1;
-            this.btnmaximizar.Location = new System.Drawing.Point(990, 3);
+            this.btnmaximizar.Location = new System.Drawing.Point(1009, 3);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -757,7 +710,7 @@ namespace Presentacion.Vista
             // linkconsulta
             // 
             this.linkconsulta.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkconsulta.Location = new System.Drawing.Point(461, 47);
+            this.linkconsulta.Location = new System.Drawing.Point(473, 47);
             this.linkconsulta.Name = "linkconsulta";
             this.linkconsulta.Size = new System.Drawing.Size(71, 37);
             this.linkconsulta.TabIndex = 79;
@@ -785,10 +738,6 @@ namespace Presentacion.Vista
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             // 
-            // linkLabel1
-            // 
-            
-
             // linkcargo
             // 
             this.linkcargo.AutoSize = true;
@@ -800,6 +749,7 @@ namespace Presentacion.Vista
             this.linkcargo.TabIndex = 77;
             this.linkcargo.TabStop = true;
             this.linkcargo.Text = "Nuevo";
+            this.linkcargo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkcargo_LinkClicked);
             // 
             // cboestado
             // 
@@ -871,7 +821,7 @@ namespace Presentacion.Vista
             // 
             this.dtfecha.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtfecha.Location = new System.Drawing.Point(179, 234);
+            this.dtfecha.Location = new System.Drawing.Point(191, 234);
             this.dtfecha.Name = "dtfecha";
             this.dtfecha.Size = new System.Drawing.Size(121, 22);
             this.dtfecha.TabIndex = 57;
@@ -913,7 +863,7 @@ namespace Presentacion.Vista
             this.cbotipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbotipo_documento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotipo_documento.FormattingEnabled = true;
-            this.cbotipo_documento.Location = new System.Drawing.Point(179, 54);
+            this.cbotipo_documento.Location = new System.Drawing.Point(191, 54);
             this.cbotipo_documento.Name = "cbotipo_documento";
             this.cbotipo_documento.Size = new System.Drawing.Size(123, 25);
             this.cbotipo_documento.TabIndex = 52;
@@ -925,7 +875,7 @@ namespace Presentacion.Vista
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(11, 115);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(131, 22);
+            this.txtNombre.Size = new System.Drawing.Size(162, 22);
             this.txtNombre.TabIndex = 41;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             this.txtNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombre_Validating);
@@ -990,7 +940,7 @@ namespace Presentacion.Vista
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(329, 33);
+            this.label10.Location = new System.Drawing.Point(341, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 17);
             this.label10.TabIndex = 58;
@@ -1009,7 +959,7 @@ namespace Presentacion.Vista
             // txtnumdoc
             // 
             this.txtnumdoc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnumdoc.Location = new System.Drawing.Point(330, 57);
+            this.txtnumdoc.Location = new System.Drawing.Point(342, 57);
             this.txtnumdoc.MaxLength = 8;
             this.txtnumdoc.Name = "txtnumdoc";
             this.txtnumdoc.Size = new System.Drawing.Size(123, 22);
@@ -1024,7 +974,7 @@ namespace Presentacion.Vista
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(176, 31);
+            this.label14.Location = new System.Drawing.Point(188, 31);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(137, 17);
             this.label14.TabIndex = 69;
@@ -1035,7 +985,7 @@ namespace Presentacion.Vista
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(178, 215);
+            this.label5.Location = new System.Drawing.Point(190, 215);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 17);
             this.label5.TabIndex = 47;
@@ -1046,7 +996,7 @@ namespace Presentacion.Vista
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(180, 272);
+            this.label4.Location = new System.Drawing.Point(192, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 17);
             this.label4.TabIndex = 48;
@@ -1055,7 +1005,7 @@ namespace Presentacion.Vista
             // txtnac
             // 
             this.txtnac.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnac.Location = new System.Drawing.Point(179, 294);
+            this.txtnac.Location = new System.Drawing.Point(191, 294);
             this.txtnac.Name = "txtnac";
             this.txtnac.Size = new System.Drawing.Size(121, 22);
             this.txtnac.TabIndex = 59;
@@ -1067,7 +1017,7 @@ namespace Presentacion.Vista
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(178, 94);
+            this.label8.Location = new System.Drawing.Point(190, 94);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 17);
             this.label8.TabIndex = 51;
@@ -1076,7 +1026,7 @@ namespace Presentacion.Vista
             // txtdire
             // 
             this.txtdire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdire.Location = new System.Drawing.Point(179, 115);
+            this.txtdire.Location = new System.Drawing.Point(191, 115);
             this.txtdire.Name = "txtdire";
             this.txtdire.Size = new System.Drawing.Size(274, 22);
             this.txtdire.TabIndex = 54;
@@ -1087,7 +1037,7 @@ namespace Presentacion.Vista
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(180, 154);
+            this.label7.Location = new System.Drawing.Point(192, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 53;
@@ -1096,7 +1046,7 @@ namespace Presentacion.Vista
             // txttele
             // 
             this.txttele.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttele.Location = new System.Drawing.Point(179, 174);
+            this.txttele.Location = new System.Drawing.Point(191, 174);
             this.txttele.MaxLength = 9;
             this.txttele.Name = "txttele";
             this.txttele.Size = new System.Drawing.Size(123, 22);
@@ -1110,7 +1060,7 @@ namespace Presentacion.Vista
             this.tabEmpleado.Controls.Add(this.tabPage1);
             this.tabEmpleado.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabEmpleado.ItemSize = new System.Drawing.Size(89, 33);
-            this.tabEmpleado.Location = new System.Drawing.Point(238, 89);
+            this.tabEmpleado.Location = new System.Drawing.Point(259, 89);
             this.tabEmpleado.Multiline = true;
             this.tabEmpleado.Name = "tabEmpleado";
             this.tabEmpleado.Padding = new System.Drawing.Point(20, 3);
@@ -1119,11 +1069,98 @@ namespace Presentacion.Vista
             this.tabEmpleado.Size = new System.Drawing.Size(823, 449);
             this.tabEmpleado.TabIndex = 40;
             // 
+            // contextmenu
+            // 
+            this.contextmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ingresarCargoToolStripMenuItem,
+            this.totxtcargo});
+            this.contextmenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.contextmenu.Name = "contextmenu";
+            this.contextmenu.Size = new System.Drawing.Size(261, 53);
+            // 
+            // ingresarCargoToolStripMenuItem
+            // 
+            this.ingresarCargoToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ingresarCargoToolStripMenuItem.ForeColor = System.Drawing.Color.DimGray;
+            this.ingresarCargoToolStripMenuItem.Name = "ingresarCargoToolStripMenuItem";
+            this.ingresarCargoToolStripMenuItem.Size = new System.Drawing.Size(260, 24);
+            this.ingresarCargoToolStripMenuItem.Text = "Nuevo Cargo";
+            // 
+            // totxtcargo
+            // 
+            this.totxtcargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totxtcargo.Name = "totxtcargo";
+            this.totxtcargo.Size = new System.Drawing.Size(200, 23);
+            this.totxtcargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.totxtcargo_KeyPress);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevo.FlatAppearance.BorderSize = 0;
+            this.btnNuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
+            this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevo.Location = new System.Drawing.Point(378, 56);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(99, 27);
+            this.btnNuevo.TabIndex = 64;
+            this.btnNuevo.Text = "&Nuevo";
+            this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(272, 56);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(99, 27);
+            this.btnguardar.TabIndex = 62;
+            this.btnguardar.Text = "&Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
+            this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btneliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.Location = new System.Drawing.Point(483, 55);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(99, 27);
+            this.btneliminar.TabIndex = 64;
+            this.btneliminar.Text = "&Eliminar";
+            this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
             // frmempleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 541);
+            this.ClientSize = new System.Drawing.Size(1084, 543);
             this.Controls.Add(this.paneltitulo);
             this.Controls.Add(this.lblcantidad_registro);
             this.Controls.Add(this.btnNuevo);
@@ -1143,7 +1180,6 @@ namespace Presentacion.Vista
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).EndInit();
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
@@ -1161,6 +1197,8 @@ namespace Presentacion.Vista
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabEmpleado.ResumeLayout(false);
+            this.contextmenu.ResumeLayout(false);
+            this.contextmenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1185,7 +1223,6 @@ namespace Presentacion.Vista
         private Label lblbuscar;
         private Panel paneltitulo;
         private PictureBox btnrestaurar;
-        private PictureBox pictureBox1;
         private TabPage tabPage1;
         private TabPage tabPage2;
         private GroupBox groupBox2;
@@ -1251,6 +1288,8 @@ namespace Presentacion.Vista
         private MaskedTextBox txtfecha_fin;
         private LinkLabel linkcargo;
         private LinkLabel linkconsulta;
-
+        private ContextMenuStrip contextmenu;
+        private ToolStripMenuItem ingresarCargoToolStripMenuItem;
+        private ToolStripTextBox totxtcargo;
     }
 }

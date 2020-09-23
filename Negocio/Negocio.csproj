@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Nafp.cs" />
     <Compile Include="Models\NBanco.cs" />
     <Compile Include="Models\Ncargo.cs" />
     <Compile Include="Models\Ndocumento.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Models\Nlogin.cs" />
     <Compile Include="Models\NPlanilla.cs" />
     <Compile Include="Models\NRegimen.cs" />
+    <Compile Include="Models\NRegimenSalud.cs" />
     <Compile Include="Models\Nrol.cs" />
     <Compile Include="Models\NSucursal.cs" />
     <Compile Include="Models\Ntipocontrato.cs" />

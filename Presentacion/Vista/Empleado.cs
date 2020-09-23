@@ -9,7 +9,6 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-using System.Data;
 using Presentacion.Subvista;
 
 
@@ -23,14 +22,13 @@ namespace Presentacion.Vista
 
         public frmempleado()
         {
-            InitializeComponent();
-            UserCache.Codigo_empresa = 2;
+            InitializeComponent();            
             Mostrar_documento();
             Mostrar_cargo();
             Mostrar_regimenpensionario();
             Mostar_banco();
             Mostar_tcontrato();
-
+            MostrarRegimenSalud();
         }
 
 
@@ -40,8 +38,8 @@ namespace Presentacion.Vista
             String[] tpago = { "EFECTIVO", "DEPOSITO EN CUENTA", "OTROS" };
             cbotipopago.Items.AddRange(tpago);
 
-            String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
-            cboregimensalud.Items.AddRange(regimen_salud);
+            //String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
+            //cboregimensalud.Items.AddRange(regimen_salud);
 
             String[] periodicidad = { "MENSUAL", "QUINCENAL", "SEMANAL", "DIARIO", "OTROS" };
             cboperiodicidad.Items.AddRange(periodicidad);
@@ -59,7 +57,7 @@ namespace Presentacion.Vista
             dgvempleado.Columns[0].Visible = false;
             dgvempleado.Columns[1].Visible = false;
             dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES";
-            dgvempleado.Columns[2].Width = 211;
+            dgvempleado.Columns[2].Width = 230;
             dgvempleado.Columns[3].Visible = false;
             dgvempleado.Columns[4].Visible = false;
             dgvempleado.Columns[5].Visible = false;
@@ -156,6 +154,16 @@ namespace Presentacion.Vista
                 cbocargo.DataSource = nca.Getall();
                 cbocargo.DisplayMember = "nombre_cargo";
                 cbocargo.ValueMember = "idcargo";
+            }
+        }
+
+        private void MostrarRegimenSalud()
+        {
+            using (NRegimenSalud nrs = new NRegimenSalud())
+            {
+                cboregimensalud.DataSource = nrs.Getall();
+                cboregimensalud.DisplayMember = "regimen_salud";
+                cboregimensalud.ValueMember = "id_regimen_salud";
             }
         }
 
@@ -267,6 +275,7 @@ namespace Presentacion.Vista
             mostrarEmpleado();
             Tabla();
             Bloquear_controles();
+            MostrarRegimenSalud();
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -342,18 +351,29 @@ namespace Presentacion.Vista
                 emple_contra.ccts = txtcts.Text.Trim();
                 emple_contra.ccussp = txtcussp.Text.Trim();
 
-                result = emple_contra.GuardarCambios();
+                bool valida = new ValidacionDatos(emple_contra).Validate();
 
-                if (result.Contains("ya se encuentra registrado"))
+
+                if (valida)
                 {
-                    Messages.M_warning(result);
+
+                    result = emple_contra.GuardarCambios();
+
+                    if (result.Contains("ya se encuentra registrado"))
+                    {
+                        Messages.M_warning(result);
+                    }
+                    else
+                    {
+                        mostrarEmpleado();
+                        Messages.M_info(result);
+                        limpiar();
+                    }
                 }
-                else
-                {
-                    mostrarEmpleado();
-                    Messages.M_info(result);
-                    limpiar();
-                }
+
+                
+
+                
             }
         }
 
@@ -412,7 +432,7 @@ namespace Presentacion.Vista
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Keypress.SoloLetras(e);
+           Keypress.SoloLetras(e);         
         }
 
         private void txtApePat_KeyPress(object sender, KeyPressEventArgs e)
@@ -483,7 +503,7 @@ namespace Presentacion.Vista
         private void btneliminar_Click(object sender, EventArgs e)
         {
             result = "";
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != 0 || dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 DialogResult re = Messages.M_question("¿Deseas eliminar al empleado?");
                 if (re == DialogResult.Yes)
@@ -491,7 +511,7 @@ namespace Presentacion.Vista
                     using (emple_contra)
                     {
                         emple_contra.state = EntityState.Remover;
-                        emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[1].Value);
+                        emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
                         result = emple_contra.GuardarCambios();
                         Messages.M_info(result);
                         btnguardar.Enabled = false;
@@ -627,12 +647,32 @@ namespace Presentacion.Vista
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkcargo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Vista_cargo fr = Vista_cargo.GetInstance();
-            fr.StartPosition = FormStartPosition.CenterParent;
-            fr.ShowDialog();
+            contextmenu.Show(cbocargo,0,0);
+            totxtcargo.Focus();
         }
 
+        private void totxtcargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(totxtcargo.Text))
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    using (Ncargo nca = new Ncargo())
+                    {
+                        nca.state = EntityState.Guardar;
+                        nca.nombre_cargo = totxtcargo.Text.Trim();
+                        nca.descripcion = "";
+                        nca.SaveChanges();
+                        
+                    }
+                    totxtcargo.Text = "";
+                    contextmenu.Close();
+                    Mostrar_cargo();
+
+                }
+            }
+        }
     }
 }

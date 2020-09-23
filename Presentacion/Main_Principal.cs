@@ -1,7 +1,10 @@
 ﻿using Presentacion.Vista;
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Comun.Cache;
+using Presentacion.Helps;
 
 namespace Presentacion
 {
@@ -10,16 +13,34 @@ namespace Presentacion
         public Main_Principal()
         {
             InitializeComponent();
+            Tooltip.Title(btncerrar, "Cerrar sesión", false);
+            Tooltip.Title(pictmenu, "Menu", false);
+
+        }
+        //para maximizar toda la pantalla
+        public void fullScreen()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
+        //CARGAR DATOS AL MEMORY CACHE.
+        private void CargarDatos()
+        {
+            lblusuario.Text = UserCache.NombreUser;
+            lblrol.Text = UserCache.RolUser;
+            lblempresa.Text = UserCache.Empresa_Sucursal + ":  " + UserCache.Empresa;
+            lbllocalidad.Text ="LOCALIDAD:  " + UserCache.Localidad_empresa;
+            lblperiodo.Text = "PERIODO:  " + UserCache.Periodo;
+            lblid_periodo.Text = "id periodo: " + UserCache.Idperiodo.ToString();
+            lblidempresa.Text = "id empresa: " + UserCache.Codigo_empresa.ToString();
+        }
         private void Main_Principal_Load(object sender, EventArgs e)
         {
             hideSubmenu();
+            fullScreen();
+            CargarDatos();
+            lblhora.Text = DateTime.Now.ToString("HH : mm : ss");
         }
 
         private void hideSubmenu()
@@ -50,42 +71,37 @@ namespace Presentacion
 
         private void btndoc_Click(object sender, EventArgs e)
         {
-            openchildform(new frmdocumento());
+            OpenForm<frmdocumento>();
         }
 
         private void btnempresa_Click(object sender, EventArgs e)
         {
-            openchildform(new frmempresa());
+            OpenForm<frmempresa>();
         }
 
         private void btncargo_Click(object sender, EventArgs e)
         {
-            openchildform(new frmcargo());
+            OpenForm<frmcargo>();
         }
 
         private void btnsucursal_Click(object sender, EventArgs e)
         {
-            openchildform(new frmsucursal());
-
+            OpenForm<frmsucursal>();
+            
         }
 
         private void btnafp_Click(object sender, EventArgs e)
         {
-            openchildform(new frmafp());
+            OpenForm<Frmafp>();
         }
-
-        private void btnonp_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnusuario_Click(object sender, EventArgs e)
         {
-            openchildform(new frmusuario());
+            OpenForm<frmusuario>();
         }
 
         private void btnempleado_Click(object sender, EventArgs e)
         {
-            openchildform(new frmempleado());
+            OpenForm<frmempleado>();
         }
 
         private void btnactualizar_Click(object sender, EventArgs e)
@@ -97,67 +113,90 @@ namespace Presentacion
         {
             showSubMenu(panelregistro);
         }
-
-
-
-        private Form activeForm = null;
-        private void openchildform(Form chilform)
+       
+        //METODO PARA ABRIR FORMULARIO DENTRO DE PANEL
+        private void OpenForm<Myform>() where Myform : Form, new()
         {
-            if (activeForm != null)
+            Form formulario;
+            formulario = panelchildform.Controls.OfType<Myform>().FirstOrDefault();
+            if (formulario == null)
             {
-                activeForm.Close();
+                formulario = new Myform();
+                formulario.TopLevel = false;
+                //formulario.FormBorderStyle = FormBorderStyle.None;
+                //formulario.Dock = DockStyle.Fill;
+                panelchildform.Controls.Add(formulario);
+                formulario.Show();
+                formulario.BringToFront();
             }
-            activeForm = chilform;
-            chilform.TopLevel = false;
-            chilform.FormBorderStyle = FormBorderStyle.None;
-            chilform.Dock = DockStyle.Fill;
-            panelchildform.Controls.Add(chilform);
-            panelchildform.Tag = chilform;
-            chilform.BringToFront();
-            chilform.Show();
-
-
+            else
+            {
+                //formulario.Close();
+                formulario.BringToFront();
+            }
         }
 
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+          
         }
-
-        private void btnmini_Click(object sender, EventArgs e)
+                           
+        private void btnbanco_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            OpenForm<Banco>();
         }
 
-        private void btncerrar2_Click(object sender, EventArgs e)
+        private void btntipo_contrato_Click(object sender, EventArgs e)
+        {
+            OpenForm<TipoContrato>();
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void pictmenu_Click(object sender, EventArgs e)
+        {
 
+            if (PanelSideMenu.Width == 250)
+            {
+                PanelSideMenu.Width = 50;
+                HideTextButton();
+                hideSubmenu();
+
+            }
+            else
+            {
+                PanelSideMenu.Width = 250;
+                ShowTextButton();
+            }
+        }
+        private void HideTextButton()
+        {
+            btnmedia.Text = "";
+            btnactualizar.Text = "";
+            btnregistro.Text = "";
+            btnreportes.Text = "";
+            lineuser.Visible = false;
+            lineperiodo.Visible = false;
+            lblusuario.Visible = false;
         }
 
-        private void btnmaxi_Click(object sender, EventArgs e)
+        private void ShowTextButton()
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnrestaurar.Visible = true;
-            btnmaximizar.Visible = false;
+            btnmedia.Text = "&Mantenimiento";
+            btnactualizar.Text = "&Actualizar";
+            btnregistro.Text = "R&egistro";
+            btnreportes.Text = "&Repostes";
+            lineuser.Visible = true;
+            lineperiodo.Visible = true;
+            lblusuario.Visible = true;
         }
 
-        private void btnres_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = true;
-            btnmaximizar.Visible = false;
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnplanilla2_Click(object sender, EventArgs e)
         {
-            openchildform(new Banco());
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openchildform(new TipoContrato());
+            OpenForm<Planilla_Manto>();
         }
     }
 }

@@ -207,6 +207,12 @@
     <Compile Include="Vista\Planilla_Manto.Designer.cs">
       <DependentUpon>Planilla_Manto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\RegimenSalud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\RegimenSalud.Designer.cs">
+      <DependentUpon>RegimenSalud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Rol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Planilla_Manto.resx">
       <DependentUpon>Planilla_Manto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\RegimenSalud.resx">
+      <DependentUpon>RegimenSalud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Rol.resx">
       <DependentUpon>Rol.cs</DependentUpon>
@@ -457,6 +466,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\azul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_cancel_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_cancel_white_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_save_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_add_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_delete_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrador.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
