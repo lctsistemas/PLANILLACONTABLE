@@ -189,6 +189,12 @@
     <Compile Include="Vista\Insertar Planilla mensual.Designer.cs">
       <DependentUpon>Insertar Planilla mensual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\InsertPlanillaMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\InsertPlanillaMensual.Designer.cs">
+      <DependentUpon>InsertPlanillaMensual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Manto_Regimen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Insertar Planilla mensual.resx">
       <DependentUpon>Insertar Planilla mensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\InsertPlanillaMensual.resx">
+      <DependentUpon>InsertPlanillaMensual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
