@@ -16,7 +16,6 @@ namespace Presentacion.Vista
         public InsertPlanillaMensual()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterParent;
 
         }
 
@@ -35,9 +34,13 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        } 
+        }
 
-
-
+        private void InsertPlanillaMensual_Load(object sender, EventArgs e)
+        {
+           
+            this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
+            this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
+        }
     }
 }

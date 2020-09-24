@@ -519,7 +519,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(394, 20);
@@ -730,10 +729,9 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
             this.panel10.Controls.Add(this.label22);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Location = new System.Drawing.Point(0, 1);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(737, 21);
+            this.panel10.Size = new System.Drawing.Size(737, 20);
             this.panel10.TabIndex = 422;
             // 
             // label22
@@ -1429,7 +1427,7 @@
             this.lineShape3.X1 = 394;
             this.lineShape3.X2 = 394;
             this.lineShape3.Y1 = -1;
-            this.lineShape3.Y2 = 162;
+            this.lineShape3.Y2 = 158;
             // 
             // shapeContainer1
             // 
@@ -2112,7 +2110,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(431, 6);
+            this.label1.Location = new System.Drawing.Point(483, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 28);
             this.label1.TabIndex = 0;
@@ -2155,6 +2153,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InsertPlanillaMensual";
             this.Text = "InsertPlanillaMensual";
+            this.Load += new System.EventHandler(this.InsertPlanillaMensual_Load);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
