@@ -244,7 +244,7 @@
             panel4.Dock = System.Windows.Forms.DockStyle.Top;
             panel4.Location = new System.Drawing.Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(825, 20);
+            panel4.Size = new System.Drawing.Size(826, 20);
             panel4.TabIndex = 467;
             // 
             // label6
@@ -442,7 +442,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 20);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(825, 55);
+            this.panel12.Size = new System.Drawing.Size(826, 55);
             this.panel12.TabIndex = 243;
             // 
             // txtTipoContrato
@@ -764,9 +764,9 @@
             this.panel11.Controls.Add(this.label91);
             this.panel11.Controls.Add(this.panel10);
             this.panel11.Controls.Add(this.shapeContainer2);
-            this.panel11.Location = new System.Drawing.Point(337, 503);
+            this.panel11.Location = new System.Drawing.Point(336, 503);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(487, 109);
+            this.panel11.Size = new System.Drawing.Size(490, 109);
             this.panel11.TabIndex = 478;
             // 
             // btnFaltas
@@ -905,7 +905,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(487, 109);
+            this.shapeContainer2.Size = new System.Drawing.Size(490, 109);
             this.shapeContainer2.TabIndex = 434;
             this.shapeContainer2.TabStop = false;
             // 
