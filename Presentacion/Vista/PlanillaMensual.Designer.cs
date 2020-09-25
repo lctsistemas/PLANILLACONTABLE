@@ -475,7 +475,6 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Enabled = false;
             this.txtDNI.Location = new System.Drawing.Point(105, 6);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(100, 20);
