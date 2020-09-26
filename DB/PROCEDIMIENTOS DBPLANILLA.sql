@@ -1032,15 +1032,17 @@ GO
 
 go
 alter PROC SP_SHOW_PLANILLA
-@codigo_empresa int
+@codigo_empresa int,
+@periodo int
 AS BEGIN
 	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
 	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
-	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa
+	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa and pe.id_periodo=@periodo
 	END
 GO
+
 
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,

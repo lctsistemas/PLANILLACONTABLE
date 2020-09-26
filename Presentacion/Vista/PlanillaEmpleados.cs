@@ -27,6 +27,7 @@ namespace Presentacion.Vista
             using (np)
             {
                 np.Id_empresa = UserCache.Codigo_empresa;
+                np.Id_periodo = UserCache.Idperiodo;
                 dgvplanilla.DataSource = np.Getall();
             }
         }

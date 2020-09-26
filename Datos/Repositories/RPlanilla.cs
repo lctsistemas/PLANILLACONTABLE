@@ -106,7 +106,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SHOW_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_empresa;
-
+                    cmd.Parameters.Add("@periodo", SqlDbType.Int).Value = entiti.Id_periodo;
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())

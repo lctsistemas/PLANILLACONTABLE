@@ -135,6 +135,7 @@ namespace Negocio.Models
             DPlanilla dp = new DPlanilla();
 
             dp.Id_empresa = Id_empresa;
+            dp.Id_periodo = Id_periodo;
             using (DataTable dt = rplanilla.GetData(dp))
             {
                 list_planilla = new List<NPlanilla>();

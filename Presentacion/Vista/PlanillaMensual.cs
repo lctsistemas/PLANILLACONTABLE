@@ -290,5 +290,309 @@ namespace Presentacion.Vista
 
             return instance;
         }
+
+        
+
+        private void txtNocturna35_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNocturna35.Text == "")
+            {
+                txtNocturna35.Text = "0";
+            }
+            else if (txtMinNocturna35.Text == "")
+            {
+                txtMinNocturna35.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+                double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+                double precioPorNocturna = ((((remuneracion + asignacion) + (remuneracion + asignacion) * 0.35)) / 30) / 8;
+                double recargoNocturna25 = precioPorNocturna * 0.25;
+                double totalRecargoNocturna = precioPorNocturna + recargoNocturna25;
+                txtPrecioHoraNocturna25.Text = totalRecargoNocturna.ToString("N2");
+
+                double recargoNocturna35 = precioPorNocturna * 0.35;
+                double totalNocturnarecargo35 = precioPorNocturna + recargoNocturna35;
+                txtPrecioHoraNocturna35.Text = totalNocturnarecargo35.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtNocturna35.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinNocturna35.Text.ToString());
+
+                double dias_mes = (remuneracion + asignacion) / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+                double recargo25minutos = minutos_mes * 0.35;
+                double sumarecargo25minutos = minutos_mes + recargo25minutos;
+
+                double horaporsumarecargo = (sumarecargo25minutos * mindiurna25) * 1.35;
+
+                double horadiurna25_2 = (horadiurna25 * totalNocturnarecargo35) + horaporsumarecargo;
+                txtTotalNocturna35.Text = horadiurna25_2.ToString("N2");
+
+                double totalDiurna25 = Double.Parse(txtTotalNocturna25.Text);
+                double totalDiurna35 = Double.Parse(txtTotalNocturna35.Text);
+
+                double totalSumaDiurna = totalDiurna25 + totalDiurna35;
+                txtTotalNocturna.Text = totalSumaDiurna.ToString("N2");
+            }
+        }
+
+        private void txtMinNocturna35_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNocturna35.Text == "")
+            {
+                txtNocturna35.Text = "0";
+            }
+            else if (txtMinNocturna35.Text == "")
+            {
+                txtMinNocturna35.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+                double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+                double precioPorNocturna = ((((remuneracion + asignacion) + (remuneracion + asignacion) * 0.35)) / 30) / 8;
+                double recargoNocturna25 = precioPorNocturna * 0.25;
+                double totalRecargoNocturna = precioPorNocturna + recargoNocturna25;
+                txtPrecioHoraNocturna25.Text = totalRecargoNocturna.ToString("N2");
+
+                double recargoNocturna35 = precioPorNocturna * 0.35;
+                double totalNocturnarecargo35 = precioPorNocturna + recargoNocturna35;
+                txtPrecioHoraNocturna35.Text = totalNocturnarecargo35.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtNocturna35.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinNocturna35.Text.ToString());
+
+                double dias_mes = (remuneracion + asignacion) / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+                double recargo25minutos = minutos_mes * 0.35;
+                double sumarecargo25minutos = minutos_mes + recargo25minutos;
+
+                double horaporsumarecargo = (sumarecargo25minutos * mindiurna25) * 1.35;
+
+                double horadiurna25_2 = (horadiurna25 * totalNocturnarecargo35) + horaporsumarecargo;
+                txtTotalNocturna35.Text = horadiurna25_2.ToString("N2");
+
+                double totalDiurna25 = Double.Parse(txtTotalNocturna25.Text);
+                double totalDiurna35 = Double.Parse(txtTotalNocturna35.Text);
+
+                double totalSumaDiurna = totalDiurna25 + totalDiurna35;
+                txtTotalNocturna.Text = totalSumaDiurna.ToString("N2");
+            }
+        }
+
+        private void txtHoraFeriado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHoraFeriado.Text == "")
+            {
+                txtHoraFeriado.Text = "0";
+            }
+            else if (txtMinFeriado.Text == "")
+            {
+                txtMinFeriado.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+                double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+                double feriado = (((remuneracion + asignacion) / 30) / 8) * 2;
+                txtPrecioHoraFeriado.Text = feriado.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtHoraFeriado.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinFeriado.Text.ToString());
+
+                double dias_mes = (remuneracion + asignacion) / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+                double recargo25minutos = minutos_mes * 2;
+                double sumarecargo25minutos = minutos_mes + recargo25minutos;
+
+                double horaporsumarecargo = (sumarecargo25minutos * mindiurna25);
+
+                double horadiurna25_2 = (horadiurna25 * feriado) + horaporsumarecargo;
+                txtTotalFeriado.Text = horadiurna25_2.ToString("N2");
+
+            }
+        }
+
+        private void txtMinFeriado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHoraFeriado.Text == "")
+            {
+                txtHoraFeriado.Text = "0";
+            }
+            else if (txtMinFeriado.Text == "")
+            {
+                txtMinFeriado.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+                double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+                double feriado = (((remuneracion + asignacion) / 30) / 8) * 2;
+                txtPrecioHoraFeriado.Text = feriado.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtHoraFeriado.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinFeriado.Text.ToString());
+
+                double dias_mes = (remuneracion + asignacion) / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+                double recargo25minutos = minutos_mes * 2;
+
+                double horaporsumarecargo = (recargo25minutos * mindiurna25);
+
+                double horadiurna25_2 = (horadiurna25 * feriado) + horaporsumarecargo;
+                txtTotalFeriado.Text = horadiurna25_2.ToString("N2");
+
+            }
+        }
+
+        private void txtHoraBonificacionNocturna_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHoraBonificacionNocturna.Text == "")
+            {
+                txtHoraBonificacionNocturna.Text = "0";
+            }
+            else if (txtMinBonificacionNocturna.Text == "")
+            {
+                txtMinBonificacionNocturna.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+                double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+                double bonificacionNocturna = (((remuneracion + asignacion) / 30) / 8) * 0.35;
+                txtPrecioHoraBoniNocturna.Text = bonificacionNocturna.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtHoraBonificacionNocturna.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinBonificacionNocturna.Text.ToString());
+
+                double dias_mes = (remuneracion + asignacion) / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+                double recargo25minutos = minutos_mes * 0.35;
+
+                double horaporsumarecargo = (recargo25minutos * mindiurna25);
+
+                double horadiurna25_2 = (horadiurna25 * bonificacionNocturna) + horaporsumarecargo;
+                txtTotalBoniNocturna.Text = horadiurna25_2.ToString("N2");
+
+            }
+        }
+
+        private void txtMinBonificacionNocturna_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHoraBonificacionNocturna.Text == "")
+            {
+                txtHoraBonificacionNocturna.Text = "0";
+            }
+            else if (txtMinBonificacionNocturna.Text == "")
+            {
+                txtMinBonificacionNocturna.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+                double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+                double bonificacionNocturna = (((remuneracion + asignacion) / 30) / 8) * 0.35;
+                txtPrecioHoraBoniNocturna.Text = bonificacionNocturna.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtHoraBonificacionNocturna.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinBonificacionNocturna.Text.ToString());
+
+                double dias_mes = (remuneracion + asignacion) / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+                double recargo25minutos = minutos_mes * 0.35;
+
+                double horaporsumarecargo = (recargo25minutos * mindiurna25);
+
+                double horadiurna25_2 = (horadiurna25 * bonificacionNocturna) + horaporsumarecargo;
+                txtTotalBoniNocturna.Text = horadiurna25_2.ToString("N2");
+
+            }
+        }
+
+        private void txtHorasTardanza_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHorasTardanza.Text == "")
+            {
+                txtHorasTardanza.Text = "0";
+            }
+            else if (txtMinTardanzas.Text == "")
+            {
+                txtMinTardanzas.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+
+                double tardanzas = ((remuneracion / 8) / 60) * 2;
+                txtPrecioHoraTardanza.Text = tardanzas.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtHorasTardanza.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinTardanzas.Text.ToString());
+
+                double dias_mes = remuneracion / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+
+                double horaporsumarecargo = (minutos_mes * mindiurna25);
+
+                double horadiurna25_2 = (horadiurna25 * tardanzas) + horaporsumarecargo;
+                txtTotalTardanza.Text = horadiurna25_2.ToString("N2");
+
+            }
+        }
+
+        private void txtMinTardanzas_TextChanged(object sender, EventArgs e)
+        {
+            if (txtHorasTardanza.Text == "")
+            {
+                txtHorasTardanza.Text = "0";
+            }
+            else if (txtMinTardanzas.Text == "")
+            {
+                txtMinTardanzas.Text = "0";
+            }
+            else
+            {
+                double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+
+                double tardanzas = ((remuneracion / 8) / 60) * 2;
+                txtPrecioHoraTardanza.Text = tardanzas.ToString("N2");
+
+                double horadiurna25 = Double.Parse(txtHorasTardanza.Text.ToString());
+                double mindiurna25 = Double.Parse(txtMinTardanzas.Text.ToString());
+
+                double dias_mes = remuneracion / 30;
+                double horas_mes = dias_mes / 8;
+                double minutos_mes = horas_mes / 60;
+
+
+                double horaporsumarecargo = (minutos_mes * mindiurna25);
+
+                double horadiurna25_2 = (horadiurna25 * tardanzas) + horaporsumarecargo;
+                txtTotalTardanza.Text = horadiurna25_2.ToString("N2");
+
+
+            }
+        }
     }
 }
