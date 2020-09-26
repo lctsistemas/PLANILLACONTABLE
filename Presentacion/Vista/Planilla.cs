@@ -33,7 +33,7 @@ namespace Presentacion.Vista
             //string m=mes[0];
             cbxmes.Items.AddRange(mes);
 
-            Planilla_Manto planilla = new Planilla_Manto();
+            PlanillaEmpleados planilla = new PlanillaEmpleados();
 
 
             DateTime datefin;

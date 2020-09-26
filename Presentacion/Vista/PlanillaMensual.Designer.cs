@@ -33,6 +33,22 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnFaltas = new System.Windows.Forms.Button();
+            this.btnSubsidiados = new System.Windows.Forms.Button();
+            this.txtImpFaltaAum = new System.Windows.Forms.TextBox();
+            this.txtAumDiasFalta = new System.Windows.Forms.TextBox();
+            this.label93 = new System.Windows.Forms.Label();
+            this.txtImporteDescFalta = new System.Windows.Forms.TextBox();
+            this.txtDesDiasFalta = new System.Windows.Forms.TextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.txtImporteSubsidiados = new System.Windows.Forms.TextBox();
+            this.txtDiasSubsidiados = new System.Windows.Forms.TextBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtTotalTardanza = new System.Windows.Forms.TextBox();
             this.label86 = new System.Windows.Forms.Label();
@@ -45,6 +61,8 @@
             this.txtHorasTardanza = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraTardanza = new System.Windows.Forms.TextBox();
             this.txtMinTardanzas = new System.Windows.Forms.TextBox();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel12 = new System.Windows.Forms.Panel();
             this.txtTipoContrato = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -78,22 +96,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txtHorasDiarias = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.btnFaltas = new System.Windows.Forms.Button();
-            this.btnSubsidiados = new System.Windows.Forms.Button();
-            this.txtImpFaltaAum = new System.Windows.Forms.TextBox();
-            this.txtAumDiasFalta = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.txtImporteDescFalta = new System.Windows.Forms.TextBox();
-            this.txtDesDiasFalta = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.txtImporteSubsidiados = new System.Windows.Forms.TextBox();
-            this.txtDiasSubsidiados = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -119,29 +121,29 @@
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.txtTotalNocturna = new System.Windows.Forms.TextBox();
             this.txtTotalDiurna = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtTotalNocturna35 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txtPrecioHoraNocturna35 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.textBox30 = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.txtTotalDiurna35 = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraDiurna35 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.textBox34 = new System.Windows.Forms.TextBox();
+            this.txtMinDiurna35 = new System.Windows.Forms.TextBox();
+            this.txtDiurna35 = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.txtTotalNocturna25 = new System.Windows.Forms.TextBox();
             this.txtTotalDiurna25 = new System.Windows.Forms.TextBox();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.txtPrecioHoraNocturna25 = new System.Windows.Forms.TextBox();
+            this.txtMinNocturna25 = new System.Windows.Forms.TextBox();
+            this.txtNocturna25 = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraDiurna25 = new System.Windows.Forms.TextBox();
             this.txtMinDiurna25 = new System.Windows.Forms.TextBox();
             this.txtDiurna25 = new System.Windows.Forms.TextBox();
@@ -213,14 +215,14 @@
             panel4 = new System.Windows.Forms.Panel();
             panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -244,7 +246,7 @@
             panel4.Dock = System.Windows.Forms.DockStyle.Top;
             panel4.Location = new System.Drawing.Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(826, 20);
+            panel4.Size = new System.Drawing.Size(830, 20);
             panel4.TabIndex = 467;
             // 
             // label6
@@ -306,8 +308,179 @@
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Location = new System.Drawing.Point(-5, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(842, 667);
+            this.panel1.Size = new System.Drawing.Size(847, 667);
             this.panel1.TabIndex = 466;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.White;
+            this.panel11.Controls.Add(this.btnFaltas);
+            this.panel11.Controls.Add(this.btnSubsidiados);
+            this.panel11.Controls.Add(this.txtImpFaltaAum);
+            this.panel11.Controls.Add(this.txtAumDiasFalta);
+            this.panel11.Controls.Add(this.label93);
+            this.panel11.Controls.Add(this.txtImporteDescFalta);
+            this.panel11.Controls.Add(this.txtDesDiasFalta);
+            this.panel11.Controls.Add(this.label92);
+            this.panel11.Controls.Add(this.txtImporteSubsidiados);
+            this.panel11.Controls.Add(this.txtDiasSubsidiados);
+            this.panel11.Controls.Add(this.label91);
+            this.panel11.Controls.Add(this.panel10);
+            this.panel11.Controls.Add(this.shapeContainer2);
+            this.panel11.Location = new System.Drawing.Point(336, 503);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(490, 109);
+            this.panel11.TabIndex = 478;
+            // 
+            // btnFaltas
+            // 
+            this.btnFaltas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
+            this.btnFaltas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(198)))));
+            this.btnFaltas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFaltas.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFaltas.ForeColor = System.Drawing.Color.White;
+            this.btnFaltas.Location = new System.Drawing.Point(323, 80);
+            this.btnFaltas.Name = "btnFaltas";
+            this.btnFaltas.Size = new System.Drawing.Size(152, 23);
+            this.btnFaltas.TabIndex = 433;
+            this.btnFaltas.Text = "NO LABORADO";
+            this.btnFaltas.UseVisualStyleBackColor = false;
+            // 
+            // btnSubsidiados
+            // 
+            this.btnSubsidiados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
+            this.btnSubsidiados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(198)))));
+            this.btnSubsidiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubsidiados.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubsidiados.ForeColor = System.Drawing.Color.White;
+            this.btnSubsidiados.Location = new System.Drawing.Point(74, 54);
+            this.btnSubsidiados.Name = "btnSubsidiados";
+            this.btnSubsidiados.Size = new System.Drawing.Size(101, 23);
+            this.btnSubsidiados.TabIndex = 432;
+            this.btnSubsidiados.Text = "SUBSIDIADOS";
+            this.btnSubsidiados.UseVisualStyleBackColor = false;
+            // 
+            // txtImpFaltaAum
+            // 
+            this.txtImpFaltaAum.Enabled = false;
+            this.txtImpFaltaAum.Location = new System.Drawing.Point(388, 52);
+            this.txtImpFaltaAum.Name = "txtImpFaltaAum";
+            this.txtImpFaltaAum.Size = new System.Drawing.Size(80, 20);
+            this.txtImpFaltaAum.TabIndex = 431;
+            this.txtImpFaltaAum.Text = "0.00";
+            // 
+            // txtAumDiasFalta
+            // 
+            this.txtAumDiasFalta.Enabled = false;
+            this.txtAumDiasFalta.Location = new System.Drawing.Point(295, 52);
+            this.txtAumDiasFalta.Name = "txtAumDiasFalta";
+            this.txtAumDiasFalta.Size = new System.Drawing.Size(80, 20);
+            this.txtAumDiasFalta.TabIndex = 430;
+            this.txtAumDiasFalta.Text = "0";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(227, 55);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(57, 13);
+            this.label93.TabIndex = 429;
+            this.label93.Text = "TOTAL (+)";
+            // 
+            // txtImporteDescFalta
+            // 
+            this.txtImporteDescFalta.Enabled = false;
+            this.txtImporteDescFalta.Location = new System.Drawing.Point(388, 23);
+            this.txtImporteDescFalta.Name = "txtImporteDescFalta";
+            this.txtImporteDescFalta.Size = new System.Drawing.Size(80, 20);
+            this.txtImporteDescFalta.TabIndex = 428;
+            this.txtImporteDescFalta.Text = "0.00";
+            // 
+            // txtDesDiasFalta
+            // 
+            this.txtDesDiasFalta.Enabled = false;
+            this.txtDesDiasFalta.Location = new System.Drawing.Point(295, 23);
+            this.txtDesDiasFalta.Name = "txtDesDiasFalta";
+            this.txtDesDiasFalta.Size = new System.Drawing.Size(80, 20);
+            this.txtDesDiasFalta.TabIndex = 427;
+            this.txtDesDiasFalta.Text = "0";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(227, 26);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(54, 13);
+            this.label92.TabIndex = 426;
+            this.label92.Text = "TOTAL (-)";
+            // 
+            // txtImporteSubsidiados
+            // 
+            this.txtImporteSubsidiados.Enabled = false;
+            this.txtImporteSubsidiados.Location = new System.Drawing.Point(111, 28);
+            this.txtImporteSubsidiados.Name = "txtImporteSubsidiados";
+            this.txtImporteSubsidiados.Size = new System.Drawing.Size(80, 20);
+            this.txtImporteSubsidiados.TabIndex = 425;
+            this.txtImporteSubsidiados.Text = "0.00";
+            // 
+            // txtDiasSubsidiados
+            // 
+            this.txtDiasSubsidiados.Enabled = false;
+            this.txtDiasSubsidiados.Location = new System.Drawing.Point(52, 28);
+            this.txtDiasSubsidiados.Name = "txtDiasSubsidiados";
+            this.txtDiasSubsidiados.Size = new System.Drawing.Size(51, 20);
+            this.txtDiasSubsidiados.TabIndex = 424;
+            this.txtDiasSubsidiados.Text = "0";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(4, 31);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(42, 13);
+            this.label91.TabIndex = 423;
+            this.label91.Text = "TOTAL";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
+            this.panel10.Controls.Add(this.label22);
+            this.panel10.Location = new System.Drawing.Point(0, 1);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(820, 20);
+            this.panel10.TabIndex = 422;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(174, 3);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(262, 16);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "DIAS SUBSIDIADOS Y OTROS NO LABORADOS";
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(490, 109);
+            this.shapeContainer2.TabIndex = 434;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(46)))));
+            this.lineShape1.X1 = 196;
+            this.lineShape1.X2 = 197;
+            this.lineShape1.Y1 = 20;
+            this.lineShape1.Y2 = 107;
             // 
             // panel9
             // 
@@ -321,6 +494,7 @@
             this.panel9.Controls.Add(this.txtHorasTardanza);
             this.panel9.Controls.Add(this.txtPrecioHoraTardanza);
             this.panel9.Controls.Add(this.txtMinTardanzas);
+            this.panel9.Controls.Add(this.shapeContainer1);
             this.panel9.Location = new System.Drawing.Point(7, 503);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(329, 109);
@@ -424,6 +598,27 @@
             this.txtMinTardanzas.TabIndex = 415;
             this.txtMinTardanzas.Text = "0";
             // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape2});
+            this.shapeContainer1.Size = new System.Drawing.Size(329, 109);
+            this.shapeContainer1.TabIndex = 421;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(46)))));
+            this.lineShape2.X1 = 326;
+            this.lineShape2.X2 = 327;
+            this.lineShape2.Y1 = 1;
+            this.lineShape2.Y2 = 109;
+            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.White;
@@ -442,7 +637,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel12.Location = new System.Drawing.Point(0, 20);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(826, 55);
+            this.panel12.Size = new System.Drawing.Size(830, 55);
             this.panel12.TabIndex = 243;
             // 
             // txtTipoContrato
@@ -533,6 +728,7 @@
             this.txtAsigFamiliar.Name = "txtAsigFamiliar";
             this.txtAsigFamiliar.Size = new System.Drawing.Size(100, 20);
             this.txtAsigFamiliar.TabIndex = 252;
+            this.txtAsigFamiliar.Text = "93.00";
             // 
             // label15
             // 
@@ -551,6 +747,7 @@
             this.txtHaberBasico.Name = "txtHaberBasico";
             this.txtHaberBasico.Size = new System.Drawing.Size(100, 20);
             this.txtHaberBasico.TabIndex = 251;
+            this.txtHaberBasico.Text = "930.00";
             // 
             // panel19
             // 
@@ -747,177 +944,6 @@
             this.label20.TabIndex = 247;
             this.label20.Text = "TOTAL DIAS DOMINICAL";
             // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Controls.Add(this.btnFaltas);
-            this.panel11.Controls.Add(this.btnSubsidiados);
-            this.panel11.Controls.Add(this.txtImpFaltaAum);
-            this.panel11.Controls.Add(this.txtAumDiasFalta);
-            this.panel11.Controls.Add(this.label93);
-            this.panel11.Controls.Add(this.txtImporteDescFalta);
-            this.panel11.Controls.Add(this.txtDesDiasFalta);
-            this.panel11.Controls.Add(this.label92);
-            this.panel11.Controls.Add(this.txtImporteSubsidiados);
-            this.panel11.Controls.Add(this.txtDiasSubsidiados);
-            this.panel11.Controls.Add(this.label91);
-            this.panel11.Controls.Add(this.panel10);
-            this.panel11.Controls.Add(this.shapeContainer2);
-            this.panel11.Location = new System.Drawing.Point(336, 503);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(490, 109);
-            this.panel11.TabIndex = 478;
-            // 
-            // btnFaltas
-            // 
-            this.btnFaltas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
-            this.btnFaltas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(198)))));
-            this.btnFaltas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFaltas.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFaltas.ForeColor = System.Drawing.Color.White;
-            this.btnFaltas.Location = new System.Drawing.Point(323, 80);
-            this.btnFaltas.Name = "btnFaltas";
-            this.btnFaltas.Size = new System.Drawing.Size(152, 23);
-            this.btnFaltas.TabIndex = 433;
-            this.btnFaltas.Text = "NO LABORADO";
-            this.btnFaltas.UseVisualStyleBackColor = false;
-            // 
-            // btnSubsidiados
-            // 
-            this.btnSubsidiados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
-            this.btnSubsidiados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(135)))), ((int)(((byte)(198)))));
-            this.btnSubsidiados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubsidiados.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubsidiados.ForeColor = System.Drawing.Color.White;
-            this.btnSubsidiados.Location = new System.Drawing.Point(74, 54);
-            this.btnSubsidiados.Name = "btnSubsidiados";
-            this.btnSubsidiados.Size = new System.Drawing.Size(101, 23);
-            this.btnSubsidiados.TabIndex = 432;
-            this.btnSubsidiados.Text = "SUBSIDIADOS";
-            this.btnSubsidiados.UseVisualStyleBackColor = false;
-            // 
-            // txtImpFaltaAum
-            // 
-            this.txtImpFaltaAum.Enabled = false;
-            this.txtImpFaltaAum.Location = new System.Drawing.Point(388, 52);
-            this.txtImpFaltaAum.Name = "txtImpFaltaAum";
-            this.txtImpFaltaAum.Size = new System.Drawing.Size(80, 20);
-            this.txtImpFaltaAum.TabIndex = 431;
-            this.txtImpFaltaAum.Text = "0.00";
-            // 
-            // txtAumDiasFalta
-            // 
-            this.txtAumDiasFalta.Enabled = false;
-            this.txtAumDiasFalta.Location = new System.Drawing.Point(295, 52);
-            this.txtAumDiasFalta.Name = "txtAumDiasFalta";
-            this.txtAumDiasFalta.Size = new System.Drawing.Size(80, 20);
-            this.txtAumDiasFalta.TabIndex = 430;
-            this.txtAumDiasFalta.Text = "0";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(227, 55);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(57, 13);
-            this.label93.TabIndex = 429;
-            this.label93.Text = "TOTAL (+)";
-            // 
-            // txtImporteDescFalta
-            // 
-            this.txtImporteDescFalta.Enabled = false;
-            this.txtImporteDescFalta.Location = new System.Drawing.Point(388, 23);
-            this.txtImporteDescFalta.Name = "txtImporteDescFalta";
-            this.txtImporteDescFalta.Size = new System.Drawing.Size(80, 20);
-            this.txtImporteDescFalta.TabIndex = 428;
-            this.txtImporteDescFalta.Text = "0.00";
-            // 
-            // txtDesDiasFalta
-            // 
-            this.txtDesDiasFalta.Enabled = false;
-            this.txtDesDiasFalta.Location = new System.Drawing.Point(295, 23);
-            this.txtDesDiasFalta.Name = "txtDesDiasFalta";
-            this.txtDesDiasFalta.Size = new System.Drawing.Size(80, 20);
-            this.txtDesDiasFalta.TabIndex = 427;
-            this.txtDesDiasFalta.Text = "0";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(227, 26);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(54, 13);
-            this.label92.TabIndex = 426;
-            this.label92.Text = "TOTAL (-)";
-            // 
-            // txtImporteSubsidiados
-            // 
-            this.txtImporteSubsidiados.Enabled = false;
-            this.txtImporteSubsidiados.Location = new System.Drawing.Point(111, 28);
-            this.txtImporteSubsidiados.Name = "txtImporteSubsidiados";
-            this.txtImporteSubsidiados.Size = new System.Drawing.Size(80, 20);
-            this.txtImporteSubsidiados.TabIndex = 425;
-            this.txtImporteSubsidiados.Text = "0.00";
-            // 
-            // txtDiasSubsidiados
-            // 
-            this.txtDiasSubsidiados.Enabled = false;
-            this.txtDiasSubsidiados.Location = new System.Drawing.Point(52, 28);
-            this.txtDiasSubsidiados.Name = "txtDiasSubsidiados";
-            this.txtDiasSubsidiados.Size = new System.Drawing.Size(51, 20);
-            this.txtDiasSubsidiados.TabIndex = 424;
-            this.txtDiasSubsidiados.Text = "0";
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(4, 31);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(42, 13);
-            this.label91.TabIndex = 423;
-            this.label91.Text = "TOTAL";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
-            this.panel10.Controls.Add(this.label22);
-            this.panel10.Location = new System.Drawing.Point(0, 1);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(820, 20);
-            this.panel10.TabIndex = 422;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(174, 3);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(262, 16);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "DIAS SUBSIDIADOS Y OTROS NO LABORADOS";
-            // 
-            // shapeContainer2
-            // 
-            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer2.Name = "shapeContainer2";
-            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(490, 109);
-            this.shapeContainer2.TabIndex = 434;
-            this.shapeContainer2.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(71)))), ((int)(((byte)(46)))));
-            this.lineShape1.X1 = 196;
-            this.lineShape1.X2 = 195;
-            this.lineShape1.Y1 = 20;
-            this.lineShape1.Y2 = 81;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(100)))));
@@ -944,7 +970,7 @@
             this.panel21.Controls.Add(this.label33);
             this.panel21.Location = new System.Drawing.Point(417, 427);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(408, 23);
+            this.panel21.Size = new System.Drawing.Size(409, 23);
             this.panel21.TabIndex = 474;
             // 
             // label33
@@ -1012,7 +1038,7 @@
             this.panel20.Controls.Add(this.textBox20);
             this.panel20.Location = new System.Drawing.Point(417, 450);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(407, 53);
+            this.panel20.Size = new System.Drawing.Size(409, 53);
             this.panel20.TabIndex = 475;
             // 
             // label9
@@ -1135,29 +1161,29 @@
             // panel24
             // 
             this.panel24.Controls.Add(this.panel18);
-            this.panel24.Controls.Add(this.textBox25);
+            this.panel24.Controls.Add(this.txtTotalNocturna);
             this.panel24.Controls.Add(this.txtTotalDiurna);
             this.panel24.Controls.Add(this.label40);
             this.panel24.Controls.Add(this.label41);
-            this.panel24.Controls.Add(this.textBox27);
+            this.panel24.Controls.Add(this.txtTotalNocturna35);
             this.panel24.Controls.Add(this.label42);
-            this.panel24.Controls.Add(this.textBox28);
+            this.panel24.Controls.Add(this.txtPrecioHoraNocturna35);
             this.panel24.Controls.Add(this.textBox29);
             this.panel24.Controls.Add(this.textBox30);
             this.panel24.Controls.Add(this.label44);
             this.panel24.Controls.Add(this.label45);
             this.panel24.Controls.Add(this.txtTotalDiurna35);
             this.panel24.Controls.Add(this.txtPrecioHoraDiurna35);
-            this.panel24.Controls.Add(this.textBox33);
-            this.panel24.Controls.Add(this.textBox34);
+            this.panel24.Controls.Add(this.txtMinDiurna35);
+            this.panel24.Controls.Add(this.txtDiurna35);
             this.panel24.Controls.Add(this.label63);
             this.panel24.Controls.Add(this.label64);
             this.panel24.Controls.Add(this.label65);
-            this.panel24.Controls.Add(this.textBox35);
+            this.panel24.Controls.Add(this.txtTotalNocturna25);
             this.panel24.Controls.Add(this.txtTotalDiurna25);
-            this.panel24.Controls.Add(this.textBox37);
-            this.panel24.Controls.Add(this.textBox38);
-            this.panel24.Controls.Add(this.textBox39);
+            this.panel24.Controls.Add(this.txtPrecioHoraNocturna25);
+            this.panel24.Controls.Add(this.txtMinNocturna25);
+            this.panel24.Controls.Add(this.txtNocturna25);
             this.panel24.Controls.Add(this.txtPrecioHoraDiurna25);
             this.panel24.Controls.Add(this.txtMinDiurna25);
             this.panel24.Controls.Add(this.txtDiurna25);
@@ -1193,14 +1219,14 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "HORAS NOCTURNAS";
             // 
-            // textBox25
+            // txtTotalNocturna
             // 
-            this.textBox25.Enabled = false;
-            this.textBox25.Location = new System.Drawing.Point(683, 94);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(100, 20);
-            this.textBox25.TabIndex = 362;
-            this.textBox25.Text = "0.00";
+            this.txtTotalNocturna.Enabled = false;
+            this.txtTotalNocturna.Location = new System.Drawing.Point(683, 94);
+            this.txtTotalNocturna.Name = "txtTotalNocturna";
+            this.txtTotalNocturna.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalNocturna.TabIndex = 362;
+            this.txtTotalNocturna.Text = "0.00";
             // 
             // txtTotalDiurna
             // 
@@ -1231,14 +1257,14 @@
             this.label41.TabIndex = 359;
             this.label41.Text = "TOTAL";
             // 
-            // textBox27
+            // txtTotalNocturna35
             // 
-            this.textBox27.Enabled = false;
-            this.textBox27.Location = new System.Drawing.Point(703, 67);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(80, 20);
-            this.textBox27.TabIndex = 358;
-            this.textBox27.Text = "0.00";
+            this.txtTotalNocturna35.Enabled = false;
+            this.txtTotalNocturna35.Location = new System.Drawing.Point(703, 67);
+            this.txtTotalNocturna35.Name = "txtTotalNocturna35";
+            this.txtTotalNocturna35.Size = new System.Drawing.Size(80, 20);
+            this.txtTotalNocturna35.TabIndex = 358;
+            this.txtTotalNocturna35.Text = "0.00";
             // 
             // label42
             // 
@@ -1249,13 +1275,13 @@
             this.label42.TabIndex = 357;
             this.label42.Text = "=";
             // 
-            // textBox28
+            // txtPrecioHoraNocturna35
             // 
-            this.textBox28.Enabled = false;
-            this.textBox28.Location = new System.Drawing.Point(616, 67);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(50, 20);
-            this.textBox28.TabIndex = 356;
+            this.txtPrecioHoraNocturna35.Enabled = false;
+            this.txtPrecioHoraNocturna35.Location = new System.Drawing.Point(616, 67);
+            this.txtPrecioHoraNocturna35.Name = "txtPrecioHoraNocturna35";
+            this.txtPrecioHoraNocturna35.Size = new System.Drawing.Size(50, 20);
+            this.txtPrecioHoraNocturna35.TabIndex = 356;
             // 
             // textBox29
             // 
@@ -1309,21 +1335,23 @@
             this.txtPrecioHoraDiurna35.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraDiurna35.TabIndex = 349;
             // 
-            // textBox33
+            // txtMinDiurna35
             // 
-            this.textBox33.Location = new System.Drawing.Point(164, 68);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(50, 20);
-            this.textBox33.TabIndex = 348;
-            this.textBox33.Text = "0";
+            this.txtMinDiurna35.Location = new System.Drawing.Point(164, 68);
+            this.txtMinDiurna35.Name = "txtMinDiurna35";
+            this.txtMinDiurna35.Size = new System.Drawing.Size(50, 20);
+            this.txtMinDiurna35.TabIndex = 348;
+            this.txtMinDiurna35.Text = "0";
+            this.txtMinDiurna35.TextChanged += new System.EventHandler(this.txtMinDiurna35_TextChanged);
             // 
-            // textBox34
+            // txtDiurna35
             // 
-            this.textBox34.Location = new System.Drawing.Point(108, 68);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(50, 20);
-            this.textBox34.TabIndex = 347;
-            this.textBox34.Text = "0";
+            this.txtDiurna35.Location = new System.Drawing.Point(108, 68);
+            this.txtDiurna35.Name = "txtDiurna35";
+            this.txtDiurna35.Size = new System.Drawing.Size(50, 20);
+            this.txtDiurna35.TabIndex = 347;
+            this.txtDiurna35.Text = "0";
+            this.txtDiurna35.TextChanged += new System.EventHandler(this.txtDiurna35_TextChanged);
             // 
             // label63
             // 
@@ -1353,14 +1381,14 @@
             this.label65.TabIndex = 343;
             this.label65.Text = "=";
             // 
-            // textBox35
+            // txtTotalNocturna25
             // 
-            this.textBox35.Enabled = false;
-            this.textBox35.Location = new System.Drawing.Point(703, 36);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(80, 20);
-            this.textBox35.TabIndex = 342;
-            this.textBox35.Text = "0.00";
+            this.txtTotalNocturna25.Enabled = false;
+            this.txtTotalNocturna25.Location = new System.Drawing.Point(703, 36);
+            this.txtTotalNocturna25.Name = "txtTotalNocturna25";
+            this.txtTotalNocturna25.Size = new System.Drawing.Size(80, 20);
+            this.txtTotalNocturna25.TabIndex = 342;
+            this.txtTotalNocturna25.Text = "0.00";
             // 
             // txtTotalDiurna25
             // 
@@ -1371,29 +1399,30 @@
             this.txtTotalDiurna25.TabIndex = 341;
             this.txtTotalDiurna25.Text = "0.00";
             // 
-            // textBox37
+            // txtPrecioHoraNocturna25
             // 
-            this.textBox37.Enabled = false;
-            this.textBox37.Location = new System.Drawing.Point(616, 36);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(50, 20);
-            this.textBox37.TabIndex = 340;
+            this.txtPrecioHoraNocturna25.Enabled = false;
+            this.txtPrecioHoraNocturna25.Location = new System.Drawing.Point(616, 36);
+            this.txtPrecioHoraNocturna25.Name = "txtPrecioHoraNocturna25";
+            this.txtPrecioHoraNocturna25.Size = new System.Drawing.Size(50, 20);
+            this.txtPrecioHoraNocturna25.TabIndex = 340;
             // 
-            // textBox38
+            // txtMinNocturna25
             // 
-            this.textBox38.Location = new System.Drawing.Point(556, 36);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(50, 20);
-            this.textBox38.TabIndex = 339;
-            this.textBox38.Text = "0";
+            this.txtMinNocturna25.Location = new System.Drawing.Point(556, 36);
+            this.txtMinNocturna25.Name = "txtMinNocturna25";
+            this.txtMinNocturna25.Size = new System.Drawing.Size(50, 20);
+            this.txtMinNocturna25.TabIndex = 339;
+            this.txtMinNocturna25.Text = "0";
             // 
-            // textBox39
+            // txtNocturna25
             // 
-            this.textBox39.Location = new System.Drawing.Point(496, 36);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(50, 20);
-            this.textBox39.TabIndex = 338;
-            this.textBox39.Text = "0";
+            this.txtNocturna25.Location = new System.Drawing.Point(496, 36);
+            this.txtNocturna25.Name = "txtNocturna25";
+            this.txtNocturna25.Size = new System.Drawing.Size(50, 20);
+            this.txtNocturna25.TabIndex = 338;
+            this.txtNocturna25.Text = "0";
+            this.txtNocturna25.TextChanged += new System.EventHandler(this.txtNocturna25_TextChanged);
             // 
             // txtPrecioHoraDiurna25
             // 
@@ -1409,7 +1438,8 @@
             this.txtMinDiurna25.Name = "txtMinDiurna25";
             this.txtMinDiurna25.Size = new System.Drawing.Size(50, 20);
             this.txtMinDiurna25.TabIndex = 336;
-            this.txtMinDiurna25.Text = "50";
+            this.txtMinDiurna25.Text = "0";
+            this.txtMinDiurna25.TextChanged += new System.EventHandler(this.txtMinDiurna25_TextChanged);
             // 
             // txtDiurna25
             // 
@@ -1417,7 +1447,8 @@
             this.txtDiurna25.Name = "txtDiurna25";
             this.txtDiurna25.Size = new System.Drawing.Size(50, 20);
             this.txtDiurna25.TabIndex = 335;
-            this.txtDiurna25.Text = "5";
+            this.txtDiurna25.Text = "0";
+            this.txtDiurna25.TextChanged += new System.EventHandler(this.txtDiurna25_TextChanged);
             // 
             // label66
             // 
@@ -2037,7 +2068,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(836, 30);
+            this.panel6.Size = new System.Drawing.Size(842, 30);
             this.panel6.TabIndex = 255;
             this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseDown);
             // 
@@ -2046,7 +2077,7 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(784, 4);
+            this.btncerrar.Location = new System.Drawing.Point(790, 4);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2070,7 +2101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 700);
+            this.ClientSize = new System.Drawing.Size(842, 700);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -2080,6 +2111,10 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -2092,10 +2127,6 @@
             this.panel22.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel21.ResumeLayout(false);
@@ -2204,29 +2235,29 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label27;
-        public System.Windows.Forms.TextBox textBox25;
+        public System.Windows.Forms.TextBox txtTotalNocturna;
         public System.Windows.Forms.TextBox txtTotalDiurna;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
-        public System.Windows.Forms.TextBox textBox27;
+        public System.Windows.Forms.TextBox txtTotalNocturna35;
         private System.Windows.Forms.Label label42;
-        public System.Windows.Forms.TextBox textBox28;
+        public System.Windows.Forms.TextBox txtPrecioHoraNocturna35;
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         public System.Windows.Forms.TextBox txtTotalDiurna35;
         public System.Windows.Forms.TextBox txtPrecioHoraDiurna35;
-        private System.Windows.Forms.TextBox textBox33;
-        private System.Windows.Forms.TextBox textBox34;
+        private System.Windows.Forms.TextBox txtMinDiurna35;
+        private System.Windows.Forms.TextBox txtDiurna35;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
-        public System.Windows.Forms.TextBox textBox35;
+        public System.Windows.Forms.TextBox txtTotalNocturna25;
         public System.Windows.Forms.TextBox txtTotalDiurna25;
-        public System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox39;
+        public System.Windows.Forms.TextBox txtPrecioHoraNocturna25;
+        private System.Windows.Forms.TextBox txtMinNocturna25;
+        private System.Windows.Forms.TextBox txtNocturna25;
         public System.Windows.Forms.TextBox txtPrecioHoraDiurna25;
         private System.Windows.Forms.TextBox txtMinDiurna25;
         private System.Windows.Forms.TextBox txtDiurna25;
@@ -2308,5 +2339,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox btncerrar;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
     }
 }

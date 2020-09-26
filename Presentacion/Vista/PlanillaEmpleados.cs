@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class Planilla_Manto : Form
+    public partial class PlanillaEmpleados : Form
     {
         String result;
         private NPlanilla np = new NPlanilla();
-        public Planilla_Manto()
+        public PlanillaEmpleados()
         {
             InitializeComponent();
         }
@@ -143,6 +143,14 @@ private void btncerrar_Click(object sender, EventArgs e)
             {
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
+        }
+
+        private void btnplanillamant_Click(object sender, EventArgs e)
+        {
+            PlanillaMensual fr = PlanillaMensual.GetInstance();
+            fr.StartPosition = FormStartPosition.CenterParent;
+            fr.ShowDialog();
+            ShowPlanilla();
         }
     }
 }
