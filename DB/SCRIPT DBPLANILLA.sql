@@ -303,4 +303,37 @@ insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
 
+CREATE TABLE SUBSIDIOS(
+id_subsidios int not null,
+cod_subsidio int not null,
+tipo_suspension varchar(100),
+descuento bit not null
+)
 
+CREATE TABLE DET_SUBSIDIOS(
+id_det_subsidios int not null,
+id_subsidios int not null,
+dias int null,
+importe int null,
+)
+
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(1,21,'S.I. INCAPACIDAD TEMPORAL (INVALIDEZ, ENFERMEDAD Y ACCIDENTES)',0);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(2,22,'S.I. MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL',0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(3,01,'S.P. SANCION DISCIPLINARIA',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(4,02,'S.P. EJERCICIO DEL DERECHO DE HUELGA',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(5,03,'S.P. DETENCION DEL TRABAJADOR, SALVO EL CASO DE CONDENA PRIVATIVA DE LA LIBERTAD',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(6,04,'S.P. INHABILITACION ADMINISTRATIVA O JUDICIAL POR PERIODO NO SUPERIOR A TRES MESES',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(7,05,'S.P. PERMISO O LICENCIA CONCEDIDOS POR EL EMPLEADOR SIN GOCE DE HABER',1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(8,06,'S.P. CASO FORTUITO O FUERZA MAYOR',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(9,07,'S.P. FALTA NO JUSTIFICADA',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(10,08,'S.P. POR TEMPORADA O INTERMITENTE',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(11,20,'S.I. ENFERMEDAD O ACCIDENTE (PRIMEROS VEINTE DÕAS)',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(12,23,'S.I. DESCANSO VACACIONAL',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(13,24,'S.I. LICENCIA PARA DESEMPE—AR CARGO CÌVICO Y PARA CUMPLIR CON EL SERVICIO MILITAR OBLIGATORIO',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(14,25,'S.I. PERMISO Y LICENCIA PARA EL DESEMPE—O DE CARGOS SINDICALES',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(15,26,'S.I. LICENCIA CON GOCE DE HABER',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(16,27,'S.I. DÌAS COMPENSADOS POR HORAS TRABAJADAS EN SOBRETIEMPO',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,tipo_suspension,descuento) VALUES(17,28,'S.P SUSPENSION PERFECTA DE LABORES',1);

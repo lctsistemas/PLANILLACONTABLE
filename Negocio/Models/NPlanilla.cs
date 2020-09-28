@@ -110,7 +110,7 @@ namespace Negocio.Models
             pla.Asig_familiar = Asig_familiar;
             pla.Tope_horario_nocturno = Tope_horario_nocturno;
 
-            switch (state)
+            switch (state) 
             {
                 case EntityState.Guardar:
                     rplanilla.Add(pla);
