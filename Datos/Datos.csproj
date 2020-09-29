@@ -81,6 +81,7 @@
     <Compile Include="Repositories\RRegimen.cs" />
     <Compile Include="Repositories\RRegimenSalud.cs" />
     <Compile Include="Repositories\Rrol.cs" />
+    <Compile Include="Repositories\RSubsidios.cs" />
     <Compile Include="Repositories\Rsucursal.cs" />
     <Compile Include="Repositories\Rtipocontrato.cs" />
     <Compile Include="Repositories\Rusuario.cs" />
