@@ -32,12 +32,13 @@ namespace Presentacion.Vista
             //oDataGridViewComboBoxColumn.DataPropertyName = "pr_CodigoEmpleado";
 
            
-                using (Ncargo nca = new Ncargo())
+                using (NSubsidios nca = new NSubsidios())
                 {
                 cbosubsidio.DataSource = nca.Getall();
-                cbosubsidio.DisplayMember = "nombre_cargo";
-                cbosubsidio.ValueMember = "idcargo";
-                }
+                cbosubsidio.DisplayMember = "descripcion_subsidio";
+                cbosubsidio.ValueMember = "id_subsidios";
+                cbosubsidio.DataPropertyName = "id_subsidios";
+            }
    
         }
 

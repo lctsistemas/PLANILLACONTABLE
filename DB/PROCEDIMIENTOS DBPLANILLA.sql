@@ -1108,3 +1108,10 @@ END
 GO
 
 exec SP_SHOW_REG_SALUD
+
+CREATE PROC SP_SELECT_SUBSIDIOS 
+AS BEGIN
+SELECT id_subsidios, cod_subsidio, descripcion_subsidio,tipo_subsidio,descuento 
+FROM SUBSIDIOS order by id_subsidios desc
+END
+GO

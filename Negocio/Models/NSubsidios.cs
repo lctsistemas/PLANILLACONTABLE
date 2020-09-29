@@ -13,11 +13,19 @@ namespace Negocio.Models
     {
         private IRepository rsubsidios;
 
-        private List<NSubsidios> listacargo;
+        private List<NSubsidios> listasubsidios;
+
+        public int Id_subsidios { get; set; }
+        public int Cod_subsidios { get ; set ; }
+        public string Descripcion_subsidio { get ; set ; }
+        public string Tipo_subsidio { get ; set ; }
+        public string Descuento { get ; set ; }
+
         public NSubsidios()
         {
             rsubsidios = new RSubsidios();
         }
+
 
         public void Dispose()
         {
@@ -29,19 +37,21 @@ namespace Negocio.Models
             using (var dt = rsubsidios.GetData(null))
             {
 
-                listacargo = new List<NSubsidios>();
+                listasubsidios = new List<NSubsidios>();
 
                 foreach (DataRow item in dt.Rows)
                 {
-                    //listacargo.Add(new Ncargo()
-                    //{
-                    //    idcargo = Convert.ToInt32(item[0]),//IDCARGO
-                    //    nombre_cargo = Convert.ToString(item[1]),//NOMBRE CARGO
-                    //    descripcion = Convert.ToString(item[2])//DESCRIPCION
-                    //});
+                    listasubsidios.Add(new NSubsidios()
+                    {
+                        Id_subsidios = Convert.ToInt32(item[0]),
+                        Cod_subsidios = Convert.ToInt32(item[1]),
+                        Descripcion_subsidio = Convert.ToString(item[2]),
+                        Tipo_subsidio = Convert.ToString(item[3]),
+                        Descuento = Convert.ToString(item[4]),
+                    });
 
                 }
-                return listacargo;
+                return listasubsidios;
             }
         }
     }

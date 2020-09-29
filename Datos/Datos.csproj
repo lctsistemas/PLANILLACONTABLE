@@ -57,6 +57,7 @@
     <Compile Include="Entities\DRegimen.cs" />
     <Compile Include="Entities\DRegimenSalud.cs" />
     <Compile Include="Entities\Drol.cs" />
+    <Compile Include="Entities\DSubsidios.cs" />
     <Compile Include="Entities\Dtipocontrato.cs" />
     <Compile Include="Entities\DtipoDocumento.cs" />
     <Compile Include="Entities\Dusuario.cs" />
