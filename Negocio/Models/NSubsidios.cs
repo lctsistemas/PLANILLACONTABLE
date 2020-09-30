@@ -1,6 +1,7 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using Datos.Repositories;
+using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -22,6 +23,7 @@ namespace Negocio.Models
         public string Tipo_subsidio { get ; set ; }
         public string Descuento { get ; set ; }
 
+        public EntityState state { get; set; }
         public NSubsidios()
         {
             rsubsidios = new RSubsidios();
@@ -32,6 +34,8 @@ namespace Negocio.Models
         {
             //throw new NotImplementedException();
         }
+
+        
 
         public List<NSubsidios> Getall()
         {

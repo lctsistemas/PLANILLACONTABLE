@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Vista
 {
-    partial class ListaNoSubsidiados
+    partial class frmListaNoSubsidiados
     {
         /// <summary>
         /// Required designer variable.
@@ -28,41 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvnosubsidiados = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btncancelar = new System.Windows.Forms.Button();
             this.btnaceptar = new System.Windows.Forms.Button();
+            this.dgvnosubsidiados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvnosubsidiados)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvnosubsidiados
-            // 
-            this.dgvnosubsidiados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.dgvnosubsidiados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvnosubsidiados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvnosubsidiados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvnosubsidiados.ColumnHeadersHeight = 30;
-            this.dgvnosubsidiados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvnosubsidiados.EnableHeadersVisualStyles = false;
-            this.dgvnosubsidiados.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvnosubsidiados.Location = new System.Drawing.Point(-1, 11);
-            this.dgvnosubsidiados.Name = "dgvnosubsidiados";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvnosubsidiados.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvnosubsidiados.Size = new System.Drawing.Size(634, 418);
-            this.dgvnosubsidiados.TabIndex = 82;
             // 
             // btncancelar
             // 
@@ -102,15 +76,60 @@
             this.btnaceptar.UseVisualStyleBackColor = false;
             this.btnaceptar.Click += new System.EventHandler(this.btnaceptar_Click);
             // 
-            // ListaNoSubsidiados
+            // dgvnosubsidiados
+            // 
+            this.dgvnosubsidiados.AllowUserToAddRows = false;
+            this.dgvnosubsidiados.AllowUserToResizeColumns = false;
+            this.dgvnosubsidiados.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.dgvnosubsidiados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvnosubsidiados.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dgvnosubsidiados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvnosubsidiados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvnosubsidiados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvnosubsidiados.ColumnHeadersHeight = 30;
+            this.dgvnosubsidiados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvnosubsidiados.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvnosubsidiados.EnableHeadersVisualStyles = false;
+            this.dgvnosubsidiados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.dgvnosubsidiados.Location = new System.Drawing.Point(1, 12);
+            this.dgvnosubsidiados.Name = "dgvnosubsidiados";
+            this.dgvnosubsidiados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvnosubsidiados.RowHeadersWidth = 25;
+            this.dgvnosubsidiados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvnosubsidiados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvnosubsidiados.Size = new System.Drawing.Size(633, 407);
+            this.dgvnosubsidiados.TabIndex = 85;
+            this.dgvnosubsidiados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnosubsidiados_CellDoubleClick);
+            // 
+            // frmListaNoSubsidiados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 484);
+            this.Controls.Add(this.dgvnosubsidiados);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);
-            this.Controls.Add(this.dgvnosubsidiados);
-            this.Name = "ListaNoSubsidiados";
+            this.Name = "frmListaNoSubsidiados";
             this.Text = "ListaNoSubsidiados";
             this.Load += new System.EventHandler(this.ListaNoSubsidiados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvnosubsidiados)).EndInit();
@@ -119,9 +138,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvnosubsidiados;
         private System.Windows.Forms.Button btnaceptar;
         private System.Windows.Forms.Button btncancelar;
+        private System.Windows.Forms.DataGridView dgvnosubsidiados;
     }
 }

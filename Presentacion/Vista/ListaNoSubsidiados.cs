@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class ListaNoSubsidiados : Form
+    public partial class frmListaNoSubsidiados : Form
     {
         private NSubsidios ns = new NSubsidios();
 
-        public ListaNoSubsidiados()
+        public frmListaNoSubsidiados()
         {
             InitializeComponent();
             ShowNoSubsidiados();
         }
 
-        private static ListaNoSubsidiados instance;
+        private static frmListaNoSubsidiados instance;
 
-        public static ListaNoSubsidiados GetInstance()
+        public static frmListaNoSubsidiados GetInstance()
         {
             if (instance == null)
-                instance = new ListaNoSubsidiados();
+                instance = new frmListaNoSubsidiados();
 
             return instance;
         }
@@ -75,13 +75,23 @@ namespace Presentacion.Vista
 
         private void btnaceptar_Click(object sender, EventArgs e)
         {
-            frmDiasSubsidiados formdiasSubsidiados = new frmDiasSubsidiados();
+            frmDiasSubsidiados formdiasSubsidiados = (frmDiasSubsidiados)Owner;
 
-            formdiasSubsidiados.txtcodsub.Text = dgvnosubsidiados.CurrentRow.Cells[1].Value.ToString();//periodo
-            formdiasSubsidiados.txtdescrip.Text = dgvnosubsidiados.CurrentRow.Cells[2].Value.ToString();//mes
+            formdiasSubsidiados.txtcodsub.Text = dgvnosubsidiados.CurrentRow.Cells[1].Value.ToString();
+            formdiasSubsidiados.txtdescrip.Text = dgvnosubsidiados.CurrentRow.Cells[2].Value.ToString();
+            //formdiasSubsidiados.ShowDialog();
+            this.Close();
 
-            formdiasSubsidiados.StartPosition = FormStartPosition.CenterParent;
-            formdiasSubsidiados.ShowDialog();
+        }
+
+        private void dgvnosubsidiados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmDiasSubsidiados formdiasSubsidiados = (frmDiasSubsidiados)Owner;
+
+            formdiasSubsidiados.txtcodsub.Text = dgvnosubsidiados.CurrentRow.Cells[1].Value.ToString();
+            formdiasSubsidiados.txtdescrip.Text = dgvnosubsidiados.CurrentRow.Cells[2].Value.ToString();
+            //formdiasSubsidiados.ShowDialog();
+            this.Close();
         }
     }
 }

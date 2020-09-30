@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvdiassubs = new System.Windows.Forms.DataGridView();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnnuevo = new System.Windows.Forms.Button();
@@ -42,14 +44,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnbuscar = new System.Windows.Forms.Button();
+            this.txttotal = new System.Windows.Forms.TextBox();
+            this.txtimporte = new System.Windows.Forms.TextBox();
             this.txtdias = new System.Windows.Forms.TextBox();
             this.txtdescrip = new System.Windows.Forms.TextBox();
             this.txtcodsub = new System.Windows.Forms.TextBox();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnbuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdiassubs)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,30 +59,45 @@
             // 
             // dgvdiassubs
             // 
-            this.dgvdiassubs.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvdiassubs.AllowUserToAddRows = false;
+            this.dgvdiassubs.AllowUserToResizeColumns = false;
+            this.dgvdiassubs.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.dgvdiassubs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvdiassubs.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvdiassubs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvdiassubs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdiassubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdiassubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvdiassubs.ColumnHeadersHeight = 30;
             this.dgvdiassubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvdiassubs.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvdiassubs.EnableHeadersVisualStyles = false;
-            this.dgvdiassubs.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvdiassubs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.dgvdiassubs.Location = new System.Drawing.Point(-1, 61);
             this.dgvdiassubs.Name = "dgvdiassubs";
+            this.dgvdiassubs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvdiassubs.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvdiassubs.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvdiassubs.RowHeadersWidth = 25;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvdiassubs.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvdiassubs.Size = new System.Drawing.Size(616, 155);
             this.dgvdiassubs.TabIndex = 81;
             // 
@@ -96,6 +113,7 @@
             this.btnguardar.TabIndex = 82;
             this.btnguardar.Text = "Grabar";
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnnuevo
             // 
@@ -109,6 +127,7 @@
             this.btnnuevo.TabIndex = 82;
             this.btnnuevo.Text = "Nuevo";
             this.btnnuevo.UseVisualStyleBackColor = false;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // label1
             // 
@@ -201,8 +220,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnbuscar);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txttotal);
+            this.panel1.Controls.Add(this.txtimporte);
             this.panel1.Controls.Add(this.txtdias);
             this.panel1.Controls.Add(this.txtdescrip);
             this.panel1.Controls.Add(this.txtcodsub);
@@ -212,19 +231,32 @@
             this.panel1.Size = new System.Drawing.Size(616, 61);
             this.panel1.TabIndex = 88;
             // 
-            // textBox5
+            // btnbuscar
             // 
-            this.textBox5.Location = new System.Drawing.Point(540, 31);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(69, 20);
-            this.textBox5.TabIndex = 5;
+            this.btnbuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(97)))), ((int)(((byte)(141)))));
+            this.btnbuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(153)))), ((int)(((byte)(199)))));
+            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuscar.Image = global::Presentacion.Properties.Resources.baseline_search_white_24dp;
+            this.btnbuscar.Location = new System.Drawing.Point(7, 30);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(38, 22);
+            this.btnbuscar.TabIndex = 6;
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
-            // textBox4
+            // txttotal
             // 
-            this.textBox4.Location = new System.Drawing.Point(454, 31);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(80, 20);
-            this.textBox4.TabIndex = 4;
+            this.txttotal.Location = new System.Drawing.Point(540, 31);
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(69, 20);
+            this.txttotal.TabIndex = 5;
+            // 
+            // txtimporte
+            // 
+            this.txtimporte.Location = new System.Drawing.Point(454, 31);
+            this.txtimporte.Name = "txtimporte";
+            this.txtimporte.Size = new System.Drawing.Size(80, 20);
+            this.txtimporte.TabIndex = 4;
             // 
             // txtdias
             // 
@@ -273,19 +305,6 @@
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnbuscar
-            // 
-            this.btnbuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(97)))), ((int)(((byte)(141)))));
-            this.btnbuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(153)))), ((int)(((byte)(199)))));
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuscar.Image = global::Presentacion.Properties.Resources.baseline_search_white_24dp;
-            this.btnbuscar.Location = new System.Drawing.Point(7, 30);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(38, 22);
-            this.btnbuscar.TabIndex = 6;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
-            // 
             // frmDiasSubsidiados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +318,7 @@
             this.Controls.Add(this.btnmodificar);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.dgvdiassubs);
+            this.MaximizeBox = false;
             this.Name = "frmDiasSubsidiados";
             this.Text = "DiasSubsidiados";
             this.Load += new System.EventHandler(this.DiasSubsidiados_Load);
@@ -329,8 +349,8 @@
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Button btnmodificar;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox txttotal;
+        public System.Windows.Forms.TextBox txtimporte;
         public System.Windows.Forms.TextBox txtdias;
         public System.Windows.Forms.TextBox txtdescrip;
         public System.Windows.Forms.TextBox txtcodsub;
