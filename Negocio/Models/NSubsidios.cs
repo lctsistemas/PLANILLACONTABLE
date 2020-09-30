@@ -1,4 +1,5 @@
 ﻿using Datos.Contract;
+using Datos.Entities;
 using Datos.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Negocio.Models
 {
     public class NSubsidios:IDisposable
     {
-        private IRepository rsubsidios;
+        private ISubsidios rsubsidios;
 
         private List<NSubsidios> listasubsidios;
 
@@ -34,7 +35,10 @@ namespace Negocio.Models
 
         public List<NSubsidios> Getall()
         {
-            using (var dt = rsubsidios.GetData(null))
+            DSubsidios ds = new DSubsidios();
+
+            ds.Tipo_subsidio = Tipo_subsidio;
+            using (DataTable dt = rsubsidios.GetData(ds))
             {
 
                 listasubsidios = new List<NSubsidios>();

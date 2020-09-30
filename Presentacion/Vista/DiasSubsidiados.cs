@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class DiasSubsidiados : Form
+    public partial class frmDiasSubsidiados : Form
     {
-        public DiasSubsidiados()
+        private NSubsidios ns = new NSubsidios();
+        public frmDiasSubsidiados()
         {
             InitializeComponent();
             DataGridViewHeaderCell s = new DataGridViewHeaderCell();
@@ -32,25 +33,36 @@ namespace Presentacion.Vista
             //oDataGridViewComboBoxColumn.DataPropertyName = "pr_CodigoEmpleado";
 
            
-                using (NSubsidios nca = new NSubsidios())
-                {
-                cbosubsidio.DataSource = nca.Getall();
-                cbosubsidio.DisplayMember = "descripcion_subsidio";
-                cbosubsidio.ValueMember = "id_subsidios";
-                cbosubsidio.DataPropertyName = "id_subsidios";
-            }
+            //    using (NSubsidios nca = new NSubsidios())
+            //    {
+            //    cbosubsidio.DataSource = nca.Getall();
+            //    cbosubsidio.DisplayMember = "descripcion_subsidio";
+            //    cbosubsidio.ValueMember = "id_subsidios";
+            //    cbosubsidio.DataPropertyName = "id_subsidios";
+            //}
    
-        }
-
-        private static DiasSubsidiados instance;
-        public static DiasSubsidiados GetInstance()
-        {
-            if (instance == null)
-                instance = new DiasSubsidiados();
-            return instance;
         }
 
         
 
+        private static frmDiasSubsidiados instance;
+        public static frmDiasSubsidiados GetInstance()
+        {
+            if (instance == null)
+                instance = new frmDiasSubsidiados();
+            return instance;
+        }
+
+        private void DiasSubsidiados_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+            ListaNoSubsidiados fr = ListaNoSubsidiados.GetInstance();
+            fr.StartPosition = FormStartPosition.CenterParent;
+            fr.ShowDialog();
+        }
     }
 }

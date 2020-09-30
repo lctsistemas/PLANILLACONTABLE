@@ -201,6 +201,12 @@
     <Compile Include="Vista\InsertPlanillaMensual.Designer.cs">
       <DependentUpon>InsertPlanillaMensual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\ListaNoSubsidiados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\ListaNoSubsidiados.Designer.cs">
+      <DependentUpon>ListaNoSubsidiados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Manto_Regimen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\InsertPlanillaMensual.resx">
       <DependentUpon>InsertPlanillaMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ListaNoSubsidiados.resx">
+      <DependentUpon>ListaNoSubsidiados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
@@ -526,6 +535,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline_build_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_search_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_done_white_24dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

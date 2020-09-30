@@ -306,8 +306,8 @@ insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(
 CREATE TABLE SUBSIDIOS(
 id_subsidios int not null,
 cod_subsidio int not null,
-descripcion_subsidio nvarchar(100),
-tipo_subsidio varchar(30), --SUBSIADOS Y NO SUBSIDIADOS
+descripcion_subsidio nvarchar(100) not null,
+tipo_subsidio varchar(30) not null, --SUBSIADOS Y NO SUBSIDIADOS
 descuento bit not null
 )
 

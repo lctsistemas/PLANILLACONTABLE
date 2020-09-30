@@ -1109,9 +1109,12 @@ GO
 
 exec SP_SHOW_REG_SALUD
 
-CREATE PROC SP_SELECT_SUBSIDIOS 
+alter PROC SP_SELECT_SUBSIDIOS 
+@tipo_subsidio varchar(30)
 AS BEGIN
 SELECT id_subsidios, cod_subsidio, descripcion_subsidio,tipo_subsidio,descuento 
-FROM SUBSIDIOS order by id_subsidios desc
+FROM SUBSIDIOS WHERE tipo_subsidio=@tipo_subsidio order by id_subsidios desc
 END
 GO
+
+exec SP_SELECT_SUBSIDIOS 'SUBSIDIADOS'
