@@ -89,12 +89,14 @@ namespace Presentacion.Vista
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             limpiar();
+            Focus)
         }
 
         private void limpiar()
         {
             txtcodsub.Text = String.Empty;
             txtdescrip.Text = String.Empty;
+
             
             using (ns) { ns.state = EntityState.Guardar; }
         }
