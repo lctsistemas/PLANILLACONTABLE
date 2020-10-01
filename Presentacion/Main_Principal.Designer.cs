@@ -32,6 +32,7 @@
             this.btnreportes = new System.Windows.Forms.Button();
             this.panelregistro = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btncalculo = new System.Windows.Forms.Button();
             this.btntipo_contrato = new System.Windows.Forms.Button();
             this.btnbanco = new System.Windows.Forms.Button();
             this.btnempleado = new System.Windows.Forms.Button();
@@ -112,7 +113,7 @@
             this.btnreportes.ForeColor = System.Drawing.Color.White;
             this.btnreportes.Image = global::Presentacion.Properties.Resources.reportes;
             this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnreportes.Location = new System.Drawing.Point(0, 735);
+            this.btnreportes.Location = new System.Drawing.Point(0, 760);
             this.btnreportes.Name = "btnreportes";
             this.btnreportes.Size = new System.Drawing.Size(233, 45);
             this.btnreportes.TabIndex = 9;
@@ -123,6 +124,7 @@
             // 
             this.panelregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.panelregistro.Controls.Add(this.panel9);
+            this.panelregistro.Controls.Add(this.btncalculo);
             this.panelregistro.Controls.Add(this.btntipo_contrato);
             this.panelregistro.Controls.Add(this.btnbanco);
             this.panelregistro.Controls.Add(this.btnempleado);
@@ -131,7 +133,7 @@
             this.panelregistro.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelregistro.Location = new System.Drawing.Point(0, 571);
             this.panelregistro.Name = "panelregistro";
-            this.panelregistro.Size = new System.Drawing.Size(233, 164);
+            this.panelregistro.Size = new System.Drawing.Size(233, 189);
             this.panelregistro.TabIndex = 8;
             // 
             // panel9
@@ -139,8 +141,25 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
             this.panel9.Location = new System.Drawing.Point(12, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 150);
+            this.panel9.Size = new System.Drawing.Size(5, 180);
             this.panel9.TabIndex = 10;
+            // 
+            // btncalculo
+            // 
+            this.btncalculo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncalculo.FlatAppearance.BorderSize = 0;
+            this.btncalculo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btncalculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncalculo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btncalculo.ForeColor = System.Drawing.Color.White;
+            this.btncalculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncalculo.Location = new System.Drawing.Point(0, 150);
+            this.btncalculo.Name = "btncalculo";
+            this.btncalculo.Size = new System.Drawing.Size(233, 30);
+            this.btncalculo.TabIndex = 21;
+            this.btncalculo.Text = "Calculo Planilla";
+            this.btncalculo.UseVisualStyleBackColor = true;
+            this.btncalculo.Click += new System.EventHandler(this.btncalculo_Click);
             // 
             // btntipo_contrato
             // 
@@ -733,5 +752,6 @@
         private System.Windows.Forms.Label lblid_periodo;
         private System.Windows.Forms.Label lblidempresa;
         private System.Windows.Forms.Button btnplanilla2;
+        private System.Windows.Forms.Button btncalculo;
     }
 }

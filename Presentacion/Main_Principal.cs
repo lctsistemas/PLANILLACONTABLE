@@ -126,6 +126,30 @@ namespace Presentacion
                 //formulario.FormBorderStyle = FormBorderStyle.None;
                 //formulario.Dock = DockStyle.Fill;
                 panelchildform.Controls.Add(formulario);
+                panelchildform.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            else
+            {
+                //formulario.Close();
+                formulario.BringToFront();
+            }
+        }
+
+        //METODO PARA ABRIR FORMULARIO DENTRO DE PANEL PERO TODO EL ANCHO FILL
+        private void OpenFormFill<Myform>() where Myform : Form, new()
+        {
+            Form formulario;
+            formulario = panelchildform.Controls.OfType<Myform>().FirstOrDefault();
+            if (formulario == null)
+            {
+                formulario = new Myform();
+                formulario.TopLevel = false;
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.Dock = DockStyle.Fill;
+                panelchildform.Controls.Add(formulario);
+                panelchildform.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
             }
@@ -197,6 +221,11 @@ namespace Presentacion
         private void btnplanilla2_Click(object sender, EventArgs e)
         {
             OpenForm<Planilla_Manto>();
+        }
+
+        private void btncalculo_Click(object sender, EventArgs e)
+        {
+            OpenFormFill<FrmPlanillaMensual>();
         }
     }
 }
