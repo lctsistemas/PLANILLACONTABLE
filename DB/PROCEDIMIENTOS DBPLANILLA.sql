@@ -731,6 +731,22 @@ ELSE
 	END
 END
 GO
+
+--GENERAR CODIGO SUBSIDIOS
+CREATE PROC SP_GENERAR_SUBSIDIO
+(@subsidio int output)
+AS BEGIN
+SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
+IF(@subsidio=0)
+	BEGIN
+		SET @subsidio=1		
+	END
+ELSE
+	BEGIN
+		SET @subsidio=(SELECT MAX(ds.id_det_subsidios)+1 FROM dbo.DET_SUBSIDIOS ds)
+	END
+END
+GO
 --generar codigo regimen salud
 CREATE PROC SP_GENERAR_REG_SAL
 (@regimen_salud int output)
@@ -1118,3 +1134,16 @@ END
 GO
 
 exec SP_SELECT_SUBSIDIOS 'SUBSIDIADOS'
+
+ALTER PROC SP_INSERT_SUBSIDIOS 
+@id_det_subsidios int,
+@id_subsidios int,
+@id_empleado int,
+@id_periodo int,
+@dias int,
+@mensaje varchar(100) output
+AS BEGIN
+INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios,id_empleado,id_periodo,dias) VALUES(@id_det_subsidios,@id_subsidios,@id_empleado,@id_periodo,@dias)
+SET @mensaje= 'SUBSIDIO REGISTRADO CON EXITO'
+END
+GO

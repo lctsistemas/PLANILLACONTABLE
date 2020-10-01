@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
@@ -16,7 +17,7 @@ namespace Presentacion.Vista
     public partial class frmDiasSubsidiados : Form
     {
         String result;
-        private NSubsidios ns = new NSubsidios();
+        private NDiasSubsidiados nds = new NDiasSubsidiados();
         private Int32 codigo;
         public frmDiasSubsidiados()
         {
@@ -29,9 +30,9 @@ namespace Presentacion.Vista
         private void GenerarCodigo()
         {
             codigo = 0;
-            using (ns)
+            using (nds)
             {
-                //codigo = ns.GetCodigo();
+                codigo = nds.GetCodigo();
             }
         }
 
@@ -68,15 +69,20 @@ namespace Presentacion.Vista
 
         private void DiasSubsidiados_Load(object sender, EventArgs e)
         {
-            ShowNoSubsidiados();
-            
+            CalculoDiasSubsidiado();
         }
 
-        private void ShowNoSubsidiados()
+        public void CalculoDiasSubsidiado()
         {
-            
-        }
+            PlanillaMensual plamens = new PlanillaMensual();
+            double basico = Double.Parse(plamens.txtHaberBasico.Text.ToString());
+            double importeDiario = Math.Round(basico / 30, 4);
 
+            txtimporte.Text = importeDiario.ToString();
+            txtdias.Text = Convert.ToString(0);
+        }
+       
+        
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             frmListaNoSubsidiados fr = new frmListaNoSubsidiados();
@@ -89,7 +95,7 @@ namespace Presentacion.Vista
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             limpiar();
-            Focus)
+            txtcodsub.Focus();
         }
 
         private void limpiar()
@@ -98,24 +104,26 @@ namespace Presentacion.Vista
             txtdescrip.Text = String.Empty;
 
             
-            using (ns) { ns.state = EntityState.Guardar; }
+            using (nds) { nds.state = EntityState.Guardar; }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
             result = "";
-            using (ns)
+            using (nds)
             {
-                ns.Id_subsidios = codigo;
+                nds.Id_det_subsidios = codigo;
 
-                ns.Cod_subsidios = Convert.ToInt32(txtcodsub.Text.Trim());
-                ns.Descripcion_subsidio = Convert.ToString(txtdescrip.Text.Trim());
+                nds.Id_subsidios = Convert.ToInt32(txtcodsub.Text.Trim());
+                nds.Id_empleado = UserCache.IdUser;
+                nds.Id_periodo = UserCache.Idperiodo;
+                nds.Dias = Convert.ToInt32(txtdias.Text.Trim());
 
-                bool valida = new ValidacionDatos(ns).Validate();
+                bool valida = new ValidacionDatos(nds).Validate();
                 if (valida)
                 {
 
-                    //result = ns.GuardarCambios();
+                    result = nds.GuardarCambios();
 
                     Messages.M_info(result);
                 }
@@ -124,5 +132,6 @@ namespace Presentacion.Vista
 
             }
         }
+      
     }
 }

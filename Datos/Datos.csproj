@@ -51,6 +51,7 @@
     <Compile Include="Entities\DBanco.cs" />
     <Compile Include="Entities\Dcargo.cs" />
     <Compile Include="Entities\Dcontrato.cs" />
+    <Compile Include="Entities\DDiasSubsidiados.cs" />
     <Compile Include="Entities\DEmpleado.cs" />
     <Compile Include="Entities\DempresaMaestra.cs" />
     <Compile Include="Entities\DPlanilla.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="KeyAutomatic\KPlanilla.cs" />
     <Compile Include="KeyAutomatic\KRegimen.cs" />
     <Compile Include="KeyAutomatic\KregimenSalud.cs" />
+    <Compile Include="KeyAutomatic\KDiasSubsidiados.cs" />
     <Compile Include="KeyAutomatic\Ktipocontrato.cs" />
     <Compile Include="KeyAutomatic\Kusuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Repositories\RBanco.cs" />
     <Compile Include="Repositories\Rcargo.cs" />
     <Compile Include="Repositories\RConexion.cs" />
+    <Compile Include="Repositories\RDiasSubsidiados.cs" />
     <Compile Include="Repositories\Rdocumento.cs" />
     <Compile Include="Repositories\REmpleado.cs" />
     <Compile Include="Repositories\Rempresa.cs" />

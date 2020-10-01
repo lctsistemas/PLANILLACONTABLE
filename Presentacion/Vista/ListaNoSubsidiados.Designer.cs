@@ -48,7 +48,7 @@
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.Image = global::Presentacion.Properties.Resources.baseline_cancel_white_24dp;
             this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncancelar.Location = new System.Drawing.Point(350, 440);
+            this.btncancelar.Location = new System.Drawing.Point(326, 428);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(103, 31);
             this.btncancelar.TabIndex = 84;
@@ -67,7 +67,7 @@
             this.btnaceptar.ForeColor = System.Drawing.Color.White;
             this.btnaceptar.Image = global::Presentacion.Properties.Resources.baseline_done_white_24dp;
             this.btnaceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnaceptar.Location = new System.Drawing.Point(190, 440);
+            this.btnaceptar.Location = new System.Drawing.Point(166, 428);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(96, 31);
             this.btnaceptar.TabIndex = 83;
@@ -117,7 +117,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgvnosubsidiados.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvnosubsidiados.Size = new System.Drawing.Size(633, 407);
+            this.dgvnosubsidiados.Size = new System.Drawing.Size(594, 407);
             this.dgvnosubsidiados.TabIndex = 85;
             this.dgvnosubsidiados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnosubsidiados_CellDoubleClick);
             // 
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 484);
+            this.ClientSize = new System.Drawing.Size(599, 465);
             this.Controls.Add(this.dgvnosubsidiados);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnaceptar);

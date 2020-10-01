@@ -42,4 +42,5 @@ namespace Datos.Contract
 
     public interface ISubsidios : IGenerict<DSubsidios> { }
 
+    public interface IDiasSubsidiados : IGenerict<DDiasSubsidiados> { }
 }

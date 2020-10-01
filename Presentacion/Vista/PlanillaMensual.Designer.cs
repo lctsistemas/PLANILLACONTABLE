@@ -359,6 +359,7 @@
             this.btnSubsidiados.TabIndex = 432;
             this.btnSubsidiados.Text = "SUBSIDIADOS";
             this.btnSubsidiados.UseVisualStyleBackColor = false;
+            this.btnSubsidiados.Click += new System.EventHandler(this.btnSubsidiados_Click);
             // 
             // txtImpFaltaAum
             // 

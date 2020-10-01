@@ -594,5 +594,12 @@ namespace Presentacion.Vista
 
             }
         }
+
+        private void btnSubsidiados_Click(object sender, EventArgs e)
+        {
+            frmDiasSubsidiados fr = frmDiasSubsidiados.GetInstance();
+            fr.StartPosition = FormStartPosition.CenterParent;
+            fr.ShowDialog();
+        }
     }
 }

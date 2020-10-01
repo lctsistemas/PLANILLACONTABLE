@@ -38,7 +38,7 @@ namespace Presentacion.Vista
             dgvnosubsidiados.Columns[0].Visible = false;
 
             dgvnosubsidiados.Columns[1].HeaderText = "Cod_subsidio";
-            dgvnosubsidiados.Columns[1].Width = 150;
+            dgvnosubsidiados.Columns[1].Width = 90;
 
             dgvnosubsidiados.Columns[2].HeaderText = "Descripcion";
             dgvnosubsidiados.Columns[2].Width = 350;
@@ -47,9 +47,13 @@ namespace Presentacion.Vista
             dgvnosubsidiados.Columns[3].Width = 100;
             dgvnosubsidiados.Columns[3].Visible = false;
 
-
             dgvnosubsidiados.Columns[4].HeaderText = "descuento";
             dgvnosubsidiados.Columns[4].Width = 100;
+
+            dgvnosubsidiados.Columns[5].HeaderText = "state";
+            dgvnosubsidiados.Columns[5].Width = 100;
+            dgvnosubsidiados.Columns[5].Visible = false;
+
 
         }
 
