@@ -345,6 +345,7 @@
             this.btnFaltas.TabIndex = 433;
             this.btnFaltas.Text = "NO LABORADO";
             this.btnFaltas.UseVisualStyleBackColor = false;
+            this.btnFaltas.Click += new System.EventHandler(this.btnFaltas_Click);
             // 
             // btnSubsidiados
             // 

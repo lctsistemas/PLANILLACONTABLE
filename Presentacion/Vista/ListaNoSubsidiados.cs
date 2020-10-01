@@ -18,7 +18,6 @@ namespace Presentacion.Vista
         public frmListaNoSubsidiados()
         {
             InitializeComponent();
-            ShowNoSubsidiados();
         }
 
         private static frmListaNoSubsidiados instance;
@@ -59,8 +58,17 @@ namespace Presentacion.Vista
 
         private void ListaNoSubsidiados_Load(object sender, EventArgs e)
         {
-            ShowNoSubsidiados();
-            Tabla();
+            if (PlanillaMensual.tipoform == "SUBSIDIADOS")
+            {
+                ShowSubsidiados();
+                Tabla();
+            }else if(PlanillaMensual.tipoform == "NO SUBSIDIADOS")
+            {
+                ShowNoSubsidiados();
+                Tabla();
+            }
+
+
         }
 
         private void ShowNoSubsidiados()
@@ -72,30 +80,41 @@ namespace Presentacion.Vista
             }
         }
 
+        private void ShowSubsidiados()
+        {
+            using (ns)
+            {
+                ns.Tipo_subsidio = "SUBSIDIADOS";
+                dgvnosubsidiados.DataSource = ns.Getall();
+            }
+        }
+
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnaceptar_Click(object sender, EventArgs e)
+
+        private void ImprimirDatos()
         {
-            frmDiasSubsidiados formdiasSubsidiados = (frmDiasSubsidiados)Owner;
+            frmSubsiyNoSubsi formdiasSubsidiados = (frmSubsiyNoSubsi)Owner;
 
             formdiasSubsidiados.txtcodsub.Text = dgvnosubsidiados.CurrentRow.Cells[1].Value.ToString();
             formdiasSubsidiados.txtdescrip.Text = dgvnosubsidiados.CurrentRow.Cells[2].Value.ToString();
+            formdiasSubsidiados.txtidsubsidio.Text = dgvnosubsidiados.CurrentRow.Cells[0].Value.ToString();
             //formdiasSubsidiados.ShowDialog();
             this.Close();
+        }
+
+        private void btnaceptar_Click(object sender, EventArgs e)
+        {
+            ImprimirDatos();
 
         }
 
         private void dgvnosubsidiados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmDiasSubsidiados formdiasSubsidiados = (frmDiasSubsidiados)Owner;
-
-            formdiasSubsidiados.txtcodsub.Text = dgvnosubsidiados.CurrentRow.Cells[1].Value.ToString();
-            formdiasSubsidiados.txtdescrip.Text = dgvnosubsidiados.CurrentRow.Cells[2].Value.ToString();
-            //formdiasSubsidiados.ShowDialog();
-            this.Close();
+            ImprimirDatos();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Vista
 {
-    partial class frmDiasSubsidiados
+    partial class frmSubsiyNoSubsi
     {
         /// <summary>
         /// Required designer variable.
@@ -52,6 +52,7 @@
             this.txtcodsub = new System.Windows.Forms.TextBox();
             this.btnmodificar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtidsubsidio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdiassubs)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -305,11 +306,19 @@
             this.button1.Text = "Eliminar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // frmDiasSubsidiados
+            // txtidsubsidio
+            // 
+            this.txtidsubsidio.Location = new System.Drawing.Point(547, 233);
+            this.txtidsubsidio.Name = "txtidsubsidio";
+            this.txtidsubsidio.Size = new System.Drawing.Size(56, 20);
+            this.txtidsubsidio.TabIndex = 89;
+            // 
+            // frmSubsiyNoSubsi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 262);
+            this.Controls.Add(this.txtidsubsidio);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -319,7 +328,7 @@
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.dgvdiassubs);
             this.MaximizeBox = false;
-            this.Name = "frmDiasSubsidiados";
+            this.Name = "frmSubsiyNoSubsi";
             this.Text = "DiasSubsidiados";
             this.Load += new System.EventHandler(this.DiasSubsidiados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdiassubs)).EndInit();
@@ -354,5 +363,6 @@
         public System.Windows.Forms.TextBox txtdias;
         public System.Windows.Forms.TextBox txtdescrip;
         public System.Windows.Forms.TextBox txtcodsub;
+        public System.Windows.Forms.TextBox txtidsubsidio;
     }
 }

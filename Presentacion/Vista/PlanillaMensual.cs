@@ -13,6 +13,7 @@ namespace Presentacion.Vista
 {
     public partial class PlanillaMensual : Form
     {
+        public static String tipoform = "";
         public PlanillaMensual()
         {
             InitializeComponent();
@@ -597,8 +598,21 @@ namespace Presentacion.Vista
 
         private void btnSubsidiados_Click(object sender, EventArgs e)
         {
-            frmDiasSubsidiados fr = frmDiasSubsidiados.GetInstance();
+            frmSubsiyNoSubsi fr = frmSubsiyNoSubsi.GetInstance();
+            fr.Text = "SUBSIDIADOS";
             fr.StartPosition = FormStartPosition.CenterParent;
+            tipoform = "SUBSIDIADOS";
+            fr.ShowDialog();
+        }
+
+        
+
+        private void btnFaltas_Click(object sender, EventArgs e)
+        {
+            frmSubsiyNoSubsi fr = frmSubsiyNoSubsi.GetInstance();
+            fr.Text = "NO LABORADOS / NO SUBSIDIADOS";
+            fr.StartPosition = FormStartPosition.CenterParent;
+            tipoform = "NO SUBSIDIADOS";
             fr.ShowDialog();
         }
     }

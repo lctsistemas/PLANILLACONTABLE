@@ -19,7 +19,7 @@ namespace Negocio.Models
         public int Id_empleado { get; set ; }
         public int Id_periodo { get ; set ; }
 
-        public int Id_mes { get; set; }
+        //public int Id_mes { get; set; }
         public int Dias { get; set; }
 
         public EntityState state { get; set; }

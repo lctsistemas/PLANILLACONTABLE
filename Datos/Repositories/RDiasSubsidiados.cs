@@ -28,7 +28,7 @@ namespace Datos.Repositories
 
                     // cmd.Parameters.Add("@id_tipo_planilla", SqlDbType.Int).Value = entiti.Id_tipo_planilla;
                     cmd.Parameters.Add("@id_det_subsidios", SqlDbType.Int).Value = entiti.Id_det_subsidios;
-                    cmd.Parameters.Add("@id_subsidio", SqlDbType.Int).Value = entiti.Id_subsidios;
+                    cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
                     cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                     cmd.Parameters.Add("@id_periodo", SqlDbType.Int).Value = entiti.Id_periodo;
                     cmd.Parameters.Add("@dias", SqlDbType.Int).Value = entiti.Dias;

@@ -14,16 +14,16 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class frmDiasSubsidiados : Form
+    public partial class frmSubsiyNoSubsi : Form
     {
         String result;
         private NDiasSubsidiados nds = new NDiasSubsidiados();
         private Int32 codigo;
-        public frmDiasSubsidiados()
+        public frmSubsiyNoSubsi()
         {
             InitializeComponent();
-            DataGridViewHeaderCell s = new DataGridViewHeaderCell();
-            s.Style.SelectionBackColor = Color.Black;
+           /* DataGridViewHeaderCell s = new DataGridViewHeaderCell();
+            s.Style.SelectionBackColor = Color.Black;*/
             Mostrar_cargo();
         }
 
@@ -59,18 +59,21 @@ namespace Presentacion.Vista
 
         
 
-        private static frmDiasSubsidiados instance;
-        public static frmDiasSubsidiados GetInstance()
+        private static frmSubsiyNoSubsi instance;
+        public static frmSubsiyNoSubsi GetInstance()
         {
             if (instance == null)
-                instance = new frmDiasSubsidiados();
+                instance = new frmSubsiyNoSubsi();
             return instance;
         }
 
         private void DiasSubsidiados_Load(object sender, EventArgs e)
         {
             CalculoDiasSubsidiado();
+            limpiar();
         }
+
+      
 
         public void CalculoDiasSubsidiado()
         {
@@ -114,7 +117,7 @@ namespace Presentacion.Vista
             {
                 nds.Id_det_subsidios = codigo;
 
-                nds.Id_subsidios = Convert.ToInt32(txtcodsub.Text.Trim());
+                nds.Id_subsidios = Convert.ToInt32(txtidsubsidio.Text.Trim());
                 nds.Id_empleado = UserCache.IdUser;
                 nds.Id_periodo = UserCache.Idperiodo;
                 nds.Dias = Convert.ToInt32(txtdias.Text.Trim());
