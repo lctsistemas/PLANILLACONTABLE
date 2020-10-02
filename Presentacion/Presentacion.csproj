@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helps\Calculo.cs" />
     <Compile Include="Helps\ValidacionDatos.cs" />
     <Compile Include="Helps\WindowsMove.cs" />
     <Compile Include="Main_Principal.cs">

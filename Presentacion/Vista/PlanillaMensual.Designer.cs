@@ -28,21 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlanillaMensual));
             this.dgvplanilla2 = new System.Windows.Forms.DataGridView();
+            this.dgvplanilla1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.tabplanilla = new System.Windows.Forms.TabControl();
+            this.tabcalculo = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupplanilla = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtal = new System.Windows.Forms.MaskedTextBox();
+            this.txtdel = new System.Windows.Forms.MaskedTextBox();
+            this.txtpago = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tabsubsidio = new System.Windows.Forms.TabPage();
             this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.check = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nosubsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +67,6 @@
             this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvplanilla1 = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,9 +93,10 @@
             this.montoferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hrboninocturna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoboninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subsicheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.subsicheck = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ndias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montosub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnnosubsidio = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ndiasnega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montonega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ndiasposi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,23 +122,6 @@
             this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.tabplanilla = new System.Windows.Forms.TabControl();
-            this.tabcalculo = new System.Windows.Forms.TabPage();
-            this.groupplanilla = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtal = new System.Windows.Forms.MaskedTextBox();
-            this.txtdel = new System.Windows.Forms.MaskedTextBox();
-            this.txtpago = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tabsubsidio = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -137,22 +137,22 @@
             this.dgvplanilla2.AllowUserToDeleteRows = false;
             this.dgvplanilla2.AllowUserToResizeColumns = false;
             this.dgvplanilla2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.dgvplanilla2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvplanilla2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvplanilla2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvplanilla2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvplanilla2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvplanilla2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvplanilla2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvplanilla2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvplanilla2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.valor1,
@@ -161,7 +161,6 @@
             this.hxnocturnas,
             this.feriado,
             this.boninocturno,
-            this.check,
             this.subsidiado,
             this.nosubsidiado,
             this.thorax,
@@ -179,6 +178,323 @@
             this.dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvplanilla2.Size = new System.Drawing.Size(1162, 39);
             this.dgvplanilla2.TabIndex = 0;
+            // 
+            // dgvplanilla1
+            // 
+            this.dgvplanilla1.AllowUserToAddRows = false;
+            this.dgvplanilla1.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvplanilla1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvplanilla1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvplanilla1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvplanilla1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvplanilla1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
+            this.ape_nom,
+            this.regi_pen,
+            this.cargo,
+            this.f_ini,
+            this.remu,
+            this.dias,
+            this.sueldo,
+            this.a_familiar,
+            this.hxd25,
+            this.minud25,
+            this.montod25,
+            this.hxd35,
+            this.minud35,
+            this.montod35,
+            this.hxn25,
+            this.minun25,
+            this.monton25,
+            this.hxn35,
+            this.minun35,
+            this.monton35,
+            this.hrferiado,
+            this.minuferiado,
+            this.montoferiado,
+            this.hrboninocturna,
+            this.montoboninocturno,
+            this.subsicheck,
+            this.ndias,
+            this.montosub,
+            this.btnnosubsidio,
+            this.ndiasnega,
+            this.montonega,
+            this.ndiasposi,
+            this.montoposi,
+            this.thoras,
+            this.reintegro,
+            this.vacaciones,
+            this.tvaca,
+            this.tgrati,
+            this.tboni,
+            this.tcts,
+            this.totaremu,
+            this.onp,
+            this.spp,
+            this.seguro,
+            this.comision,
+            this.adelanto,
+            this.prestamo,
+            this.renta5cate,
+            this.retencionj,
+            this.otrodes,
+            this.totades,
+            this.topagar,
+            this.aportsalud,
+            this.transporte});
+            this.dgvplanilla1.EnableHeadersVisualStyles = false;
+            this.dgvplanilla1.Location = new System.Drawing.Point(2, 159);
+            this.dgvplanilla1.Name = "dgvplanilla1";
+            this.dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvplanilla1.RowHeadersWidth = 25;
+            this.dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(40)))), ((int)(((byte)(31)))));
+            this.dgvplanilla1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvplanilla1.Size = new System.Drawing.Size(1162, 290);
+            this.dgvplanilla1.TabIndex = 1;
+            this.dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEndEdit);
+            this.dgvplanilla1.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvplanilla1_RowValidating);
+            this.dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvplanilla1_Scroll);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(595, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Agregar (+)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnminimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnminimizar.Image")));
+            this.btnminimizar.Location = new System.Drawing.Point(1086, 6);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnminimizar.TabIndex = 0;
+            this.btnminimizar.TabStop = false;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
+            this.btncerrar.Location = new System.Drawing.Point(1127, 6);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 20);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncerrar.TabIndex = 0;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // tabplanilla
+            // 
+            this.tabplanilla.Controls.Add(this.tabcalculo);
+            this.tabplanilla.Controls.Add(this.tabsubsidio);
+            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
+            this.tabplanilla.Location = new System.Drawing.Point(0, 0);
+            this.tabplanilla.Multiline = true;
+            this.tabplanilla.Name = "tabplanilla";
+            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
+            this.tabplanilla.SelectedIndex = 0;
+            this.tabplanilla.Size = new System.Drawing.Size(1176, 588);
+            this.tabplanilla.TabIndex = 8;
+            this.tabplanilla.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabplanilla_MouseDown);
+            // 
+            // tabcalculo
+            // 
+            this.tabcalculo.Controls.Add(this.btnminimizar);
+            this.tabcalculo.Controls.Add(this.btncerrar);
+            this.tabcalculo.Controls.Add(this.label6);
+            this.tabcalculo.Controls.Add(this.comboBox1);
+            this.tabcalculo.Controls.Add(this.groupplanilla);
+            this.tabcalculo.Controls.Add(this.dgvplanilla1);
+            this.tabcalculo.Controls.Add(this.label5);
+            this.tabcalculo.Controls.Add(this.label4);
+            this.tabcalculo.Controls.Add(this.dgvplanilla2);
+            this.tabcalculo.Controls.Add(this.button1);
+            this.tabcalculo.Location = new System.Drawing.Point(4, 30);
+            this.tabcalculo.Name = "tabcalculo";
+            this.tabcalculo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabcalculo.Size = new System.Drawing.Size(1168, 554);
+            this.tabcalculo.TabIndex = 0;
+            this.tabcalculo.Text = "CALCULO DE PLANILLA";
+            this.tabcalculo.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(117, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 17);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Marzo - 2020";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Planilla Mensual"});
+            this.comboBox1.Location = new System.Drawing.Point(120, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(142, 25);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // groupplanilla
+            // 
+            this.groupplanilla.Controls.Add(this.label3);
+            this.groupplanilla.Controls.Add(this.label2);
+            this.groupplanilla.Controls.Add(this.label1);
+            this.groupplanilla.Controls.Add(this.txtal);
+            this.groupplanilla.Controls.Add(this.txtdel);
+            this.groupplanilla.Controls.Add(this.txtpago);
+            this.groupplanilla.Location = new System.Drawing.Point(2, 67);
+            this.groupplanilla.Name = "groupplanilla";
+            this.groupplanilla.Size = new System.Drawing.Size(677, 53);
+            this.groupplanilla.TabIndex = 3;
+            this.groupplanilla.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(482, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Al :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(291, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Del :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(16, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Fecha de Pago :";
+            // 
+            // txtal
+            // 
+            this.txtal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtal.Location = new System.Drawing.Point(514, 23);
+            this.txtal.Mask = "00 - 00 - 0000";
+            this.txtal.Name = "txtal";
+            this.txtal.Size = new System.Drawing.Size(109, 15);
+            this.txtal.TabIndex = 4;
+            this.txtal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtal.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtdel
+            // 
+            this.txtdel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtdel.Location = new System.Drawing.Point(331, 23);
+            this.txtdel.Mask = "00 - 00 - 0000";
+            this.txtdel.Name = "txtdel";
+            this.txtdel.Size = new System.Drawing.Size(109, 15);
+            this.txtdel.TabIndex = 4;
+            this.txtdel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdel.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtpago
+            // 
+            this.txtpago.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtpago.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtpago.Location = new System.Drawing.Point(126, 23);
+            this.txtpago.Mask = "00 - 00 - 0000";
+            this.txtpago.Name = "txtpago";
+            this.txtpago.Size = new System.Drawing.Size(109, 15);
+            this.txtpago.TabIndex = 4;
+            this.txtpago.ValidatingType = typeof(System.DateTime);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(8, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Tipo de Planilla :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(8, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Periodo :";
+            // 
+            // tabsubsidio
+            // 
+            this.tabsubsidio.Location = new System.Drawing.Point(4, 30);
+            this.tabsubsidio.Name = "tabsubsidio";
+            this.tabsubsidio.Padding = new System.Windows.Forms.Padding(3);
+            this.tabsubsidio.Size = new System.Drawing.Size(1168, 554);
+            this.tabsubsidio.TabIndex = 1;
+            this.tabsubsidio.Text = "HISTORIAL SUBSIDIO";
+            this.tabsubsidio.UseVisualStyleBackColor = true;
             // 
             // valor1
             // 
@@ -228,29 +544,21 @@
             this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.boninocturno.Width = 80;
             // 
-            // check
-            // 
-            this.check.HeaderText = "";
-            this.check.Name = "check";
-            this.check.ReadOnly = true;
-            this.check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.check.Width = 30;
-            // 
             // subsidiado
             // 
             this.subsidiado.HeaderText = "SUBSIDIADO";
             this.subsidiado.Name = "subsidiado";
             this.subsidiado.ReadOnly = true;
             this.subsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.subsidiado.Width = 80;
+            this.subsidiado.Width = 110;
             // 
             // nosubsidiado
             // 
-            this.nosubsidiado.HeaderText = "NO SUBSIDIADO/NO LABOR.";
+            this.nosubsidiado.HeaderText = "NO SUBSIDIADO/NO LABORADO";
             this.nosubsidiado.Name = "nosubsidiado";
             this.nosubsidiado.ReadOnly = true;
             this.nosubsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nosubsidiado.Width = 160;
+            this.nosubsidiado.Width = 190;
             // 
             // thorax
             // 
@@ -292,109 +600,6 @@
             this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.fin.Width = 600;
             // 
-            // dgvplanilla1
-            // 
-            this.dgvplanilla1.AllowUserToAddRows = false;
-            this.dgvplanilla1.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvplanilla1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvplanilla1.BackgroundColor = System.Drawing.Color.White;
-            this.dgvplanilla1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle10.NullValue = null;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvplanilla1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvplanilla1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codigo,
-            this.ape_nom,
-            this.regi_pen,
-            this.cargo,
-            this.f_ini,
-            this.remu,
-            this.dias,
-            this.sueldo,
-            this.a_familiar,
-            this.hxd25,
-            this.minud25,
-            this.montod25,
-            this.hxd35,
-            this.minud35,
-            this.montod35,
-            this.hxn25,
-            this.minun25,
-            this.monton25,
-            this.hxn35,
-            this.minun35,
-            this.monton35,
-            this.hrferiado,
-            this.minuferiado,
-            this.montoferiado,
-            this.hrboninocturna,
-            this.montoboninocturno,
-            this.subsicheck,
-            this.ndias,
-            this.montosub,
-            this.ndiasnega,
-            this.montonega,
-            this.ndiasposi,
-            this.montoposi,
-            this.thoras,
-            this.reintegro,
-            this.vacaciones,
-            this.tvaca,
-            this.tgrati,
-            this.tboni,
-            this.tcts,
-            this.totaremu,
-            this.onp,
-            this.spp,
-            this.seguro,
-            this.comision,
-            this.adelanto,
-            this.prestamo,
-            this.renta5cate,
-            this.retencionj,
-            this.otrodes,
-            this.totades,
-            this.topagar,
-            this.aportsalud,
-            this.transporte});
-            this.dgvplanilla1.EnableHeadersVisualStyles = false;
-            this.dgvplanilla1.Location = new System.Drawing.Point(2, 159);
-            this.dgvplanilla1.Name = "dgvplanilla1";
-            this.dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle11.NullValue = null;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvplanilla1.RowHeadersWidth = 25;
-            this.dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(40)))), ((int)(((byte)(31)))));
-            this.dgvplanilla1.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvplanilla1.Size = new System.Drawing.Size(1162, 290);
-            this.dgvplanilla1.TabIndex = 1;
-            this.dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEndEdit);
-            this.dgvplanilla1.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvplanilla1_RowValidating);
-            this.dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvplanilla1_Scroll);
-            // 
             // codigo
             // 
             this.codigo.HeaderText = "Codigo";
@@ -427,7 +632,7 @@
             // 
             // remu
             // 
-            this.remu.HeaderText = "Remuneración";
+            this.remu.HeaderText = "Basico";
             this.remu.Name = "remu";
             this.remu.Width = 70;
             // 
@@ -557,6 +762,7 @@
             this.subsicheck.Name = "subsicheck";
             this.subsicheck.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.subsicheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.subsicheck.Text = "";
             this.subsicheck.ToolTipText = "Subsidiado";
             this.subsicheck.Width = 30;
             // 
@@ -571,6 +777,15 @@
             this.montosub.HeaderText = "Monto";
             this.montosub.Name = "montosub";
             this.montosub.Width = 50;
+            // 
+            // btnnosubsidio
+            // 
+            this.btnnosubsidio.HeaderText = "";
+            this.btnnosubsidio.Name = "btnnosubsidio";
+            this.btnnosubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnnosubsidio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnnosubsidio.ToolTipText = "No subsidiado";
+            this.btnnosubsidio.Width = 30;
             // 
             // ndiasnega
             // 
@@ -722,218 +937,6 @@
             this.transporte.Name = "transporte";
             this.transporte.Width = 70;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(595, 455);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Agregar (+)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnminimizar
-            // 
-            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnminimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnminimizar.Image")));
-            this.btnminimizar.Location = new System.Drawing.Point(1086, 6);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnminimizar.TabIndex = 0;
-            this.btnminimizar.TabStop = false;
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = ((System.Drawing.Image)(resources.GetObject("btncerrar.Image")));
-            this.btncerrar.Location = new System.Drawing.Point(1127, 6);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 20);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 0;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // tabplanilla
-            // 
-            this.tabplanilla.Controls.Add(this.tabcalculo);
-            this.tabplanilla.Controls.Add(this.tabsubsidio);
-            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
-            this.tabplanilla.Location = new System.Drawing.Point(0, 0);
-            this.tabplanilla.Multiline = true;
-            this.tabplanilla.Name = "tabplanilla";
-            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
-            this.tabplanilla.SelectedIndex = 0;
-            this.tabplanilla.Size = new System.Drawing.Size(1176, 588);
-            this.tabplanilla.TabIndex = 8;
-            // 
-            // tabcalculo
-            // 
-            this.tabcalculo.Controls.Add(this.btnminimizar);
-            this.tabcalculo.Controls.Add(this.btncerrar);
-            this.tabcalculo.Controls.Add(this.label6);
-            this.tabcalculo.Controls.Add(this.comboBox1);
-            this.tabcalculo.Controls.Add(this.groupplanilla);
-            this.tabcalculo.Controls.Add(this.dgvplanilla1);
-            this.tabcalculo.Controls.Add(this.label5);
-            this.tabcalculo.Controls.Add(this.label4);
-            this.tabcalculo.Controls.Add(this.dgvplanilla2);
-            this.tabcalculo.Controls.Add(this.button1);
-            this.tabcalculo.Location = new System.Drawing.Point(4, 30);
-            this.tabcalculo.Name = "tabcalculo";
-            this.tabcalculo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabcalculo.Size = new System.Drawing.Size(1168, 554);
-            this.tabcalculo.TabIndex = 0;
-            this.tabcalculo.Text = "CALCULO DE PLANILLA";
-            this.tabcalculo.UseVisualStyleBackColor = true;
-            // 
-            // groupplanilla
-            // 
-            this.groupplanilla.Controls.Add(this.label3);
-            this.groupplanilla.Controls.Add(this.label2);
-            this.groupplanilla.Controls.Add(this.label1);
-            this.groupplanilla.Controls.Add(this.txtal);
-            this.groupplanilla.Controls.Add(this.txtdel);
-            this.groupplanilla.Controls.Add(this.txtpago);
-            this.groupplanilla.Location = new System.Drawing.Point(2, 67);
-            this.groupplanilla.Name = "groupplanilla";
-            this.groupplanilla.Size = new System.Drawing.Size(677, 53);
-            this.groupplanilla.TabIndex = 3;
-            this.groupplanilla.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(482, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Al :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(291, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Del :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(16, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Fecha de Pago :";
-            // 
-            // txtal
-            // 
-            this.txtal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtal.Location = new System.Drawing.Point(514, 23);
-            this.txtal.Mask = "00 - 00 - 0000";
-            this.txtal.Name = "txtal";
-            this.txtal.Size = new System.Drawing.Size(109, 15);
-            this.txtal.TabIndex = 4;
-            this.txtal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtal.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtdel
-            // 
-            this.txtdel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtdel.Location = new System.Drawing.Point(331, 23);
-            this.txtdel.Mask = "00 - 00 - 0000";
-            this.txtdel.Name = "txtdel";
-            this.txtdel.Size = new System.Drawing.Size(109, 15);
-            this.txtdel.TabIndex = 4;
-            this.txtdel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtdel.ValidatingType = typeof(System.DateTime);
-            // 
-            // txtpago
-            // 
-            this.txtpago.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtpago.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtpago.Location = new System.Drawing.Point(126, 23);
-            this.txtpago.Mask = "00 - 00 - 0000";
-            this.txtpago.Name = "txtpago";
-            this.txtpago.Size = new System.Drawing.Size(109, 15);
-            this.txtpago.TabIndex = 4;
-            this.txtpago.ValidatingType = typeof(System.DateTime);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(8, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Tipo de Planilla :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(8, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Periodo :";
-            // 
-            // tabsubsidio
-            // 
-            this.tabsubsidio.Location = new System.Drawing.Point(4, 30);
-            this.tabsubsidio.Name = "tabsubsidio";
-            this.tabsubsidio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabsubsidio.Size = new System.Drawing.Size(1168, 554);
-            this.tabsubsidio.TabIndex = 1;
-            this.tabsubsidio.Text = "HISTORIAL SUBSIDIO";
-            this.tabsubsidio.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Planilla Mensual"});
-            this.comboBox1.Location = new System.Drawing.Point(120, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(142, 25);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(117, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Marzo - 2020";
-            // 
             // FrmPlanillaMensual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,13 +965,28 @@
         private System.Windows.Forms.DataGridView dgvplanilla2;
         private System.Windows.Forms.DataGridView dgvplanilla1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.TabControl tabplanilla;
+        private System.Windows.Forms.TabPage tabcalculo;
+        private System.Windows.Forms.TabPage tabsubsidio;
+        private System.Windows.Forms.GroupBox groupplanilla;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txtal;
+        private System.Windows.Forms.MaskedTextBox txtdel;
+        private System.Windows.Forms.MaskedTextBox txtpago;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
         private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
         private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
         private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn subsidiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nosubsidiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
@@ -1002,9 +1020,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn montoferiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn hrboninocturna;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoboninocturno;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn subsicheck;
+        private System.Windows.Forms.DataGridViewButtonColumn subsicheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn ndias;
         private System.Windows.Forms.DataGridViewTextBoxColumn montosub;
+        private System.Windows.Forms.DataGridViewButtonColumn btnnosubsidio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ndiasnega;
         private System.Windows.Forms.DataGridViewTextBoxColumn montonega;
         private System.Windows.Forms.DataGridViewTextBoxColumn ndiasposi;
@@ -1030,21 +1049,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn topagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn aportsalud;
         private System.Windows.Forms.DataGridViewTextBoxColumn transporte;
-        private System.Windows.Forms.PictureBox btnminimizar;
-        private System.Windows.Forms.PictureBox btncerrar;
-        private System.Windows.Forms.TabControl tabplanilla;
-        private System.Windows.Forms.TabPage tabcalculo;
-        private System.Windows.Forms.TabPage tabsubsidio;
-        private System.Windows.Forms.GroupBox groupplanilla;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtal;
-        private System.Windows.Forms.MaskedTextBox txtdel;
-        private System.Windows.Forms.MaskedTextBox txtpago;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
     }
 }

@@ -84,15 +84,15 @@ namespace Presentacion.Vista
                 case 7: //sueldo
                 case 8: //asig fami      
                 case 28: //monto subsidio
-                case 30: //monto nega de subsi.
-                case 32: //monto positi de subsi.
-                case 33: //total horas extr.
-                case 34: //reintegro
-                case 35: // vacaciones
-                case 36: // vaca trunca.
-                case 37: // grati trunca.
-                case 38: // boni trunca.
-                case 39: // cts trunca.
+                case 31: //monto nega de subsi.
+                case 33: //monto positi de subsi.
+                case 34: //total horas extr.
+                case 35: //reintegro
+                case 36: // vacaciones
+                case 37: // vaca trunca.
+                case 38: // grati trunca.
+                case 39: // boni trunca.
+                case 40: // cts trunca.
                     try
                     {
                         double suel = 0, asigfami = 0, monto_sub = 0, montonegasub = 0, montoposisub = 0, totalHorasEx = 0;
@@ -252,6 +252,49 @@ namespace Presentacion.Vista
                     break;
             }
 
+            //Calculo para Horas Extras.
+            switch (e.ColumnIndex)
+            {
+                case 9:
+                case 10:
+                    double horxd25 = 0;
+                    Int32 hora25=0, minu25 = 0;
+                    if (dar.Cells["hxd25"].Value == null)
+                        hora25 = 0;
+                    else
+                        hora25 = Convert.ToInt32(dar.Cells["hxd25"].Value);
+
+
+                    if(dar.Cells["minud25"].Value == null)
+                        minu25 = 0;
+                    else
+                        minu25 = Convert.ToInt32(dar.Cells["minud25"].Value);
+                 
+                    horxd25 = Calculo.HoraExDiurna(930, 0, 0.25, hora25, minu25);
+                    dar.Cells["montod25"].Value = horxd25.ToString("#.##");
+                    break;
+                case 12:
+                case 13:
+                    double horxd35 = 0;
+                    Int32 hora35 = 0, minu35 = 0;
+                    if (dar.Cells["hxd35"].Value == null)
+                        hora35 = 0;
+                    else
+                        hora35 = Convert.ToInt32(dar.Cells["hxd35"].Value);
+
+
+                    if (dar.Cells["minud35"].Value == null)
+                        minu35 = 0;
+                    else
+                        minu35 = Convert.ToInt32(dar.Cells["minud35"].Value);
+
+                    horxd35 = Calculo.HoraExDiurna(930, 0, 0.35, hora35,minu35);
+                    dar.Cells["montod35"].Value = horxd35.ToString("#.##");
+                    break;
+
+                default:
+                    break;
+            }
 
         }
 
@@ -259,13 +302,11 @@ namespace Presentacion.Vista
         {
             this.Close();
         }
-
-        private void panelplanilla_MouseDown(object sender, MouseEventArgs e)
+      
+        private void tabplanilla_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        
     }
 }
