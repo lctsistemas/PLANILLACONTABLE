@@ -1010,13 +1010,12 @@ END
 GO
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
-CREATE PROC SP_INSERT_PLANILLA
+alter PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
 @id_empresa int,
-@mes varchar(20),
---@id_mes varchar(50),
+@id_mes int,
 @fecha_inicial date,
 @fecha_final date,
 @fecha_pago date,
@@ -1027,11 +1026,19 @@ CREATE PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,mes,fecha_inicial , fecha_final,fecha_pago, 
-	dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla,@id_periodo,@id_empresa,@mes,@fecha_inicial, @fecha_final, @fecha_pago, 
-	@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
-	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
+	IF EXISTS(SELECT p.id_periodo,p.id_mes FROM Planilla p WHERE p.id_mes=@id_mes and p.id_periodo=@id_periodo) 
+		BEGIN 
+			SET @mesage ='El mes ('+@id_mes+') ya se encuentra registrado'
+		END
+	ELSE
+		BEGIN
+		
+			INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
+			dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+			(@id_planilla,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
+			@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
+			SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
+		END
 END
 GO
 
@@ -1051,7 +1058,7 @@ alter PROC SP_SHOW_PLANILLA
 @codigo_empresa int,
 @periodo int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.id_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
 	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe

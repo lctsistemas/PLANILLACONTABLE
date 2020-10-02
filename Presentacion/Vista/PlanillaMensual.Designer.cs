@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Panel panel4;
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -212,6 +213,8 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.txtmes = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             panel4 = new System.Windows.Forms.Panel();
             panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2073,6 +2076,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel6.Controls.Add(this.txtmes);
             this.panel6.Controls.Add(this.btncerrar);
             this.panel6.Controls.Add(this.label10);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
@@ -2106,6 +2110,19 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "PLANILLA MENSUAL";
             this.label10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label10_MouseDown);
+            // 
+            // txtmes
+            // 
+            this.txtmes.Location = new System.Drawing.Point(109, 4);
+            this.txtmes.Name = "txtmes";
+            this.txtmes.Size = new System.Drawing.Size(48, 20);
+            this.txtmes.TabIndex = 13;
+            this.txtmes.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // PlanillaMensual
             // 
@@ -2351,5 +2368,7 @@
         private System.Windows.Forms.PictureBox btncerrar;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.TextBox txtmes;
     }
 }

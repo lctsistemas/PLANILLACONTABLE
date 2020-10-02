@@ -11,6 +11,7 @@ namespace Presentacion.Vista
     {
         String result;
         private NPlanilla np = new NPlanilla();
+        private Nafp naf;
         private Int32 codigo;
         public Planilla()
         {
@@ -24,6 +25,16 @@ namespace Presentacion.Vista
             using (np)
             {
                 codigo = np.GetCodigo();
+            }
+        }
+
+        private void LlenarMes()
+        {
+            using (naf = new Nafp())
+            {
+                cbxmes.DataSource = naf.Mostrar_mes();
+                cbxmes.DisplayMember = "Mes";
+                cbxmes.ValueMember = "Idmes";
             }
         }
 
@@ -115,6 +126,7 @@ namespace Presentacion.Vista
 
             }
             GenerarCodigo();
+            LlenarMes();
         }
 
 

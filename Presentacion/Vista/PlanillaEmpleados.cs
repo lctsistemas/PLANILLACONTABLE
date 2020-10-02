@@ -113,7 +113,7 @@ private void btncerrar_Click(object sender, EventArgs e)
             frmModificarPlanilla formodi = new frmModificarPlanilla();
 
             formodi.lblper.Text = dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
-            formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[2].Value.ToString();//mes
+            formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[3].Value.ToString();//mes
 
             formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[5].Value.ToString();//fecha pago
             formodi.StartPosition = FormStartPosition.CenterParent;
@@ -149,6 +149,7 @@ private void btncerrar_Click(object sender, EventArgs e)
         private void btnplanillamant_Click(object sender, EventArgs e)
         {
             PlanillaMensual fr = PlanillaMensual.GetInstance();
+            fr.txtmes.Text= dgvplanilla.CurrentRow.Cells[3].Value.ToString();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
             ShowPlanilla();

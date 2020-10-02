@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Datos.Repositories
 {
-    public class RPlanilla : IPlanilla
+    public class RPlanilla : IPlanilla,IDisposable
     {
         Int32 result;
         SqlCommand cmd;
@@ -117,6 +117,11 @@ namespace Datos.Repositories
                     }
                 }
             }
+        }
+
+        public void Dispose()
+        {
+            //throw new NotImplementedException();
         }
     }
 }

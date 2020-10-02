@@ -26,6 +26,7 @@ ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_plani
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFERENCES dbo.periodo
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(id_empresa) REFERENCES dbo.Empresa
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub PRIMARY KEY(id_subsidios)
+alter table Planilla ADD CONSTRAINT FK_idmes FOREIGN KEY(id_mes) REFERENCES Mes;
 
 
 TRUNCATE TABLE ComisionesPension
