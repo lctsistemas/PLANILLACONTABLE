@@ -279,9 +279,8 @@ remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
 tope_horario_nocturno int
 )
-go
-sp_rename 'Planilla.mes','id_mes';
-alter table Planilla modify column id_mes int;
+sp_rename 'Planilla.mes','id_mes'
+alter table Planilla alter column id_mes int;
 
 
 CREATE TABLE tipo_planilla(
