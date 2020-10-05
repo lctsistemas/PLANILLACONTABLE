@@ -13,6 +13,8 @@ alter table tipo_planilla ADD CONSTRAINT pk_idTipo_planilla PRIMARY KEY(id_tipo_
 alter table ComisionesPension ADD CONSTRAINT pk_comision PRIMARY KEY(idcomision)
 alter table RegimenPensionario ADD CONSTRAINT pk_idregimen PRIMARY KEY(codigo_regimen)
 alter table SUBSIDIOS ADD CONSTRAINT pk_idsubsidios PRIMARY KEY(id_subsidios)
+alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetsubsidios PRIMARY KEY(id_det_subsidios)
+
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
@@ -25,8 +27,10 @@ ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCE
 ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_planilla) REFERENCES tipo_planilla
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFERENCES dbo.periodo
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(id_empresa) REFERENCES dbo.Empresa
-alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub PRIMARY KEY(id_subsidios)
 alter table Planilla ADD CONSTRAINT FK_idmes FOREIGN KEY(id_mes) REFERENCES Mes;
+alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub FOREIGN KEY(id_subsidios) REFERENCES Subsidios
+alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERENCES Periodo
+alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFERENCES Mes
 
 
 TRUNCATE TABLE ComisionesPension

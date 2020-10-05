@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Datos.Repositories
 {
-    public class RDiasSubsidiados : IDiasSubsidiados
+    public class RDiasSubsidiados : IDiasSubsidiados,IDisposable
     {
         Int32 result;
         SqlCommand cmd;
@@ -47,6 +47,11 @@ namespace Datos.Repositories
         public int Delete(DDiasSubsidiados entiti)
         {
             throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
+            //throw new NotImplementedException();
         }
 
         public int Edit(DDiasSubsidiados entiti)

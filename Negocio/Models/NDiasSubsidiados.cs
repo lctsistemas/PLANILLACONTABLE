@@ -19,7 +19,7 @@ namespace Negocio.Models
         public int Id_empleado { get; set ; }
         public int Id_periodo { get ; set ; }
 
-        //public int Id_mes { get; set; }
+        public int Id_mes { get; set; }
         public int Dias { get; set; }
 
         public EntityState state { get; set; }
@@ -64,6 +64,27 @@ namespace Negocio.Models
             }
 
             return mensaje;
+        }
+
+        public void InsertarMassiveData(IEnumerable<NDiasSubsidiados> list)
+        {
+            List<DDiasSubsidiados> listadias = new List<DDiasSubsidiados>();
+            using (RDiasSubsidiados rdias = new RDiasSubsidiados())
+            {
+                foreach (var item in list)
+                {
+                    listadias.Add(new DDiasSubsidiados()
+                    {
+                        Id_subsidios = item.Id_subsidios,
+                        Id_empleado = item.Id_empleado,
+                        Dias = item.Dias,
+                        Id_mes = item.Id_mes,
+                        Id_periodo = item.Id_periodo
+
+                    });
+                }
+                rdias.InsertarMassiveData(listadias);
+            }
         }
         public int GetCodigo()
         {

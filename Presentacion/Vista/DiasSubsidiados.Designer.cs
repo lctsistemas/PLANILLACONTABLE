@@ -53,6 +53,10 @@
             this.btnmodificar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtidsubsidio = new System.Windows.Forms.TextBox();
+            this.Susbidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdiassubs)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,6 +82,11 @@
             this.dgvdiassubs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdiassubs.ColumnHeadersHeight = 30;
             this.dgvdiassubs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvdiassubs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Susbidio,
+            this.Dias,
+            this.Modificar,
+            this.Eliminar});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,7 +97,7 @@
             this.dgvdiassubs.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvdiassubs.EnableHeadersVisualStyles = false;
             this.dgvdiassubs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.dgvdiassubs.Location = new System.Drawing.Point(-1, 61);
+            this.dgvdiassubs.Location = new System.Drawing.Point(34, 58);
             this.dgvdiassubs.Name = "dgvdiassubs";
             this.dgvdiassubs.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvdiassubs.RowHeadersVisible = false;
@@ -99,7 +108,7 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgvdiassubs.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvdiassubs.Size = new System.Drawing.Size(616, 155);
+            this.dgvdiassubs.Size = new System.Drawing.Size(555, 155);
             this.dgvdiassubs.TabIndex = 81;
             // 
             // btnguardar
@@ -313,6 +322,28 @@
             this.txtidsubsidio.Size = new System.Drawing.Size(56, 20);
             this.txtidsubsidio.TabIndex = 89;
             // 
+            // Susbidio
+            // 
+            this.Susbidio.HeaderText = "Subsidio";
+            this.Susbidio.Name = "Susbidio";
+            this.Susbidio.Width = 200;
+            // 
+            // Dias
+            // 
+            this.Dias.HeaderText = "Cantidad de Dias";
+            this.Dias.Name = "Dias";
+            this.Dias.Width = 150;
+            // 
+            // Modificar
+            // 
+            this.Modificar.HeaderText = "Modificar";
+            this.Modificar.Name = "Modificar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // frmSubsiyNoSubsi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,5 +395,9 @@
         public System.Windows.Forms.TextBox txtdescrip;
         public System.Windows.Forms.TextBox txtcodsub;
         public System.Windows.Forms.TextBox txtidsubsidio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Susbidio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modificar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }
 }
