@@ -291,7 +291,43 @@ namespace Presentacion.Vista
                     horxd35 = Calculo.HoraExDiurna(930, 0, 0.35, hora35,minu35);
                     dar.Cells["montod35"].Value = horxd35.ToString("#.##");
                     break;
+                case 15:
+                case 16:
+                    double horxn25 = 0;
+                    Int32 nhora25 = 0, nminu25 = 0;
+                    if (dar.Cells["hxn25"].Value == null)
+                        nhora25 = 0;
+                    else
+                        nhora25 = Convert.ToInt32(dar.Cells["hxn25"].Value);
 
+
+                    if (dar.Cells["minun25"].Value == null)
+                        nminu25 = 0;
+                    else
+                        nminu25 = Convert.ToInt32(dar.Cells["minun25"].Value);
+
+                    horxn25 = Calculo.HoraExNocturnas(930, 0, 0.25, nhora25, nminu25);
+                    dar.Cells["monton25"].Value = horxn25.ToString("#.##");
+
+                    break;
+                case 18:
+                case 19:
+                    double horxn35 = 0;
+                    Int32 nhora35 = 0, nminu35 = 0;
+                    if (dar.Cells["hxn35"].Value == null)
+                        nhora35 = 0;
+                    else
+                        nhora35 = Convert.ToInt32(dar.Cells["hxn35"].Value);
+
+
+                    if (dar.Cells["minun35"].Value == null)
+                        nminu35 = 0;
+                    else
+                        nminu35 = Convert.ToInt32(dar.Cells["minun35"].Value);
+
+                    horxn35 = Calculo.HoraExNocturnas(930, 0, 0.35, nhora35, nminu35);
+                    dar.Cells["monton35"].Value = horxn35.ToString("#.##");
+                    break;
                 default:
                     break;
             }
