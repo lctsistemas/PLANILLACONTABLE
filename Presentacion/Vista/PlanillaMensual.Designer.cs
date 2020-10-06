@@ -211,9 +211,9 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtmes = new System.Windows.Forms.TextBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtmes = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             panel4 = new System.Windows.Forms.Panel();
             panel4.SuspendLayout();
@@ -2086,6 +2086,13 @@
             this.panel6.TabIndex = 255;
             this.panel6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseDown);
             // 
+            // txtmes
+            // 
+            this.txtmes.Location = new System.Drawing.Point(109, 4);
+            this.txtmes.Name = "txtmes";
+            this.txtmes.Size = new System.Drawing.Size(48, 20);
+            this.txtmes.TabIndex = 13;
+            // 
             // btncerrar
             // 
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -2110,14 +2117,6 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "PLANILLA MENSUAL";
             this.label10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label10_MouseDown);
-            // 
-            // txtmes
-            // 
-            this.txtmes.Location = new System.Drawing.Point(109, 4);
-            this.txtmes.Name = "txtmes";
-            this.txtmes.Size = new System.Drawing.Size(48, 20);
-            this.txtmes.TabIndex = 13;
-            this.txtmes.Visible = false;
             // 
             // contextMenuStrip1
             // 

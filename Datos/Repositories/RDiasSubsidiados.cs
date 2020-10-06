@@ -63,5 +63,59 @@ namespace Datos.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public void InsertarMassiveData(IEnumerable<DDiasSubsidiados> listdiassubs)
+        {
+            //create table, tiene que estar en el mismo orden de tu tabla de sql
+            using (DataTable tabla = new DataTable())
+            {
+                tabla.Columns.Add("id_det_subsidios", typeof(int));
+                tabla.Columns.Add("id_subsidios", typeof(int));
+                tabla.Columns.Add("id_empleado", typeof(int));
+                tabla.Columns.Add("idmes", typeof(int));
+                tabla.Columns.Add("idperiodo", typeof(int));
+                tabla.Columns.Add("dias", typeof(int));
+
+
+                //ahora agregamos datos por un ciclo
+                foreach (var item in listdiassubs)
+                {
+                    tabla.Rows.Add(new object[]{
+                    item.Id_det_subsidios,
+                    item.Id_subsidios,
+                    item.Id_empleado,
+                    item.Id_mes,
+                    item.Id_periodo,
+                    item.Dias
+                    
+                });
+
+                }
+
+                //insert to DB
+                using (SqlConnection conect = RConexion.Getconectar())
+                {
+                    conect.Open();
+                    using (SqlTransaction transaction = conect.BeginTransaction())
+                    {
+                        using (SqlBulkCopy bulkcopy = new SqlBulkCopy(conect, SqlBulkCopyOptions.Default, transaction))
+                        {
+                            try
+                            {
+                                bulkcopy.DestinationTableName = "ComisionesPension";//nombre de tabla
+                                bulkcopy.WriteToServer(tabla);
+                                transaction.Commit();
+                            }
+                            catch (Exception ex)
+                            {
+                                transaction.Rollback();
+                                conect.Close();
+                                System.Windows.Forms.MessageBox.Show(ex.Message);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

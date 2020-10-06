@@ -1028,7 +1028,7 @@ alter PROC SP_INSERT_PLANILLA
 AS BEGIN
 	IF EXISTS(SELECT p.id_periodo,p.id_mes FROM Planilla p WHERE p.id_mes=@id_mes and p.id_periodo=@id_periodo) 
 		BEGIN 
-			SET @mesage ='El mes ('+@id_mes+') ya se encuentra registrado'
+			SET @mesage ='El mes ya se encuentra registrado'
 		END
 	ELSE
 		BEGIN
@@ -1058,14 +1058,18 @@ alter PROC SP_SHOW_PLANILLA
 @codigo_empresa int,
 @periodo int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.id_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.id_mes,m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
 	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
-	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa and pe.id_periodo=@periodo
+	on(pe.id_periodo=p.id_periodo) 
+	inner join Mes m
+	on(m.id_mes=p.id_mes)
+	where id_empresa=@codigo_empresa and pe.id_periodo=@periodo
+	order by m.id_mes asc
 	END
 GO
-
+exec SP_SHOW_PLANILLA 2,1
 
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,

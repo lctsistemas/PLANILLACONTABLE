@@ -63,36 +63,40 @@ private void btncerrar_Click(object sender, EventArgs e)
             dgvplanilla.Columns[2].Width = 100;
             dgvplanilla.Columns[2].Visible = false;
 
-            dgvplanilla.Columns[3].HeaderText = "MES";
+            dgvplanilla.Columns[3].HeaderText = "Id_mes";
             dgvplanilla.Columns[3].Width = 100;
+            dgvplanilla.Columns[3].Visible = false;
 
-            dgvplanilla.Columns[4].HeaderText = "FECHA INICIAL";
-            dgvplanilla.Columns[4].Width = 120;
+            dgvplanilla.Columns[4].HeaderText = "MES";
+            dgvplanilla.Columns[4].Width = 100;
 
-            dgvplanilla.Columns[5].HeaderText = "FECHA FINAL";
+            dgvplanilla.Columns[5].HeaderText = "FECHA INICIAL";
             dgvplanilla.Columns[5].Width = 120;
 
-            dgvplanilla.Columns[6].HeaderText = "FECHA PAGO";
+            dgvplanilla.Columns[6].HeaderText = "FECHA FINAL";
             dgvplanilla.Columns[6].Width = 120;
 
-            dgvplanilla.Columns[7].HeaderText = "DIAS_MES";
-            dgvplanilla.Columns[7].Width = 100;
+            dgvplanilla.Columns[7].HeaderText = "FECHA PAGO";
+            dgvplanilla.Columns[7].Width = 120;
 
-            dgvplanilla.Columns[8].HeaderText = "HORAS_MES";
+            dgvplanilla.Columns[8].HeaderText = "DIAS_MES";
             dgvplanilla.Columns[8].Width = 100;
 
-            dgvplanilla.Columns[9].HeaderText = "REM. BASICA";
+            dgvplanilla.Columns[9].HeaderText = "HORAS_MES";
             dgvplanilla.Columns[9].Width = 100;
 
-            dgvplanilla.Columns[10].HeaderText = "ASIG. FAMILIAR";
-            dgvplanilla.Columns[10].Width = 130;
+            dgvplanilla.Columns[10].HeaderText = "REM. BASICA";
+            dgvplanilla.Columns[10].Width = 100;
 
-            dgvplanilla.Columns[11].HeaderText = "TOPE HORARIO NOCT";
-            dgvplanilla.Columns[11].Width = 150;
+            dgvplanilla.Columns[11].HeaderText = "ASIG. FAMILIAR";
+            dgvplanilla.Columns[11].Width = 130;
 
-            dgvplanilla.Columns[12].HeaderText = "ESTADO";
-            dgvplanilla.Columns[12].Width = 100;
-            dgvplanilla.Columns[12].Visible = false;
+            dgvplanilla.Columns[12].HeaderText = "TOPE HORARIO NOCT";
+            dgvplanilla.Columns[12].Width = 150;
+
+            dgvplanilla.Columns[13].HeaderText = "ESTADO";
+            dgvplanilla.Columns[13].Width = 100;
+            dgvplanilla.Columns[13].Visible = false;
 
         }
 
@@ -113,7 +117,7 @@ private void btncerrar_Click(object sender, EventArgs e)
             frmModificarPlanilla formodi = new frmModificarPlanilla();
 
             formodi.lblper.Text = dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
-            formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[3].Value.ToString();//mes
+            formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[4].Value.ToString();//mes
 
             formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[5].Value.ToString();//fecha pago
             formodi.StartPosition = FormStartPosition.CenterParent;
