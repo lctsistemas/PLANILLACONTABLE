@@ -62,7 +62,7 @@ namespace Presentacion.Vista
             dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, ultimoDiaInt);
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
 
-            //cbxmes.SelectedItem = mes.ElementAt(datefin.Month);
+            //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado
             
 
             txtremu.Text = "930.00";
