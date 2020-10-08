@@ -599,6 +599,7 @@ namespace Presentacion.Vista
         private void btnSubsidiados_Click(object sender, EventArgs e)
         {
             frmSubsiyNoSubsi fr = frmSubsiyNoSubsi.GetInstance();
+            fr.txtmes.Text = this.txtmes.Text;
             fr.Text = "SUBSIDIADOS";
             fr.StartPosition = FormStartPosition.CenterParent;
             tipoform = "SUBSIDIADOS";

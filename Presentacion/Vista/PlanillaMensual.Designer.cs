@@ -2092,6 +2092,7 @@
             this.txtmes.Name = "txtmes";
             this.txtmes.Size = new System.Drawing.Size(48, 20);
             this.txtmes.TabIndex = 13;
+            this.txtmes.Visible = false;
             // 
             // btncerrar
             // 

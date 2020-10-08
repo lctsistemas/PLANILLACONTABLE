@@ -119,7 +119,7 @@ namespace Presentacion.Vista
 
                 nds.Id_subsidios = Convert.ToInt32(txtidsubsidio.Text.Trim());
                 nds.Id_empleado = UserCache.IdUser;
-
+                nds.Id_mes = Convert.ToInt32(txtmes.Text.Trim());
                 nds.Id_periodo = UserCache.Idperiodo;
                 nds.Dias = Convert.ToInt32(txtdias.Text.Trim());
 

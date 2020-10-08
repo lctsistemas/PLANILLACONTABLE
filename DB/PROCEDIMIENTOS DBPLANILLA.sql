@@ -1150,11 +1150,14 @@ ALTER PROC SP_INSERT_SUBSIDIOS
 @id_det_subsidios int,
 @id_subsidios int,
 @id_empleado int,
+@id_mes int,
 @id_periodo int,
 @dias int,
 @mensaje varchar(100) output
 AS BEGIN
-INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios,id_empleado,id_periodo,dias) VALUES(@id_det_subsidios,@id_subsidios,@id_empleado,@id_periodo,@dias)
+INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios,id_empleado,id_mes,id_periodo,dias) VALUES(@id_det_subsidios,@id_subsidios,@id_empleado,@id_mes,@id_periodo,@dias)
 SET @mensaje= 'SUBSIDIO REGISTRADO CON EXITO'
 END
 GO
+
+exec SP_INSERT_SUBSIDIOS 
