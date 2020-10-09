@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helps\Calculo.cs" />
     <Compile Include="Helps\ValidacionDatos.cs" />
     <Compile Include="Helps\WindowsMove.cs" />
     <Compile Include="Main_Principal.cs">
@@ -75,12 +76,6 @@
     </Compile>
     <Compile Include="Main_Principal.Designer.cs">
       <DependentUpon>Main_Principal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu_Principal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu_Principal.Designer.cs">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -213,7 +208,17 @@
     <Compile Include="Vista\Planilla.Designer.cs">
       <DependentUpon>Planilla.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Vista\PlanillaEmpleados.cs">
+=======
+    <Compile Include="Vista\PlanillaMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\PlanillaMensual.Designer.cs">
+      <DependentUpon>PlanillaMensual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Planilla_Manto.cs">
+>>>>>>> Carlos
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\PlanillaEmpleados.Designer.cs">
@@ -257,9 +262,6 @@
     </Compile>
     <EmbeddedResource Include="Main_Principal.resx">
       <DependentUpon>Main_Principal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu_Principal.resx">
-      <DependentUpon>Menu_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -323,6 +325,15 @@
     <EmbeddedResource Include="Vista\Planilla.resx">
       <DependentUpon>Planilla.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="Vista\PlanillaMensual.resx">
+      <DependentUpon>PlanillaMensual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Planilla_Manto.resx">
+      <DependentUpon>Planilla_Manto.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Carlos
     <EmbeddedResource Include="Vista\RegimenSalud.resx">
       <DependentUpon>RegimenSalud.cs</DependentUpon>
     </EmbeddedResource>

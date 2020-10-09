@@ -950,7 +950,7 @@ CREATE PROCEDURE SP_ADD_REGIMEN(
 AS BEGIN
 INSERT INTO RegimenPensionario(descripcion_corta,descripcion,tipo_regimen)
 VALUES(@descripcion,@descripcion_corta,@tipo_regimen)
-SET @mensaje= 'REGIMEN REGISTRADO CORRECTAMENTE'
+SET @mensaje= 'Régimen Registrado Correctamente.'
 END
 GO
 
@@ -972,17 +972,15 @@ descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codig
 END
 GO
 
-
 CREATE PROC SP_DELETE_REGIMEN
 @codigo_regimen int,
 @mensaje varchar(100) output
 AS BEGIN
 DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
-SET @mensaje= 'REGIMEN ELIMINADO CORRECTAMENTE'
+SET @mensaje= 'Régimen Eliminado Correctamente.'
 END
 --END
 GO
-
 
 --STAR PROCEDIMIENTO PARA COMISIONES PENSIONES	
 CREATE PROC SP_SHOW_MES

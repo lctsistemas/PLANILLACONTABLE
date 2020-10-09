@@ -6,11 +6,11 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class Manto_Regimen : Form
+    public partial class FrmManto_Regimen : Form
     {
         String result;
         private NRegimen nr = new NRegimen();
-        public Manto_Regimen()
+        public FrmManto_Regimen()
         {
             InitializeComponent();
         }
@@ -18,8 +18,8 @@ namespace Presentacion.Vista
         private void Manto_Regimen_Load(object sender, EventArgs e)
         {
 
-            cbxregimen.Items.Add("S.N.P");
-            cbxregimen.Items.Add("S.P.P");
+            cbxregimen.Items.Add("SNP");
+            cbxregimen.Items.Add("SPP");
             ShowRegimen();
             Tabla();
             Habilitar(false);
@@ -39,8 +39,7 @@ namespace Presentacion.Vista
         {
             txtdescripcion.Text = String.Empty;
             txtdescCorta.Text = String.Empty;
-            cbxregimen.Text = "";
-            cbxregimen.Text = null;
+            cbxregimen.Text = "";            
             using (nr) { nr.state = EntityState.Guardar; }
         }
 
@@ -62,11 +61,11 @@ namespace Presentacion.Vista
             dgvregimen.Columns[1].HeaderText = "DESCRIPCION";
             dgvregimen.Columns[1].Width = 150;
 
-            dgvregimen.Columns[2].HeaderText = "DESCRIPCION CORTA";
-            dgvregimen.Columns[2].Width = 150;
+            dgvregimen.Columns[2].HeaderText = "DES. CORTA";
+            dgvregimen.Columns[2].Width = 70;
 
             dgvregimen.Columns[3].HeaderText = "TIPO REGIMEN";
-            dgvregimen.Columns[3].Width = 100;
+            dgvregimen.Columns[3].Width = 70;
 
             dgvregimen.Columns[4].HeaderText = "";
             dgvregimen.Columns[4].Width = 100;
@@ -106,10 +105,7 @@ namespace Presentacion.Vista
             }
         }
 
-        private void txtbuscar_TextChanged(object sender, EventArgs e)
-        {
-            dgvregimen.DataSource = nr.Search(txtbuscar.Text.Trim());
-        }
+      
 
         private void dgvregimen_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -146,7 +142,6 @@ namespace Presentacion.Vista
                         Messages.M_info(result);
                     }
                 }
-
             }
             else
             {

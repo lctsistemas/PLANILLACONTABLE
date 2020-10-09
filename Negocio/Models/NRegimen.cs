@@ -13,24 +13,21 @@ namespace Negocio.Models
     public class NRegimen : IDisposable
     {
         String mensaje;
-
         public int Codigo_Regimen { get; set; }
+       
+        [Required(ErrorMessage = "El campo Descripcion es obligatorio.")]
+        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Descripcion solo permite letras.")]
+        public String Descripcion { get; set; }
 
         [Required(ErrorMessage = "El campo Descripcion corta es obligatorio.")]
         [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Descripcion corta solo permite letras.")]
         public String Descripcion_corta { get; set; }
 
-        [Required(ErrorMessage = "El campo Descripcion es obligatorio.")]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Descripcion solo permite letras.")]
-        public String Descripcion { get; set; }
-
         [Required(ErrorMessage = "El campo Tipo de regimen es obligatorio.")]
         public String Tipo_regimen { get; set; }
 
         public EntityState state { get; set; }
-
         private IRegimen regimen;
-
         private List<NRegimen> list_regimen;
 
         public NRegimen()
@@ -87,21 +84,15 @@ namespace Negocio.Models
                         Descripcion_corta = item[2].ToString(),
                         Tipo_regimen = item[3].ToString()
                     });
-                }
-                return list_regimen;
+                }                
             }
+            return list_regimen;
         }
         public void Dispose()
         {
 
         }
-
-        //METODO PARA FILTRAR.
-        public IEnumerable<NRegimen> Search(string filter)
-        {
-            return list_regimen.FindAll(e => e.Descripcion.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
-        }
-
+       
         public int Getcodigo()
         {
             return new KRegimen().Getcodigo();
