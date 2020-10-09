@@ -314,6 +314,9 @@ C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Present
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.exe
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.RegimenSalud.resources
+C:\Users\juan\Source\Repos\Planillalct\PLANILLACONTABLE\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\juan\Source\Repos\Planillalct\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.exe
+C:\Users\juan\Source\Repos\Planillalct\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.pdb
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Insertar_Planilla_mensual.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.InsertPlanillaMensual.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.PlanillaMensual.resources
@@ -324,3 +327,4 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmDiasSubsidiados.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmListaNoSubsidiados.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmSubsiyNoSubsi.resources
+>>>>>>> dbde1b5aafb5ba23c9c73deb7f24029ffd7d77a9

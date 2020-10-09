@@ -153,12 +153,6 @@
     <Compile Include="Vista\Cargo.Designer.cs">
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\DiasSubsidiados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\DiasSubsidiados.Designer.cs">
-      <DependentUpon>DiasSubsidiados.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Documento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,29 +177,11 @@
     <Compile Include="Vista\Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Inicio.designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\InsertPlanillaMensual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\InsertPlanillaMensual.Designer.cs">
-      <DependentUpon>InsertPlanillaMensual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\ListaNoSubsidiados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\ListaNoSubsidiados.Designer.cs">
-      <DependentUpon>ListaNoSubsidiados.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Manto_Regimen.cs">
       <SubType>Form</SubType>
@@ -225,17 +201,9 @@
     <Compile Include="Vista\Planilla.Designer.cs">
       <DependentUpon>Planilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\PlanillaMensual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\PlanillaMensual.Designer.cs">
-      <DependentUpon>PlanillaMensual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\PlanillaEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\PlanillaEmpleados.Designer.cs">
-      <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
+    <Compile Include="Vista\Planilla_Manto.cs" />
+    <Compile Include="Vista\Planilla_Manto.Designer.cs">
+      <DependentUpon>Planilla_Manto.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\RegimenSalud.cs">
       <SubType>Form</SubType>
@@ -308,9 +276,6 @@
     <EmbeddedResource Include="Vista\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\DiasSubsidiados.resx">
-      <DependentUpon>DiasSubsidiados.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Documento.resx">
       <DependentUpon>Documento.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,17 +288,8 @@
     <EmbeddedResource Include="Vista\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\InsertPlanillaMensual.resx">
-      <DependentUpon>InsertPlanillaMensual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\ListaNoSubsidiados.resx">
-      <DependentUpon>ListaNoSubsidiados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
@@ -344,11 +300,8 @@
     <EmbeddedResource Include="Vista\Planilla.resx">
       <DependentUpon>Planilla.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\PlanillaMensual.resx">
-      <DependentUpon>PlanillaMensual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\PlanillaEmpleados.resx">
-      <DependentUpon>PlanillaEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\Planilla_Manto.resx">
+      <DependentUpon>Planilla_Manto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\RegimenSalud.resx">
       <DependentUpon>RegimenSalud.cs</DependentUpon>
@@ -532,15 +485,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Administrador.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baseline_build_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baseline_search_white_24dp.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\baseline_done_white_24dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
