@@ -252,7 +252,7 @@ namespace Presentacion.Vista
                     break;
             }
 
-            //Calculo para Horas Extras.
+            //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
             {
                 case 9:
@@ -271,7 +271,7 @@ namespace Presentacion.Vista
                         minu25 = Convert.ToInt32(dar.Cells["minud25"].Value);
                  
                     horxd25 = Calculo.HoraExDiurna(930, 0, 0.25, hora25, minu25);
-                    dar.Cells["montod25"].Value = horxd25.ToString("#.##");
+                    dar.Cells["montod25"].Value = horxd25.ToString("0.##");
                     break;
                 case 12:
                 case 13:
@@ -289,7 +289,7 @@ namespace Presentacion.Vista
                         minu35 = Convert.ToInt32(dar.Cells["minud35"].Value);
 
                     horxd35 = Calculo.HoraExDiurna(930, 0, 0.35, hora35,minu35);
-                    dar.Cells["montod35"].Value = horxd35.ToString("#.##");
+                    dar.Cells["montod35"].Value = horxd35.ToString("0.##");
                     break;
                 case 15:
                 case 16:
@@ -307,9 +307,9 @@ namespace Presentacion.Vista
                         nminu25 = Convert.ToInt32(dar.Cells["minun25"].Value);
 
                     horxn25 = Calculo.HoraExNocturnas(930, 0, 0.25, nhora25, nminu25);
-                    dar.Cells["monton25"].Value = horxn25.ToString("#.##");
-
+                    dar.Cells["monton25"].Value = horxn25.ToString("0.##");
                     break;
+
                 case 18:
                 case 19:
                     double horxn35 = 0;
@@ -326,8 +326,59 @@ namespace Presentacion.Vista
                         nminu35 = Convert.ToInt32(dar.Cells["minun35"].Value);
 
                     horxn35 = Calculo.HoraExNocturnas(930, 0, 0.35, nhora35, nminu35);
-                    dar.Cells["monton35"].Value = horxn35.ToString("#.##");
+                    dar.Cells["monton35"].Value = horxn35.ToString("0.##");
                     break;
+
+                case 21:
+                case 22:
+                    double hferi = 0;
+                    Int32 horaferiado = 0, minutoferi = 0;
+                    if (dar.Cells["hrferiado"].Value == null)
+                        horaferiado = 0;
+                    else
+                        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+
+                    if (dar.Cells["minuferiado"].Value == null)
+                        minutoferi = 0;
+                    else
+                        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+
+                    hferi = Calculo.FeriadoDom(930,0, horaferiado, minutoferi);
+                    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                    break;
+
+                case 24:
+                    double boninoc = 0;
+                    int horanoc = 0;
+                    if (dar.Cells["hrboninocturna"].Value == null)
+                        horanoc = 0;
+                    else
+                        horanoc = Convert.ToInt32(dar.Cells["hrboninocturna"].Value);
+
+                    boninoc = Calculo.BoniNocturno(930, 0, horanoc);
+                    dar.Cells["montoboninocturno"].Value = boninoc.ToString("0.##");
+                    break;
+
+                case 26:
+                case 27:
+                    double importe_tarde = 0;
+                    Int32 horatarde = 0, minutarde = 0;
+                    if (dar.Cells["htarde"].Value == null)
+                        horatarde = 0;
+                    else
+                        horatarde = Convert.ToInt32(dar.Cells["htarde"].Value);
+
+
+                    if (dar.Cells["mtarde"].Value == null)
+                        minutarde = 0;
+                    else
+                        minutarde = Convert.ToInt32(dar.Cells["mtarde"].Value);
+
+                    importe_tarde = Calculo.Tardanza(930, horatarde, minutarde);
+                    dar.Cells["montotarde"].Value = importe_tarde.ToString("0.##");
+                    break;
+
                 default:
                     break;
             }

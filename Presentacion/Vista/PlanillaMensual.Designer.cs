@@ -54,19 +54,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabsubsidio = new System.Windows.Forms.TabPage();
-            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nosubsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +80,9 @@
             this.montoferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hrboninocturna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoboninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.htarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montotarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subsicheck = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ndias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montosub = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -122,6 +112,20 @@
             this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nosubsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
@@ -161,6 +165,7 @@
             this.hxnocturnas,
             this.feriado,
             this.boninocturno,
+            this.tardanza,
             this.subsidiado,
             this.nosubsidiado,
             this.thorax,
@@ -227,6 +232,9 @@
             this.montoferiado,
             this.hrboninocturna,
             this.montoboninocturno,
+            this.htarde,
+            this.mtarde,
+            this.montotarde,
             this.subsicheck,
             this.ndias,
             this.montosub,
@@ -496,110 +504,6 @@
             this.tabsubsidio.Text = "HISTORIAL SUBSIDIO";
             this.tabsubsidio.UseVisualStyleBackColor = true;
             // 
-            // valor1
-            // 
-            this.valor1.HeaderText = "";
-            this.valor1.Name = "valor1";
-            this.valor1.ReadOnly = true;
-            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor1.Width = 320;
-            // 
-            // valor2
-            // 
-            this.valor2.HeaderText = "";
-            this.valor2.Name = "valor2";
-            this.valor2.ReadOnly = true;
-            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor2.Width = 543;
-            // 
-            // hxdiurnas
-            // 
-            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
-            this.hxdiurnas.Name = "hxdiurnas";
-            this.hxdiurnas.ReadOnly = true;
-            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxdiurnas.Width = 220;
-            // 
-            // hxnocturnas
-            // 
-            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNOS";
-            this.hxnocturnas.Name = "hxnocturnas";
-            this.hxnocturnas.ReadOnly = true;
-            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxnocturnas.Width = 220;
-            // 
-            // feriado
-            // 
-            this.feriado.HeaderText = "FERIADO | DOMINICAL";
-            this.feriado.Name = "feriado";
-            this.feriado.ReadOnly = true;
-            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.feriado.Width = 110;
-            // 
-            // boninocturno
-            // 
-            this.boninocturno.HeaderText = "BONI. NOCTURNA";
-            this.boninocturno.Name = "boninocturno";
-            this.boninocturno.ReadOnly = true;
-            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.boninocturno.Width = 80;
-            // 
-            // subsidiado
-            // 
-            this.subsidiado.HeaderText = "SUBSIDIADO";
-            this.subsidiado.Name = "subsidiado";
-            this.subsidiado.ReadOnly = true;
-            this.subsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.subsidiado.Width = 110;
-            // 
-            // nosubsidiado
-            // 
-            this.nosubsidiado.HeaderText = "NO SUBSIDIADO/NO LABORADO";
-            this.nosubsidiado.Name = "nosubsidiado";
-            this.nosubsidiado.ReadOnly = true;
-            this.nosubsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nosubsidiado.Width = 190;
-            // 
-            // thorax
-            // 
-            this.thorax.HeaderText = "";
-            this.thorax.Name = "thorax";
-            this.thorax.ReadOnly = true;
-            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thorax.Width = 233;
-            // 
-            // truncas
-            // 
-            this.truncas.HeaderText = "TRUNCAS";
-            this.truncas.Name = "truncas";
-            this.truncas.ReadOnly = true;
-            this.truncas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.truncas.Width = 280;
-            // 
-            // tremu
-            // 
-            this.tremu.HeaderText = "";
-            this.tremu.Name = "tremu";
-            this.tremu.ReadOnly = true;
-            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tremu.Width = 160;
-            // 
-            // descuentoafp
-            // 
-            this.descuentoafp.HeaderText = "DESCUENTO AFP";
-            this.descuentoafp.Name = "descuentoafp";
-            this.descuentoafp.ReadOnly = true;
-            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.descuentoafp.Width = 210;
-            // 
-            // fin
-            // 
-            this.fin.HeaderText = "";
-            this.fin.Name = "fin";
-            this.fin.ReadOnly = true;
-            this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fin.Width = 600;
-            // 
             // codigo
             // 
             this.codigo.HeaderText = "Codigo";
@@ -746,7 +650,7 @@
             // 
             // hrboninocturna
             // 
-            this.hrboninocturna.HeaderText = "No. hrs.";
+            this.hrboninocturna.HeaderText = "No. Hrs.";
             this.hrboninocturna.Name = "hrboninocturna";
             this.hrboninocturna.Width = 30;
             // 
@@ -755,6 +659,24 @@
             this.montoboninocturno.HeaderText = "Monto Hrs.";
             this.montoboninocturno.Name = "montoboninocturno";
             this.montoboninocturno.Width = 50;
+            // 
+            // htarde
+            // 
+            this.htarde.HeaderText = "No. Hrs.";
+            this.htarde.Name = "htarde";
+            this.htarde.Width = 30;
+            // 
+            // mtarde
+            // 
+            this.mtarde.HeaderText = "No. Min.";
+            this.mtarde.Name = "mtarde";
+            this.mtarde.Width = 30;
+            // 
+            // montotarde
+            // 
+            this.montotarde.HeaderText = "Monto Hrs.";
+            this.montotarde.Name = "montotarde";
+            this.montotarde.Width = 50;
             // 
             // subsicheck
             // 
@@ -937,6 +859,118 @@
             this.transporte.Name = "transporte";
             this.transporte.Width = 70;
             // 
+            // valor1
+            // 
+            this.valor1.HeaderText = "";
+            this.valor1.Name = "valor1";
+            this.valor1.ReadOnly = true;
+            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor1.Width = 320;
+            // 
+            // valor2
+            // 
+            this.valor2.HeaderText = "";
+            this.valor2.Name = "valor2";
+            this.valor2.ReadOnly = true;
+            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor2.Width = 543;
+            // 
+            // hxdiurnas
+            // 
+            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
+            this.hxdiurnas.Name = "hxdiurnas";
+            this.hxdiurnas.ReadOnly = true;
+            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxdiurnas.Width = 220;
+            // 
+            // hxnocturnas
+            // 
+            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNOS";
+            this.hxnocturnas.Name = "hxnocturnas";
+            this.hxnocturnas.ReadOnly = true;
+            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxnocturnas.Width = 220;
+            // 
+            // feriado
+            // 
+            this.feriado.HeaderText = "FERIADO | DOMINICAL";
+            this.feriado.Name = "feriado";
+            this.feriado.ReadOnly = true;
+            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.feriado.Width = 110;
+            // 
+            // boninocturno
+            // 
+            this.boninocturno.HeaderText = "BONI. NOCTURNA";
+            this.boninocturno.Name = "boninocturno";
+            this.boninocturno.ReadOnly = true;
+            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.boninocturno.Width = 80;
+            // 
+            // tardanza
+            // 
+            this.tardanza.HeaderText = "TARDANZA";
+            this.tardanza.Name = "tardanza";
+            this.tardanza.ReadOnly = true;
+            this.tardanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tardanza.Width = 110;
+            // 
+            // subsidiado
+            // 
+            this.subsidiado.HeaderText = "SUBSIDIADO";
+            this.subsidiado.Name = "subsidiado";
+            this.subsidiado.ReadOnly = true;
+            this.subsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.subsidiado.Width = 110;
+            // 
+            // nosubsidiado
+            // 
+            this.nosubsidiado.HeaderText = "NO SUBSIDIADO/NO LABORADO";
+            this.nosubsidiado.Name = "nosubsidiado";
+            this.nosubsidiado.ReadOnly = true;
+            this.nosubsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nosubsidiado.Width = 190;
+            // 
+            // thorax
+            // 
+            this.thorax.HeaderText = "";
+            this.thorax.Name = "thorax";
+            this.thorax.ReadOnly = true;
+            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thorax.Width = 233;
+            // 
+            // truncas
+            // 
+            this.truncas.HeaderText = "TRUNCAS";
+            this.truncas.Name = "truncas";
+            this.truncas.ReadOnly = true;
+            this.truncas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.truncas.Width = 280;
+            // 
+            // tremu
+            // 
+            this.tremu.HeaderText = "";
+            this.tremu.Name = "tremu";
+            this.tremu.ReadOnly = true;
+            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tremu.Width = 160;
+            // 
+            // descuentoafp
+            // 
+            this.descuentoafp.HeaderText = "DESCUENTO AFP";
+            this.descuentoafp.Name = "descuentoafp";
+            this.descuentoafp.ReadOnly = true;
+            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.descuentoafp.Width = 210;
+            // 
+            // fin
+            // 
+            this.fin.HeaderText = "";
+            this.fin.Name = "fin";
+            this.fin.ReadOnly = true;
+            this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fin.Width = 600;
+            // 
             // FrmPlanillaMensual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -987,6 +1021,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
         private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
         private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
         private System.Windows.Forms.DataGridViewTextBoxColumn subsidiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn nosubsidiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
@@ -1020,6 +1055,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn montoferiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn hrboninocturna;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoboninocturno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn htarde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mtarde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn montotarde;
         private System.Windows.Forms.DataGridViewButtonColumn subsicheck;
         private System.Windows.Forms.DataGridViewTextBoxColumn ndias;
         private System.Windows.Forms.DataGridViewTextBoxColumn montosub;
