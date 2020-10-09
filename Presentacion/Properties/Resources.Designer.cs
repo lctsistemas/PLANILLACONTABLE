@@ -143,6 +143,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_build_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_build_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_business_white_18dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_business_white_18dp", resourceCulture);
@@ -273,6 +283,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_done_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_done_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_minimize_white_36dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_minimize_white_36dp", resourceCulture);
@@ -326,6 +346,16 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap baseline_save_white_24dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_save_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap baseline_search_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("baseline_search_white_24dp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

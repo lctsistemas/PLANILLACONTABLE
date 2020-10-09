@@ -176,7 +176,7 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openchilform(new Planilla_Manto());
+            openchilform(new PlanillaEmpleados());
 
         }
     }

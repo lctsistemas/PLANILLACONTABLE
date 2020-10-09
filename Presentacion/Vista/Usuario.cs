@@ -148,8 +148,7 @@ namespace Presentacion.Vista
                 bool valida = new ValidacionDatos(nu).Validate(lblerror);
                 if (valida)
                 {
-                    if (String.IsNullOrEmpty(cborol.SelectedText))
-                        return;
+                    
                     result = nu.SaveChanges();
                     ShowUser();
                     Messages.M_info(result);

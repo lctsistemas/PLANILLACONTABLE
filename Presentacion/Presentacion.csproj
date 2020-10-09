@@ -201,9 +201,7 @@
     <Compile Include="Vista\Planilla.Designer.cs">
       <DependentUpon>Planilla.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Planilla_Manto.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Vista\Planilla_Manto.cs" />
     <Compile Include="Vista\Planilla_Manto.Designer.cs">
       <DependentUpon>Planilla_Manto.cs</DependentUpon>
     </Compile>

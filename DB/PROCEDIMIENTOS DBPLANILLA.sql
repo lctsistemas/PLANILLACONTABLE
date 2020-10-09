@@ -731,6 +731,22 @@ ELSE
 	END
 END
 GO
+
+--GENERAR CODIGO SUBSIDIOS
+CREATE PROC SP_GENERAR_SUBSIDIO
+(@subsidio int output)
+AS BEGIN
+SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
+IF(@subsidio=0)
+	BEGIN
+		SET @subsidio=1		
+	END
+ELSE
+	BEGIN
+		SET @subsidio=(SELECT MAX(ds.id_det_subsidios)+1 FROM dbo.DET_SUBSIDIOS ds)
+	END
+END
+GO
 --generar codigo regimen salud
 CREATE PROC SP_GENERAR_REG_SAL
 (@regimen_salud int output)
@@ -975,7 +991,7 @@ SELECT id_mes, nombre_mes FROM Mes
 END
 GO
 
-ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
+CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
 @idmes int =null,
 @idperiodo int=null
 AS BEGIN
@@ -983,7 +999,7 @@ IF(EXISTS(SELECT co.codigo_regimen FROM ComisionesPension co))
 	BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
+	WHERE (co.idmes=null AND idperiodo=null) AND r.tipo_regimen='SPP'
 	END
 ELSE BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
@@ -994,13 +1010,12 @@ END
 GO
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
-CREATE PROC SP_INSERT_PLANILLA
+alter PROC SP_INSERT_PLANILLA
 @id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
 @id_empresa int,
-@mes varchar(20),
---@id_mes varchar(50),
+@id_mes int,
 @fecha_inicial date,
 @fecha_final date,
 @fecha_pago date,
@@ -1011,11 +1026,19 @@ CREATE PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,mes,fecha_inicial , fecha_final,fecha_pago, 
-	dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-	(@id_planilla,@id_periodo,@id_empresa,@mes,@fecha_inicial, @fecha_final, @fecha_pago, 
-	@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno)
-	SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
+	IF EXISTS(SELECT p.id_periodo,p.id_mes FROM Planilla p WHERE p.id_mes=@id_mes and p.id_periodo=@id_periodo) 
+		BEGIN 
+			SET @mesage ='El mes ya se encuentra registrado'
+		END
+	ELSE
+		BEGIN
+		
+			INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
+			dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+			(@id_planilla,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
+			@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
+			SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
+		END
 END
 GO
 
@@ -1032,15 +1055,21 @@ GO
 
 go
 alter PROC SP_SHOW_PLANILLA
-@codigo_empresa int
+@codigo_empresa int,
+@periodo int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.id_mes,m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
 	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
 	FROM Planilla p 
 	inner join Periodo pe
-	on(pe.id_periodo=p.id_periodo) where id_empresa=@codigo_empresa
+	on(pe.id_periodo=p.id_periodo) 
+	inner join Mes m
+	on(m.id_mes=p.id_mes)
+	where id_empresa=@codigo_empresa and pe.id_periodo=@periodo
+	order by m.id_mes asc
 	END
 GO
+exec SP_SHOW_PLANILLA 2,1
 
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,
@@ -1106,3 +1135,29 @@ END
 GO
 
 exec SP_SHOW_REG_SALUD
+
+alter PROC SP_SELECT_SUBSIDIOS 
+@tipo_subsidio varchar(30)
+AS BEGIN
+SELECT id_subsidios, cod_subsidio, descripcion_subsidio,tipo_subsidio,descuento 
+FROM SUBSIDIOS WHERE tipo_subsidio=@tipo_subsidio order by id_subsidios desc
+END
+GO
+
+exec SP_SELECT_SUBSIDIOS 'SUBSIDIADOS'
+
+ALTER PROC SP_INSERT_SUBSIDIOS 
+@id_det_subsidios int,
+@id_subsidios int,
+@id_empleado int,
+@id_mes int,
+@id_periodo int,
+@dias int,
+@mensaje varchar(100) output
+AS BEGIN
+INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios,id_empleado,id_mes,id_periodo,dias) VALUES(@id_det_subsidios,@id_subsidios,@id_empleado,@id_mes,@id_periodo,@dias)
+SET @mensaje= 'SUBSIDIO REGISTRADO CON EXITO'
+END
+GO
+
+exec SP_INSERT_SUBSIDIOS 

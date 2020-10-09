@@ -196,7 +196,7 @@ namespace Presentacion
 
         private void btnplanilla2_Click(object sender, EventArgs e)
         {
-            OpenForm<Planilla_Manto>();
+            OpenForm<PlanillaEmpleados>();
         }
     }
 }

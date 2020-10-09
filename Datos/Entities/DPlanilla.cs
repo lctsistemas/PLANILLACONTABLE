@@ -8,7 +8,8 @@ namespace Datos.Entities
         //Int32 id_tipo_planilla;
         Int32 id_periodo;
         Int32 id_empresa;
-        String mes;
+        Int32 id_mes;
+        string nombre_mes;
         DateTime fecha_inicial;
         DateTime fecha_final;
         DateTime fecha_pago;
@@ -18,12 +19,13 @@ namespace Datos.Entities
         Decimal asig_familiar;
         Int32 tope_horario_nocturno;
 
-        public DPlanilla(int id_planilla, int id_periodo, int id_empresa, string mes, DateTime fecha_inicial, DateTime fecha_final, DateTime fecha_pago, int dias_mes, int horas_mes, decimal remu_basica, decimal asig_familiar, int tope_horario_nocturno)
+        public DPlanilla(int id_planilla, int id_periodo, int id_empresa, int id_mes, string nom_mes, DateTime fecha_inicial, DateTime fecha_final, DateTime fecha_pago, int dias_mes, int horas_mes, decimal remu_basica, decimal asig_familiar, int tope_horario_nocturno)
         {
             this.id_planilla = id_planilla;
             this.id_periodo = id_periodo;
             this.id_empresa = id_empresa;
-            this.mes = mes;
+            this.id_mes = id_mes;
+            this.nombre_mes = nom_mes;
             this.fecha_inicial = fecha_inicial;
             this.fecha_final = fecha_final;
             this.fecha_pago = fecha_pago;
@@ -42,7 +44,9 @@ namespace Datos.Entities
         public int Id_planilla { get => id_planilla; set => id_planilla = value; }
         public int Id_periodo { get => id_periodo; set => id_periodo = value; }
         public int Id_empresa { get => id_empresa; set => id_empresa = value; }
-        public string Mes { get => mes; set => mes = value; }
+        public int Id_mes { get => id_mes; set => id_mes = value; }
+
+        public string Nombre_mes { get => nombre_mes; set => nombre_mes = value; }
         public DateTime Fecha_inicial { get => fecha_inicial; set => fecha_inicial = value; }
         public DateTime Fecha_final { get => fecha_final; set => fecha_final = value; }
         public DateTime Fecha_pago { get => fecha_pago; set => fecha_pago = value; }
