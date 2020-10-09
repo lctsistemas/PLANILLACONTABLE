@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Datos.Repositories
 {
-    public class RPlanilla : IPlanilla
+    public class RPlanilla : IPlanilla,IDisposable
     {
         Int32 result;
         SqlCommand cmd;
@@ -26,7 +26,7 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@id_planilla", SqlDbType.Int).Value = entiti.Id_planilla;
                     cmd.Parameters.Add("@id_periodo", SqlDbType.Int).Value = entiti.Id_periodo;
                     cmd.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Id_empresa;
-                    cmd.Parameters.Add("@mes", SqlDbType.VarChar, 20).Value = entiti.Mes;
+                    cmd.Parameters.Add("@id_mes", SqlDbType.Int).Value = entiti.Id_mes;
                     cmd.Parameters.Add("@fecha_inicial", SqlDbType.Date).Value = entiti.Fecha_inicial;
                     cmd.Parameters.Add("@fecha_final", SqlDbType.Date).Value = entiti.Fecha_final;
                     cmd.Parameters.Add("@fecha_pago", SqlDbType.Date).Value = entiti.Fecha_pago;
@@ -106,7 +106,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SHOW_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_empresa;
-
+                    cmd.Parameters.Add("@periodo", SqlDbType.Int).Value = entiti.Id_periodo;
                     da.SelectCommand = cmd;
 
                     using (DataTable dt = new DataTable())
@@ -117,6 +117,11 @@ namespace Datos.Repositories
                     }
                 }
             }
+        }
+
+        public void Dispose()
+        {
+            //throw new NotImplementedException();
         }
     }
 }

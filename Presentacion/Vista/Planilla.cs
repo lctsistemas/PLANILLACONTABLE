@@ -11,6 +11,7 @@ namespace Presentacion.Vista
     {
         String result;
         private NPlanilla np = new NPlanilla();
+        private Nafp naf;
         private Int32 codigo;
         public Planilla()
         {
@@ -27,13 +28,23 @@ namespace Presentacion.Vista
             }
         }
 
+        private void LlenarMes()
+        {
+            using (naf = new Nafp())
+            {
+                cbxmes.DataSource = naf.Mostrar_mes();
+                cbxmes.DisplayMember = "Mes";
+                cbxmes.ValueMember = "Idmes";
+            }
+        }
+
         private void Initialize()
         {
-            String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
-            //string m=mes[0];
-            cbxmes.Items.AddRange(mes);
+            //String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            ////string m=mes[0];
+            //cbxmes.Items.AddRange(mes);
 
-            Planilla_Manto planilla = new Planilla_Manto();
+            PlanillaEmpleados planilla = new PlanillaEmpleados();
 
 
             DateTime datefin;
@@ -51,7 +62,7 @@ namespace Presentacion.Vista
             dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, ultimoDiaInt);
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
 
-            cbxmes.SelectedItem = mes.ElementAt(datefin.Month);
+            //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado
             
 
             txtremu.Text = "930.00";
@@ -81,7 +92,7 @@ namespace Presentacion.Vista
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
                 np.Id_periodo = UserCache.Idperiodo;
                 np.Id_empresa = UserCache.Codigo_empresa;
-                np.Mes = cbxmes.SelectedItem.ToString();
+                np.Id_mes = Convert.ToInt32(cbxmes.SelectedValue);
                 // = cbxmes.SelectedItem.ToString(); 
                 np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());
                 np.Fecha_final = Convert.ToDateTime(dtpfin.Text.Trim());
@@ -115,6 +126,7 @@ namespace Presentacion.Vista
 
             }
             GenerarCodigo();
+            LlenarMes();
         }
 
 

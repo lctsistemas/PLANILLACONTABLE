@@ -91,9 +91,9 @@ namespace Negocio.Models
                         descripcion = Convert.ToString(item[2])//DESCRIPCION
                     });
 
-                }
-                return listacargo;
+                }               
             }
+            return listacargo;
         }
 
         public IEnumerable<Ncargo> Search(string filter)

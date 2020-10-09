@@ -279,8 +279,8 @@ remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
 tope_horario_nocturno int
 )
-
-alter table Planilla add mes varchar(20);
+sp_rename 'Planilla.mes','id_mes'
+alter table Planilla alter column id_mes int;
 
 
 CREATE TABLE tipo_planilla(
@@ -303,4 +303,40 @@ insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
 
+CREATE TABLE SUBSIDIOS(
+id_subsidios int not null,
+cod_subsidio int not null,
+descripcion_subsidio nvarchar(100) not null,
+tipo_subsidio varchar(30) not null, --SUBSIADOS Y NO SUBSIDIADOS
+descuento bit not null
+)
 
+CREATE TABLE DET_SUBSIDIOS(
+id_det_subsidios int not null,
+id_subsidios int not null,
+id_empleado int not null,
+id_mes int not null,
+id_periodo int not null,
+dias int not null
+)
+
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(1,21,'S.I. INCAPACIDAD TEMPORAL (INVALIDEZ, ENFERMEDAD Y ACCIDENTES)','SUBSIDIADOS',0);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(2,22,'S.I. MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL','SUBSIDIADOS',0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(3,01,'S.P. SANCION DISCIPLINARIA','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(4,02,'S.P. EJERCICIO DEL DERECHO DE HUELGA','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(5,03,'S.P. DETENCION DEL TRABAJADOR, SALVO EL CASO DE CONDENA PRIVATIVA DE LA LIBERTAD','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(6,04,'S.P. INHABILITACION ADMINISTRATIVA O JUDICIAL POR PERIODO NO SUPERIOR A TRES MESES','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(7,05,'S.P. PERMISO O LICENCIA CONCEDIDOS POR EL EMPLEADOR SIN GOCE DE HABER','NO SUBSIDIADOS',1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(8,06,'S.P. CASO FORTUITO O FUERZA MAYOR','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(9,07,'S.P. FALTA NO JUSTIFICADA','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(10,08,'S.P. POR TEMPORADA O INTERMITENTE','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(11,20,'S.I. ENFERMEDAD O ACCIDENTE (PRIMEROS VEINTE DÕAS)','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(12,23,'S.I. DESCANSO VACACIONAL','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(13,24,'S.I. LICENCIA PARA DESEMPE—AR CARGO CÌVICO Y PARA CUMPLIR CON EL SERVICIO MILITAR OBLIGATORIO','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(14,25,'S.I. PERMISO Y LICENCIA PARA EL DESEMPE—O DE CARGOS SINDICALES','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(15,26,'S.I. LICENCIA CON GOCE DE HABER','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(16,27,'S.I. DÌAS COMPENSADOS POR HORAS TRABAJADAS EN SOBRETIEMPO','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(17,28,'S.P SUSPENSION PERFECTA DE LABORES','NO SUBSIDIADOS',1);
