@@ -44,6 +44,20 @@ namespace Presentacion.Vista
             this.Top = (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2;
             this.Left = (Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2;
             txtDNI.Focus();
+            txtAsigFamiliar.Text = "93";
+            txtHaberBasico.Text = "930";
+        }
+
+        private void calculos_Remuneracion()
+        {
+            Double totalhorasdiurnas = Convert.ToDouble(txtTotalDiurna.Text);
+            Double totalhorasnoct = Convert.ToDouble(txtTotalNocturna.Text);
+
+            Double feriado_importe = Convert.ToDouble(txtTotalFeriado.Text);
+
+            Double reintegro = Convert.ToDouble(txtReintegro.Text);
+            Double tardanza_total = Convert.ToDouble(txtTotalTardanza.Text);
+            Messages.M_info(""+totalremuneracion);
         }
 
         private void txtDiurna25_TextChanged(object sender, EventArgs e)
@@ -92,9 +106,9 @@ namespace Presentacion.Vista
 
                 double totalSumaDiurna = totalDiurna25 + totalDiurna35;
                 txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
+                calculos_Remuneracion();
             }
         }
-
         private void txtMinDiurna25_TextChanged(object sender, EventArgs e)
         {
             if (txtDiurna25.Text == "")

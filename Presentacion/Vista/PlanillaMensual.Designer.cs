@@ -162,7 +162,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtReintegro = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -735,7 +735,6 @@
             this.txtAsigFamiliar.Name = "txtAsigFamiliar";
             this.txtAsigFamiliar.Size = new System.Drawing.Size(100, 20);
             this.txtAsigFamiliar.TabIndex = 252;
-            this.txtAsigFamiliar.Text = "93.00";
             // 
             // label15
             // 
@@ -754,7 +753,6 @@
             this.txtHaberBasico.Name = "txtHaberBasico";
             this.txtHaberBasico.Size = new System.Drawing.Size(100, 20);
             this.txtHaberBasico.TabIndex = 251;
-            this.txtHaberBasico.Text = "930.00";
             // 
             // panel19
             // 
@@ -1551,7 +1549,7 @@
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.textBox2);
             this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.txtReintegro);
             this.panel3.Controls.Add(this.textBox5);
             this.panel3.Controls.Add(this.textBox6);
             this.panel3.Controls.Add(this.textBox7);
@@ -1627,13 +1625,13 @@
             this.textBox3.TabIndex = 287;
             this.textBox3.Text = "0.00";
             // 
-            // textBox4
+            // txtReintegro
             // 
-            this.textBox4.Location = new System.Drawing.Point(710, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 286;
-            this.textBox4.Text = "0.00";
+            this.txtReintegro.Location = new System.Drawing.Point(710, 58);
+            this.txtReintegro.Name = "txtReintegro";
+            this.txtReintegro.Size = new System.Drawing.Size(100, 20);
+            this.txtReintegro.TabIndex = 286;
+            this.txtReintegro.Text = "0.00";
             // 
             // textBox5
             // 
@@ -2302,7 +2300,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtReintegro;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
