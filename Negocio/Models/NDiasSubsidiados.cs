@@ -43,6 +43,7 @@ namespace Negocio.Models
             ds.Id_subsidios = Id_subsidios;
             ds.Id_empleado = Id_empleado;
             ds.Id_periodo = Id_periodo;
+            ds.Id_mes = Id_mes;
             ds.Dias = Dias;
 
 

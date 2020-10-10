@@ -38,11 +38,10 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();
-
-                    return result;
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
 
         public int Delete(DDiasSubsidiados entiti)

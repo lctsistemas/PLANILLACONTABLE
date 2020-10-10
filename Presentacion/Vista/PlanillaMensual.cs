@@ -57,7 +57,7 @@ namespace Presentacion.Vista
 
             Double reintegro = Convert.ToDouble(txtReintegro.Text);
             Double tardanza_total = Convert.ToDouble(txtTotalTardanza.Text);
-            Messages.M_info(""+totalremuneracion);
+            //Messages.M_info(""+);
         }
 
         private void txtDiurna25_TextChanged(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace Presentacion.Vista
 
                 double totalSumaDiurna = totalDiurna25 + totalDiurna35;
                 txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
-                calculos_Remuneracion();
+                //calculos_Remuneracion();
             }
         }
         private void txtMinDiurna25_TextChanged(object sender, EventArgs e)

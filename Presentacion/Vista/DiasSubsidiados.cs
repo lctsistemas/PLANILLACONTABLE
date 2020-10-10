@@ -25,6 +25,7 @@ namespace Presentacion.Vista
            /* DataGridViewHeaderCell s = new DataGridViewHeaderCell();
             s.Style.SelectionBackColor = Color.Black;*/
             Mostrar_cargo();
+            GenerarCodigo();
         }
 
         private void GenerarCodigo()
@@ -78,11 +79,11 @@ namespace Presentacion.Vista
         public void CalculoDiasSubsidiado()
         {
             PlanillaMensual plamens = new PlanillaMensual();
-            double basico = Double.Parse(plamens.txtHaberBasico.Text.ToString());
-            double importeDiario = Math.Round(basico / 30, 4);
+            //double basico = Double.Parse(plamens.txtHaberBasico.Text.ToString());
+            //double importeDiario = Math.Round(basico / 30, 4);
 
-            txtimporte.Text = importeDiario.ToString();
-            txtdias.Text = Convert.ToString(0);
+            //txtimporte.Text = importeDiario.ToString();
+            //txtdias.Text = Convert.ToString(0);
         }
        
         
