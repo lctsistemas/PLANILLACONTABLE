@@ -6,9 +6,6 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Models
 {
@@ -25,9 +22,9 @@ namespace Negocio.Models
             Rregsalud = new RRegimenSalud();
         }
 
-        public int Id_regimen_salud { get ; set ; }
-        public int Cod_regi_salud { get ; set ; }
-        public string Regimen_salud { get ; set ; }
+        public int Id_regimen_salud { get; set; }
+        public int Cod_regi_salud { get; set; }
+        public string Regimen_salud { get; set; }
 
         public EntityState state { get; set; }
 
@@ -43,7 +40,7 @@ namespace Negocio.Models
             dregsalud.Id_regimen_salud = Id_regimen_salud;
             dregsalud.Cod_regi_salud = Cod_regi_salud;
             dregsalud.Regimen_salud = Regimen_salud;
-          
+
 
             switch (state)
             {
@@ -74,9 +71,9 @@ namespace Negocio.Models
                 {
                     list_reg_salud.Add(new NRegimenSalud()
                     {
-                        Id_regimen_salud=Convert.ToInt32(item[0]),
-                        Cod_regi_salud=Convert.ToInt32(item[1]),
-                        Regimen_salud= item[2].ToString()                
+                        Id_regimen_salud = Convert.ToInt32(item[0]),
+                        Cod_regi_salud = Convert.ToInt32(item[1]),
+                        Regimen_salud = item[2].ToString()
                     });
                 }
                 return list_reg_salud;

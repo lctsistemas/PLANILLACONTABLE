@@ -1,12 +1,8 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Repositories
 {
@@ -40,7 +36,7 @@ namespace Datos.Repositories
                     cmd.Connection = conect;
                     cmd.CommandText = "SP_SELECT_SUBSIDIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar,30).Value = entiti.Tipo_subsidio;
+                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar, 30).Value = entiti.Tipo_subsidio;
 
                     da.SelectCommand = cmd;
 
@@ -55,6 +51,6 @@ namespace Datos.Repositories
             }
         }
 
-        
+
     }
 }

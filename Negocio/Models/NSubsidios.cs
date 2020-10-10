@@ -5,23 +5,20 @@ using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Models
 {
-    public class NSubsidios:IDisposable
+    public class NSubsidios : IDisposable
     {
         private ISubsidios rsubsidios;
 
         private List<NSubsidios> listasubsidios;
 
         public int Id_subsidios { get; set; }
-        public int Cod_subsidios { get ; set ; }
-        public string Descripcion_subsidio { get ; set ; }
-        public string Tipo_subsidio { get ; set ; }
-        public string Descuento { get ; set ; }
+        public int Cod_subsidios { get; set; }
+        public string Descripcion_subsidio { get; set; }
+        public string Tipo_subsidio { get; set; }
+        public string Descuento { get; set; }
 
         public EntityState state { get; set; }
         public NSubsidios()
@@ -35,7 +32,7 @@ namespace Negocio.Models
             //throw new NotImplementedException();
         }
 
-        
+
 
         public List<NSubsidios> Getall()
         {

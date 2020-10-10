@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using RestSharp;
 using System;
-using System.Windows.Forms;
-using System.Web;
-using System.Net;
 using System.IO;
+using System.Net;
+using System.Web;
+using System.Windows.Forms;
 
 namespace Comun.Comunicacion
 {

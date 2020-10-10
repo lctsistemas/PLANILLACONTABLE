@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Entities
 {
@@ -15,7 +11,7 @@ namespace Datos.Entities
         Int32 id_periodo;
         Int32 dias;
 
-        public DDiasSubsidiados(int id_det_subsidios, int id_subsidios, int id_empleado,int id_mes, int id_periodo, int dias)
+        public DDiasSubsidiados(int id_det_subsidios, int id_subsidios, int id_empleado, int id_mes, int id_periodo, int dias)
         {
             this.id_det_subsidios = id_det_subsidios;
             this.id_subsidios = id_subsidios;

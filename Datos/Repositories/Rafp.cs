@@ -1,17 +1,14 @@
-﻿using System;
+﻿using Datos.Entities;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Datos.Entities;
 using System.Data;
 using System.Data.SqlClient;
 
 
 namespace Datos.Repositories
 {
-    public class Rafp:IDisposable
-    {       
+    public class Rafp : IDisposable
+    {
         #region Metodo insertar masivo
         public void InsertarMassiveData(IEnumerable<Dafp> afplist)
         {
@@ -76,9 +73,9 @@ namespace Datos.Repositories
         //MOSTRAR MES.
         public DataTable Mostrar_mes()
         {
-            List<Dafp> lista_mes =new List<Dafp>();
-            DataTable dt=null;
-           // Dafp dafp = new Dafp();
+            List<Dafp> lista_mes = new List<Dafp>();
+            DataTable dt = null;
+            // Dafp dafp = new Dafp();
             using (SqlConnection cn = RConexion.Getconectar())
             {
                 cn.Open();
@@ -91,38 +88,38 @@ namespace Datos.Repositories
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        using ( dt = new DataTable())
+                        using (dt = new DataTable())
                         {
                             dt.Load(reader);
-                            reader.Close();                          
+                            reader.Close();
                         }
                     }
-                        //while (reader.Read())
-                        //{
-                        //    dafp.Idmes=(reader.GetInt32(0));
-                        //    dafp.Mes=(reader.GetString(1));
-                        //    lista_mes.Add(dafp);
-                        //} 
+                    //while (reader.Read())
+                    //{
+                    //    dafp.Idmes=(reader.GetInt32(0));
+                    //    dafp.Mes=(reader.GetString(1));
+                    //    lista_mes.Add(dafp);
+                    //} 
                 }
             }
             return dt;
         }
-        
+
         #region Mostrar comisiones AFP
         public DataTable Show_comisionafp(Dafp entity)
         {
             DataTable dt = null;
             using (SqlConnection conect = RConexion.Getconectar())
             {
-                conect.Open();                
+                conect.Open();
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conect;
                     cmd.CommandText = "SP_SHOW_COMISIONPENSIONES";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@idmes",entity.Idmes);
-                    cmd.Parameters.AddWithValue("@idperiodo",entity.Idperiodo);
+                    cmd.Parameters.AddWithValue("@idmes", entity.Idmes);
+                    cmd.Parameters.AddWithValue("@idperiodo", entity.Idperiodo);
                     SqlDataReader reader = cmd.ExecuteReader();
                     using (dt = new DataTable())
                     {
@@ -130,7 +127,7 @@ namespace Datos.Repositories
                         {
                             dt.Load(reader);
                             reader.Close();
-                        }                      
+                        }
                     }
                 }
             }

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Datos.Repositories
 {
-    public class RPlanilla : IPlanilla,IDisposable
+    public class RPlanilla : IPlanilla, IDisposable
     {
         Int32 result;
         SqlCommand cmd;

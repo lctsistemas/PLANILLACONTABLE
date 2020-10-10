@@ -36,11 +36,12 @@ namespace Datos.Entities
             this.tope_horario_nocturno = tope_horario_nocturno;
         }
 
-        public DPlanilla(){
+        public DPlanilla()
+        {
 
-         }
+        }
 
-    public String mensaje { get; set; }
+        public String mensaje { get; set; }
         public int Id_planilla { get => id_planilla; set => id_planilla = value; }
         public int Id_periodo { get => id_periodo; set => id_periodo = value; }
         public int Id_empresa { get => id_empresa; set => id_empresa = value; }

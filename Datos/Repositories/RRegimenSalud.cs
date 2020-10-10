@@ -1,17 +1,13 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Repositories
 {
 
-    public class RRegimenSalud:IRegimenSalud
+    public class RRegimenSalud : IRegimenSalud
     {
         Int32 result;
         SqlCommand cmd;
@@ -79,7 +75,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;
                     cmd.Parameters.Add("@cod_regimen_salud", SqlDbType.Int).Value = entiti.Cod_regi_salud;
-                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar,80).Value = entiti.Regimen_salud;
+                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
 
 
                     result = cmd.ExecuteNonQuery();

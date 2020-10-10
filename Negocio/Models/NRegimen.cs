@@ -14,7 +14,7 @@ namespace Negocio.Models
     {
         String mensaje;
         public int Codigo_Regimen { get; set; }
-       
+
         [Required(ErrorMessage = "El campo Descripcion es obligatorio.")]
         [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Descripcion solo permite letras.")]
         public String Descripcion { get; set; }
@@ -84,7 +84,7 @@ namespace Negocio.Models
                         Descripcion_corta = item[2].ToString(),
                         Tipo_regimen = item[3].ToString()
                     });
-                }                
+                }
             }
             return list_regimen;
         }
@@ -92,7 +92,7 @@ namespace Negocio.Models
         {
 
         }
-       
+
         public int Getcodigo()
         {
             return new KRegimen().Getcodigo();

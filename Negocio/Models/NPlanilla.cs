@@ -115,7 +115,7 @@ namespace Negocio.Models
             pla.Asig_familiar = Asig_familiar;
             pla.Tope_horario_nocturno = Tope_horario_nocturno;
 
-            switch (state) 
+            switch (state)
             {
                 case EntityState.Guardar:
                     rplanilla.Add(pla);
@@ -152,7 +152,7 @@ namespace Negocio.Models
                         Id_periodo = Convert.ToInt32(item[1]),
                         Id_empresa = Convert.ToInt32(item[2]),
                         Id_mes = Convert.ToInt32(item[3]),
-                        Nombre_mes=item[4].ToString(),
+                        Nombre_mes = item[4].ToString(),
                         Fecha_inicial = Convert.ToDateTime(item[5]),
                         Fecha_final = Convert.ToDateTime(item[6]),
                         Fecha_pago = Convert.ToDateTime(item[7]),
@@ -166,8 +166,8 @@ namespace Negocio.Models
                 return list_planilla;
             }
         }
-        
-        
+
+
 
         public void Dispose()
         {

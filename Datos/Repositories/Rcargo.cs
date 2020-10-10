@@ -22,7 +22,7 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@nom", entiti.Nombre_cargo);
-                    cmd.Parameters.AddWithValue("@descripcion",entiti.Descripcion);
+                    cmd.Parameters.AddWithValue("@descripcion", entiti.Descripcion);
                     result = cmd.ExecuteNonQuery();
 
                     cmd.Parameters.Clear();

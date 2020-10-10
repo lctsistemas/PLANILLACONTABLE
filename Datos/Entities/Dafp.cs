@@ -17,8 +17,8 @@
 
         #region Metodo Set and Get
         public int Id_comision { get { return id_comision; } set { id_comision = value; } }
-        public int Codigo_regimen { get { return codigo_regimen;} set { codigo_regimen = value; } }
-        public decimal Comision { get { return comision;} set { comision = value; } }
+        public int Codigo_regimen { get { return codigo_regimen; } set { codigo_regimen = value; } }
+        public decimal Comision { get { return comision; } set { comision = value; } }
         public decimal Saldo { get { return saldo; } set { saldo = value; } }
         public decimal Seguro { get { return seguro; } set { seguro = value; } }
         public decimal Aporte { get { return aporte; } set { aporte = value; } }

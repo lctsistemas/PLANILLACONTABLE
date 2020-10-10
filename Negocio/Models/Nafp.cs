@@ -1,32 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Datos.Entities;
+﻿using Datos.Entities;
 using Datos.Repositories;
+using System;
+using System.Collections.Generic;
 using System.Data;
 namespace Negocio.Models
 {
-    public class Nafp:IDisposable
+    public class Nafp : IDisposable
     {
         List<Nafp> list_comisionAfp;
         #region Metodo Set and Get
         public int Id_comision { get; set; }
-        public int Codigo_regimen {get; set; }
+        public int Codigo_regimen { get; set; }
         public string descripcion { get; set; }//nombre afp
-        public decimal Comision {get; set; }
-        public decimal Saldo {get; set; }
+        public decimal Comision { get; set; }
+        public decimal Saldo { get; set; }
         public decimal Seguro { get; set; }
         public decimal Aporte { get; set; }
-        public decimal Tope {get; set;}
+        public decimal Tope { get; set; }
         public int Idmes { get; set; }
         public string Mes { get; set; }
-        public int Idperiodo {private get; set; }        
+        public int Idperiodo { private get; set; }
         #endregion
 
         public void InsertarMassiveData(IEnumerable<Nafp> list)
-        {            
+        {
             List<Dafp> listafp = new List<Dafp>();
             using (Rafp rafp = new Rafp())
             {
@@ -70,8 +67,8 @@ namespace Negocio.Models
 
         //    return lisn;
         //}
-        #endregion 
-        
+        #endregion
+
         #region Mostrar mes para afp
         public IEnumerable<Nafp> Mostrar_mes()
         {
@@ -85,33 +82,33 @@ namespace Negocio.Models
                     {
                         list_rol.Add(new Nafp()
                         {
-                            Idmes=Convert.ToInt32(item[0]),
+                            Idmes = Convert.ToInt32(item[0]),
                             Mes = item[1].ToString()
                         });
-                    }                    
+                    }
                 }
             }
             return list_rol;
         }
         #endregion
-      
+
         #region Mostrar comisiones AFP
         public IEnumerable<Nafp> Show_comisionafp()
         {
             list_comisionAfp = new List<Nafp>();
-            Dafp daf = new Dafp();            
+            Dafp daf = new Dafp();
             daf.Idmes = Idmes;
             daf.Idperiodo = Idperiodo;
-           
-            using (DataTable dt = new Rafp().Show_comisionafp(daf) )
-            {                
+
+            using (DataTable dt = new Rafp().Show_comisionafp(daf))
+            {
                 foreach (DataRow item in dt.Rows)
                 {
                     list_comisionAfp.Add(new Nafp()
                     {
-                        Codigo_regimen= Convert.ToInt32(item[0]),
+                        Codigo_regimen = Convert.ToInt32(item[0]),
                         descripcion = item[1].ToString(),
-                        Id_comision= Convert.ToInt32(item[2]),
+                        Id_comision = Convert.ToInt32(item[2]),
                         Comision = Convert.ToDecimal(item[3]),
                         Saldo = Convert.ToDecimal(item[4]),
                         Seguro = Convert.ToDecimal(item[5]),
@@ -120,7 +117,7 @@ namespace Negocio.Models
                         //Idmes = Convert.ToInt32(item[]),
                         //Idperiodo=Convert.ToInt32(item[])
                     });
-                }               
+                }
             }
             return list_comisionAfp;
         }
@@ -136,7 +133,7 @@ namespace Negocio.Models
 
         public void Dispose()
         {
-           //throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

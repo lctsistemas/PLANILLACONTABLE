@@ -5,9 +5,6 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Models
 {
@@ -16,8 +13,8 @@ namespace Negocio.Models
         String mensaje;
         public int Id_det_subsidios { get; set; }
         public int Id_subsidios { get; set; }
-        public int Id_empleado { get; set ; }
-        public int Id_periodo { get ; set ; }
+        public int Id_empleado { get; set; }
+        public int Id_periodo { get; set; }
 
         public int Id_mes { get; set; }
         public int Dias { get; set; }

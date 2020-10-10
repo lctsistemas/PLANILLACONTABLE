@@ -4,13 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.Repositories
 {
-    public class RDiasSubsidiados : IDiasSubsidiados,IDisposable
+    public class RDiasSubsidiados : IDiasSubsidiados, IDisposable
     {
         Int32 result;
         SqlCommand cmd;
@@ -33,7 +30,7 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@id_mes", SqlDbType.Int).Value = entiti.Id_mes;
                     cmd.Parameters.Add("@id_periodo", SqlDbType.Int).Value = entiti.Id_periodo;
                     cmd.Parameters.Add("@dias", SqlDbType.Int).Value = entiti.Dias;
- 
+
 
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
@@ -88,7 +85,7 @@ namespace Datos.Repositories
                     item.Id_mes,
                     item.Id_periodo,
                     item.Dias
-                    
+
                 });
 
                 }

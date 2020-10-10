@@ -29,7 +29,7 @@ namespace Comun.Comunicacion
 
         }
 
-        
+
 
         public void Dispose()
         {

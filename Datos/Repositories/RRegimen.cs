@@ -30,7 +30,7 @@ namespace Datos.Repositories
 
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();                    
+                    cmd.Parameters.Clear();
                 }
             }
             return result;
