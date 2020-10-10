@@ -225,7 +225,7 @@ namespace Presentacion
 
         private void btncalculo_Click(object sender, EventArgs e)
         {
-            OpenFormFill<FrmPlanillaMensual>();
+            OpenFormFill<FrmPlanillaMensual2>();
         }
     }
 }
