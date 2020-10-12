@@ -1051,7 +1051,7 @@ END
 GO
 
 
-go
+GO
 alter PROC SP_SHOW_PLANILLA
 @codigo_empresa int,
 @periodo int
@@ -1068,7 +1068,7 @@ AS BEGIN
 	END
 GO
 exec SP_SHOW_PLANILLA 2,1
-
+GO
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,
 @mensaje varchar(100) output

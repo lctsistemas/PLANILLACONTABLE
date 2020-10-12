@@ -53,7 +53,7 @@ namespace Datos.Repositories
                             try
                             {
                                 bulkcopy.DestinationTableName = "ComisionesPension";//nombre de tabla
-                                bulkcopy.WriteToServer(tabla);
+                                bulkcopy.WriteToServer(tabla);                         
                                 transaction.Commit();
                             }
                             catch (Exception ex)
