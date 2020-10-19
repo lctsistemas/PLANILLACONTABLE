@@ -23,7 +23,7 @@ namespace Negocio.Models
 
         public IDiasSubsidiados rdiassubsidiados;
 
-        private List<NDiasSubsidiados> list_diasSubsidiados;
+       // private List<NDiasSubsidiados> list_diasSubsidiados;
         public NDiasSubsidiados()
         {
             rdiassubsidiados = new RDiasSubsidiados();

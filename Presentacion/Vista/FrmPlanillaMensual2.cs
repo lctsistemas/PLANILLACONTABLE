@@ -383,17 +383,37 @@ namespace Presentacion.Vista
                     break;
             }
 
-        }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        }       
       
         private void tabplanilla_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void tbtnsalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgvplanilla1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                //MessageBox.Show(""+e.RowIndex);
+                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
+                {
+                    Messages.M_info("seleccione el boton susbidio");
+                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();
+                    
+                    fr2.ShowDialog(dgvplanilla1);
+                }
+
+                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+                {
+                    Messages.M_info("Seleccine boton no subsidiado");
+                }
+            }
         }
     }
 }

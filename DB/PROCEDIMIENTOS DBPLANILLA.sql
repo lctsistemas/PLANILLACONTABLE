@@ -169,8 +169,6 @@ DELETE from Contrato where id_empleado=@id_emp;
 END
 GO
 
-EXEC SP_ELIM_EMPLEADO 5
-
 --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 ALTER PROC SP_SHOW_EMP
 @codigo_empresa int
@@ -296,7 +294,6 @@ ELSE
 	END
 END
 GO
-
 
 CREATE PROC SP_INSERT_EMPRESA
 @cod_empresa varchar(8),
@@ -434,7 +431,6 @@ ELSE
 	END
 END
 GO
-
 
  --UPDATE USUARIO
 ALTER PROC SP_UPDATE_USUARIO
@@ -747,6 +743,7 @@ ELSE
 	END
 END
 GO
+
 --generar codigo regimen salud
 CREATE PROC SP_GENERAR_REG_SAL
 (@regimen_salud int output)
@@ -989,7 +986,7 @@ SELECT id_mes, nombre_mes FROM Mes
 END
 GO
 
-CREATE PROCEDURE SP_SHOW_COMISIONPENSIONES
+ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
 @idmes int =null,
 @idperiodo int=null
 AS BEGIN
@@ -997,7 +994,7 @@ IF(EXISTS(SELECT co.codigo_regimen FROM ComisionesPension co))
 	BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=null AND idperiodo=null) AND r.tipo_regimen='SPP'
+	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
 	END
 ELSE BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
@@ -1006,6 +1003,48 @@ ELSE BEGIN
 	END
 END
 GO
+
+ALTER PROC SP_INSERT_COMISIONES
+@codigo_regimen int,
+@comision decimal(6,2),
+@saldo decimal(6,2) ,
+@seguro decimal(6,2), 
+@aporte decimal(6,2),
+@tope  decimal(10,2),
+@idmes int,
+@idperiodo int
+AS BEGIN
+	DECLARE @idcomi int
+	SET @idcomi=(SELECT count(c.idcomision) FROM dbo.ComisionesPension c)
+	IF(@idcomi=0)
+		SET @idcomi=1		
+	ELSE
+		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
+
+	INSERT INTO dbo.ComisionesPension(idcomision, codigo_regimen,
+	comision, saldo, seguro, aporte, tope, idmes, idperiodo) VALUES
+	(@idcomi, @codigo_regimen, @comision, @saldo, @seguro, @aporte, @tope, @idmes, @idperiodo)
+END
+GO
+
+CREATE PROC SP_UPDATE_COMISIONES
+@comision decimal(6,2),
+@saldo decimal(6,2) ,
+@seguro decimal(6,2),
+@aporte decimal(6,2),
+@tope  decimal(10,2),
+@idcomision int
+AS BEGIN	
+	UPDATE dbo.ComisionesPension SET comision=@comision, saldo=@saldo, seguro=@seguro, 
+	aporte=@aporte, tope=@tope WHERE idcomision=@idcomision
+END
+GO
+
+go
+select * from dbo.ComisionesPension --where idcomision between 17 and 24 and idmes= 10
+delete from dbo.ComisionesPension where idmes= 10 or idmes =11
+GO
+
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 alter PROC SP_INSERT_PLANILLA
@@ -1051,7 +1090,7 @@ END
 GO
 
 
-go
+GO
 alter PROC SP_SHOW_PLANILLA
 @codigo_empresa int,
 @periodo int
@@ -1068,7 +1107,7 @@ AS BEGIN
 	END
 GO
 exec SP_SHOW_PLANILLA 2,1
-
+GO
 CREATE PROC SP_DELETE_PLANILLA
 @idplanilla int,
 @mensaje varchar(100) output

@@ -369,10 +369,7 @@ namespace Presentacion.Vista
                         Messages.M_info(result);
                         limpiar();
                     }
-                }
-
-                
-
+                }                
                 
             }
         }

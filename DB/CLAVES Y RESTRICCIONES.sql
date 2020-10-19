@@ -33,8 +33,6 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERE
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFERENCES Mes
 
 
-TRUNCATE TABLE ComisionesPension
-
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_regpension FOREIGN KEY(codigo_regimen) REFERENCES RegimenPensionario
@@ -102,22 +100,17 @@ GO
 --INSERTAR REGISTRO EN LAS TABLAS
 
 INSERT INTO RegimenPensionario(descripcion_corta, descripcion,tipo_regimen) VALUES
-('HM','HABITAT MIXTA','SPP'),('HF','HABITAT FLUJO','SPP'),
-('IM','INTEGRA MIXTA','SPP'),('IF','INTEGRA FLUJO','SPP'),
-('PM','PRIMA MIXTA','SPP'),('PF','PRIMA FLUJO','SPP'),
-('PRM','PROFUTURO MIXTA','SPP'),('PRF','PROFUTURO FLUJO','SPP'),
+('HM','HABITAT - MIXTA','SPP'),('HF','HABITAT - FLUJO','SPP'),
+('IM','INTEGRA - MIXTA','SPP'),('IF','INTEGRA - FLUJO','SPP'),
+('PM','PRIMA - MIXTA','SPP'),('PF','PRIMA - FLUJO','SPP'),
+('PRM','PROFUTURO - MIXTA','SPP'),('PRF','PROFUTURO - FLUJO','SPP'),
 ('O.N.P','DECRETO LEY 19990-ONP','SNP')
 GO
 
 -- INSERTAR COMISIONES PENSIONES
-INSERT INTO ComisionesPension(codigo_regimen, comision, saldo, seguro, aporte, tope, idmes, idperiodo)VALUES
-(1, 0.38, 1.25, 1.35, 10.00, 9792.61,9, 2),(2, 1.47, 1.25, 1.35, 10.00, 9792.61,9, 2),--HABITAT
-(3, 0.00, 0.82, 1.35, 10.00, 9792.61,9,2),(4, 1.55, 0.82, 1.35, 10.00, 9792.61,9,2),--INTEGRA
-(5, 0.18, 1.25, 1.35, 10.00, 9792.61, 9, 2),(6, 1.60, 1.25, 1.35, 10.00, 9792.61, 9, 2),--PRIMA
-(7, 0.67, 1.20, 1.35, 10.00, 9792.61,9, 2),(8, 1.69, 1.20, 1.35, 10.00, 9792.61,9, 2)--PROFUTURO
-
+INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, seguro, aporte, tope, idmes, idperiodo)VALUES
+(1, 1, 0.38, 1.25, 1.35, 10.00, 9792.61,9, 2),(2, 2, 1.47, 1.25, 1.35, 10.00, 9792.61,9, 2),--HABITAT
+(3, 3, 0.00, 0.82, 1.35, 10.00, 9792.61,9,2),(4, 4, 1.55, 0.82, 1.35, 10.00, 9792.61,9,2),--INTEGRA
+(5, 5, 0.18, 1.25, 1.35, 10.00, 9792.61, 9, 2),(6, 6, 1.60, 1.25, 1.35, 10.00, 9792.61, 9, 2),--PRIMA
+(7, 7, 0.67, 1.20, 1.35, 10.00, 9792.61,9, 2),(8, 8, 1.69, 1.20, 1.35, 10.00, 9792.61,9, 2)--PROFUTURO
 GO
-
-
-
-
