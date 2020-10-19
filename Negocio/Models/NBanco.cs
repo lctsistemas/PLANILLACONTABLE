@@ -13,8 +13,6 @@ namespace Negocio.Models
     public class NBanco : IDisposable
     {
         String mensaje;
-
-
         public Int32 IdBanco { get; set; }
 
 
@@ -25,10 +23,7 @@ namespace Negocio.Models
         public String Nom_banco { get; set; }
 
         public EntityState state { get; set; }
-
-
-        public IBanco RBanco;
-
+        private IBanco RBanco;
         private List<NBanco> list_banco;
 
         public NBanco()

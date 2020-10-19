@@ -8,7 +8,7 @@ namespace Negocio.Models
     public class Nafp : IDisposable
     {
         List<Nafp> list_comisionAfp;
-        #region Metodo Set and Get
+        Dafp daf;
         public int Id_comision { get; set; }
         public int Codigo_regimen { get; set; }
         public string descripcion { get; set; }//nombre afp
@@ -20,56 +20,82 @@ namespace Negocio.Models
         public int Idmes { get; set; }
         public string Mes { get; set; }
         public int Idperiodo { private get; set; }
-        #endregion
-
-        public void InsertarMassiveData(IEnumerable<Nafp> list)
+        public List<Nafp> ListNafp { get; set; }
+    
+        public Nafp()
         {
-            List<Dafp> listafp = new List<Dafp>();
-            using (Rafp rafp = new Rafp())
-            {
-                foreach (var item in list)
-                {
-                    listafp.Add(new Dafp()
-                    {
-                        Codigo_regimen = item.Codigo_regimen,
-                        Comision = item.Comision,
-                        Saldo = item.Saldo,
-                        Seguro = item.Seguro,
-                        Aporte = item.Aporte,
-                        Tope = item.Tope,
-                        Idmes = item.Idmes,
-                        Idperiodo = item.Idperiodo
-
-                    });
-                }
-                rafp.InsertarMassiveData(listafp);
-            }
+            daf = new Dafp();
         }
 
-        #region revisar no sale
-        //LLENAR MES
-        //public IEnumerable<Nafp> Mostrar_mes()
-        //{
-        //    List<Nafp> lisn = new List<Nafp>();
-        //    Rafp r = new Rafp();
-        //    var dt = new DataTable();
-        //   // dt.Load(r.Mostrar_mes().ToArray());
+        //METODO SAVE COMISION.
+        public string SaveComision()
+        {
+            int i = 0;
+            string message;
 
-        //        foreach (Dafp item in r.Mostrar_mes())
-        //        {
-        //            lisn.Add(new Nafp()
-        //            {
-        //                Idmes = item.Idmes,
-        //                Mes = item.Mes
+            if (daf.DlistAfp == null)
+                daf.DlistAfp = new List<Dafp>();
 
-        //            });
-        //        }            
+            Rafp raf = new Rafp();
+            foreach (Nafp item in ListNafp)
+            {
+                daf.DlistAfp.Add(new Dafp()
+                {
+                    Codigo_regimen=item.Codigo_regimen,
+                    Comision=item.Comision,
+                    Saldo=item.Saldo,
+                    Seguro=item.Seguro,
+                    Aporte=item.Aporte,
+                    Tope=item.Tope,
+                    Idmes=item.Idmes,
+                    Idperiodo=item.Idperiodo,
+                });
+            }
+            i = raf.SaveComision(daf);
+            daf.DlistAfp.Clear();
 
-        //    return lisn;
-        //}
-        #endregion
+            if (i > 0)
+                message = "Ok";
+            else
+                message = "Error Al Insertar";
 
-        #region Mostrar mes para afp
+            return message;
+        }
+
+        //EDIT COMISION
+        public string EditComision()
+        {
+            int i = 0;
+            string message;
+
+            if (daf.DlistAfp == null)
+                daf.DlistAfp = new List<Dafp>();
+
+            Rafp raf = new Rafp();
+            foreach (Nafp item in ListNafp)
+            {
+                daf.DlistAfp.Add(new Dafp()
+                {                    
+                    Comision = item.Comision,
+                    Saldo = item.Saldo,
+                    Seguro = item.Seguro,
+                    Aporte = item.Aporte,
+                    Tope = item.Tope,
+                    Id_comision=item.Id_comision
+                });
+            }
+            i = raf.EditComision(daf);
+            daf.DlistAfp.Clear();
+
+            if (i > 0)
+                message = "Ok Edit";
+            else
+                message = "Error Al Edit";
+
+            return message;
+        }
+
+        //MOSTRAR MES PARA AFP
         public IEnumerable<Nafp> Mostrar_mes()
         {
             List<Nafp> list_rol = null;
@@ -89,10 +115,10 @@ namespace Negocio.Models
                 }
             }
             return list_rol;
-        }
-        #endregion
+        }        
 
-        #region Mostrar comisiones AFP
+
+        // MOSTRAR COMISION AFP
         public IEnumerable<Nafp> Show_comisionafp()
         {
             list_comisionAfp = new List<Nafp>();
@@ -121,7 +147,7 @@ namespace Negocio.Models
             }
             return list_comisionAfp;
         }
-        #endregion
+        
 
         //FILTRAR DATOS POR MES Y PERIODO
         public IEnumerable<Nusuario> Search(int idmes)

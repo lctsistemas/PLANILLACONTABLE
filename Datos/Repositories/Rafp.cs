@@ -9,73 +9,122 @@ namespace Datos.Repositories
 {
     public class Rafp : IDisposable
     {
+        int result;
         #region Metodo insertar masivo
-        public void InsertarMassiveData(IEnumerable<Dafp> afplist)
+        public int Add(Dafp daf)
         {
-            //create table, tiene que estar en el mismo orden de tu tabla de sql
-            using (DataTable tabla = new DataTable())
+            result = 0;
+            using (SqlConnection conect = RConexion.Getconectar())
             {
-                tabla.Columns.Add("idcomision", typeof(int));
-                tabla.Columns.Add("codigo_regimen", typeof(int));
-                tabla.Columns.Add("comision", typeof(decimal));
-                tabla.Columns.Add("saldo", typeof(decimal));
-                tabla.Columns.Add("seguro", typeof(decimal));
-                tabla.Columns.Add("aporte", typeof(decimal));
-                tabla.Columns.Add("tope", typeof(decimal));
-                tabla.Columns.Add("idmes", typeof(int));
-                tabla.Columns.Add("idperiodo", typeof(int));
-
-                //ahora agregamos datos por un ciclo
-                foreach (var item in afplist)
+                conect.Open();
+              
+                using (SqlTransaction sqltra = conect.BeginTransaction())
                 {
-                    tabla.Rows.Add(new object[]{
-                    item.Id_comision,
-                    item.Codigo_regimen,
-                    item.Comision,
-                    item.Saldo,
-                    item.Seguro,
-                    item.Aporte,
-                    item.Tope,
-                    item.Idmes,
-                    item.Idperiodo
-                });
-
-                }
-
-                //insert to DB
-                using (SqlConnection conect = RConexion.Getconectar())
-                {
-                    conect.Open();
-                    using (SqlTransaction transaction = conect.BeginTransaction())
+                    try
                     {
-                        using (SqlBulkCopy bulkcopy = new SqlBulkCopy(conect, SqlBulkCopyOptions.Default, transaction))
+                        using (SqlCommand cmd = new SqlCommand())
                         {
-                            try
-                            {
-                                bulkcopy.DestinationTableName = "ComisionesPension";//nombre de tabla
-                                bulkcopy.WriteToServer(tabla);                         
-                                transaction.Commit();
-                            }
-                            catch (Exception ex)
-                            {
-                                transaction.Rollback();
-                                conect.Close();
-                                System.Windows.Forms.MessageBox.Show(ex.Message);
-                            }
+                            cmd.CommandText = "SP_INSERT_COMISIONES";
+                            cmd.Connection = conect;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Transaction = sqltra;
+
+                            cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = daf.Codigo_regimen;
+                            cmd.Parameters.Add("@comision", SqlDbType.Decimal).Value = daf.Comision;
+                            cmd.Parameters.Add("@saldo", SqlDbType.Decimal).Value = daf.Saldo;
+                            cmd.Parameters.Add("@seguro", SqlDbType.Decimal).Value = daf.Seguro;
+                            cmd.Parameters.Add("@aporte", SqlDbType.Decimal).Value = daf.Aporte;
+                            cmd.Parameters.Add("@tope", SqlDbType.Decimal).Value = daf.Tope;
+                            cmd.Parameters.Add("@idmes", SqlDbType.Int).Value = daf.Idmes;
+                            cmd.Parameters.Add("@idperiodo", SqlDbType.Int).Value = daf.Idperiodo;                            
+                            result = cmd.ExecuteNonQuery();
+                            //System.Windows.Forms.MessageBox.Show("EXECUTE: " + result);                            
+
                         }
+
+                        sqltra.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        sqltra.Rollback();
+                    }
+                        
+                }    
+
+            }
+            return result;
+        }
+        #endregion
+
+        //Guardar Comision
+        public int SaveComision(Dafp lisaf)
+        {
+            int i = 0;
+            foreach (Dafp item in lisaf.DlistAfp)
+            {
+              i = Add(item);
+            }
+
+            return i;
+        }
+
+        //EDITAR COMISIONES
+        public int Edit(Dafp daf)
+        {
+            result = 0;
+            using (SqlConnection conect = RConexion.Getconectar())
+            {
+                conect.Open();
+                using (SqlTransaction sqltra = conect.BeginTransaction())
+                {
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.CommandText = "SP_UPDATE_COMISIONES";
+                            cmd.Connection = conect;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Transaction = sqltra;
+                           
+                            cmd.Parameters.Add("@comision", SqlDbType.Decimal).Value = daf.Comision;
+                            cmd.Parameters.Add("@saldo", SqlDbType.Decimal).Value = daf.Saldo;
+                            cmd.Parameters.Add("@seguro", SqlDbType.Decimal).Value = daf.Seguro;
+                            cmd.Parameters.Add("@aporte", SqlDbType.Decimal).Value = daf.Aporte;
+                            cmd.Parameters.Add("@tope", SqlDbType.Decimal).Value = daf.Tope;                                                        
+                            cmd.Parameters.Add("@idcomision", SqlDbType.Int).Value = daf.Id_comision;                                                        
+                            result = cmd.ExecuteNonQuery();                            
+                        }
+
+                        sqltra.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        sqltra.Rollback();
                     }
                 }
             }
-
+            return result;
         }
-        #endregion
+
+
+        //EDIT COMISION
+        public int EditComision(Dafp lisaf)
+        {
+            int i = 0;
+            foreach (Dafp item in lisaf.DlistAfp)
+            {
+                i = Edit(item);
+            }
+            return i;
+        }
 
         //MOSTRAR MES.
         public DataTable Mostrar_mes()
         {
             List<Dafp> lista_mes = new List<Dafp>();
-            DataTable dt = null;
-            // Dafp dafp = new Dafp();
+            DataTable dt = null;            
             using (SqlConnection cn = RConexion.Getconectar())
             {
                 cn.Open();
@@ -93,13 +142,7 @@ namespace Datos.Repositories
                             dt.Load(reader);
                             reader.Close();
                         }
-                    }
-                    //while (reader.Read())
-                    //{
-                    //    dafp.Idmes=(reader.GetInt32(0));
-                    //    dafp.Mes=(reader.GetString(1));
-                    //    lista_mes.Add(dafp);
-                    //} 
+                    }                    
                 }
             }
             return dt;

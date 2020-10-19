@@ -52,20 +52,21 @@ GO
 
 --TABLA: COMISION AFP
 CREATE TABLE ComisionesPension(
-idcomision int identity(1,1),
+idcomision int not null,
 codigo_regimen int not null,
-comision decimal(4,2) null,
-saldo decimal(4,2) null,
-seguro decimal(4,2) null,
-aporte decimal(4,2) null,
-tope  decimal(8,2) null, 
+comision decimal(6,2) null,
+saldo decimal(6,2) null,
+seguro decimal(6,2) null,
+aporte decimal(6,2) null,
+tope  decimal(10,2) null, 
 idmes int not null,
 idperiodo int not null
 )
 GO
 
-select *  from ComisionesPension
-delete from ComisionesPension
+select *  from RegimenPensionario
+
+
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
 CREATE TABLE Empresa_maestra(
 id_em_maestra int identity(1,1),
@@ -183,6 +184,8 @@ Diciembre decimal(10,2)null,
 num_meses int null,
 num_dias int null
 )
+GO
+
 --drop table Meses_maestra
 CREATE TABLE Grati_manto(
 id_grati int not null,
@@ -190,12 +193,14 @@ id_meses int not null,
 remuneracion decimal(10,2),
 bonificacion decimal(10,2)
 )
+GO
 
 CREATE TABLE Faltas(
 id_falta int not null,
 id_meses int not null,
 tipo_falta varchar(100)
 )
+GO
 
 CREATE TABLE cts(
 id_cts int not null,
@@ -204,6 +209,7 @@ f_inicial date,
 f_final date,
 f_pago date
 )
+GO
 
 CREATE TABLE Gratificaciones(
 id_grati int not null,
@@ -212,12 +218,14 @@ f_inicial date,
 f_final date,
 f_pago date
 )
+GO
 
 CREATE TABLE cts_manto(
 id_cts_manto int not null,
 id_meses int not null,
 id_periodo int not null
 )
+GO
 
 CREATE TABLE Descuentos(
 id_descuentos int not null,
@@ -226,42 +234,21 @@ renta_quinta decimal(10,2),
 desc_judicial decimal(10,2),
 otros_descuentos decimal(10,2)
 )
+GO
 
 CREATE TABLE Periodo(
 id_periodo int identity(1,1),
 periodo int not null,
 )
-
-INSERT INTO Periodo(periodo) values('2018',1);
-INSERT INTO Periodo(periodo) values('2018',2);
-
-
-INSERT INTO Periodo(periodo) values('2019',1);
-INSERT INTO Periodo(periodo) values('2019',2);
-
-
-INSERT INTO Periodo(periodo) values('2020',1);
-
+GO
 
 CREATE TABLE Mes(
 id_mes int,
 nombre_mes varchar(20) not null,
 --id_empresa int
 )
-
-INSERT INTO Mes(nombre_mes) values('Enero');1
-INSERT INTO Mes(nombre_mes) values('Febrero');2
-
 GO
---enero
-/*
-diciembre
-*/
-select * from mes
-/*
-INSERT INTO Mes(nombre_mes,id_periodo) values('Julio',1);
-INSERT INTO Mes(nombre_mes,id_periodo) values('Julio',2);
-*/
+
 
 CREATE TABLE Planilla(
 id_planilla int not null,
@@ -279,20 +266,20 @@ remu_basica decimal(10,2),
 asig_familiar decimal(10,2),
 tope_horario_nocturno int
 )
-sp_rename 'Planilla.mes','id_mes'
-alter table Planilla alter column id_mes int;
-
+GO
 
 CREATE TABLE tipo_planilla(
 id_tipo_planilla int not null,
 nombre_planilla varchar(30) 
 )
+GO
 
 CREATE TABLE REGIMEN_SALUD(
 id_regimen_salud int not null,
 cod_regi_salud int not null,
 regimen_salud varchar(80)
-);
+)
+GO
 
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(2,05,'ESSALUD PENSIONISTAS');

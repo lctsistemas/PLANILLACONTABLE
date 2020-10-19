@@ -14,7 +14,7 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
             Fill_mes();
-            
+           
         }
 
         private void Fill_mes()
@@ -23,7 +23,7 @@ namespace Presentacion.Vista
             {
                 cbomes.DataSource = nafp.Mostrar_mes();
                 cbomes.DisplayMember = "Mes";             
-                cbomes.ValueMember = "Idmes";
+                cbomes.ValueMember = "Idmes";                
             }
         }    
 
@@ -70,8 +70,7 @@ namespace Presentacion.Vista
         }
 
         private void Frmafp_Load(object sender, System.EventArgs e)
-        {
-            //dgvcomision.Rows.Add();
+        {            
             lblperiodo.Text = "Periodo:  "+ UserCache.Periodo;            
             MesInicial();
             Fill_comisionafp();            
@@ -80,16 +79,41 @@ namespace Presentacion.Vista
 
         private void btnupdate_Click(object sender, System.EventArgs e)
         {
-           //Nafp lisnafp;
-            List<Nafp> obsa = new List<Nafp>();            
-            foreach (DataGridViewRow item in dgvcomision.Rows)
+            using (nafp = new Nafp())
             {
-              
-                    var lisnafp = new Nafp()
-                    {
-                        //Cells["id_regimen"] esos nombres estan en: name de las celdas de datagri.
+                if (nafp.ListNafp == null)
+                    nafp.ListNafp = new List<Nafp>();
 
-                        Codigo_regimen = Convert.ToInt32(item.Cells["id_regimen"].Value),                        
+                foreach (DataGridViewRow item in dgvcomision.Rows)
+                {
+                    nafp.ListNafp.Add(new Nafp()
+                    {                       
+                        Comision = Convert.ToDecimal(item.Cells["comision"].Value),
+                        Saldo = Convert.ToDecimal(item.Cells["saldo"].Value),
+                        Seguro = Convert.ToDecimal(item.Cells["seguro"].Value),
+                        Aporte = Convert.ToDecimal(item.Cells["aporte"].Value),
+                        Tope = Convert.ToDecimal(item.Cells["tope"].Value),                 
+                        Id_comision = Convert.ToInt32(item.Cells["id_comision"].Value)
+                    });
+                }
+                string result = nafp.EditComision();
+                Messages.M_info(result);
+                nafp.ListNafp.Clear();
+            }                                    
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            using (nafp = new Nafp())
+            {
+                if (nafp.ListNafp == null)
+                    nafp.ListNafp = new List<Nafp>();
+
+                foreach (DataGridViewRow item in dgvcomision.Rows)
+                {
+                    nafp.ListNafp.Add(new Nafp()
+                    {
+                        Codigo_regimen = Convert.ToInt32(item.Cells["id_regimen"].Value),
                         Comision = Convert.ToDecimal(item.Cells["comision"].Value),
                         Saldo = Convert.ToDecimal(item.Cells["saldo"].Value),
                         Seguro = Convert.ToDecimal(item.Cells["seguro"].Value),
@@ -97,15 +121,12 @@ namespace Presentacion.Vista
                         Tope = Convert.ToDecimal(item.Cells["tope"].Value),
                         Idmes = Convert.ToInt32(cbomes.SelectedValue),
                         Idperiodo = UserCache.Idperiodo
-                    };                    
-                
-                obsa.Add(lisnafp);
-            }
 
-            using (nafp = new Nafp())
-            {
-                nafp.InsertarMassiveData(obsa);
-                Messages.M_info("Insertado correctamente");
+                    });
+                }
+                string result = nafp.SaveComision();
+                Messages.M_info(result);
+                nafp.ListNafp.Clear();
             }
         }
 
@@ -128,5 +149,6 @@ namespace Presentacion.Vista
 
         }
 
+       
     }
 }
