@@ -23,7 +23,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_INSERT_BANCO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
+                    //cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
                     cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
 
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
@@ -78,6 +78,8 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
 
                     result = cmd.ExecuteNonQuery();
+                    System.Windows.Forms.MessageBox.Show("update:  " + result);
+
                     cmd.Parameters.Clear();
                     return result;
 

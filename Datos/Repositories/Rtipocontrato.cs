@@ -22,7 +22,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_INSERT_TIP_CONT";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
+                    //cmd.Parameters.Add("@id_tip_cont", SqlDbType.Int).Value = entiti.Id_tcontrato;
                     cmd.Parameters.Add("@tiempo_contrato", SqlDbType.VarChar, 30).Value = entiti.Tipo_contrato;
 
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;

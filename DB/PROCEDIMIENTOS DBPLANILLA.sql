@@ -829,14 +829,22 @@ GO
 
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
-CREATE PROC SP_INSERT_BANCO(
-@id_banco int,
+alter PROC SP_INSERT_BANCO(
+--@id_banco int,
 @nombre_banco varchar(25),
 @mensaje varchar(100) output
 )
 AS BEGIN
-	INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
-	SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
+	DECLARE @Banco int
+	SET @Banco=(SELECT count(b.id_banco) FROM Banco b)
+	IF(@Banco=0)
+		BEGIN
+			SET @Banco=1
+		END
+	ELSE	
+		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)	
+INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@Banco,@nombre_banco)
+SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
 END
 GO
 
@@ -880,13 +888,19 @@ GO
 EXEC SP_SHOW_BANCO
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
-CREATE PROC SP_INSERT_TIP_CONT(
-@id_tip_cont int,
+alter PROC SP_INSERT_TIP_CONT(
+--@id_tip_cont int,
 @tiempo_contrato varchar(30),
 @mensaje varchar(100) output
 )
 AS BEGIN
-INSERT INTO Tipo_contrato(id_tipo_contrato, tiempo_contrato) VALUES(@id_tip_cont,@tiempo_contrato)
+DECLARE @Tipocont int
+	SET @Tipocont=(SELECT COUNT(t.id_tipocontrato) FROM Tipo_contrato t)
+	IF(@Tipocont=0)
+		SET @Tipocont=1
+	ELSE
+		SET @Tipocont=(SELECT MAX(t.id_tipocontrato)+1 FROM Tipo_contrato t)
+INSERT INTO Tipo_contrato(id_tipocontrato, tiempo_contrato) VALUES(@Tipocont,@tiempo_contrato)
 SET @mensaje= 'TIPO DE CONTRATO REGISTRADO CORRECTAMENTE'
 END
 GO
@@ -899,7 +913,7 @@ alter PROC SP_UPDATE_TIP_CONT(
 @tipo_contrato varchar(30)
 )
 AS BEGIN 
-UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipo_contrato=@id_tip_cont
+UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipocontrato=@id_tip_cont
 END;
 GO
 
@@ -1048,7 +1062,7 @@ GO
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 alter PROC SP_INSERT_PLANILLA
-@id_planilla int,
+--@id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
 @id_empresa int,
@@ -1063,21 +1077,21 @@ alter PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	IF EXISTS(SELECT p.id_periodo,p.id_mes FROM Planilla p WHERE p.id_mes=@id_mes and p.id_periodo=@id_periodo) 
-		BEGIN 
-			SET @mesage ='El mes ya se encuentra registrado'
-		END
+	DECLARE @plani int
+	SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
+	IF(@plani=0)
+		SET @plani=1
 	ELSE
-		BEGIN
+		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)
 		
-			INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
-			dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-			(@id_planilla,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
-			@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
-			SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
-		END
+INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
+dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+(@plani,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
+@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
+SET @mesage= 'PLANILLA REGISTRADA CORRECTAMENTE'	
 END
 GO
+
 
 
 alter PROC SP_UPDATE_PLANILLA
@@ -1088,7 +1102,7 @@ UPDATE Planilla SET fecha_pago=@fecha_pago
 WHERE id_planilla=@id_planilla
 END
 GO
-
+EXEC SP_UPDATE_PLANILLA 4,'2020-11-29'
 
 GO
 alter PROC SP_SHOW_PLANILLA
@@ -1130,17 +1144,26 @@ GO
 
 
 
-CREATE PROCEDURE SP_ADD_REG_SAL(
-@id_regimen_salud int,
+
+ALTER PROCEDURE SP_ADD_REG_SAL(
+--@id_regimen_salud int,
 @cod_regi_salud int,
 @regimen_salud varchar(80),
 @mensaje varchar(100) output)
 AS BEGIN
+DECLARE @reg_salud int
+SET @reg_salud=(SELECT count(rs.id_regimen_salud) FROM REGIMEN_SALUD rs)
+IF(@reg_salud=0)	
+	SET @reg_salud=1	
+ELSE
+	SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
+
 INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud)
-VALUES(@id_regimen_salud,@cod_regi_salud,@regimen_salud)
+VALUES(@reg_salud,@cod_regi_salud,@regimen_salud)
 SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
 END
 GO
+
 
 CREATE PROC SP_UPDATE_REG_SALUD
 @id_regimen_salud int,
@@ -1164,7 +1187,7 @@ SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
 END
 GO
 
-CREATE PROC SP_SHOW_REG_SALUD 
+alter PROC SP_SHOW_REG_SALUD 
 AS BEGIN 
 SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.regimen_salud
 from REGIMEN_SALUD rs

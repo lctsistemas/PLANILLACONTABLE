@@ -37,7 +37,7 @@ namespace Presentacion.Vista
             result = "";
             using (nrs)
             {
-                nrs.Id_regimen_salud = codigo;
+                //nrs.Id_regimen_salud = codigo;
 
                 nrs.Cod_regi_salud = Convert.ToInt32(txtcodregsal.Text.ToString());
                 nrs.Regimen_salud =txtregsal.Text.ToString();
@@ -92,7 +92,7 @@ namespace Presentacion.Vista
             using (nrs) { nrs.state = EntityState.Guardar; }
             Habilitar(true);
             limpiar();
-            GenerarCodigo();
+            //GenerarCodigo();
         }
 
         private void RegimenSalud_Load(object sender, EventArgs e)
@@ -100,7 +100,7 @@ namespace Presentacion.Vista
             Showregimensalud();
             Habilitar(false);
             Tabla();
-            GenerarCodigo();
+           // GenerarCodigo();
         }
 
         private void Habilitar(bool v)

@@ -338,3 +338,6 @@ C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Present
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.PlanillaMensual.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.DiasSubsidiados2.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmDiasSubsidiados2.resources
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmDiasSubsidiados2.resources
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmPlanillaMensual2.resources
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmManto_Regimen.resources
