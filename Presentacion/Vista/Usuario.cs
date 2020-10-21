@@ -137,8 +137,8 @@ namespace Presentacion.Vista
             result = "";
             using (nu)
             {
-                if (nu.state == EntityState.Guardar)
-                    nu.Idusuario = codigo;
+                
+                    //nu.Idusuario = codigo;
 
                 nu.Codigo_usu = txtacceso.Text.Trim().ToUpper();
                 nu.Nombre_refe = txtnom_usuario.Text.Trim().ToUpper();
@@ -151,12 +151,9 @@ namespace Presentacion.Vista
                     
                     result = nu.SaveChanges();
                     ShowUser();
+                    limpiar();
                     Messages.M_info(result);
-                    if (nu.state == EntityState.Guardar)
-                    {
-                        GenerarCodigo();
-                        limpiar();
-                    }
+                    
                 }
             }
         }

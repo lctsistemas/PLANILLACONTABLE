@@ -112,6 +112,7 @@ namespace Presentacion.Vista
         private void dgvtipocontrato_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvtipocontrato.CurrentRow;
+            Habilitar(true);
             if (dgvtipocontrato.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 using (nTipocont)

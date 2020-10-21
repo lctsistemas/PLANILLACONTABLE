@@ -63,13 +63,17 @@ namespace Presentacion.Vista
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
 
             //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado
-            
 
-            txtremu.Text = "930.00";
-            txtasig.Text = "93.00";
-            txttope.Text = "1200";
 
-            }
+            Double remu_basica = 930;
+            Double asign = 93;
+            Double tope = 1300;
+
+            txtremu.Text = remu_basica.ToString("#.##");
+            txtasig.Text = asign.ToString("#.##");
+            txttope.Text = tope.ToString("#.##");
+
+        }
         
 
         private static Planilla instance;

@@ -101,7 +101,7 @@ GO
 
 --Agregar empleado
 ALTER PROC SP_AGR_EMPL
-(@id_empleado int,
+(--@id_empleado int,
 @codigo varchar(20),--sera número de documento.
 @nom_emp varchar(50),
 @ape_pat varchar(50),
@@ -119,6 +119,13 @@ ALTER PROC SP_AGR_EMPL
 @id_empresa_maestra int,
 @mensaje varchar(100) output)
 AS BEGIN 
+	DECLARE @empleado int
+	SET @empleado=(SELECT count(e.id_empleado) FROM dbo.Empleado e)
+	IF(@empleado=0)	
+		SET @empleado=1	
+	ELSE
+		SET @empleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
+
 IF(EXISTS(SELECT e.numero_documento FROM Empleado e WHERE e.numero_documento=@num_doc))
 	BEGIN 
 	SET @mensaje ='El número de documento ('+@num_doc+') ya se encuentra registrado'
@@ -127,7 +134,7 @@ ELSE
 	BEGIN
 		INSERT INTO dbo.Empleado(id_empleado,codigo,nombre_empleado, ape_paterno, ape_materno, fecha_nacimiento, nacionalidad, 
 		tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra, eliminado_estado) 
-		VALUES (@id_empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
+		VALUES (@empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
 		@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, 'NO ANULADO')
 		SET @mensaje= '¡Empleado registrado correctamente!'
 	END	
@@ -198,7 +205,7 @@ GO
 
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
 ALTER PROCEDURE SP_INSERT_CONTRATO
-(@id_contrato int,
+(--@id_contrato int,
 @id_banco int,
 @id_tcontrato int,
 @fecha_inicio date,
@@ -213,10 +220,16 @@ ALTER PROCEDURE SP_INSERT_CONTRATO
 @cuenta_cts nvarchar(50),
 @cussp nvarchar(70))
 AS BEGIN
+	DECLARE @contrato int
+	SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
+	IF(@contrato=0)
+		SET @contrato=1		
+	ELSE
+		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)			
 INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
 fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, regimen_salud, tipo_pago, 
 periodicidad, tipo_moneda, cuenta_cts, cussp)
-VALUES(@id_contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
+VALUES(@contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
 @id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @regimen_salud, @tipo_pago, 
 @periodicidad, @tipo_modeda, @cuenta_cts, @cussp)
 END
@@ -411,14 +424,21 @@ END
 GO
 
 /*   PROCEDIMIENTO PARA USUARIO*/
-CREATE PROC SP_INSERT_USUARIO
-(@idusu int,
+alter PROC SP_INSERT_USUARIO
+(--@idusu int,
 @codigo_usu varchar(20),
 @referencia varchar(50),
 @passwor varchar(10),
 @id_rol int,
 @mesage varchar(100) output)
 AS BEGIN
+DECLARE @usu int
+SET @usu=(SELECT count(u.id_usuario) FROM dbo.Usuario u)
+IF(@usu=0)
+	SET @usu=1	
+ELSE
+	SET @usu=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
+
 IF(EXISTS(SELECT u.codigo_usuario FROM dbo.Usuario u WHERE U.codigo_usuario=@codigo_usu))
 	BEGIN
 	SET @mesage= 'USUARIO ('+@codigo_usu+' ) SE ENCUENTRA REGISTRADO'
@@ -426,7 +446,7 @@ IF(EXISTS(SELECT u.codigo_usuario FROM dbo.Usuario u WHERE U.codigo_usuario=@cod
 ELSE
 	BEGIN
 	INSERT INTO dbo.Usuario(id_usuario, codigo_usuario, referencia, contrasena, id_rol)VALUES
-	(@idusu, @codigo_usu, @referencia, @passwor, @id_rol)
+	(@usu, @codigo_usu, @referencia, @passwor, @id_rol)
 	SET @mesage= 'USUARIO REGISTRADO'
 	END
 END

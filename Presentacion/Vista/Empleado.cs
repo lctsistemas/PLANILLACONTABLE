@@ -309,8 +309,8 @@ namespace Presentacion.Vista
             using (emple_contra)
             {
                 //EMPLEADO
-                if (emple_contra.state == EntityState.Guardar)
-                    emple_contra.Id_empleado = emple_contra.GetCodigo_empleado();
+                //if (emple_contra.state == EntityState.Guardar)
+                    //emple_contra.Id_empleado = emple_contra.GetCodigo_empleado();
 
                 emple_contra.Codigo = txtcodigo.Text.Trim();
                 emple_contra.Nom_emp = txtNombre.Text.Trim();
@@ -329,8 +329,8 @@ namespace Presentacion.Vista
                 emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
 
                 //CONTRATO
-                if (emple_contra.state == EntityState.Guardar)
-                    emple_contra.cid_contrato = emple_contra.Getcodigo_contrato();
+                //if (emple_contra.state == EntityState.Guardar)
+                    //emple_contra.cid_contrato = emple_contra.Getcodigo_contrato();
 
                 emple_contra.cid_banco = int.Parse(cbobanco.SelectedValue.ToString());
                 emple_contra.cid_tcontrato = int.Parse(cbotipocontra.SelectedValue.ToString());

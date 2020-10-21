@@ -55,6 +55,7 @@ namespace Presentacion.Vista
 
             Double reintegro = Convert.ToDouble(txtReintegro.Text);
             Double tardanza_total = Convert.ToDouble(txtTotalTardanza.Text);
+            Double bonificacion_nocturna = Convert.ToDouble(txtTotalBoniNocturna.Text);
            // Messages.M_info(""+totalremuneracion);
         }
 
