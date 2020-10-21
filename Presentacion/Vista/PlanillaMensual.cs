@@ -46,8 +46,10 @@ namespace Presentacion.Vista
             txtHaberBasico.Text = "930";
         }
 
-        private void calculos_Remuneracion()
+        private Double calculos_Remuneracion()
         {
+            Double total_remuneracion=0;
+
             Double totalhorasdiurnas = Convert.ToDouble(txtTotalDiurna.Text);
             Double totalhorasnoct = Convert.ToDouble(txtTotalNocturna.Text);
 
@@ -56,6 +58,10 @@ namespace Presentacion.Vista
             Double reintegro = Convert.ToDouble(txtReintegro.Text);
             Double tardanza_total = Convert.ToDouble(txtTotalTardanza.Text);
             Double bonificacion_nocturna = Convert.ToDouble(txtTotalBoniNocturna.Text);
+
+            total_remuneracion = totalhorasdiurnas + totalhorasnoct + feriado_importe + reintegro + tardanza_total + bonificacion_nocturna;
+
+            return total_remuneracion;
            // Messages.M_info(""+totalremuneracion);
         }
 
@@ -628,6 +634,13 @@ namespace Presentacion.Vista
             fr.StartPosition = FormStartPosition.CenterParent;
             tipoform = "NO SUBSIDIADOS";
             fr.ShowDialog();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            Double total_remu = calculos_Remuneracion();
+            MessageBox.Show(total_remu.ToString());
+            
         }
     }
 }
