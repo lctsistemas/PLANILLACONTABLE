@@ -51,6 +51,8 @@
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.nudMinTardanza = new System.Windows.Forms.NumericUpDown();
+            this.nudHorasTardanza = new System.Windows.Forms.NumericUpDown();
             this.txtTotalTardanza = new System.Windows.Forms.TextBox();
             this.label86 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,9 +61,7 @@
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtHorasTardanza = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraTardanza = new System.Windows.Forms.TextBox();
-            this.txtMinTardanzas = new System.Windows.Forms.TextBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -80,6 +80,8 @@
             this.panel19 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.nudMinferiado = new System.Windows.Forms.NumericUpDown();
+            this.nudHoraFeriado = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -88,8 +90,6 @@
             this.txtTotalFeriado = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.txtPrecioHoraFeriado = new System.Windows.Forms.TextBox();
-            this.txtHoraFeriado = new System.Windows.Forms.TextBox();
-            this.txtMinFeriado = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTotalDominical = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -106,6 +106,8 @@
             this.panel23 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.nudMinBonificacionNocturna = new System.Windows.Forms.NumericUpDown();
+            this.nudHoraBonificacionNocturna = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -114,12 +116,18 @@
             this.txtTotalBoniNocturna = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.txtPrecioHoraBoniNocturna = new System.Windows.Forms.TextBox();
-            this.txtHoraBonificacionNocturna = new System.Windows.Forms.TextBox();
-            this.txtMinBonificacionNocturna = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
+            this.nudMinNocturna35 = new System.Windows.Forms.NumericUpDown();
+            this.nudMinNocturna25 = new System.Windows.Forms.NumericUpDown();
+            this.nudNocturna35 = new System.Windows.Forms.NumericUpDown();
+            this.nudNocturna25 = new System.Windows.Forms.NumericUpDown();
+            this.nudMinDiurna35 = new System.Windows.Forms.NumericUpDown();
+            this.nudDiurna35 = new System.Windows.Forms.NumericUpDown();
+            this.nudMinDiurna25 = new System.Windows.Forms.NumericUpDown();
+            this.nudDiurna25 = new System.Windows.Forms.NumericUpDown();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
             this.txtTotalNocturna = new System.Windows.Forms.TextBox();
@@ -129,25 +137,17 @@
             this.txtTotalNocturna35 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.txtPrecioHoraNocturna35 = new System.Windows.Forms.TextBox();
-            this.txtMinNocturna35 = new System.Windows.Forms.TextBox();
-            this.txtNocturna35 = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.txtTotalDiurna35 = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraDiurna35 = new System.Windows.Forms.TextBox();
-            this.txtMinDiurna35 = new System.Windows.Forms.TextBox();
-            this.txtDiurna35 = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
             this.txtTotalNocturna25 = new System.Windows.Forms.TextBox();
             this.txtTotalDiurna25 = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraNocturna25 = new System.Windows.Forms.TextBox();
-            this.txtMinNocturna25 = new System.Windows.Forms.TextBox();
-            this.txtNocturna25 = new System.Windows.Forms.TextBox();
             this.txtPrecioHoraDiurna25 = new System.Windows.Forms.TextBox();
-            this.txtMinDiurna25 = new System.Windows.Forms.TextBox();
-            this.txtDiurna25 = new System.Windows.Forms.TextBox();
             this.label66 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
@@ -221,19 +221,33 @@
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinTardanza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHorasTardanza)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinferiado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHoraFeriado)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinBonificacionNocturna)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHoraBonificacionNocturna)).BeginInit();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinNocturna35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinNocturna25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNocturna35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNocturna25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinDiurna35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiurna35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinDiurna25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiurna25)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -490,6 +504,8 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.nudMinTardanza);
+            this.panel9.Controls.Add(this.nudHorasTardanza);
             this.panel9.Controls.Add(this.txtTotalTardanza);
             this.panel9.Controls.Add(this.label86);
             this.panel9.Controls.Add(this.panel2);
@@ -497,14 +513,28 @@
             this.panel9.Controls.Add(this.label83);
             this.panel9.Controls.Add(this.label84);
             this.panel9.Controls.Add(this.label3);
-            this.panel9.Controls.Add(this.txtHorasTardanza);
             this.panel9.Controls.Add(this.txtPrecioHoraTardanza);
-            this.panel9.Controls.Add(this.txtMinTardanzas);
             this.panel9.Controls.Add(this.shapeContainer1);
             this.panel9.Location = new System.Drawing.Point(5, 503);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(331, 109);
             this.panel9.TabIndex = 466;
+            // 
+            // nudMinTardanza
+            // 
+            this.nudMinTardanza.Location = new System.Drawing.Point(67, 51);
+            this.nudMinTardanza.Name = "nudMinTardanza";
+            this.nudMinTardanza.Size = new System.Drawing.Size(42, 20);
+            this.nudMinTardanza.TabIndex = 423;
+            this.nudMinTardanza.ValueChanged += new System.EventHandler(this.nudMinTardanza_ValueChanged);
+            // 
+            // nudHorasTardanza
+            // 
+            this.nudHorasTardanza.Location = new System.Drawing.Point(12, 51);
+            this.nudHorasTardanza.Name = "nudHorasTardanza";
+            this.nudHorasTardanza.Size = new System.Drawing.Size(42, 20);
+            this.nudHorasTardanza.TabIndex = 422;
+            this.nudHorasTardanza.ValueChanged += new System.EventHandler(this.nudHorasTardanza_ValueChanged);
             // 
             // txtTotalTardanza
             // 
@@ -580,15 +610,6 @@
             this.label3.TabIndex = 413;
             this.label3.Text = "MIN";
             // 
-            // txtHorasTardanza
-            // 
-            this.txtHorasTardanza.Location = new System.Drawing.Point(15, 51);
-            this.txtHorasTardanza.Name = "txtHorasTardanza";
-            this.txtHorasTardanza.Size = new System.Drawing.Size(50, 20);
-            this.txtHorasTardanza.TabIndex = 414;
-            this.txtHorasTardanza.Text = "0";
-            this.txtHorasTardanza.TextChanged += new System.EventHandler(this.txtHorasTardanza_TextChanged);
-            // 
             // txtPrecioHoraTardanza
             // 
             this.txtPrecioHoraTardanza.Enabled = false;
@@ -596,15 +617,6 @@
             this.txtPrecioHoraTardanza.Name = "txtPrecioHoraTardanza";
             this.txtPrecioHoraTardanza.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraTardanza.TabIndex = 416;
-            // 
-            // txtMinTardanzas
-            // 
-            this.txtMinTardanzas.Location = new System.Drawing.Point(71, 51);
-            this.txtMinTardanzas.Name = "txtMinTardanzas";
-            this.txtMinTardanzas.Size = new System.Drawing.Size(50, 20);
-            this.txtMinTardanzas.TabIndex = 415;
-            this.txtMinTardanzas.Text = "0";
-            this.txtMinTardanzas.TextChanged += new System.EventHandler(this.txtMinTardanzas_TextChanged);
             // 
             // shapeContainer1
             // 
@@ -778,6 +790,8 @@
             // 
             // panel22
             // 
+            this.panel22.Controls.Add(this.nudMinferiado);
+            this.panel22.Controls.Add(this.nudHoraFeriado);
             this.panel22.Controls.Add(this.label1);
             this.panel22.Controls.Add(this.label34);
             this.panel22.Controls.Add(this.label35);
@@ -786,12 +800,26 @@
             this.panel22.Controls.Add(this.txtTotalFeriado);
             this.panel22.Controls.Add(this.label38);
             this.panel22.Controls.Add(this.txtPrecioHoraFeriado);
-            this.panel22.Controls.Add(this.txtHoraFeriado);
-            this.panel22.Controls.Add(this.txtMinFeriado);
             this.panel22.Location = new System.Drawing.Point(5, 450);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(412, 53);
             this.panel22.TabIndex = 477;
+            // 
+            // nudMinferiado
+            // 
+            this.nudMinferiado.Location = new System.Drawing.Point(185, 23);
+            this.nudMinferiado.Name = "nudMinferiado";
+            this.nudMinferiado.Size = new System.Drawing.Size(40, 20);
+            this.nudMinferiado.TabIndex = 422;
+            this.nudMinferiado.ValueChanged += new System.EventHandler(this.nudMinferiado_ValueChanged);
+            // 
+            // nudHoraFeriado
+            // 
+            this.nudHoraFeriado.Location = new System.Drawing.Point(124, 23);
+            this.nudHoraFeriado.Name = "nudHoraFeriado";
+            this.nudHoraFeriado.Size = new System.Drawing.Size(37, 20);
+            this.nudHoraFeriado.TabIndex = 422;
+            this.nudHoraFeriado.ValueChanged += new System.EventHandler(this.nudHoraFeriado_ValueChanged);
             // 
             // label1
             // 
@@ -860,28 +888,10 @@
             // txtPrecioHoraFeriado
             // 
             this.txtPrecioHoraFeriado.Enabled = false;
-            this.txtPrecioHoraFeriado.Location = new System.Drawing.Point(243, 23);
+            this.txtPrecioHoraFeriado.Location = new System.Drawing.Point(242, 23);
             this.txtPrecioHoraFeriado.Name = "txtPrecioHoraFeriado";
             this.txtPrecioHoraFeriado.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraFeriado.TabIndex = 391;
-            // 
-            // txtHoraFeriado
-            // 
-            this.txtHoraFeriado.Location = new System.Drawing.Point(122, 23);
-            this.txtHoraFeriado.Name = "txtHoraFeriado";
-            this.txtHoraFeriado.Size = new System.Drawing.Size(50, 20);
-            this.txtHoraFeriado.TabIndex = 389;
-            this.txtHoraFeriado.Text = "0";
-            this.txtHoraFeriado.TextChanged += new System.EventHandler(this.txtHoraFeriado_TextChanged);
-            // 
-            // txtMinFeriado
-            // 
-            this.txtMinFeriado.Location = new System.Drawing.Point(183, 23);
-            this.txtMinFeriado.Name = "txtMinFeriado";
-            this.txtMinFeriado.Size = new System.Drawing.Size(50, 20);
-            this.txtMinFeriado.TabIndex = 390;
-            this.txtMinFeriado.Text = "0";
-            this.txtMinFeriado.TextChanged += new System.EventHandler(this.txtMinFeriado_TextChanged);
             // 
             // panel5
             // 
@@ -1034,6 +1044,8 @@
             // 
             // panel20
             // 
+            this.panel20.Controls.Add(this.nudMinBonificacionNocturna);
+            this.panel20.Controls.Add(this.nudHoraBonificacionNocturna);
             this.panel20.Controls.Add(this.label9);
             this.panel20.Controls.Add(this.label28);
             this.panel20.Controls.Add(this.label29);
@@ -1042,12 +1054,24 @@
             this.panel20.Controls.Add(this.txtTotalBoniNocturna);
             this.panel20.Controls.Add(this.label32);
             this.panel20.Controls.Add(this.txtPrecioHoraBoniNocturna);
-            this.panel20.Controls.Add(this.txtHoraBonificacionNocturna);
-            this.panel20.Controls.Add(this.txtMinBonificacionNocturna);
             this.panel20.Location = new System.Drawing.Point(417, 450);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(409, 53);
             this.panel20.TabIndex = 475;
+            // 
+            // nudMinBonificacionNocturna
+            // 
+            this.nudMinBonificacionNocturna.Location = new System.Drawing.Point(169, 25);
+            this.nudMinBonificacionNocturna.Name = "nudMinBonificacionNocturna";
+            this.nudMinBonificacionNocturna.Size = new System.Drawing.Size(42, 20);
+            this.nudMinBonificacionNocturna.TabIndex = 435;
+            // 
+            // nudHoraBonificacionNocturna
+            // 
+            this.nudHoraBonificacionNocturna.Location = new System.Drawing.Point(110, 25);
+            this.nudHoraBonificacionNocturna.Name = "nudHoraBonificacionNocturna";
+            this.nudHoraBonificacionNocturna.Size = new System.Drawing.Size(42, 20);
+            this.nudHoraBonificacionNocturna.TabIndex = 435;
             // 
             // label9
             // 
@@ -1121,24 +1145,6 @@
             this.txtPrecioHoraBoniNocturna.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraBoniNocturna.TabIndex = 405;
             // 
-            // txtHoraBonificacionNocturna
-            // 
-            this.txtHoraBonificacionNocturna.Location = new System.Drawing.Point(108, 25);
-            this.txtHoraBonificacionNocturna.Name = "txtHoraBonificacionNocturna";
-            this.txtHoraBonificacionNocturna.Size = new System.Drawing.Size(50, 20);
-            this.txtHoraBonificacionNocturna.TabIndex = 403;
-            this.txtHoraBonificacionNocturna.Text = "0";
-            this.txtHoraBonificacionNocturna.TextChanged += new System.EventHandler(this.txtHoraBonificacionNocturna_TextChanged);
-            // 
-            // txtMinBonificacionNocturna
-            // 
-            this.txtMinBonificacionNocturna.Location = new System.Drawing.Point(167, 25);
-            this.txtMinBonificacionNocturna.Name = "txtMinBonificacionNocturna";
-            this.txtMinBonificacionNocturna.Size = new System.Drawing.Size(50, 20);
-            this.txtMinBonificacionNocturna.TabIndex = 404;
-            this.txtMinBonificacionNocturna.Text = "0";
-            this.txtMinBonificacionNocturna.TextChanged += new System.EventHandler(this.txtMinBonificacionNocturna_TextChanged);
-            // 
             // panel16
             // 
             this.panel16.Controls.Add(this.panel17);
@@ -1170,6 +1176,14 @@
             // 
             // panel24
             // 
+            this.panel24.Controls.Add(this.nudMinNocturna35);
+            this.panel24.Controls.Add(this.nudMinNocturna25);
+            this.panel24.Controls.Add(this.nudNocturna35);
+            this.panel24.Controls.Add(this.nudNocturna25);
+            this.panel24.Controls.Add(this.nudMinDiurna35);
+            this.panel24.Controls.Add(this.nudDiurna35);
+            this.panel24.Controls.Add(this.nudMinDiurna25);
+            this.panel24.Controls.Add(this.nudDiurna25);
             this.panel24.Controls.Add(this.panel18);
             this.panel24.Controls.Add(this.txtTotalNocturna);
             this.panel24.Controls.Add(this.txtTotalDiurna);
@@ -1178,25 +1192,17 @@
             this.panel24.Controls.Add(this.txtTotalNocturna35);
             this.panel24.Controls.Add(this.label42);
             this.panel24.Controls.Add(this.txtPrecioHoraNocturna35);
-            this.panel24.Controls.Add(this.txtMinNocturna35);
-            this.panel24.Controls.Add(this.txtNocturna35);
             this.panel24.Controls.Add(this.label44);
             this.panel24.Controls.Add(this.label45);
             this.panel24.Controls.Add(this.txtTotalDiurna35);
             this.panel24.Controls.Add(this.txtPrecioHoraDiurna35);
-            this.panel24.Controls.Add(this.txtMinDiurna35);
-            this.panel24.Controls.Add(this.txtDiurna35);
             this.panel24.Controls.Add(this.label63);
             this.panel24.Controls.Add(this.label64);
             this.panel24.Controls.Add(this.label65);
             this.panel24.Controls.Add(this.txtTotalNocturna25);
             this.panel24.Controls.Add(this.txtTotalDiurna25);
             this.panel24.Controls.Add(this.txtPrecioHoraNocturna25);
-            this.panel24.Controls.Add(this.txtMinNocturna25);
-            this.panel24.Controls.Add(this.txtNocturna25);
             this.panel24.Controls.Add(this.txtPrecioHoraDiurna25);
-            this.panel24.Controls.Add(this.txtMinDiurna25);
-            this.panel24.Controls.Add(this.txtDiurna25);
             this.panel24.Controls.Add(this.label66);
             this.panel24.Controls.Add(this.label67);
             this.panel24.Controls.Add(this.label69);
@@ -1208,6 +1214,66 @@
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(820, 130);
             this.panel24.TabIndex = 411;
+            // 
+            // nudMinNocturna35
+            // 
+            this.nudMinNocturna35.Location = new System.Drawing.Point(555, 68);
+            this.nudMinNocturna35.Name = "nudMinNocturna35";
+            this.nudMinNocturna35.Size = new System.Drawing.Size(43, 20);
+            this.nudMinNocturna35.TabIndex = 373;
+            // 
+            // nudMinNocturna25
+            // 
+            this.nudMinNocturna25.Location = new System.Drawing.Point(555, 37);
+            this.nudMinNocturna25.Name = "nudMinNocturna25";
+            this.nudMinNocturna25.Size = new System.Drawing.Size(43, 20);
+            this.nudMinNocturna25.TabIndex = 372;
+            // 
+            // nudNocturna35
+            // 
+            this.nudNocturna35.Location = new System.Drawing.Point(496, 68);
+            this.nudNocturna35.Name = "nudNocturna35";
+            this.nudNocturna35.Size = new System.Drawing.Size(43, 20);
+            this.nudNocturna35.TabIndex = 371;
+            // 
+            // nudNocturna25
+            // 
+            this.nudNocturna25.Location = new System.Drawing.Point(496, 37);
+            this.nudNocturna25.Name = "nudNocturna25";
+            this.nudNocturna25.Size = new System.Drawing.Size(43, 20);
+            this.nudNocturna25.TabIndex = 370;
+            // 
+            // nudMinDiurna35
+            // 
+            this.nudMinDiurna35.Location = new System.Drawing.Point(164, 68);
+            this.nudMinDiurna35.Name = "nudMinDiurna35";
+            this.nudMinDiurna35.Size = new System.Drawing.Size(36, 20);
+            this.nudMinDiurna35.TabIndex = 369;
+            this.nudMinDiurna35.ValueChanged += new System.EventHandler(this.nudMinDiurna35_ValueChanged);
+            // 
+            // nudDiurna35
+            // 
+            this.nudDiurna35.Location = new System.Drawing.Point(108, 68);
+            this.nudDiurna35.Name = "nudDiurna35";
+            this.nudDiurna35.Size = new System.Drawing.Size(39, 20);
+            this.nudDiurna35.TabIndex = 368;
+            this.nudDiurna35.ValueChanged += new System.EventHandler(this.nudDiurna35_ValueChanged);
+            // 
+            // nudMinDiurna25
+            // 
+            this.nudMinDiurna25.Location = new System.Drawing.Point(164, 38);
+            this.nudMinDiurna25.Name = "nudMinDiurna25";
+            this.nudMinDiurna25.Size = new System.Drawing.Size(36, 20);
+            this.nudMinDiurna25.TabIndex = 367;
+            this.nudMinDiurna25.ValueChanged += new System.EventHandler(this.nudMinDiurna25_ValueChanged);
+            // 
+            // nudDiurna25
+            // 
+            this.nudDiurna25.Location = new System.Drawing.Point(108, 37);
+            this.nudDiurna25.Name = "nudDiurna25";
+            this.nudDiurna25.Size = new System.Drawing.Size(39, 20);
+            this.nudDiurna25.TabIndex = 366;
+            this.nudDiurna25.ValueChanged += new System.EventHandler(this.nudDiurna25_ValueChanged);
             // 
             // panel18
             // 
@@ -1270,7 +1336,7 @@
             // txtTotalNocturna35
             // 
             this.txtTotalNocturna35.Enabled = false;
-            this.txtTotalNocturna35.Location = new System.Drawing.Point(703, 67);
+            this.txtTotalNocturna35.Location = new System.Drawing.Point(703, 68);
             this.txtTotalNocturna35.Name = "txtTotalNocturna35";
             this.txtTotalNocturna35.Size = new System.Drawing.Size(80, 20);
             this.txtTotalNocturna35.TabIndex = 358;
@@ -1292,24 +1358,6 @@
             this.txtPrecioHoraNocturna35.Name = "txtPrecioHoraNocturna35";
             this.txtPrecioHoraNocturna35.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraNocturna35.TabIndex = 356;
-            // 
-            // txtMinNocturna35
-            // 
-            this.txtMinNocturna35.Location = new System.Drawing.Point(556, 67);
-            this.txtMinNocturna35.Name = "txtMinNocturna35";
-            this.txtMinNocturna35.Size = new System.Drawing.Size(50, 20);
-            this.txtMinNocturna35.TabIndex = 355;
-            this.txtMinNocturna35.Text = "0";
-            this.txtMinNocturna35.TextChanged += new System.EventHandler(this.txtMinNocturna35_TextChanged);
-            // 
-            // txtNocturna35
-            // 
-            this.txtNocturna35.Location = new System.Drawing.Point(496, 67);
-            this.txtNocturna35.Name = "txtNocturna35";
-            this.txtNocturna35.Size = new System.Drawing.Size(50, 20);
-            this.txtNocturna35.TabIndex = 354;
-            this.txtNocturna35.Text = "0";
-            this.txtNocturna35.TextChanged += new System.EventHandler(this.txtNocturna35_TextChanged);
             // 
             // label44
             // 
@@ -1333,7 +1381,7 @@
             // txtTotalDiurna35
             // 
             this.txtTotalDiurna35.Enabled = false;
-            this.txtTotalDiurna35.Location = new System.Drawing.Point(291, 68);
+            this.txtTotalDiurna35.Location = new System.Drawing.Point(291, 67);
             this.txtTotalDiurna35.Name = "txtTotalDiurna35";
             this.txtTotalDiurna35.Size = new System.Drawing.Size(80, 20);
             this.txtTotalDiurna35.TabIndex = 350;
@@ -1342,34 +1390,16 @@
             // txtPrecioHoraDiurna35
             // 
             this.txtPrecioHoraDiurna35.Enabled = false;
-            this.txtPrecioHoraDiurna35.Location = new System.Drawing.Point(220, 68);
+            this.txtPrecioHoraDiurna35.Location = new System.Drawing.Point(220, 67);
             this.txtPrecioHoraDiurna35.Name = "txtPrecioHoraDiurna35";
             this.txtPrecioHoraDiurna35.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraDiurna35.TabIndex = 349;
-            // 
-            // txtMinDiurna35
-            // 
-            this.txtMinDiurna35.Location = new System.Drawing.Point(164, 68);
-            this.txtMinDiurna35.Name = "txtMinDiurna35";
-            this.txtMinDiurna35.Size = new System.Drawing.Size(50, 20);
-            this.txtMinDiurna35.TabIndex = 348;
-            this.txtMinDiurna35.Text = "0";
-            this.txtMinDiurna35.TextChanged += new System.EventHandler(this.txtMinDiurna35_TextChanged);
-            // 
-            // txtDiurna35
-            // 
-            this.txtDiurna35.Location = new System.Drawing.Point(108, 68);
-            this.txtDiurna35.Name = "txtDiurna35";
-            this.txtDiurna35.Size = new System.Drawing.Size(50, 20);
-            this.txtDiurna35.TabIndex = 347;
-            this.txtDiurna35.Text = "0";
-            this.txtDiurna35.TextChanged += new System.EventHandler(this.txtDiurna35_TextChanged);
             // 
             // label63
             // 
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(20, 72);
+            this.label63.Location = new System.Drawing.Point(20, 70);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(63, 16);
             this.label63.TabIndex = 345;
@@ -1396,9 +1426,9 @@
             // txtTotalNocturna25
             // 
             this.txtTotalNocturna25.Enabled = false;
-            this.txtTotalNocturna25.Location = new System.Drawing.Point(703, 36);
+            this.txtTotalNocturna25.Location = new System.Drawing.Point(702, 34);
             this.txtTotalNocturna25.Name = "txtTotalNocturna25";
-            this.txtTotalNocturna25.Size = new System.Drawing.Size(80, 20);
+            this.txtTotalNocturna25.Size = new System.Drawing.Size(81, 20);
             this.txtTotalNocturna25.TabIndex = 342;
             this.txtTotalNocturna25.Text = "0.00";
             // 
@@ -1419,23 +1449,6 @@
             this.txtPrecioHoraNocturna25.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraNocturna25.TabIndex = 340;
             // 
-            // txtMinNocturna25
-            // 
-            this.txtMinNocturna25.Location = new System.Drawing.Point(556, 36);
-            this.txtMinNocturna25.Name = "txtMinNocturna25";
-            this.txtMinNocturna25.Size = new System.Drawing.Size(50, 20);
-            this.txtMinNocturna25.TabIndex = 339;
-            this.txtMinNocturna25.Text = "0";
-            // 
-            // txtNocturna25
-            // 
-            this.txtNocturna25.Location = new System.Drawing.Point(496, 36);
-            this.txtNocturna25.Name = "txtNocturna25";
-            this.txtNocturna25.Size = new System.Drawing.Size(50, 20);
-            this.txtNocturna25.TabIndex = 338;
-            this.txtNocturna25.Text = "0";
-            this.txtNocturna25.TextChanged += new System.EventHandler(this.txtNocturna25_TextChanged);
-            // 
             // txtPrecioHoraDiurna25
             // 
             this.txtPrecioHoraDiurna25.Enabled = false;
@@ -1443,24 +1456,6 @@
             this.txtPrecioHoraDiurna25.Name = "txtPrecioHoraDiurna25";
             this.txtPrecioHoraDiurna25.Size = new System.Drawing.Size(50, 20);
             this.txtPrecioHoraDiurna25.TabIndex = 337;
-            // 
-            // txtMinDiurna25
-            // 
-            this.txtMinDiurna25.Location = new System.Drawing.Point(164, 38);
-            this.txtMinDiurna25.Name = "txtMinDiurna25";
-            this.txtMinDiurna25.Size = new System.Drawing.Size(50, 20);
-            this.txtMinDiurna25.TabIndex = 336;
-            this.txtMinDiurna25.Text = "0";
-            this.txtMinDiurna25.TextChanged += new System.EventHandler(this.txtMinDiurna25_TextChanged);
-            // 
-            // txtDiurna25
-            // 
-            this.txtDiurna25.Location = new System.Drawing.Point(108, 38);
-            this.txtDiurna25.Name = "txtDiurna25";
-            this.txtDiurna25.Size = new System.Drawing.Size(50, 20);
-            this.txtDiurna25.TabIndex = 335;
-            this.txtDiurna25.Text = "0";
-            this.txtDiurna25.TextChanged += new System.EventHandler(this.txtDiurna25_TextChanged);
             // 
             // label66
             // 
@@ -2143,6 +2138,8 @@
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinTardanza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHorasTardanza)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -2151,6 +2148,8 @@
             this.panel19.PerformLayout();
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinferiado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHoraFeriado)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -2163,11 +2162,21 @@
             this.panel23.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinBonificacionNocturna)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHoraBonificacionNocturna)).EndInit();
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinNocturna35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinNocturna25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNocturna35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNocturna25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinDiurna35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiurna35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinDiurna25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDiurna25)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -2196,8 +2205,6 @@
         public System.Windows.Forms.TextBox txtTotalFeriado;
         private System.Windows.Forms.Label label38;
         public System.Windows.Forms.TextBox txtPrecioHoraFeriado;
-        private System.Windows.Forms.TextBox txtHoraFeriado;
-        private System.Windows.Forms.TextBox txtMinFeriado;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtTotalDominical;
         private System.Windows.Forms.Label label18;
@@ -2215,9 +2222,7 @@
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtHorasTardanza;
         public System.Windows.Forms.TextBox txtPrecioHoraTardanza;
-        private System.Windows.Forms.TextBox txtMinTardanzas;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnFaltas;
         private System.Windows.Forms.Button btnSubsidiados;
@@ -2251,8 +2256,6 @@
         public System.Windows.Forms.TextBox txtTotalBoniNocturna;
         private System.Windows.Forms.Label label32;
         public System.Windows.Forms.TextBox txtPrecioHoraBoniNocturna;
-        private System.Windows.Forms.TextBox txtHoraBonificacionNocturna;
-        private System.Windows.Forms.TextBox txtMinBonificacionNocturna;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label25;
@@ -2268,25 +2271,17 @@
         public System.Windows.Forms.TextBox txtTotalNocturna35;
         private System.Windows.Forms.Label label42;
         public System.Windows.Forms.TextBox txtPrecioHoraNocturna35;
-        private System.Windows.Forms.TextBox txtMinNocturna35;
-        private System.Windows.Forms.TextBox txtNocturna35;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         public System.Windows.Forms.TextBox txtTotalDiurna35;
         public System.Windows.Forms.TextBox txtPrecioHoraDiurna35;
-        private System.Windows.Forms.TextBox txtMinDiurna35;
-        private System.Windows.Forms.TextBox txtDiurna35;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
         public System.Windows.Forms.TextBox txtTotalNocturna25;
         public System.Windows.Forms.TextBox txtTotalDiurna25;
         public System.Windows.Forms.TextBox txtPrecioHoraNocturna25;
-        private System.Windows.Forms.TextBox txtMinNocturna25;
-        private System.Windows.Forms.TextBox txtNocturna25;
         public System.Windows.Forms.TextBox txtPrecioHoraDiurna25;
-        private System.Windows.Forms.TextBox txtMinDiurna25;
-        private System.Windows.Forms.TextBox txtDiurna25;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Label label69;
@@ -2369,5 +2364,19 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         public System.Windows.Forms.TextBox txtmes;
+        private System.Windows.Forms.NumericUpDown nudMinDiurna25;
+        private System.Windows.Forms.NumericUpDown nudDiurna25;
+        private System.Windows.Forms.NumericUpDown nudMinDiurna35;
+        private System.Windows.Forms.NumericUpDown nudDiurna35;
+        private System.Windows.Forms.NumericUpDown nudMinNocturna35;
+        private System.Windows.Forms.NumericUpDown nudMinNocturna25;
+        private System.Windows.Forms.NumericUpDown nudNocturna35;
+        private System.Windows.Forms.NumericUpDown nudNocturna25;
+        private System.Windows.Forms.NumericUpDown nudMinferiado;
+        private System.Windows.Forms.NumericUpDown nudHoraFeriado;
+        private System.Windows.Forms.NumericUpDown nudMinBonificacionNocturna;
+        private System.Windows.Forms.NumericUpDown nudHoraBonificacionNocturna;
+        private System.Windows.Forms.NumericUpDown nudMinTardanza;
+        private System.Windows.Forms.NumericUpDown nudHorasTardanza;
     }
 }
