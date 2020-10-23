@@ -68,6 +68,7 @@ namespace Presentacion.Vista
         {
             dgvsubsidio.Columns["canti_dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvsubsidio.Columns["id_dsubsidio"].Visible = false;
+            dgvsubsidio.Columns["cod_subsidio"].Visible = false;
             dgvsubsidio.Columns["tsupension"].ReadOnly = true;
         }
 
