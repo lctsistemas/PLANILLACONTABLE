@@ -26,31 +26,37 @@ namespace Datos.Repositories
 
         public DataTable GetData(DSubsidios entiti)
         {
-            using (var conect = RConexion.Getconectar())
+            throw new NotImplementedException();
+        }
+
+        //mostrar en combox subsidios
+        public DataTable ShowSubsidio(DSubsidios Entity)
+        {
+            DataTable dt = null;
+            using (SqlConnection cnn = RConexion.Getconectar())
             {
-                conect.Open();
-                cmd = null;
-                SqlDataAdapter da = new SqlDataAdapter();
+                cnn.Open();
                 using (cmd = new SqlCommand())
                 {
-                    cmd.Connection = conect;
-                    cmd.CommandText = "SP_SELECT_SUBSIDIOS";
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_SHOW_SUBSIDIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar, 30).Value = entiti.Tipo_subsidio;
 
-                    da.SelectCommand = cmd;
+                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar, 30).Value = Entity.Tipo_subsidio;
+                    SqlDataReader reader = cmd.ExecuteReader();
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
-                        da.Fill(dt);
-                        cmd.Parameters.Clear();
-                        da.Dispose();
-                        return dt;
+                        if (reader.HasRows)
+                        {
+                            dt.Load(reader);
+                            reader.Close();
+                        }
                     }
                 }
             }
+            return dt;
         }
-
 
     }
 }

@@ -18,7 +18,7 @@ namespace Presentacion.Vista
     {
         String result;
         private NDiasSubsidiados nds = new NDiasSubsidiados();
-        private Int32 codigo;
+       
         public frmSubsiyNoSubsi()
         {
             InitializeComponent();
@@ -27,14 +27,6 @@ namespace Presentacion.Vista
             Mostrar_cargo();
         }
 
-        private void GenerarCodigo()
-        {
-            codigo = 0;
-            using (nds)
-            {
-                codigo = nds.GetCodigo();
-            }
-        }
 
         private void Mostrar_cargo()
         {
@@ -60,6 +52,7 @@ namespace Presentacion.Vista
         
 
         private static frmSubsiyNoSubsi instance;
+        
         public static frmSubsiyNoSubsi GetInstance()
         {
             if (instance == null)
@@ -83,6 +76,7 @@ namespace Presentacion.Vista
 
             txtimporte.Text = importeDiario.ToString();
             txtdias.Text = Convert.ToString(0);
+            
         }
        
         
@@ -104,9 +98,7 @@ namespace Presentacion.Vista
         private void limpiar()
         {
             txtcodsub.Text = String.Empty;
-            txtdescrip.Text = String.Empty;
-
-            
+            txtdescrip.Text = String.Empty;            
             using (nds) { nds.state = EntityState.Guardar; }
         }
 
@@ -114,9 +106,7 @@ namespace Presentacion.Vista
         {
             result = "";
             using (nds)
-            {
-                nds.Id_det_subsidios = codigo;
-
+            {              
                 nds.Id_subsidios = Convert.ToInt32(txtidsubsidio.Text.Trim());
                 nds.Id_empleado = UserCache.IdUser;
                 nds.Id_mes = Convert.ToInt32(txtmes.Text.Trim());
@@ -126,13 +116,9 @@ namespace Presentacion.Vista
                 bool valida = new ValidacionDatos(nds).Validate();
                 if (valida)
                 {
-
                     result = nds.GuardarCambios();
-
                     Messages.M_info(result);
-                }
-
-                GenerarCodigo();
+                }              
 
             }
         }

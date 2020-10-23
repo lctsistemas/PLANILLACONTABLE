@@ -15,8 +15,6 @@ namespace Datos.Repositories
             result = 0;
             try
             {
-
-
                 using (SqlConnection conn = RConexion.Getconectar())
                 {
                     using (SqlCommand cmd = new SqlCommand())
@@ -103,9 +101,9 @@ namespace Datos.Repositories
                         cmd.Parameters.Clear();
                         cmd1.Parameters.Clear();
                     }
-                }
-                return result;
+                }                
             }
+            return result;
         }
         //REMOVE
         public int Delete(DempresaMaestra entiti)
@@ -124,14 +122,15 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mesages = cmd.Parameters["@mesage"].Value.ToString();
-                    cmd.Parameters.Clear();
-                    return result;
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
         //GET SHOW ALL
         public DataTable GetData(DempresaMaestra entiti)
         {
+            DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
@@ -144,15 +143,14 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        return dt;
+                        da.Dispose();                        
                     }
                 }
-
             }
+            return dt;
         }
 
     }

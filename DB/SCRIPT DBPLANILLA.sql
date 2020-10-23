@@ -289,15 +289,21 @@ insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
+GO
 
 CREATE TABLE SUBSIDIOS(
 id_subsidios int not null,
-cod_subsidio int not null,
+cod_subsidio char(2) not null,
+tipo_suspencion varchar(10)not null, -- S.P. AND S.I.
+descripcion_corta nvarchar(70) not null,
 descripcion_subsidio nvarchar(100) not null,
 tipo_subsidio varchar(30) not null, --SUBSIADOS Y NO SUBSIDIADOS
 descuento bit not null
 )
+GO
 
+--ALTER TABLE SUBSIDIOS ALTER COLUMN cod_subsidio char(2) not null
+--ALTER TABLE SUBSIDIOS add  descripcion_corta nvarchar(70) not null
 CREATE TABLE DET_SUBSIDIOS(
 id_det_subsidios int not null,
 id_subsidios int not null,
@@ -306,8 +312,9 @@ id_mes int not null,
 id_periodo int not null,
 dias int not null
 )
+GO
 
-
+BEGIN
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(1,21,'S.I. INCAPACIDAD TEMPORAL (INVALIDEZ, ENFERMEDAD Y ACCIDENTES)','SUBSIDIADOS',0);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(2,22,'S.I. MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL','SUBSIDIADOS',0);
 
@@ -322,8 +329,64 @@ insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsid
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(10,08,'S.P. POR TEMPORADA O INTERMITENTE','NO SUBSIDIADOS',1);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(11,20,'S.I. ENFERMEDAD O ACCIDENTE (PRIMEROS VEINTE DÍAS)','NO SUBSIDIADOS',1);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(12,23,'S.I. DESCANSO VACACIONAL','NO SUBSIDIADOS',1);
-insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(13,24,'S.I. LICENCIA PARA DESEMPEÑAR CARGO CíVICO Y PARA CUMPLIR CON EL SERVICIO MILITAR OBLIGATORIO','NO SUBSIDIADOS',1);
+insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(13,24,'S.I. LICENCIA PARA DESEMPEÑAR CARGO CÍVICO Y PARA CUMPLIR CON EL SERVICIO MILITAR OBLIGATORIO','NO SUBSIDIADOS',1);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(14,25,'S.I. PERMISO Y LICENCIA PARA EL DESEMPEÑO DE CARGOS SINDICALES','NO SUBSIDIADOS',1);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(15,26,'S.I. LICENCIA CON GOCE DE HABER','NO SUBSIDIADOS',1);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(16,27,'S.I. DíAS COMPENSADOS POR HORAS TRABAJADAS EN SOBRETIEMPO','NO SUBSIDIADOS',1);
 insert into SUBSIDIOS(id_subsidios,cod_subsidio,descripcion_subsidio,tipo_subsidio,descuento) VALUES(17,28,'S.P SUSPENSION PERFECTA DE LABORES','NO SUBSIDIADOS',1);
+END
+GO
+SELECT * FROM SUBSIDIOS
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(1, '01', 'S.P.', 'SANCION DISCIPLINARIA', 'SANCION DISCIPLINARIA','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(2, '02', 'S.P.', 'EJERCICIO DERECHO HUELGA', 'EJERCICIO DEL DERECHO DE HUELGA','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(3, '03', 'S.P.', 'DETENCION DEL TRABAJADOR', 'DETENCION DEL TRABAJADOR, SALVO EL CASO DE CONDENA PRIVATIVA DE LA LIBERTAD','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(4, '04', 'S.P.', 'INHAB. ADMINIST. JUDI. O PENAL PRIVATIVA', 'INHABILITACION ADMINISTRATIVA O JUDICIAL POR PERIODO NO SUPERIOR A TRES MESES','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(5, '05', 'S.P.', 'LICENCIA U OTROS SIN GOCE DE HABER', 'PERMISO O LICENCIA CONCEDIDOS POR EL EMPLEADOR SIN GOCE DE HABER','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(6, '06', 'S.P.', 'CASO FORTUITO O FUERZA MAYOR', 'CASO FORTUITO O FUERZA MAYOR','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(7, '07', 'S.P.', 'FALTA NO JUSTIFICADA', 'FALTA NO JUSTIFICADA','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(8, '08', 'S.P.', 'POR TEMPORADA O INTERMITENTE', 'POR TEMPORADA O INTERMITENTE','NO SUBSIDIADOS', 1);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(9, '20', 'S.I.', 'ENFERM/ACCIDENTE (20 PRIMEROS DIAS)', 'ENFERMEDAD O ACCIDENTE (PRIMEROS VEINTE DÍAS)','NO SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(10, '21', 'S.I.', 'INCAP TEMPORAL (SUBSIDIADO)', 'INCAPACIDAD TEMPORAL (INVALIDEZ, ENFERMEDAD Y ACCIDENTES)', 'SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(11, '22', 'S.I.', 'MATERNIDAD - PRE Y POST NATAL', 'MATERNIDAD DURANTE EL DESCANSO PRE Y POST NATAL','SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(12, '23', 'S.I.', 'DESCANSO VACACIONAL', 'DESCANSO VACACIONAL','NO SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(13, '24', 'S.I.', 'LIC DESEMP CARGO CIVICO Y PARA SMO', 'LICENCIA PARA DESEMPEÑAR CARGO CÍVICO Y PARA CUMPLIR CON EL SERVICIO MILITAR OBLIGATORIO','NO SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(14, '25', 'S.I.', 'LIC DESEMPEÑO CARGOS SINDICALES', 'PERMISO Y LICENCIA PARA EL DESEMPEÑO DE CARGOS SINDICALES','NO SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(15, '26', 'S.I.', 'LICENCIA CON GOCE DE HABER', 'LICENCIA Y OTROS MOTIVOS CON GOCE DE HABER','NO SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(16, '27', 'S.I.', 'DIAS COMPENS POR HORAS DE SOBRETIEMPO', 'DÍAS COMPENSADOS POR HORAS TRABAJADAS EN SOBRETIEMPO','NO SUBSIDIADOS', 0);
+
+insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(17, '28', 'S.I.', 'DIAS LICENCIA POR PATERNIDAD','DIAS LICENCIA POR PATERNIDAD','NO SUBSIDIADOS', 0);
+
+GO

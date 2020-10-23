@@ -79,9 +79,7 @@ namespace Negocio.Models
         {
             using (var dt = cargo_repository.GetData(null))
             {
-
                 listacargo = new List<Ncargo>();
-
                 foreach (DataRow item in dt.Rows)
                 {
                     listacargo.Add(new Ncargo()
@@ -90,7 +88,6 @@ namespace Negocio.Models
                         nombre_cargo = Convert.ToString(item[1]),//NOMBRE CARGO
                         descripcion = Convert.ToString(item[2])//DESCRIPCION
                     });
-
                 }
             }
             return listacargo;

@@ -1,5 +1,7 @@
 ﻿using Datos.Entities;
 
+using System.Data;
+
 namespace Datos.Contract
 {
     public interface IRepository : IGenerict<Dcargo>
@@ -31,16 +33,17 @@ namespace Datos.Contract
     }
     public interface IRegimen : IGenerict<DRegimen> { }
 
-    public interface IContrato : IGenerict<Dcontrato>
-    {
-    }
+    public interface IContrato : IGenerict<Dcontrato> { }
+   
     public interface ITipo_contrato : IGenerict<Dtipocontrato> { }
 
     public interface IPlanilla : IGenerict<DPlanilla> { }
 
     public interface IRegimenSalud : IGenerict<DRegimenSalud> { }
 
-    public interface ISubsidios : IGenerict<DSubsidios> { }
+    public interface ISubsidios : IGenerict<DSubsidios> {
+        DataTable ShowSubsidio(DSubsidios Entity);
+    }
 
     public interface IDiasSubsidiados : IGenerict<DDiasSubsidiados> { }
 }

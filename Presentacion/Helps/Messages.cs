@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 namespace Presentacion.Helps
 {
-    public class Messages
+    public static class Messages
     {
         public static void M_info(String men)
         {
@@ -21,7 +21,7 @@ namespace Presentacion.Helps
 
         public static DialogResult M_question(String men)
         {
-            return MessageBox.Show(men, "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return MessageBox.Show(men, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
     }
