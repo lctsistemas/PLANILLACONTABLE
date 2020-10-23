@@ -26,7 +26,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_AGR_EMPL";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
+                    //cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                     cmd.Parameters.Add("@codigo", SqlDbType.VarChar, 20).Value = entiti.Codigo;
                     cmd.Parameters.Add("@nom_emp", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
                     cmd.Parameters.Add("@ape_pat", SqlDbType.VarChar, 50).Value = entiti.Ape_pat;
@@ -65,7 +65,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_INSERT_CONTRATO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;
+                    //cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;
                     cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.Id_banco;
                     cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
                     cmd.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = entiti.Fecha_inicio;

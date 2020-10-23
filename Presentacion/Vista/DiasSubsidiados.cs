@@ -66,15 +66,16 @@ namespace Presentacion.Vista
             limpiar();
         }
 
-      
+
 
         public void CalculoDiasSubsidiado()
         {
             PlanillaMensual plamens = new PlanillaMensual();
-            double basico = Double.Parse(plamens.txtHaberBasico.Text.ToString());
-            double importeDiario = Math.Round(basico / 30, 4);
+            Double basico=930;
+               
+            Double importeDiario = Math.Round(basico / 30, 4);
 
-            txtimporte.Text = importeDiario.ToString();
+            txtimporte.Text = importeDiario.ToString("#.##");
             txtdias.Text = Convert.ToString(0);
             
         }

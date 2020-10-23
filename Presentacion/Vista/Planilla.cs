@@ -63,13 +63,17 @@ namespace Presentacion.Vista
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
 
             //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado
-            
 
-            txtremu.Text = "930.00";
-            txtasig.Text = "93.00";
-            txttope.Text = "1200";
 
-            }
+            Double remu_basica = 930;
+            Double asign = 93;
+            Double tope = 1300;
+
+            txtremu.Text = remu_basica.ToString("#.##");
+            txtasig.Text = asign.ToString("#.##");
+            txttope.Text = tope.ToString("#.##");
+
+        }
         
 
         private static Planilla instance;
@@ -87,8 +91,7 @@ namespace Presentacion.Vista
             result = "";
             using (np)
             {
-                np.Id_planilla = codigo;
-                //np.Id_planilla = txtdescCorta.Text.Trim().ToUpper();
+                //np.Id_planilla = codigo;
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
                 np.Id_periodo = UserCache.Idperiodo;
                 np.Id_empresa = UserCache.Codigo_empresa;

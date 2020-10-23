@@ -78,9 +78,8 @@ namespace Presentacion.Vista
         {
             result = "";
             using (nbanco)
-            {
-                if (nbanco.state == EntityState.Guardar)
-                    nbanco.IdBanco = codigoban;
+            {   
+                //nbanco.IdBanco = codigoban;
 
                 nbanco.Nom_banco = txtBanco.Text.Trim();
                 bool validar = new ValidacionDatos(nbanco).Validate();
@@ -90,14 +89,11 @@ namespace Presentacion.Vista
 
                     Messages.M_info(result);
 
-                    if (nbanco.state == EntityState.Guardar)
-                    {
-                        generarCodigo();
-                        limpiar();
-                    }
                 }
 
                 ShowBanco();
+                limpiar();
+
             }
         }
 
@@ -137,15 +133,14 @@ namespace Presentacion.Vista
         private void Banco_Load(object sender, EventArgs e)
         {
             ShowBanco();
-            generarCodigo();
             Tabla();
+            Habilitar(false);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             using (nbanco) { nbanco.state = EntityState.Guardar; }
-            generarCodigo();
-
+            Habilitar(true);
             limpiar();
         }
         private void BorrarError(TextBox textbox)
@@ -213,6 +208,7 @@ namespace Presentacion.Vista
         private void dgvBanco_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvBanco.CurrentRow;
+            Habilitar(true);
             if (dgvBanco.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 using (nbanco)
@@ -222,7 +218,7 @@ namespace Presentacion.Vista
                     txtBanco.Text = r.Cells[1].Value.ToString();
 
                     tablista.SelectedIndex = 0;
-                    Habilitar(true);
+                    
                     ValidateError.validate.Clear();
                 }
 

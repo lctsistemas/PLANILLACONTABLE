@@ -101,7 +101,7 @@ GO
 
 --Agregar empleado
 ALTER PROC SP_AGR_EMPL
-(@id_empleado int,
+(--@id_empleado int,
 @codigo varchar(20),--sera número de documento.
 @nom_emp varchar(50),
 @ape_pat varchar(50),
@@ -119,6 +119,13 @@ ALTER PROC SP_AGR_EMPL
 @id_empresa_maestra int,
 @mensaje varchar(100) output)
 AS BEGIN 
+	DECLARE @empleado int
+	SET @empleado=(SELECT count(e.id_empleado) FROM dbo.Empleado e)
+	IF(@empleado=0)	
+		SET @empleado=1	
+	ELSE
+		SET @empleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
+
 IF(EXISTS(SELECT e.numero_documento FROM Empleado e WHERE e.numero_documento=@num_doc))
 	BEGIN 
 	SET @mensaje ='El número de documento ('+@num_doc+') ya se encuentra registrado'
@@ -127,7 +134,7 @@ ELSE
 	BEGIN
 		INSERT INTO dbo.Empleado(id_empleado,codigo,nombre_empleado, ape_paterno, ape_materno, fecha_nacimiento, nacionalidad, 
 		tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra, eliminado_estado) 
-		VALUES (@id_empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
+		VALUES (@empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
 		@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, 'NO ANULADO')
 		SET @mensaje= '¡Empleado registrado correctamente!'
 	END	
@@ -198,7 +205,7 @@ GO
 
 -- CONTRATO SEGUN EMPLEADO REGISTRADO
 ALTER PROCEDURE SP_INSERT_CONTRATO
-(@id_contrato int,
+(--@id_contrato int,
 @id_banco int,
 @id_tcontrato int,
 @fecha_inicio date,
@@ -213,10 +220,16 @@ ALTER PROCEDURE SP_INSERT_CONTRATO
 @cuenta_cts nvarchar(50),
 @cussp nvarchar(70))
 AS BEGIN
+	DECLARE @contrato int
+	SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
+	IF(@contrato=0)
+		SET @contrato=1		
+	ELSE
+		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)			
 INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
 fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, regimen_salud, tipo_pago, 
 periodicidad, tipo_moneda, cuenta_cts, cussp)
-VALUES(@id_contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
+VALUES(@contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
 @id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @regimen_salud, @tipo_pago, 
 @periodicidad, @tipo_modeda, @cuenta_cts, @cussp)
 END
@@ -411,14 +424,21 @@ END
 GO
 
 /*   PROCEDIMIENTO PARA USUARIO*/
-CREATE PROC SP_INSERT_USUARIO
-(@idusu int,
+alter PROC SP_INSERT_USUARIO
+(--@idusu int,
 @codigo_usu varchar(20),
 @referencia varchar(50),
 @passwor varchar(10),
 @id_rol int,
 @mesage varchar(100) output)
 AS BEGIN
+DECLARE @usu int
+SET @usu=(SELECT count(u.id_usuario) FROM dbo.Usuario u)
+IF(@usu=0)
+	SET @usu=1	
+ELSE
+	SET @usu=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
+
 IF(EXISTS(SELECT u.codigo_usuario FROM dbo.Usuario u WHERE U.codigo_usuario=@codigo_usu))
 	BEGIN
 	SET @mesage= 'USUARIO ('+@codigo_usu+' ) SE ENCUENTRA REGISTRADO'
@@ -426,7 +446,7 @@ IF(EXISTS(SELECT u.codigo_usuario FROM dbo.Usuario u WHERE U.codigo_usuario=@cod
 ELSE
 	BEGIN
 	INSERT INTO dbo.Usuario(id_usuario, codigo_usuario, referencia, contrasena, id_rol)VALUES
-	(@idusu, @codigo_usu, @referencia, @passwor, @id_rol)
+	(@usu, @codigo_usu, @referencia, @passwor, @id_rol)
 	SET @mesage= 'USUARIO REGISTRADO'
 	END
 END
@@ -814,14 +834,22 @@ GO
 
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
-CREATE PROC SP_INSERT_BANCO(
-@id_banco int,
+alter PROC SP_INSERT_BANCO(
+--@id_banco int,
 @nombre_banco varchar(25),
 @mensaje varchar(100) output
 )
 AS BEGIN
-	INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@id_banco,@nombre_banco)
-	SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
+	DECLARE @Banco int
+	SET @Banco=(SELECT count(b.id_banco) FROM Banco b)
+	IF(@Banco=0)
+		BEGIN
+			SET @Banco=1
+		END
+	ELSE	
+		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)	
+INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@Banco,@nombre_banco)
+SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
 END
 GO
 
@@ -865,13 +893,19 @@ GO
 EXEC SP_SHOW_BANCO
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
-CREATE PROC SP_INSERT_TIP_CONT(
-@id_tip_cont int,
+alter PROC SP_INSERT_TIP_CONT(
+--@id_tip_cont int,
 @tiempo_contrato varchar(30),
 @mensaje varchar(100) output
 )
 AS BEGIN
-INSERT INTO Tipo_contrato(id_tipo_contrato, tiempo_contrato) VALUES(@id_tip_cont,@tiempo_contrato)
+DECLARE @Tipocont int
+	SET @Tipocont=(SELECT COUNT(t.id_tipocontrato) FROM Tipo_contrato t)
+	IF(@Tipocont=0)
+		SET @Tipocont=1
+	ELSE
+		SET @Tipocont=(SELECT MAX(t.id_tipocontrato)+1 FROM Tipo_contrato t)
+INSERT INTO Tipo_contrato(id_tipocontrato, tiempo_contrato) VALUES(@Tipocont,@tiempo_contrato)
 SET @mensaje= 'TIPO DE CONTRATO REGISTRADO CORRECTAMENTE'
 END
 GO
@@ -884,7 +918,7 @@ alter PROC SP_UPDATE_TIP_CONT(
 @tipo_contrato varchar(30)
 )
 AS BEGIN 
-UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipo_contrato=@id_tip_cont
+UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipocontrato=@id_tip_cont
 END;
 GO
 
@@ -1033,7 +1067,7 @@ GO
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
 alter PROC SP_INSERT_PLANILLA
-@id_planilla int,
+--@id_planilla int,
 --@id_tipo_planilla varchar(20),
 @id_periodo int,
 @id_empresa int,
@@ -1048,21 +1082,21 @@ alter PROC SP_INSERT_PLANILLA
 @tope_horario_nocturno int,
 @mesage varchar(100) output
 AS BEGIN
-	IF EXISTS(SELECT p.id_periodo,p.id_mes FROM Planilla p WHERE p.id_mes=@id_mes and p.id_periodo=@id_periodo) 
-		BEGIN 
-			SET @mesage ='El mes ya se encuentra registrado'
-		END
+	DECLARE @plani int
+	SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
+	IF(@plani=0)
+		SET @plani=1
 	ELSE
-		BEGIN
+		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)
 		
-			INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
-			dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-			(@id_planilla,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
-			@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
-			SET @mesage= 'PLANILLA ELIMINADO CORRECTAMENTE'	
-		END
+INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
+dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
+(@plani,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
+@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
+SET @mesage= 'PLANILLA REGISTRADA CORRECTAMENTE'	
 END
 GO
+
 
 
 alter PROC SP_UPDATE_PLANILLA
@@ -1073,7 +1107,7 @@ UPDATE Planilla SET fecha_pago=@fecha_pago
 WHERE id_planilla=@id_planilla
 END
 GO
-
+EXEC SP_UPDATE_PLANILLA 4,'2020-11-29'
 
 GO
 alter PROC SP_SHOW_PLANILLA
@@ -1113,18 +1147,34 @@ AS BEGIN
 END
 GO
 
+<<<<<<< HEAD
 -- SCRIPT PARA ESSALUD
 CREATE PROCEDURE SP_ADD_REG_SAL(
 @id_regimen_salud int,
+=======
+
+
+
+ALTER PROCEDURE SP_ADD_REG_SAL(
+--@id_regimen_salud int,
+>>>>>>> 1025941f78a75d9300207f0f21bde5067e348976
 @cod_regi_salud int,
 @regimen_salud varchar(80),
 @mensaje varchar(100) output)
 AS BEGIN
+DECLARE @reg_salud int
+SET @reg_salud=(SELECT count(rs.id_regimen_salud) FROM REGIMEN_SALUD rs)
+IF(@reg_salud=0)	
+	SET @reg_salud=1	
+ELSE
+	SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
+
 INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud)
-VALUES(@id_regimen_salud,@cod_regi_salud,@regimen_salud)
+VALUES(@reg_salud,@cod_regi_salud,@regimen_salud)
 SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
 END
 GO
+
 
 CREATE PROC SP_UPDATE_REG_SALUD
 @id_regimen_salud int,
@@ -1147,7 +1197,7 @@ SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
 END
 GO
 
-CREATE PROC SP_SHOW_REG_SALUD 
+alter PROC SP_SHOW_REG_SALUD 
 AS BEGIN 
 SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.regimen_salud
 from REGIMEN_SALUD rs

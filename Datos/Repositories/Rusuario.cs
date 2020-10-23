@@ -23,7 +23,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_INSERT_USUARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@idusu", SqlDbType.Int).Value = entiti.Idusuario;
+                    //cmd.Parameters.Add("@idusu", SqlDbType.Int).Value = entiti.Idusuario;
                     cmd.Parameters.Add("@codigo_usu", SqlDbType.VarChar, 20).Value = entiti.Codigo_usu;
                     cmd.Parameters.Add("@referencia", SqlDbType.VarChar, 50).Value = entiti.Nombre_refe;
                     cmd.Parameters.Add("@passwor", SqlDbType.VarChar, 10).Value = entiti.Password;

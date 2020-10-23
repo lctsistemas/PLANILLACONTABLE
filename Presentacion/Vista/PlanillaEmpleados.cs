@@ -119,7 +119,7 @@ private void btncerrar_Click(object sender, EventArgs e)
             formodi.lblper.Text = dgvplanilla.CurrentRow.Cells[1].Value.ToString();//periodo
             formodi.cbxmes.Text = dgvplanilla.CurrentRow.Cells[4].Value.ToString();//mes
 
-            formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[5].Value.ToString();//fecha pago
+            formodi.txtpago.Text = dgvplanilla.CurrentRow.Cells[7].Value.ToString();//fecha pago
             formodi.StartPosition = FormStartPosition.CenterParent;
             formodi.ShowDialog();
             ShowPlanilla();

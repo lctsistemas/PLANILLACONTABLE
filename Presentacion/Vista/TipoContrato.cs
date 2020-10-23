@@ -51,24 +51,24 @@ namespace Presentacion.Vista
         private void btnguardar_Click(object sender, EventArgs e)
         {
 
-            if (Validar_campo())
-            {
-                Messages.M_warning("Ingrese un tipo de contrato  por favor");
-                return;
-            }
             result = "";
 
             using (nTipocont)
             {
-
-                if (nTipocont.state == EntityState.Guardar)
-                    nTipocont.id_tcontrato = nTipocont.Getcodigo();
+                //nTipocont.id_tcontrato = nTipocont.Getcodigo();
 
                 nTipocont.tiem_contrato = txttipo.Text.Trim().ToUpper();
 
-                result = nTipocont.GuardarCambios();
+                bool validar = new ValidacionDatos(nTipocont).Validate();
+                if (validar)
+                {
+                    result = nTipocont.GuardarCambios();
+
+                    Messages.M_info(result);
+
+                }
+
                 ShowTipoContrato();
-                Messages.M_info(result);
 
                 limpiar();
 
@@ -93,20 +93,26 @@ namespace Presentacion.Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             using (nTipocont) { nTipocont.state = EntityState.Guardar; }
-
+            Habilitar(true);
             limpiar();
         }
 
         private void TipoContrato_Load(object sender, EventArgs e)
         {
-
+            Habilitar(false);
         }
 
-
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            txttipo.Enabled = v;
+           
+        }
 
         private void dgvtipocontrato_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvtipocontrato.CurrentRow;
+            Habilitar(true);
             if (dgvtipocontrato.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 using (nTipocont)

@@ -25,12 +25,13 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_ADD_REG_SAL";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;
+                    //cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;
                     cmd.Parameters.Add("@cod_regi_salud", SqlDbType.Int).Value = entiti.Cod_regi_salud;
                     cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
 
                     result = cmd.ExecuteNonQuery();
+                    System.Windows.Forms.MessageBox.Show(""+result);
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();
                     return result;
@@ -77,8 +78,8 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@cod_regimen_salud", SqlDbType.Int).Value = entiti.Cod_regi_salud;
                     cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
 
-
                     result = cmd.ExecuteNonQuery();
+                    System.Windows.Forms.MessageBox.Show("update:  " + result);
                     cmd.Parameters.Clear();
                     return result;
                 }
@@ -87,6 +88,7 @@ namespace Datos.Repositories
 
         public DataTable GetData(DRegimenSalud entiti)
         {
+            DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
@@ -99,15 +101,16 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
                         da.Dispose();
-                        return dt;
+                        
                     }
                 }
 
             }
+            return dt;
         }
     }
 }

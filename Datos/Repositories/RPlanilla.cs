@@ -23,7 +23,7 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // cmd.Parameters.Add("@id_tipo_planilla", SqlDbType.Int).Value = entiti.Id_tipo_planilla;
-                    cmd.Parameters.Add("@id_planilla", SqlDbType.Int).Value = entiti.Id_planilla;
+                    //cmd.Parameters.Add("@id_planilla", SqlDbType.Int).Value = entiti.Id_planilla;
                     cmd.Parameters.Add("@id_periodo", SqlDbType.Int).Value = entiti.Id_periodo;
                     cmd.Parameters.Add("@id_empresa", SqlDbType.Int).Value = entiti.Id_empresa;
                     cmd.Parameters.Add("@id_mes", SqlDbType.Int).Value = entiti.Id_mes;
