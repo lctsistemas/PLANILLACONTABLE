@@ -1221,6 +1221,7 @@
             this.nudMinNocturna35.Name = "nudMinNocturna35";
             this.nudMinNocturna35.Size = new System.Drawing.Size(43, 20);
             this.nudMinNocturna35.TabIndex = 373;
+            this.nudMinNocturna35.ValueChanged += new System.EventHandler(this.nudMinNocturna35_ValueChanged);
             // 
             // nudMinNocturna25
             // 
@@ -1228,6 +1229,7 @@
             this.nudMinNocturna25.Name = "nudMinNocturna25";
             this.nudMinNocturna25.Size = new System.Drawing.Size(43, 20);
             this.nudMinNocturna25.TabIndex = 372;
+            this.nudMinNocturna25.ValueChanged += new System.EventHandler(this.nudMinNocturna25_ValueChanged);
             // 
             // nudNocturna35
             // 
@@ -1235,6 +1237,7 @@
             this.nudNocturna35.Name = "nudNocturna35";
             this.nudNocturna35.Size = new System.Drawing.Size(43, 20);
             this.nudNocturna35.TabIndex = 371;
+            this.nudNocturna35.ValueChanged += new System.EventHandler(this.nudNocturna35_ValueChanged);
             // 
             // nudNocturna25
             // 
@@ -1242,6 +1245,7 @@
             this.nudNocturna25.Name = "nudNocturna25";
             this.nudNocturna25.Size = new System.Drawing.Size(43, 20);
             this.nudNocturna25.TabIndex = 370;
+            this.nudNocturna25.ValueChanged += new System.EventHandler(this.nudNocturna25_ValueChanged);
             // 
             // nudMinDiurna35
             // 

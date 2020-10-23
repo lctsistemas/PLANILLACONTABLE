@@ -574,6 +574,78 @@ namespace Presentacion.Vista
             //txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
         }
 
+        private void Hora25Nocturna()
+        {
+            double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+            double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+            double precioPorNocturna = ((((remuneracion + asignacion) + (remuneracion + asignacion) * 0.35)) / 30) / 8;
+            double recargoNocturna25 = precioPorNocturna * 0.25;
+            double totalRecargoNocturna = precioPorNocturna + recargoNocturna25;
+            txtPrecioHoraNocturna25.Text = totalRecargoNocturna.ToString("N2");
+
+            double recargoNocturna35 = precioPorNocturna * 0.35;
+            double totalNocturnarecargo35 = precioPorNocturna + recargoNocturna35;
+            txtPrecioHoraNocturna35.Text = totalNocturnarecargo35.ToString("N2");
+
+            double horadiurna25 = Double.Parse(nudNocturna25.Value.ToString());
+            double mindiurna25 = Double.Parse(nudMinNocturna25.Value.ToString());
+
+            double dias_mes = (remuneracion + asignacion) / 30;
+            double horas_mes = dias_mes / 8;
+            double minutos_mes = horas_mes / 60;
+
+            double recargo25minutos = minutos_mes * 0.25;
+            double sumarecargo25minutos = minutos_mes + recargo25minutos;
+
+            double horaporsumarecargo = (sumarecargo25minutos * mindiurna25) * 1.35;
+
+            double horadiurna25_2 = (horadiurna25 * totalRecargoNocturna) + horaporsumarecargo;
+            txtTotalNocturna25.Text = horadiurna25_2.ToString("N2");
+
+            double totalDiurna25 = Double.Parse(txtTotalNocturna25.Text);
+            double totalDiurna35 = Double.Parse(txtTotalNocturna35.Text);
+
+            double totalSumaDiurna = totalDiurna25 + totalDiurna35;
+            txtTotalNocturna.Text = totalSumaDiurna.ToString("N2");
+        }
+
+        private void Hora35Nocturna()
+        {
+            double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+            double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+            double precioPorNocturna = ((((remuneracion + asignacion) + (remuneracion + asignacion) * 0.35)) / 30) / 8;
+            double recargoNocturna25 = precioPorNocturna * 0.25;
+            double totalRecargoNocturna = precioPorNocturna + recargoNocturna25;
+            txtPrecioHoraNocturna25.Text = totalRecargoNocturna.ToString("N2");
+
+            double recargoNocturna35 = precioPorNocturna * 0.35;
+            double totalNocturnarecargo35 = precioPorNocturna + recargoNocturna35;
+            txtPrecioHoraNocturna35.Text = totalNocturnarecargo35.ToString("N2");
+
+            double horadiurna25 = Double.Parse(nudNocturna35.Value.ToString());
+            double mindiurna25 = Double.Parse(nudMinNocturna35.Value.ToString());
+
+            double dias_mes = (remuneracion + asignacion) / 30;
+            double horas_mes = dias_mes / 8;
+            double minutos_mes = horas_mes / 60;
+
+            double recargo25minutos = minutos_mes * 0.35;
+            double sumarecargo25minutos = minutos_mes + recargo25minutos;
+
+            double horaporsumarecargo = (sumarecargo25minutos * mindiurna25) * 1.35;
+
+            double horadiurna25_2 = (horadiurna25 * totalNocturnarecargo35) + horaporsumarecargo;
+            txtTotalNocturna35.Text = horadiurna25_2.ToString("N2");
+
+            double totalDiurna25 = Double.Parse(txtTotalNocturna25.Text);
+            double totalDiurna35 = Double.Parse(txtTotalNocturna35.Text);
+
+            double totalSumaDiurna = totalDiurna25 + totalDiurna35;
+            txtTotalNocturna.Text = totalSumaDiurna.ToString("N2");
+        }
+
         private void tardanzas()
         {
             /*if (nudHorasTardanza.Text == "") //aca tambien le cambio?
@@ -707,6 +779,26 @@ namespace Presentacion.Vista
         private void nudMinDiurna35_ValueChanged(object sender, EventArgs e)
         {
             Hora35();
+        }
+
+        private void nudNocturna25_ValueChanged(object sender, EventArgs e)
+        {
+            Hora25Nocturna();
+        }
+
+        private void nudMinNocturna25_ValueChanged(object sender, EventArgs e)
+        {
+            Hora25Nocturna();
+        }
+
+        private void nudNocturna35_ValueChanged(object sender, EventArgs e)
+        {
+            Hora35Nocturna();
+        }
+
+        private void nudMinNocturna35_ValueChanged(object sender, EventArgs e)
+        {
+            Hora35Nocturna();
         }
     }
 }
