@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Presentacion.Helps
 {
-    public class Calculo
+    public  class Calculo
     {
 
         public static double HoraExDiurna(double basico, double asig_fami, double taza, int hora, int minuto)

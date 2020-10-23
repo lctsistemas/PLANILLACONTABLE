@@ -25,12 +25,10 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nombre_documento;
                     cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
                     result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    return result;
-
+                    cmd.Parameters.Clear();                    
                 }
-
             }
+            return result;
         }
         //EDITAR
         public int Edit(DtipoDocumento entiti)
@@ -49,13 +47,10 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
                     cmd.Parameters.Add("@iddocumento", SqlDbType.Int).Value = entiti.Iddocumento;
                     result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    return result;
-
+                    cmd.Parameters.Clear();                    
                 }
-
             }
-
+            return result;
         }
         //ELIMINAR
         public int Delete(DtipoDocumento entiti)

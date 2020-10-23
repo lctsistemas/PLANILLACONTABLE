@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Comun.Cache;
+
 namespace Presentacion.Vista
 {
     public partial class FrmPlanillaMensual2 : Form
     {
-        
+        private const string Subsidiado = "SUBSIDIADOS";
+        private const string NoSubsidiado = "NO SUBSIDIADOS";
         public FrmPlanillaMensual2()
         {
             InitializeComponent();
@@ -403,15 +406,23 @@ namespace Presentacion.Vista
                 //MessageBox.Show(""+e.RowIndex);
                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
                 {
-                    Messages.M_info("seleccione el boton susbidio");
-                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();
-                    
+                    //Messages.M_info("seleccione el boton susbidio");
+                    PlanillaCache.Subsidiado = Subsidiado;
+                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();                    
                     fr2.ShowDialog(dgvplanilla1);
                 }
 
                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
                 {
-                    Messages.M_info("Seleccine boton no subsidiado");
+                    //Messages.M_info("Seleccine boton no subsidiado");
+                    PlanillaCache.Subsidiado = NoSubsidiado;
+                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();
+                    fr2.ShowDialog(dgvplanilla1);
+                    MessageBox.Show("dato:  "+ PlanillaCache.mensaje);
+                    //dgvplanilla1.CurrentRow.Cells["ape_nom"].Value = PlanillaCache.mensaje;
+                    dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value = PlanillaCache.mensaje;
+
+
                 }
             }
         }

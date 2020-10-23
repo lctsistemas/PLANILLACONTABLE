@@ -748,21 +748,6 @@ ELSE
 END
 GO
 
---GENERAR CODIGO SUBSIDIOS
-CREATE PROC SP_GENERAR_SUBSIDIO
-(@subsidio int output)
-AS BEGIN
-SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
-IF(@subsidio=0)
-	BEGIN
-		SET @subsidio=1		
-	END
-ELSE
-	BEGIN
-		SET @subsidio=(SELECT MAX(ds.id_det_subsidios)+1 FROM dbo.DET_SUBSIDIOS ds)
-	END
-END
-GO
 
 --generar codigo regimen salud
 CREATE PROC SP_GENERAR_REG_SAL
@@ -1162,11 +1147,17 @@ AS BEGIN
 END
 GO
 
+<<<<<<< HEAD
+-- SCRIPT PARA ESSALUD
+CREATE PROCEDURE SP_ADD_REG_SAL(
+@id_regimen_salud int,
+=======
 
 
 
 ALTER PROCEDURE SP_ADD_REG_SAL(
 --@id_regimen_salud int,
+>>>>>>> 1025941f78a75d9300207f0f21bde5067e348976
 @cod_regi_salud int,
 @regimen_salud varchar(80),
 @mensaje varchar(100) output)
@@ -1195,9 +1186,8 @@ WHERE id_regimen_salud=@id_regimen_salud
 END
 GO
 
-EXEC SP_UPDATE_REG_SALUD 1,4,'ESSALUD AGRARIO/ACUICOLAs'
-GO
 
+GO
 CREATE PROC SP_DELETE_REG_SALUD
 @id_regimen_salud int,
 @mensaje varchar(100) output
@@ -1214,30 +1204,61 @@ from REGIMEN_SALUD rs
 END
 GO
 
-exec SP_SHOW_REG_SALUD
 
-alter PROC SP_SELECT_SUBSIDIOS 
+--- SCRIPT SUBSIDIOS
+ALTER PROC SP_SHOW_DETSUBSIDIOS 
+@idmes int,
+@idperiodo int,
+@idempleado int,
+@tipoSubsidio varchar(30)
+AS BEGIN
+SELECT d.id_det_subsidios, s.cod_subsidio, CONCAT(s.cod_subsidio,' - ', s.tipo_suspension,' ', s.descripcion_corta) 
+AS t_supension, d.dias FROM DET_SUBSIDIOS d join SUBSIDIOS s on d.id_subsidios=s.id_subsidios 
+WHERE (d.id_periodo=@idperiodo and d.id_mes=@idmes) and s.tipo_subsidio= @tipoSubsidio and d.id_empleado= @idempleado
+END
+GO
+--select * from DET_SUBSIDIOS
+--select * from SUBSIDIOS
+--DELETE FROM DET_SUBSIDIOS where id_det_subsidios between 3 and 5
+
+ALTER PROC SP_SHOW_SUBSIDIOS --mostrara en combobox
 @tipo_subsidio varchar(30)
 AS BEGIN
-SELECT id_subsidios, cod_subsidio, descripcion_subsidio,tipo_subsidio,descuento 
-FROM SUBSIDIOS WHERE tipo_subsidio=@tipo_subsidio order by id_subsidios desc
+SELECT s.id_subsidios, cod_subsidio, tipo_suspension, descripcion_corta FROM SUBSIDIOS s 
+WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
 
-exec SP_SELECT_SUBSIDIOS 'SUBSIDIADOS'
-
-ALTER PROC SP_INSERT_SUBSIDIOS 
-@id_det_subsidios int,
+ALTER PROC SP_INSERT_SUBSIDIOS
 @id_subsidios int,
 @id_empleado int,
 @id_mes int,
 @id_periodo int,
-@dias int,
-@mensaje varchar(100) output
+@dias int
 AS BEGIN
-INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios,id_empleado,id_mes,id_periodo,dias) VALUES(@id_det_subsidios,@id_subsidios,@id_empleado,@id_mes,@id_periodo,@dias)
-SET @mensaje= 'SUBSIDIO REGISTRADO CON EXITO'
+DECLARE @subsidio int
+SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
+IF(@subsidio=0)	
+	SET @subsidio=1		
+ELSE
+	SET @subsidio=(SELECT MAX(ds.id_det_subsidios) + 1 FROM dbo.DET_SUBSIDIOS ds)
+INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios, id_empleado, id_mes, id_periodo, dias)
+VALUES(@subsidio, @id_subsidios, @id_empleado, @id_mes, @id_periodo, @dias)
 END
 GO
 
-exec SP_INSERT_SUBSIDIOS 
+ALTER PROC SP_UPDATE_SUBSIDIOS
+@dias int,
+@id_detSubsidios int
+AS BEGIN
+UPDATE dbo.DET_SUBSIDIOS SET dias=@dias WHERE id_det_subsidios=@id_detSubsidios
+END
+GO
+
+CREATE PROC SP_DELETE_SUBSIDIOS
+@id_detSubsidios int
+AS BEGIN
+DELETE FROM dbo.DET_SUBSIDIOS WHERE id_det_subsidios=@id_detSubsidios
+END
+
+	

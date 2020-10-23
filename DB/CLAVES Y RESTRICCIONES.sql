@@ -32,8 +32,9 @@ alter table Planilla ADD CONSTRAINT FK_idmes FOREIGN KEY(id_mes) REFERENCES Mes;
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub FOREIGN KEY(id_subsidios) REFERENCES Subsidios
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERENCES Periodo
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFERENCES Mes
-
-
+alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REFERENCES Empleado
+GO
+select * from empleado
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_regpension FOREIGN KEY(codigo_regimen) REFERENCES RegimenPensionario

@@ -180,9 +180,9 @@ namespace Negocio.Models
                         Id_emp_maestra = Convert.ToInt32(item[4]),
                         Empresa = item[5].ToString(),
                     });
-                }
-                return listaemp;
+                }               
             }
+            return listaemp;
         }
 
         public IEnumerable<NEmpleado> Search(String filter)

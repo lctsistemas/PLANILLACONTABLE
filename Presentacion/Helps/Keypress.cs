@@ -54,9 +54,9 @@ namespace Presentacion.Helps
                 }
 
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
