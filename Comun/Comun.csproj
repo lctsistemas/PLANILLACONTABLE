@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\PlanillaCache.cs" />
     <Compile Include="Cache\Rol.cs" />
     <Compile Include="Cache\UserCache.cs" />
     <Compile Include="Comunicacion\Apirest.cs" />

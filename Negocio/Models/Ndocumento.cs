@@ -18,6 +18,7 @@ namespace Negocio.Models
         [Required]
         [RegularExpression("^[a-zA-Z ]+$")]
         public string nombre_documento { get; set; }
+
         public string descripcion { get; set; }
         public EntityState state { private get; set; }
         private IDocumento docu_repsository;
@@ -84,8 +85,8 @@ namespace Negocio.Models
                         descripcion = item[2].ToString()
                     });
                 }
-                return listadocu;
             }
+            return listadocu;
         }
 
         public IEnumerable<Ndocumento> Search(string filter)

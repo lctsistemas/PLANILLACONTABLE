@@ -14,14 +14,13 @@ namespace Presentacion.Vista
     public partial class frmListaNoSubsidiados : Form
     {
         private NSubsidios ns = new NSubsidios();
-
+        private static frmListaNoSubsidiados instance;
         public frmListaNoSubsidiados()
         {
             InitializeComponent();
         }
 
-        private static frmListaNoSubsidiados instance;
-
+       
         public static frmListaNoSubsidiados GetInstance()
         {
             if (instance == null)
@@ -52,42 +51,38 @@ namespace Presentacion.Vista
             dgvnosubsidiados.Columns[5].HeaderText = "state";
             dgvnosubsidiados.Columns[5].Width = 100;
             dgvnosubsidiados.Columns[5].Visible = false;
-
-
         }
 
         private void ListaNoSubsidiados_Load(object sender, EventArgs e)
         {
-            if (PlanillaMensual.tipoform == "SUBSIDIADOS")
-            {
-                ShowSubsidiados();
-                Tabla();
-            }else if(PlanillaMensual.tipoform == "NO SUBSIDIADOS")
-            {
-                ShowNoSubsidiados();
-                Tabla();
-            }
-
-
+            //if (PlanillaMensual.tipoform == "SUBSIDIADOS")
+            //{
+            //    ShowSubsidiados();
+            //    Tabla();
+            //}else if(PlanillaMensual.tipoform == "NO SUBSIDIADOS")
+            //{
+            //    ShowNoSubsidiados();
+            //    Tabla();
+            //}
         }
 
-        private void ShowNoSubsidiados()
-        {
-            using (ns)
-            {
-                ns.Tipo_subsidio = "NO SUBSIDIADOS";
-                dgvnosubsidiados.DataSource = ns.Getall();
-            }
-        }
+        //private void ShowNoSubsidiados()
+        //{
+        //    using (ns)
+        //    {
+        //        ns.Tipo_subsidio = "NO SUBSIDIADOS";
+        //        dgvnosubsidiados.DataSource = ns.Getall();
+        //    }
+        //}
 
-        private void ShowSubsidiados()
-        {
-            using (ns)
-            {
-                ns.Tipo_subsidio = "SUBSIDIADOS";
-                dgvnosubsidiados.DataSource = ns.Getall();
-            }
-        }
+        //private void ShowSubsidiados()
+        //{
+        //    using (ns)
+        //    {
+        //        ns.Tipo_subsidio = "SUBSIDIADOS";
+        //        dgvnosubsidiados.DataSource = ns.Getall();
+        //    }
+        //}
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
@@ -109,7 +104,6 @@ namespace Presentacion.Vista
         private void btnaceptar_Click(object sender, EventArgs e)
         {
             ImprimirDatos();
-
         }
 
         private void dgvnosubsidiados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
