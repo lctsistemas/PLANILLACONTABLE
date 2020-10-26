@@ -333,7 +333,7 @@ namespace Presentacion.Vista
                     break;
 
                 case 21:
-                case 22:
+                case 22:                
                     double hferi = 0;
                     Int32 horaferiado = 0, minutoferi = 0;
                     if (dar.Cells["hrferiado"].Value == null)
@@ -408,7 +408,8 @@ namespace Presentacion.Vista
                 {
                     //Messages.M_info("seleccione el boton susbidio");
                     PlanillaCache.Subsidiado = Subsidiado;
-                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();                    
+                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();
+                    //this.AddOwnedForm(fr2);
                     fr2.ShowDialog(dgvplanilla1);
                 }
 
@@ -420,11 +421,138 @@ namespace Presentacion.Vista
                     fr2.ShowDialog(dgvplanilla1);
                     MessageBox.Show("dato:  "+ PlanillaCache.mensaje);
                     //dgvplanilla1.CurrentRow.Cells["ape_nom"].Value = PlanillaCache.mensaje;
-                    dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value = PlanillaCache.mensaje;
+                    dgvplanilla1.Rows[e.RowIndex].Cells["hrferiado"].Value = PlanillaCache.mensaje;
+                    feriadooo();
 
 
                 }
             }
+        }
+
+        private void dgvplanilla1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           /* if (e.RowIndex != -1)
+            {
+                DataGridViewRow dar = dgvplanilla1.CurrentRow;
+                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+                {
+                    double hferi = 0;
+                    Int32 horaferiado = 0, minutoferi = 0;
+                    if (dar.Cells["hrferiado"].Value == null)
+                        horaferiado = 0;
+                    else
+                        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+
+                    if (dar.Cells["minuferiado"].Value == null)
+                        minutoferi = 0;
+                    else
+                        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+
+                    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+                    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                }
+            }*/
+        }
+
+        private void dgvplanilla1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex != -1)
+            //{
+            //    DataGridViewRow dar = dgvplanilla1.CurrentRow;
+            //    if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+            //    {
+            //        double hferi = 0;
+            //        Int32 horaferiado = 0, minutoferi = 0;
+            //        if (dar.Cells["hrferiado"].Value == null)
+            //            horaferiado = 0;
+            //        else
+            //            horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+
+            //        if (dar.Cells["minuferiado"].Value == null)
+            //            minutoferi = 0;
+            //        else
+            //            minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+
+            //        hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+            //        dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+            //    }
+            //}
+            
+        }
+
+        private void dgvplanilla1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (e.RowIndex != -1)
+            //{
+            //    DataGridViewRow dar = dgvplanilla1.CurrentRow;
+            //    if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+            //    {
+            //        double hferi = 0;
+            //        Int32 horaferiado = 0, minutoferi = 0;
+            //        if (dar.Cells["hrferiado"].Value == null)
+            //            horaferiado = 0;
+            //        else
+            //            horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+
+            //        if (dar.Cells["minuferiado"].Value == null)
+            //            minutoferi = 0;
+            //        else
+            //            minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+
+            //        hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+            //        dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+            //    }
+            //}
+
+        }
+
+        private void dgvplanilla1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            
+                //DataGridViewRow dar = dgvplanilla1.CurrentRow;
+                //if (dar.Cells["btnnosubsidio"].Selected)
+                //{
+                //    double hferi = 0;
+                //    Int32 horaferiado = 0, minutoferi = 0;
+                //    if (dar.Cells["hrferiado"].Value == null)
+                //        horaferiado = 0;
+                //    else
+                //        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+
+                //    if (dar.Cells["minuferiado"].Value == null)
+                //        minutoferi = 0;
+                //    else
+                //        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+
+                //    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+                //    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                //}                        
+        }
+
+        void feriadooo()
+        {
+            DataGridViewRow dar = dgvplanilla1.CurrentRow;
+           
+                double hferi = 0;
+                Int32 horaferiado = 0, minutoferi = 0;
+                if (dar.Cells["hrferiado"].Value == null)
+                    horaferiado = 0;
+                else
+                    horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+
+                if (dar.Cells["minuferiado"].Value == null)
+                    minutoferi = 0;
+                else
+                    minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+
+                hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+                dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+            
         }
     }
 }
