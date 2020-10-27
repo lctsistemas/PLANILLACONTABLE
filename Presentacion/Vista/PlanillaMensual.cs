@@ -48,7 +48,7 @@ namespace Presentacion.Vista
 
         private Double calculos_Remuneracion()
         {
-            Double total_remuneracion=0;
+            Double total_remuneracion=0.00;
 
             Double totalhorasdiurnas = Convert.ToDouble(txtTotalDiurna.Text);
             Double totalhorasnoct = Convert.ToDouble(txtTotalNocturna.Text);
@@ -552,6 +552,7 @@ namespace Presentacion.Vista
             double total_recargo35 = precioPorHoraDiurna + recargo35;
             txtPrecioHoraDiurna35.Text = total_recargo35.ToString("N2");
 
+
             double horadiurna35 = Double.Parse(nudDiurna35.Value.ToString());
             double mindiurna35 = Double.Parse(nudMinDiurna35.Value.ToString());
 
@@ -567,11 +568,11 @@ namespace Presentacion.Vista
             double horadiurna35_2 = (horadiurna35 * total_recargo35) + horaporsumarecargo35;
             txtTotalDiurna35.Text = horadiurna35_2.ToString("N2");
 
-            //double totalDiurna25 = Double.Parse(txtTotalDiurna25.Text);
-            //double totalDiurna35 = Double.Parse(txtTotalDiurna35.Text);
+            double totalDiurna25 = Double.Parse(txtTotalDiurna25.Text);
+           double totalDiurna35 = Double.Parse(txtTotalDiurna35.Text);
 
-            //double totalSumaDiurna = totalDiurna25 + totalDiurna35;
-            //txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
+            double totalSumaDiurna = totalDiurna25 + totalDiurna35;
+            txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
         }
 
         private void Hora25Nocturna()
