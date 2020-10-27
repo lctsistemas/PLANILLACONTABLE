@@ -721,6 +721,29 @@ namespace Presentacion.Vista
             txtTotalFeriado.Text = sumarecargo25minutos.ToString("N2");
         }
 
+        private void BonificacionNoct()
+        {
+            double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+            double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+            double bonificacionNocturna = (((remuneracion + asignacion) / 30) / 8) * 0.35;
+            txtPrecioHoraBoniNocturna.Text = bonificacionNocturna.ToString("N2");
+
+            double horadiurna25 = Double.Parse(nudHoraBonificacionNocturna.Value.ToString());
+            double mindiurna25 = Double.Parse(nudMinBonificacionNocturna.Value.ToString());
+
+            double dias_mes = (remuneracion + asignacion) / 30;
+            double horas_mes = dias_mes / 8;
+            double minutos_mes = horas_mes / 60;
+
+            double recargo25minutos = minutos_mes * 0.35;
+
+            double horaporsumarecargo = (recargo25minutos * mindiurna25);
+
+            double horadiurna25_2 = (horadiurna25 * bonificacionNocturna) + horaporsumarecargo;
+            txtTotalBoniNocturna.Text = horadiurna25_2.ToString("N2");
+        }
+
         
 
         private void btnFaltas_Click(object sender, EventArgs e)
@@ -799,6 +822,16 @@ namespace Presentacion.Vista
         private void nudMinNocturna35_ValueChanged(object sender, EventArgs e)
         {
             Hora35Nocturna();
+        }
+
+        private void nudHoraBonificacionNocturna_ValueChanged(object sender, EventArgs e)
+        {
+            BonificacionNoct();
+        }
+
+        private void nudMinBonificacionNocturna_ValueChanged(object sender, EventArgs e)
+        {
+            BonificacionNoct();
         }
     }
 }

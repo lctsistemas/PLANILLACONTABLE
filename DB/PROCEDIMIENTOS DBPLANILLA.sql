@@ -1206,13 +1206,13 @@ GO
 
 
 --- SCRIPT SUBSIDIOS
-ALTER PROC SP_SHOW_DETSUBSIDIOS 
+CREATE PROC SP_SHOW_DETSUBSIDIOS 
 @idmes int,
 @idperiodo int,
 @idempleado int,
 @tipoSubsidio varchar(30)
 AS BEGIN
-SELECT d.id_det_subsidios, s.cod_subsidio, CONCAT(s.cod_subsidio,' - ', s.tipo_suspension,' ', s.descripcion_corta) 
+SELECT d.id_det_subsidios, s.cod_subsidio, CONCAT(s.cod_subsidio,' - ', s.tipo_subsidio,' ', s.descripcion_subsidio) 
 AS t_supension, d.dias FROM DET_SUBSIDIOS d join SUBSIDIOS s on d.id_subsidios=s.id_subsidios 
 WHERE (d.id_periodo=@idperiodo and d.id_mes=@idmes) and s.tipo_subsidio= @tipoSubsidio and d.id_empleado= @idempleado
 END
@@ -1221,10 +1221,10 @@ GO
 --select * from SUBSIDIOS
 --DELETE FROM DET_SUBSIDIOS where id_det_subsidios between 3 and 5
 
-ALTER PROC SP_SHOW_SUBSIDIOS --mostrara en combobox
+create PROC SP_SHOW_SUBSIDIOS --mostrara en combobox
 @tipo_subsidio varchar(30)
 AS BEGIN
-SELECT s.id_subsidios, cod_subsidio, tipo_suspension, descripcion_corta FROM SUBSIDIOS s 
+SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM SUBSIDIOS s 
 WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
