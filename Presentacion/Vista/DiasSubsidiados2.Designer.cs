@@ -35,6 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbosubsidio = new System.Windows.Forms.ComboBox();
             this.dgvsubsidio = new System.Windows.Forms.DataGridView();
+            this.tsupension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.canti_dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.id_dsubsidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_subsidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtdias = new System.Windows.Forms.TextBox();
             this.btngrabar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Label();
@@ -43,12 +49,8 @@
             this.lbltotal = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.tsupension = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.canti_dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.id_dsubsidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod_subsidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbltotalSp = new System.Windows.Forms.Label();
+            this.lbltotalSi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -134,98 +136,6 @@
             this.dgvsubsidio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
             this.dgvsubsidio.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvsubsidio_EditingControlShowing);
             // 
-            // txtdias
-            // 
-            this.txtdias.Location = new System.Drawing.Point(305, 26);
-            this.txtdias.MaxLength = 2;
-            this.txtdias.Name = "txtdias";
-            this.txtdias.Size = new System.Drawing.Size(60, 20);
-            this.txtdias.TabIndex = 4;
-            this.txtdias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtdias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdias_KeyPress);
-            // 
-            // btngrabar
-            // 
-            this.btngrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btngrabar.Location = new System.Drawing.Point(365, 25);
-            this.btngrabar.Name = "btngrabar";
-            this.btngrabar.Size = new System.Drawing.Size(50, 22);
-            this.btngrabar.TabIndex = 5;
-            this.btngrabar.Text = "Grabar";
-            this.btngrabar.UseVisualStyleBackColor = true;
-            this.btngrabar.Click += new System.EventHandler(this.btngrabar_Click);
-            // 
-            // btnsalir
-            // 
-            this.btnsalir.AutoSize = true;
-            this.btnsalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnsalir.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsalir.Location = new System.Drawing.Point(443, 3);
-            this.btnsalir.Name = "btnsalir";
-            this.btnsalir.Size = new System.Drawing.Size(16, 16);
-            this.btnsalir.TabIndex = 6;
-            this.btnsalir.Text = "X";
-            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtdias);
-            this.panel1.Controls.Add(this.txttotaldias);
-            this.panel1.Controls.Add(this.lbltotal);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnsalir);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btngrabar);
-            this.panel1.Controls.Add(this.dgvsubsidio);
-            this.panel1.Controls.Add(this.cbosubsidio);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 243);
-            this.panel1.TabIndex = 7;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // txttotaldias
-            // 
-            this.txttotaldias.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttotaldias.Enabled = false;
-            this.txttotaldias.Location = new System.Drawing.Point(304, 210);
-            this.txttotaldias.Name = "txttotaldias";
-            this.txttotaldias.Size = new System.Drawing.Size(60, 20);
-            this.txttotaldias.TabIndex = 8;
-            this.txttotaldias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(228, 213);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(42, 13);
-            this.lbltotal.TabIndex = 7;
-            this.lbltotal.Text = "TOTAL";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.Description = "Modificar";
-            this.dataGridViewImageColumn1.HeaderText = "Editar";
-            this.dataGridViewImageColumn1.Image = global::Presentacion.Properties.Resources.delete2;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
-            this.dataGridViewImageColumn2.Image = global::Presentacion.Properties.Resources.delete;
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn2.Width = 50;
-            // 
             // tsupension
             // 
             this.tsupension.DataPropertyName = "Descrip_corta";
@@ -273,6 +183,119 @@
             this.cod_subsidio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.cod_subsidio.Width = 50;
             // 
+            // txtdias
+            // 
+            this.txtdias.Location = new System.Drawing.Point(305, 26);
+            this.txtdias.MaxLength = 2;
+            this.txtdias.Name = "txtdias";
+            this.txtdias.Size = new System.Drawing.Size(60, 20);
+            this.txtdias.TabIndex = 4;
+            this.txtdias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtdias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdias_KeyPress);
+            // 
+            // btngrabar
+            // 
+            this.btngrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btngrabar.Location = new System.Drawing.Point(365, 25);
+            this.btngrabar.Name = "btngrabar";
+            this.btngrabar.Size = new System.Drawing.Size(50, 22);
+            this.btngrabar.TabIndex = 5;
+            this.btngrabar.Text = "Grabar";
+            this.btngrabar.UseVisualStyleBackColor = true;
+            this.btngrabar.Click += new System.EventHandler(this.btngrabar_Click);
+            // 
+            // btnsalir
+            // 
+            this.btnsalir.AutoSize = true;
+            this.btnsalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnsalir.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsalir.Location = new System.Drawing.Point(443, 3);
+            this.btnsalir.Name = "btnsalir";
+            this.btnsalir.Size = new System.Drawing.Size(16, 16);
+            this.btnsalir.TabIndex = 6;
+            this.btnsalir.Text = "X";
+            this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lbltotalSi);
+            this.panel1.Controls.Add(this.lbltotalSp);
+            this.panel1.Controls.Add(this.txtdias);
+            this.panel1.Controls.Add(this.txttotaldias);
+            this.panel1.Controls.Add(this.lbltotal);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnsalir);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btngrabar);
+            this.panel1.Controls.Add(this.dgvsubsidio);
+            this.panel1.Controls.Add(this.cbosubsidio);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(472, 243);
+            this.panel1.TabIndex = 7;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // txttotaldias
+            // 
+            this.txttotaldias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txttotaldias.Enabled = false;
+            this.txttotaldias.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotaldias.Location = new System.Drawing.Point(304, 210);
+            this.txttotaldias.Name = "txttotaldias";
+            this.txttotaldias.Size = new System.Drawing.Size(60, 15);
+            this.txttotaldias.TabIndex = 8;
+            this.txttotaldias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Location = new System.Drawing.Point(228, 213);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(42, 13);
+            this.lbltotal.TabIndex = 7;
+            this.lbltotal.Text = "TOTAL";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.Description = "Modificar";
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::Presentacion.Properties.Resources.delete2;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Eliminar";
+            this.dataGridViewImageColumn2.Image = global::Presentacion.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // lbltotalSp
+            // 
+            this.lbltotalSp.AutoSize = true;
+            this.lbltotalSp.Location = new System.Drawing.Point(177, 200);
+            this.lbltotalSp.Name = "lbltotalSp";
+            this.lbltotalSp.Size = new System.Drawing.Size(10, 13);
+            this.lbltotalSp.TabIndex = 9;
+            this.lbltotalSp.Text = ".";
+            // 
+            // lbltotalSi
+            // 
+            this.lbltotalSi.AutoSize = true;
+            this.lbltotalSi.Location = new System.Drawing.Point(177, 218);
+            this.lbltotalSi.Name = "lbltotalSi";
+            this.lbltotalSi.Size = new System.Drawing.Size(10, 13);
+            this.lbltotalSi.TabIndex = 9;
+            this.lbltotalSi.Text = ".";
+            // 
             // FrmDiasSubsidiados2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,5 +335,7 @@
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_dsubsidio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_subsidio;
+        private System.Windows.Forms.Label lbltotalSi;
+        private System.Windows.Forms.Label lbltotalSp;
     }
 }

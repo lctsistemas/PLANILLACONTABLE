@@ -46,32 +46,6 @@
             this.txtdel = new System.Windows.Forms.MaskedTextBox();
             this.txtpago = new System.Windows.Forms.MaskedTextBox();
             this.dgvplanilla1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvplanilla2 = new System.Windows.Forms.DataGridView();
-            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nosubsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabplanilla = new System.Windows.Forms.TabControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +104,32 @@
             this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvplanilla2 = new System.Windows.Forms.DataGridView();
+            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nosubsidiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabplanilla = new System.Windows.Forms.TabControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabcalculo.SuspendLayout();
             this.groupplanilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).BeginInit();
@@ -378,275 +378,14 @@
             this.dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvplanilla1.Size = new System.Drawing.Size(1162, 290);
             this.dgvplanilla1.TabIndex = 1;
+            this.dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellContentClick);
             this.dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEndEdit);
+            this.dgvplanilla1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEnter);
+            this.dgvplanilla1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellMouseLeave);
+            this.dgvplanilla1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvplanilla1_CellStateChanged);
             this.dgvplanilla1.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvplanilla1_RowValidating);
             this.dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvplanilla1_Scroll);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(8, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Tipo de Planilla :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(8, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Periodo :";
-            // 
-            // dgvplanilla2
-            // 
-            this.dgvplanilla2.AllowUserToAddRows = false;
-            this.dgvplanilla2.AllowUserToDeleteRows = false;
-            this.dgvplanilla2.AllowUserToResizeColumns = false;
-            this.dgvplanilla2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.dgvplanilla2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvplanilla2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvplanilla2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvplanilla2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvplanilla2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvplanilla2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvplanilla2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvplanilla2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.valor1,
-            this.valor2,
-            this.hxdiurnas,
-            this.hxnocturnas,
-            this.feriado,
-            this.boninocturno,
-            this.tardanza,
-            this.subsidiado,
-            this.nosubsidiado,
-            this.thorax,
-            this.truncas,
-            this.tremu,
-            this.descuentoafp,
-            this.fin});
-            this.dgvplanilla2.EnableHeadersVisualStyles = false;
-            this.dgvplanilla2.Location = new System.Drawing.Point(2, 126);
-            this.dgvplanilla2.Name = "dgvplanilla2";
-            this.dgvplanilla2.ReadOnly = true;
-            this.dgvplanilla2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvplanilla2.RowHeadersWidth = 25;
-            this.dgvplanilla2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvplanilla2.Size = new System.Drawing.Size(1162, 39);
-            this.dgvplanilla2.TabIndex = 0;
-            // 
-            // valor1
-            // 
-            this.valor1.HeaderText = "";
-            this.valor1.Name = "valor1";
-            this.valor1.ReadOnly = true;
-            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor1.Width = 320;
-            // 
-            // valor2
-            // 
-            this.valor2.HeaderText = "";
-            this.valor2.Name = "valor2";
-            this.valor2.ReadOnly = true;
-            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor2.Width = 543;
-            // 
-            // hxdiurnas
-            // 
-            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
-            this.hxdiurnas.Name = "hxdiurnas";
-            this.hxdiurnas.ReadOnly = true;
-            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxdiurnas.Width = 220;
-            // 
-            // hxnocturnas
-            // 
-            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNOS";
-            this.hxnocturnas.Name = "hxnocturnas";
-            this.hxnocturnas.ReadOnly = true;
-            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxnocturnas.Width = 220;
-            // 
-            // feriado
-            // 
-            this.feriado.HeaderText = "FERIADO | DOMINICAL";
-            this.feriado.Name = "feriado";
-            this.feriado.ReadOnly = true;
-            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.feriado.Width = 110;
-            // 
-            // boninocturno
-            // 
-            this.boninocturno.HeaderText = "BONI. NOCTURNA";
-            this.boninocturno.Name = "boninocturno";
-            this.boninocturno.ReadOnly = true;
-            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.boninocturno.Width = 80;
-            // 
-            // tardanza
-            // 
-            this.tardanza.HeaderText = "TARDANZA";
-            this.tardanza.Name = "tardanza";
-            this.tardanza.ReadOnly = true;
-            this.tardanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tardanza.Width = 110;
-            // 
-            // subsidiado
-            // 
-            this.subsidiado.HeaderText = "SUBSIDIADO";
-            this.subsidiado.Name = "subsidiado";
-            this.subsidiado.ReadOnly = true;
-            this.subsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.subsidiado.Width = 110;
-            // 
-            // nosubsidiado
-            // 
-            this.nosubsidiado.HeaderText = "NO SUBSIDIADO/NO LABORADO";
-            this.nosubsidiado.Name = "nosubsidiado";
-            this.nosubsidiado.ReadOnly = true;
-            this.nosubsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nosubsidiado.Width = 190;
-            // 
-            // thorax
-            // 
-            this.thorax.HeaderText = "";
-            this.thorax.Name = "thorax";
-            this.thorax.ReadOnly = true;
-            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thorax.Width = 233;
-            // 
-            // truncas
-            // 
-            this.truncas.HeaderText = "TRUNCAS";
-            this.truncas.Name = "truncas";
-            this.truncas.ReadOnly = true;
-            this.truncas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.truncas.Width = 280;
-            // 
-            // tremu
-            // 
-            this.tremu.HeaderText = "";
-            this.tremu.Name = "tremu";
-            this.tremu.ReadOnly = true;
-            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tremu.Width = 160;
-            // 
-            // descuentoafp
-            // 
-            this.descuentoafp.HeaderText = "DESCUENTO AFP";
-            this.descuentoafp.Name = "descuentoafp";
-            this.descuentoafp.ReadOnly = true;
-            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.descuentoafp.Width = 210;
-            // 
-            // fin
-            // 
-            this.fin.HeaderText = "";
-            this.fin.Name = "fin";
-            this.fin.ReadOnly = true;
-            this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fin.Width = 600;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(595, 455);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Agregar (+)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabplanilla
-            // 
-            this.tabplanilla.Controls.Add(this.tabcalculo);
-            this.tabplanilla.Controls.Add(this.tabsubsidio);
-            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
-            this.tabplanilla.Location = new System.Drawing.Point(0, 24);
-            this.tabplanilla.Multiline = true;
-            this.tabplanilla.Name = "tabplanilla";
-            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
-            this.tabplanilla.SelectedIndex = 0;
-            this.tabplanilla.Size = new System.Drawing.Size(1176, 529);
-            this.tabplanilla.TabIndex = 8;
-            this.tabplanilla.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabplanilla_MouseDown);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.verToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1176, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbtnsalir});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "&Archivo";
-            // 
-            // tbtnsalir
-            // 
-            this.tbtnsalir.Name = "tbtnsalir";
-            this.tbtnsalir.Size = new System.Drawing.Size(180, 22);
-            this.tbtnsalir.Text = "&Salir";
-            this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
-            // 
-            // verToolStripMenuItem
-            // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-            this.verToolStripMenuItem.Text = "&Ver";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.CheckOnClick = true;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.CheckOnClick = true;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.CheckOnClick = true;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
             // 
             // codigo
             // 
@@ -1056,6 +795,271 @@
             this.transporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.transporte.Width = 70;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(8, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Tipo de Planilla :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(8, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Periodo :";
+            // 
+            // dgvplanilla2
+            // 
+            this.dgvplanilla2.AllowUserToAddRows = false;
+            this.dgvplanilla2.AllowUserToDeleteRows = false;
+            this.dgvplanilla2.AllowUserToResizeColumns = false;
+            this.dgvplanilla2.AllowUserToResizeRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvplanilla2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvplanilla2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvplanilla2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvplanilla2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvplanilla2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvplanilla2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvplanilla2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvplanilla2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.valor1,
+            this.valor2,
+            this.hxdiurnas,
+            this.hxnocturnas,
+            this.feriado,
+            this.boninocturno,
+            this.tardanza,
+            this.subsidiado,
+            this.nosubsidiado,
+            this.thorax,
+            this.truncas,
+            this.tremu,
+            this.descuentoafp,
+            this.fin});
+            this.dgvplanilla2.EnableHeadersVisualStyles = false;
+            this.dgvplanilla2.Location = new System.Drawing.Point(2, 126);
+            this.dgvplanilla2.Name = "dgvplanilla2";
+            this.dgvplanilla2.ReadOnly = true;
+            this.dgvplanilla2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvplanilla2.RowHeadersWidth = 25;
+            this.dgvplanilla2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvplanilla2.Size = new System.Drawing.Size(1162, 39);
+            this.dgvplanilla2.TabIndex = 0;
+            // 
+            // valor1
+            // 
+            this.valor1.HeaderText = "";
+            this.valor1.Name = "valor1";
+            this.valor1.ReadOnly = true;
+            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor1.Width = 320;
+            // 
+            // valor2
+            // 
+            this.valor2.HeaderText = "";
+            this.valor2.Name = "valor2";
+            this.valor2.ReadOnly = true;
+            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor2.Width = 543;
+            // 
+            // hxdiurnas
+            // 
+            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
+            this.hxdiurnas.Name = "hxdiurnas";
+            this.hxdiurnas.ReadOnly = true;
+            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxdiurnas.Width = 220;
+            // 
+            // hxnocturnas
+            // 
+            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNOS";
+            this.hxnocturnas.Name = "hxnocturnas";
+            this.hxnocturnas.ReadOnly = true;
+            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxnocturnas.Width = 220;
+            // 
+            // feriado
+            // 
+            this.feriado.HeaderText = "FERIADO | DOMINICAL";
+            this.feriado.Name = "feriado";
+            this.feriado.ReadOnly = true;
+            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.feriado.Width = 110;
+            // 
+            // boninocturno
+            // 
+            this.boninocturno.HeaderText = "BONI. NOCTURNA";
+            this.boninocturno.Name = "boninocturno";
+            this.boninocturno.ReadOnly = true;
+            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.boninocturno.Width = 80;
+            // 
+            // tardanza
+            // 
+            this.tardanza.HeaderText = "TARDANZA";
+            this.tardanza.Name = "tardanza";
+            this.tardanza.ReadOnly = true;
+            this.tardanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tardanza.Width = 110;
+            // 
+            // subsidiado
+            // 
+            this.subsidiado.HeaderText = "SUBSIDIADO";
+            this.subsidiado.Name = "subsidiado";
+            this.subsidiado.ReadOnly = true;
+            this.subsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.subsidiado.Width = 110;
+            // 
+            // nosubsidiado
+            // 
+            this.nosubsidiado.HeaderText = "NO SUBSIDIADO/NO LABORADO";
+            this.nosubsidiado.Name = "nosubsidiado";
+            this.nosubsidiado.ReadOnly = true;
+            this.nosubsidiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nosubsidiado.Width = 190;
+            // 
+            // thorax
+            // 
+            this.thorax.HeaderText = "";
+            this.thorax.Name = "thorax";
+            this.thorax.ReadOnly = true;
+            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thorax.Width = 233;
+            // 
+            // truncas
+            // 
+            this.truncas.HeaderText = "TRUNCAS";
+            this.truncas.Name = "truncas";
+            this.truncas.ReadOnly = true;
+            this.truncas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.truncas.Width = 280;
+            // 
+            // tremu
+            // 
+            this.tremu.HeaderText = "";
+            this.tremu.Name = "tremu";
+            this.tremu.ReadOnly = true;
+            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tremu.Width = 160;
+            // 
+            // descuentoafp
+            // 
+            this.descuentoafp.HeaderText = "DESCUENTO AFP";
+            this.descuentoafp.Name = "descuentoafp";
+            this.descuentoafp.ReadOnly = true;
+            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.descuentoafp.Width = 210;
+            // 
+            // fin
+            // 
+            this.fin.HeaderText = "";
+            this.fin.Name = "fin";
+            this.fin.ReadOnly = true;
+            this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fin.Width = 600;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(595, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Agregar (+)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabplanilla
+            // 
+            this.tabplanilla.Controls.Add(this.tabcalculo);
+            this.tabplanilla.Controls.Add(this.tabsubsidio);
+            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
+            this.tabplanilla.Location = new System.Drawing.Point(0, 24);
+            this.tabplanilla.Multiline = true;
+            this.tabplanilla.Name = "tabplanilla";
+            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
+            this.tabplanilla.SelectedIndex = 0;
+            this.tabplanilla.Size = new System.Drawing.Size(1176, 529);
+            this.tabplanilla.TabIndex = 8;
+            this.tabplanilla.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabplanilla_MouseDown);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.verToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1176, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtnsalir});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "&Archivo";
+            // 
+            // tbtnsalir
+            // 
+            this.tbtnsalir.Name = "tbtnsalir";
+            this.tbtnsalir.Size = new System.Drawing.Size(96, 22);
+            this.tbtnsalir.Text = "&Salir";
+            this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
+            // 
+            // verToolStripMenuItem
+            // 
+            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.verToolStripMenuItem.Text = "&Ver";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.CheckOnClick = true;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.CheckOnClick = true;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.CheckOnClick = true;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
+            // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1095,7 +1099,6 @@
         private System.Windows.Forms.MaskedTextBox txtal;
         private System.Windows.Forms.MaskedTextBox txtdel;
         private System.Windows.Forms.MaskedTextBox txtpago;
-        private System.Windows.Forms.DataGridView dgvplanilla1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvplanilla2;
@@ -1180,5 +1183,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn topagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn aportsalud;
         private System.Windows.Forms.DataGridViewTextBoxColumn transporte;
+        public System.Windows.Forms.DataGridView dgvplanilla1;
     }
 }

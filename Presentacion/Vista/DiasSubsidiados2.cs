@@ -24,6 +24,7 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
             Fillcombo(PlanillaCache.Subsidiado);
+            //PlanillaCache.mensaje
         }
 
         //METODO CARGAR COMBOBOX SUBSIDIOS
@@ -54,12 +55,19 @@ namespace Presentacion.Vista
         //SUMAR SUMA CELDA DATAGRIDVIEW
         private void SumarDias()
         {
-            int total = 0;
+            int total_sp = 0, total_si = 0, total = 0;
             foreach (DataGridViewRow item in dgvsubsidio.Rows)
             {
                 int canti= Convert.ToInt32(item.Cells["canti_dias"].Value);
-                total += canti;
+                string tsusp = item.Cells["tsupension"].Value.ToString();
+                if (tsusp.Contains("S.P."))
+                    total_sp += canti;
+                else if (tsusp.Contains("S.I"))
+                    total_si += canti;
             }
+            lbltotalSp.Text = total_sp.ToString();
+            lbltotalSi.Text = total_si.ToString();
+            total = (total_sp + total_si);
             txttotaldias.Text = total.ToString();
         }
 
@@ -103,11 +111,12 @@ namespace Presentacion.Vista
                 Messages.M_warning("SUPENSION PERFECTA");
             else if (cbo.Contains("S.I."))
                 Messages.M_warning("SUSPENSION IMPERFECTA");*/
-
+            
             if (String.IsNullOrWhiteSpace(txtdias.Text))
                 return;
 
-             mensaje = "";
+            
+            mensaje = "";
              using (ndsub =new NDiasSubsidiados())
              {
                  ndsub.Id_subsidios = Convert.ToInt32(cbosubsidio.SelectedValue);
@@ -115,10 +124,10 @@ namespace Presentacion.Vista
                  ndsub.Id_mes = 1;
                  ndsub.Id_periodo = 2;
                  ndsub.Dias = Convert.ToInt32(txtdias.Text.Trim());
-                 mensaje = ndsub.GuardarCambios();                 
+                 mensaje = ndsub.GuardarCambios();      
              }
 
-            PlanillaCache.mensaje = "HOLA SOY EL BOTON GRABAR DE FORM.. SUBSIDI..";
+            PlanillaCache.mensaje = 12;
             txtdias.Text = string.Empty;
             txtdias.Focus();
                         
@@ -187,7 +196,7 @@ namespace Presentacion.Vista
             style.Font = new Font(style.Font.FontFamily, 10, FontStyle.Bold);
             style.BackColor = Color.Beige;
         }
-
+        
         private void dgvsubsidio_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
