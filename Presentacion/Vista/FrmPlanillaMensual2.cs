@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Negocio.Models;
 using Comun.Cache;
 
 namespace Presentacion.Vista
@@ -17,9 +18,11 @@ namespace Presentacion.Vista
     {
         private const string Subsidiado = "SUBSIDIADOS";
         private const string NoSubsidiado = "NO SUBSIDIADOS";
+        int suel { get; set; }
         public FrmPlanillaMensual2()
         {
             InitializeComponent();
+           // FillTabla();
         }
 
 
@@ -44,11 +47,20 @@ namespace Presentacion.Vista
             dgvplanilla1.Columns["montoboninocturno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvplanilla1.Columns["montoboninocturno"].ReadOnly = true;
 
+            dgvplanilla1.Columns["montotarde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montotarde"].ReadOnly = true;
+
             //subsidios
+            dgvplanilla1.Columns["ndias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvplanilla1.Columns["ndias"].ReadOnly = true;
             dgvplanilla1.Columns["montosub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvplanilla1.Columns["montosub"].ReadOnly = true;
+            dgvplanilla1.Columns["ndiasnega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvplanilla1.Columns["ndiasnega"].ReadOnly = true;
             dgvplanilla1.Columns["montonega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvplanilla1.Columns["montonega"].ReadOnly = true;
+            dgvplanilla1.Columns["ndiasposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvplanilla1.Columns["ndiasposi"].ReadOnly = true;
             dgvplanilla1.Columns["montoposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvplanilla1.Columns["montoposi"].ReadOnly = true;
 
@@ -57,8 +69,118 @@ namespace Presentacion.Vista
 
             dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             //dgvplanilla1.Columns["totaremu"].ReadOnly = true;
+        }
+
+        //CARGAR DATAGRI
+        List<int> lista = new List<int>();
+        private void FillTabla()
+        {
+            
+
+            suel = 930;
+            lista.Add(suel);
+            dgvplanilla1.DataSource = lista;
+            MessageBox.Show(""+suel);
+        }
+
+        //TOTAL REMUNERACION
+        private void TotalRemuneracion()
+        {
+            DataGridViewRow dar = dgvplanilla1.CurrentRow;
+            try
+            {
+                double suel = 0, asigfami = 0, monto_sub = 0, montonegasub = 0, montoposisub = 0, totalHorasEx = 0;
+                double reintegr = 0, vacacion = 0, vaca_trun = 0, grati_tru = 0, boni_tru = 0, cts_tru = 0;
+                double subtotal1 = 0, subtotal2 = 0, totalsub = 0;
+
+                if (dar.Cells["sueldo"].Value == null)
+                    suel = 0.00;
+                else
+                    suel = Convert.ToDouble(dar.Cells["sueldo"].Value);
 
 
+                if (dar.Cells["a_familiar"].Value == null)
+                    asigfami = 0;
+                else
+                    asigfami = Convert.ToDouble(dar.Cells["a_familiar"].Value);
+
+
+                if (dar.Cells["montosub"].Value == null)
+                    monto_sub = 0;
+                else
+                    monto_sub = Convert.ToDouble(dar.Cells["montosub"].Value);
+
+
+                if (dar.Cells["montonega"].Value == null)
+                    montonegasub = 0;
+                else
+                    montonegasub = Convert.ToDouble(dar.Cells["montonega"].Value);
+
+
+                if (dar.Cells["montoposi"].Value == null)
+                    montoposisub = 0;
+                else
+                    montoposisub = Convert.ToDouble(dar.Cells["montoposi"].Value);
+
+
+                if (dar.Cells["montoposi"].Value == null)
+                    montoposisub = 0;
+                else
+                    montoposisub = Convert.ToDouble(dar.Cells["montoposi"].Value);
+
+
+                if (dar.Cells["thoras"].Value == null)
+                    totalHorasEx = 0;
+                else
+                    totalHorasEx = Convert.ToDouble(dar.Cells["thoras"].Value);
+
+
+                if (dar.Cells["reintegro"].Value == null)
+                    reintegr = 0;
+                else
+                    reintegr = Convert.ToDouble(dar.Cells["reintegro"].Value);
+
+
+                if (dar.Cells["vacaciones"].Value == null)
+                    vacacion = 0.00;
+                else
+                    vacacion = Convert.ToDouble(dar.Cells["vacaciones"].Value);
+
+
+                if (dar.Cells["tvaca"].Value == null)
+                    vaca_trun = 0.00;
+                else
+                    vaca_trun = Convert.ToDouble(dar.Cells["tvaca"].Value);
+
+
+                if (dar.Cells["tgrati"].Value == null)
+                    grati_tru = 0.00;
+                else
+                    grati_tru = Convert.ToDouble(dar.Cells["tgrati"].Value);
+
+
+                if (dar.Cells["tboni"].Value == null)
+                    boni_tru = 0.00;
+                else
+                    boni_tru = Convert.ToDouble(dar.Cells["tboni"].Value);
+
+
+                /*if (dar.Cells["tcts"].Value == null)
+                    cts_tru = 0.00;
+                else
+                    cts_tru = Convert.ToDouble(dar.Cells["tcts"].Value);*/
+
+                subtotal1 = (suel + asigfami + monto_sub + montoposisub + totalHorasEx);
+                subtotal2 = (reintegr + vacacion + vaca_trun + grati_tru + boni_tru + cts_tru);
+                totalsub = (subtotal1 + subtotal2) - montonegasub;
+
+                dar.Cells["totaremu"].Value = totalsub;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -73,10 +195,8 @@ namespace Presentacion.Vista
 
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {
-            TablaPlanilla();
-            
-        }
-     
+            TablaPlanilla();            
+        }     
 
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -90,125 +210,9 @@ namespace Presentacion.Vista
             //    Hdiurna25 = decimal.Parse(dgvplanilla1.Rows[e.RowIndex].Cells[10].Value.ToString());
             //    subtotal = (sueldo + asig_fami + Hdiurna25);
             //    dgvplanilla1.Rows[e.RowIndex].Cells[35].Value = subtotal.ToString("#.##");//total remu.
-            //}
+            //}                             
+
             DataGridViewRow dar = dgvplanilla1.CurrentRow;
-
-            switch (e.ColumnIndex)
-             {
-                case 7: //sueldo
-                case 8: //asig fami      
-                case 28: //monto subsidio
-                case 31: //monto nega de subsi.
-                case 33: //monto positi de subsi.
-                case 34: //total horas extr.
-                case 35: //reintegro
-                case 36: // vacaciones
-                case 37: // vaca trunca.
-                case 38: // grati trunca.
-                case 39: // boni trunca.
-                case 40: // cts trunca.
-                    try
-                    {
-                        double suel = 0, asigfami = 0, monto_sub = 0, montonegasub = 0, montoposisub = 0, totalHorasEx = 0;
-                        double reintegr = 0, vacacion = 0, vaca_trun = 0, grati_tru = 0, boni_tru = 0, cts_tru = 0;
-                        double subtotal1 = 0.00, subtotal2 = 0.00, totalsub = 0.00;                        
-
-                        if (dar.Cells["sueldo"].Value == null)
-                            suel = 0.00;
-                        else
-                            suel = Convert.ToDouble(dar.Cells["sueldo"].Value);
-
-
-                        if (dar.Cells["a_familiar"].Value == null)
-                            asigfami = 0.00;
-                        else
-                            asigfami = Convert.ToDouble(dar.Cells["a_familiar"].Value);
-
-
-                        if (dar.Cells["montosub"].Value == null)
-                            monto_sub = 0.00;
-                        else
-                            monto_sub = Convert.ToDouble(dar.Cells["montosub"].Value);
-
-
-                        if (dar.Cells["montonega"].Value == null)
-                            montonegasub = 0.00;
-                        else
-                            montonegasub = Convert.ToDouble(dar.Cells["montonega"].Value);
-
-
-                        if (dar.Cells["montoposi"].Value == null)
-                            montoposisub = 0.00;
-                        else
-                            montoposisub = Convert.ToDouble(dar.Cells["montoposi"].Value);
-
-
-                        if (dar.Cells["montoposi"].Value == null)
-                            montoposisub = 0.00;
-                        else
-                            montoposisub = Convert.ToDouble(dar.Cells["montoposi"].Value);
-
-
-                        if (dar.Cells["thoras"].Value == null)
-                            totalHorasEx = 0.00;
-                        else
-                            totalHorasEx = Convert.ToDouble(dar.Cells["thoras"].Value);
-
-
-                        if (dar.Cells["reintegro"].Value == null)
-                            reintegr = 0.00;
-                        else
-                            reintegr = Convert.ToDouble(dar.Cells["reintegro"].Value);
-
-
-                        if (dar.Cells["vacaciones"].Value == null)
-                            vacacion = 0.00;
-                        else
-                            vacacion = Convert.ToDouble(dar.Cells["vacaciones"].Value);
-
-
-                        if (dar.Cells["tvaca"].Value == null)
-                            vaca_trun = 0.00;
-                        else
-                            vaca_trun = Convert.ToDouble(dar.Cells["tvaca"].Value);
-
-
-                        if (dar.Cells["tgrati"].Value == null)
-                            grati_tru = 0.00;
-                        else
-                            grati_tru = Convert.ToDouble(dar.Cells["tgrati"].Value);
-
-
-                        if (dar.Cells["tboni"].Value == null)
-                            boni_tru = 0.00;
-                        else
-                            boni_tru = Convert.ToDouble(dar.Cells["tboni"].Value);
-
-
-                        if (dar.Cells["tcts"].Value == null)
-                            cts_tru = 0.00;
-                        else
-                            cts_tru = Convert.ToDouble(dar.Cells["tcts"].Value);
-
-                        subtotal1 = (suel + asigfami + monto_sub + montoposisub + totalHorasEx);
-                        subtotal2 = (reintegr + vacacion + vaca_trun + grati_tru + boni_tru + cts_tru);
-                        totalsub = (subtotal1 + subtotal2 ) - montonegasub;
-
-                        dar.Cells["totaremu"].Value = totalsub;
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    break;
-
-                default:
-                    //dar.Cells["totaremu"].Value = 0.00;
-                    break;
-            }          
-
-
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
             {
@@ -467,7 +471,6 @@ namespace Presentacion.Vista
 
                     monto = Calculo.MontoSubsidios(dias, 930);
                     dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto.ToString("N2");
-
                 }
             }
         }
@@ -578,27 +581,6 @@ namespace Presentacion.Vista
                 //    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
                 //}                        
         }
-
-        void feriadooo()
-        {
-            DataGridViewRow dar = dgvplanilla1.CurrentRow;
-           
-                double hferi = 0;
-                Int32 horaferiado = 0, minutoferi = 0;
-                if (dar.Cells["hrferiado"].Value == null)
-                    horaferiado = 0;
-                else
-                    horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
-
-
-                if (dar.Cells["minuferiado"].Value == null)
-                    minutoferi = 0;
-                else
-                    minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
-
-                hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
-                dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
-            
-        }
+       
     }
 }

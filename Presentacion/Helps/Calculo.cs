@@ -72,6 +72,7 @@ namespace Presentacion.Helps
             double monto_Sub = 0;
             double diario = (basico / 30);
 
+            //le falta.
             if (dia >= 30 && dia <=31 )
             {
                 monto_Sub = ((diario * dia) + asig_fami);
