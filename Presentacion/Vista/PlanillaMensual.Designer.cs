@@ -1065,6 +1065,7 @@
             this.nudMinBonificacionNocturna.Name = "nudMinBonificacionNocturna";
             this.nudMinBonificacionNocturna.Size = new System.Drawing.Size(42, 20);
             this.nudMinBonificacionNocturna.TabIndex = 435;
+            this.nudMinBonificacionNocturna.ValueChanged += new System.EventHandler(this.nudMinBonificacionNocturna_ValueChanged);
             // 
             // nudHoraBonificacionNocturna
             // 
@@ -1072,6 +1073,7 @@
             this.nudHoraBonificacionNocturna.Name = "nudHoraBonificacionNocturna";
             this.nudHoraBonificacionNocturna.Size = new System.Drawing.Size(42, 20);
             this.nudHoraBonificacionNocturna.TabIndex = 435;
+            this.nudHoraBonificacionNocturna.ValueChanged += new System.EventHandler(this.nudHoraBonificacionNocturna_ValueChanged);
             // 
             // label9
             // 

@@ -48,7 +48,7 @@ namespace Presentacion.Vista
 
         private Double calculos_Remuneracion()
         {
-            Double total_remuneracion=0;
+            Double total_remuneracion=0.00;
 
             Double totalhorasdiurnas = Convert.ToDouble(txtTotalDiurna.Text);
             Double totalhorasnoct = Convert.ToDouble(txtTotalNocturna.Text);
@@ -552,6 +552,7 @@ namespace Presentacion.Vista
             double total_recargo35 = precioPorHoraDiurna + recargo35;
             txtPrecioHoraDiurna35.Text = total_recargo35.ToString("N2");
 
+
             double horadiurna35 = Double.Parse(nudDiurna35.Value.ToString());
             double mindiurna35 = Double.Parse(nudMinDiurna35.Value.ToString());
 
@@ -567,11 +568,11 @@ namespace Presentacion.Vista
             double horadiurna35_2 = (horadiurna35 * total_recargo35) + horaporsumarecargo35;
             txtTotalDiurna35.Text = horadiurna35_2.ToString("N2");
 
-            //double totalDiurna25 = Double.Parse(txtTotalDiurna25.Text);
-            //double totalDiurna35 = Double.Parse(txtTotalDiurna35.Text);
+            double totalDiurna25 = Double.Parse(txtTotalDiurna25.Text);
+           double totalDiurna35 = Double.Parse(txtTotalDiurna35.Text);
 
-            //double totalSumaDiurna = totalDiurna25 + totalDiurna35;
-            //txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
+            double totalSumaDiurna = totalDiurna25 + totalDiurna35;
+            txtTotalDiurna.Text = totalSumaDiurna.ToString("N2");
         }
 
         private void Hora25Nocturna()
@@ -721,6 +722,29 @@ namespace Presentacion.Vista
             txtTotalFeriado.Text = sumarecargo25minutos.ToString("N2");
         }
 
+        private void BonificacionNoct()
+        {
+            double remuneracion = Double.Parse(txtHaberBasico.Text.ToString());
+            double asignacion = Double.Parse(txtAsigFamiliar.Text.ToString());
+
+            double bonificacionNocturna = (((remuneracion + asignacion) / 30) / 8) * 0.35;
+            txtPrecioHoraBoniNocturna.Text = bonificacionNocturna.ToString("N2");
+
+            double horadiurna25 = Double.Parse(nudHoraBonificacionNocturna.Value.ToString());
+            double mindiurna25 = Double.Parse(nudMinBonificacionNocturna.Value.ToString());
+
+            double dias_mes = (remuneracion + asignacion) / 30;
+            double horas_mes = dias_mes / 8;
+            double minutos_mes = horas_mes / 60;
+
+            double recargo25minutos = minutos_mes * 0.35;
+
+            double horaporsumarecargo = (recargo25minutos * mindiurna25);
+
+            double horadiurna25_2 = (horadiurna25 * bonificacionNocturna) + horaporsumarecargo;
+            txtTotalBoniNocturna.Text = horadiurna25_2.ToString("N2");
+        }
+
         
 
         private void btnFaltas_Click(object sender, EventArgs e)
@@ -799,6 +823,16 @@ namespace Presentacion.Vista
         private void nudMinNocturna35_ValueChanged(object sender, EventArgs e)
         {
             Hora35Nocturna();
+        }
+
+        private void nudHoraBonificacionNocturna_ValueChanged(object sender, EventArgs e)
+        {
+            BonificacionNoct();
+        }
+
+        private void nudMinBonificacionNocturna_ValueChanged(object sender, EventArgs e)
+        {
+            BonificacionNoct();
         }
     }
 }
