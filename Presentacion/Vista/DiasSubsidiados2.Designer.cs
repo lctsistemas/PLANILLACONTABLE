@@ -45,12 +45,12 @@
             this.btngrabar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbltotalSi = new System.Windows.Forms.Label();
+            this.lbltotalSp = new System.Windows.Forms.Label();
             this.txttotaldias = new System.Windows.Forms.TextBox();
             this.lbltotal = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lbltotalSp = new System.Windows.Forms.Label();
-            this.lbltotalSi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -238,14 +238,35 @@
             this.panel1.TabIndex = 7;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
+            // lbltotalSi
+            // 
+            this.lbltotalSi.AutoSize = true;
+            this.lbltotalSi.Location = new System.Drawing.Point(177, 218);
+            this.lbltotalSi.Name = "lbltotalSi";
+            this.lbltotalSi.Size = new System.Drawing.Size(10, 13);
+            this.lbltotalSi.TabIndex = 9;
+            this.lbltotalSi.Text = ".";
+            this.lbltotalSi.Visible = false;
+            // 
+            // lbltotalSp
+            // 
+            this.lbltotalSp.AutoSize = true;
+            this.lbltotalSp.Location = new System.Drawing.Point(177, 200);
+            this.lbltotalSp.Name = "lbltotalSp";
+            this.lbltotalSp.Size = new System.Drawing.Size(10, 13);
+            this.lbltotalSp.TabIndex = 9;
+            this.lbltotalSp.Text = ".";
+            this.lbltotalSp.Visible = false;
+            // 
             // txttotaldias
             // 
             this.txttotaldias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttotaldias.Enabled = false;
             this.txttotaldias.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttotaldias.Location = new System.Drawing.Point(304, 210);
+            this.txttotaldias.Multiline = true;
             this.txttotaldias.Name = "txttotaldias";
-            this.txttotaldias.Size = new System.Drawing.Size(60, 15);
+            this.txttotaldias.Size = new System.Drawing.Size(60, 20);
             this.txttotaldias.TabIndex = 8;
             this.txttotaldias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -278,24 +299,6 @@
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // lbltotalSp
-            // 
-            this.lbltotalSp.AutoSize = true;
-            this.lbltotalSp.Location = new System.Drawing.Point(177, 200);
-            this.lbltotalSp.Name = "lbltotalSp";
-            this.lbltotalSp.Size = new System.Drawing.Size(10, 13);
-            this.lbltotalSp.TabIndex = 9;
-            this.lbltotalSp.Text = ".";
-            // 
-            // lbltotalSi
-            // 
-            this.lbltotalSi.AutoSize = true;
-            this.lbltotalSi.Location = new System.Drawing.Point(177, 218);
-            this.lbltotalSi.Name = "lbltotalSi";
-            this.lbltotalSi.Size = new System.Drawing.Size(10, 13);
-            this.lbltotalSi.TabIndex = 9;
-            this.lbltotalSi.Text = ".";
-            // 
             // FrmDiasSubsidiados2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,6 +310,7 @@
             this.Name = "FrmDiasSubsidiados2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DiasSubsidiados2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDiasSubsidiados2_FormClosing);
             this.Load += new System.EventHandler(this.FrmDiasSubsidiados2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).EndInit();
             this.panel1.ResumeLayout(false);
