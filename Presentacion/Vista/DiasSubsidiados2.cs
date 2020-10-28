@@ -20,11 +20,22 @@ namespace Presentacion.Vista
         NSubsidios nsub;
         NDiasSubsidiados ndsub;
         string mensaje;
+        
+        private static FrmDiasSubsidiados2 _intancia;
         public FrmDiasSubsidiados2()
         {
             InitializeComponent();
-            Fillcombo(PlanillaCache.Subsidiado);
+            Fillcombo(PlanillaCache.Subsidiado);            
             //PlanillaCache.mensaje
+            
+        }
+
+        //METODO LLAMAR THIS FORMULARIO
+        public static FrmDiasSubsidiados2 Getinstance()
+        {
+            if (_intancia == null)
+                _intancia = new FrmDiasSubsidiados2();
+            return _intancia;
         }
 
         //METODO CARGAR COMBOBOX SUBSIDIOS
@@ -80,6 +91,24 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns["tsupension"].ReadOnly = true;
         }
 
+        //ENVIAR DIAS SUBSIDIOS
+        private void SentDayinDatagri(dynamic negativo, dynamic positivo, bool val)
+        {
+            FrmPlanillaMensual2 frpla2 = (FrmPlanillaMensual2)Owner;
+            if (val)
+                frpla2.dgvplanilla1.CurrentRow.Cells[negativo].Value = lbltotalSp.Text;
+
+            frpla2.dgvplanilla1.CurrentRow.Cells[positivo].Value = lbltotalSi.Text;
+        }
+
+        //ENVIAR DIAS POR TIPO DE SUBSIDIO
+        private void SentTypeDaySubsidio()
+        {
+            if (PlanillaCache.Subsidiado.Equals("NO SUBSIDIADOS"))
+                SentDayinDatagri("ndiasnega", "ndiasposi", true);
+            else if (PlanillaCache.Subsidiado.Equals("SUBSIDIADOS"))
+                SentDayinDatagri("", "ndias", false);
+        }
 
 
         private void btnsalir_Click(object sender, EventArgs e)
@@ -110,11 +139,10 @@ namespace Presentacion.Vista
             if (cbo.Contains("S.P."))
                 Messages.M_warning("SUPENSION PERFECTA");
             else if (cbo.Contains("S.I."))
-                Messages.M_warning("SUSPENSION IMPERFECTA");*/
+                Messages.M_warning("SUSPENSION IMPERFECTA");*/           
             
             if (String.IsNullOrWhiteSpace(txtdias.Text))
                 return;
-
             
             mensaje = "";
              using (ndsub =new NDiasSubsidiados())
@@ -126,13 +154,12 @@ namespace Presentacion.Vista
                  ndsub.Dias = Convert.ToInt32(txtdias.Text.Trim());
                  mensaje = ndsub.GuardarCambios();      
              }
-
-            PlanillaCache.mensaje = 12;
+                                  
             txtdias.Text = string.Empty;
-            txtdias.Focus();
-                        
+            txtdias.Focus();                        
             Fill_detSubsidio(PlanillaCache.Subsidiado);
             SumarDias();
+            SentTypeDaySubsidio();           
         }
 
         private void FrmDiasSubsidiados2_Load(object sender, EventArgs e)
@@ -160,6 +187,7 @@ namespace Presentacion.Vista
                         {
                             Fill_detSubsidio(PlanillaCache.Subsidiado);
                             SumarDias();
+                            SentTypeDaySubsidio();
                         }
                         Messages.M_info(mensaje);
                         ndsub.state = EntityState.Guardar;
@@ -181,6 +209,7 @@ namespace Presentacion.Vista
                             {
                                 Fill_detSubsidio(PlanillaCache.Subsidiado);
                                 SumarDias();
+                                SentTypeDaySubsidio();
                             }
                             Messages.M_info(mensaje);
                             ndsub.state = EntityState.Guardar;
@@ -206,6 +235,11 @@ namespace Presentacion.Vista
                     dgvsubsidio.BeginEdit(true);                    
                 }
             }
+        }
+
+        private void FrmDiasSubsidiados2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _intancia = null;
         }
     }
 }

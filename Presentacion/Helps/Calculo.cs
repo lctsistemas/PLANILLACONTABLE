@@ -66,5 +66,31 @@ namespace Presentacion.Helps
             return imp_tarde;
         }
 
+
+        public static double MontoSubsidios(int dia, double basico, double asig_fami)
+        {
+            double monto_Sub = 0;
+            double diario = (basico / 30);
+
+            if (dia >= 30 && dia <=31 )
+            {
+                monto_Sub = ((diario * dia) + asig_fami);
+            }else if( dia < 30)
+            {
+                monto_Sub = (diario * dia);
+            }            
+            return monto_Sub;
+        }
+
+        //SOBRECARGA.
+        public static double MontoSubsidios(int dia, double basico)
+        {
+            double monto_Sub = 0;
+            double diario = (basico / 30);
+
+            monto_Sub = (diario * dia);
+            return monto_Sub;
+        }
+
     }
 }

@@ -27,7 +27,38 @@ namespace Presentacion.Vista
         private void TablaPlanilla() {
             dgvplanilla1.Columns["ape_nom"].Frozen = true;
             dgvplanilla2.Columns["valor1"].Frozen = true;
-        
+            
+            dgvplanilla1.Columns["montod25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montod25"].ReadOnly = true;
+            dgvplanilla1.Columns["montod35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montod35"].ReadOnly = true;
+
+            dgvplanilla1.Columns["monton25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["monton25"].ReadOnly = true;
+            dgvplanilla1.Columns["monton35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["monton35"].ReadOnly = true;
+
+            dgvplanilla1.Columns["montoferiado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montoferiado"].ReadOnly = true;
+
+            dgvplanilla1.Columns["montoboninocturno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montoboninocturno"].ReadOnly = true;
+
+            //subsidios
+            dgvplanilla1.Columns["montosub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montosub"].ReadOnly = true;
+            dgvplanilla1.Columns["montonega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montonega"].ReadOnly = true;
+            dgvplanilla1.Columns["montoposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["montoposi"].ReadOnly = true;
+
+            dgvplanilla1.Columns["thoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvplanilla1.Columns["thoras"].ReadOnly = true;
+
+            dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dgvplanilla1.Columns["totaremu"].ReadOnly = true;
+
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -45,27 +76,7 @@ namespace Presentacion.Vista
             TablaPlanilla();
             
         }
-
-        //envento cuando una fila esta validando.
-        private void dgvplanilla1_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            if (dgvplanilla1.CurrentRow != null)
-            {
-                if (dgvplanilla1.CurrentRow.Index < dgvplanilla1.Rows.Count -1 )
-                {
-                    if (dgvplanilla1.CurrentRow.Cells[6].Value != null)
-                    {
-                        if (dgvplanilla1.CurrentRow.Cells[6].Value.ToString() == "")
-                        {
-                            MessageBox.Show("El campo no puede estar vacío");
-                            e.Cancel = true;
-                            return;
-                        }
-                    }
-
-                }
-            }
-        }
+     
 
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -195,65 +206,8 @@ namespace Presentacion.Vista
                 default:
                     //dar.Cells["totaremu"].Value = 0.00;
                     break;
-            }
+            }          
 
-
-            //TOTAL HORAS EXTRAS.
-            switch (e.ColumnIndex)
-            {
-                case 11:
-                case 14:
-                case 17:
-                case 20:
-                case 23:
-                case 25:                    
-                    double montoD25 = 0, montoD35 = 0, montoN25 = 0, montoN35 = 0, feriado = 0, boniNoct = 0;
-                    double totalHorasExt = 0;
-
-                    //diurna de 25%
-                    if (dar.Cells["montod25"].Value == null)
-                        montoD25 = 0.00;
-                    else
-                        montoD25 = Convert.ToDouble(dar.Cells["montod25"].Value);
-
-                    //diurna de 35%
-                    if (dar.Cells["montod35"].Value == null)
-                        montoD35 = 0.00;
-                    else
-                        montoD35 = Convert.ToDouble(dar.Cells["montod35"].Value);
-
-                    //nocturno de 25%
-                    if (dar.Cells["monton25"].Value == null)
-                        montoN25 = 0.00;
-                    else
-                        montoN25 = Convert.ToDouble(dar.Cells["monton25"].Value);
-
-                    //nocturno de 35%
-                    if (dar.Cells["monton35"].Value == null)
-                        montoN35 = 0.00;
-                    else
-                        montoN35 = Convert.ToDouble(dar.Cells["monton35"].Value);
-
-                    //feriado
-                    if (dar.Cells["montoferiado"].Value == null)
-                        feriado = 0.00;
-                    else
-                        feriado = Convert.ToDouble(dar.Cells["montoferiado"].Value);
-
-                    //bonificacion nocturna
-                    if (dar.Cells["montoboninocturno"].Value == null)
-                        boniNoct = 0.00;
-                    else
-                        boniNoct = Convert.ToDouble(dar.Cells["montoboninocturno"].Value);
-
-                    //total horas extras.
-                    totalHorasExt = (montoD25 + montoD35 + montoN25 + montoN35 + feriado + boniNoct);
-                    dar.Cells["thoras"].Value = totalHorasExt.ToString();
-
-                    break;
-                default:
-                    break;
-            }
 
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
@@ -274,7 +228,7 @@ namespace Presentacion.Vista
                         minu25 = Convert.ToInt32(dar.Cells["minud25"].Value);
                  
                     horxd25 = Calculo.HoraExDiurna(930, 0, 0.25, hora25, minu25);
-                    dar.Cells["montod25"].Value = horxd25.ToString("0.##");
+                    dar.Cells["montod25"].Value = horxd25.ToString("N2");
                     break;
                 case 12:
                 case 13:
@@ -292,7 +246,7 @@ namespace Presentacion.Vista
                         minu35 = Convert.ToInt32(dar.Cells["minud35"].Value);
 
                     horxd35 = Calculo.HoraExDiurna(930, 0, 0.35, hora35,minu35);
-                    dar.Cells["montod35"].Value = horxd35.ToString("0.##");
+                    dar.Cells["montod35"].Value = horxd35.ToString("N2");
                     break;
                 case 15:
                 case 16:
@@ -310,7 +264,7 @@ namespace Presentacion.Vista
                         nminu25 = Convert.ToInt32(dar.Cells["minun25"].Value);
 
                     horxn25 = Calculo.HoraExNocturnas(930, 0, 0.25, nhora25, nminu25);
-                    dar.Cells["monton25"].Value = horxn25.ToString("0.##");
+                    dar.Cells["monton25"].Value = horxn25.ToString("N2");
                     break;
 
                 case 18:
@@ -329,7 +283,7 @@ namespace Presentacion.Vista
                         nminu35 = Convert.ToInt32(dar.Cells["minun35"].Value);
 
                     horxn35 = Calculo.HoraExNocturnas(930, 0, 0.35, nhora35, nminu35);
-                    dar.Cells["monton35"].Value = horxn35.ToString("0.##");
+                    dar.Cells["monton35"].Value = horxn35.ToString("N2");
                     break;
 
                 case 21:
@@ -348,7 +302,7 @@ namespace Presentacion.Vista
                         minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
 
                     hferi = Calculo.FeriadoDom(930,0, horaferiado, minutoferi);
-                    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                    dar.Cells["montoferiado"].Value = hferi.ToString("N2");
                     break;
 
                 case 24:
@@ -360,7 +314,7 @@ namespace Presentacion.Vista
                         horanoc = Convert.ToInt32(dar.Cells["hrboninocturna"].Value);
 
                     boninoc = Calculo.BoniNocturno(930, 0, horanoc);
-                    dar.Cells["montoboninocturno"].Value = boninoc.ToString("0.##");
+                    dar.Cells["montoboninocturno"].Value = boninoc.ToString("N2");
                     break;
 
                 case 26:
@@ -379,15 +333,80 @@ namespace Presentacion.Vista
                         minutarde = Convert.ToInt32(dar.Cells["mtarde"].Value);
 
                     importe_tarde = Calculo.Tardanza(930, horatarde, minutarde);
-                    dar.Cells["montotarde"].Value = importe_tarde.ToString("0.##");
+                    dar.Cells["montotarde"].Value = importe_tarde.ToString("N2");
                     break;
 
                 default:
                     break;
             }
 
+
+            // TOTAL HORAS EXTRAS.
+            switch (e.ColumnIndex)
+            {
+                case 9:
+                case 10:
+                case 12:
+                case 13:
+                case 15:
+                case 16:
+                case 18:
+                case 19:
+                case 21:
+                case 22:
+                case 24:
+
+                    double montoD25 = 0, montoD35 = 0, montoN25 = 0, montoN35 = 0, feriado = 0, boniNoct = 0;
+                    double totalHorasExt = 0;
+
+                    //diurna de 25%
+                    if (dar.Cells["montod25"].Value == null)
+                        montoD25 = 0;
+                    else
+                        montoD25 = Convert.ToDouble(dar.Cells["montod25"].Value);
+
+                    //diurna de 35%
+                    if (dar.Cells["montod35"].Value == null)
+                        montoD35 = 0;
+                    else
+                        montoD35 = Convert.ToDouble(dar.Cells["montod35"].Value);
+
+                    //nocturno de 25%
+                    if (dar.Cells["monton25"].Value == null)
+                        montoN25 = 0;
+                    else
+                        montoN25 = Convert.ToDouble(dar.Cells["monton25"].Value);
+
+                    //nocturno de 35%
+                    if (dar.Cells["monton35"].Value == null)
+                        montoN35 = 0;
+                    else
+                        montoN35 = Convert.ToDouble(dar.Cells["monton35"].Value);
+
+                    //feriado
+                    if (dar.Cells["montoferiado"].Value == null)
+                        feriado = 0;
+                    else
+                        feriado = Convert.ToDouble(dar.Cells["montoferiado"].Value);
+
+                    //bonificacion nocturna
+                    if (dar.Cells["montoboninocturno"].Value == null)
+                        boniNoct = 0;
+                    else
+                        boniNoct = Convert.ToDouble(dar.Cells["montoboninocturno"].Value);
+
+                    //total horas extras.
+                    totalHorasExt = (montoD25 + montoD35 + montoN25 + montoN35 + feriado + boniNoct);
+                    dar.Cells["thoras"].Value = totalHorasExt.ToString("N2");
+
+                    break;
+                default:
+                    break;
+            }
         }       
       
+
+        //.........
         private void tabplanilla_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
@@ -403,27 +422,51 @@ namespace Presentacion.Vista
         {
             if (e.RowIndex != -1)
             {
+                int dias = 0;
+                double monto = 0;
                 //MessageBox.Show(""+e.RowIndex);
                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
                 {
                     //Messages.M_info("seleccione el boton susbidio");
                     PlanillaCache.Subsidiado = Subsidiado;
-                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();
-                    //this.AddOwnedForm(fr2);
+                    FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
+                    this.AddOwnedForm(fr2);
                     fr2.ShowDialog(dgvplanilla1);
+
+                    if (dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null)
+                        dias = 0;
+                    else
+                        dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value);
+
+                    monto = Calculo.MontoSubsidios(dias,930,93);
+                    dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
                 }
 
                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
-                {
-                    //Messages.M_info("Seleccine boton no subsidiado");
+                {                    
                     PlanillaCache.Subsidiado = NoSubsidiado;
-                    FrmDiasSubsidiados2 fr2 = new FrmDiasSubsidiados2();
-                    fr2.ShowDialog(dgvplanilla1);
-                    MessageBox.Show("dato:  "+ PlanillaCache.mensaje);
-                    //dgvplanilla1.CurrentRow.Cells["ape_nom"].Value = PlanillaCache.mensaje;
-                    dgvplanilla1.Rows[e.RowIndex].Cells["hrferiado"].Value = PlanillaCache.mensaje;
-                    feriadooo();
+                    FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
 
+                    this.AddOwnedForm(fr2);
+                    fr2.ShowDialog(dgvplanilla1);
+
+                   //MONTO NEGATIVO.
+                    if (dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value == null)
+                        dias = 0;
+                    else
+                        dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value);
+
+                    monto = Calculo.MontoSubsidios(dias, 930);
+                    dgvplanilla1.Rows[e.RowIndex].Cells["montonega"].Value = monto.ToString("N2");
+                    
+                    //MONTO POSITIVO
+                    if (dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value == null)
+                        dias = 0;
+                    else
+                        dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
+
+                    monto = Calculo.MontoSubsidios(dias, 930);
+                    dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto.ToString("N2");
 
                 }
             }
@@ -457,29 +500,30 @@ namespace Presentacion.Vista
 
         private void dgvplanilla1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex != -1)
-            //{
-            //    DataGridViewRow dar = dgvplanilla1.CurrentRow;
-            //    if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
-            //    {
-            //        double hferi = 0;
-            //        Int32 horaferiado = 0, minutoferi = 0;
-            //        if (dar.Cells["hrferiado"].Value == null)
-            //            horaferiado = 0;
-            //        else
-            //            horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+            if (e.RowIndex != -1)
+            {
+                /*DataGridViewRow dar = dgvplanilla1.CurrentRow;
+                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+                {
+                    double hferi = 0;
+                    Int32 horaferiado = 0, minutoferi = 0;
+                    if (dar.Cells["hrferiado"].Value == null)
+                        horaferiado = 0;
+                    else
+                        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
 
 
-            //        if (dar.Cells["minuferiado"].Value == null)
-            //            minutoferi = 0;
-            //        else
-            //            minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+                    if (dar.Cells["minuferiado"].Value == null)
+                        minutoferi = 0;
+                    else
+                        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
 
-            //        hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
-            //        dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
-            //    }
-            //}
-            
+                    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+                    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                }*/
+               // MessageBox.Show("holalalacell enter");
+            }
+
         }
 
         private void dgvplanilla1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
@@ -511,6 +555,8 @@ namespace Presentacion.Vista
 
         private void dgvplanilla1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
+
+           // MessageBox.Show("cell state changed");
             
                 //DataGridViewRow dar = dgvplanilla1.CurrentRow;
                 //if (dar.Cells["btnnosubsidio"].Selected)
