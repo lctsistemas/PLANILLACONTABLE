@@ -1263,4 +1263,3 @@ AS BEGIN
 DELETE FROM dbo.DET_SUBSIDIOS WHERE id_det_subsidios=@id_detSubsidios
 END
 
-	

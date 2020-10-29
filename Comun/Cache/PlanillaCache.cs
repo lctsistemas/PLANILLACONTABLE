@@ -9,6 +9,6 @@ namespace Comun.Cache
     public  class  PlanillaCache
     {
         public static string Subsidiado { get; set; }
-        public static string mensaje { get; set; }
+        public static int mensaje { get; set; }
     }
 }
