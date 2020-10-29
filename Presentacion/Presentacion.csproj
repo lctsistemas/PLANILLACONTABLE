@@ -537,6 +537,18 @@
   <ItemGroup>
     <None Include="Resources\delete18p.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1486485588-add-create-new-math-sign-cross-plus_81186.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_37110.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DocumentEdit_40924.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe_78956 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
