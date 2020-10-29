@@ -546,6 +546,7 @@ SELECT id_rol, rol FROM dbo.Rol ORDER BY id_rol DESC
 GO
 
 ---------- PROCEDIMIENTOS GENERAR CODIGO AUTOMATICO ------------
+/*
 CREATE PROC SP_GENERAR_USUARIO
 (@usuario int output)
 AS BEGIN
@@ -560,8 +561,9 @@ ELSE
 		SET @usuario=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
 	END
 END
-GO
+GO*/
 
+/*ya no se utiliza
 CREATE PROC SP_GENERAR_EMP
 (@empleado int output)
 AS BEGIN
@@ -575,8 +577,9 @@ ELSE
 		SET @empleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
 	END
 END
-GO
+GO*/
 
+/*ya no se utiliza
 CREATE PROC SP_GENERAR_BANCO
 (@Banco int output)
 AS BEGIN
@@ -590,8 +593,9 @@ ELSE
 		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)
 	END
 END
-GO
+GO*/
 
+/* ya no se utiliza
 CREATE PROC SP_GEN_TIPO_CONT
 (@Tipocont int output)
 AS BEGIN
@@ -605,7 +609,7 @@ ELSE
 		SET @Tipocont=(SELECT MAX(t.id_tipo_contrato)+1 FROM Tipo_contrato t)
 	END
 END
-GO
+GO*/
 
 CREATE PROC SP_GENERAR_CONTRATO
 (@contrato int output)
@@ -733,7 +737,7 @@ ELSE
 	END
 END
 GO
-
+/*ya no se utiliza
 --GENERAR CODIGO Planilla
 CREATE PROC SP_GENERAR_Planilla
 (@plani int output)
@@ -749,23 +753,7 @@ ELSE
 	END
 END
 GO
-
-
---generar codigo regimen salud
-CREATE PROC SP_GENERAR_REG_SAL
-(@regimen_salud int output)
-AS BEGIN
-SET @regimen_salud=(SELECT count(rs.id_regimen_salud) FROM dbo.REGIMEN_SALUD rs)
-IF(@regimen_salud=0)
-	BEGIN
-		SET @regimen_salud=1		
-	END
-ELSE
-	BEGIN
-		SET @regimen_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM dbo.REGIMEN_SALUD rs)
-	END
-END
-GO
+*/
 
 --GENERAR CODIGO Tipo Planilla
 CREATE PROC SP_GENERAR_TipoPlanilla
@@ -782,6 +770,8 @@ ELSE
 	END
 END
 GO
+
+/*ya no se utiliza
 ----PROCEDIMIENTOS PARA GENERAR REGIMEN SALUD
 ALTER PROC SP_GEN_REG_SALUD
 (@reg_salud int output)
@@ -797,6 +787,7 @@ ELSE
 	END
 END
 GO
+*/
 
 --GENERAR CODIGO REGIMEN
 
@@ -1223,7 +1214,8 @@ GO
 --select * from SUBSIDIOS
 --DELETE FROM DET_SUBSIDIOS where id_det_subsidios between 3 and 5
 
-create PROC SP_SHOW_SUBSIDIOS --mostrara en combobox
+--MOSTRAR EN COMBOBOX SUBSIDIOS
+create PROC SP_SHOW_SUBSIDIOS 
 @tipo_subsidio varchar(30)
 AS BEGIN
 SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM SUBSIDIOS s 
@@ -1231,6 +1223,7 @@ WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
 
+--MANTENIMIENTO DETALLE DE SUBSIDIOS (ADD,UPDATE,DELETE)
 ALTER PROC SP_INSERT_SUBSIDIOS
 @id_subsidios int,
 @id_empleado int,
@@ -1262,4 +1255,24 @@ CREATE PROC SP_DELETE_SUBSIDIOS
 AS BEGIN
 DELETE FROM dbo.DET_SUBSIDIOS WHERE id_det_subsidios=@id_detSubsidios
 END
+------------------------------------------------------------------------
+--MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
+GO
+ALTER PROC SP_ADD_SUBSIDIOS
+@id_subsidios int,
+@id_empleado int,
+@id_mes int,
+@id_periodo int,
+@dias int
+AS BEGIN
+DECLARE @subsidio int
+SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
+IF(@subsidio=0)	
+	SET @subsidio=1		
+ELSE
+	SET @subsidio=(SELECT MAX(ds.id_det_subsidios) + 1 FROM dbo.DET_SUBSIDIOS ds)
+INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios, id_empleado, id_mes, id_periodo, dias)
+VALUES(@subsidio, @id_subsidios, @id_empleado, @id_mes, @id_periodo, @dias)
+END
+GO
 

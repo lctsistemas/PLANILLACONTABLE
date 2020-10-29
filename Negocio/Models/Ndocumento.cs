@@ -16,7 +16,7 @@ namespace Negocio.Models
 
         [Display(Name = "Documento")]
         [Required]
-        [RegularExpression("^[a-zA-Z ]+$")]
+        [RegularExpression("^[a-zA-Z]+$")]
         public string nombre_documento { get; set; }
 
         public string descripcion { get; set; }
