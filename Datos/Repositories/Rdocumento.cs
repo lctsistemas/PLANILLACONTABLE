@@ -24,6 +24,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nombre_documento;
                     cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
+                    cmd.Parameters.Add("@cod_doc", SqlDbType.Char, 2).Value = entiti.Cod_doc;
                     result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();                    
                 }
@@ -46,6 +47,7 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nombre_documento;
                     cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
                     cmd.Parameters.Add("@iddocumento", SqlDbType.Int).Value = entiti.Iddocumento;
+                    cmd.Parameters.Add("@cod_doc", SqlDbType.Char,2).Value = entiti.Cod_doc;
                     result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();                    
                 }

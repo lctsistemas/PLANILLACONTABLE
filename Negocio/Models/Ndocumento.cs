@@ -20,6 +20,8 @@ namespace Negocio.Models
         public string nombre_documento { get; set; }
 
         public string descripcion { get; set; }
+
+        public string cod_doc { get; set; }
         public EntityState state { private get; set; }
         private IDocumento docu_repsository;
 
@@ -40,6 +42,7 @@ namespace Negocio.Models
                 rt.Iddocumento = iddocumento;
                 rt.Nombre_documento = nombre_documento;
                 rt.Descripcion = descripcion;
+                rt.Cod_doc = cod_doc;
 
                 switch (state)
                 {
@@ -82,8 +85,9 @@ namespace Negocio.Models
                     {
                         iddocumento = Convert.ToInt32(item[0]),
                         nombre_documento = item[1].ToString(),
-                        descripcion = item[2].ToString()
-                    });
+                        descripcion = item[2].ToString(),
+                        cod_doc = item[3].ToString()
+                    }) ;
                 }
             }
             return listadocu;

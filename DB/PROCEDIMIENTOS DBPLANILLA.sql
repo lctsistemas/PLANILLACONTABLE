@@ -53,22 +53,24 @@ GO
 /*    PROCEDIMIENTO TIPO DE DOCUMENTO     */
 
 --INSERT TIPO DOCUMENTO
-CREATE PROC SP_REGISTRAR_DOCUMENTO
+ALTER PROC SP_REGISTRAR_DOCUMENTO
 @nom varchar(50),
-@descripcion nvarchar(100)
+@descripcion nvarchar(100),
+@cod_doc char(2)
 AS BEGIN
-INSERT INTO Tipo_documento(nombre,descripcion)
-VALUES(@nom,@descripcion)
+INSERT INTO Tipo_documento(nombre,descripcion,codigo_doc)
+VALUES(@nom,@descripcion,@cod_doc)
 END
 GO
 
 --UPDATE DOCUMENTO
-CREATE PROC SP_UPDATE_DOCUMENTO
+alter PROC SP_UPDATE_DOCUMENTO
 @iddocumento int,
 @nom varchar(50),
-@descripcion nvarchar(100)
+@descripcion nvarchar(100),
+@cod_doc char(2)
 AS BEGIN
-UPDATE Tipo_documento SET nombre=@nom, descripcion=@descripcion WHERE id_documento=@iddocumento
+UPDATE Tipo_documento SET nombre=@nom, descripcion=@descripcion,codigo_doc=@cod_doc WHERE id_documento=@iddocumento
 END
 GO
 
@@ -94,7 +96,7 @@ GO
 --SHOW DOCUMENTO
 ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
-SELECT id_documento,nombre,descripcion FROM 
+SELECT id_documento,codigo_doc,nombre,descripcion FROM 
 Tipo_documento 
 END
 GO
