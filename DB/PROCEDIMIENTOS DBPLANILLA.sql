@@ -1255,24 +1255,43 @@ CREATE PROC SP_DELETE_SUBSIDIOS
 AS BEGIN
 DELETE FROM dbo.DET_SUBSIDIOS WHERE id_det_subsidios=@id_detSubsidios
 END
+GO
 ------------------------------------------------------------------------
 --MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
-GO
-ALTER PROC SP_ADD_SUBSIDIOS
+
+CREATE PROC SP_ADD_SUBSIDIOS
 @id_subsidios int,
-@id_empleado int,
-@id_mes int,
-@id_periodo int,
-@dias int
+@cod_subsidio int,
+@descripcion_subsidio nvarchar(100),
+@tipo_subsidio varchar(30),
+@descuento bit
 AS BEGIN
 DECLARE @subsidio int
-SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
+SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.SUBSIDIOS s)
 IF(@subsidio=0)	
 	SET @subsidio=1		
 ELSE
-	SET @subsidio=(SELECT MAX(ds.id_det_subsidios) + 1 FROM dbo.DET_SUBSIDIOS ds)
-INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios, id_empleado, id_mes, id_periodo, dias)
-VALUES(@subsidio, @id_subsidios, @id_empleado, @id_mes, @id_periodo, @dias)
+	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.SUBSIDIOS s)
+INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(@subsidio, @cod_subsidio, @descripcion_subsidio, @tipo_subsidio, @descuento)
 END
 GO
 
+CREATE PROC SP_MODIFY_SUBSIDIOS
+@cod_subsidio int,
+@descrip_subsidio nvarchar(100),
+@tipo_subsidio varchar(30),
+@descuento bit,
+@id_subsidios int
+AS BEGIN
+UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,descripcion_subsidio=@descrip_subsidio,
+                         tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios
+END
+GO
+
+CREATE PROC SP_BORRAR_SUBSIDIOS
+@id_subsidios int
+AS BEGIN
+DELETE FROM dbo.SUBSIDIOS WHERE id_subsidios=@id_subsidios
+END
+GO
