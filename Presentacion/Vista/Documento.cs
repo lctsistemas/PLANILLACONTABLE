@@ -35,11 +35,15 @@ namespace Presentacion.Vista
             dgvdocumento.Columns[0].Width = 50;
             dgvdocumento.Columns[0].Visible = false;
 
-            dgvdocumento.Columns[1].HeaderText = "DOCUMENTO";
-            dgvdocumento.Columns[1].Width = 150;
+            dgvdocumento.Columns[1].HeaderText = "CODIGO DOCUMENTO";
+            dgvdocumento.Columns[1].Width = 100;
 
-            dgvdocumento.Columns[2].HeaderText = "DESCRIPCION";
-            dgvdocumento.Columns[2].Width = 250;
+            dgvdocumento.Columns[2].HeaderText = "DOCUMENTO";
+            dgvdocumento.Columns[2].Width = 120;
+
+            dgvdocumento.Columns[3].HeaderText = "DESCRIPCION";
+            dgvdocumento.Columns[3].Width = 200;
+            
         }
         //VALIDAR CONTROLES
         /*private bool Validar()
@@ -67,6 +71,7 @@ namespace Presentacion.Vista
         {
             txtdocumento.Text = String.Empty;
             txtdescripcion.Text = String.Empty;
+            txtcoddoc.Text = String.Empty;
             txtdocumento.Focus();
         }
         //LOAD
@@ -93,12 +98,14 @@ namespace Presentacion.Vista
             {
                 nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
                 nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
+                nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
                 bool validar = new ValidacionDatos(nd).Validate();
                 if (validar)
                 {
                     result = nd.SaveChanges();
                     ShowDocument("");
                     Messages.M_info(result);
+                    limpiar();
                 }
             }
         }
@@ -122,8 +129,11 @@ namespace Presentacion.Vista
             {
                 nd.state = EntityState.Modificar;
                 nd.iddocumento = Convert.ToInt32(r.Cells[0].Value);
-                txtdocumento.Text = Convert.ToString(r.Cells[1].Value);
-                txtdescripcion.Text = Convert.ToString(r.Cells[2].Value);
+                txtcoddoc.Text = Convert.ToString(r.Cells[1].Value);
+                txtdocumento.Text = Convert.ToString(r.Cells[2].Value);
+                txtdescripcion.Text = Convert.ToString(r.Cells[3].Value);
+                Habilitar(true);
+
                 ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
             }
         }
@@ -209,7 +219,7 @@ namespace Presentacion.Vista
 
         private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Keypress.SoloNumeros(e);
+            Keypress.SoloLetras(e);
         }
 
 

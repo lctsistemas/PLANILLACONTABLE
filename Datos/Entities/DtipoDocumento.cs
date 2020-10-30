@@ -5,6 +5,7 @@
         private int _iddocumento;
         private string _nombre_documento;
         private string _descripcion;
+        private string cod_doc;
         public string message { get; set; }
 
         //METODOS GET AND SET
@@ -26,13 +27,18 @@
             set { _descripcion = value; }
         }
 
+        public string Cod_doc { get => cod_doc; set => cod_doc = value; }
+
+
+
         //CONSTRUCTORES
         public DtipoDocumento() { }
 
-        public DtipoDocumento(string docu, string des)
+        public DtipoDocumento(string docu, string des,string cod_doc)
         {
             this.Nombre_documento = docu;
             this.Descripcion = des;
+            this.Cod_doc = cod_doc;
         }
     }
 }

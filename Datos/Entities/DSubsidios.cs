@@ -11,8 +11,8 @@ namespace Datos.Entities
         private String descripcion_subsidio;
         private String tipo_subsidio;
         private bool descuento;
+        public string mensaje { get; set; }
 
-       
         public int Id_subsidios { get => id_subsidios; set => id_subsidios = value; }
         public string Cod_subsidios { get => cod_subsidios; set => cod_subsidios = value; }
         public string Tipo_supension { get => tipo_supension; set => tipo_supension = value; }

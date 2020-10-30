@@ -41,6 +41,8 @@ descripcion nvarchar(100) null
 )
 GO
 
+alter table Tipo_documento add codigo_doc char(2);
+
 --TABLA: REGIMEN PENSIONARIO
 CREATE TABLE RegimenPensionario(
 codigo_regimen int identity(1,1),
