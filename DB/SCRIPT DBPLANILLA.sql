@@ -316,8 +316,6 @@ dias int not null
 )
 GO
 
-
-GO
 SELECT * FROM SUBSIDIOS
 
 insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
@@ -372,3 +370,7 @@ insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_co
 VALUES(17, '28', 'S.I.', 'DIAS LICENCIA POR PATERNIDAD','DIAS LICENCIA POR PATERNIDAD','NO SUBSIDIADOS', 0);
 
 GO
+ 
+ select * from dbo.Mes
+ select id_mes from dbo.Mes group by id_mes
+

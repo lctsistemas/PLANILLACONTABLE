@@ -15,8 +15,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PlanillaMensual());
-
+            Application.Run(new FrmPlanillaMensual2());
         }
     }
 }

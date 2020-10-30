@@ -116,3 +116,6 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, segur
 (5, 5, 0.18, 1.25, 1.35, 10.00, 9792.61, 9, 2),(6, 6, 1.60, 1.25, 1.35, 10.00, 9792.61, 9, 2),--PRIMA
 (7, 7, 0.67, 1.20, 1.35, 10.00, 9792.61,9, 2),(8, 8, 1.69, 1.20, 1.35, 10.00, 9792.61,9, 2)--PROFUTURO
 GO
+
+select * from empleado
+select * from contrato
