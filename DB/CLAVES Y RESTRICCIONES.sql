@@ -16,6 +16,7 @@ alter table RegimenPensionario ADD CONSTRAINT pk_idregimen PRIMARY KEY(codigo_re
 alter table SUBSIDIOS ADD CONSTRAINT pk_idsubsidios PRIMARY KEY(id_subsidios)
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetsubsidios PRIMARY KEY(id_det_subsidios)
 
+alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanillam PRIMARY KEY(idplanilla_manto)
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
@@ -34,6 +35,8 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERE
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFERENCES Mes
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REFERENCES Empleado
 GO
+
+
 select * from empleado
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
@@ -47,12 +50,14 @@ ALTER TABLE Empresa ADD CONSTRAINT PK_idempresa PRIMARY KEY(id_empresa)
 ALTER TABLE Sucursal ADD CONSTRAINT PK_idsucursal PRIMARY KEY(id_sucursal)
 go
 
+
 --ALTER TABLE Usuario drop constraint Fk_idrol 
 --FOREIGN KEY
 ALTER TABLE Empresa ADD CONSTRAINT FK_id_Emaestra FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 ALTER TABLE Sucursal ADD CONSTRAINT FK_idEmaestra FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 ALTER TABLE Sucursal ADD CONSTRAINT FK_idempresa FOREIGN KEY(id_empresa)REFERENCES Empresa
 GO
+
 
 --TABLA: USUARIO Y ROL
 	--PRIMARY KEY USUARIO Y ROL
