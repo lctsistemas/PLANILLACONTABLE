@@ -53,22 +53,24 @@ GO
 /*    PROCEDIMIENTO TIPO DE DOCUMENTO     */
 
 --INSERT TIPO DOCUMENTO
-CREATE PROC SP_REGISTRAR_DOCUMENTO
+ALTER PROC SP_REGISTRAR_DOCUMENTO
 @nom varchar(50),
-@descripcion nvarchar(100)
+@descripcion nvarchar(100),
+@cod_doc char(2)
 AS BEGIN
-INSERT INTO Tipo_documento(nombre,descripcion)
-VALUES(@nom,@descripcion)
+INSERT INTO Tipo_documento(nombre,descripcion,codigo_doc)
+VALUES(@nom,@descripcion,@cod_doc)
 END
 GO
 
 --UPDATE DOCUMENTO
-CREATE PROC SP_UPDATE_DOCUMENTO
+alter PROC SP_UPDATE_DOCUMENTO
 @iddocumento int,
 @nom varchar(50),
-@descripcion nvarchar(100)
+@descripcion nvarchar(100),
+@cod_doc char(2)
 AS BEGIN
-UPDATE Tipo_documento SET nombre=@nom, descripcion=@descripcion WHERE id_documento=@iddocumento
+UPDATE Tipo_documento SET nombre=@nom, descripcion=@descripcion,codigo_doc=@cod_doc WHERE id_documento=@iddocumento
 END
 GO
 
@@ -94,7 +96,7 @@ GO
 --SHOW DOCUMENTO
 ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
-SELECT id_documento,nombre,descripcion FROM 
+SELECT id_documento,codigo_doc,nombre,descripcion FROM 
 Tipo_documento 
 END
 GO
@@ -544,6 +546,7 @@ SELECT id_rol, rol FROM dbo.Rol ORDER BY id_rol DESC
 GO
 
 ---------- PROCEDIMIENTOS GENERAR CODIGO AUTOMATICO ------------
+/*
 CREATE PROC SP_GENERAR_USUARIO
 (@usuario int output)
 AS BEGIN
@@ -558,8 +561,9 @@ ELSE
 		SET @usuario=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
 	END
 END
-GO
+GO*/
 
+/*ya no se utiliza
 CREATE PROC SP_GENERAR_EMP
 (@empleado int output)
 AS BEGIN
@@ -573,8 +577,9 @@ ELSE
 		SET @empleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
 	END
 END
-GO
+GO*/
 
+/*ya no se utiliza
 CREATE PROC SP_GENERAR_BANCO
 (@Banco int output)
 AS BEGIN
@@ -588,8 +593,9 @@ ELSE
 		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)
 	END
 END
-GO
+GO*/
 
+/* ya no se utiliza
 CREATE PROC SP_GEN_TIPO_CONT
 (@Tipocont int output)
 AS BEGIN
@@ -603,7 +609,7 @@ ELSE
 		SET @Tipocont=(SELECT MAX(t.id_tipo_contrato)+1 FROM Tipo_contrato t)
 	END
 END
-GO
+GO*/
 
 CREATE PROC SP_GENERAR_CONTRATO
 (@contrato int output)
@@ -731,7 +737,7 @@ ELSE
 	END
 END
 GO
-
+/*ya no se utiliza
 --GENERAR CODIGO Planilla
 CREATE PROC SP_GENERAR_Planilla
 (@plani int output)
@@ -747,23 +753,7 @@ ELSE
 	END
 END
 GO
-
-
---generar codigo regimen salud
-CREATE PROC SP_GENERAR_REG_SAL
-(@regimen_salud int output)
-AS BEGIN
-SET @regimen_salud=(SELECT count(rs.id_regimen_salud) FROM dbo.REGIMEN_SALUD rs)
-IF(@regimen_salud=0)
-	BEGIN
-		SET @regimen_salud=1		
-	END
-ELSE
-	BEGIN
-		SET @regimen_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM dbo.REGIMEN_SALUD rs)
-	END
-END
-GO
+*/
 
 --GENERAR CODIGO Tipo Planilla
 CREATE PROC SP_GENERAR_TipoPlanilla
@@ -780,6 +770,8 @@ ELSE
 	END
 END
 GO
+
+/*ya no se utiliza
 ----PROCEDIMIENTOS PARA GENERAR REGIMEN SALUD
 ALTER PROC SP_GEN_REG_SALUD
 (@reg_salud int output)
@@ -795,6 +787,7 @@ ELSE
 	END
 END
 GO
+*/
 
 --GENERAR CODIGO REGIMEN
 
@@ -1221,7 +1214,8 @@ GO
 --select * from SUBSIDIOS
 --DELETE FROM DET_SUBSIDIOS where id_det_subsidios between 3 and 5
 
-create PROC SP_SHOW_SUBSIDIOS --mostrara en combobox
+--MOSTRAR EN COMBOBOX SUBSIDIOS
+create PROC SP_SHOW_SUBSIDIOS 
 @tipo_subsidio varchar(30)
 AS BEGIN
 SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM SUBSIDIOS s 
@@ -1229,6 +1223,7 @@ WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
 
+--MANTENIMIENTO DETALLE DE SUBSIDIOS (ADD,UPDATE,DELETE)
 ALTER PROC SP_INSERT_SUBSIDIOS
 @id_subsidios int,
 @id_empleado int,
@@ -1260,4 +1255,53 @@ CREATE PROC SP_DELETE_SUBSIDIOS
 AS BEGIN
 DELETE FROM dbo.DET_SUBSIDIOS WHERE id_det_subsidios=@id_detSubsidios
 END
+GO
+------------------------------------------------------------------------
+--MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
 
+ALTER PROC SP_ADD_SUBSIDIOS
+@id_subsidios int,
+@cod_subsidio int,
+@tipo_suspension varchar(10),
+@descripcion_corta nvarchar(70),
+@descripcion_subsidio nvarchar(100),
+@tipo_subsidio varchar(30),
+@descuento bit
+AS BEGIN
+DECLARE @subsidio int
+SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.SUBSIDIOS s)
+IF(@subsidio=0)	
+	SET @subsidio=1		
+ELSE
+	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.SUBSIDIOS s)
+INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio,tipo_suspencion,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, @descuento)
+END
+GO
+
+ALTER PROC SP_MODIFY_SUBSIDIOS
+@cod_subsidio int,
+@tipo_suspension varchar(10),
+@descripcion_corta nvarchar(70),
+@descrip_subsidio nvarchar(100),
+@tipo_subsidio varchar(30),
+@descuento bit,
+@id_subsidios int
+AS BEGIN
+UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
+                         tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios
+END
+GO
+
+CREATE PROC SP_BORRAR_SUBSIDIOS
+@id_subsidios int
+AS BEGIN
+DELETE FROM dbo.SUBSIDIOS WHERE id_subsidios=@id_subsidios
+END
+GO
+
+ALTER PROC SP_MOSTRAR_SUBSIDIOS 
+AS BEGIN
+SELECT id_subsidios, cod_subsidio,tipo_suspencion , descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM SUBSIDIOS 
+END
+GO
