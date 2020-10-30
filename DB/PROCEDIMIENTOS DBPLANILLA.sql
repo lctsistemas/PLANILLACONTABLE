@@ -1259,9 +1259,11 @@ GO
 ------------------------------------------------------------------------
 --MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
 
-CREATE PROC SP_ADD_SUBSIDIOS
+ALTER PROC SP_ADD_SUBSIDIOS
 @id_subsidios int,
 @cod_subsidio int,
+@tipo_suspension varchar(10),
+@descripcion_corta nvarchar(70),
 @descripcion_subsidio nvarchar(100),
 @tipo_subsidio varchar(30),
 @descuento bit
@@ -1272,19 +1274,21 @@ IF(@subsidio=0)
 	SET @subsidio=1		
 ELSE
 	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.SUBSIDIOS s)
-INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio, descripcion_subsidio, tipo_subsidio, descuento)
-VALUES(@subsidio, @cod_subsidio, @descripcion_subsidio, @tipo_subsidio, @descuento)
+INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio,tipo_suspencion,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, @descuento)
 END
 GO
 
-CREATE PROC SP_MODIFY_SUBSIDIOS
+ALTER PROC SP_MODIFY_SUBSIDIOS
 @cod_subsidio int,
+@tipo_suspension varchar(10),
+@descripcion_corta nvarchar(70),
 @descrip_subsidio nvarchar(100),
 @tipo_subsidio varchar(30),
 @descuento bit,
 @id_subsidios int
 AS BEGIN
-UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,descripcion_subsidio=@descrip_subsidio,
+UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
                          tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios
 END
 GO
@@ -1293,5 +1297,11 @@ CREATE PROC SP_BORRAR_SUBSIDIOS
 @id_subsidios int
 AS BEGIN
 DELETE FROM dbo.SUBSIDIOS WHERE id_subsidios=@id_subsidios
+END
+GO
+
+ALTER PROC SP_MOSTRAR_SUBSIDIOS 
+AS BEGIN
+SELECT id_subsidios, cod_subsidio,tipo_suspencion , descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM SUBSIDIOS 
 END
 GO

@@ -1,15 +1,53 @@
-﻿using System;
+﻿using Negocio.Models;
+using System;
 using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class MDIParent1 : Form
+    public partial class Subsidios : Form
     {
         private int childFormNumber = 0;
-
-        public MDIParent1()
+        private NSubsidios ns = new NSubsidios();
+        public Subsidios()
         {
             InitializeComponent();
+        }
+
+        private void ShowSubsidio()
+        {
+            using (ns)
+            {
+                dgvsubsidio.DataSource = ns.Getall();
+            }
+        }
+
+        private void Tabla()
+        {
+            dgvsubsidio.Columns[0].HeaderText = "id_subsidios";
+            dgvsubsidio.Columns[0].Width = 100;
+            dgvsubsidio.Columns[0].Visible = false;
+
+            dgvsubsidio.Columns[1].HeaderText = "Cod_subsidio";
+            dgvsubsidio.Columns[1].Width = 100;
+
+            dgvsubsidio.Columns[2].HeaderText = "Tipo de suspension";
+            dgvsubsidio.Columns[2].Width = 120;
+
+            dgvsubsidio.Columns[3].HeaderText = "Descripcion corta";
+            dgvsubsidio.Columns[3].Width = 150;
+
+            dgvsubsidio.Columns[4].HeaderText = "Descripcion subsidio";
+            dgvsubsidio.Columns[4].Width = 250;
+
+            dgvsubsidio.Columns[5].HeaderText = "Tipo Subsidio";
+            dgvsubsidio.Columns[5].Width = 100;
+
+            dgvsubsidio.Columns[6].HeaderText = "descuento";
+            dgvsubsidio.Columns[6].Width = 100;
+
+            dgvsubsidio.Columns[7].HeaderText = "state";
+            dgvsubsidio.Columns[7].Width = 100;
+            dgvsubsidio.Columns[7].Visible = false;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -66,7 +104,7 @@ namespace Presentacion
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,6 +133,12 @@ namespace Presentacion
             {
                 childForm.Close();
             }
+        }
+
+        private void Subsidios_Load(object sender, EventArgs e)
+        {
+            ShowSubsidio();
+            Tabla();
         }
     }
 }

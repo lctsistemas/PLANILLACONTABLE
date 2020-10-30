@@ -324,6 +324,9 @@
     <EmbeddedResource Include="Vista\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\ListaNoSubsidiados.resx">
+      <DependentUpon>ListaNoSubsidiados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Manto_Regimen.resx">
       <DependentUpon>Manto_Regimen.cs</DependentUpon>
     </EmbeddedResource>
