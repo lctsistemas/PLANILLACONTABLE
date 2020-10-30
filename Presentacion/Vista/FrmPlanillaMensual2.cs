@@ -209,7 +209,7 @@ namespace Presentacion.Vista
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {
             TablaPlanilla();
-            FillTabla();          
+            //FillTabla();          
         }      
              
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
