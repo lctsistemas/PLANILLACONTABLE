@@ -1,5 +1,6 @@
 ﻿using Negocio.Models;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -27,27 +28,34 @@ namespace Presentacion
             dgvsubsidio.Columns[0].Width = 100;
             dgvsubsidio.Columns[0].Visible = false;
 
-            dgvsubsidio.Columns[1].HeaderText = "Cod_subsidio";
-            dgvsubsidio.Columns[1].Width = 100;
+            dgvsubsidio.Columns[1].HeaderText = "Codigo subsudio";
+            dgvsubsidio.Columns[1].Width = 80;
+
 
             dgvsubsidio.Columns[2].HeaderText = "Tipo de suspension";
-            dgvsubsidio.Columns[2].Width = 120;
+            dgvsubsidio.Columns[2].Width = 80;
 
             dgvsubsidio.Columns[3].HeaderText = "Descripcion corta";
-            dgvsubsidio.Columns[3].Width = 150;
+            dgvsubsidio.Columns[3].Width = 200;
 
             dgvsubsidio.Columns[4].HeaderText = "Descripcion subsidio";
             dgvsubsidio.Columns[4].Width = 250;
 
             dgvsubsidio.Columns[5].HeaderText = "Tipo Subsidio";
-            dgvsubsidio.Columns[5].Width = 100;
+            dgvsubsidio.Columns[5].Width = 120;
 
-            dgvsubsidio.Columns[6].HeaderText = "descuento";
-            dgvsubsidio.Columns[6].Width = 100;
+            dgvsubsidio.Columns[6].HeaderText = "Descuento";
+            dgvsubsidio.Columns[6].Width = 80;
 
             dgvsubsidio.Columns[7].HeaderText = "state";
             dgvsubsidio.Columns[7].Width = 100;
             dgvsubsidio.Columns[7].Visible = false;
+
+            foreach (DataGridViewColumn col in dgvsubsidio.Columns)
+            {
+                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
+            }
         }
 
         private void ShowNewForm(object sender, EventArgs e)
