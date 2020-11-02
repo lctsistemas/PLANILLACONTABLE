@@ -1002,20 +1002,19 @@ ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
 @idmes int =null,
 @idperiodo int=null
 AS BEGIN
-IF(EXISTS(SELECT co.codigo_regimen FROM ComisionesPension co))
-	BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
-	END
-ELSE BEGIN
-	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
-	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 	WHERE
-	r.tipo_regimen='SPP'
-	END
+	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'	
 END
 GO
 
+--- SCRIPT
+
+select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
+	RegimenPensionario r right join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
+	WHERE (co.idmes=9 AND idperiodo=2) 
+
+GO
 ALTER PROC SP_INSERT_COMISIONES
 @codigo_regimen int,
 @comision decimal(6,2),

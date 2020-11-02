@@ -61,12 +61,14 @@ saldo decimal(6,2) null,
 seguro decimal(6,2) null,
 aporte decimal(6,2) null,
 tope  decimal(10,2) null, 
-idmes int not null,
-idperiodo int not null
+idmes int null,
+idperiodo int null
 )
 GO
 
+
 select *  from RegimenPensionario
+select *  from ComisionesPension
 
 
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/

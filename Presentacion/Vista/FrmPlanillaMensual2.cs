@@ -27,6 +27,9 @@ namespace Presentacion.Vista
         }
 
 
+        //METODO BORRR CEROS
+        
+
         //TABLA
         private void TablaPlanilla() {
             dgvplanilla1.Columns["ape_nom"].Frozen = true;
@@ -78,7 +81,7 @@ namespace Presentacion.Vista
             dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvplanilla1.Columns["totaremu"].ReadOnly = true;
 
-            dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##";
+            dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
         }
 
         //CARGAR DATAGRI
@@ -444,6 +447,8 @@ namespace Presentacion.Vista
         
         //.........
 
+
+        //METODO HORAS DIARIAS.
         private int HorasDiarias(DataGridViewRow dgr, int hrboninoc)
         {
             int pdias = 0, pdiaDominical = 0, horaTrabajada = 0;            

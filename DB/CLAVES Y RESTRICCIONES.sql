@@ -120,6 +120,8 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, segur
 (3, 3, 0.00, 0.82, 1.35, 10.00, 9792.61,9,2),(4, 4, 1.55, 0.82, 1.35, 10.00, 9792.61,9,2),--INTEGRA
 (5, 5, 0.18, 1.25, 1.35, 10.00, 9792.61, 9, 2),(6, 6, 1.60, 1.25, 1.35, 10.00, 9792.61, 9, 2),--PRIMA
 (7, 7, 0.67, 1.20, 1.35, 10.00, 9792.61,9, 2),(8, 8, 1.69, 1.20, 1.35, 10.00, 9792.61,9, 2)--PROFUTURO
+
+INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision) VALUES (17,9,13.00)
 GO
 
 select * from empleado
