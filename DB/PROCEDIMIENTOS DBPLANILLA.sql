@@ -1261,12 +1261,13 @@ GO
 
 ALTER PROC SP_ADD_SUBSIDIOS
 @id_subsidios int,
-@cod_subsidio int,
+@cod_subsidio char(2),
 @tipo_suspension varchar(10),
 @descripcion_corta nvarchar(70),
 @descripcion_subsidio nvarchar(100),
 @tipo_subsidio varchar(30),
-@descuento bit
+@descuento bit,
+@mensaje varchar(100) output
 AS BEGIN
 DECLARE @subsidio int
 SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.SUBSIDIOS s)
@@ -1276,8 +1277,10 @@ ELSE
 	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.SUBSIDIOS s)
 INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio,tipo_suspencion,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
 VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, @descuento)
+SET @mensaje= 'SUBSIDIO REGISTRADO CORRECTAMENTE'
 END
 GO
+
 
 ALTER PROC SP_MODIFY_SUBSIDIOS
 @cod_subsidio int,

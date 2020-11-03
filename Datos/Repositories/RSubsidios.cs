@@ -24,11 +24,18 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
-                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Int).Value = entiti.Cod_subsidios;
-                    cmd.Parameters.Add("@descripcion_subsidio", SqlDbType.Int).Value = entiti.Descripcion_subsidio;
-                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.Int).Value = entiti.Tipo_subsidio;
-                    cmd.Parameters.Add("@descuento", SqlDbType.Int).Value = entiti.Descuento;
+                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Int).Value = entiti.Cod_subsidios;                  
+                    cmd.Parameters.Add("@tipo_suspension", SqlDbType.VarChar,10).Value = entiti.Tipo_supension;
+                    cmd.Parameters.Add("@descripcion_corta", SqlDbType.NVarChar,70).Value = entiti.Descrip_corta;
+                    cmd.Parameters.Add("@descripcion_subsidio", SqlDbType.NVarChar,100).Value = entiti.Descripcion_subsidio;
+                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar,30).Value = entiti.Tipo_subsidio;
+                    cmd.Parameters.Add("@descuento", SqlDbType.Bit).Value = entiti.Descuento;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+
+
                     result = cmd.ExecuteNonQuery();
+                    entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+
                     cmd.Parameters.Clear();
                 }
             }

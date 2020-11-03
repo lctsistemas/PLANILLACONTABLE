@@ -13,15 +13,14 @@ namespace Negocio.Models
     {
         private string mensaje;
         public int iddocumento { get; set; }
+        public string cod_doc { get; set; }
 
         [Display(Name = "Documento")]
         [Required]
-        [RegularExpression("^[a-zA-Z]+$")]
+        [RegularExpression("^[a-zA-Z. /]+$")]
         public string nombre_documento { get; set; }
 
-        public string descripcion { get; set; }
-
-        public string cod_doc { get; set; }
+        public string descripcion { get; set; }        
         public EntityState state { private get; set; }
         private IDocumento docu_repsository;
 
@@ -84,9 +83,10 @@ namespace Negocio.Models
                     listadocu.Add(new Ndocumento()
                     {
                         iddocumento = Convert.ToInt32(item[0]),
-                        nombre_documento = item[1].ToString(),
-                        descripcion = item[2].ToString(),
-                        cod_doc = item[3].ToString()
+                        cod_doc = item[1].ToString(),
+                        nombre_documento = item[2].ToString(),
+                        descripcion = item[3].ToString(),
+                        
                     }) ;
                 }
             }

@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Presentacion.Helps;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,6 +9,7 @@ namespace Presentacion
     public partial class Subsidios : Form
     {
         private int childFormNumber = 0;
+        String result;
         private NSubsidios ns = new NSubsidios();
         public Subsidios()
         {
@@ -147,6 +149,29 @@ namespace Presentacion
         {
             ShowSubsidio();
             Tabla();
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            using (ns)
+            {
+                //ns.Id_subsidios = Convert.ToInt32(tx.Text.Trim());
+                ns.Cod_subsidios = txtcodigosuspension.Text.Trim();
+                ns.Tipo_suspension = cbxsuspension.SelectedItem.ToString();
+                ns.Descripcion_corta = txtdescCorta.Text.Trim();
+                ns.Descripcion_subsidio = txtdescSubsi.Text.Trim();
+                ns.Tipo_subsidio = txtdescSubsi.Text.Trim();
+                ns.Descuento = Convert.ToBoolean(checkDescuento.Text.Trim());
+
+                bool valida = new ValidacionDatos(ns).Validate();
+                if (valida)
+                {
+                    //result = ns.GuardarCambios();
+                    Messages.M_info(result);
+                }
+
+            }
         }
     }
 }

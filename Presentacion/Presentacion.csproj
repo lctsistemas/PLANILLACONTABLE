@@ -148,6 +148,12 @@
     <Compile Include="Vista\Cargo.Designer.cs">
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Subsidios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Subsidios.Designer.cs">
+      <DependentUpon>Subsidios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\DiasSubsidiados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Cargo.resx">
       <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Subsidios.resx">
+      <DependentUpon>Subsidios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\DiasSubsidiados.resx">
       <DependentUpon>DiasSubsidiados.cs</DependentUpon>
