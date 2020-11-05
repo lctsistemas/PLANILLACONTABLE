@@ -49,11 +49,12 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@iddocumento", SqlDbType.Int).Value = entiti.Iddocumento;
                     cmd.Parameters.Add("@cod_doc", SqlDbType.Char,2).Value = entiti.Cod_doc;
                     result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();                    
+                    cmd.Parameters.Clear();               
                 }
             }
             return result;
         }
+
         //ELIMINAR
         public int Delete(DtipoDocumento entiti)
         {
@@ -73,14 +74,14 @@ namespace Datos.Repositories
                     entiti.message = cmd.Parameters["@message"].Value.ToString();
                     cmd.Parameters.Clear();
                     return result;
-
                 }
-
             }
         }
+
         //SHOW DATA
         public DataTable GetData(DtipoDocumento entiti)
         {
+            DataTable dt;
             using (var conect = RConexion.Getconectar())
             {
                 conect.Open();
@@ -92,15 +93,14 @@ namespace Datos.Repositories
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        return dt;
+                        da.Dispose();                        
                     }
                 }
-
             }
+            return dt;
         }
     }
 }

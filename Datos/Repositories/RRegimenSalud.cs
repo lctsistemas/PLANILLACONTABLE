@@ -27,7 +27,7 @@ namespace Datos.Repositories
 
                     //cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;
                     cmd.Parameters.Add("@cod_regi_salud", SqlDbType.Int).Value = entiti.Cod_regi_salud;
-                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
+                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Descripcion;
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
 
                     result = cmd.ExecuteNonQuery();
@@ -76,7 +76,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;
                     cmd.Parameters.Add("@cod_regimen_salud", SqlDbType.Int).Value = entiti.Cod_regi_salud;
-                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
+                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Descripcion;
 
                     result = cmd.ExecuteNonQuery();
                     System.Windows.Forms.MessageBox.Show("update:  " + result);
@@ -104,11 +104,9 @@ namespace Datos.Repositories
                     using (dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        
+                        da.Dispose();                        
                     }
                 }
-
             }
             return dt;
         }

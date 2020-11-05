@@ -16,14 +16,13 @@ namespace Presentacion.Vista
         public frmdocumento()
         {
             InitializeComponent();
-            ShowDocument("");
+            ShowDocument();
         }
         //METODO MOSTRAR
-        private void ShowDocument(string data)
+        private void ShowDocument()
         {
             using (nd)
-            {
-                nd.nombre_documento = data;
+            {               
                 dgvdocumento.DataSource = nd.Getall();
                 lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
             }
@@ -31,12 +30,13 @@ namespace Presentacion.Vista
         //MODIFICAR DATAGRIDVIEW
         private void Tabla()
         {
-            dgvdocumento.Columns[0].HeaderText = "CODIGO";
+            dgvdocumento.Columns[0].HeaderText = "ID";
             dgvdocumento.Columns[0].Width = 50;
             dgvdocumento.Columns[0].Visible = false;
-
-            dgvdocumento.Columns[1].HeaderText = "CODIGO DOCUMENTO";
-            dgvdocumento.Columns[1].Width = 100;
+            
+            dgvdocumento.Columns[1].HeaderText = "CODIGO";
+            dgvdocumento.Columns[1].Width = 70;
+            dgvdocumento.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvdocumento.Columns[2].HeaderText = "DOCUMENTO";
             dgvdocumento.Columns[2].Width = 120;
@@ -103,7 +103,7 @@ namespace Presentacion.Vista
                 if (validar)
                 {
                     result = nd.SaveChanges();
-                    ShowDocument("");
+                    ShowDocument();
                     Messages.M_info(result);
                     limpiar();
                 }
@@ -118,6 +118,7 @@ namespace Presentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvdocumento.DataSource = nd.Search(txtbuscar.Text.Trim());
+            lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
         }
 
         //TABLA
@@ -149,7 +150,7 @@ namespace Presentacion.Vista
                     nd.state = EntityState.Remover;
                     nd.iddocumento = Convert.ToInt32(dgvdocumento.CurrentRow.Cells[0].Value);
                     result = nd.SaveChanges();
-                    ShowDocument("");
+                    ShowDocument();
                     Messages.M_info(result);
                 }
 
@@ -219,15 +220,17 @@ namespace Presentacion.Vista
 
         private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Keypress.SoloLetras(e);
+            //Keypress.SoloLetras(e);
         }
 
 
 
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Keypress.SoloLetras(e);
+            //Keypress.SoloLetras(e);
 
         }
+
+       
     }
 }

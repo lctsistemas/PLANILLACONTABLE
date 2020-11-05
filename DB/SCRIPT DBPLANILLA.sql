@@ -36,12 +36,13 @@ GO
 --TABLA: TIPO DE DOCUMENTO
 CREATE TABLE Tipo_documento(
 id_documento int identity(1,1),
+codigo_doc char(2),
 nombre varchar(50) not null,
 descripcion nvarchar(100) null
 )
 GO
 
-alter table Tipo_documento add codigo_doc char(2);
+--alter table Tipo_documento add codigo_doc char(2);
 
 --TABLA: REGIMEN PENSIONARIO
 CREATE TABLE RegimenPensionario(
@@ -61,12 +62,10 @@ saldo decimal(6,2) null,
 seguro decimal(6,2) null,
 aporte decimal(6,2) null,
 tope  decimal(10,2) null, 
-idmes int not null,
-idperiodo int not null
+idmes int null,
+idperiodo int null
 )
 GO
-
-select *  from RegimenPensionario
 
 
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
@@ -103,7 +102,7 @@ GO
 
 --TABLA: USUSARIO
 CREATE TABLE Usuario (
-id_usuario int not null,--SERA AUTO INCREMENTABLE, PERO MANUALMENTE
+id_usuario int not null,
 codigo_usuario varchar(20)CONSTRAINT UNQ_usuario UNIQUE not null,
 referencia varchar(50)not null,
 contrasena varchar(10)not null,
@@ -162,11 +161,13 @@ tipo_pago varchar(30) not null,
 periodicidad varchar(70)not null,
 tipo_moneda varchar(10) not null,
 cuenta_cts nvarchar(50) null,
-cussp varchar(70) null
+cussp varchar(70) null,
+id_rsalud int 
 )
 GO
 --alter table dbo.contrato drop column estado
 
+--alter table contrato drop constraint DF__Contrato__asigna__4865BE2A
 --Meses_maestra
 CREATE TABLE Meses_maestra(
 id_meses_maestra int not null,
@@ -276,21 +277,22 @@ nombre_planilla varchar(30)
 )
 GO
 
-CREATE TABLE REGIMEN_SALUD(
-id_regimen_salud int not null,
-cod_regi_salud int not null,
-regimen_salud varchar(80)
-)
-GO
 
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(2,05,'ESSALUD PENSIONISTAS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
+CREATE TABLE Regimen_salud( --falta modificar el procedi.. add modi delet
+id_regimen_salud int not null,
+cod_regi_salud char(2) not null,
+descripcion_rsalud nvarchar(100) not null
+)
+
+
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(2,05,'ESSALUD PENSIONISTAS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(8,21,'SIS - MICROEMPRESA');
 GO
 
 CREATE TABLE SUBSIDIOS(
@@ -319,7 +321,6 @@ dias int not null
 GO
 
 
-GO
 SELECT * FROM SUBSIDIOS
 
 insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
@@ -373,4 +374,77 @@ VALUES(16, '27', 'S.I.', 'DIAS COMPENS POR HORAS DE SOBRETIEMPO', 'DÍAS COMPENSA
 insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
 VALUES(17, '28', 'S.I.', 'DIAS LICENCIA POR PATERNIDAD','DIAS LICENCIA POR PATERNIDAD','NO SUBSIDIADOS', 0);
 
+GO
+
+--TABLA PLANILLA MANTO
+CREATE TABLE PlanillaManto(
+idplanilla_manto int not null,
+id_contrato int not null,
+id_planilla int not null,
+id_tipo_planilla int not null,
+basico money not null,
+dias int null,
+dia_dominical int null,
+horas_diarias int null,
+sueldo_basico money null,
+asig_familiar decimal(5,2),
+--horas diurnas 25%
+hora_dvc int null,
+minuto_dvc int null,
+monto_dvc decimal(5,2) null,
+--hora diurna 35%
+hora_dtc int null,
+minuto_dtc int null,
+monto_dtc decimal(5,2) null,
+--hora nocturna 25%
+hora_nvc int null,
+minuto_nvc int null,
+monto_nvc decimal(5,2) null,
+--hora nocturna 35%
+hora_ntc int null,
+minuto_ntc int null,
+monto_ntc decimal(5,2) null,
+--feriado
+hora_feriado int null,
+minuto_feriado int null,
+monto_feriado decimal(5,2) null,
+--boni nocturna
+hora_boni int null,
+monto_boni decimal(5,2) null,
+--tardanzas
+hora_tarde int null,
+minuto_tarde int null,
+monto_tarde decimal(5,2) null,
+--subsidio
+dia_sub int null,
+monto_sub decimal (6,2) null,
+--no subsidiados no laborados
+dia_subnegativo int null,
+monto_subnegativo decimal(6,2) null,
+dia_subpositivo int null,
+monto_subpositivo decimal(6,2) null,
+--otros
+total_horaex decimal(8,2) null,
+reintegro decimal(8,2) null,
+vacaciones decimal(8,2) null,
+--truncas
+vaca_trunca decimal(8,2) null,
+grati_trunca decimal(8,2) null,
+boni_trunca decimal(8,2) null,
+cts_trunca decimal(8,2) null,
+--otro y afp
+total_remuneracion decimal(9, 2),
+descuento_onp decimal (8,2) null,
+des_spp decimal(8,2) null,
+des_seguro decimal (8,2)null,
+des_comision decimal(8,2)null,
+adelanto decimal(8,2) null,
+prestamo decimal(8,2) null,
+renta_quinta decimal(8,2) null,
+retencion_judicial decimal(8,2) null,
+otro_des decimal(8,2) null,
+total_pagar decimal(8,2) null,
+aporte_essalud decimal(8,2) null,
+transporte decimal(8,2) null
+)
 GO
