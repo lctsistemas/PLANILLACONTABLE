@@ -1263,13 +1263,13 @@ GO
 
 
 ALTER PROC SP_MODIFY_SUBSIDIOS
+@id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
 @descripcion_corta nvarchar(70),
 @descrip_subsidio nvarchar(100),
 @tipo_subsidio varchar(30),
-@descuento bit,
-@id_subsidios int
+@descuento bit
 AS BEGIN
 UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
                          tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios

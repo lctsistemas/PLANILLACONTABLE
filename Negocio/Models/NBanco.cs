@@ -85,6 +85,31 @@ namespace Negocio.Models
             }
         }
 
+        public IEnumerable<NBanco> GetData()
+        {
+            DBanco db = null;
+            if (db == null)
+                db = new DBanco();
+            db.IdBanco = IdBanco;
+            db.Nom_banco = Nom_banco;
+
+            if (list_banco == null)
+                list_banco = new List<NBanco>();
+
+            using (DataTable dt = RBanco.GetData(db))
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    list_banco.Add(new NBanco()
+                    {
+                        IdBanco = Convert.ToInt32(item[0]),
+                        Nom_banco = item[1].ToString()
+                    });
+                }
+            }
+            return list_banco;
+        }
+
         public IEnumerable<NBanco> Search(string filter)
         {
             return list_banco.FindAll(e => e.Nom_banco.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);

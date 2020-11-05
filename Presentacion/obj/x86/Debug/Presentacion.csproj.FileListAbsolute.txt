@@ -347,3 +347,4 @@ C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Present
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Subsidios.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmsubsidios.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.frmsubsidios.resources
+C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Banco2.resources

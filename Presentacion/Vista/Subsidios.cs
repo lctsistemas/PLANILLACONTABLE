@@ -137,14 +137,14 @@ namespace Presentacion.Vista
                 using (ns)
                 {
                     ns.state = EntityState.Modificar;
-                   // ns.Id_subsidios = Convert.ToInt32(r.Cells[0].Value);
+                   ns.Id_subsidios = Convert.ToInt32(r.Cells[0].Value);
                     txtcodigosubsidio.Text = Convert.ToString(r.Cells[1].Value);
                     cbxsuspension.Text= r.Cells[2].Value.ToString();
                     txtdescCorta.Text = Convert.ToString(r.Cells[3].Value);
                     txtdescSubsi.Text = Convert.ToString(r.Cells[4].Value);
                     cbxtiposub.Text = Convert.ToString(r.Cells[5].Value);
                     checkDescuento.Checked =Convert.ToBoolean(r.Cells[6].Value);
-                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER                    
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER     
                 }
             }
         }
