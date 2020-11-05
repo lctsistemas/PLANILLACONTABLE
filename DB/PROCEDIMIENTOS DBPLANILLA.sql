@@ -1,8 +1,8 @@
 USE Planilla_lct
 GO
-/*    PROCEDIMIENTOD ALMACENADOS     */
 
---INSERT CARGO
+
+/*    PROCEDIMIENTOD ALMACENADOS PARA CARGO    */
 CREATE PROC SP_REGISTRAR_CARGO
 @nom varchar(40),
 @descripcion nvarchar(100)
@@ -12,7 +12,7 @@ VALUES(@nom,@descripcion)
 END 
 GO
 
---UPDATE CARGO
+
 CREATE PROC SP_UPDATE_CARGO
 @idcargo int,
 @nom varchar(40),
@@ -22,7 +22,7 @@ UPDATE Cargo SET nombre_cargo=@nom, descripcion=@descripcion WHERE id_cargo=@idc
 END
 GO
 
---DELETE CARGO
+
 CREATE PROC SP_DELETE_CARGO
 @idcargo int,
 @message varchar(100) output
@@ -41,7 +41,7 @@ ELSE
 END
 GO
 
---SHOW CARGO
+
 ALTER PROC SP_SELECT_CARGO 
 AS BEGIN
 SELECT id_cargo, nombre_cargo, descripcion 
@@ -51,8 +51,6 @@ GO
 
 
 /*    PROCEDIMIENTO TIPO DE DOCUMENTO     */
-
---INSERT TIPO DOCUMENTO
 ALTER PROC SP_REGISTRAR_DOCUMENTO
 @nom varchar(50),
 @descripcion nvarchar(100),
@@ -63,19 +61,20 @@ VALUES(@nom,@descripcion,@cod_doc)
 END
 GO
 
---UPDATE DOCUMENTO
+
 alter PROC SP_UPDATE_DOCUMENTO
 @iddocumento int,
+@cod_doc char(2),
 @nom varchar(50),
-@descripcion nvarchar(100),
-@cod_doc char(2)
+@descripcion nvarchar(100)
 AS BEGIN
-UPDATE Tipo_documento SET nombre=@nom, descripcion=@descripcion,codigo_doc=@cod_doc WHERE id_documento=@iddocumento
+UPDATE Tipo_documento SET nombre=@nom, descripcion=@descripcion,codigo_doc=@cod_doc
+WHERE id_documento=@iddocumento
 END
 GO
 
---DELETE DOCUMENTO
-CREATE PROC SP_DELETE_DOCUMENTO
+
+ALTER PROC SP_DELETE_DOCUMENTO
 @iddocumento int,
 @message varchar(100) output
 AS BEGIN
@@ -83,17 +82,17 @@ IF(EXISTS(SELECT t.id_documento FROM Empleado E join Tipo_documento t on E.id_do
 	BEGIN
 	DECLARE @resul VARCHAR(20)
 	SET @resul=(SELECT t.nombre FROM dbo.Tipo_documento t WHERE t.id_documento=@iddocumento)
-	SET @message='DOCUMENTO ( '+@resul+' ) ESTA EN USO'
+	SET @message='Documento ( '+@resul+' ) esta en uso.'
 	END
 ELSE
 	BEGIN
 	DELETE FROM Tipo_documento WHERE id_documento=@iddocumento
-	SET @message='SE ELIMINO DOCUMENTO CORRECTAMENTE!'
+	SET @message='¡Eliminado!'
 	END	
 END
 GO
 
---SHOW DOCUMENTO
+
 ALTER PROC SP_SELECT_DOCUMENTO 
 AS BEGIN
 SELECT id_documento,codigo_doc,nombre,descripcion FROM 
@@ -101,9 +100,9 @@ Tipo_documento
 END
 GO
 
---Agregar empleado
-ALTER PROC SP_AGR_EMPL
-(--@id_empleado int,
+
+/*        PROCEDIMIENTO ALMACENADO PARA EMPLEADO      */
+ALTER PROC SP_AGR_EMPL(
 @codigo varchar(20),--sera número de documento.
 @nom_emp varchar(50),
 @ape_pat varchar(50),
@@ -168,9 +167,7 @@ AS BEGIN
 END
 GO
 
-
---ELIMINAR EMPLEADO ---> MODIFICAR
-alter PROC SP_ELIM_EMPLEADO
+ALTER PROC SP_ELIM_EMPLEADO -- CORREGIR ESTE PROCE. URGENTE DE ACUERDO A VALIDACION
 (@id_emp int)
 AS BEGIN 
 UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
@@ -178,8 +175,8 @@ DELETE from Contrato where id_empleado=@id_emp;
 END
 GO
 
---MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
-ALTER PROC SP_SHOW_EMP
+
+ALTER PROC SP_SHOW_EMP --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 @codigo_empresa int
 AS BEGIN 
 SELECT e.id_empleado, e.ape_paterno, e.ape_materno, e.nombre_empleado,
@@ -189,38 +186,39 @@ ORDER BY e.id_empleado DESC
 END
 GO
 
-CREATE PROC SP_SHOW_EMPLEADO_CONTRATO
+ALTER PROC SP_SHOW_EMPLEADO_CONTRATO
 @codigo_empleado int
 AS BEGIN 
 SELECT e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
 e.nacionalidad, e.tipo_genero, e.direccion, e.telefono, e.numero_documento, e.estado, e.codigo_regimen, 
 r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, co.id_banco, b.nombre_banco,
 co.id_tipocontrato, ti.tiempo_contrato, co.fecha_inicio, co.fecha_fin, co.numero_cuenta, 
-co.remuneracion_basica, co.asignacion_familiar, co.regimen_salud, co.tipo_pago, co.periodicidad, 
+co.remuneracion_basica, co.asignacion_familiar, co.id_rsalud, re.descripcion_rsalud, co.tipo_pago, co.periodicidad, 
 co.tipo_moneda, co.cuenta_cts, co.cussp 
 FROM Empleado e JOIN RegimenPensionario r on(e.codigo_regimen = r.codigo_regimen) JOIN Tipo_documento t
 on(e.id_documento = t.id_documento) JOIN Cargo c on(e.id_cargo = c.id_cargo) JOIN Contrato co
-on(e.id_empleado = co.id_empleado) JOIN Banco b on(b.id_banco = co.id_banco) JOIN Tipo_contrato ti
-on(co.id_tipocontrato = ti.id_tipocontrato) WHERE e.id_empleado=@codigo_empleado
+on(e.id_empleado = co.id_empleado) JOIN Banco b on(b.id_banco = co.id_banco) JOIN Tipo_contrato ti 
+on(co.id_tipocontrato = ti.id_tipocontrato) JOIN Regimen_salud re on(co.id_rsalud=re.id_regimen_salud)
+WHERE e.id_empleado=@codigo_empleado
 END
 GO
 
--- CONTRATO SEGUN EMPLEADO REGISTRADO
-ALTER PROCEDURE SP_INSERT_CONTRATO
-(--@id_contrato int,
+
+/*      CONTRATO SEGUN EMPLEADO REGISTRADO     */
+ALTER PROCEDURE SP_INSERT_CONTRATO(
 @id_banco int,
 @id_tcontrato int,
 @fecha_inicio date,
 @fecha_fin date,
 @num_cuenta varchar(30),
 @remu_basica money,
-@asig_fami money,
-@regimen_salud varchar(80),
+@asig_fami decimal(5,2),
 @tipo_pago varchar(30),
 @periodicidad varchar(70),
 @tipo_modeda varchar(10),
 @cuenta_cts nvarchar(50),
-@cussp nvarchar(70))
+@cussp nvarchar(70),
+@id_salud int)
 AS BEGIN
 	DECLARE @contrato int
 	SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
@@ -229,16 +227,15 @@ AS BEGIN
 	ELSE
 		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)			
 INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
-fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, regimen_salud, tipo_pago, 
-periodicidad, tipo_moneda, cuenta_cts, cussp)
+fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, tipo_pago, 
+periodicidad, tipo_moneda, cuenta_cts, cussp, id_rsalud)
 VALUES(@contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
-@id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @regimen_salud, @tipo_pago, 
-@periodicidad, @tipo_modeda, @cuenta_cts, @cussp)
+@id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @tipo_pago, 
+@periodicidad, @tipo_modeda, @cuenta_cts, @cussp, @id_salud)
 END
 GO
 
-
---UPDATE EMPLEADO.
+                                                                                                                                                                                                                                                   
 ALTER PROCEDURE SP_UPDATE_CONTRATO
 (@id_banco int,
 @id_tcontrato int,
@@ -246,25 +243,24 @@ ALTER PROCEDURE SP_UPDATE_CONTRATO
 @fecha_fin date,
 @num_cuenta varchar(30),
 @remu_basica money,
-@asig_fami money,
-@regimen_salud varchar(80),
+@asig_fami decimal(5,2),
 @tipo_pago varchar(30),
 @periodicidad varchar(70),
 @tipo_modeda varchar(10),
 @cuenta_cts nvarchar(50),
 @cussp nvarchar(70),
+@id_salud int,
 @id_empleado int)
 AS BEGIN
 UPDATE Contrato SET id_banco=@id_banco, id_tipocontrato=@id_tcontrato, fecha_inicio=@fecha_inicio,
 fecha_fin=@fecha_fin, numero_cuenta=@num_cuenta, remuneracion_basica=@remu_basica, 
-asignacion_familiar=@asig_fami, regimen_salud=@regimen_salud, tipo_pago=@tipo_pago, 
-periodicidad=@periodicidad, tipo_moneda=@tipo_modeda, cuenta_cts=@cuenta_cts, cussp=@cussp 
+asignacion_familiar=@asig_fami, tipo_pago=@tipo_pago, periodicidad=@periodicidad, 
+tipo_moneda=@tipo_modeda, cuenta_cts=@cuenta_cts, cussp=@cussp, id_rsalud=@id_salud 
 WHERE id_empleado=@id_empleado
 END
 GO
 
--- PROCED. ELIMINAR
-CREATE PROC SP_DELETE_CONTRATO
+CREATE PROC SP_DELETE_CONTRATO  --revisar con validacion urgente.
 @id_contrato int,
 @mensaje varchar(100) OUTPUT
 AS BEGIN
@@ -272,8 +268,7 @@ UPDATE dbo.Contrato SET estado='ANULADO' WHERE id_contrato=@id_contrato
 END
 GO
 
---		SHOW CONTRATO
-CREATE PROC SP_SHOW_CONTRATO
+alter PROC SP_SHOW_CONTRATO
 @seach varchar(30)
 AS BEGIN
 SELECT * FROM dbo.Contrato c
@@ -281,7 +276,7 @@ END
 GO
 GO
 
-----and e.id_em_maestra=@codigo_empresa
+
 /*     EMPRESA AND SUCURSAL      */
 ALTER PROC SP_INSERT_EMPRESA_MAESTRA
 @razon_social varchar(50),
@@ -320,7 +315,6 @@ END
 GO
 
 
---INSERT SUCURSAL
 CREATE PROC SP_INSERT_SUCURSAL
 @cod_sucursal varchar(8),
 @id_empresa int
@@ -330,9 +324,7 @@ INSERT INTO dbo.Sucursal(codigo_sucursal,id_em_maestra,id_empresa)VALUES
 END
 GO
 
---DROP PROCEDURE SP_SUCURSAL
 
---UPDATE EMPRESA MAESTRA
 CREATE PROC SP_UPDATE_EMPRESAMAESTRA
 @razon_social varchar(50),
 @direccion nvarchar(250),
@@ -358,7 +350,7 @@ WHERE id_em_maestra=@id_emmaestra
 END
 GO
 
---UPDATE SUCURSAL
+
 CREATE PROC SP_UPDATE_SUCURSAL
 @cod_sucursal varchar(8),
 @id_empresa int,
@@ -369,7 +361,7 @@ WHERE id_em_maestra=@id_emmaestra
 END
 GO
 
---REMOVE EMPRESA MAESTRA
+
 CREATE PROC SP_REMOVE_EMPRESA
 @id_maestra int,
 @mesage varchar(50) OUTPUT
@@ -403,7 +395,7 @@ AS BEGIN
 END
 GO
 
---PROCEDIMIENTO MOSTRAR EMPRESA
+
 ALTER PROC SP_SHOW_EMPRESA
 AS BEGIN
 SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social,em.localidad,
@@ -413,7 +405,7 @@ on e.id_usuario=u.id_usuario WHERE em.estado_eliminado ='NO ANULADO' ORDER BY e.
 END
 GO
 
---PROCEDIMIENTO MOSTRAR SUCURSAL
+
 ALTER PROC SP_SHOW_SUCURSAL
 AS BEGIN
 SELECT TOP(200) em.estado_eliminado,s.id_em_maestra, e.id_empresa, s.codigo_sucursal, em.razon_social AS SUCURSAL, em.localidad,
@@ -425,9 +417,8 @@ WHERE em.estado_eliminado='NO ANULADO' ORDER BY S.id_sucursal DESC
 END
 GO
 
-/*   PROCEDIMIENTO PARA USUARIO*/
-alter PROC SP_INSERT_USUARIO
-(--@idusu int,
+/*         PROCEDIMIENTO PARA USUARIO            */
+ALTER PROC SP_INSERT_USUARIO(
 @codigo_usu varchar(20),
 @referencia varchar(50),
 @passwor varchar(10),
@@ -449,12 +440,12 @@ ELSE
 	BEGIN
 	INSERT INTO dbo.Usuario(id_usuario, codigo_usuario, referencia, contrasena, id_rol)VALUES
 	(@usu, @codigo_usu, @referencia, @passwor, @id_rol)
-	SET @mesage= 'USUARIO REGISTRADO'
+	SET @mesage= '¡Usuario registrado!'
 	END
 END
 GO
 
- --UPDATE USUARIO
+
 ALTER PROC SP_UPDATE_USUARIO
 (@codigo_usu varchar(20),
 @referencia varchar(50),
@@ -467,7 +458,7 @@ WHERE id_usuario=@idusu
 END
 GO
 
---REMOVE USUARIO
+
 CREATE PROC SP_REMOVE_USUARIO
 (@idusu int,
 @mesage varchar(100) output)
@@ -486,21 +477,14 @@ END
 END
 GO
 
---ELIMINAR EMPLEADO
-CREATE PROC SP_ELIM_EMPL
-(@id_emp int)
-AS BEGIN 
-UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
-END
-GO
 
---MOSTRAR USUARIO
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
 SELECT u.id_usuario, u.codigo_usuario, u.referencia, u.contrasena, u.id_rol, r.rol FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
+
 
 /*     PROCEDIMIENTO ROL     */
 CREATE PROC SP_INSERT_ROL
@@ -510,7 +494,7 @@ INSERT INTO dbo.Rol(rol)VALUES(@rol)
 END
 GO
 
---UPDATE ROL
+
 CREATE PROC SP_UPDATE_ROL
 (@rol varchar(30),
 @idrol int)
@@ -519,8 +503,7 @@ UPDATE dbo.Rol SET rol=@rol WHERE id_rol=@idrol
 END
 GO
 
---REMOVE ROL
---preparar condicion para rol=another user, que nadie elimine
+
 CREATE PROC SP_REMOVE_ROL
 (@idrol int,
 @mesage varchar(100) output)
@@ -539,7 +522,7 @@ END
 END
 GO
 
---MOSTRAR ROL
+
 CREATE PROC SP_SHOW_ROL
 AS
 SELECT id_rol, rol FROM dbo.Rol ORDER BY id_rol DESC
@@ -621,7 +604,7 @@ IF(@contrato=0)
 	END
 ELSE
 	BEGIN
-		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)		
+		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)	
 	END
 END
 GO
@@ -817,9 +800,9 @@ END
 GO
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-CREATE PROC SP_REG_SALUD
+alter PROC SP_REG_SALUD		--no existe proce
 AS BEGIN
-SELECT rs.id_regimen_salud,rs.regimen_salud
+SELECT rs.id_regimen_salud,rs.descripcion_rsalud
 FROM REGIMEN_SALUD rs
 END
 GO
@@ -883,7 +866,6 @@ SELECT b.id_banco,b.nombre_banco from Banco b;
 END;
 GO
 
-EXEC SP_SHOW_BANCO
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
 alter PROC SP_INSERT_TIP_CONT(
@@ -1012,7 +994,7 @@ GO
 
 select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r right join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=9 AND idperiodo=2) 
+	WHERE (co.idmes=10 AND idperiodo=2)
 
 GO
 ALTER PROC SP_INSERT_COMISIONES
@@ -1189,9 +1171,9 @@ SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
 END
 GO
 
-alter PROC SP_SHOW_REG_SALUD 
+ALTER PROC SP_SHOW_REG_SALUD 
 AS BEGIN 
-SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.regimen_salud
+SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.descripcion_rsalud
 from REGIMEN_SALUD rs
 END
 GO
@@ -1209,9 +1191,7 @@ AS t_supension, d.dias FROM DET_SUBSIDIOS d join SUBSIDIOS s on d.id_subsidios=s
 WHERE (d.id_periodo=@idperiodo and d.id_mes=@idmes) and s.tipo_subsidio= @tipoSubsidio and d.id_empleado= @idempleado
 END
 GO
---select * from DET_SUBSIDIOS
---select * from SUBSIDIOS
---DELETE FROM DET_SUBSIDIOS where id_det_subsidios between 3 and 5
+
 
 --MOSTRAR EN COMBOBOX SUBSIDIOS
 create PROC SP_SHOW_SUBSIDIOS 
@@ -1221,6 +1201,7 @@ SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM SU
 WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
+
 
 --MANTENIMIENTO DETALLE DE SUBSIDIOS (ADD,UPDATE,DELETE)
 ALTER PROC SP_INSERT_SUBSIDIOS
@@ -1304,3 +1285,23 @@ AS BEGIN
 SELECT id_subsidios, cod_subsidio,tipo_suspencion , descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM SUBSIDIOS 
 END
 GO
+
+/* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
+
+CREATE PROC SP_ShowPlanillaManto
+@idmes int,
+@id_empresaMaestra int
+AS BEGIN
+SELECT co.id_contrato, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, co.remuneracion_basica, 
+co.asignacion_familiar
+FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
+JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
+JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
+JOIN Contrato co on(co.id_empleado=e.id_empleado)
+WHERE cop.idmes = @idmes and e.id_em_maestra=@id_empresaMaestra
+END
+
+SELECT * FROM Empleado
+SELECT * FROM RegimenPensionario
+SELECT * FROM ComisionesPension

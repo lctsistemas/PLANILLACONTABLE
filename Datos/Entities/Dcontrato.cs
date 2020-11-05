@@ -13,7 +13,7 @@ namespace Datos.Entities
         private String num_cuenta;
         private Decimal remu_basica;
         private Decimal asig_fami;
-        private String regimen_salud;
+        private Int32 id_regimenSalud;
         private String tipo_pago;
         private String periodicidad;
         private String tipo_moneda;
@@ -29,7 +29,7 @@ namespace Datos.Entities
         public string Num_cuenta { get { return num_cuenta; } set { num_cuenta = value; } }
         public decimal Remu_basica { get { return remu_basica; } set { remu_basica = value; } }
         public decimal Asig_fami { get { return asig_fami; } set { asig_fami = value; } }
-        public string Regimen_salud { get { return regimen_salud; } set { regimen_salud = value; } }
+        public int Id_regimenSalud { get { return id_regimenSalud; } set { id_regimenSalud = value; } }
         public string Tipo_pago { get { return tipo_pago; } set { tipo_pago = value; } }
         public string Periodicidad { get { return periodicidad; } set { periodicidad = value; } }
         public string Tipo_moneda { get { return tipo_moneda; } set { tipo_moneda = value; } }

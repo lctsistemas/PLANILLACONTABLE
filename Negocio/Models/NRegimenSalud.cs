@@ -24,7 +24,7 @@ namespace Negocio.Models
 
         public int Id_regimen_salud { get; set; }
         public int Cod_regi_salud { get; set; }
-        public string Regimen_salud { get; set; }
+        public string Descripcion { get; set; }
 
         public EntityState state { get; set; }
 
@@ -36,10 +36,10 @@ namespace Negocio.Models
         public String GuardarCambios()
         {
             DRegimenSalud dregsalud = new DRegimenSalud();
-            //pla.Id_tipo_planilla = Id_tipo_planilla;
+            
             dregsalud.Id_regimen_salud = Id_regimen_salud;
             dregsalud.Cod_regi_salud = Cod_regi_salud;
-            dregsalud.Regimen_salud = Regimen_salud;
+            dregsalud.Descripcion = Descripcion;
 
 
             switch (state)
@@ -73,11 +73,11 @@ namespace Negocio.Models
                     {
                         Id_regimen_salud = Convert.ToInt32(item[0]),
                         Cod_regi_salud = Convert.ToInt32(item[1]),
-                        Regimen_salud = item[2].ToString()
+                        Descripcion = item[2].ToString()
                     });
-                }
-                return list_reg_salud;
+                }                
             }
+            return list_reg_salud;
         }
 
         public int GetCodigo()

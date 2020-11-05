@@ -36,12 +36,13 @@ GO
 --TABLA: TIPO DE DOCUMENTO
 CREATE TABLE Tipo_documento(
 id_documento int identity(1,1),
+codigo_doc char(2),
 nombre varchar(50) not null,
 descripcion nvarchar(100) null
 )
 GO
 
-alter table Tipo_documento add codigo_doc char(2);
+--alter table Tipo_documento add codigo_doc char(2);
 
 --TABLA: REGIMEN PENSIONARIO
 CREATE TABLE RegimenPensionario(
@@ -65,10 +66,6 @@ idmes int null,
 idperiodo int null
 )
 GO
-
-
-select *  from RegimenPensionario
-select *  from ComisionesPension
 
 
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
@@ -105,7 +102,7 @@ GO
 
 --TABLA: USUSARIO
 CREATE TABLE Usuario (
-id_usuario int not null,--SERA AUTO INCREMENTABLE, PERO MANUALMENTE
+id_usuario int not null,
 codigo_usuario varchar(20)CONSTRAINT UNQ_usuario UNIQUE not null,
 referencia varchar(50)not null,
 contrasena varchar(10)not null,
@@ -164,11 +161,13 @@ tipo_pago varchar(30) not null,
 periodicidad varchar(70)not null,
 tipo_moneda varchar(10) not null,
 cuenta_cts nvarchar(50) null,
-cussp varchar(70) null
+cussp varchar(70) null,
+id_rsalud int 
 )
 GO
 --alter table dbo.contrato drop column estado
 
+--alter table contrato drop constraint DF__Contrato__asigna__4865BE2A
 --Meses_maestra
 CREATE TABLE Meses_maestra(
 id_meses_maestra int not null,
@@ -278,21 +277,22 @@ nombre_planilla varchar(30)
 )
 GO
 
-CREATE TABLE REGIMEN_SALUD(
-id_regimen_salud int not null,
-cod_regi_salud int not null,
-regimen_salud varchar(80)
-)
-GO
 
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(2,05,'ESSALUD PENSIONISTAS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud) VALUES(8,21,'SIS - MICROEMPRESA');
+CREATE TABLE Regimen_salud( --falta modificar el procedi.. add modi delet
+id_regimen_salud int not null,
+cod_regi_salud char(2) not null,
+descripcion_rsalud nvarchar(100) not null
+)
+
+
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(2,05,'ESSALUD PENSIONISTAS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(8,21,'SIS - MICROEMPRESA');
 GO
 
 CREATE TABLE SUBSIDIOS(
@@ -319,6 +319,7 @@ id_periodo int not null,
 dias int not null
 )
 GO
+
 
 SELECT * FROM SUBSIDIOS
 

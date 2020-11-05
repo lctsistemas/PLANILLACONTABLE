@@ -18,6 +18,7 @@ namespace Presentacion.Vista
     {
         private const string Subsidiado = "SUBSIDIADOS";
         private const string NoSubsidiado = "NO SUBSIDIADOS";
+        NplanillaM nplam;
         int suel { get; set; }
         public FrmPlanillaMensual2()
         {
@@ -37,6 +38,10 @@ namespace Presentacion.Vista
 
             dgvplanilla1.Columns["id_contrato"].Visible = false;
             dgvplanilla1.Columns["id_planilla_manto"].Visible = false;
+
+            dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
+            dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
+            dgvplanilla1.Columns["a_familiar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvplanilla1.Columns["dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvplanilla1.Columns["dia_dominical"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -84,12 +89,15 @@ namespace Presentacion.Vista
             dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
         }
 
-        //CARGAR DATAGRI
-        
+        //CARGAR DATAGRI        
         private void FillTabla()
         {
-            Nrol n = new Nrol();
-            dgvplanilla1.DataSource = n.Getall();
+            using (nplam =new NplanillaM())
+            {
+                nplam.Id_mes = 10;
+                nplam.Id_empreMaestra = 2;
+                dgvplanilla1.DataSource = nplam.Show_planillaM();
+            }        
             
         }
 
@@ -210,9 +218,9 @@ namespace Presentacion.Vista
         }
 
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
-        {
+        {            
+            FillTabla();
             TablaPlanilla();
-            //FillTabla();          
         }      
              
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -642,10 +650,7 @@ namespace Presentacion.Vista
                 //}                        
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            TotalRemuneracion();
-        }
+       
 
         private void dgvplanilla1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
