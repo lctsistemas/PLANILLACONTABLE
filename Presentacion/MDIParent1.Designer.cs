@@ -80,7 +80,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.btnguardar = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printPreviewToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -88,15 +88,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvsubsidio = new System.Windows.Forms.DataGridView();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txtdescsubsidio = new System.Windows.Forms.TextBox();
-            this.txtcodigosuspension = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtdescSubsi = new System.Windows.Forms.TextBox();
+            this.cbxsuspension = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dgvsubsidio = new System.Windows.Forms.DataGridView();
+            this.checkDescuento = new System.Windows.Forms.CheckBox();
+            this.txtdescCorta = new System.Windows.Forms.TextBox();
+            this.txtcodigosuspension = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -116,7 +116,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(710, 24);
+            this.menuStrip.Size = new System.Drawing.Size(768, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -474,7 +474,7 @@
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newToolStripButton,
-            this.saveToolStripButton,
+            this.btnguardar,
             this.openToolStripButton,
             this.toolStripSeparator1,
             this.printPreviewToolStripButton,
@@ -482,7 +482,7 @@
             this.helpToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(710, 25);
+            this.toolStrip.Size = new System.Drawing.Size(768, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -496,14 +496,15 @@
             this.newToolStripButton.Text = "Nuevo";
             this.newToolStripButton.Click += new System.EventHandler(this.ShowNewForm);
             // 
-            // saveToolStripButton
+            // btnguardar
             // 
-            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveToolStripButton.Image = global::Presentacion.Properties.Resources.Save_37110;
-            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
-            this.saveToolStripButton.Name = "saveToolStripButton";
-            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.saveToolStripButton.Text = "Guardar";
+            this.btnguardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.Save_37110;
+            this.btnguardar.ImageTransparentColor = System.Drawing.Color.Black;
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(23, 22);
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // openToolStripButton
             // 
@@ -572,21 +573,68 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.txtdescSubsi);
+            this.panel1.Controls.Add(this.cbxsuspension);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.dgvsubsidio);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.txtdescsubsidio);
+            this.panel1.Controls.Add(this.checkDescuento);
+            this.panel1.Controls.Add(this.txtdescCorta);
             this.panel1.Controls.Add(this.txtcodigosuspension);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 397);
+            this.panel1.Size = new System.Drawing.Size(768, 397);
             this.panel1.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(38, 95);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 16);
+            this.label5.TabIndex = 91;
+            this.label5.Text = "Descripcion Subsidio";
+            // 
+            // txtdescSubsi
+            // 
+            this.txtdescSubsi.Location = new System.Drawing.Point(41, 114);
+            this.txtdescSubsi.Name = "txtdescSubsi";
+            this.txtdescSubsi.Size = new System.Drawing.Size(254, 20);
+            this.txtdescSubsi.TabIndex = 90;
+            // 
+            // cbxsuspension
+            // 
+            this.cbxsuspension.FormattingEnabled = true;
+            this.cbxsuspension.Location = new System.Drawing.Point(195, 51);
+            this.cbxsuspension.Name = "cbxsuspension";
+            this.cbxsuspension.Size = new System.Drawing.Size(90, 21);
+            this.cbxsuspension.TabIndex = 89;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(192, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 16);
+            this.label4.TabIndex = 88;
+            this.label4.Text = "Tipo de suspension";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(357, 114);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(91, 21);
+            this.comboBox1.TabIndex = 87;
             // 
             // dgvsubsidio
             // 
@@ -606,7 +654,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvsubsidio.ColumnHeadersHeight = 30;
+            this.dgvsubsidio.ColumnHeadersHeight = 35;
             this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
@@ -629,27 +677,27 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvsubsidio.Size = new System.Drawing.Size(675, 239);
+            this.dgvsubsidio.Size = new System.Drawing.Size(744, 239);
             this.dgvsubsidio.TabIndex = 86;
             // 
-            // checkBox1
+            // checkDescuento
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(518, 114);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 20);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Descuento";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkDescuento.AutoSize = true;
+            this.checkDescuento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDescuento.ForeColor = System.Drawing.Color.White;
+            this.checkDescuento.Location = new System.Drawing.Point(518, 114);
+            this.checkDescuento.Name = "checkDescuento";
+            this.checkDescuento.Size = new System.Drawing.Size(94, 20);
+            this.checkDescuento.TabIndex = 10;
+            this.checkDescuento.Text = "Descuento";
+            this.checkDescuento.UseVisualStyleBackColor = true;
             // 
-            // txtdescsubsidio
+            // txtdescCorta
             // 
-            this.txtdescsubsidio.Location = new System.Drawing.Point(357, 51);
-            this.txtdescsubsidio.Name = "txtdescsubsidio";
-            this.txtdescsubsidio.Size = new System.Drawing.Size(210, 20);
-            this.txtdescsubsidio.TabIndex = 8;
+            this.txtdescCorta.Location = new System.Drawing.Point(357, 51);
+            this.txtdescCorta.Name = "txtdescCorta";
+            this.txtdescCorta.Size = new System.Drawing.Size(210, 20);
+            this.txtdescCorta.TabIndex = 8;
             // 
             // txtcodigosuspension
             // 
@@ -658,59 +706,12 @@
             this.txtcodigosuspension.Size = new System.Drawing.Size(100, 20);
             this.txtcodigosuspension.TabIndex = 8;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(357, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(91, 21);
-            this.comboBox1.TabIndex = 87;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(192, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 16);
-            this.label4.TabIndex = 88;
-            this.label4.Text = "Tipo de suspension";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(195, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(90, 21);
-            this.comboBox2.TabIndex = 89;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(41, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 20);
-            this.textBox1.TabIndex = 90;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(38, 95);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 16);
-            this.label5.TabIndex = 91;
-            this.label5.Text = "Descripcion Subsidio";
-            // 
             // Subsidios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(710, 447);
+            this.ClientSize = new System.Drawing.Size(768, 447);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -776,7 +777,7 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton btnguardar;
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
@@ -787,15 +788,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtdescsubsidio;
+        private System.Windows.Forms.TextBox txtdescCorta;
         private System.Windows.Forms.TextBox txtcodigosuspension;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkDescuento;
         private System.Windows.Forms.DataGridView dgvsubsidio;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbxsuspension;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtdescSubsi;
     }
 }
 

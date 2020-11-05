@@ -20,8 +20,12 @@ namespace Negocio.Models
         [RegularExpression("^[a-zA-Z. /]+$")]
         public string nombre_documento { get; set; }
 
+<<<<<<< HEAD
         public string descripcion { get; set; }
         
+=======
+        public string descripcion { get; set; }        
+>>>>>>> ab0354af7f8752c909d86d158528d978bbf5901b
         public EntityState state { private get; set; }
         private IDocumento docu_repsository;
 
@@ -89,8 +93,14 @@ namespace Negocio.Models
                         iddocumento = Convert.ToInt32(item[0]),
                         cod_doc = item[1].ToString(),
                         nombre_documento = item[2].ToString(),
+<<<<<<< HEAD
                         descripcion = item[3].ToString()                        
                     });
+=======
+                        descripcion = item[3].ToString(),
+                        
+                    }) ;
+>>>>>>> ab0354af7f8752c909d86d158528d978bbf5901b
                 }
             }
             return listadocu;

@@ -37,6 +37,8 @@ namespace Negocio.Models
                 DSubsidios ds = new DSubsidios();
 
                 ds.Cod_subsidios = Cod_subsidios;
+                ds.Tipo_supension = Tipo_suspension;
+                ds.Descrip_corta = Descripcion_corta;
                 ds.Descripcion_subsidio = Descripcion_subsidio;
                 ds.Tipo_subsidio = Tipo_subsidio;
                 ds.Descuento = Descuento;
