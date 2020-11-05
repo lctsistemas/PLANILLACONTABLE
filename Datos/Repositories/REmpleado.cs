@@ -64,21 +64,20 @@ namespace Datos.Repositories
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_INSERT_CONTRATO";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    //cmd.Parameters.Add("@id_contrato", SqlDbType.Int).Value = entiti.Id_contrato;
+                    
                     cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.Id_banco;
                     cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
                     cmd.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = entiti.Fecha_inicio;
                     cmd.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = entiti.Fecha_fin;
                     cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar, 30).Value = entiti.Num_cuenta;
                     cmd.Parameters.Add("@remu_basica", SqlDbType.Money).Value = entiti.Remu_basica;
-                    cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;
-                    cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
+                    cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;                    
                     cmd.Parameters.Add("@tipo_pago", SqlDbType.VarChar, 30).Value = entiti.Tipo_pago;
                     cmd.Parameters.Add("@periodicidad", SqlDbType.VarChar, 70).Value = entiti.Periodicidad;
                     cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
                     cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
                     cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
+                    cmd.Parameters.Add("@id_salud", SqlDbType.Int).Value = entiti.Id_regimenSalud;
 
                     result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
@@ -151,13 +150,13 @@ namespace Datos.Repositories
                         cmd.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = entiti.Fecha_fin;
                         cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar, 30).Value = entiti.Num_cuenta;
                         cmd.Parameters.Add("@remu_basica", SqlDbType.Money).Value = entiti.Remu_basica;
-                        cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;
-                        cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
+                        cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;                        
                         cmd.Parameters.Add("@tipo_pago", SqlDbType.VarChar, 30).Value = entiti.Tipo_pago;
                         cmd.Parameters.Add("@periodicidad", SqlDbType.VarChar, 70).Value = entiti.Periodicidad;
                         cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
                         cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
                         cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
+                        cmd.Parameters.Add("@id_salud", SqlDbType.Int).Value = entiti.Id_regimenSalud;
                         cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                         result = cmd.ExecuteNonQuery();
                     }
@@ -198,6 +197,7 @@ namespace Datos.Repositories
 
         public DataTable GetData(DEmpleado entiti)
         {
+            DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
@@ -211,19 +211,20 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;
                     da.SelectCommand = cmd;
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
                         cmd.Parameters.Clear();
-                        da.Dispose();
-                        return dt;
+                        da.Dispose();                        
                     }
                 }
             }
+            return dt;
         }
 
         public DataTable GetData(Dcontrato entiti)
         {
+            DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
@@ -237,15 +238,17 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@codigo_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                     da.SelectCommand = cmd;
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
                         cmd.Parameters.Clear();
-                        da.Dispose();
-                        return dt;
+                        da.Dispose();                        
                     }
                 }
             }
+            return dt;
         }
+
+
     }
 }

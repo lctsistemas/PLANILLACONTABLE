@@ -8,14 +8,14 @@ namespace Presentacion
     static class Program
     {
         /// <summary>
-        /// Punto de entrada principal para la aplicación.
+        /// Punto de entrada principal para la aplicación.o
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmsubsidios());
+            Application.Run(new frminicio());
 
         }
     }

@@ -28,77 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.dgvdocumento = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtcoddoc = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.barraTitulo = new System.Windows.Forms.Panel();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
             this.txtdocumento = new System.Windows.Forms.TextBox();
-            this.txtdescripcion = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnnuevo = new System.Windows.Forms.Button();
+            this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtcoddoc = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdocumento)).BeginInit();
             this.panel2.SuspendLayout();
             this.barraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtbuscar
             // 
-            this.txtbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.Location = new System.Drawing.Point(106, 10);
+            this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtbuscar.Location = new System.Drawing.Point(296, 86);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(209, 22);
+            this.txtbuscar.Size = new System.Drawing.Size(275, 23);
             this.txtbuscar.TabIndex = 1;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
             // 
             // dgvdocumento
             // 
+            this.dgvdocumento.AllowUserToAddRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvdocumento.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvdocumento.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvdocumento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvdocumento.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvdocumento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdocumento.Location = new System.Drawing.Point(8, 49);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvdocumento.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvdocumento.Location = new System.Drawing.Point(267, 115);
             this.dgvdocumento.Name = "dgvdocumento";
-            this.dgvdocumento.RowHeadersWidth = 30;
-            this.dgvdocumento.Size = new System.Drawing.Size(307, 217);
+            this.dgvdocumento.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvdocumento.RowHeadersWidth = 25;
+            this.dgvdocumento.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvdocumento.Size = new System.Drawing.Size(376, 212);
             this.dgvdocumento.TabIndex = 0;
             this.dgvdocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdocumento_CellDoubleClick);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.txtcoddoc);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.barraTitulo);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.dgvdocumento);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.txtbuscar);
+            this.panel2.Controls.Add(this.lbltotal);
+            this.panel2.Controls.Add(this.txtdocumento);
             this.panel2.Controls.Add(this.btnnuevo);
+            this.panel2.Controls.Add(this.txtdescripcion);
             this.panel2.Controls.Add(this.btneliminar);
             this.panel2.Controls.Add(this.btnguardar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 416);
+            this.panel2.Size = new System.Drawing.Size(654, 354);
             this.panel2.TabIndex = 4;
+            // 
+            // txtcoddoc
+            // 
+            this.txtcoddoc.Location = new System.Drawing.Point(110, 112);
+            this.txtcoddoc.Name = "txtcoddoc";
+            this.txtcoddoc.Size = new System.Drawing.Size(105, 20);
+            this.txtcoddoc.TabIndex = 7;
+            this.txtcoddoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(11, 100);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 41);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Codigo Documento";
             // 
             // barraTitulo
             // 
@@ -106,13 +144,12 @@
             this.barraTitulo.Controls.Add(this.btnmaximizar);
             this.barraTitulo.Controls.Add(this.btnminimizar);
             this.barraTitulo.Controls.Add(this.btncerrar);
-            this.barraTitulo.Controls.Add(this.pictureBox1);
             this.barraTitulo.Controls.Add(this.label4);
             this.barraTitulo.Controls.Add(this.btnrestaurar);
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(0, 0);
             this.barraTitulo.Name = "barraTitulo";
-            this.barraTitulo.Size = new System.Drawing.Size(596, 50);
+            this.barraTitulo.Size = new System.Drawing.Size(650, 50);
             this.barraTitulo.TabIndex = 8;
             this.barraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.barraTitulo_Paint);
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);
@@ -121,7 +158,7 @@
             // 
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp;
-            this.btnmaximizar.Location = new System.Drawing.Point(523, 6);
+            this.btnmaximizar.Location = new System.Drawing.Point(504, 11);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(33, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,7 +170,7 @@
             // 
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(489, 6);
+            this.btnminimizar.Location = new System.Drawing.Point(470, 12);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(33, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -145,7 +182,7 @@
             // 
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp1;
-            this.btncerrar.Location = new System.Drawing.Point(557, 6);
+            this.btncerrar.Location = new System.Drawing.Point(538, 12);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Padding = new System.Windows.Forms.Padding(3);
             this.btncerrar.Size = new System.Drawing.Size(33, 20);
@@ -157,33 +194,23 @@
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(62, 11);
+            this.label4.Location = new System.Drawing.Point(9, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 25);
+            this.label4.Size = new System.Drawing.Size(231, 25);
             this.label4.TabIndex = 0;
-            this.label4.Text = "DOCUMENTO";
+            this.label4.Text = "TIPO DE DOCUMENTO";
             // 
             // btnrestaurar
             // 
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(523, 6);
+            this.btnrestaurar.Location = new System.Drawing.Point(504, 12);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(33, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,30 +218,15 @@
             this.btnrestaurar.TabStop = false;
             this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.Controls.Add(this.txtcoddoc);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lbltotal);
-            this.panel1.Controls.Add(this.txtdocumento);
-            this.panel1.Controls.Add(this.txtdescripcion);
-            this.panel1.Location = new System.Drawing.Point(10, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(221, 281);
-            this.panel1.TabIndex = 7;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 73);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(12, 160);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Documento";
             // 
@@ -222,11 +234,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(14, 129);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(12, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 16);
+            this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Descripcion";
             // 
@@ -234,137 +246,112 @@
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(14, 241);
+            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbltotal.Location = new System.Drawing.Point(264, 334);
             this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(39, 16);
+            this.lbltotal.Size = new System.Drawing.Size(39, 17);
             this.lbltotal.TabIndex = 5;
             this.lbltotal.Text = "Total";
             // 
             // txtdocumento
             // 
             this.txtdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdocumento.Location = new System.Drawing.Point(17, 90);
+            this.txtdocumento.Location = new System.Drawing.Point(110, 160);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(192, 22);
+            this.txtdocumento.Size = new System.Drawing.Size(151, 22);
             this.txtdocumento.TabIndex = 4;
             this.txtdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdocumento_KeyPress);
             this.txtdocumento.Validating += new System.ComponentModel.CancelEventHandler(this.txtdocumento_Validating);
             // 
-            // txtdescripcion
-            // 
-            this.txtdescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescripcion.Location = new System.Drawing.Point(17, 149);
-            this.txtdescripcion.Multiline = true;
-            this.txtdescripcion.Name = "txtdescripcion";
-            this.txtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtdescripcion.Size = new System.Drawing.Size(189, 75);
-            this.txtdescripcion.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.dgvdocumento);
-            this.panel3.Controls.Add(this.txtbuscar);
-            this.panel3.Location = new System.Drawing.Point(259, 56);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(327, 281);
-            this.panel3.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(20, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "BUSCAR";
-            // 
             // btnnuevo
             // 
-            this.btnnuevo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
             this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnnuevo.FlatAppearance.BorderSize = 6;
+            this.btnnuevo.FlatAppearance.BorderSize = 0;
             this.btnnuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources.outline_add_white_18dp1;
-            this.btnnuevo.Location = new System.Drawing.Point(158, 353);
+            this.btnnuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnnuevo.ForeColor = System.Drawing.Color.White;
+            this.btnnuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
+            this.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnnuevo.Location = new System.Drawing.Point(15, 56);
             this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.Size = new System.Drawing.Size(73, 49);
+            this.btnnuevo.Size = new System.Drawing.Size(99, 27);
             this.btnnuevo.TabIndex = 1;
+            this.btnnuevo.Text = "&Nuevo";
+            this.btnnuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnuevo.UseVisualStyleBackColor = false;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
+            // txtdescripcion
+            // 
+            this.txtdescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescripcion.Location = new System.Drawing.Point(110, 216);
+            this.txtdescripcion.Multiline = true;
+            this.txtdescripcion.Name = "txtdescripcion";
+            this.txtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtdescripcion.Size = new System.Drawing.Size(151, 73);
+            this.txtdescripcion.TabIndex = 4;
+            // 
             // btneliminar
             // 
-            this.btneliminar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btneliminar.FlatAppearance.BorderSize = 6;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_18dp1;
-            this.btneliminar.Location = new System.Drawing.Point(353, 353);
+            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.Location = new System.Drawing.Point(225, 56);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(73, 49);
+            this.btneliminar.Size = new System.Drawing.Size(99, 27);
             this.btneliminar.TabIndex = 1;
+            this.btneliminar.Text = "&Eliminar";
+            this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnguardar
             // 
-            this.btnguardar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnguardar.FlatAppearance.BorderSize = 6;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
             this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_18dp1;
-            this.btnguardar.Location = new System.Drawing.Point(257, 353);
+            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(120, 56);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(73, 49);
+            this.btnguardar.Size = new System.Drawing.Size(99, 27);
             this.btnguardar.TabIndex = 1;
+            this.btnguardar.Text = "&Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // label5
+            // pictureBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(14, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Codigo Documento";
-            // 
-            // txtcoddoc
-            // 
-            this.txtcoddoc.Location = new System.Drawing.Point(17, 33);
-            this.txtcoddoc.Name = "txtcoddoc";
-            this.txtcoddoc.Size = new System.Drawing.Size(192, 20);
-            this.txtcoddoc.TabIndex = 7;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(267, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // frmdocumento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 416);
+            this.ClientSize = new System.Drawing.Size(653, 358);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -374,17 +361,14 @@
             this.Load += new System.EventHandler(this.frmdocumento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdocumento)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.barraTitulo.ResumeLayout(false);
             this.barraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,11 +385,7 @@
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel barraTitulo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.PictureBox btnmaximizar;
@@ -413,6 +393,6 @@
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.TextBox txtcoddoc;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

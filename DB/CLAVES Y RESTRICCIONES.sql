@@ -11,11 +11,12 @@ alter table Mes ADD CONSTRAINT pk_id_mes PRIMARY KEY(id_mes)
 alter table Planilla ADD CONSTRAINT pk_id_planilla PRIMARY KEY(id_planilla)
 alter table tipo_planilla ADD CONSTRAINT pk_idTipo_planilla PRIMARY KEY(id_tipo_planilla)
 alter table ComisionesPension ADD CONSTRAINT pk_comision PRIMARY KEY(idcomision)
-alter table REGIMEN_SALUD ADD CONSTRAINT pk_regimensalud PRIMARY KEY(id_regimen_salud)
+alter table Regimen_salud ADD CONSTRAINT pk_regimensalud PRIMARY KEY(id_regimen_salud)
 alter table RegimenPensionario ADD CONSTRAINT pk_idregimen PRIMARY KEY(codigo_regimen)
 alter table SUBSIDIOS ADD CONSTRAINT pk_idsubsidios PRIMARY KEY(id_subsidios)
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetsubsidios PRIMARY KEY(id_det_subsidios)
 
+alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanillam PRIMARY KEY(idplanilla_manto)
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
@@ -33,7 +34,11 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub FOREIGN KEY(id_subsidios) REFE
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERENCES Periodo
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFERENCES Mes
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REFERENCES Empleado
+
+ALTER TABLE planillaManto ADD CONSTRAINT FK_idcontratop FOREIGN KEY (id_contrato) REFERENCES Contrato
 GO
+
+
 select * from empleado
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
@@ -47,12 +52,14 @@ ALTER TABLE Empresa ADD CONSTRAINT PK_idempresa PRIMARY KEY(id_empresa)
 ALTER TABLE Sucursal ADD CONSTRAINT PK_idsucursal PRIMARY KEY(id_sucursal)
 go
 
+
 --ALTER TABLE Usuario drop constraint Fk_idrol 
 --FOREIGN KEY
 ALTER TABLE Empresa ADD CONSTRAINT FK_id_Emaestra FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 ALTER TABLE Sucursal ADD CONSTRAINT FK_idEmaestra FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 ALTER TABLE Sucursal ADD CONSTRAINT FK_idempresa FOREIGN KEY(id_empresa)REFERENCES Empresa
 GO
+
 
 --TABLA: USUARIO Y ROL
 	--PRIMARY KEY USUARIO Y ROL
@@ -82,9 +89,10 @@ ALTER TABLE Contrato ADD CONSTRAINT PK_idcontrato PRIMARY KEY(id_contrato)
 ALTER TABLE Banco ADD CONSTRAINT PK_idbanco PRIMARY KEY(id_banco)
 ALTER TABLE Tipo_Contrato ADD CONSTRAINT PK_idtcontrato PRIMARY KEY(id_tipocontrato)
 
---FOREIGN KEY CONTRATO CON BANCO, TIPO_CONTRATO, EMPLEADO
+--FOREIGN KEY CONTRATO CON BANCO, TIPO_CONTRATO, EMPLEADO, REGIMEN SALUD
 ALTER TABLE Contrato ADD CONSTRAINT FK_Cbanco FOREIGN KEY(id_banco) REFERENCES Banco
 ALTER TABLE Contrato ADD CONSTRAINT FK_CEmpleado FOREIGN KEY(id_empleado) REFERENCES Empleado
+ALTER TABLE Contrato ADD CONSTRAINT FK_regisalud FOREIGN KEY(id_rsalud) REFERENCES Regimen_salud(id_regimen_salud)
 
 --FOREIGN KEY DELETE EN CASCADA
 ALTER TABLE Contrato  WITH CHECK ADD  CONSTRAINT [FK_CEmpleado] FOREIGN KEY(id_empleado)
@@ -94,6 +102,7 @@ GO
 
 --ALTER TABLE Contrato ADD CONSTRAINT FK_CBanco FOREIGN KEY(id_banco) REFERENCES Banco
 ALTER TABLE Contrato ADD CONSTRAINT Fk_CTipo_Contrato FOREIGN KEY(id_tipocontrato) REFERENCES Tipo_Contrato 
+GO
 
 --DIAGRAMA
 ALTER AUTHORIZATION ON DATABASE::Planilla_lct TO[SA]
@@ -115,4 +124,18 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, segur
 (3, 3, 0.00, 0.82, 1.35, 10.00, 9792.61,9,2),(4, 4, 1.55, 0.82, 1.35, 10.00, 9792.61,9,2),--INTEGRA
 (5, 5, 0.18, 1.25, 1.35, 10.00, 9792.61, 9, 2),(6, 6, 1.60, 1.25, 1.35, 10.00, 9792.61, 9, 2),--PRIMA
 (7, 7, 0.67, 1.20, 1.35, 10.00, 9792.61,9, 2),(8, 8, 1.69, 1.20, 1.35, 10.00, 9792.61,9, 2)--PROFUTURO
+
+INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, idmes, idperiodo) VALUES (17,9,13.00,10,2) --ONP
 GO
+
+select * from dbo.ComisionesPension
+select * from contrato c join Regimen_salud r on( c.id_rsalud=r.id_regimen_salud)
+go
+
+select * from Contrato
+alter table Contrato alter column regimen_salud int not null
+update Contrato set regimen_salud = ''
+
+sp_rename 'Contrato.regimen_salud','id_r'
+--
+alter table contrato drop column id_r

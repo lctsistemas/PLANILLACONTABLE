@@ -20,7 +20,8 @@ namespace Negocio.Models
         [RegularExpression("^[a-zA-Z. /]+$")]
         public string nombre_documento { get; set; }
 
-        public string descripcion { get; set; }        
+        public string descripcion { get; set; }
+        
         public EntityState state { private get; set; }
         private IDocumento docu_repsository;
 
@@ -37,7 +38,10 @@ namespace Negocio.Models
             mensaje = "";
             try
             {
-                DtipoDocumento rt = new DtipoDocumento();
+                DtipoDocumento rt = null;
+                if ( rt == null)
+                        rt = new DtipoDocumento();
+
                 rt.Iddocumento = iddocumento;
                 rt.Nombre_documento = nombre_documento;
                 rt.Descripcion = descripcion;
@@ -76,8 +80,8 @@ namespace Negocio.Models
         public List<Ndocumento> Getall()
         {
             using (var dt = docu_repsository.GetData(null))
-            {
-                listadocu = new List<Ndocumento>();
+            {               
+                    listadocu = new List<Ndocumento>();
                 foreach (DataRow item in dt.Rows)
                 {
                     listadocu.Add(new Ndocumento()
@@ -85,9 +89,9 @@ namespace Negocio.Models
                         iddocumento = Convert.ToInt32(item[0]),
                         cod_doc = item[1].ToString(),
                         nombre_documento = item[2].ToString(),
-                        descripcion = item[3].ToString(),
-                        
-                    }) ;
+                        descripcion = item[3].ToString()                        
+                    });
+
                 }
             }
             return listadocu;

@@ -36,25 +36,19 @@ namespace Presentacion.Vista
         {
             result = "";
             using (nrs)
-            {
-                //nrs.Id_regimen_salud = codigo;
-
+            {               
                 nrs.Cod_regi_salud = Convert.ToInt32(txtcodregsal.Text.ToString());
-                nrs.Regimen_salud =txtregsal.Text.ToString();
-
+                nrs.Descripcion =txtregsal.Text.ToString();
 
                 bool valida = new ValidacionDatos(nrs).Validate();
                 if (valida)
                 {
-
                     result = nrs.GuardarCambios();
-
                     Messages.M_info(result);
                 }
 
                 Showregimensalud();
-                limpiar();
-               
+                limpiar();               
             }
         }
 
@@ -73,8 +67,6 @@ namespace Presentacion.Vista
             dgvregimensalud.Columns[3].HeaderText = "state";
             dgvregimensalud.Columns[3].Width = 100;
             dgvregimensalud.Columns[3].Visible = false;
-
-
 
         }
 

@@ -50,7 +50,7 @@ namespace Presentacion.Helps
         public static double BoniNocturno(double basico, double asig_fami, int hora)
         {
             double sub_hora = (((basico + asig_fami) / 30) / 8);
-            double hora_mastasa = (sub_hora + (sub_hora * 0.35));
+            double hora_mastasa = (sub_hora * 0.35);
             double boninocturno = (hora_mastasa * hora);
             return boninocturno;
         }

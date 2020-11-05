@@ -162,7 +162,7 @@ namespace Presentacion.Vista
             using (NRegimenSalud nrs = new NRegimenSalud())
             {
                 cboregimensalud.DataSource = nrs.Getall();
-                cboregimensalud.DisplayMember = "regimen_salud";
+                cboregimensalud.DisplayMember = "Descripcion";
                 cboregimensalud.ValueMember = "id_regimen_salud";
             }
         }
@@ -308,9 +308,7 @@ namespace Presentacion.Vista
             result = "";
             using (emple_contra)
             {
-                //EMPLEADO
-                //if (emple_contra.state == EntityState.Guardar)
-                    //emple_contra.Id_empleado = emple_contra.GetCodigo_empleado();
+                //EMPLEADO                
 
                 emple_contra.Codigo = txtcodigo.Text.Trim();
                 emple_contra.Nom_emp = txtNombre.Text.Trim();
@@ -328,10 +326,7 @@ namespace Presentacion.Vista
                 emple_contra.Id_cargo = Convert.ToInt32(cbocargo.SelectedValue);
                 emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
 
-                //CONTRATO
-                //if (emple_contra.state == EntityState.Guardar)
-                    //emple_contra.cid_contrato = emple_contra.Getcodigo_contrato();
-
+                //CONTRATO               
                 emple_contra.cid_banco = int.Parse(cbobanco.SelectedValue.ToString());
                 emple_contra.cid_tcontrato = int.Parse(cbotipocontra.SelectedValue.ToString());
                 emple_contra.cfecha_inicio = DateTime.Parse(dtinicio.Value.ToString());
@@ -342,9 +337,9 @@ namespace Presentacion.Vista
                     emple_contra.cfecha_fin = DateTime.Parse(txtfecha_fin.Text);
 
                 emple_contra.cnum_cuenta = txtnum_cuenta.Text.Trim();
-                emple_contra.cremu_basica = decimal.Parse(txtremune.Text);
-                emple_contra.casig_fami = decimal.Parse(txtasig.Text);
-                emple_contra.cregimen_salud = cboregimensalud.SelectedItem.ToString();
+                emple_contra.cremu_basica = decimal.Parse(txtremune.Text.Trim());
+                emple_contra.casig_fami = decimal.Parse(txtasig.Text.Trim());
+                emple_contra.cid_salud = Convert.ToInt32(cboregimensalud.SelectedValue);
                 emple_contra.ctipo_pago = cbotipopago.SelectedItem.ToString();
                 emple_contra.ctipo_moneda = cbotipo_moneda.SelectedItem.ToString();
                 emple_contra.cperiodicidad = cboperiodicidad.SelectedItem.ToString();
@@ -353,10 +348,8 @@ namespace Presentacion.Vista
 
                 bool valida = new ValidacionDatos(emple_contra).Validate();
 
-
                 if (valida)
                 {
-
                     result = emple_contra.GuardarCambios();
 
                     if (result.Contains("ya se encuentra registrado"))
@@ -587,7 +580,8 @@ namespace Presentacion.Vista
                     txtnum_cuenta.Text = dr["numero_cuenta"].ToString();
                     txtremune.Text = Convert.ToDecimal(dr["remuneracion_basica"]).ToString("0.00");
                     txtasig.Text = Convert.ToDecimal(dr["asignacion_familiar"]).ToString("0.00");
-                    cboregimensalud.Text = dr["regimen_salud"].ToString();
+                    cboregimensalud.SelectedValue = dr["id_rsalud"].ToString();
+                    cboregimensalud.Text = dr["descripcion_rsalud"].ToString();
                     cbotipopago.Text = dr["tipo_pago"].ToString();
                     cboperiodicidad.Text = dr["periodicidad"].ToString();
                     cbotipo_moneda.Text = dr["tipo_moneda"].ToString();

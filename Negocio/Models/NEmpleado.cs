@@ -53,10 +53,9 @@ namespace Negocio.Models
         [Display(Name = "Asignacion familiar")]
         [Required]
         public Decimal casig_fami { get; set; }
-
-        [Display(Name = "Regimen Salud")]
-        [Required]
-        public String cregimen_salud { get; set; }
+        
+        public int cid_salud { get; set; }
+        public string cdescrip_regimensalud { get; set; }//agregue
         public String ctipo_pago { get; set; }
         public String cperiodicidad { get; set; }
         public String ctipo_moneda { get; set; }
@@ -108,7 +107,7 @@ namespace Negocio.Models
                 dcon.Num_cuenta = cnum_cuenta;
                 dcon.Remu_basica = cremu_basica;
                 dcon.Asig_fami = casig_fami;
-                dcon.Regimen_salud = cregimen_salud;
+                dcon.Id_regimenSalud = cid_salud;
                 dcon.Tipo_pago = ctipo_pago;
                 dcon.Tipo_moneda = ctipo_moneda;
                 dcon.Periodicidad = cperiodicidad;
@@ -149,17 +148,7 @@ namespace Negocio.Models
             { }
 
             return mensaje;
-        }
-
-        public int GetCodigo_empleado()
-        {
-            return new KEmpleado().GetCodigo();
-        }
-
-        public int Getcodigo_contrato()
-        {
-            return new Kcontrato().Getcodigo();
-        }
+        }          
 
 
         public IEnumerable<NEmpleado> listar_empleado()

@@ -30,10 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,6 +40,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabsubsidio = new System.Windows.Forms.TabPage();
             this.tabcalculo = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,32 +55,8 @@
             this.txtdel = new System.Windows.Forms.MaskedTextBox();
             this.txtpago = new System.Windows.Forms.MaskedTextBox();
             this.dgvplanilla1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dgvplanilla2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tabplanilla = new System.Windows.Forms.TabControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nosubsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_planilla_manto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,6 +64,8 @@
             this.f_ini = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dia_dominical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hora_trabajada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.a_familiar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxd25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,6 +117,32 @@
             this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvplanilla2 = new System.Windows.Forms.DataGridView();
+            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nosubsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabplanilla = new System.Windows.Forms.TabControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabcalculo.SuspendLayout();
             this.groupplanilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).BeginInit();
@@ -151,7 +156,7 @@
             this.tabsubsidio.Location = new System.Drawing.Point(4, 30);
             this.tabsubsidio.Name = "tabsubsidio";
             this.tabsubsidio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabsubsidio.Size = new System.Drawing.Size(1168, 495);
+            this.tabsubsidio.Size = new System.Drawing.Size(1235, 495);
             this.tabsubsidio.TabIndex = 1;
             this.tabsubsidio.Text = "HISTORIAL SUBSIDIO";
             this.tabsubsidio.UseVisualStyleBackColor = true;
@@ -169,7 +174,7 @@
             this.tabcalculo.Location = new System.Drawing.Point(4, 30);
             this.tabcalculo.Name = "tabcalculo";
             this.tabcalculo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabcalculo.Size = new System.Drawing.Size(1168, 495);
+            this.tabcalculo.Size = new System.Drawing.Size(1235, 495);
             this.tabcalculo.TabIndex = 0;
             this.tabcalculo.Text = "CALCULO DE PLANILLA";
             this.tabcalculo.UseVisualStyleBackColor = true;
@@ -285,7 +290,6 @@
             // 
             // dgvplanilla1
             // 
-            this.dgvplanilla1.AllowUserToAddRows = false;
             this.dgvplanilla1.AllowUserToResizeColumns = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -305,6 +309,8 @@
             this.dgvplanilla1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvplanilla1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvplanilla1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_contrato,
+            this.id_planilla_manto,
             this.codigo,
             this.ape_nom,
             this.regi_pen,
@@ -312,6 +318,8 @@
             this.f_ini,
             this.remu,
             this.dias,
+            this.dia_dominical,
+            this.hora_trabajada,
             this.sueldo,
             this.a_familiar,
             this.hxd25,
@@ -363,39 +371,508 @@
             this.topagar,
             this.aportsalud,
             this.transporte});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(40)))), ((int)(((byte)(31)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvplanilla1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(40)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvplanilla1.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvplanilla1.EnableHeadersVisualStyles = false;
             this.dgvplanilla1.Location = new System.Drawing.Point(2, 159);
             this.dgvplanilla1.Name = "dgvplanilla1";
             this.dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle12.NullValue = null;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle13.NullValue = null;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvplanilla1.RowHeadersWidth = 25;
             this.dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvplanilla1.Size = new System.Drawing.Size(1162, 290);
+            this.dgvplanilla1.Size = new System.Drawing.Size(1229, 290);
             this.dgvplanilla1.TabIndex = 1;
             this.dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellContentClick);
             this.dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEndEdit);
             this.dgvplanilla1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEnter);
+            this.dgvplanilla1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvplanilla1_CellFormatting);
             this.dgvplanilla1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellMouseLeave);
             this.dgvplanilla1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvplanilla1_CellStateChanged);
             this.dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvplanilla1_Scroll);
+            // 
+            // id_contrato
+            // 
+            this.id_contrato.DataPropertyName = "Id_contrato";
+            this.id_contrato.HeaderText = "Id Contrato";
+            this.id_contrato.Name = "id_contrato";
+            this.id_contrato.Width = 50;
+            // 
+            // id_planilla_manto
+            // 
+            this.id_planilla_manto.HeaderText = "Id Planilla";
+            this.id_planilla_manto.Name = "id_planilla_manto";
+            this.id_planilla_manto.Width = 50;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Numero_documento";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.codigo.Width = 70;
+            // 
+            // ape_nom
+            // 
+            this.ape_nom.DataPropertyName = "Nombres";
+            this.ape_nom.HeaderText = "Apellidos y Nombres";
+            this.ape_nom.Name = "ape_nom";
+            this.ape_nom.Width = 250;
+            // 
+            // regi_pen
+            // 
+            this.regi_pen.DataPropertyName = "Descrip_regipension";
+            this.regi_pen.HeaderText = "Regimen Pensionario";
+            this.regi_pen.Name = "regi_pen";
+            this.regi_pen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.regi_pen.Width = 120;
+            // 
+            // cargo
+            // 
+            this.cargo.DataPropertyName = "Cargop";
+            this.cargo.HeaderText = "Cargo";
+            this.cargo.Name = "cargo";
+            this.cargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cargo.Width = 120;
+            // 
+            // f_ini
+            // 
+            this.f_ini.DataPropertyName = "Fecha_inicio";
+            this.f_ini.HeaderText = "Fecha de Ingreso";
+            this.f_ini.Name = "f_ini";
+            this.f_ini.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.f_ini.Width = 70;
+            // 
+            // remu
+            // 
+            this.remu.DataPropertyName = "Remune_basica";
+            this.remu.HeaderText = "Basico";
+            this.remu.Name = "remu";
+            this.remu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.remu.Width = 70;
+            // 
+            // dias
+            // 
+            this.dias.HeaderText = "Dias";
+            this.dias.Name = "dias";
+            this.dias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dias.Width = 35;
+            // 
+            // dia_dominical
+            // 
+            this.dia_dominical.HeaderText = "Dia Domi nical";
+            this.dia_dominical.Name = "dia_dominical";
+            this.dia_dominical.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dia_dominical.Width = 35;
+            // 
+            // hora_trabajada
+            // 
+            this.hora_trabajada.HeaderText = "Horas Trabaja das";
+            this.hora_trabajada.Name = "hora_trabajada";
+            this.hora_trabajada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hora_trabajada.Width = 50;
+            // 
+            // sueldo
+            // 
+            this.sueldo.HeaderText = "Sueldo Basico";
+            this.sueldo.Name = "sueldo";
+            this.sueldo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sueldo.Width = 70;
+            // 
+            // a_familiar
+            // 
+            this.a_familiar.DataPropertyName = "Asig_familiar";
+            this.a_familiar.HeaderText = "Asig. Familiar";
+            this.a_familiar.Name = "a_familiar";
+            this.a_familiar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.a_familiar.Width = 58;
+            // 
+            // hxd25
+            // 
+            this.hxd25.HeaderText = "No. Hrs.";
+            this.hxd25.Name = "hxd25";
+            this.hxd25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxd25.Width = 30;
+            // 
+            // minud25
+            // 
+            this.minud25.HeaderText = "No. Min.";
+            this.minud25.Name = "minud25";
+            this.minud25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minud25.Width = 30;
+            // 
+            // montod25
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montod25.DefaultCellStyle = dataGridViewCellStyle3;
+            this.montod25.HeaderText = "Monto Hrs. 25%";
+            this.montod25.Name = "montod25";
+            this.montod25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montod25.Width = 50;
+            // 
+            // hxd35
+            // 
+            this.hxd35.HeaderText = "No. Hrs.";
+            this.hxd35.Name = "hxd35";
+            this.hxd35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxd35.Width = 30;
+            // 
+            // minud35
+            // 
+            this.minud35.HeaderText = "No. Min.";
+            this.minud35.Name = "minud35";
+            this.minud35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minud35.Width = 30;
+            // 
+            // montod35
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montod35.DefaultCellStyle = dataGridViewCellStyle4;
+            this.montod35.HeaderText = "Monto Hrs. 35%";
+            this.montod35.Name = "montod35";
+            this.montod35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montod35.Width = 50;
+            // 
+            // hxn25
+            // 
+            this.hxn25.HeaderText = "No. Hrs.";
+            this.hxn25.Name = "hxn25";
+            this.hxn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxn25.Width = 30;
+            // 
+            // minun25
+            // 
+            this.minun25.HeaderText = "No. Min.";
+            this.minun25.Name = "minun25";
+            this.minun25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minun25.Width = 30;
+            // 
+            // monton25
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.monton25.DefaultCellStyle = dataGridViewCellStyle5;
+            this.monton25.HeaderText = "Monto Hrs. 25%";
+            this.monton25.Name = "monton25";
+            this.monton25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.monton25.Width = 50;
+            // 
+            // hxn35
+            // 
+            this.hxn35.HeaderText = "No. Hrs.";
+            this.hxn35.Name = "hxn35";
+            this.hxn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxn35.Width = 30;
+            // 
+            // minun35
+            // 
+            this.minun35.HeaderText = "No. Min.";
+            this.minun35.Name = "minun35";
+            this.minun35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minun35.Width = 30;
+            // 
+            // monton35
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.monton35.DefaultCellStyle = dataGridViewCellStyle6;
+            this.monton35.HeaderText = "Monto Hrs. 35%";
+            this.monton35.Name = "monton35";
+            this.monton35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.monton35.Width = 50;
+            // 
+            // hrferiado
+            // 
+            this.hrferiado.HeaderText = "No. Hrs.";
+            this.hrferiado.Name = "hrferiado";
+            this.hrferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hrferiado.Width = 30;
+            // 
+            // minuferiado
+            // 
+            this.minuferiado.HeaderText = "No. Min.";
+            this.minuferiado.Name = "minuferiado";
+            this.minuferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minuferiado.Width = 30;
+            // 
+            // montoferiado
+            // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montoferiado.DefaultCellStyle = dataGridViewCellStyle7;
+            this.montoferiado.HeaderText = "Monto Hrs.";
+            this.montoferiado.Name = "montoferiado";
+            this.montoferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montoferiado.Width = 50;
+            // 
+            // hrboninocturna
+            // 
+            this.hrboninocturna.HeaderText = "No. Hrs.";
+            this.hrboninocturna.Name = "hrboninocturna";
+            this.hrboninocturna.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hrboninocturna.Width = 30;
+            // 
+            // montoboninocturno
+            // 
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.montoboninocturno.DefaultCellStyle = dataGridViewCellStyle8;
+            this.montoboninocturno.HeaderText = "Monto Hrs.";
+            this.montoboninocturno.Name = "montoboninocturno";
+            this.montoboninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montoboninocturno.Width = 50;
+            // 
+            // htarde
+            // 
+            this.htarde.HeaderText = "No. Hrs.";
+            this.htarde.Name = "htarde";
+            this.htarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.htarde.Width = 30;
+            // 
+            // mtarde
+            // 
+            this.mtarde.HeaderText = "No. Min.";
+            this.mtarde.Name = "mtarde";
+            this.mtarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.mtarde.Width = 30;
+            // 
+            // montotarde
+            // 
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montotarde.DefaultCellStyle = dataGridViewCellStyle9;
+            this.montotarde.HeaderText = "Monto Hrs.";
+            this.montotarde.Name = "montotarde";
+            this.montotarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montotarde.Width = 50;
+            // 
+            // btnsubsidio
+            // 
+            this.btnsubsidio.HeaderText = "";
+            this.btnsubsidio.Name = "btnsubsidio";
+            this.btnsubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnsubsidio.Text = "";
+            this.btnsubsidio.ToolTipText = "Subsidiado";
+            this.btnsubsidio.Width = 30;
+            // 
+            // ndias
+            // 
+            this.ndias.HeaderText = "No. Dias";
+            this.ndias.Name = "ndias";
+            this.ndias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ndias.Width = 30;
+            // 
+            // montosub
+            // 
+            this.montosub.HeaderText = "Monto";
+            this.montosub.Name = "montosub";
+            this.montosub.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montosub.Width = 50;
+            // 
+            // btnnosubsidio
+            // 
+            this.btnnosubsidio.HeaderText = "";
+            this.btnnosubsidio.Name = "btnnosubsidio";
+            this.btnnosubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnnosubsidio.ToolTipText = "No subsidiado";
+            this.btnnosubsidio.Width = 30;
+            // 
+            // ndiasnega
+            // 
+            this.ndiasnega.HeaderText = "No. Dias";
+            this.ndiasnega.Name = "ndiasnega";
+            this.ndiasnega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ndiasnega.Width = 30;
+            // 
+            // montonega
+            // 
+            this.montonega.HeaderText = "Monto (-)";
+            this.montonega.Name = "montonega";
+            this.montonega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montonega.Width = 50;
+            // 
+            // ndiasposi
+            // 
+            this.ndiasposi.HeaderText = "No. Dias";
+            this.ndiasposi.Name = "ndiasposi";
+            this.ndiasposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ndiasposi.Width = 30;
+            // 
+            // montoposi
+            // 
+            this.montoposi.HeaderText = "Monto (+)";
+            this.montoposi.Name = "montoposi";
+            this.montoposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montoposi.Width = 50;
+            // 
+            // thoras
+            // 
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.thoras.DefaultCellStyle = dataGridViewCellStyle10;
+            this.thoras.HeaderText = "Total Horas Extras";
+            this.thoras.Name = "thoras";
+            this.thoras.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thoras.Width = 73;
+            // 
+            // reintegro
+            // 
+            this.reintegro.HeaderText = "Reintegro";
+            this.reintegro.Name = "reintegro";
+            this.reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reintegro.Width = 70;
+            // 
+            // vacaciones
+            // 
+            this.vacaciones.HeaderText = "Vacaciones del Mes";
+            this.vacaciones.Name = "vacaciones";
+            this.vacaciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.vacaciones.Width = 70;
+            // 
+            // tvaca
+            // 
+            this.tvaca.HeaderText = "Vacaciones Monto";
+            this.tvaca.Name = "tvaca";
+            this.tvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tvaca.Width = 70;
+            // 
+            // tgrati
+            // 
+            this.tgrati.HeaderText = "Gratif. Monto";
+            this.tgrati.Name = "tgrati";
+            this.tgrati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tgrati.Width = 70;
+            // 
+            // tboni
+            // 
+            this.tboni.HeaderText = "Bonif. Monto";
+            this.tboni.Name = "tboni";
+            this.tboni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tboni.Width = 70;
+            // 
+            // tcts
+            // 
+            this.tcts.HeaderText = "C.T.S Monto";
+            this.tcts.Name = "tcts";
+            this.tcts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tcts.Width = 70;
+            // 
+            // totaremu
+            // 
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Maroon;
+            this.totaremu.DefaultCellStyle = dataGridViewCellStyle11;
+            this.totaremu.HeaderText = "Total Remuneración";
+            this.totaremu.Name = "totaremu";
+            this.totaremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.totaremu.Width = 90;
+            // 
+            // onp
+            // 
+            this.onp.HeaderText = "O.N.P";
+            this.onp.Name = "onp";
+            this.onp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.onp.Width = 70;
+            // 
+            // spp
+            // 
+            this.spp.HeaderText = "SPP";
+            this.spp.Name = "spp";
+            this.spp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.spp.Width = 70;
+            // 
+            // seguro
+            // 
+            this.seguro.HeaderText = "SEGURO";
+            this.seguro.Name = "seguro";
+            this.seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.seguro.Width = 70;
+            // 
+            // comision
+            // 
+            this.comision.HeaderText = "COMISION";
+            this.comision.Name = "comision";
+            this.comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.comision.Width = 70;
+            // 
+            // adelanto
+            // 
+            this.adelanto.HeaderText = "Adelanto";
+            this.adelanto.Name = "adelanto";
+            this.adelanto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.adelanto.Width = 60;
+            // 
+            // prestamo
+            // 
+            this.prestamo.HeaderText = "Prestamo";
+            this.prestamo.Name = "prestamo";
+            this.prestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.prestamo.Width = 60;
+            // 
+            // renta5cate
+            // 
+            this.renta5cate.HeaderText = "5Ta. Categ.";
+            this.renta5cate.Name = "renta5cate";
+            this.renta5cate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.renta5cate.Width = 60;
+            // 
+            // retencionj
+            // 
+            this.retencionj.HeaderText = "Reten. Judic.";
+            this.retencionj.Name = "retencionj";
+            this.retencionj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.retencionj.Width = 60;
+            // 
+            // otrodes
+            // 
+            this.otrodes.HeaderText = "Otros Desct.";
+            this.otrodes.Name = "otrodes";
+            this.otrodes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.otrodes.Width = 60;
+            // 
+            // totades
+            // 
+            this.totades.HeaderText = "Total Descuento";
+            this.totades.Name = "totades";
+            this.totades.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.totades.Width = 70;
+            // 
+            // topagar
+            // 
+            this.topagar.HeaderText = "Total a Pagar";
+            this.topagar.Name = "topagar";
+            this.topagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.topagar.Width = 90;
+            // 
+            // aportsalud
+            // 
+            this.aportsalud.HeaderText = "Aportes Essalud";
+            this.aportsalud.Name = "aportsalud";
+            this.aportsalud.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.aportsalud.Width = 70;
+            // 
+            // transporte
+            // 
+            this.transporte.HeaderText = "Transporte";
+            this.transporte.Name = "transporte";
+            this.transporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.transporte.Width = 70;
             // 
             // label5
             // 
@@ -425,22 +902,22 @@
             this.dgvplanilla2.AllowUserToDeleteRows = false;
             this.dgvplanilla2.AllowUserToResizeColumns = false;
             this.dgvplanilla2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.dgvplanilla2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvplanilla2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvplanilla2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvplanilla2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvplanilla2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvplanilla2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvplanilla2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvplanilla2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvplanilla2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.valor1,
@@ -465,90 +942,8 @@
             this.dgvplanilla2.RowHeadersWidth = 25;
             this.dgvplanilla2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvplanilla2.Size = new System.Drawing.Size(1162, 39);
+            this.dgvplanilla2.Size = new System.Drawing.Size(1229, 39);
             this.dgvplanilla2.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(595, 455);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Agregar (+)";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabplanilla
-            // 
-            this.tabplanilla.Controls.Add(this.tabcalculo);
-            this.tabplanilla.Controls.Add(this.tabsubsidio);
-            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
-            this.tabplanilla.Location = new System.Drawing.Point(0, 24);
-            this.tabplanilla.Multiline = true;
-            this.tabplanilla.Name = "tabplanilla";
-            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
-            this.tabplanilla.SelectedIndex = 0;
-            this.tabplanilla.Size = new System.Drawing.Size(1176, 529);
-            this.tabplanilla.TabIndex = 8;
-            this.tabplanilla.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabplanilla_MouseDown);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.verToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1176, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbtnsalir});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "&Archivo";
-            // 
-            // tbtnsalir
-            // 
-            this.tbtnsalir.Name = "tbtnsalir";
-            this.tbtnsalir.Size = new System.Drawing.Size(96, 22);
-            this.tbtnsalir.Text = "&Salir";
-            this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
-            // 
-            // verToolStripMenuItem
-            // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-            this.verToolStripMenuItem.Text = "&Ver";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.CheckOnClick = true;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.CheckOnClick = true;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.CheckOnClick = true;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
             // 
             // valor1
             // 
@@ -564,7 +959,7 @@
             this.valor2.Name = "valor2";
             this.valor2.ReadOnly = true;
             this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor2.Width = 543;
+            this.valor2.Width = 628;
             // 
             // hxdiurnas
             // 
@@ -662,443 +1057,93 @@
             this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.fin.Width = 600;
             // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.codigo.Width = 70;
-            // 
-            // ape_nom
-            // 
-            this.ape_nom.HeaderText = "Apellidos y Nombres";
-            this.ape_nom.Name = "ape_nom";
-            this.ape_nom.Width = 250;
-            // 
-            // regi_pen
-            // 
-            this.regi_pen.HeaderText = "Regimen Pensionario";
-            this.regi_pen.Name = "regi_pen";
-            this.regi_pen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.regi_pen.Width = 120;
-            // 
-            // cargo
-            // 
-            this.cargo.HeaderText = "Cargo";
-            this.cargo.Name = "cargo";
-            this.cargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cargo.Width = 120;
-            // 
-            // f_ini
-            // 
-            this.f_ini.HeaderText = "Fecha de Ingreso";
-            this.f_ini.Name = "f_ini";
-            this.f_ini.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.f_ini.Width = 70;
-            // 
-            // remu
-            // 
-            this.remu.HeaderText = "Basico";
-            this.remu.Name = "remu";
-            this.remu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.remu.Width = 70;
-            // 
-            // dias
-            // 
-            this.dias.HeaderText = "Dias";
-            this.dias.Name = "dias";
-            this.dias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dias.Width = 35;
-            // 
-            // sueldo
-            // 
-            this.sueldo.DataPropertyName = "suel";
-            this.sueldo.HeaderText = "Sueldo Basico";
-            this.sueldo.Name = "sueldo";
-            this.sueldo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sueldo.Width = 70;
-            // 
-            // a_familiar
-            // 
-            this.a_familiar.HeaderText = "Asig. Familiar";
-            this.a_familiar.Name = "a_familiar";
-            this.a_familiar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.a_familiar.Width = 58;
-            // 
-            // hxd25
-            // 
-            this.hxd25.HeaderText = "No. Hrs.";
-            this.hxd25.Name = "hxd25";
-            this.hxd25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxd25.Width = 30;
-            // 
-            // minud25
-            // 
-            this.minud25.HeaderText = "No. Min.";
-            this.minud25.Name = "minud25";
-            this.minud25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minud25.Width = 30;
-            // 
-            // montod25
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.montod25.DefaultCellStyle = dataGridViewCellStyle3;
-            this.montod25.HeaderText = "Monto Hrs. 25%";
-            this.montod25.Name = "montod25";
-            this.montod25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montod25.Width = 50;
-            // 
-            // hxd35
-            // 
-            this.hxd35.HeaderText = "No. Hrs.";
-            this.hxd35.Name = "hxd35";
-            this.hxd35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxd35.Width = 30;
-            // 
-            // minud35
-            // 
-            this.minud35.HeaderText = "No. Min.";
-            this.minud35.Name = "minud35";
-            this.minud35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minud35.Width = 30;
-            // 
-            // montod35
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.montod35.DefaultCellStyle = dataGridViewCellStyle4;
-            this.montod35.HeaderText = "Monto Hrs. 35%";
-            this.montod35.Name = "montod35";
-            this.montod35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montod35.Width = 50;
-            // 
-            // hxn25
-            // 
-            this.hxn25.HeaderText = "No. Hrs.";
-            this.hxn25.Name = "hxn25";
-            this.hxn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxn25.Width = 30;
-            // 
-            // minun25
-            // 
-            this.minun25.HeaderText = "No. Min.";
-            this.minun25.Name = "minun25";
-            this.minun25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minun25.Width = 30;
-            // 
-            // monton25
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.monton25.DefaultCellStyle = dataGridViewCellStyle5;
-            this.monton25.HeaderText = "Monto Hrs. 25%";
-            this.monton25.Name = "monton25";
-            this.monton25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.monton25.Width = 50;
-            // 
-            // hxn35
-            // 
-            this.hxn35.HeaderText = "No. Hrs.";
-            this.hxn35.Name = "hxn35";
-            this.hxn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxn35.Width = 30;
-            // 
-            // minun35
-            // 
-            this.minun35.HeaderText = "No. Min.";
-            this.minun35.Name = "minun35";
-            this.minun35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minun35.Width = 30;
-            // 
-            // monton35
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.monton35.DefaultCellStyle = dataGridViewCellStyle6;
-            this.monton35.HeaderText = "Monto Hrs. 35%";
-            this.monton35.Name = "monton35";
-            this.monton35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.monton35.Width = 50;
-            // 
-            // hrferiado
-            // 
-            this.hrferiado.HeaderText = "No. Hrs.";
-            this.hrferiado.Name = "hrferiado";
-            this.hrferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hrferiado.Width = 30;
-            // 
-            // minuferiado
-            // 
-            this.minuferiado.HeaderText = "No. Min.";
-            this.minuferiado.Name = "minuferiado";
-            this.minuferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minuferiado.Width = 30;
-            // 
-            // montoferiado
-            // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.montoferiado.DefaultCellStyle = dataGridViewCellStyle7;
-            this.montoferiado.HeaderText = "Monto Hrs.";
-            this.montoferiado.Name = "montoferiado";
-            this.montoferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montoferiado.Width = 50;
-            // 
-            // hrboninocturna
-            // 
-            this.hrboninocturna.HeaderText = "No. Hrs.";
-            this.hrboninocturna.Name = "hrboninocturna";
-            this.hrboninocturna.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hrboninocturna.Width = 30;
-            // 
-            // montoboninocturno
-            // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.montoboninocturno.DefaultCellStyle = dataGridViewCellStyle8;
-            this.montoboninocturno.HeaderText = "Monto Hrs.";
-            this.montoboninocturno.Name = "montoboninocturno";
-            this.montoboninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montoboninocturno.Width = 50;
-            // 
-            // htarde
-            // 
-            this.htarde.HeaderText = "No. Hrs.";
-            this.htarde.Name = "htarde";
-            this.htarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.htarde.Width = 30;
-            // 
-            // mtarde
-            // 
-            this.mtarde.HeaderText = "No. Min.";
-            this.mtarde.Name = "mtarde";
-            this.mtarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.mtarde.Width = 30;
-            // 
-            // montotarde
-            // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.montotarde.DefaultCellStyle = dataGridViewCellStyle9;
-            this.montotarde.HeaderText = "Monto Hrs.";
-            this.montotarde.Name = "montotarde";
-            this.montotarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montotarde.Width = 50;
-            // 
-            // btnsubsidio
-            // 
-            this.btnsubsidio.HeaderText = "";
-            this.btnsubsidio.Name = "btnsubsidio";
-            this.btnsubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnsubsidio.Text = "";
-            this.btnsubsidio.ToolTipText = "Subsidiado";
-            this.btnsubsidio.Width = 30;
-            // 
-            // ndias
-            // 
-            this.ndias.HeaderText = "No. Dias";
-            this.ndias.Name = "ndias";
-            this.ndias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ndias.Width = 30;
-            // 
-            // montosub
-            // 
-            this.montosub.HeaderText = "Monto";
-            this.montosub.Name = "montosub";
-            this.montosub.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montosub.Width = 50;
-            // 
-            // btnnosubsidio
-            // 
-            this.btnnosubsidio.HeaderText = "";
-            this.btnnosubsidio.Name = "btnnosubsidio";
-            this.btnnosubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnnosubsidio.ToolTipText = "No subsidiado";
-            this.btnnosubsidio.Width = 30;
-            // 
-            // ndiasnega
-            // 
-            this.ndiasnega.HeaderText = "No. Dias";
-            this.ndiasnega.Name = "ndiasnega";
-            this.ndiasnega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ndiasnega.Width = 30;
-            // 
-            // montonega
-            // 
-            this.montonega.HeaderText = "Monto (-)";
-            this.montonega.Name = "montonega";
-            this.montonega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montonega.Width = 50;
-            // 
-            // ndiasposi
-            // 
-            this.ndiasposi.HeaderText = "No. Dias";
-            this.ndiasposi.Name = "ndiasposi";
-            this.ndiasposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ndiasposi.Width = 30;
-            // 
-            // montoposi
-            // 
-            this.montoposi.HeaderText = "Monto (+)";
-            this.montoposi.Name = "montoposi";
-            this.montoposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montoposi.Width = 50;
-            // 
-            // thoras
-            // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
-            this.thoras.DefaultCellStyle = dataGridViewCellStyle10;
-            this.thoras.HeaderText = "Total Horas Extras";
-            this.thoras.Name = "thoras";
-            this.thoras.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thoras.Width = 73;
-            // 
-            // reintegro
-            // 
-            this.reintegro.HeaderText = "Reintegro";
-            this.reintegro.Name = "reintegro";
-            this.reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reintegro.Width = 70;
-            // 
-            // vacaciones
-            // 
-            this.vacaciones.HeaderText = "Vacaciones del Mes";
-            this.vacaciones.Name = "vacaciones";
-            this.vacaciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.vacaciones.Width = 70;
-            // 
-            // tvaca
-            // 
-            this.tvaca.HeaderText = "Vacaciones Monto";
-            this.tvaca.Name = "tvaca";
-            this.tvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tvaca.Width = 70;
-            // 
-            // tgrati
-            // 
-            this.tgrati.HeaderText = "Gratif. Monto";
-            this.tgrati.Name = "tgrati";
-            this.tgrati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tgrati.Width = 70;
-            // 
-            // tboni
-            // 
-            this.tboni.HeaderText = "Bonif. Monto";
-            this.tboni.Name = "tboni";
-            this.tboni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tboni.Width = 70;
-            // 
-            // tcts
-            // 
-            this.tcts.HeaderText = "C.T.S Monto";
-            this.tcts.Name = "tcts";
-            this.tcts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tcts.Width = 70;
-            // 
-            // totaremu
-            // 
-            this.totaremu.HeaderText = "Total Remuneración";
-            this.totaremu.Name = "totaremu";
-            this.totaremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.totaremu.Width = 90;
-            // 
-            // onp
-            // 
-            this.onp.HeaderText = "O.N.P";
-            this.onp.Name = "onp";
-            this.onp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.onp.Width = 70;
-            // 
-            // spp
-            // 
-            this.spp.HeaderText = "SPP";
-            this.spp.Name = "spp";
-            this.spp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.spp.Width = 70;
-            // 
-            // seguro
-            // 
-            this.seguro.HeaderText = "SEGURO";
-            this.seguro.Name = "seguro";
-            this.seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.seguro.Width = 70;
-            // 
-            // comision
-            // 
-            this.comision.HeaderText = "COMISION";
-            this.comision.Name = "comision";
-            this.comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.comision.Width = 70;
-            // 
-            // adelanto
-            // 
-            this.adelanto.HeaderText = "Adelanto";
-            this.adelanto.Name = "adelanto";
-            this.adelanto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.adelanto.Width = 60;
-            // 
-            // prestamo
-            // 
-            this.prestamo.HeaderText = "Prestamo";
-            this.prestamo.Name = "prestamo";
-            this.prestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.prestamo.Width = 60;
-            // 
-            // renta5cate
-            // 
-            this.renta5cate.HeaderText = "5Ta. Categ.";
-            this.renta5cate.Name = "renta5cate";
-            this.renta5cate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.renta5cate.Width = 60;
-            // 
-            // retencionj
-            // 
-            this.retencionj.HeaderText = "Reten. Judic.";
-            this.retencionj.Name = "retencionj";
-            this.retencionj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.retencionj.Width = 60;
-            // 
-            // otrodes
-            // 
-            this.otrodes.HeaderText = "Otros Desct.";
-            this.otrodes.Name = "otrodes";
-            this.otrodes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.otrodes.Width = 60;
-            // 
-            // totades
-            // 
-            this.totades.HeaderText = "Total Descuento";
-            this.totades.Name = "totades";
-            this.totades.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.totades.Width = 70;
-            // 
-            // topagar
-            // 
-            this.topagar.HeaderText = "Total a Pagar";
-            this.topagar.Name = "topagar";
-            this.topagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.topagar.Width = 90;
-            // 
-            // aportsalud
-            // 
-            this.aportsalud.HeaderText = "Aportes Essalud";
-            this.aportsalud.Name = "aportsalud";
-            this.aportsalud.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.aportsalud.Width = 70;
-            // 
-            // transporte
-            // 
-            this.transporte.HeaderText = "Transporte";
-            this.transporte.Name = "transporte";
-            this.transporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.transporte.Width = 70;
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(595, 455);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Agregar (+)";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabplanilla
+            // 
+            this.tabplanilla.Controls.Add(this.tabcalculo);
+            this.tabplanilla.Controls.Add(this.tabsubsidio);
+            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
+            this.tabplanilla.Location = new System.Drawing.Point(0, 24);
+            this.tabplanilla.Multiline = true;
+            this.tabplanilla.Name = "tabplanilla";
+            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
+            this.tabplanilla.SelectedIndex = 0;
+            this.tabplanilla.Size = new System.Drawing.Size(1243, 529);
+            this.tabplanilla.TabIndex = 8;
+            this.tabplanilla.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabplanilla_MouseDown);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.verToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1243, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtnsalir});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "&Archivo";
+            // 
+            // tbtnsalir
+            // 
+            this.tbtnsalir.Name = "tbtnsalir";
+            this.tbtnsalir.Size = new System.Drawing.Size(96, 22);
+            this.tbtnsalir.Text = "&Salir";
+            this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
+            // 
+            // verToolStripMenuItem
+            // 
+            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.verToolStripMenuItem.Text = "&Ver";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.CheckOnClick = true;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.CheckOnClick = true;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.CheckOnClick = true;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
             // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 553);
+            this.ClientSize = new System.Drawing.Size(1243, 553);
             this.Controls.Add(this.tabplanilla);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1160,6 +1205,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
         private System.Windows.Forms.DataGridViewTextBoxColumn fin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_contrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_planilla_manto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ape_nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn regi_pen;
@@ -1167,6 +1214,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn f_ini;
         private System.Windows.Forms.DataGridViewTextBoxColumn remu;
         private System.Windows.Forms.DataGridViewTextBoxColumn dias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dia_dominical;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hora_trabajada;
         private System.Windows.Forms.DataGridViewTextBoxColumn sueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn a_familiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn hxd25;
