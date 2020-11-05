@@ -49,7 +49,32 @@ namespace Datos.Repositories
 
         public int Edit(DSubsidios entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_MODIFY_SUBSIDIOS";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Int).Value = entiti.Cod_subsidios;
+                    cmd.Parameters.Add("@tipo_suspension", SqlDbType.VarChar, 10).Value = entiti.Tipo_supension;
+                    cmd.Parameters.Add("@descripcion_corta", SqlDbType.NVarChar, 70).Value = entiti.Descrip_corta;
+                    cmd.Parameters.Add("@descrip_subsidio", SqlDbType.NVarChar, 100).Value = entiti.Descripcion_subsidio;
+                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar, 30).Value = entiti.Tipo_subsidio;
+                    cmd.Parameters.Add("@descuento", SqlDbType.Bit).Value = entiti.Descuento;
+                    cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
+
+
+                    result = cmd.ExecuteNonQuery();
+                    System.Windows.Forms.MessageBox.Show("update:  " + result);
+                    cmd.Parameters.Clear();
+                    return result;
+                }
+            }
         }
 
         public DataTable GetData(DSubsidios entiti)

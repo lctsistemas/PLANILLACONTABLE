@@ -33,10 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnnuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnguardar = new System.Windows.Forms.ToolStripButton();
-            this.btnedit = new System.Windows.Forms.ToolStripButton();
-            this.btnbuscar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtdescSubsi = new System.Windows.Forms.TextBox();
@@ -50,6 +46,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnnuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnguardar = new System.Windows.Forms.ToolStripButton();
+            this.btnedit = new System.Windows.Forms.ToolStripButton();
+            this.btnbuscar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
@@ -61,50 +62,13 @@
             this.btnnuevo,
             this.btnguardar,
             this.btnedit,
+            this.toolStripButton1,
             this.btnbuscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(726, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnnuevo
-            // 
-            this.btnnuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources._1486485588_add_create_new_math_sign_cross_plus_81186;
-            this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.Size = new System.Drawing.Size(23, 22);
-            this.btnnuevo.Text = "toolStripButton1";
-            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.Save_37110;
-            this.btnguardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(23, 22);
-            this.btnguardar.Text = "toolStripButton2";
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // btnedit
-            // 
-            this.btnedit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnedit.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
-            this.btnedit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(23, 22);
-            this.btnedit.Text = "toolStripButton3";
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnbuscar.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
-            this.btnbuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(23, 22);
-            this.btnbuscar.Text = "toolStripButton4";
             // 
             // panel1
             // 
@@ -218,6 +182,7 @@
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvsubsidio.Size = new System.Drawing.Size(697, 264);
             this.dgvsubsidio.TabIndex = 86;
+            this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
             // 
             // checkDescuento
             // 
@@ -281,6 +246,53 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Descripcion corta";
             // 
+            // btnnuevo
+            // 
+            this.btnnuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnnuevo.Image = global::Presentacion.Properties.Resources._1486485588_add_create_new_math_sign_cross_plus_81186;
+            this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnnuevo.Name = "btnnuevo";
+            this.btnnuevo.Size = new System.Drawing.Size(23, 22);
+            this.btnnuevo.Text = "toolStripButton1";
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.Save_37110;
+            this.btnguardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(23, 22);
+            this.btnguardar.Text = "toolStripButton2";
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
+            // btnedit
+            // 
+            this.btnedit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnedit.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
+            this.btnedit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(23, 22);
+            this.btnedit.Text = "toolStripButton3";
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnbuscar.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.btnbuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(23, 22);
+            this.btnbuscar.Text = "toolStripButton4";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Presentacion.Properties.Resources.borrar3;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // frmsubsidios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,5 +333,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

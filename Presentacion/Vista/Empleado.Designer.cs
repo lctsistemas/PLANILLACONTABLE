@@ -860,9 +860,12 @@ namespace Presentacion.Vista
             // 
             // cbotipo_documento
             // 
+            this.cbotipo_documento.DropDownHeight = 2;
             this.cbotipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbotipo_documento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotipo_documento.FormattingEnabled = true;
+            this.cbotipo_documento.IntegralHeight = false;
+            this.cbotipo_documento.ItemHeight = 17;
             this.cbotipo_documento.Location = new System.Drawing.Point(191, 54);
             this.cbotipo_documento.Name = "cbotipo_documento";
             this.cbotipo_documento.Size = new System.Drawing.Size(123, 25);

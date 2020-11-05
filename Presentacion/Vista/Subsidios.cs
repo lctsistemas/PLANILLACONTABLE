@@ -92,7 +92,7 @@ namespace Presentacion.Vista
                 ns.Descripcion_corta = txtdescCorta.Text.Trim();
                 ns.Descripcion_subsidio = txtdescSubsi.Text.Trim();
                 ns.Tipo_subsidio = cbxtiposub.Text.Trim();
-                ns.Descuento = Convert.ToBoolean(checkDescuento.Text.ToString());
+                ns.Descuento = Convert.ToBoolean(checkDescuento.Checked);
 
                 bool valida = new ValidacionDatos(ns).Validate();
                 if (valida)
@@ -126,6 +126,27 @@ namespace Presentacion.Vista
             cbxsuspension.Text = String.Empty;
 
             using (ns) { ns.state = EntityState.Guardar; }
+        }
+
+        private void dgvsubsidio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvsubsidio.CurrentRow;
+            Habilitar(true);
+            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (ns)
+                {
+                    ns.state = EntityState.Modificar;
+                   // ns.Id_subsidios = Convert.ToInt32(r.Cells[0].Value);
+                    txtcodigosubsidio.Text = Convert.ToString(r.Cells[1].Value);
+                    cbxsuspension.Text= r.Cells[2].Value.ToString();
+                    txtdescCorta.Text = Convert.ToString(r.Cells[3].Value);
+                    txtdescSubsi.Text = Convert.ToString(r.Cells[4].Value);
+                    cbxtiposub.Text = Convert.ToString(r.Cells[5].Value);
+                    checkDescuento.Checked =Convert.ToBoolean(r.Cells[6].Value);
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER                    
+                }
+            }
         }
     }
 }

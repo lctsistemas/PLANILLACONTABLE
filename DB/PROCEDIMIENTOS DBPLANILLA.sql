@@ -1276,7 +1276,7 @@ IF(@subsidio=0)
 ELSE
 	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.SUBSIDIOS s)
 INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio,tipo_suspencion,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
-VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, @descuento)
+VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, CAST(@descuento AS BIT))
 SET @mensaje= 'SUBSIDIO REGISTRADO CORRECTAMENTE'
 END
 GO
