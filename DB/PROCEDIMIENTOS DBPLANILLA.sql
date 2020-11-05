@@ -1283,7 +1283,7 @@ GO
 
 
 ALTER PROC SP_MODIFY_SUBSIDIOS
-@cod_subsidio int,
+@cod_subsidio char(2),
 @tipo_suspension varchar(10),
 @descripcion_corta nvarchar(70),
 @descrip_subsidio nvarchar(100),
@@ -1296,10 +1296,12 @@ UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspen
 END
 GO
 
-CREATE PROC SP_BORRAR_SUBSIDIOS
-@id_subsidios int
+alter PROC SP_BORRAR_SUBSIDIOS
+@id_subsidios int,
+@mensaje varchar(100) output
 AS BEGIN
 DELETE FROM dbo.SUBSIDIOS WHERE id_subsidios=@id_subsidios
+SET @mensaje= 'SUBSIDIO ELIMINADO CORRECTAMENTE'
 END
 GO
 

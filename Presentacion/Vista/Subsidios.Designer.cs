@@ -50,7 +50,7 @@
             this.btnguardar = new System.Windows.Forms.ToolStripButton();
             this.btnedit = new System.Windows.Forms.ToolStripButton();
             this.btnbuscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnborrar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
@@ -62,7 +62,7 @@
             this.btnnuevo,
             this.btnguardar,
             this.btnedit,
-            this.toolStripButton1,
+            this.btnborrar,
             this.btnbuscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -253,7 +253,7 @@
             this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(23, 22);
-            this.btnnuevo.Text = "toolStripButton1";
+            this.btnnuevo.Text = "Nuevo";
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // btnguardar
@@ -263,7 +263,7 @@
             this.btnguardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(23, 22);
-            this.btnguardar.Text = "toolStripButton2";
+            this.btnguardar.Text = "Guardar";
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnedit
@@ -273,7 +273,7 @@
             this.btnedit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(23, 22);
-            this.btnedit.Text = "toolStripButton3";
+            this.btnedit.Text = "Editar";
             // 
             // btnbuscar
             // 
@@ -282,16 +282,17 @@
             this.btnbuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(23, 22);
-            this.btnbuscar.Text = "toolStripButton4";
+            this.btnbuscar.Text = "Buscar";
             // 
-            // toolStripButton1
+            // btnborrar
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Presentacion.Properties.Resources.borrar3;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.btnborrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnborrar.Image = global::Presentacion.Properties.Resources.borrar3;
+            this.btnborrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnborrar.Name = "btnborrar";
+            this.btnborrar.Size = new System.Drawing.Size(23, 22);
+            this.btnborrar.Text = "Eliminar";
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // frmsubsidios
             // 
@@ -333,6 +334,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnborrar;
     }
 }

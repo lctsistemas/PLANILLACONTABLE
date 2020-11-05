@@ -44,7 +44,24 @@ namespace Datos.Repositories
 
         public int Delete(DSubsidios entiti)
         {
-            throw new NotImplementedException();
+            result = 0;
+            using (SqlConnection conn = RConexion.Getconectar())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_BORRAR_SUBSIDIOS";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    result = cmd.ExecuteNonQuery();
+                    entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+                    cmd.Parameters.Clear();
+                    return result;
+                }
+            }
         }
 
         public int Edit(DSubsidios entiti)
@@ -60,7 +77,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_MODIFY_SUBSIDIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Int).Value = entiti.Cod_subsidios;
+                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Char,2).Value = entiti.Cod_subsidios;
                     cmd.Parameters.Add("@tipo_suspension", SqlDbType.VarChar, 10).Value = entiti.Tipo_supension;
                     cmd.Parameters.Add("@descripcion_corta", SqlDbType.NVarChar, 70).Value = entiti.Descrip_corta;
                     cmd.Parameters.Add("@descrip_subsidio", SqlDbType.NVarChar, 100).Value = entiti.Descripcion_subsidio;

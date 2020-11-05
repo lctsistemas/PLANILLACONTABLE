@@ -79,7 +79,6 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@regimen_salud", SqlDbType.VarChar, 80).Value = entiti.Regimen_salud;
 
                     result = cmd.ExecuteNonQuery();
-                    System.Windows.Forms.MessageBox.Show("update:  " + result);
                     cmd.Parameters.Clear();
                     return result;
                 }

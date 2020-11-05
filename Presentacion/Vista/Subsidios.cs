@@ -148,5 +148,31 @@ namespace Presentacion.Vista
                 }
             }
         }
+
+        private void btnborrar_Click(object sender, EventArgs e)
+        {
+            result = "";
+            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                if (r == DialogResult.Yes)
+                {
+                    using (ns)
+                    {
+                        ns.state = EntityState.Remover;
+                        ns.Id_subsidios = Convert.ToInt32(dgvsubsidio.CurrentRow.Cells[0].Value);
+                        result = ns.SaveChanges();
+                        ShowSubsidio();
+                        Messages.M_info(result);
+                    }
+                }
+
+            }
+            else
+            {
+                Messages.M_warning("Seleccione una fila de la tabla");
+            }
+            limpiar();
+        }
     }
 }
