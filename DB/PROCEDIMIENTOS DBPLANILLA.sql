@@ -862,7 +862,7 @@ GO
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
 ALTER PROC SP_SHOW_BANCO
 AS BEGIN 
-SELECT b.id_banco,b.nombre_banco from Banco b; 
+SELECT b.id_banco,b.nombre_banco from Banco b;
 END;
 GO
 
@@ -1293,7 +1293,7 @@ GO
 
 /* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
 
-CREATE PROC SP_ShowPlanillaManto
+alter PROC SP_ShowPlanillaManto
 @idmes int,
 @id_empresaMaestra int
 AS BEGIN
@@ -1304,9 +1304,12 @@ FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regim
 JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
-WHERE cop.idmes = @idmes and e.id_em_maestra=@id_empresaMaestra
+WHERE cop.idmes =10  and e.id_em_maestra=2
 END
 
 SELECT * FROM Empleado
 SELECT * FROM RegimenPensionario
 SELECT * FROM ComisionesPension
+
+
+delete FROM ComisionesPension where idcomision between 17 and 40

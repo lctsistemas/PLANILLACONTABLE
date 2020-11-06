@@ -155,7 +155,7 @@ fecha_inicio date not null,
 fecha_fin date null,
 numero_cuenta varchar(30) null,
 remuneracion_basica money not null,
-asignacion_familiar money default (0.00) null,
+asignacion_familiar decimal(5,2) null,
 regimen_salud varchar(80)not null,
 tipo_pago varchar(30) not null,
 periodicidad varchar(70)not null,
@@ -165,9 +165,9 @@ cussp varchar(70) null,
 id_rsalud int 
 )
 GO
---alter table dbo.contrato drop column estado
-
---alter table contrato drop constraint DF__Contrato__asigna__4865BE2A
+alter table dbo.contrato drop column estado
+alter table dbo.contrato alter column [asignacion_familiar] decimal(5,2) null
+alter table contrato drop constraint [CK__Contrato__estado__4959E263]
 --Meses_maestra
 CREATE TABLE Meses_maestra(
 id_meses_maestra int not null,
@@ -376,7 +376,7 @@ VALUES(17, '28', 'S.I.', 'DIAS LICENCIA POR PATERNIDAD','DIAS LICENCIA POR PATER
 
 GO
 
---TABLA PLANILLA MANTO
+--TABLA PLANILLA MANTO, AUNA FANTAN MAS CAMPOS QUE TENGO QUE PONER.
 CREATE TABLE PlanillaManto(
 idplanilla_manto int not null,
 id_contrato int not null,

@@ -489,7 +489,7 @@
             // newToolStripButton
             // 
             this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.newToolStripButton.Image = global::Presentacion.Properties.Resources._1486485588_add_create_new_math_sign_cross_plus_81186;
+            this.newToolStripButton.Image = global::Presentacion.Properties.Resources.agregar;
             this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Black;
             this.newToolStripButton.Name = "newToolStripButton";
             this.newToolStripButton.Size = new System.Drawing.Size(23, 22);

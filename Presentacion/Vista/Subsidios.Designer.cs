@@ -249,7 +249,7 @@
             // btnnuevo
             // 
             this.btnnuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources._1486485588_add_create_new_math_sign_cross_plus_81186;
+            this.btnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
             this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(23, 22);

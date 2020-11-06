@@ -63,9 +63,9 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1486485588_add_create_new_math_sign_cross_plus_81186 {
+        internal static System.Drawing.Bitmap Administrador {
             get {
-                object obj = ResourceManager.GetObject("1486485588-add-create-new-math-sign-cross-plus_81186", resourceCulture);
+                object obj = ResourceManager.GetObject("Administrador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Administrador {
+        internal static System.Drawing.Bitmap agregar {
             get {
-                object obj = ResourceManager.GetObject("Administrador", resourceCulture);
+                object obj = ResourceManager.GetObject("agregar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

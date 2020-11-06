@@ -36,6 +36,8 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFEREN
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REFERENCES Empleado
 
 ALTER TABLE planillaManto ADD CONSTRAINT FK_idcontratop FOREIGN KEY (id_contrato) REFERENCES Contrato
+alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanilla  FOREIGN KEY (id_planilla) REFERENCES planilla(id_planilla)
+
 GO
 
 
@@ -128,14 +130,5 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, segur
 INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, idmes, idperiodo) VALUES (17,9,13.00,10,2) --ONP
 GO
 
-select * from dbo.ComisionesPension
-select * from contrato c join Regimen_salud r on( c.id_rsalud=r.id_regimen_salud)
-go
-
-select * from Contrato
-alter table Contrato alter column regimen_salud int not null
-update Contrato set regimen_salud = ''
-
-sp_rename 'Contrato.regimen_salud','id_r'
---
-alter table contrato drop column id_r
+sp_rename  '[dbo].[REGIMEN_SALUD]','Regimen_salud'
+--en el procedimiento yo le cambie con minuscula en salud 
