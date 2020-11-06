@@ -528,86 +528,9 @@ AS
 SELECT id_rol, rol FROM dbo.Rol ORDER BY id_rol DESC
 GO
 
----------- PROCEDIMIENTOS GENERAR CODIGO AUTOMATICO ------------
-/*
-CREATE PROC SP_GENERAR_USUARIO
-(@usuario int output)
-AS BEGIN
---DECLARE @usu int
-SET @usuario=(SELECT count(u.id_usuario) FROM dbo.Usuario u)
-IF(@usuario=0)
-	BEGIN
-		SET @usuario=1
-	END
-ELSE
-	BEGIN
-		SET @usuario=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
-	END
-END
-GO*/
 
-/*ya no se utiliza
-CREATE PROC SP_GENERAR_EMP
-(@empleado int output)
-AS BEGIN
-SET @empleado=(SELECT count(e.id_empleado) FROM dbo.Empleado e)
-IF(@empleado=0)
-	BEGIN
-		SET @empleado=1
-	END
-ELSE
-	BEGIN
-		SET @empleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
-	END
-END
-GO*/
 
-/*ya no se utiliza
-CREATE PROC SP_GENERAR_BANCO
-(@Banco int output)
-AS BEGIN
-SET @Banco=(SELECT count(b.id_banco) FROM Banco b)
-IF(@Banco=0)
-	BEGIN
-		SET @Banco=1
-	END
-ELSE
-	BEGIN
-		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)
-	END
-END
-GO*/
 
-/* ya no se utiliza
-CREATE PROC SP_GEN_TIPO_CONT
-(@Tipocont int output)
-AS BEGIN
-SET @Tipocont=(SELECT COUNT(t.id_tipo_contrato) FROM Tipo_contrato t)
-IF(@Tipocont=0)
-	BEGIN
-		SET @Tipocont=1
-	END
-ELSE
-	BEGIN
-		SET @Tipocont=(SELECT MAX(t.id_tipo_contrato)+1 FROM Tipo_contrato t)
-	END
-END
-GO*/
-
-CREATE PROC SP_GENERAR_CONTRATO
-(@contrato int output)
-AS BEGIN
-SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
-IF(@contrato=0)
-	BEGIN
-		SET @contrato=1		
-	END
-ELSE
-	BEGIN
-		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)	
-	END
-END
-GO
 
 --GENERAR CODIGO MESES_MAESTRA
 CREATE PROC SP_GENERAR_MESESMAESTRA
@@ -720,23 +643,7 @@ ELSE
 	END
 END
 GO
-/*ya no se utiliza
---GENERAR CODIGO Planilla
-CREATE PROC SP_GENERAR_Planilla
-(@plani int output)
-AS BEGIN
-SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
-IF(@plani=0)
-	BEGIN
-		SET @plani=1		
-	END
-ELSE
-	BEGIN
-		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)
-	END
-END
-GO
-*/
+
 
 --GENERAR CODIGO Tipo Planilla
 CREATE PROC SP_GENERAR_TipoPlanilla
@@ -754,23 +661,6 @@ ELSE
 END
 GO
 
-/*ya no se utiliza
-----PROCEDIMIENTOS PARA GENERAR REGIMEN SALUD
-ALTER PROC SP_GEN_REG_SALUD
-(@reg_salud int output)
-AS BEGIN
-SET @reg_salud=(SELECT count(rs.id_regimen_salud) FROM REGIMEN_SALUD rs)
-IF(@reg_salud=0)
-	BEGIN
-		SET @reg_salud=1
-	END
-ELSE
-	BEGIN
-		SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
-	END
-END
-GO
-*/
 
 --GENERAR CODIGO REGIMEN
 
@@ -986,15 +876,10 @@ ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
 AS BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'	
+	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
 END
 GO
 
---- SCRIPT
-
-select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
-	RegimenPensionario r right join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=10 AND idperiodo=2)
 
 GO
 ALTER PROC SP_INSERT_COMISIONES
