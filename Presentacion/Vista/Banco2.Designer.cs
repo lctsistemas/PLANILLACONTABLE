@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Banco2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Banco2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbltotalSi = new System.Windows.Forms.Label();
             this.lbltotalSp = new System.Windows.Forms.Label();
-            this.txtdias = new System.Windows.Forms.TextBox();
             this.txttotaldias = new System.Windows.Forms.TextBox();
             this.lbltotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,15 +46,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btngrabar = new System.Windows.Forms.Button();
             this.dgvsubsidio = new System.Windows.Forms.DataGridView();
-            this.cboBanco = new System.Windows.Forms.ComboBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.cod_subsidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_dsubsidio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dgvtxtidbanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxtbanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.canti_dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsupension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +62,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.lbltotalSi);
             this.panel1.Controls.Add(this.lbltotalSp);
-            this.panel1.Controls.Add(this.txtdias);
             this.panel1.Controls.Add(this.txttotaldias);
             this.panel1.Controls.Add(this.lbltotal);
             this.panel1.Controls.Add(this.label1);
@@ -74,7 +72,6 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btngrabar);
             this.panel1.Controls.Add(this.dgvsubsidio);
-            this.panel1.Controls.Add(this.cboBanco);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -100,15 +97,6 @@
             this.lbltotalSp.TabIndex = 9;
             this.lbltotalSp.Text = ".";
             this.lbltotalSp.Visible = false;
-            // 
-            // txtdias
-            // 
-            this.txtdias.Location = new System.Drawing.Point(305, 26);
-            this.txtdias.MaxLength = 2;
-            this.txtdias.Name = "txtdias";
-            this.txtdias.Size = new System.Drawing.Size(60, 20);
-            this.txtdias.TabIndex = 4;
-            this.txtdias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txttotaldias
             // 
@@ -163,7 +151,7 @@
             // btngrabar
             // 
             this.btngrabar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btngrabar.Location = new System.Drawing.Point(365, 25);
+            this.btngrabar.Location = new System.Drawing.Point(198, 21);
             this.btngrabar.Name = "btngrabar";
             this.btngrabar.Size = new System.Drawing.Size(50, 22);
             this.btngrabar.TabIndex = 5;
@@ -191,20 +179,18 @@
             this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvsubsidio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tsupension,
-            this.canti_dias,
+            this.dgvtxtidbanco,
+            this.dgvtxtbanco,
             this.modificar,
-            this.eliminar,
-            this.id_dsubsidio,
-            this.cod_subsidio});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle7;
+            this.eliminar});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvsubsidio.EnableHeadersVisualStyles = false;
             this.dgvsubsidio.Location = new System.Drawing.Point(2, 47);
             this.dgvsubsidio.Name = "dgvsubsidio";
@@ -213,21 +199,6 @@
             this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvsubsidio.Size = new System.Drawing.Size(463, 150);
             this.dgvsubsidio.TabIndex = 3;
-            // 
-            // cboBanco
-            // 
-            this.cboBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBanco.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboBanco.FormattingEnabled = true;
-            this.cboBanco.Items.AddRange(new object[] {
-            "Elemento1",
-            "Elemento2",
-            "Elemento3",
-            "LICENCIA Y OTROS MOTIVOS CON GOCE DE HABER"});
-            this.cboBanco.Location = new System.Drawing.Point(2, 25);
-            this.cboBanco.Name = "cboBanco";
-            this.cboBanco.Size = new System.Drawing.Size(297, 24);
-            this.cboBanco.TabIndex = 2;
             // 
             // dataGridViewImageColumn1
             // 
@@ -246,40 +217,41 @@
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // cod_subsidio
+            // textBox1
             // 
-            this.cod_subsidio.DataPropertyName = "Codigo_subsidio";
-            this.cod_subsidio.HeaderText = "CODSU";
-            this.cod_subsidio.Name = "cod_subsidio";
-            this.cod_subsidio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cod_subsidio.Width = 50;
+            this.textBox1.Location = new System.Drawing.Point(3, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(164, 20);
+            this.textBox1.TabIndex = 10;
             // 
-            // id_dsubsidio
+            // contextMenuStrip1
             // 
-            this.id_dsubsidio.DataPropertyName = "Id_det_subsidios";
-            this.id_dsubsidio.HeaderText = "ID";
-            this.id_dsubsidio.Name = "id_dsubsidio";
-            this.id_dsubsidio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.id_dsubsidio.Width = 50;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // eliminar
+            // dgvtxtidbanco
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
-            this.eliminar.DefaultCellStyle = dataGridViewCellStyle6;
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::Presentacion.Properties.Resources.delete18p;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.eliminar.Width = 50;
+            this.dgvtxtidbanco.DataPropertyName = "IdBanco";
+            this.dgvtxtidbanco.HeaderText = "ID";
+            this.dgvtxtidbanco.Name = "dgvtxtidbanco";
+            this.dgvtxtidbanco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvtxtidbanco.Width = 50;
+            // 
+            // dgvtxtbanco
+            // 
+            this.dgvtxtbanco.DataPropertyName = "Nom_banco";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvtxtbanco.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvtxtbanco.HeaderText = "Banco";
+            this.dgvtxtbanco.Name = "dgvtxtbanco";
+            this.dgvtxtbanco.Width = 200;
             // 
             // modificar
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
-            this.modificar.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
+            this.modificar.DefaultCellStyle = dataGridViewCellStyle4;
             this.modificar.Description = "Modificar";
             this.modificar.HeaderText = "Editar";
             this.modificar.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
@@ -287,23 +259,17 @@
             this.modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.modificar.Width = 50;
             // 
-            // canti_dias
+            // eliminar
             // 
-            this.canti_dias.DataPropertyName = "Dias";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.canti_dias.DefaultCellStyle = dataGridViewCellStyle4;
-            this.canti_dias.HeaderText = "Cantidad de dias";
-            this.canti_dias.Name = "canti_dias";
-            this.canti_dias.Width = 60;
-            // 
-            // tsupension
-            // 
-            this.tsupension.DataPropertyName = "Descrip_corta";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsupension.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tsupension.HeaderText = "Tipo de suspensión";
-            this.tsupension.Name = "tsupension";
-            this.tsupension.Width = 300;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
+            this.eliminar.DefaultCellStyle = dataGridViewCellStyle5;
+            this.eliminar.HeaderText = "Eliminar";
+            this.eliminar.Image = global::Presentacion.Properties.Resources.delete18p;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.eliminar.Width = 50;
             // 
             // Banco2
             // 
@@ -325,7 +291,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbltotalSi;
         private System.Windows.Forms.Label lbltotalSp;
-        private System.Windows.Forms.TextBox txtdias;
         private System.Windows.Forms.TextBox txttotaldias;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label label1;
@@ -333,14 +298,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btngrabar;
         private System.Windows.Forms.DataGridView dgvsubsidio;
-        private System.Windows.Forms.ComboBox cboBanco;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tsupension;
-        private System.Windows.Forms.DataGridViewTextBoxColumn canti_dias;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtidbanco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtbanco;
         private System.Windows.Forms.DataGridViewImageColumn modificar;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_dsubsidio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod_subsidio;
     }
 }

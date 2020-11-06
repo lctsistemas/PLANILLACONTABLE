@@ -17,10 +17,10 @@ namespace Presentacion.Vista
         public Banco2()
         {
             InitializeComponent();
-            Fillcombo();
+            //Fillcombo();
             Fill_Banco();
         }
-
+/*
         private void Fillcombo()
         {
             using (nb = new NBanco())
@@ -29,7 +29,7 @@ namespace Presentacion.Vista
                 cboBanco.DisplayMember = "Nom_banco";
                 cboBanco.ValueMember = "IdBanco";
             }
-        }
+        }*/
 
         private void Fill_Banco()
         {

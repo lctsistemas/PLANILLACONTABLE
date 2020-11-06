@@ -67,9 +67,8 @@ namespace Negocio.Models
         }
 
 
-        public List<NBanco> Getall()
+        public IEnumerable<NBanco> Getall()
         {
-
             using (DataTable dt = RBanco.GetData(null))
             {
                 list_banco = new List<NBanco>();
@@ -80,35 +79,12 @@ namespace Negocio.Models
                         IdBanco = Convert.ToInt32(item[0]),
                         Nom_banco = item[1].ToString()
                     });
-                }
-                return list_banco;
-            }
-        }
-
-        public IEnumerable<NBanco> GetData()
-        {
-            DBanco db = null;
-            if (db == null)
-                db = new DBanco();
-            db.IdBanco = IdBanco;
-            db.Nom_banco = Nom_banco;
-
-            if (list_banco == null)
-                list_banco = new List<NBanco>();
-
-            using (DataTable dt = RBanco.GetData(db))
-            {
-                foreach (DataRow item in dt.Rows)
-                {
-                    list_banco.Add(new NBanco()
-                    {
-                        IdBanco = Convert.ToInt32(item[0]),
-                        Nom_banco = item[1].ToString()
-                    });
-                }
+                }                
             }
             return list_banco;
         }
+
+        
 
         public IEnumerable<NBanco> Search(string filter)
         {
