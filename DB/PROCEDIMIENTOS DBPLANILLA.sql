@@ -279,6 +279,7 @@ GO
 
 /*     EMPRESA AND SUCURSAL      */
 ALTER PROC SP_INSERT_EMPRESA_MAESTRA
+@idem_maestra int,
 @razon_social varchar(50),
 @direccion nvarchar(250),
 @domicilio nvarchar(250),
@@ -298,29 +299,51 @@ ELSE IF(EXISTS(SELECT codigo_sucursal FROM Sucursal WHERE codigo_sucursal=@cod_e
 	END
 ELSE
 	BEGIN
-		INSERT INTO dbo.Empresa_maestra(razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
-		VALUES(@razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
-		set @mesage='¡Registro Exitosamente!'
+	DECLARE @codigo int
+	SET @codigo=(SELECT count(epm.id_em_maestra) FROM dbo.Empresa_maestra epm)
+		IF(@codigo=0)
+			SET @codigo=1	
+		ELSE
+			SET @codigo=(SELECT MAX(epm.id_em_maestra)+1 FROM dbo.Empresa_maestra epm)	
+
+		INSERT INTO dbo.Empresa_maestra(id_em_maestra, razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
+		VALUES(@idem_maestra,@razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
+		set @mesage='¡Se registro Exitosamente!'
 	END
 END
 GO
 
-CREATE PROC SP_INSERT_EMPRESA
+
+ALTER PROC SP_INSERT_EMPRESA
 @cod_empresa varchar(8),
 @id_usuario int
 AS BEGIN
-INSERT INTO dbo.Empresa(codigo_empresa,id_em_maestra,id_usuario)VALUES
-(@cod_empresa,(SELECT TOP(1)id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_usuario)		
+DECLARE @cod_emp int
+SET @cod_emp=(SELECT count(emp.id_empresa) FROM dbo.Empresa emp)
+IF(@cod_emp=0)
+	SET @cod_emp=1	
+ELSE
+	SET @cod_emp=(SELECT MAX(emp.id_empresa)+1 FROM dbo.Empresa emp)
+	
+INSERT INTO dbo.Empresa(id_empresa ,codigo_empresa,id_em_maestra,id_usuario)VALUES
+(@cod_emp ,@cod_empresa,(SELECT TOP(1)id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_usuario)		
 END
 GO
 
 
-CREATE PROC SP_INSERT_SUCURSAL
+ALTER PROC SP_INSERT_SUCURSAL
 @cod_sucursal varchar(8),
 @id_empresa int
 AS BEGIN
-INSERT INTO dbo.Sucursal(codigo_sucursal,id_em_maestra,id_empresa)VALUES
-(@cod_sucursal,(SELECT TOP(1) id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_empresa)		
+DECLARE @cod_sucur int
+SET @cod_sucur=(SELECT count(suc.id_sucursal) FROM dbo.Sucursal suc)
+IF(@cod_sucur=0)
+	SET @cod_sucur=1	
+ELSE
+	SET @cod_sucur=(SELECT MAX(suc.id_sucursal)+1 FROM dbo.Sucursal suc)
+
+INSERT INTO dbo.Sucursal(id_sucursal ,codigo_sucursal,id_em_maestra,id_empresa)VALUES
+(@cod_sucur ,@cod_sucursal,(SELECT TOP(1) id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_empresa)		
 END
 GO
 
