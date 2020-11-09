@@ -78,7 +78,6 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@nombre_banco", SqlDbType.VarChar, 25).Value = entiti.Nom_banco;
 
                     result = cmd.ExecuteNonQuery();
-                    System.Windows.Forms.MessageBox.Show("update:  " + result);
 
                     cmd.Parameters.Clear();
                     return result;
