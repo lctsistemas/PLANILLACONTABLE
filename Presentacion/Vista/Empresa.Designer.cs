@@ -90,7 +90,7 @@
             this.tabempresa.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabempresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabempresa.ItemSize = new System.Drawing.Size(159, 27);
-            this.tabempresa.Location = new System.Drawing.Point(1, 86);
+            this.tabempresa.Location = new System.Drawing.Point(1, 78);
             this.tabempresa.Multiline = true;
             this.tabempresa.Name = "tabempresa";
             this.tabempresa.Padding = new System.Drawing.Point(20, 5);
@@ -275,11 +275,11 @@
             // ConsultaRuc
             // 
             this.ConsultaRuc.AutoSize = true;
-            this.ConsultaRuc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaRuc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaRuc.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.ConsultaRuc.Location = new System.Drawing.Point(390, 17);
             this.ConsultaRuc.Name = "ConsultaRuc";
-            this.ConsultaRuc.Size = new System.Drawing.Size(89, 16);
+            this.ConsultaRuc.Size = new System.Drawing.Size(90, 17);
             this.ConsultaRuc.TabIndex = 17;
             this.ConsultaRuc.TabStop = true;
             this.ConsultaRuc.Text = "ConsultaRuc";
@@ -478,7 +478,7 @@
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
             this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneliminar.Location = new System.Drawing.Point(222, 56);
+            this.btneliminar.Location = new System.Drawing.Point(215, 46);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(99, 27);
             this.btneliminar.TabIndex = 2;
@@ -501,7 +501,7 @@
             this.btnnuevo.ForeColor = System.Drawing.Color.White;
             this.btnnuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
             this.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnnuevo.Location = new System.Drawing.Point(117, 56);
+            this.btnnuevo.Location = new System.Drawing.Point(110, 46);
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(99, 27);
             this.btnnuevo.TabIndex = 16;
@@ -522,7 +522,7 @@
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(12, 56);
+            this.btnguardar.Location = new System.Drawing.Point(5, 46);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(99, 27);
             this.btnguardar.TabIndex = 15;
@@ -542,7 +542,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(879, 50);
+            this.panel2.Size = new System.Drawing.Size(879, 40);
             this.panel2.TabIndex = 6;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -551,7 +551,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(35, 9);
+            this.label10.Location = new System.Drawing.Point(3, 3);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(132, 33);
             this.label10.TabIndex = 1;
@@ -624,7 +624,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(879, 538);
+            this.ClientSize = new System.Drawing.Size(879, 528);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabempresa);
             this.Controls.Add(this.btneliminar);

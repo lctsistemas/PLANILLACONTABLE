@@ -26,9 +26,9 @@ ALTER TABLE Gratificaciones ADD CONSTRAINT FK_id_PerGrati FOREIGN KEY(id_periodo
 ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCES Meses_maestra
 --ALTER TABLE Periodo ADD CONSTRAINT fk_id_MesPeriodo FOREIGN KEY(id_meses) REFERENCES Meses_maestra
 --ALTER TABLE Periodo ADD CONSTRAINT fk_id_mesper FOREIGN KEY(id_mes) REFERENCES Mes
-ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_planilla) REFERENCES tipo_planilla
+--ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_planilla) REFERENCES tipo_planilla
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFERENCES dbo.periodo
-ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(id_empresa) REFERENCES dbo.Empresa
+ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(idempresa_maestra) REFERENCES dbo.Empresa_maestra(id_em_maestra)
 alter table Planilla ADD CONSTRAINT FK_idmes FOREIGN KEY(id_mes) REFERENCES Mes;
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub FOREIGN KEY(id_subsidios) REFERENCES Subsidios
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERENCES Periodo
@@ -41,7 +41,6 @@ alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanilla  FOREIGN KEY (id_plan
 GO
 
 
-select * from empleado
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_regpension FOREIGN KEY(codigo_regimen) REFERENCES RegimenPensionario
@@ -78,7 +77,8 @@ ALTER TABLE Empleado ADD CONSTRAINT PK_idempleado PRIMARY KEY(id_empleado)
 ALTER TABLE Cargo ADD CONSTRAINT PK_idcargo PRIMARY KEY(id_cargo)
 ALTER TABLE Tipo_documento ADD CONSTRAINT PK_tdocumento PRIMARY KEY(id_documento)
 ALTER TABLE Afp ADD CONSTRAINT PK_idafp PRIMARY KEY(id_afp)
-TRUNCATE TABLE TIPO_DOCUMENTO
+
+
 --FOREIGN KEY: EMPLEADO CON  CARGO, TIPO DOCUMENTO, AFP, EMPRESA, 
 ALTER TABLE Empleado ADD CONSTRAINT FK_EempresaM FOREIGN KEY(id_em_maestra)REFERENCES Empresa_maestra
 Alter TABLE	Empleado ADD CONSTRAINT FK_Eidcargo FOREIGN KEY(id_cargo)REFERENCES Cargo
