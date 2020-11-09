@@ -48,14 +48,14 @@
             this.txtTipoContrato = new System.Windows.Forms.TextBox();
             this.txttotaldias = new System.Windows.Forms.TextBox();
             this.lbltotal = new System.Windows.Forms.Label();
-            this.dgvsubsidio = new System.Windows.Forms.DataGridView();
-            this.dgvtxtidbanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtxtbanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTcontrato = new System.Windows.Forms.DataGridView();
+            this.dgvtxtidtcontrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvtxttcontrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTcontrato)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -172,18 +172,18 @@
             this.lbltotal.TabIndex = 97;
             this.lbltotal.Text = "TOTAL";
             // 
-            // dgvsubsidio
+            // dgvTcontrato
             // 
-            this.dgvsubsidio.AllowUserToAddRows = false;
-            this.dgvsubsidio.AllowUserToResizeColumns = false;
-            this.dgvsubsidio.AllowUserToResizeRows = false;
+            this.dgvTcontrato.AllowUserToAddRows = false;
+            this.dgvTcontrato.AllowUserToResizeColumns = false;
+            this.dgvTcontrato.AllowUserToResizeRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.dgvsubsidio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvsubsidio.BackgroundColor = System.Drawing.Color.White;
-            this.dgvsubsidio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvsubsidio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvsubsidio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTcontrato.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTcontrato.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTcontrato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTcontrato.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvTcontrato.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -191,11 +191,11 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsubsidio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvtxtidbanco,
-            this.dgvtxtbanco,
+            this.dgvTcontrato.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTcontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTcontrato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvtxtidtcontrato,
+            this.dgvtxttcontrato,
             this.modificar,
             this.eliminar});
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -205,11 +205,11 @@
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvsubsidio.EnableHeadersVisualStyles = false;
-            this.dgvsubsidio.Location = new System.Drawing.Point(4, 71);
-            this.dgvsubsidio.Name = "dgvsubsidio";
-            this.dgvsubsidio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvTcontrato.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvTcontrato.EnableHeadersVisualStyles = false;
+            this.dgvTcontrato.Location = new System.Drawing.Point(4, 71);
+            this.dgvTcontrato.Name = "dgvTcontrato";
+            this.dgvTcontrato.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,35 +217,34 @@
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsubsidio.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvsubsidio.RowHeadersVisible = false;
+            this.dgvTcontrato.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvTcontrato.RowHeadersVisible = false;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvsubsidio.Size = new System.Drawing.Size(456, 143);
-            this.dgvsubsidio.TabIndex = 96;
-            this.dgvsubsidio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
+            this.dgvTcontrato.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvTcontrato.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTcontrato.Size = new System.Drawing.Size(456, 143);
+            this.dgvTcontrato.TabIndex = 96;
+            this.dgvTcontrato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
             // 
-            // dgvtxtidbanco
+            // dgvtxtidtcontrato
             // 
-            this.dgvtxtidbanco.DataPropertyName = "IdBanco";
-            this.dgvtxtidbanco.HeaderText = "ID";
-            this.dgvtxtidbanco.Name = "dgvtxtidbanco";
-            this.dgvtxtidbanco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvtxtidbanco.Width = 50;
+            this.dgvtxtidtcontrato.DataPropertyName = "id_tcontrato";
+            this.dgvtxtidtcontrato.HeaderText = "ID";
+            this.dgvtxtidtcontrato.Name = "dgvtxtidtcontrato";
+            this.dgvtxtidtcontrato.Width = 50;
             // 
-            // dgvtxtbanco
+            // dgvtxttcontrato
             // 
-            this.dgvtxtbanco.DataPropertyName = "Nom_banco";
+            this.dgvtxttcontrato.DataPropertyName = "tiem_contrato";
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvtxtbanco.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvtxtbanco.HeaderText = "Banco";
-            this.dgvtxtbanco.Name = "dgvtxtbanco";
-            this.dgvtxtbanco.Width = 200;
+            this.dgvtxttcontrato.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvtxttcontrato.HeaderText = "Tipo Contrato";
+            this.dgvtxttcontrato.Name = "dgvtxttcontrato";
+            this.dgvtxttcontrato.Width = 200;
             // 
             // modificar
             // 
@@ -283,13 +282,13 @@
             this.Controls.Add(this.txtTipoContrato);
             this.Controls.Add(this.txttotaldias);
             this.Controls.Add(this.lbltotal);
-            this.Controls.Add(this.dgvsubsidio);
+            this.Controls.Add(this.dgvTcontrato);
             this.Name = "TipoContrato2";
             this.Text = "TipoContrato2";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTcontrato)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,9 +306,9 @@
         private System.Windows.Forms.TextBox txtTipoContrato;
         private System.Windows.Forms.TextBox txttotaldias;
         private System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.DataGridView dgvsubsidio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtidbanco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtbanco;
+        private System.Windows.Forms.DataGridView dgvTcontrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtidtcontrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxttcontrato;
         private System.Windows.Forms.DataGridViewImageColumn modificar;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
     }

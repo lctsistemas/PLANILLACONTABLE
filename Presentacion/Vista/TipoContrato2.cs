@@ -1,4 +1,6 @@
 ﻿using Negocio.Models;
+using Negocio.ValueObjects;
+using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +20,13 @@ namespace Presentacion.Vista
         public TipoContrato2()
         {
             InitializeComponent();
+            Fill_TipoContrato();
         }
-        private void Fill_Banco()
+        private void Fill_TipoContrato()
         {
             using (nt = new Ntipocontrato())
             {
-                dgvsubsidio.DataSource = nt.MostrarTcontrato();
+                dgvTcontrato.DataSource = nt.MostrarTcontrato();
             }
         }
         private void btnguardar_Click(object sender, EventArgs e)
@@ -40,50 +43,50 @@ namespace Presentacion.Vista
 
             txtTipoContrato.Text = string.Empty;
             txtTipoContrato.Focus();
-            Fill_Banco();
+            Fill_TipoContrato();
         }
 
         private void dgvsubsidio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                if (dgvsubsidio.Rows[e.RowIndex].Cells["modificar"].Selected)
+                if (dgvTcontrato.Rows[e.RowIndex].Cells["modificar"].Selected)
                 {
                     mensaje = "";
-                    using (nb = new NBanco())
+                    using (nt = new Ntipocontrato())
                     {
-                        nb.state = EntityState.Modificar;
-                        nb.Nom_banco = dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtbanco"].Value.ToString();
-                        nb.IdBanco = Convert.ToInt32(dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
-                        mensaje = nb.GuardarCambios();
+                        nt.state = EntityState.Modificar;
+                        nt.tiem_contrato = dgvTcontrato.Rows[e.RowIndex].Cells["dgvtxttcontrato"].Value.ToString();
+                        nt.id_tcontrato = Convert.ToInt32(dgvTcontrato.Rows[e.RowIndex].Cells["dgvtxtidtcontrato"].Value);
+                        mensaje = nt.GuardarCambios();
                         if (!mensaje.Equals(""))
                         {
-                            Fill_Banco();
+                            Fill_TipoContrato();
 
                         }
                         Messages.M_info(mensaje);
-                        nb.state = EntityState.Guardar;
+                        nt.state = EntityState.Guardar;
                     }
                 }
-                else if (dgvsubsidio.Rows[e.RowIndex].Cells["eliminar"].Selected)
+                else if (dgvTcontrato.Rows[e.RowIndex].Cells["eliminar"].Selected)
                 {
                     mensaje = "";
-                    using (nb = new NBanco())
+                    using (nt = new Ntipocontrato())
                     {
-                        string cod_subsi = dgvsubsidio.CurrentRow.Cells["dgvtxtbanco"].Value.ToString();
+                        string cod_subsi = dgvTcontrato.CurrentRow.Cells["dgvtxtidtcontrato"].Value.ToString();
                         DialogResult result = Messages.M_question("¿Está seguro de eliminar el tipo " + cod_subsi + "?");
                         if (result == DialogResult.Yes)
                         {
-                            nb.state = EntityState.Remover;
-                            nb.IdBanco = Convert.ToInt32(dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
-                            mensaje = nb.GuardarCambios();
+                            nt.state = EntityState.Remover;
+                            nt.id_tcontrato = Convert.ToInt32(dgvTcontrato.Rows[e.RowIndex].Cells["dgvtxtidtcontrato"].Value);
+                            mensaje = nt.GuardarCambios();
                             if (!mensaje.Equals(""))
                             {
-                                Fill_Banco();
+                                Fill_TipoContrato();
 
                             }
                             Messages.M_info(mensaje);
-                            nb.state = EntityState.Guardar;
+                            nt.state = EntityState.Guardar;
                         }
                     }
                 }
