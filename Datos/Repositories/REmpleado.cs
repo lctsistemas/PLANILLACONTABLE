@@ -11,7 +11,6 @@ namespace Datos.Repositories
         Int32 result;
         SqlCommand cmd;
 
-
         //AGREGAR EMPLEADO
         public int Add(DEmpleado entiti)
         {
@@ -25,8 +24,7 @@ namespace Datos.Repositories
                     cmd.Connection = connect;
                     cmd.CommandText = "SP_AGR_EMPL";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    //cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
+                    
                     cmd.Parameters.Add("@codigo", SqlDbType.VarChar, 20).Value = entiti.Codigo;
                     cmd.Parameters.Add("@nom_emp", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
                     cmd.Parameters.Add("@ape_pat", SqlDbType.VarChar, 50).Value = entiti.Ape_pat;

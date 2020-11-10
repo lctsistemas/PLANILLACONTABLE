@@ -7,26 +7,21 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class Planilla : Form
+    public partial class FrmPlanilla : Form
     {
         String result;
         private NPlanilla np = new NPlanilla();
         private Nafp naf;
-        private Int32 codigo;
-        public Planilla()
+       
+        public FrmPlanilla()
         {
             InitializeComponent();
+            UserCache.Periodo = "2020";
             Initialize();
+            
         }
 
-        private void GenerarCodigo()
-        {
-            codigo = 0;
-            using (np)
-            {
-                codigo = np.GetCodigo();
-            }
-        }
+        
 
         private void LlenarMes()
         {
@@ -39,22 +34,13 @@ namespace Presentacion.Vista
         }
 
         private void Initialize()
-        {
-            //String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
-            ////string m=mes[0];
-            //cbxmes.Items.AddRange(mes);
-
-            PlanillaEmpleados planilla = new PlanillaEmpleados();
-
-
+        {                     
             DateTime datefin;
             datefin = dtpfin.Value;
            
 
             DateTime primerDia = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, 1); //obteniendo el ultimo primer del mes
-
             DateTime ultimoDia = primerDia.AddMonths(1).AddDays(-1);//obteniendo el ultimo dia del mes
-
             Int32 ultimoDiaInt = ultimoDia.Day;
 
 
@@ -62,26 +48,17 @@ namespace Presentacion.Vista
             dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, ultimoDiaInt);
             dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
 
-            //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado
-
-
-            Double remu_basica = 930;
-            Double asign = 93;
-            Double tope = 1300;
-
-            txtremu.Text = remu_basica.ToString("#.##");
-            txtasig.Text = asign.ToString("#.##");
-            txttope.Text = tope.ToString("#.##");
+            //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado          
 
         }
         
 
-        private static Planilla instance;
+        private static FrmPlanilla instance;
 
-        public static Planilla GetInstance()
+        public static FrmPlanilla GetInstance()
         {
             if (instance == null)
-                instance = new Planilla();
+                instance = new FrmPlanilla();
 
             return instance;
         }
@@ -101,9 +78,7 @@ namespace Presentacion.Vista
                 np.Fecha_final = Convert.ToDateTime(dtpfin.Text.Trim());
                 np.Fecha_pago = Convert.ToDateTime(dtppago.Text.Trim());
                 np.Dias_mes = Convert.ToInt32(txtdia.Text.Trim());
-                np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());
-                np.Remu_basica = Convert.ToDecimal(txtremu.Text.Trim());
-                np.Asig_familiar = Convert.ToDecimal(txtasig.Text.Trim());
+                np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());              
                 np.Tope_horario_nocturno = Convert.ToInt32(txttope.Text.ToString());
 
 
@@ -116,8 +91,7 @@ namespace Presentacion.Vista
                     Messages.M_info(result);
                 }
 
-                GenerarCodigo();
-
+                
             }
         }
 
@@ -128,7 +102,8 @@ namespace Presentacion.Vista
                 lblyear.Text = UserCache.Periodo.ToString();
 
             }
-            GenerarCodigo();
+
+           
             LlenarMes();
         }
 
@@ -150,11 +125,14 @@ namespace Presentacion.Vista
             Int32 mes;
             mes = Convert.ToInt32(cbxmes.SelectedIndex);
 
+
+
             DateTime primerDia = new DateTime(Convert.ToInt32(UserCache.Periodo), mes+1, 1); //obteniendo el ultimo primer del mes
 
             DateTime ultimoDia = primerDia.AddMonths(1).AddDays(-1);//obteniendo el ultimo dia del mes
 
             Int32 ultimoDiaInt = ultimoDia.Day;
+
 
             dtpini.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes + 1, 1);
             dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), mes+1, ultimoDiaInt);

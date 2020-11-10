@@ -87,6 +87,7 @@ namespace Presentacion.Vista
             dgvplanilla1.Columns["totaremu"].ReadOnly = true;
 
             dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
+           // dgvplanilla1.Columns["hxdiurnas"].Background
         }
 
         //CARGAR DATAGRI        
@@ -477,12 +478,7 @@ namespace Presentacion.Vista
         }
 
         //-----
-        private void tabplanilla_MouseDown(object sender, MouseEventArgs e)
-        {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
+      
         private void tbtnsalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -653,9 +649,26 @@ namespace Presentacion.Vista
        
 
         private void dgvplanilla1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {            
+            
+        }
+
+      
+        private void menuarchivos_MouseDown(object sender, MouseEventArgs e)
         {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void tollistaconceptos_Click(object sender, EventArgs e)
+        {
+            grobconceptos.Visible = tollistaconceptos.Checked;
             
-            
+        }
+
+        private void tolbarraerramientas_Click(object sender, EventArgs e)
+        {            
+            toolbotones.Visible = tolbarraerramientas.Checked;
         }
     }
 }

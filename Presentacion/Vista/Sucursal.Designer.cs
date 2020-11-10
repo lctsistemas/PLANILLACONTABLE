@@ -29,20 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmsucursal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelsucursal = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
             this.tabgestion_empresa = new System.Windows.Forms.TabPage();
-            this.btnnuevo = new System.Windows.Forms.Button();
-            this.btnguardar = new System.Windows.Forms.Button();
             this.btnempresa = new System.Windows.Forms.Button();
             this.txtregimen = new System.Windows.Forms.TextBox();
             this.txtusuario = new System.Windows.Forms.TextBox();
@@ -61,16 +58,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnnuevo = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.tablista_empresa = new System.Windows.Forms.TabPage();
             this.txtbuscar = new System.Windows.Forms.TextBox();
-            this.btneliminar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
             this.dgvsucursal = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
+            this.btneliminar = new System.Windows.Forms.Button();
             this.tapsucursal = new System.Windows.Forms.TabControl();
             this.panelsucursal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -84,7 +82,6 @@
             // panelsucursal
             // 
             this.panelsucursal.BackColor = System.Drawing.Color.SteelBlue;
-            this.panelsucursal.Controls.Add(this.pictureBox1);
             this.panelsucursal.Controls.Add(this.label10);
             this.panelsucursal.Controls.Add(this.btnminimizar);
             this.panelsucursal.Controls.Add(this.btnmaximizar);
@@ -93,13 +90,6 @@
             resources.ApplyResources(this.panelsucursal, "panelsucursal");
             this.panelsucursal.Name = "panelsucursal";
             this.panelsucursal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelsucursal_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.logo_lct_2;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // label10
             // 
@@ -176,39 +166,10 @@
             resources.ApplyResources(this.tabgestion_empresa, "tabgestion_empresa");
             this.tabgestion_empresa.Name = "tabgestion_empresa";
             // 
-            // btnnuevo
-            // 
-            this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnnuevo.FlatAppearance.BorderSize = 0;
-            this.btnnuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnnuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.btnnuevo, "btnnuevo");
-            this.btnnuevo.ForeColor = System.Drawing.Color.White;
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
-            this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.UseVisualStyleBackColor = false;
-            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            resources.ApplyResources(this.btnguardar, "btnguardar");
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
             // btnempresa
             // 
             this.btnempresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnempresa.FlatAppearance.BorderColor = System.Drawing.SystemColors.Highlight;
+            this.btnempresa.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnempresa.FlatAppearance.BorderSize = 0;
             this.btnempresa.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnempresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCoral;
@@ -311,6 +272,35 @@
             this.label5.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label5.Name = "label5";
             // 
+            // btnnuevo
+            // 
+            this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnnuevo.FlatAppearance.BorderSize = 0;
+            this.btnnuevo.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnnuevo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.btnnuevo, "btnnuevo");
+            this.btnnuevo.ForeColor = System.Drawing.Color.White;
+            this.btnnuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
+            this.btnnuevo.Name = "btnnuevo";
+            this.btnnuevo.UseVisualStyleBackColor = false;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            resources.ApplyResources(this.btnguardar, "btnguardar");
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
             // tablista_empresa
             // 
             this.tablista_empresa.BackColor = System.Drawing.SystemColors.Window;
@@ -330,18 +320,6 @@
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btneliminar.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btneliminar, "btneliminar");
-            this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
@@ -358,37 +336,37 @@
             this.dgvsucursal.AllowUserToAddRows = false;
             this.dgvsucursal.AllowUserToDeleteRows = false;
             this.dgvsucursal.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvsucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvsucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvsucursal.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvsucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvsucursal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvsucursal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvsucursal, "dgvsucursal");
             this.dgvsucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvsucursal.EnableHeadersVisualStyles = false;
             this.dgvsucursal.Name = "dgvsucursal";
             this.dgvsucursal.ReadOnly = true;
             this.dgvsucursal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsucursal.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvsucursal.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsucursal.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvsucursal.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvsucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellDoubleClick);
             // 
             // label9
@@ -396,6 +374,18 @@
             resources.ApplyResources(this.label9, "label9");
             this.label9.ForeColor = System.Drawing.Color.DimGray;
             this.label9.Name = "label9";
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btneliminar, "btneliminar");
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // tapsucursal
             // 
@@ -422,7 +412,6 @@
             this.Load += new System.EventHandler(this.frmsucursal_Load);
             this.panelsucursal.ResumeLayout(false);
             this.panelsucursal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
@@ -444,7 +433,6 @@
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.PictureBox btnmaximizar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabgestion_empresa;
         private System.Windows.Forms.Button btnnuevo;
         private System.Windows.Forms.Button btnguardar;

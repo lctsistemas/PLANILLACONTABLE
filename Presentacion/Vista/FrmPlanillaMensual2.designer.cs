@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlanillaMensual2));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,8 +44,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tabsubsidio = new System.Windows.Forms.TabPage();
-            this.tabcalculo = new System.Windows.Forms.TabPage();
+            this.menuarchivos = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tollistaconceptos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tolbarraerramientas = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolbotones = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.panelplanilla = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupplanilla = new System.Windows.Forms.GroupBox();
@@ -135,59 +147,164 @@
             this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabplanilla = new System.Windows.Forms.TabControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabcalculo.SuspendLayout();
+            this.grobconceptos = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.menuarchivos.SuspendLayout();
+            this.toolbotones.SuspendLayout();
+            this.panelplanilla.SuspendLayout();
             this.groupplanilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla2)).BeginInit();
-            this.tabplanilla.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.grobconceptos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabsubsidio
+            // menuarchivos
             // 
-            this.tabsubsidio.Location = new System.Drawing.Point(4, 30);
-            this.tabsubsidio.Name = "tabsubsidio";
-            this.tabsubsidio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabsubsidio.Size = new System.Drawing.Size(1235, 495);
-            this.tabsubsidio.TabIndex = 1;
-            this.tabsubsidio.Text = "HISTORIAL SUBSIDIO";
-            this.tabsubsidio.UseVisualStyleBackColor = true;
+            this.menuarchivos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.verToolStripMenuItem});
+            this.menuarchivos.Location = new System.Drawing.Point(0, 0);
+            this.menuarchivos.Name = "menuarchivos";
+            this.menuarchivos.Size = new System.Drawing.Size(1243, 24);
+            this.menuarchivos.TabIndex = 9;
+            this.menuarchivos.Text = "menuStrip1";
+            this.menuarchivos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuarchivos_MouseDown);
             // 
-            // tabcalculo
+            // archivoToolStripMenuItem
             // 
-            this.tabcalculo.Controls.Add(this.label6);
-            this.tabcalculo.Controls.Add(this.comboBox1);
-            this.tabcalculo.Controls.Add(this.groupplanilla);
-            this.tabcalculo.Controls.Add(this.dgvplanilla1);
-            this.tabcalculo.Controls.Add(this.label5);
-            this.tabcalculo.Controls.Add(this.label4);
-            this.tabcalculo.Controls.Add(this.dgvplanilla2);
-            this.tabcalculo.Controls.Add(this.button1);
-            this.tabcalculo.Location = new System.Drawing.Point(4, 30);
-            this.tabcalculo.Name = "tabcalculo";
-            this.tabcalculo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabcalculo.Size = new System.Drawing.Size(1235, 495);
-            this.tabcalculo.TabIndex = 0;
-            this.tabcalculo.Text = "CALCULO DE PLANILLA";
-            this.tabcalculo.UseVisualStyleBackColor = true;
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtnsalir});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "&Archivo";
+            // 
+            // tbtnsalir
+            // 
+            this.tbtnsalir.Name = "tbtnsalir";
+            this.tbtnsalir.Size = new System.Drawing.Size(180, 22);
+            this.tbtnsalir.Text = "&Salir";
+            this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
+            // 
+            // verToolStripMenuItem
+            // 
+            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tollistaconceptos,
+            this.tolbarraerramientas,
+            this.toolStripMenuItem3});
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.verToolStripMenuItem.Text = "&Ver";
+            // 
+            // tollistaconceptos
+            // 
+            this.tollistaconceptos.CheckOnClick = true;
+            this.tollistaconceptos.Name = "tollistaconceptos";
+            this.tollistaconceptos.Size = new System.Drawing.Size(189, 22);
+            this.tollistaconceptos.Text = "&Lista de conceptos";
+            this.tollistaconceptos.Click += new System.EventHandler(this.tollistaconceptos_Click);
+            // 
+            // tolbarraerramientas
+            // 
+            this.tolbarraerramientas.CheckOnClick = true;
+            this.tolbarraerramientas.Name = "tolbarraerramientas";
+            this.tolbarraerramientas.Size = new System.Drawing.Size(189, 22);
+            this.tolbarraerramientas.Text = "&Barra de herramientas";
+            this.tolbarraerramientas.Click += new System.EventHandler(this.tolbarraerramientas_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.CheckOnClick = true;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(189, 22);
+            this.toolStripMenuItem3.Text = "tool";
+            // 
+            // toolbotones
+            // 
+            this.toolbotones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2});
+            this.toolbotones.Location = new System.Drawing.Point(0, 24);
+            this.toolbotones.Name = "toolbotones";
+            this.toolbotones.Size = new System.Drawing.Size(1243, 25);
+            this.toolbotones.TabIndex = 10;
+            this.toolbotones.Text = "toolStrip1";
+            this.toolbotones.Visible = false;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // panelplanilla
+            // 
+            this.panelplanilla.BackColor = System.Drawing.Color.White;
+            this.panelplanilla.Controls.Add(this.grobconceptos);
+            this.panelplanilla.Controls.Add(this.button1);
+            this.panelplanilla.Controls.Add(this.label6);
+            this.panelplanilla.Controls.Add(this.comboBox1);
+            this.panelplanilla.Controls.Add(this.groupplanilla);
+            this.panelplanilla.Controls.Add(this.dgvplanilla1);
+            this.panelplanilla.Controls.Add(this.label5);
+            this.panelplanilla.Controls.Add(this.label4);
+            this.panelplanilla.Controls.Add(this.dgvplanilla2);
+            this.panelplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelplanilla.Location = new System.Drawing.Point(0, 24);
+            this.panelplanilla.Name = "panelplanilla";
+            this.panelplanilla.Size = new System.Drawing.Size(1243, 601);
+            this.panelplanilla.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(117, 10);
+            this.label6.Location = new System.Drawing.Point(85, 16);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 17);
-            this.label6.TabIndex = 6;
+            this.label6.TabIndex = 13;
             this.label6.Text = "Marzo - 2020";
             // 
             // comboBox1
@@ -198,10 +315,10 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Planilla Mensual"});
-            this.comboBox1.Location = new System.Drawing.Point(120, 36);
+            this.comboBox1.Location = new System.Drawing.Point(113, 49);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 25);
-            this.comboBox1.TabIndex = 5;
+            this.comboBox1.TabIndex = 12;
             // 
             // groupplanilla
             // 
@@ -211,10 +328,10 @@
             this.groupplanilla.Controls.Add(this.txtal);
             this.groupplanilla.Controls.Add(this.txtdel);
             this.groupplanilla.Controls.Add(this.txtpago);
-            this.groupplanilla.Location = new System.Drawing.Point(2, 67);
+            this.groupplanilla.Location = new System.Drawing.Point(3, 80);
             this.groupplanilla.Name = "groupplanilla";
-            this.groupplanilla.Size = new System.Drawing.Size(677, 53);
-            this.groupplanilla.TabIndex = 3;
+            this.groupplanilla.Size = new System.Drawing.Size(612, 53);
+            this.groupplanilla.TabIndex = 9;
             this.groupplanilla.TabStop = false;
             // 
             // label3
@@ -222,7 +339,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(482, 23);
+            this.label3.Location = new System.Drawing.Point(462, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 17);
             this.label3.TabIndex = 4;
@@ -233,7 +350,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(291, 23);
+            this.label2.Location = new System.Drawing.Point(271, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 4;
@@ -255,7 +372,7 @@
             this.txtal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtal.Location = new System.Drawing.Point(514, 23);
+            this.txtal.Location = new System.Drawing.Point(494, 25);
             this.txtal.Mask = "00 - 00 - 0000";
             this.txtal.Name = "txtal";
             this.txtal.Size = new System.Drawing.Size(109, 15);
@@ -268,7 +385,7 @@
             this.txtdel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtdel.Location = new System.Drawing.Point(331, 23);
+            this.txtdel.Location = new System.Drawing.Point(311, 25);
             this.txtdel.Mask = "00 - 00 - 0000";
             this.txtdel.Name = "txtdel";
             this.txtdel.Size = new System.Drawing.Size(109, 15);
@@ -291,12 +408,13 @@
             // dgvplanilla1
             // 
             this.dgvplanilla1.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
             this.dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvplanilla1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvplanilla1.BackgroundColor = System.Drawing.Color.White;
             this.dgvplanilla1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvplanilla1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -374,36 +492,29 @@
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(40)))), ((int)(((byte)(31)))));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(30)))), ((int)(((byte)(22)))));
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvplanilla1.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvplanilla1.EnableHeadersVisualStyles = false;
-            this.dgvplanilla1.Location = new System.Drawing.Point(2, 159);
+            this.dgvplanilla1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgvplanilla1.Location = new System.Drawing.Point(3, 172);
             this.dgvplanilla1.Name = "dgvplanilla1";
             this.dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
             dataGridViewCellStyle13.NullValue = null;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvplanilla1.RowHeadersWidth = 25;
             this.dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvplanilla1.Size = new System.Drawing.Size(1229, 290);
-            this.dgvplanilla1.TabIndex = 1;
-            this.dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
-            this.dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellContentClick);
-            this.dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEndEdit);
-            this.dgvplanilla1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellEnter);
-            this.dgvplanilla1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvplanilla1_CellFormatting);
-            this.dgvplanilla1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellMouseLeave);
-            this.dgvplanilla1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvplanilla1_CellStateChanged);
+            this.dgvplanilla1.Size = new System.Drawing.Size(1231, 334);
+            this.dgvplanilla1.TabIndex = 8;
             this.dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvplanilla1_Scroll);
             // 
             // id_contrato
@@ -879,10 +990,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(8, 40);
+            this.label5.Location = new System.Drawing.Point(5, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 17);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 10;
             this.label5.Text = "Tipo de Planilla :";
             // 
             // label4
@@ -890,10 +1001,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(8, 8);
+            this.label4.Location = new System.Drawing.Point(3, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 17);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
             // 
             // dgvplanilla2
@@ -935,15 +1046,16 @@
             this.descuentoafp,
             this.fin});
             this.dgvplanilla2.EnableHeadersVisualStyles = false;
-            this.dgvplanilla2.Location = new System.Drawing.Point(2, 126);
+            this.dgvplanilla2.GridColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.dgvplanilla2.Location = new System.Drawing.Point(3, 139);
             this.dgvplanilla2.Name = "dgvplanilla2";
             this.dgvplanilla2.ReadOnly = true;
             this.dgvplanilla2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvplanilla2.RowHeadersWidth = 25;
             this.dgvplanilla2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvplanilla2.Size = new System.Drawing.Size(1229, 39);
-            this.dgvplanilla2.TabIndex = 0;
+            this.dgvplanilla2.Size = new System.Drawing.Size(1231, 39);
+            this.dgvplanilla2.TabIndex = 7;
             // 
             // valor1
             // 
@@ -1059,7 +1171,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(595, 455);
+            this.button1.Location = new System.Drawing.Point(180, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -1067,108 +1179,269 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tabplanilla
+            // grobconceptos
             // 
-            this.tabplanilla.Controls.Add(this.tabcalculo);
-            this.tabplanilla.Controls.Add(this.tabsubsidio);
-            this.tabplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabplanilla.ItemSize = new System.Drawing.Size(132, 26);
-            this.tabplanilla.Location = new System.Drawing.Point(0, 24);
-            this.tabplanilla.Multiline = true;
-            this.tabplanilla.Name = "tabplanilla";
-            this.tabplanilla.Padding = new System.Drawing.Point(30, 3);
-            this.tabplanilla.SelectedIndex = 0;
-            this.tabplanilla.Size = new System.Drawing.Size(1243, 529);
-            this.tabplanilla.TabIndex = 8;
-            this.tabplanilla.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tabplanilla_MouseDown);
+            this.grobconceptos.Controls.Add(this.checkBox20);
+            this.grobconceptos.Controls.Add(this.checkBox19);
+            this.grobconceptos.Controls.Add(this.checkBox16);
+            this.grobconceptos.Controls.Add(this.checkBox15);
+            this.grobconceptos.Controls.Add(this.checkBox12);
+            this.grobconceptos.Controls.Add(this.checkBox11);
+            this.grobconceptos.Controls.Add(this.checkBox18);
+            this.grobconceptos.Controls.Add(this.checkBox8);
+            this.grobconceptos.Controls.Add(this.checkBox14);
+            this.grobconceptos.Controls.Add(this.checkBox7);
+            this.grobconceptos.Controls.Add(this.checkBox10);
+            this.grobconceptos.Controls.Add(this.checkBox17);
+            this.grobconceptos.Controls.Add(this.checkBox13);
+            this.grobconceptos.Controls.Add(this.checkBox6);
+            this.grobconceptos.Controls.Add(this.checkBox9);
+            this.grobconceptos.Controls.Add(this.checkBox3);
+            this.grobconceptos.Controls.Add(this.checkBox5);
+            this.grobconceptos.Controls.Add(this.checkBox2);
+            this.grobconceptos.Controls.Add(this.checkBox1);
+            this.grobconceptos.Location = new System.Drawing.Point(648, 16);
+            this.grobconceptos.Name = "grobconceptos";
+            this.grobconceptos.Size = new System.Drawing.Size(583, 117);
+            this.grobconceptos.TabIndex = 14;
+            this.grobconceptos.TabStop = false;
+            this.grobconceptos.Text = "Lista de conceptos";
+            this.grobconceptos.Visible = false;
             // 
-            // menuStrip1
+            // checkBox1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.verToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1243, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
+            this.checkBox1.Location = new System.Drawing.Point(6, 19);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(104, 34);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Horas extras diurnas";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // archivoToolStripMenuItem
+            // checkBox2
             // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbtnsalir});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "&Archivo";
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(6, 62);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "checkBox1";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // tbtnsalir
+            // checkBox3
             // 
-            this.tbtnsalir.Name = "tbtnsalir";
-            this.tbtnsalir.Size = new System.Drawing.Size(96, 22);
-            this.tbtnsalir.Text = "&Salir";
-            this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(6, 85);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(80, 17);
+            this.checkBox3.TabIndex = 0;
+            this.checkBox3.Text = "checkBox1";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // verToolStripMenuItem
+            // checkBox5
             // 
-            this.verToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-            this.verToolStripMenuItem.Text = "&Ver";
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(111, 19);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(80, 17);
+            this.checkBox5.TabIndex = 0;
+            this.checkBox5.Text = "checkBox1";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // toolStripMenuItem1
+            // checkBox6
             // 
-            this.toolStripMenuItem1.CheckOnClick = true;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(111, 42);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(80, 17);
+            this.checkBox6.TabIndex = 0;
+            this.checkBox6.Text = "checkBox1";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // toolStripMenuItem2
+            // checkBox7
             // 
-            this.toolStripMenuItem2.CheckOnClick = true;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Location = new System.Drawing.Point(111, 64);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(80, 17);
+            this.checkBox7.TabIndex = 0;
+            this.checkBox7.Text = "checkBox1";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
-            // toolStripMenuItem3
+            // checkBox8
             // 
-            this.toolStripMenuItem3.CheckOnClick = true;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem3.Text = "toolStripMenuItem3";
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Location = new System.Drawing.Point(111, 87);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(80, 17);
+            this.checkBox8.TabIndex = 0;
+            this.checkBox8.Text = "checkBox1";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Location = new System.Drawing.Point(225, 17);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(80, 17);
+            this.checkBox9.TabIndex = 0;
+            this.checkBox9.Text = "checkBox1";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Location = new System.Drawing.Point(225, 40);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(80, 17);
+            this.checkBox10.TabIndex = 0;
+            this.checkBox10.Text = "checkBox1";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Location = new System.Drawing.Point(225, 62);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(80, 17);
+            this.checkBox11.TabIndex = 0;
+            this.checkBox11.Text = "checkBox1";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Location = new System.Drawing.Point(225, 85);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(80, 17);
+            this.checkBox12.TabIndex = 0;
+            this.checkBox12.Text = "checkBox1";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Location = new System.Drawing.Point(334, 17);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(80, 17);
+            this.checkBox13.TabIndex = 0;
+            this.checkBox13.Text = "checkBox1";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Location = new System.Drawing.Point(334, 40);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(80, 17);
+            this.checkBox14.TabIndex = 0;
+            this.checkBox14.Text = "checkBox1";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Location = new System.Drawing.Point(334, 62);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(80, 17);
+            this.checkBox15.TabIndex = 0;
+            this.checkBox15.Text = "checkBox1";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Location = new System.Drawing.Point(334, 85);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(80, 17);
+            this.checkBox16.TabIndex = 0;
+            this.checkBox16.Text = "checkBox1";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.Location = new System.Drawing.Point(442, 17);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(80, 17);
+            this.checkBox17.TabIndex = 0;
+            this.checkBox17.Text = "checkBox1";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.Location = new System.Drawing.Point(442, 40);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(80, 17);
+            this.checkBox18.TabIndex = 0;
+            this.checkBox18.Text = "checkBox1";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.Location = new System.Drawing.Point(442, 62);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(80, 17);
+            this.checkBox19.TabIndex = 0;
+            this.checkBox19.Text = "checkBox1";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.Location = new System.Drawing.Point(442, 85);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(80, 17);
+            this.checkBox20.TabIndex = 0;
+            this.checkBox20.Text = "checkBox1";
+            this.checkBox20.UseVisualStyleBackColor = true;
             // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 553);
-            this.Controls.Add(this.tabplanilla);
-            this.Controls.Add(this.menuStrip1);
+            this.ClientSize = new System.Drawing.Size(1243, 625);
+            this.Controls.Add(this.panelplanilla);
+            this.Controls.Add(this.toolbotones);
+            this.Controls.Add(this.menuarchivos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuarchivos;
             this.Name = "FrmPlanillaMensual2";
             this.Text = "PlanillaMensual";
             this.Load += new System.EventHandler(this.FrmPlanillaMensual_Load);
-            this.tabcalculo.ResumeLayout(false);
-            this.tabcalculo.PerformLayout();
+            this.menuarchivos.ResumeLayout(false);
+            this.menuarchivos.PerformLayout();
+            this.toolbotones.ResumeLayout(false);
+            this.toolbotones.PerformLayout();
+            this.panelplanilla.ResumeLayout(false);
+            this.panelplanilla.PerformLayout();
             this.groupplanilla.ResumeLayout(false);
             this.groupplanilla.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla2)).EndInit();
-            this.tabplanilla.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.grobconceptos.ResumeLayout(false);
+            this.grobconceptos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabPage tabsubsidio;
-        private System.Windows.Forms.TabPage tabcalculo;
+        private System.Windows.Forms.MenuStrip menuarchivos;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tbtnsalir;
+        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tollistaconceptos;
+        private System.Windows.Forms.ToolStripMenuItem tolbarraerramientas;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStrip toolbotones;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.Panel panelplanilla;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupplanilla;
@@ -1178,33 +1451,7 @@
         private System.Windows.Forms.MaskedTextBox txtal;
         private System.Windows.Forms.MaskedTextBox txtdel;
         private System.Windows.Forms.MaskedTextBox txtpago;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvplanilla2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TabControl tabplanilla;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tbtnsalir;
-        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         public System.Windows.Forms.DataGridView dgvplanilla1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subsi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nosubsi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn truncas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_contrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_planilla_manto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -1267,5 +1514,42 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn topagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn aportsalud;
         private System.Windows.Forms.DataGridViewTextBoxColumn transporte;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvplanilla2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nosubsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn truncas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin;
+        private System.Windows.Forms.GroupBox grobconceptos;
+        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox18;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

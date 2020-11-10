@@ -90,6 +90,7 @@ namespace Datos.Repositories
         //SHOW DATA
         public DataTable GetData(Dusuario entiti)
         {
+            DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
@@ -102,15 +103,15 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
                         da.Dispose();
-                        return dt;
+                        
                     }
                 }
-
             }
+            return dt;
         }
 
 

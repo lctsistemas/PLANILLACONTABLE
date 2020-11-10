@@ -57,10 +57,7 @@ namespace Negocio.Models
             return mensaje;
         }
 
-        public int GetCodigo()
-        {
-            return new KBanco().GetCodigo();
-        }
+       
         public void Dispose()
         {
             // throw new NotImplementedException();
