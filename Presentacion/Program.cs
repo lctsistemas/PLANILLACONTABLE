@@ -17,11 +17,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new RegimenSalud());
-=======
             Application.Run(new frmempresa());
->>>>>>> Carlos
 
         }
     }
