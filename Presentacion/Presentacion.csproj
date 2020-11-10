@@ -268,6 +268,12 @@
     <Compile Include="Vista\TipoContrato.Designer.cs">
       <DependentUpon>TipoContrato.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\TipoContrato2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\TipoContrato2.Designer.cs">
+      <DependentUpon>TipoContrato2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\TipoContrato.resx">
       <DependentUpon>TipoContrato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\TipoContrato2.resx">
+      <DependentUpon>TipoContrato2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Usuario.resx">
       <DependentUpon>Usuario.cs</DependentUpon>

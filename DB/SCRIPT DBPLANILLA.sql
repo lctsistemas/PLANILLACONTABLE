@@ -276,6 +276,7 @@ tope_horario_nocturno decimal(8,2)
 )
 GO
 
+
 CREATE TABLE tipo_planilla(
 idtipo_planilla int not null,
 nombre_planilla varchar(30) 

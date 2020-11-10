@@ -553,7 +553,29 @@ AS
 SELECT id_rol, descrip_rol FROM dbo.Rol ORDER BY id_rol DESC
 GO
 
+<<<<<<< HEAD
+
+
+
+
+--GENERAR CODIGO MESES_MAESTRA
+CREATE PROC SP_GENERAR_MESESMAESTRA
+(@mesesm int output)
+AS BEGIN
+SET @mesesm=(SELECT count(mm.id_meses_maestra) FROM dbo.Meses_maestra mm)
+IF(@mesesm=0)
+	BEGIN
+		SET @mesesm=1		
+	END
+ELSE
+	BEGIN
+		SET @mesesm=(SELECT MAX(mm.id_meses_maestra)+1 FROM dbo.Meses_maestra mm)		
+	END
+END
+GO
+=======
 ---------- PROCEDIMIENTOS GENERAR CODIGO AUTOMATICO ------------
+>>>>>>> Carlos
 
 --GENERAR CODIGO GRATI_MANTO
 CREATE PROC SP_GENERAR_GRATIMANTO
@@ -650,6 +672,29 @@ ELSE
 	END
 END
 GO
+<<<<<<< HEAD
+
+
+--GENERAR CODIGO Tipo Planilla
+CREATE PROC SP_GENERAR_TipoPlanilla
+(@tipoPlan int output)
+AS BEGIN
+SET @tipoPlan=(SELECT count(tp.id_tipo_planilla) FROM dbo.tipo_planilla tp)
+IF(@tipoPlan=0)
+	BEGIN
+		SET @tipoPlan=1		
+	END
+ELSE
+	BEGIN
+		SET @tipoPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM dbo.tipo_planilla tp)
+	END
+END
+GO
+
+
+--GENERAR CODIGO REGIMEN
+=======
+>>>>>>> Carlos
 
 
 
@@ -838,7 +883,7 @@ ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
 AS BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
 	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'	
+	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
 END
 GO
 
