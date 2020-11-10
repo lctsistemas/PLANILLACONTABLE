@@ -3,6 +3,8 @@ using Presentacion.Vista;
 using System;
 using System.Windows.Forms;
 
+using Presentacion.Subvista;
+
 namespace Presentacion
 {
     static class Program
@@ -15,7 +17,11 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new RegimenSalud());
+=======
+            Application.Run(new frmempresa());
+>>>>>>> Carlos
 
         }
     }

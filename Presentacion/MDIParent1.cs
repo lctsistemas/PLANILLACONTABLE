@@ -6,12 +6,12 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class Subsidios : Form
+    public partial class frmMDIParent : Form
     {
         private int childFormNumber = 0;
         String result;
         private NSubsidios ns = new NSubsidios();
-        public Subsidios()
+        public frmMDIParent()
         {
             InitializeComponent();
         }
@@ -147,8 +147,7 @@ namespace Presentacion
 
         private void Subsidios_Load(object sender, EventArgs e)
         {
-            ShowSubsidio();
-            Tabla();
+            
         }
 
         private void btnguardar_Click(object sender, EventArgs e)

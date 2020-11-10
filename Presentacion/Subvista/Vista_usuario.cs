@@ -10,11 +10,22 @@ namespace Presentacion.Subvista
     public partial class frmvista_usuario : Form
     {
         Nusuario nu;
+        private static frmvista_usuario _instance;
         public frmvista_usuario()
         {
             InitializeComponent();
+            Tooltip.Title(txtbuscar, "Buscar por nombre o código", true);
             Vista_user();
             Tabla();
+        }
+
+        //METODO PARA ACCEDER CON OTRO FORM, INSTANCIA.
+        public static frmvista_usuario Getinstance()
+        {
+            if (_instance == null)
+                _instance = new frmvista_usuario();
+
+            return _instance;
         }
 
 
@@ -59,7 +70,7 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
-            Tooltip.Title(txtbuscar, "Buscar por nombre usuario", true);
+            
             txtbuscar.Focus();
         }
 
@@ -82,7 +93,20 @@ namespace Presentacion.Subvista
 
         private void frmvista_usuario_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Dispose();
+            _instance = null;
+        }
+
+      
+        private void btncerrar_MouseMove(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+            btncerrar.ForeColor = Color.White;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Transparent;
+            btncerrar.ForeColor = Color.Crimson;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -92,12 +116,7 @@ namespace Presentacion.Subvista
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.Crimson;
-        }
 
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.Transparent;
         }
     }
 }

@@ -173,10 +173,7 @@ namespace Negocio.Models
         {
             //throw new NotImplementedException();
         }
-        public int GetCodigo()
-        {
-            return new KPlanilla().GetCodigo();
-        }
+       
 
     }
 }

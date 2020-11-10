@@ -11,8 +11,7 @@ namespace Presentacion.Vista
     public partial class Banco : Form
     {
         String result;
-        private Int32 codigoban;
-
+        
         private NBanco nbanco = new NBanco();
         public Banco()
         {
@@ -42,17 +41,7 @@ namespace Presentacion.Vista
             else
                 return false;
         }
-
-
-        public void generarCodigo()
-        {
-            codigoban = 0;
-
-            using (nbanco)
-            {
-                codigoban = nbanco.GetCodigo();
-            }
-        }
+        
 
         private void ShowBanco()
         {

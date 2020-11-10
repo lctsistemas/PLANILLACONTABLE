@@ -298,29 +298,52 @@ ELSE IF(EXISTS(SELECT codigo_sucursal FROM Sucursal WHERE codigo_sucursal=@cod_e
 	END
 ELSE
 	BEGIN
-		INSERT INTO dbo.Empresa_maestra(razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
-		VALUES(@razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
-		set @mesage='¡Registro Exitosamente!'
+	DECLARE @codigo int
+	SET @codigo=(SELECT count(epm.id_em_maestra) FROM dbo.Empresa_maestra epm)
+		IF(@codigo=0)
+			SET @codigo=1	
+		ELSE
+			SET @codigo=(SELECT MAX(epm.id_em_maestra)+1 FROM dbo.Empresa_maestra epm)	
+
+		INSERT INTO dbo.Empresa_maestra(id_em_maestra, razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
+		VALUES(@codigo, @razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
+		set @mesage='¡Se registro Exitosamente!'
 	END
 END
 GO
 
-CREATE PROC SP_INSERT_EMPRESA
+--SELECT * FROM DBO.Empresa_maestra
+
+ALTER PROC SP_INSERT_EMPRESA
 @cod_empresa varchar(8),
 @id_usuario int
 AS BEGIN
-INSERT INTO dbo.Empresa(codigo_empresa,id_em_maestra,id_usuario)VALUES
-(@cod_empresa,(SELECT TOP(1)id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_usuario)		
+DECLARE @cod_emp int
+SET @cod_emp=(SELECT count(emp.id_empresa) FROM dbo.Empresa emp)
+IF(@cod_emp=0)
+	SET @cod_emp=1	
+ELSE
+	SET @cod_emp=(SELECT MAX(emp.id_empresa)+1 FROM dbo.Empresa emp)
+	
+INSERT INTO dbo.Empresa(id_empresa ,codigo_empresa,id_em_maestra,id_usuario)VALUES
+(@cod_emp ,@cod_empresa,(SELECT TOP(1)id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_usuario)		
 END
 GO
 
 
-CREATE PROC SP_INSERT_SUCURSAL
+ALTER PROC SP_INSERT_SUCURSAL
 @cod_sucursal varchar(8),
 @id_empresa int
 AS BEGIN
-INSERT INTO dbo.Sucursal(codigo_sucursal,id_em_maestra,id_empresa)VALUES
-(@cod_sucursal,(SELECT TOP(1) id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_empresa)		
+DECLARE @cod_sucur int
+SET @cod_sucur=(SELECT count(suc.id_sucursal) FROM dbo.Sucursal suc)
+IF(@cod_sucur=0)
+	SET @cod_sucur=1	
+ELSE
+	SET @cod_sucur=(SELECT MAX(suc.id_sucursal)+1 FROM dbo.Sucursal suc)
+
+INSERT INTO dbo.Sucursal(id_sucursal ,codigo_sucursal,id_em_maestra,id_empresa)VALUES
+(@cod_sucur ,@cod_sucursal,(SELECT TOP(1) id_em_maestra FROM dbo.Empresa_maestra ORDER BY id_em_maestra DESC),@id_empresa)		
 END
 GO
 
@@ -362,21 +385,23 @@ END
 GO
 
 
-CREATE PROC SP_REMOVE_EMPRESA
+ALTER PROC SP_REMOVE_EMPRESA
 @id_maestra int,
 @mesage varchar(50) OUTPUT
 AS BEGIN	
-	IF(EXISTS(SELECT * FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra WHERE em.id_em_maestra=@id_maestra))
+	IF(EXISTS(SELECT em.id_em_maestra FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra
+	WHERE em.id_em_maestra=@id_maestra))
 		BEGIN
-			SET @mesage ='ACCESO DENEGADO'
+			SET @mesage ='Acceso denagado, Empresa tiene colaboradores.'
 		END
 	ELSE
 		BEGIN
 			UPDATE dbo.Empresa_maestra SET estado_eliminado='ANULADO' WHERE id_em_maestra=@id_maestra
-			SET @mesage='EMPRESA ELIMINADO'
+			SET @mesage='¡Anulado!'
 		END
 END
 GO
+
 
 
 CREATE PROC SP_REMOVE_SUCURSAL
@@ -398,7 +423,7 @@ GO
 
 ALTER PROC SP_SHOW_EMPRESA
 AS BEGIN
-SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social,em.localidad,
+SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social, em.localidad,
 direccion, domicilio_fiscal, em.ruc, em.regimen, u.referencia
 FROM dbo.Empresa_maestra em right join dbo.Empresa e on em.id_em_maestra=e.id_em_maestra join dbo.Usuario u 
 on e.id_usuario=u.id_usuario WHERE em.estado_eliminado ='NO ANULADO' ORDER BY e.id_empresa DESC
@@ -480,54 +505,55 @@ GO
 
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario, u.referencia, u.contrasena, u.id_rol, r.rol FROM 
+SELECT u.id_usuario, u.codigo_usuario, u.referencia, u.contrasena, u.id_rol, r.descrip_rol FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
 
 
 /*     PROCEDIMIENTO ROL     */
-CREATE PROC SP_INSERT_ROL
+ALTER PROC SP_INSERT_ROL
 (@rol varchar(30))
 AS BEGIN
-INSERT INTO dbo.Rol(rol)VALUES(@rol)
+INSERT INTO dbo.Rol(descrip_rol)VALUES(@rol)
 END
 GO
 
 
-CREATE PROC SP_UPDATE_ROL
+ALTER PROC SP_UPDATE_ROL
 (@rol varchar(30),
 @idrol int)
 AS BEGIN
-UPDATE dbo.Rol SET rol=@rol WHERE id_rol=@idrol
+UPDATE dbo.Rol SET descrip_rol=@rol WHERE id_rol=@idrol
 END
 GO
 
 
-CREATE PROC SP_REMOVE_ROL
+ALTER PROC SP_REMOVE_ROL
 (@idrol int,
 @mesage varchar(100) output)
 AS BEGIN
 IF(EXISTS(SELECT u.id_rol FROM dbo.Rol r join dbo.Usuario u on r.id_rol=u.id_rol WHERE R.id_rol=@idrol))
 BEGIN
 	DECLARE @nom varchar(20)
-	SET @nom= (select r.rol from Rol r where r.id_rol=@idrol)
-	SET @mesage='ROL ( '+@nom+' ) ESTA EN USO'
+	SET @nom= (select r.descrip_rol from Rol r where r.id_rol=@idrol)
+	SET @mesage='Rol ( '+@nom+' ) esta en uso.'
 END
 ELSE
 BEGIN
 	DELETE FROM dbo.Rol WHERE id_rol=@idrol
-	SET @mesage='ROL ELIMINADO'
+	SET @mesage='¡Rol eliminado!'
 END
 END
 GO
 
 
-CREATE PROC SP_SHOW_ROL
+ALTER PROC SP_SHOW_ROL
 AS
-SELECT id_rol, rol FROM dbo.Rol ORDER BY id_rol DESC
+SELECT id_rol, descrip_rol FROM dbo.Rol ORDER BY id_rol DESC
 GO
 
+<<<<<<< HEAD
 
 
 
@@ -547,6 +573,9 @@ ELSE
 	END
 END
 GO
+=======
+---------- PROCEDIMIENTOS GENERAR CODIGO AUTOMATICO ------------
+>>>>>>> Carlos
 
 --GENERAR CODIGO GRATI_MANTO
 CREATE PROC SP_GENERAR_GRATIMANTO
@@ -643,6 +672,7 @@ ELSE
 	END
 END
 GO
+<<<<<<< HEAD
 
 
 --GENERAR CODIGO Tipo Planilla
@@ -663,31 +693,10 @@ GO
 
 
 --GENERAR CODIGO REGIMEN
+=======
+>>>>>>> Carlos
 
-CREATE PROC SP_GENERAR_REGIMEN
-(@regimen int output)
-AS BEGIN
-SET @regimen=(SELECT count(r.codigo_regimen) FROM RegimenPensionario r)
-IF(@regimen=0)
-	BEGIN
-		SET @regimen=1
-	END
-ELSE
-	BEGIN
-		SET @regimen=(SELECT MAX(r.codigo_regimen)+1 FROM dbo.RegimenPensionario r)
-	END
-END
-GO
 
-----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-CREATE PROC SP_EMPR
-AS BEGIN
-SELECT e.id_em_maestra,em.razon_social
-FROM Empresa e
-INNER JOIN Empresa_maestra em
-on(em.id_em_maestra=e.id_em_maestra)
-END
-GO
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
 alter PROC SP_REG_SALUD		--no existe proce
@@ -730,7 +739,7 @@ END;
 GO
 
 --PROCEDIMENTO PARA ELIMINAR BANCO
-CREATE PROC SP_DEL_BANCO(
+ALTER PROC SP_DEL_BANCO(
 @id_banco int,
 @message varchar(100) output
 )
@@ -744,7 +753,7 @@ IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(c.id_banco=b.id_banc
 ELSE
 	BEGIN 
 		DELETE from Banco where id_banco=@id_banco
-		SET @message='EL BANCO FUE ELIMINADO'
+		SET @message='¡Eliminado!'
 	END
 END
 GO
@@ -758,7 +767,7 @@ GO
 
 
 --PROCEDIMIENTO PARA REGISTRAR TIPO CONTRATO
-alter PROC SP_INSERT_TIP_CONT(
+ALTER PROC SP_INSERT_TIP_CONT(
 --@id_tip_cont int,
 @tiempo_contrato varchar(30),
 @mensaje varchar(100) output
@@ -771,14 +780,12 @@ DECLARE @Tipocont int
 	ELSE
 		SET @Tipocont=(SELECT MAX(t.id_tipocontrato)+1 FROM Tipo_contrato t)
 INSERT INTO Tipo_contrato(id_tipocontrato, tiempo_contrato) VALUES(@Tipocont,@tiempo_contrato)
-SET @mensaje= 'TIPO DE CONTRATO REGISTRADO CORRECTAMENTE'
+SET @mensaje= '¡Registrado!'
 END
 GO
 
---sp_rename 'Tipo_contrato.tiempo_contato','tiempo_contrato'
-
---PROCEDIMIENTO PARA ACTUALIZAR TIPO CONTRATO 
-alter PROC SP_UPDATE_TIP_CONT(
+--PROCEDIMIENTO PARA ACTUALIZAR TIPO CONTRATO
+ALTER PROC SP_UPDATE_TIP_CONT(
 @id_tip_cont int,
 @tipo_contrato varchar(30)
 )
@@ -798,11 +805,11 @@ GO
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
  
  --PROCEDIMIENTO LOGIN USUARIO
- CREATE PROC SP_LOGIN_USUARIO
+ ALTER PROC SP_LOGIN_USUARIO
  @user varchar(50),
  @pass varchar(10)
  AS BEGIN
- select u.id_usuario, u.codigo_usuario,u.referencia,r.rol from Usuario u join Rol r on u.id_rol=r.id_rol 
+ select u.id_usuario, u.codigo_usuario,u.referencia,r.descrip_rol from Usuario u join Rol r on u.id_rol=r.id_rol 
  WHERE (u.codigo_usuario=@user or referencia=@user) and contrasena=@pass
  END
  GO
@@ -881,7 +888,6 @@ END
 GO
 
 
-GO
 ALTER PROC SP_INSERT_COMISIONES
 @codigo_regimen int,
 @comision decimal(6,2),
@@ -916,11 +922,6 @@ AS BEGIN
 	UPDATE dbo.ComisionesPension SET comision=@comision, saldo=@saldo, seguro=@seguro, 
 	aporte=@aporte, tope=@tope WHERE idcomision=@idcomision
 END
-GO
-
-go
-select * from dbo.ComisionesPension --where idcomision between 17 and 24 and idmes= 10
-delete from dbo.ComisionesPension where idmes= 10 or idmes =11
 GO
 
 
@@ -1065,24 +1066,24 @@ GO
 
 
 --- SCRIPT SUBSIDIOS
-CREATE PROC SP_SHOW_DETSUBSIDIOS 
+ALTER PROC SP_SHOW_DETSUBSIDIOS 
 @idmes int,
 @idperiodo int,
 @idempleado int,
 @tipoSubsidio varchar(30)
 AS BEGIN
 SELECT d.id_det_subsidios, s.cod_subsidio, CONCAT(s.cod_subsidio,' - ', s.tipo_subsidio,' ', s.descripcion_subsidio) 
-AS t_supension, d.dias FROM DET_SUBSIDIOS d join SUBSIDIOS s on d.id_subsidios=s.id_subsidios 
+AS t_supension, d.dias FROM Det_subsidios d join Subsidios s on d.id_subsidios=s.id_subsidios 
 WHERE (d.id_periodo=@idperiodo and d.id_mes=@idmes) and s.tipo_subsidio= @tipoSubsidio and d.id_empleado= @idempleado
 END
 GO
 
 
 --MOSTRAR EN COMBOBOX SUBSIDIOS
-create PROC SP_SHOW_SUBSIDIOS 
+ALTER PROC SP_SHOW_SUBSIDIOS 
 @tipo_subsidio varchar(30)
 AS BEGIN
-SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM SUBSIDIOS s 
+SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM Subsidios s 
 WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
@@ -1097,12 +1098,12 @@ ALTER PROC SP_INSERT_SUBSIDIOS
 @dias int
 AS BEGIN
 DECLARE @subsidio int
-SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.DET_SUBSIDIOS ds)
+SET @subsidio=(SELECT count(ds.id_det_subsidios) FROM dbo.Det_subsidios ds)
 IF(@subsidio=0)	
 	SET @subsidio=1		
 ELSE
-	SET @subsidio=(SELECT MAX(ds.id_det_subsidios) + 1 FROM dbo.DET_SUBSIDIOS ds)
-INSERT INTO DET_SUBSIDIOS(id_det_subsidios, id_subsidios, id_empleado, id_mes, id_periodo, dias)
+	SET @subsidio=(SELECT MAX(ds.id_det_subsidios) + 1 FROM dbo.Det_subsidios ds)
+INSERT INTO Det_subsidios(id_det_subsidios, id_subsidios, id_empleado, id_mes, id_periodo, dias)
 VALUES(@subsidio, @id_subsidios, @id_empleado, @id_mes, @id_periodo, @dias)
 END
 GO
@@ -1111,14 +1112,14 @@ ALTER PROC SP_UPDATE_SUBSIDIOS
 @dias int,
 @id_detSubsidios int
 AS BEGIN
-UPDATE dbo.DET_SUBSIDIOS SET dias=@dias WHERE id_det_subsidios=@id_detSubsidios
+UPDATE dbo.Det_subsidios SET dias=@dias WHERE id_det_subsidios=@id_detSubsidios
 END
 GO
 
-CREATE PROC SP_DELETE_SUBSIDIOS
+ALTER PROC SP_DELETE_SUBSIDIOS
 @id_detSubsidios int
 AS BEGIN
-DELETE FROM dbo.DET_SUBSIDIOS WHERE id_det_subsidios=@id_detSubsidios
+DELETE FROM dbo.Det_subsidios WHERE id_det_subsidios=@id_detSubsidios
 END
 GO
 ------------------------------------------------------------------------
@@ -1135,14 +1136,14 @@ ALTER PROC SP_ADD_SUBSIDIOS
 @mensaje varchar(100) output
 AS BEGIN
 DECLARE @subsidio int
-SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.SUBSIDIOS s)
+SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.Subsidios s)
 IF(@subsidio=0)	
 	SET @subsidio=1		
 ELSE
-	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.SUBSIDIOS s)
-INSERT INTO SUBSIDIOS(id_subsidios, cod_subsidio,tipo_suspencion,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.Subsidios s)
+INSERT INTO Subsidios(id_subsidios, cod_subsidio,tipo_suspension,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
 VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, CAST(@descuento AS BIT))
-SET @mensaje= 'SUBSIDIO REGISTRADO CORRECTAMENTE'
+SET @mensaje= '¡Registrado!'
 END
 GO
 
@@ -1156,7 +1157,7 @@ ALTER PROC SP_MODIFY_SUBSIDIOS
 @tipo_subsidio varchar(30),
 @descuento bit
 AS BEGIN
-UPDATE dbo.SUBSIDIOS SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
+UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
                          tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios
 END
 GO
@@ -1165,14 +1166,14 @@ alter PROC SP_BORRAR_SUBSIDIOS
 @id_subsidios int,
 @mensaje varchar(100) output
 AS BEGIN
-DELETE FROM dbo.SUBSIDIOS WHERE id_subsidios=@id_subsidios
+DELETE FROM dbo.Subsidios WHERE id_subsidios=@id_subsidios
 SET @mensaje= 'SUBSIDIO ELIMINADO CORRECTAMENTE'
 END
 GO
 
 ALTER PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
-SELECT id_subsidios, cod_subsidio,tipo_suspencion , descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM SUBSIDIOS 
+SELECT id_subsidios, cod_subsidio,tipo_suspencion , descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END
 GO
 

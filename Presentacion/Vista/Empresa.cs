@@ -108,37 +108,26 @@ namespace Presentacion.Vista
                 ne.razon_social = txtrazon_social.Text.Trim().ToUpper();
                 ne.direccion = txtdireccion.Text.Trim().ToUpper();
                 ne.domicilio = txtdomicilio.Text.Trim().ToUpper();
-                ne.ruc = txtruc.Text.Trim();
-                if (String.IsNullOrWhiteSpace(cboregimen.Text))
-                    ne.regimen = "";
-                else
-                    ne.regimen = cboregimen.SelectedItem.ToString();
+                ne.ruc = txtruc.Text.Trim();               
+                ne.regimen = cboregimen.SelectedItem.ToString();
 
                 ne.localidad = txtlocalidad.Text.Trim().ToUpper();
-                ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();
-                if (!string.IsNullOrEmpty(txtiduser.Text))
-                    ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
-                else
-                    ne.eidusuario = -1;//para poder validar con dataAnotation
+                ne.ecodigo_empresa = txtcodigo_empresa.Text.Trim().ToUpper();             
+                ne.eidusuario = Convert.ToInt32(txtiduser.Text.Trim());
+                            
+                 result = ne.SaveChanges();
 
-                bool valida = new ValidacionDatos(ne).Validate();
-                if (valida)
+                if (result.Contains("¡Codigo"))
                 {
-                    if (string.IsNullOrEmpty(txtiduser.Text))
-                        return;
-
-                    result = ne.SaveChanges();
-                    if (result.Contains("¡Codigo"))
-                    {
-                        Messages.M_error(result);
-                    }
-                    else
-                    {
-                        Messages.M_info(result);
-                        Show_empresa();
-                    }
+                    Messages.M_error(result);
+                }
+                else
+                {
+                    Messages.M_info(result);
+                    Show_empresa();
                 }
             }
+            
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
@@ -149,26 +138,21 @@ namespace Presentacion.Vista
         }
 
         private void btnusuario_Click(object sender, EventArgs e)
-        {
-            //TIENE QUE SER OTRA MANERA ESTO.
-            frmvista_usuario f_vist = new frmvista_usuario();
+        {            
+            frmvista_usuario f_vist = frmvista_usuario.Getinstance();
             this.AddOwnedForm(f_vist);
-            f_vist.FormBorderStyle = FormBorderStyle.None;
-            f_vist.TopLevel = false;//como ventana nivel superior
-            f_vist.Dock = DockStyle.Fill;
-            this.Controls.Add(f_vist);
-            this.Tag = f_vist;//datos sobre el control
-            f_vist.BringToFront();
-            //f_vist.StartPosition = FormStartPosition.CenterParent;
-            f_vist.Show();
+            f_vist.ShowDialog();
+           
+            
         }
 
         private void frmempresa_Load(object sender, EventArgs e)
         {
+            this.linkconsulta_ruc.Enabled = false;
             txtusuario.Enabled = false;
             txtiduser.Visible = false;
             Tooltip.Title(btnusuario, "Seleccione Usuario", true);
-            Tooltip.Title(txtbuscar, "Buscar por Razon Social o Codigo Empresa", true);
+            Tooltip.Title(txtbuscar, "Buscar por Razon Social", true);
             CargarRegimen();
         }
 
@@ -206,7 +190,7 @@ namespace Presentacion.Vista
         {
             if (dgvempresa.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                if (Messages.M_question("¿Desea Eliminar?") == DialogResult.Yes)
+                if (Messages.M_question("¿Desea Anular?") == DialogResult.Yes)
                 {
                     result = "";
                     using (ne)
@@ -214,7 +198,7 @@ namespace Presentacion.Vista
                         ne.state = EntityState.Remover;
                         ne.eidemp_maestra = Convert.ToInt32(dgvempresa.CurrentRow.Cells[3].Value);
                         result = ne.SaveChanges();
-                        if (result.Contains("ACCESO"))
+                        if (result.Contains("Acceso"))
                         {
                             Messages.M_error(result);
                         }
@@ -324,8 +308,7 @@ namespace Presentacion.Vista
 
             txtrazon_social.Text = respuesta.razon_social.ToString();
             txtdomicilio.Text = respuesta.domicilio_fiscal.ToString();
-            mtbfecha.Text = respuesta.fecha_actividad.ToString();
-            condicion.Text= respuesta.contribuyente_condicion.ToString();
+            
         }
     }
 }

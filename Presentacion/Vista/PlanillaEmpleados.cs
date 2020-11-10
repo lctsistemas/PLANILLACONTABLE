@@ -18,8 +18,8 @@ namespace Presentacion.Vista
 
         private void Prueba_Load(object sender, EventArgs e)
         {
-            ShowPlanilla();
-            Tabla();
+            //ShowPlanilla();
+            //Tabla();
         }
 
         private void ShowPlanilla()
@@ -33,7 +33,7 @@ namespace Presentacion.Vista
         }
 
 
-private void btncerrar_Click(object sender, EventArgs e)
+        private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -102,10 +102,10 @@ private void btncerrar_Click(object sender, EventArgs e)
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            Planilla fr = Planilla.GetInstance();
+            FrmPlanilla fr = FrmPlanilla.GetInstance();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
-            ShowPlanilla();
+           // ShowPlanilla();
 
         }
 
