@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabempresa = new System.Windows.Forms.TabControl();
             this.tablista_empresa = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,11 +40,7 @@
             this.dgvempresa = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.tabgestion_empresa = new System.Windows.Forms.TabPage();
-            this.condicion = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.mtbfecha = new System.Windows.Forms.MaskedTextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.ConsultaRuc = new System.Windows.Forms.LinkLabel();
+            this.linkconsulta_ruc = new System.Windows.Forms.LinkLabel();
             this.txtiduser = new System.Windows.Forms.TextBox();
             this.cboregimen = new System.Windows.Forms.ComboBox();
             this.btnusuario = new System.Windows.Forms.Button();
@@ -96,7 +92,7 @@
             this.tabempresa.Padding = new System.Drawing.Point(20, 5);
             this.tabempresa.SelectedIndex = 0;
             this.tabempresa.ShowToolTips = true;
-            this.tabempresa.Size = new System.Drawing.Size(878, 447);
+            this.tabempresa.Size = new System.Drawing.Size(878, 426);
             this.tabempresa.TabIndex = 2;
             // 
             // tablista_empresa
@@ -111,7 +107,7 @@
             this.tablista_empresa.Location = new System.Drawing.Point(4, 31);
             this.tablista_empresa.Name = "tablista_empresa";
             this.tablista_empresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tablista_empresa.Size = new System.Drawing.Size(870, 412);
+            this.tablista_empresa.Size = new System.Drawing.Size(870, 391);
             this.tablista_empresa.TabIndex = 0;
             this.tablista_empresa.Text = "LISTA DE EMPRESAS";
             // 
@@ -141,7 +137,7 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(583, 376);
+            this.lbltotal.Location = new System.Drawing.Point(532, 43);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(47, 17);
             this.lbltotal.TabIndex = 1;
@@ -151,20 +147,20 @@
             // 
             this.dgvempresa.AllowUserToAddRows = false;
             this.dgvempresa.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvempresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvempresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvempresa.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvempresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempresa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvempresa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvempresa.ColumnHeadersHeight = 30;
             this.dgvempresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempresa.EnableHeadersVisualStyles = false;
@@ -172,20 +168,20 @@
             this.dgvempresa.Name = "dgvempresa";
             this.dgvempresa.ReadOnly = true;
             this.dgvempresa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvempresa.RowHeadersWidth = 30;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvempresa.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvempresa.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvempresa.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvempresa.Size = new System.Drawing.Size(858, 292);
+            this.dgvempresa.Size = new System.Drawing.Size(858, 305);
             this.dgvempresa.TabIndex = 1;
             this.dgvempresa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempresa_CellDoubleClick);
             // 
@@ -203,11 +199,7 @@
             // tabgestion_empresa
             // 
             this.tabgestion_empresa.BackColor = System.Drawing.SystemColors.Window;
-            this.tabgestion_empresa.Controls.Add(this.condicion);
-            this.tabgestion_empresa.Controls.Add(this.label13);
-            this.tabgestion_empresa.Controls.Add(this.mtbfecha);
-            this.tabgestion_empresa.Controls.Add(this.label12);
-            this.tabgestion_empresa.Controls.Add(this.ConsultaRuc);
+            this.tabgestion_empresa.Controls.Add(this.linkconsulta_ruc);
             this.tabgestion_empresa.Controls.Add(this.txtiduser);
             this.tabgestion_empresa.Controls.Add(this.cboregimen);
             this.tabgestion_empresa.Controls.Add(this.btnusuario);
@@ -229,65 +221,26 @@
             this.tabgestion_empresa.Location = new System.Drawing.Point(4, 31);
             this.tabgestion_empresa.Name = "tabgestion_empresa";
             this.tabgestion_empresa.Padding = new System.Windows.Forms.Padding(3);
-            this.tabgestion_empresa.Size = new System.Drawing.Size(870, 412);
+            this.tabgestion_empresa.Size = new System.Drawing.Size(870, 391);
             this.tabgestion_empresa.TabIndex = 1;
             this.tabgestion_empresa.Text = "GESTION DE EMPRESAS";
             // 
-            // condicion
+            // linkconsulta_ruc
             // 
-            this.condicion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.condicion.Location = new System.Drawing.Point(187, 169);
-            this.condicion.Name = "condicion";
-            this.condicion.Size = new System.Drawing.Size(133, 23);
-            this.condicion.TabIndex = 21;
-            this.condicion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label13.Location = new System.Drawing.Point(33, 172);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(145, 17);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Cond. Contribuyente";
-            // 
-            // mtbfecha
-            // 
-            this.mtbfecha.Location = new System.Drawing.Point(187, 131);
-            this.mtbfecha.Mask = "0000/00/00";
-            this.mtbfecha.Name = "mtbfecha";
-            this.mtbfecha.Size = new System.Drawing.Size(100, 22);
-            this.mtbfecha.TabIndex = 20;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label12.Location = new System.Drawing.Point(33, 131);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(114, 17);
-            this.label12.TabIndex = 19;
-            this.label12.Text = "Fecha actividad";
-            // 
-            // ConsultaRuc
-            // 
-            this.ConsultaRuc.AutoSize = true;
-            this.ConsultaRuc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultaRuc.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.ConsultaRuc.Location = new System.Drawing.Point(390, 17);
-            this.ConsultaRuc.Name = "ConsultaRuc";
-            this.ConsultaRuc.Size = new System.Drawing.Size(90, 17);
-            this.ConsultaRuc.TabIndex = 17;
-            this.ConsultaRuc.TabStop = true;
-            this.ConsultaRuc.Text = "ConsultaRuc";
-            this.ConsultaRuc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.consultaruc_LinkClicked);
+            this.linkconsulta_ruc.AutoSize = true;
+            this.linkconsulta_ruc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkconsulta_ruc.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkconsulta_ruc.Location = new System.Drawing.Point(390, 17);
+            this.linkconsulta_ruc.Name = "linkconsulta_ruc";
+            this.linkconsulta_ruc.Size = new System.Drawing.Size(94, 17);
+            this.linkconsulta_ruc.TabIndex = 17;
+            this.linkconsulta_ruc.TabStop = true;
+            this.linkconsulta_ruc.Text = "Consulta Ruc";
+            this.linkconsulta_ruc.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.consultaruc_LinkClicked);
             // 
             // txtiduser
             // 
-            this.txtiduser.Location = new System.Drawing.Point(569, 363);
+            this.txtiduser.Location = new System.Drawing.Point(569, 291);
             this.txtiduser.Name = "txtiduser";
             this.txtiduser.Size = new System.Drawing.Size(40, 22);
             this.txtiduser.TabIndex = 14;
@@ -297,7 +250,7 @@
             this.cboregimen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboregimen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboregimen.FormattingEnabled = true;
-            this.cboregimen.Location = new System.Drawing.Point(187, 322);
+            this.cboregimen.Location = new System.Drawing.Point(187, 250);
             this.cboregimen.Name = "cboregimen";
             this.cboregimen.Size = new System.Drawing.Size(310, 25);
             this.cboregimen.TabIndex = 8;
@@ -312,7 +265,7 @@
             this.btnusuario.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.btnusuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnusuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnusuario.Location = new System.Drawing.Point(503, 363);
+            this.btnusuario.Location = new System.Drawing.Point(503, 291);
             this.btnusuario.Name = "btnusuario";
             this.btnusuario.Size = new System.Drawing.Size(60, 22);
             this.btnusuario.TabIndex = 10;
@@ -323,7 +276,7 @@
             // txtusuario
             // 
             this.txtusuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(187, 362);
+            this.txtusuario.Location = new System.Drawing.Point(187, 290);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(310, 23);
             this.txtusuario.TabIndex = 9;
@@ -342,7 +295,7 @@
             // txtdomicilio
             // 
             this.txtdomicilio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdomicilio.Location = new System.Drawing.Point(187, 282);
+            this.txtdomicilio.Location = new System.Drawing.Point(187, 210);
             this.txtdomicilio.Name = "txtdomicilio";
             this.txtdomicilio.Size = new System.Drawing.Size(376, 23);
             this.txtdomicilio.TabIndex = 6;
@@ -350,7 +303,7 @@
             // txtdireccion
             // 
             this.txtdireccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdireccion.Location = new System.Drawing.Point(187, 246);
+            this.txtdireccion.Location = new System.Drawing.Point(187, 174);
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(376, 23);
             this.txtdireccion.TabIndex = 5;
@@ -358,7 +311,7 @@
             // txtlocalidad
             // 
             this.txtlocalidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlocalidad.Location = new System.Drawing.Point(187, 209);
+            this.txtlocalidad.Location = new System.Drawing.Point(187, 137);
             this.txtlocalidad.Name = "txtlocalidad";
             this.txtlocalidad.Size = new System.Drawing.Size(376, 23);
             this.txtlocalidad.TabIndex = 4;
@@ -385,7 +338,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label8.Location = new System.Drawing.Point(33, 365);
+            this.label8.Location = new System.Drawing.Point(33, 293);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 17);
             this.label8.TabIndex = 11;
@@ -396,7 +349,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label9.Location = new System.Drawing.Point(33, 209);
+            this.label9.Location = new System.Drawing.Point(33, 137);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 17);
             this.label9.TabIndex = 7;
@@ -429,7 +382,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label3.Location = new System.Drawing.Point(33, 249);
+            this.label3.Location = new System.Drawing.Point(33, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 17);
             this.label3.TabIndex = 4;
@@ -440,7 +393,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label6.Location = new System.Drawing.Point(33, 325);
+            this.label6.Location = new System.Drawing.Point(33, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 17);
             this.label6.TabIndex = 3;
@@ -451,7 +404,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label4.Location = new System.Drawing.Point(33, 285);
+            this.label4.Location = new System.Drawing.Point(33, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 17);
             this.label4.TabIndex = 5;
@@ -624,7 +577,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(879, 528);
+            this.ClientSize = new System.Drawing.Size(879, 507);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabempresa);
             this.Controls.Add(this.btneliminar);
@@ -687,10 +640,6 @@
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.LinkLabel ConsultaRuc;
-        private System.Windows.Forms.MaskedTextBox mtbfecha;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox condicion;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.LinkLabel linkconsulta_ruc;
     }
 }

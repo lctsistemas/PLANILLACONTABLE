@@ -33,28 +33,42 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dgvvista_user = new System.Windows.Forms.DataGridView();
             this.lblcantidad = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.btncerrar = new System.Windows.Forms.Label();
+            this.pictbuscar = new System.Windows.Forms.PictureBox();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_user)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictbuscar)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtbuscar
+            // lineShape1
             // 
-            this.txtbuscar.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtbuscar.Location = new System.Drawing.Point(64, 19);
-            this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(328, 16);
-            this.txtbuscar.TabIndex = 0;
-            this.txtbuscar.WordWrap = false;
-            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            this.lineShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 73;
+            this.lineShape1.X2 = 412;
+            this.lineShape1.Y1 = 42;
+            this.lineShape1.Y2 = 42;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictbuscar);
+            this.panel1.Controls.Add(this.dgvvista_user);
+            this.panel1.Controls.Add(this.btncerrar);
+            this.panel1.Controls.Add(this.lblcantidad);
+            this.panel1.Controls.Add(this.txtbuscar);
+            this.panel1.Controls.Add(this.shapeContainer2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(756, 403);
+            this.panel1.TabIndex = 9;
             // 
             // dgvvista_user
             // 
@@ -63,7 +77,7 @@
             this.dgvvista_user.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvvista_user.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvvista_user.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dgvvista_user.BackgroundColor = System.Drawing.Color.White;
             this.dgvvista_user.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvvista_user.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvvista_user.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -86,7 +100,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvvista_user.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvvista_user.EnableHeadersVisualStyles = false;
-            this.dgvvista_user.Location = new System.Drawing.Point(4, 53);
+            this.dgvvista_user.Location = new System.Drawing.Point(15, 55);
             this.dgvvista_user.Name = "dgvvista_user";
             this.dgvvista_user.ReadOnly = true;
             this.dgvvista_user.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -103,7 +117,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
             this.dgvvista_user.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvvista_user.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvvista_user.Size = new System.Drawing.Size(742, 307);
+            this.dgvvista_user.Size = new System.Drawing.Size(715, 324);
             this.dgvvista_user.TabIndex = 1;
             this.dgvvista_user.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvvista_user_CellDoubleClick);
             // 
@@ -112,81 +126,91 @@
             this.lblcantidad.AutoSize = true;
             this.lblcantidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcantidad.ForeColor = System.Drawing.Color.DimGray;
-            this.lblcantidad.Location = new System.Drawing.Point(472, 34);
+            this.lblcantidad.Location = new System.Drawing.Point(483, 36);
             this.lblcantidad.Name = "lblcantidad";
             this.lblcantidad.Size = new System.Drawing.Size(38, 17);
             this.lblcantidad.TabIndex = 3;
             this.lblcantidad.Text = "cant";
             // 
-            // label1
+            // txtbuscar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(5, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Buscar:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(58, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(343, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "________________________________________________________";
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
+            this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtbuscar.Location = new System.Drawing.Point(75, 19);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(334, 19);
+            this.txtbuscar.TabIndex = 0;
+            this.txtbuscar.WordWrap = false;
+            this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             // 
             // btncerrar
             // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.BackColor = System.Drawing.Color.Transparent;
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(743, 8);
+            this.btncerrar.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrar.ForeColor = System.Drawing.Color.Crimson;
+            this.btncerrar.Location = new System.Drawing.Point(719, 10);
             this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(27, 22);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 9;
-            this.btncerrar.TabStop = false;
+            this.btncerrar.Size = new System.Drawing.Size(20, 20);
+            this.btncerrar.TabIndex = 6;
+            this.btncerrar.Text = "X";
+            this.btncerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            // 
+            // pictbuscar
+            // 
+            this.pictbuscar.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.pictbuscar.Location = new System.Drawing.Point(34, 21);
+            this.pictbuscar.Name = "pictbuscar";
+            this.pictbuscar.Size = new System.Drawing.Size(35, 21);
+            this.pictbuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictbuscar.TabIndex = 8;
+            this.pictbuscar.TabStop = false;
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(754, 401);
+            this.shapeContainer2.TabIndex = 9;
+            this.shapeContainer2.TabStop = false;
             // 
             // frmvista_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 382);
-            this.Controls.Add(this.btncerrar);
-            this.Controls.Add(this.txtbuscar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblcantidad);
-            this.Controls.Add(this.dgvvista_user);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(756, 403);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmvista_usuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VISTA USUARIO";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmvista_usuario_FormClosing);
             this.Load += new System.EventHandler(this.frmvista_usuario_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_user)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictbuscar)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtbuscar;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictbuscar;
         private System.Windows.Forms.DataGridView dgvvista_user;
+        private System.Windows.Forms.Label btncerrar;
         private System.Windows.Forms.Label lblcantidad;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
     }
 }

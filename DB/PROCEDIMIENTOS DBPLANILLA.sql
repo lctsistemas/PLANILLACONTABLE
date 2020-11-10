@@ -279,7 +279,6 @@ GO
 
 /*     EMPRESA AND SUCURSAL      */
 ALTER PROC SP_INSERT_EMPRESA_MAESTRA
-@idem_maestra int,
 @razon_social varchar(50),
 @direccion nvarchar(250),
 @domicilio nvarchar(250),
@@ -307,12 +306,13 @@ ELSE
 			SET @codigo=(SELECT MAX(epm.id_em_maestra)+1 FROM dbo.Empresa_maestra epm)	
 
 		INSERT INTO dbo.Empresa_maestra(id_em_maestra, razon_social,direccion,domicilio_fiscal,ruc,regimen,estado_eliminado,localidad)
-		VALUES(@idem_maestra,@razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
+		VALUES(@codigo, @razon_social,@direccion,@domicilio,@ruc,@regimen,'NO ANULADO', @localidad)
 		set @mesage='¡Se registro Exitosamente!'
 	END
 END
 GO
 
+--SELECT * FROM DBO.Empresa_maestra
 
 ALTER PROC SP_INSERT_EMPRESA
 @cod_empresa varchar(8),
@@ -385,21 +385,23 @@ END
 GO
 
 
-CREATE PROC SP_REMOVE_EMPRESA
+ALTER PROC SP_REMOVE_EMPRESA
 @id_maestra int,
 @mesage varchar(50) OUTPUT
 AS BEGIN	
-	IF(EXISTS(SELECT * FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra WHERE em.id_em_maestra=@id_maestra))
+	IF(EXISTS(SELECT em.id_em_maestra FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra
+	WHERE em.id_em_maestra=@id_maestra))
 		BEGIN
-			SET @mesage ='ACCESO DENEGADO'
+			SET @mesage ='Acceso denagado, Empresa tiene colaboradores.'
 		END
 	ELSE
 		BEGIN
 			UPDATE dbo.Empresa_maestra SET estado_eliminado='ANULADO' WHERE id_em_maestra=@id_maestra
-			SET @mesage='EMPRESA ELIMINADO'
+			SET @mesage='¡Anulado!'
 		END
 END
 GO
+
 
 
 CREATE PROC SP_REMOVE_SUCURSAL
@@ -421,7 +423,7 @@ GO
 
 ALTER PROC SP_SHOW_EMPRESA
 AS BEGIN
-SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social,em.localidad,
+SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social, em.localidad,
 direccion, domicilio_fiscal, em.ruc, em.regimen, u.referencia
 FROM dbo.Empresa_maestra em right join dbo.Empresa e on em.id_em_maestra=e.id_em_maestra join dbo.Usuario u 
 on e.id_usuario=u.id_usuario WHERE em.estado_eliminado ='NO ANULADO' ORDER BY e.id_empresa DESC

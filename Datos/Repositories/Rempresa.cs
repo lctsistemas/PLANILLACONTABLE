@@ -13,25 +13,25 @@ namespace Datos.Repositories
         public int Add(DempresaMaestra entiti)
         {
             result = 0;
-            try
+            using (SqlConnection conn = RConexion.Getconectar())
             {
-                using (SqlConnection conn = RConexion.Getconectar())
+                conn.Open();
+                try
                 {
                     using (SqlCommand cmd = new SqlCommand())
                     {
-                        conn.Open();
 
                         cmd.Connection = conn;
                         cmd.CommandText = "SP_INSERT_EMPRESA_MAESTRA";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@razon_social", SqlDbType.VarChar, 50).Value = entiti.Razon_social;
-                        cmd.Parameters.Add("@direccion", SqlDbType.NVarChar, 250).Value = entiti.Direccion;
-                        cmd.Parameters.Add("@domicilio", SqlDbType.NVarChar, 250).Value = entiti.Domicilio;
-                        cmd.Parameters.Add("@ruc", SqlDbType.Char, 11).Value = entiti.Ruc;
-                        cmd.Parameters.Add("@regimen", SqlDbType.VarChar, 50).Value = entiti.Regimen;
-                        cmd.Parameters.Add("@localidad", SqlDbType.VarChar, 50).Value = entiti.Localidad;
-                        cmd.Parameters.Add("@cod_empresa_validar", SqlDbType.VarChar, 50).Value = entiti.Ecodigo_empresa;
+                        cmd.Parameters.AddWithValue("@razon_social", entiti.Razon_social);
+                        cmd.Parameters.AddWithValue("@direccion", entiti.Direccion);
+                        cmd.Parameters.AddWithValue("@domicilio", entiti.Domicilio);
+                        cmd.Parameters.AddWithValue("@ruc", entiti.Ruc);
+                        cmd.Parameters.AddWithValue("@regimen", entiti.Regimen);
+                        cmd.Parameters.AddWithValue("@localidad", entiti.Localidad);
+                        cmd.Parameters.AddWithValue("@cod_empresa_validar", entiti.Ecodigo_empresa);
                         cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                         using (SqlCommand cmd1 = new SqlCommand())
                         {
@@ -39,28 +39,28 @@ namespace Datos.Repositories
                             cmd1.CommandText = "SP_INSERT_EMPRESA";
                             cmd1.CommandType = CommandType.StoredProcedure;
 
-                            cmd1.Parameters.Add("@cod_empresa", SqlDbType.VarChar, 8).Value = entiti.Ecodigo_empresa;
-                            cmd1.Parameters.Add("@id_usuario", SqlDbType.Int).Value = entiti.Eidusuario;
+                            cmd1.Parameters.AddWithValue("@cod_empresa", entiti.Ecodigo_empresa);
+                            cmd1.Parameters.AddWithValue("@id_usuario", entiti.Eidusuario);
                             result = cmd.ExecuteNonQuery();
                             entiti.mesages = cmd.Parameters["@mesage"].Value.ToString();
 
                             if (result > 0)
-                            {
                                 result = cmd1.ExecuteNonQuery();
-                            }
+
                             cmd.Parameters.Clear();
                             cmd1.Parameters.Clear();
+
                         }
                     }
+
                 }
-            }
-            catch (Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.ToString());
+                catch (Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.ToString());
+                }
 
             }
             return result;
-
         }
         //EDIT
         public int Edit(DempresaMaestra entiti)
@@ -68,10 +68,10 @@ namespace Datos.Repositories
             result = 0;
             using (SqlConnection conn = RConexion.Getconectar())
             {
+                conn.Open();
+
                 using (SqlCommand cmd = new SqlCommand())
                 {
-                    conn.Open();
-
                     cmd.Connection = conn;
                     cmd.CommandText = "SP_UPDATE_EMPRESAMAESTRA";
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -101,10 +101,12 @@ namespace Datos.Repositories
                         cmd.Parameters.Clear();
                         cmd1.Parameters.Clear();
                     }
-                }                
+                }
             }
             return result;
         }
+
+
         //REMOVE
         public int Delete(DempresaMaestra entiti)
         {
@@ -127,6 +129,7 @@ namespace Datos.Repositories
             }
             return result;
         }
+
         //GET SHOW ALL
         public DataTable GetData(DempresaMaestra entiti)
         {
