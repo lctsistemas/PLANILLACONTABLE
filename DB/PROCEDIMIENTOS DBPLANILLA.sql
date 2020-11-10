@@ -739,7 +739,7 @@ IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(c.id_banco=b.id_banc
 	BEGIN
 		DECLARE @cod_banco varchar(20);
 		SET @cod_banco=(SELECT b.nombre_banco from Banco b WHERE b.id_banco=@id_banco)
-		SET @message='EL BANCO ('+@cod_banco+') ESTA SIENDO USADO'  
+		SET @message='El banco ('+@cod_banco+') esta en uso.'  
 	END
 ELSE
 	BEGIN 
@@ -748,6 +748,9 @@ ELSE
 	END
 END
 GO
+
+SELECT * FROM Contrato
+
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
 ALTER PROC SP_SHOW_BANCO

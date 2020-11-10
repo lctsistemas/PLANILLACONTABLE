@@ -35,6 +35,12 @@ namespace Datos.Repositories
                 }
             }
         }
+
+        public int Delete(Dtipocontrato entiti)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Edit(Dtipocontrato entiti)
         {
             result = 0;
@@ -60,10 +66,29 @@ namespace Datos.Repositories
 
             }
         }
-        public int Delete(Dtipocontrato entiti)
+        /*public int Delete(Dtipocontrato entiti)
         {
-            throw new NotImplementedException();
-        }
+            result = 0;
+
+            using (SqlConnection conn = RConexion.Getconectar())
+            {
+                conn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_DEL_BANCO";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    //cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
+                    cmd.Parameters.Add("@message", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    result = cmd.ExecuteNonQuery();
+                    entiti.mensaje = cmd.Parameters["@message"].Value.ToString();
+                    cmd.Parameters.Clear();
+                    return result;
+                }
+            }
+        }*/
 
         public DataTable GetData(Dtipocontrato entiti)
         {
