@@ -36,10 +36,7 @@ namespace Datos.Repositories
             }
         }
 
-        public int Delete(Dtipocontrato entiti)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public int Edit(Dtipocontrato entiti)
         {
@@ -66,7 +63,7 @@ namespace Datos.Repositories
 
             }
         }
-        /*public int Delete(Dtipocontrato entiti)
+        public int Delete(Dtipocontrato entiti)
         {
             result = 0;
 
@@ -83,12 +80,12 @@ namespace Datos.Repositories
                     //cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
                     cmd.Parameters.Add("@message", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
-                    entiti.mensaje = cmd.Parameters["@message"].Value.ToString();
+                    entiti.Mensaje = cmd.Parameters["@message"].Value.ToString();
                     cmd.Parameters.Clear();
                     return result;
                 }
             }
-        }*/
+        }
 
         public DataTable GetData(Dtipocontrato entiti)
         {

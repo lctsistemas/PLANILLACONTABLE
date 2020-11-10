@@ -753,7 +753,7 @@ IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(c.id_banco=b.id_banc
 ELSE
 	BEGIN 
 		DELETE from Banco where id_banco=@id_banco
-		SET @message='¡Eliminado!'
+		SET @message='¡Banco eliminado correctamente!'
 	END
 END
 GO
@@ -804,7 +804,7 @@ AS BEGIN
 SELECT id_tipocontrato, tiempo_contrato from Tipo_contrato;
 END
 GO
-
+exec SP_SHOW_TIP_CONT
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
  
  --PROCEDIMIENTO LOGIN USUARIO

@@ -49,6 +49,13 @@ namespace Negocio.Models
                     mensaje = "Successfully Edited!";
 
                     break;
+
+                case EntityState.Remover:
+
+                    tcontrato_repository.Delete(dtipocontrato);
+                    mensaje = "Successfully Removed!";
+
+                    break;
             }
 
             return mensaje;
