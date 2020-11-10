@@ -271,6 +271,7 @@ tope_horario_nocturno int
 )
 GO
 
+
 CREATE TABLE tipo_planilla(
 id_tipo_planilla int not null,
 nombre_planilla varchar(30) 
