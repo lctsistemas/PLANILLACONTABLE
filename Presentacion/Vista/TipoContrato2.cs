@@ -73,19 +73,22 @@ namespace Presentacion.Vista
                     mensaje = "";
                     using (nt = new Ntipocontrato())
                     {
-                        string cod_subsi = dgvTcontrato.CurrentRow.Cells["dgvtxtidtcontrato"].Value.ToString();
+                        string cod_subsi = dgvTcontrato.CurrentRow.Cells["dgvtxttcontrato"].Value.ToString();
                         DialogResult result = Messages.M_question("¿Está seguro de eliminar el tipo " + cod_subsi + "?");
                         if (result == DialogResult.Yes)
                         {
                             nt.state = EntityState.Remover;
                             nt.id_tcontrato = Convert.ToInt32(dgvTcontrato.Rows[e.RowIndex].Cells["dgvtxtidtcontrato"].Value);
                             mensaje = nt.GuardarCambios();
-                            if (!mensaje.Equals(""))
+                            if (mensaje.Contains("ESTA SIENDO USADO"))
                             {
-                                Fill_TipoContrato();
-
+                                Messages.M_error(mensaje);
                             }
-                            Messages.M_info(mensaje);
+                            else
+                            {
+                                Messages.M_info(mensaje);
+                                Fill_TipoContrato();
+                            }
                             nt.state = EntityState.Guardar;
                         }
                     }
