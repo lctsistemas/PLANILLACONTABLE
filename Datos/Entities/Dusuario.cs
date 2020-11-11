@@ -8,6 +8,7 @@ namespace Datos.Entities
         private String codigo_usu;
         private String nombre_refe;
         private String password;
+        private string genero;
         private Int32 idrol;
         public String mesage { get; set; }
 
@@ -31,6 +32,12 @@ namespace Datos.Entities
         {
             get { return password; }
             set { password = value; }
+        }
+
+        public String Genero
+        {
+            get { return genero; }
+            set { genero = value; }
         }
         public Int32 Idrol
         {

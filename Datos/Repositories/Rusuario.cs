@@ -22,20 +22,19 @@ namespace Datos.Repositories
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_INSERT_USUARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    //cmd.Parameters.Add("@idusu", SqlDbType.Int).Value = entiti.Idusuario;
-                    cmd.Parameters.Add("@codigo_usu", SqlDbType.VarChar, 20).Value = entiti.Codigo_usu;
-                    cmd.Parameters.Add("@referencia", SqlDbType.VarChar, 50).Value = entiti.Nombre_refe;
-                    cmd.Parameters.Add("@passwor", SqlDbType.VarChar, 10).Value = entiti.Password;
-                    cmd.Parameters.Add("@id_rol", SqlDbType.Int).Value = entiti.Idrol;
+                    
+                    cmd.Parameters.AddWithValue("@codigo_usu", entiti.Codigo_usu);
+                    cmd.Parameters.AddWithValue("@nom_user", entiti.Nombre_refe);
+                    cmd.Parameters.AddWithValue("@passwor", entiti.Password);
+                    cmd.Parameters.AddWithValue("@genero", entiti.Genero);
+                    cmd.Parameters.AddWithValue("@id_rol", entiti.Idrol);
                     cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     resul = cmd.ExecuteNonQuery();
                     entiti.mesage = cmd.Parameters["@mesage"].Value.ToString();
                     cmd.Parameters.Clear();
-                    return resul;
-
                 }
             }
+            return resul;
 
         }
         //EDIT
@@ -52,18 +51,19 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_UPDATE_USUARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@codigo_usu", SqlDbType.VarChar, 20).Value = entiti.Codigo_usu;
-                    cmd.Parameters.Add("@referencia", SqlDbType.VarChar, 50).Value = entiti.Nombre_refe;
-                    cmd.Parameters.Add("@passwor", SqlDbType.VarChar, 10).Value = entiti.Password;
-                    cmd.Parameters.Add("@id_rol", SqlDbType.Int).Value = entiti.Idrol;
-                    cmd.Parameters.Add("@idusu", SqlDbType.Int).Value = entiti.Idusuario;
+                    cmd.Parameters.AddWithValue("@codigo_usu", entiti.Codigo_usu);
+                    cmd.Parameters.AddWithValue("@nom_user", entiti.Nombre_refe);
+                    cmd.Parameters.AddWithValue("@passwor", entiti.Password);
+                    cmd.Parameters.AddWithValue("@genero", entiti.Genero);
+                    cmd.Parameters.AddWithValue("@id_rol", entiti.Idrol);
+                    cmd.Parameters.AddWithValue("@idusu", entiti.Idusuario);
                     resul = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    return resul;
-
+                    cmd.Parameters.Clear();                   
                 }
             }
+            return resul;
         }
+
         //DELETE
         public int Delete(Dusuario entiti)
         {
@@ -78,15 +78,16 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_REMOVE_USUARIO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@idusu", SqlDbType.Int).Value = entiti.Idusuario;
+                    cmd.Parameters.AddWithValue("@idusu", entiti.Idusuario);
                     cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     resul = cmd.ExecuteNonQuery();
                     entiti.mesage = cmd.Parameters["@mesage"].Value.ToString();
                     cmd.Parameters.Clear();
-                    return resul;
                 }
             }
+            return resul;
         }
+
         //SHOW DATA
         public DataTable GetData(Dusuario entiti)
         {
@@ -106,8 +107,7 @@ namespace Datos.Repositories
                     using (dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        
+                        da.Dispose();                        
                     }
                 }
             }

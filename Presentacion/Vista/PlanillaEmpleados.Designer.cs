@@ -28,61 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvplanilla = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneltitulo = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tbtnnuevo = new System.Windows.Forms.ToolStripButton();
-            this.tbtnmodificar = new System.Windows.Forms.ToolStripButton();
-            this.tbtneliminar = new System.Windows.Forms.ToolStripButton();
-            this.tbtcalculo = new System.Windows.Forms.ToolStripButton();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btnmaximizar = new System.Windows.Forms.PictureBox();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla)).BeginInit();
+            this.toolmenu = new System.Windows.Forms.ToolStrip();
+            this.tbtnnuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtnmodificar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtneliminar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbtcalculo = new System.Windows.Forms.ToolStripButton();
+            this.dgvplanilla = new System.Windows.Forms.DataGridView();
+            this.panelcrearplanilla = new System.Windows.Forms.Panel();
             this.paneltitulo.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
+            this.toolmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla)).BeginInit();
+            this.panelcrearplanilla.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvplanilla
-            // 
-            this.dgvplanilla.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvplanilla.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvplanilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvplanilla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvplanilla.ColumnHeadersHeight = 30;
-            this.dgvplanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvplanilla.EnableHeadersVisualStyles = false;
-            this.dgvplanilla.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvplanilla.Location = new System.Drawing.Point(8, 77);
-            this.dgvplanilla.Name = "dgvplanilla";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvplanilla.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvplanilla.Size = new System.Drawing.Size(799, 378);
-            this.dgvplanilla.TabIndex = 89;
             // 
             // paneltitulo
             // 
@@ -99,6 +72,19 @@
             this.paneltitulo.TabIndex = 90;
             this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
             // 
+            // btncerrar
+            // 
+            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
+            this.btncerrar.Location = new System.Drawing.Point(778, 3);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 20);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncerrar.TabIndex = 8;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -112,93 +98,6 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "PLANILLA";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbtnnuevo,
-            this.toolStripSeparator1,
-            this.tbtnmodificar,
-            this.toolStripSeparator2,
-            this.tbtneliminar,
-            this.toolStripSeparator3,
-            this.tbtcalculo});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 40);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(818, 25);
-            this.toolStrip1.TabIndex = 95;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tbtnnuevo
-            // 
-            this.tbtnnuevo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbtnnuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbtnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
-            this.tbtnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnnuevo.Name = "tbtnnuevo";
-            this.tbtnnuevo.Size = new System.Drawing.Size(66, 22);
-            this.tbtnnuevo.Text = "&Nuevo";
-            this.tbtnnuevo.Click += new System.EventHandler(this.tbtnnuevo_Click);
-            // 
-            // tbtnmodificar
-            // 
-            this.tbtnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbtnmodificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbtnmodificar.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
-            this.tbtnmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtnmodificar.Name = "tbtnmodificar";
-            this.tbtnmodificar.Size = new System.Drawing.Size(84, 22);
-            this.tbtnmodificar.Text = "&Modificar";
-            this.tbtnmodificar.Click += new System.EventHandler(this.tbtnmodificar_Click);
-            // 
-            // tbtneliminar
-            // 
-            this.tbtneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbtneliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tbtneliminar.Image = global::Presentacion.Properties.Resources.borrar;
-            this.tbtneliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtneliminar.Name = "tbtneliminar";
-            this.tbtneliminar.Size = new System.Drawing.Size(74, 22);
-            this.tbtneliminar.Text = "&Eliminar";
-            this.tbtneliminar.ToolTipText = "Eliminar";
-            this.tbtneliminar.Click += new System.EventHandler(this.tbtneliminar_Click);
-            // 
-            // tbtcalculo
-            // 
-            this.tbtcalculo.Image = global::Presentacion.Properties.Resources.planilla;
-            this.tbtcalculo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbtcalculo.Name = "tbtcalculo";
-            this.tbtcalculo.Size = new System.Drawing.Size(87, 22);
-            this.tbtcalculo.Text = "Ir al cálculo";
-            this.tbtcalculo.Click += new System.EventHandler(this.tbtcalculo_Click);
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(778, 3);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 20);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 8;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // btnminimizar
             // 
@@ -238,27 +137,153 @@
             this.btnrestaurar.TabIndex = 11;
             this.btnrestaurar.TabStop = false;
             // 
+            // toolmenu
+            // 
+            this.toolmenu.BackColor = System.Drawing.Color.White;
+            this.toolmenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtnnuevo,
+            this.toolStripSeparator1,
+            this.tbtnmodificar,
+            this.toolStripSeparator2,
+            this.tbtneliminar,
+            this.toolStripSeparator3,
+            this.tbtcalculo});
+            this.toolmenu.Location = new System.Drawing.Point(0, 40);
+            this.toolmenu.Name = "toolmenu";
+            this.toolmenu.Size = new System.Drawing.Size(818, 25);
+            this.toolmenu.TabIndex = 95;
+            this.toolmenu.Text = "toolStrip1";
+            // 
+            // tbtnnuevo
+            // 
+            this.tbtnnuevo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnnuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbtnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
+            this.tbtnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnnuevo.Name = "tbtnnuevo";
+            this.tbtnnuevo.Size = new System.Drawing.Size(66, 22);
+            this.tbtnnuevo.Text = "&Nuevo";
+            this.tbtnnuevo.Click += new System.EventHandler(this.tbtnnuevo_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tbtnmodificar
+            // 
+            this.tbtnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnmodificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbtnmodificar.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
+            this.tbtnmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtnmodificar.Name = "tbtnmodificar";
+            this.tbtnmodificar.Size = new System.Drawing.Size(84, 22);
+            this.tbtnmodificar.Text = "&Modificar";
+            this.tbtnmodificar.Click += new System.EventHandler(this.tbtnmodificar_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tbtneliminar
+            // 
+            this.tbtneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtneliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbtneliminar.Image = global::Presentacion.Properties.Resources.borrar;
+            this.tbtneliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtneliminar.Name = "tbtneliminar";
+            this.tbtneliminar.Size = new System.Drawing.Size(74, 22);
+            this.tbtneliminar.Text = "&Eliminar";
+            this.tbtneliminar.ToolTipText = "Eliminar";
+            this.tbtneliminar.Click += new System.EventHandler(this.tbtneliminar_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tbtcalculo
+            // 
+            this.tbtcalculo.Image = global::Presentacion.Properties.Resources.planilla;
+            this.tbtcalculo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbtcalculo.Name = "tbtcalculo";
+            this.tbtcalculo.Size = new System.Drawing.Size(87, 22);
+            this.tbtcalculo.Text = "Ir al cálculo";
+            this.tbtcalculo.Click += new System.EventHandler(this.tbtcalculo_Click);
+            // 
+            // dgvplanilla
+            // 
+            this.dgvplanilla.AllowUserToAddRows = false;
+            this.dgvplanilla.AllowUserToResizeColumns = false;
+            this.dgvplanilla.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvplanilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvplanilla.BackgroundColor = System.Drawing.Color.White;
+            this.dgvplanilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvplanilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvplanilla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvplanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvplanilla.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvplanilla.Location = new System.Drawing.Point(6, 32);
+            this.dgvplanilla.MultiSelect = false;
+            this.dgvplanilla.Name = "dgvplanilla";
+            this.dgvplanilla.ReadOnly = true;
+            this.dgvplanilla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvplanilla.RowHeadersWidth = 25;
+            this.dgvplanilla.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvplanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvplanilla.Size = new System.Drawing.Size(807, 363);
+            this.dgvplanilla.TabIndex = 96;
+            // 
+            // panelcrearplanilla
+            // 
+            this.panelcrearplanilla.BackColor = System.Drawing.Color.White;
+            this.panelcrearplanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelcrearplanilla.Controls.Add(this.dgvplanilla);
+            this.panelcrearplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelcrearplanilla.Location = new System.Drawing.Point(0, 65);
+            this.panelcrearplanilla.Name = "panelcrearplanilla";
+            this.panelcrearplanilla.Size = new System.Drawing.Size(818, 403);
+            this.panelcrearplanilla.TabIndex = 97;
+            // 
             // FrmPlanillaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 468);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.panelcrearplanilla);
+            this.Controls.Add(this.toolmenu);
             this.Controls.Add(this.paneltitulo);
-            this.Controls.Add(this.dgvplanilla);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPlanillaEmpleados";
             this.Text = "Prueba";
             this.Load += new System.EventHandler(this.Prueba_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla)).EndInit();
             this.paneltitulo.ResumeLayout(false);
             this.paneltitulo.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
+            this.toolmenu.ResumeLayout(false);
+            this.toolmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla)).EndInit();
+            this.panelcrearplanilla.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,8 +296,7 @@
         private System.Windows.Forms.Panel paneltitulo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox btnrestaurar;
-        public System.Windows.Forms.DataGridView dgvplanilla;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolmenu;
         private System.Windows.Forms.ToolStripButton tbtnnuevo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tbtnmodificar;
@@ -280,5 +304,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tbtcalculo;
+        private System.Windows.Forms.DataGridView dgvplanilla;
+        private System.Windows.Forms.Panel panelcrearplanilla;
     }
 }

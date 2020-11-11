@@ -108,8 +108,9 @@ GO
 CREATE TABLE Usuario (
 id_usuario int not null,
 codigo_usuario varchar(20)CONSTRAINT UNQ_usuario UNIQUE not null,
-referencia varchar(50)not null,
+nombre_usuario varchar(50)not null,
 contrasena varchar(10)not null,
+genero char(1) not null,
 id_rol int not null
 )
 GO

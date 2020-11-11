@@ -5,7 +5,6 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace Negocio.Models
@@ -19,30 +18,16 @@ namespace Negocio.Models
         private String codigo_usu;
         private String nombre_refe;
         private String password;
+        private String genero;
         private Int32 idrol;
 
-
         private IUsuario usu_repository;
-
         public int Idusuario { get { return idusuario; } set { idusuario = value; } }
-
-        [Required(ErrorMessage = "El campo Codigo Acceso es obligatorio.")]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Codigo Acceso solo permite letras.")]
-        [StringLength(maximumLength: 10, MinimumLength = 4, ErrorMessage = "Campo Codigo Acceso debe ser 10 digitos maximo y 4 minimo.")]
         public string Codigo_usu { get { return codigo_usu; } set { codigo_usu = value; } }
-
-        [Required(ErrorMessage = "El campo Nombre Usuario es obligatorio.")]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Nombre Usuario se permite solo letras.")]
         public string Nombre_refe { get { return nombre_refe; } set { nombre_refe = value; } }
-
-        [Required(ErrorMessage = "El campo Contraseña es obligatorio.")]
         public string Password { get { return password; } set { password = value; } }
-
-        [Required(ErrorMessage = "Seleccione Rol para el Usuario obligatorio.")]
-        public int Idrol { get { return idrol; } set { idrol = value; } }
-
-        //[RegularExpression("([0-9]+)", ErrorMessage = "identification number must be only numbers")]
-        //[EmailAddress]
+        public string Genero { get { return genero; } set { genero = value; } }
+        public int Idrol { get { return idrol; } set { idrol = value; } }       
 
         public String name_rol { get; set; }
         public EntityState state { get; set; }
@@ -62,6 +47,7 @@ namespace Negocio.Models
                 du.Codigo_usu = Codigo_usu;
                 du.Nombre_refe = Nombre_refe;
                 du.Password = Password;
+                du.Genero = Genero;
                 du.Idrol = Idrol;
 
                 switch (state)
@@ -105,12 +91,13 @@ namespace Negocio.Models
                         codigo_usu = item[1].ToString(),
                         nombre_refe = item[2].ToString(),
                         password = item[3].ToString(),
-                        idrol = Convert.ToInt32(item[4]),
-                        name_rol = item[5].ToString()
+                        genero = item[4].ToString(),
+                        idrol = Convert.ToInt32(item[5]),
+                        name_rol = item[6].ToString()
                     });
-                }
-                return list_usu;
+                }              
             }
+            return list_usu;
         }
 
 
@@ -129,16 +116,7 @@ namespace Negocio.Models
             return list_usu.FindAll(e => e.nombre_refe.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0 || e.codigo_usu.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
             //return list_usu.FindAll(e => e.Contains(filter, StringComparison.OrdinalIgnoreCase));
         }
-
-
-
-        //GENERAR CODIGO USUARIO
-        public int Getcodigo()
-        {
-            return new Kusuario().Getcodigo();
-        }
-
-
+       
 
         public void Dispose()
         {

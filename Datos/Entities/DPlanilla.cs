@@ -14,10 +14,10 @@ namespace Datos.Entities
         private DateTime fecha_pago;
         private Int32 dias_mes;
         private Int32 horas_mes;     
-        private Int32 tope_horario_nocturno;
+        private decimal tope_horario_nocturno;
 
         public DPlanilla(int id_planilla, int id_periodo, int id_empresam, int id_mes, DateTime fecha_inicial,
-            DateTime fecha_final, DateTime fecha_pago, int dias_mes, int horas_mes, int tope_horario_nocturno)
+            DateTime fecha_final, DateTime fecha_pago, int dias_mes, int horas_mes, decimal tope_horario_nocturno)
         {
             this.id_planilla = id_planilla;
             this.id_periodo = id_periodo;
@@ -43,7 +43,7 @@ namespace Datos.Entities
         public DateTime Fecha_pago { get => fecha_pago; set => fecha_pago = value; }
         public int Dias_mes { get => dias_mes; set => dias_mes = value; }
         public int Horas_mes { get => horas_mes; set => horas_mes = value; }  
-        public int Tope_horario_nocturno { get => tope_horario_nocturno; set => tope_horario_nocturno = value; }
+        public decimal Tope_horario_nocturno { get => tope_horario_nocturno; set => tope_horario_nocturno = value; }
 
 
     }

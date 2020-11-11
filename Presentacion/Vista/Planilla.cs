@@ -68,27 +68,22 @@ namespace Presentacion.Vista
             result = "";
             using (np)
             {
-                //np.Id_planilla = codigo;
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
-                np.Id_periodo = UserCache.Idperiodo;
-                np.Id_empresam = UserCache.Codigo_empresa;
+                np.Id_periodo = 2;//UserCache.Idperiodo;
+                np.Id_empresam = 1;//UserCache.Codigo_empresa;
                 np.Id_mes = Convert.ToInt32(cbxmes.SelectedValue);
                 // = cbxmes.SelectedItem.ToString(); 
                 np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());
                 np.Fecha_final = Convert.ToDateTime(dtpfin.Text.Trim());
                 np.Fecha_pago = Convert.ToDateTime(dtppago.Text.Trim());
                 np.Dias_mes = Convert.ToInt32(txtdia.Text.Trim());
-                np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());              
-                np.Tope_horario_nocturno = Convert.ToInt32(txttope.Text.ToString());
-               
-
-                    result = np.GuardarCambios();
-
-                    Messages.M_info(result);
-                
-
+                np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());
+                np.Tope_horario_nocturno = Convert.ToDecimal(txttope.Text.Trim());               
+                result = np.GuardarCambios();
+                Messages.M_info(result);
                 
             }
+            this.Close();
         }
 
         private void Planilla_Load(object sender, EventArgs e)

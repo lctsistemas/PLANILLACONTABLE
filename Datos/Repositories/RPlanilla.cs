@@ -65,7 +65,7 @@ namespace Datos.Repositories
             }
         }
 
-        public int Delete(DPlanilla entiti) // modificar
+        public int Delete(DPlanilla entiti)
         {
             result = 0;
             using (SqlConnection conn = RConexion.Getconectar())
@@ -77,14 +77,14 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_DELETE_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@idplanilla", SqlDbType.Int).Value = entiti.Id_planilla;
+                    cmd.Parameters.AddWithValue("@idplanilla", entiti.Id_planilla);
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();
-                    return result;
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
 
 

@@ -18,8 +18,8 @@ namespace Presentacion.Vista
 
         private void Prueba_Load(object sender, EventArgs e)
         {
-            //ShowPlanilla();
-            //Tabla();
+            ShowPlanilla();
+            Tabla();
         }
 
         private void ShowPlanilla()
@@ -41,62 +41,62 @@ namespace Presentacion.Vista
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-
         }
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void Tabla()
         {
-            dgvplanilla.Columns[0].HeaderText = "Id_planilla";
+            dgvplanilla.Columns[0].HeaderText = "Id planilla";
             dgvplanilla.Columns[0].Width = 50;
             dgvplanilla.Columns[0].Visible = false;
 
             dgvplanilla.Columns[1].HeaderText = "PERIODO";
-            dgvplanilla.Columns[1].Width = 100;
+            dgvplanilla.Columns[1].Width = 80;
+            dgvplanilla.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvplanilla.Columns[2].HeaderText = "EMPRESA";
-            dgvplanilla.Columns[2].Width = 100;
+            dgvplanilla.Columns[2].HeaderText = "idmes";
+            dgvplanilla.Columns[2].Width = 50;
             dgvplanilla.Columns[2].Visible = false;
 
-            dgvplanilla.Columns[3].HeaderText = "Id_mes";
-            dgvplanilla.Columns[3].Width = 100;
+            dgvplanilla.Columns[3].HeaderText = "idemp maestra";
+            dgvplanilla.Columns[3].Width = 50;
             dgvplanilla.Columns[3].Visible = false;
 
             dgvplanilla.Columns[4].HeaderText = "MES";
             dgvplanilla.Columns[4].Width = 100;
 
             dgvplanilla.Columns[5].HeaderText = "FECHA INICIAL";
-            dgvplanilla.Columns[5].Width = 120;
+            dgvplanilla.Columns[5].Width = 80;
+            dgvplanilla.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvplanilla.Columns[6].HeaderText = "FECHA FINAL";
-            dgvplanilla.Columns[6].Width = 120;
+            dgvplanilla.Columns[6].Width = 80;
+            dgvplanilla.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvplanilla.Columns[7].HeaderText = "FECHA PAGO";
-            dgvplanilla.Columns[7].Width = 120;
+            dgvplanilla.Columns[7].Width = 80;
+            dgvplanilla.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvplanilla.Columns[8].HeaderText = "DIAS_MES";
-            dgvplanilla.Columns[8].Width = 100;
+            dgvplanilla.Columns[8].HeaderText = "DIAS";
+            dgvplanilla.Columns[8].Width = 70;
+            dgvplanilla.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvplanilla.Columns[9].HeaderText = "HORAS_MES";
+            dgvplanilla.Columns[9].HeaderText = "HORAS MES";
             dgvplanilla.Columns[9].Width = 100;
+            dgvplanilla.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvplanilla.Columns[10].HeaderText = "REM. BASICA";
-            dgvplanilla.Columns[10].Width = 100;
+            dgvplanilla.Columns[10].HeaderText = "TOPE HORA NOCTURNA";
+            dgvplanilla.Columns[10].Width = 90;
+            dgvplanilla.Columns[10].DefaultCellStyle.Format = "N2";
+            dgvplanilla.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dgvplanilla.Columns[11].HeaderText = "ASIG. FAMILIAR";
-            dgvplanilla.Columns[11].Width = 130;
-
-            dgvplanilla.Columns[12].HeaderText = "TOPE HORARIO NOCT";
-            dgvplanilla.Columns[12].Width = 150;
-
-            dgvplanilla.Columns[13].HeaderText = "ESTADO";
-            dgvplanilla.Columns[13].Width = 100;
-            dgvplanilla.Columns[13].Visible = false;
+            dgvplanilla.Columns[11].HeaderText = "ESTADO";
+            dgvplanilla.Columns[11].Width = 50;
+            dgvplanilla.Columns[11].Visible = false;
 
         }     
      
@@ -105,6 +105,7 @@ namespace Presentacion.Vista
             FrmPlanilla fr = FrmPlanilla.GetInstance();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
+            ShowPlanilla();
         }
 
         private void tbtnmodificar_Click(object sender, EventArgs e)
@@ -126,7 +127,8 @@ namespace Presentacion.Vista
             result = "";
             if (dgvplanilla.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                string mes = dgvplanilla.CurrentRow.Cells[4].Value.ToString();
+                DialogResult r = Messages.M_question("¿Desea eliminar la planilla de " + mes + "?");
                 if (r == DialogResult.Yes)
                 {
                     using (np)
@@ -134,8 +136,14 @@ namespace Presentacion.Vista
                         np.state = EntityState.Remover;
                         np.Id_planilla = Convert.ToInt32(dgvplanilla.CurrentRow.Cells[0].Value);
                         result = np.GuardarCambios();
-                        ShowPlanilla();
-                        Messages.M_info(result);
+                        
+                        if (result.Contains("la planilla tiene cálculo"))
+                            Messages.M_error(result);
+                        else
+                        {
+                            Messages.M_info(result);
+                            ShowPlanilla();
+                        }                       
                     }
                 }
 

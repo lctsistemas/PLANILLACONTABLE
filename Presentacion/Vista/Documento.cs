@@ -24,7 +24,7 @@ namespace Presentacion.Vista
             using (nd)
             {               
                 dgvdocumento.DataSource = nd.Getall();
-                lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
+                lbltotal.Text = "Total registro: " + dgvdocumento.Rows.Count;
             }
         }
         //MODIFICAR DATAGRIDVIEW
@@ -35,14 +35,14 @@ namespace Presentacion.Vista
             dgvdocumento.Columns[0].Visible = false;
             
             dgvdocumento.Columns[1].HeaderText = "CODIGO";
-            dgvdocumento.Columns[1].Width = 70;
+            dgvdocumento.Columns[1].Width = 50;
             dgvdocumento.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvdocumento.Columns[2].HeaderText = "DOCUMENTO";
-            dgvdocumento.Columns[2].Width = 120;
+            dgvdocumento.Columns[2].Width = 130;
 
             dgvdocumento.Columns[3].HeaderText = "DESCRIPCION";
-            dgvdocumento.Columns[3].Width = 200;
+            dgvdocumento.Columns[3].Width = 250;
             
         }
         //VALIDAR CONTROLES

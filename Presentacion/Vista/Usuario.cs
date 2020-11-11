@@ -10,11 +10,8 @@ namespace Presentacion.Vista
     public partial class frmusuario : Form
     {
         private Nusuario nu = new Nusuario();
-
         private String result;
-        private Int32 codigo;
-
-
+       
         public frmusuario()
         {
             InitializeComponent();
@@ -42,17 +39,7 @@ namespace Presentacion.Vista
             }
         }
 
-        //GENERAR CODIGO 
-        private void GenerarCodigo()
-        {
-            codigo = 0;
-            using (nu)
-            {
-                codigo = nu.Getcodigo();
-                txtcodigo.Text = "USER 0" + codigo;
-            }
-        }
-
+       
         //MODIFICAR DATAGRIDVIEW
         private void Tabla()
         {
@@ -64,21 +51,25 @@ namespace Presentacion.Vista
             dgvusuario.Columns[1].Width = 150;
 
             dgvusuario.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvusuario.Columns[2].Width = 250;
+            dgvusuario.Columns[2].Width = 270;
 
             dgvusuario.Columns[3].HeaderText = "CONTRASEÑA";
             dgvusuario.Columns[3].Width = 100;
 
-            dgvusuario.Columns[4].HeaderText = "CODIGO ROL";
+            dgvusuario.Columns[4].HeaderText = "genero";
             dgvusuario.Columns[4].Width = 50;
             dgvusuario.Columns[4].Visible = false;
 
-            dgvusuario.Columns[5].HeaderText = "ROL";
-            dgvusuario.Columns[5].Width = 200;
+            dgvusuario.Columns[5].HeaderText = "CODIGO ROL";
+            dgvusuario.Columns[5].Width = 50;
+            dgvusuario.Columns[5].Visible = false;
 
-            dgvusuario.Columns[6].HeaderText = "STATE";
-            dgvusuario.Columns[6].Width = 50;
-            dgvusuario.Columns[6].Visible = false;
+            dgvusuario.Columns[6].HeaderText = "ROL";
+            dgvusuario.Columns[6].Width = 220;
+
+            dgvusuario.Columns[7].HeaderText = "STATE";
+            dgvusuario.Columns[7].Width = 50;
+            dgvusuario.Columns[7].Visible = false;
         }
 
         //HABILITAR CONTROLES
@@ -89,6 +80,7 @@ namespace Presentacion.Vista
             txtnom_usuario.Enabled = v;
             txtpassword.Enabled = v;
             cborol.Enabled = v;
+            cbogenero.Enabled = v;
             btnrol.Enabled = v;
         }
 
@@ -99,6 +91,7 @@ namespace Presentacion.Vista
             txtnom_usuario.Text = String.Empty;
             txtpassword.Text = String.Empty;
             cborol.Text = "";
+            cbogenero.Text = null;
             cborol.SelectedValue = 0;
             txtacceso.Focus();
         }
@@ -106,14 +99,16 @@ namespace Presentacion.Vista
         //LOAD
         private void frmusuario_Load(object sender, EventArgs e)
         {
+            cbogenero.Items.Add("M");
+            cbogenero.Items.Add("F");            
             Tooltip.Title(btnrol, "Registrar Rol", true);
             Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo", true);
             Tabla();
             Habilitar(false);
             cborol.Text = "";
-            cborol.SelectedValue = 0;
-            txtcodigo.Enabled = false;
+            cborol.SelectedValue = 0;            
         }
+
         //FORMULARIO ROL
         private void btnrol_Click(object sender, EventArgs e)
         {
@@ -126,8 +121,7 @@ namespace Presentacion.Vista
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            using (nu) { nu.state = EntityState.Guardar; }
-            GenerarCodigo();
+            using (nu) { nu.state = EntityState.Guardar; }            
             Habilitar(true);
             limpiar();
         }
@@ -137,24 +131,16 @@ namespace Presentacion.Vista
             result = "";
             using (nu)
             {
-                
-                    //nu.Idusuario = codigo;
-
                 nu.Codigo_usu = txtacceso.Text.Trim().ToUpper();
                 nu.Nombre_refe = txtnom_usuario.Text.Trim().ToUpper();
                 nu.Password = txtpassword.Text.Trim();
+                nu.Genero = cbogenero.SelectedItem.ToString();
                 nu.Idrol = Convert.ToInt32(cborol.SelectedValue);
-
-                bool valida = new ValidacionDatos(nu).Validate(lblerror);
-                if (valida)
-                {
-                    
-                    result = nu.SaveChanges();
-                    ShowUser();
-                    limpiar();
-                    Messages.M_info(result);
-                    
-                }
+               
+                result = nu.SaveChanges();
+                Messages.M_info(result);
+                ShowUser();
+                limpiar();                                         
             }
         }
 
@@ -173,13 +159,13 @@ namespace Presentacion.Vista
                 using (nu)
                 {
                     nu.state = EntityState.Modificar;
-                    nu.Idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario
-                    txtcodigo.Text = "USER 0" + nu.Idusuario;
+                    nu.Idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario                   
                     txtacceso.Text = r.Cells[1].Value.ToString();//codigo acceso
                     txtnom_usuario.Text = r.Cells[2].Value.ToString();//referencia
                     txtpassword.Text = r.Cells[3].Value.ToString();//contrasena
-                    cborol.SelectedValue = r.Cells[4].Value.ToString();//idrol
-                    cborol.Text = r.Cells[5].Value.ToString();//rol
+                    cbogenero.Text = r.Cells[4].Value.ToString();//genero
+                    cborol.SelectedValue = r.Cells[5].Value.ToString();//idrol
+                    cborol.Text = r.Cells[6].Value.ToString();//rol
                     tabuser.SelectedIndex = 1;
                     Habilitar(true);
                     ValidateError.validate.Clear();
@@ -192,7 +178,7 @@ namespace Presentacion.Vista
             result = "";
             if (dgvusuario.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                DialogResult re = Messages.M_question("¿Desea Eliminar Usuario?");
+                DialogResult re = Messages.M_question("¿Desea eliminar usuario?");
                 if (re == DialogResult.Yes)
                 {
                     using (nu)
@@ -200,9 +186,14 @@ namespace Presentacion.Vista
                         nu.state = EntityState.Remover;
                         nu.Idusuario = Convert.ToInt32(dgvusuario.CurrentRow.Cells[0].Value);//idusuario
                         result = nu.SaveChanges();
-                        Messages.M_info(result);
-                        ShowUser();
-                        btnguardar.Enabled = false;
+                        if (result.Contains("esta asignado"))
+                            Messages.M_error(result);
+                        else
+                        {
+                            Messages.M_info(result);
+                            ShowUser();
+                            btnguardar.Enabled = false;
+                        }
                     }
                 }
             }
@@ -240,6 +231,26 @@ namespace Presentacion.Vista
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void paneltitulo_user_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnrestaurar.Visible = true;
+            btnmaximizar.Visible = false;
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
     }
 }

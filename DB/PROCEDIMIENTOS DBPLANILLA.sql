@@ -31,12 +31,12 @@ IF(EXISTS(SELECT c.id_cargo FROM Empleado E join Cargo C on E.id_cargo=C.id_carg
 	BEGIN
 	DECLARE @resul VARCHAR(20)
 	SET @resul=(SELECT c.nombre_cargo FROM Cargo c WHERE c.id_cargo=@idcargo)
-	SET @message='CARGO ( '+@resul+' ) ESTA EN USO'
+	SET @message='Cargo( '+@resul+' ) esta en uso'
 	END
 ELSE
 	BEGIN
 	DELETE FROM Cargo WHERE id_cargo=@idcargo
-	SET @message='SE ELIMINO CARGO CORRECTAMENTE!'
+	SET @message='¡Eliminado!'
 	END	
 END
 GO
@@ -425,7 +425,7 @@ GO
 ALTER PROC SP_SHOW_EMPRESA
 AS BEGIN
 SELECT TOP(200) em.id_em_maestra, em.estado_eliminado, u.id_usuario, e.id_em_maestra,e.id_empresa, e.codigo_empresa, em.razon_social, em.localidad,
-direccion, domicilio_fiscal, em.ruc, em.regimen, u.referencia
+direccion, domicilio_fiscal, em.ruc, em.regimen, u.nombre_usuario
 FROM dbo.Empresa_maestra em right join dbo.Empresa e on em.id_em_maestra=e.id_em_maestra join dbo.Usuario u 
 on e.id_usuario=u.id_usuario WHERE em.estado_eliminado ='NO ANULADO' ORDER BY e.id_empresa DESC
 END
@@ -435,7 +435,7 @@ GO
 ALTER PROC SP_SHOW_SUCURSAL
 AS BEGIN
 SELECT TOP(200) em.estado_eliminado,s.id_em_maestra, e.id_empresa, s.codigo_sucursal, em.razon_social AS SUCURSAL, em.localidad,
-direccion, domicilio_fiscal, em.ruc, em.regimen, usu.referencia AS USUARIO,
+direccion, domicilio_fiscal, em.ruc, em.regimen, usu.nombre_usuario AS USUARIO,
 (SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA 
 FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maestra join 
 dbo.Empresa e on e.id_empresa=s.id_empresa join dbo.Usuario usu on e.id_usuario=usu.id_usuario
@@ -447,8 +447,9 @@ GO
 /*         PROCEDIMIENTO PARA USUARIO            */
 ALTER PROC SP_INSERT_USUARIO(
 @codigo_usu varchar(20),
-@referencia varchar(50),
+@nom_user varchar(50),
 @passwor varchar(10),
+@genero char(1),
 @id_rol int,
 @mesage varchar(100) output)
 AS BEGIN
@@ -461,32 +462,35 @@ ELSE
 
 IF(EXISTS(SELECT u.codigo_usuario FROM dbo.Usuario u WHERE U.codigo_usuario=@codigo_usu))
 	BEGIN
-	SET @mesage= 'USUARIO ('+@codigo_usu+' ) SE ENCUENTRA REGISTRADO'
+	SET @mesage= 'Usuario ('+@codigo_usu+' ) ya existe.'
 	END
 ELSE
 	BEGIN
-	INSERT INTO dbo.Usuario(id_usuario, codigo_usuario, referencia, contrasena, id_rol)VALUES
-	(@usu, @codigo_usu, @referencia, @passwor, @id_rol)
+	INSERT INTO dbo.Usuario(id_usuario, codigo_usuario, nombre_usuario, contrasena, genero, id_rol)VALUES
+	(@usu, @codigo_usu, @nom_user, @passwor,@genero, @id_rol)
 	SET @mesage= '¡Usuario registrado!'
 	END
 END
 GO
 
 
+
 ALTER PROC SP_UPDATE_USUARIO
 (@codigo_usu varchar(20),
-@referencia varchar(50),
+@nom_user varchar(50),
 @passwor varchar(10),
+@genero char(1),
 @id_rol int,
 @idusu int)
 AS BEGIN
-UPDATE dbo.Usuario SET codigo_usuario=@codigo_usu, referencia=@referencia, contrasena=@passwor, id_rol=@id_rol 
+UPDATE dbo.Usuario SET codigo_usuario=@codigo_usu, nombre_usuario=@nom_user, 
+contrasena=@passwor,genero=@genero, id_rol=@id_rol 
 WHERE id_usuario=@idusu
 END
 GO
 
 
-CREATE PROC SP_REMOVE_USUARIO
+ALTER PROC SP_REMOVE_USUARIO
 (@idusu int,
 @mesage varchar(100) output)
 AS BEGIN
@@ -494,12 +498,12 @@ IF(EXISTS(SELECT e.id_usuario FROM Usuario u join dbo.Empresa e on u.id_usuario=
 BEGIN
 	DECLARE @cod_usu varchar(20)
 	SET @cod_usu=(SELECT u.codigo_usuario FROM Usuario u WHERE U.id_usuario=@idusu)
-	SET @mesage='USUARIO ( '+@cod_usu+' ) ESTA SIENDO USADO'
+	SET @mesage='Usuario ( '+@cod_usu+' ) esta asignado'
 END
 ELSE
 BEGIN
 	DELETE FROM dbo.Usuario WHERE id_usuario=@idusu
-	SET @mesage='USUARIO ELIMINADO'
+	SET @mesage='¡Eliminado!'
 END
 END
 GO
@@ -507,7 +511,7 @@ GO
 
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario, u.referencia, u.contrasena, u.id_rol, r.descrip_rol FROM 
+SELECT u.id_usuario, u.codigo_usuario, u.nombre_usuario, u.contrasena, u.genero, u.id_rol, r.descrip_rol FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
@@ -791,14 +795,14 @@ exec SP_SHOW_TIP_CONT
  @user varchar(50),
  @pass varchar(10)
  AS BEGIN
- select u.id_usuario, u.codigo_usuario,u.referencia,r.descrip_rol from Usuario u join Rol r on u.id_rol=r.id_rol 
- WHERE (u.codigo_usuario=@user or referencia=@user) and contrasena=@pass
+ select u.id_usuario, u.codigo_usuario, u.nombre_usuario, r.descrip_rol from Usuario u join Rol r on u.id_rol=r.id_rol 
+ WHERE (u.codigo_usuario=@user or nombre_usuario=@user) and contrasena=@pass
  END
  GO
 
 
  -- SEGUN EL CODIGO DE USUARIO MOSTRAR LAS EMPRESAS QUE EL USUARIO TIENE A CARGO TAMBIEN LAS SUCURSALES.
-CREATE PROC SP_EMPRESAS_USUARIO
+ALTER PROC SP_EMPRESAS_USUARIO
 @codigo_user int
 AS BEGIN
 SELECT (SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA, 
@@ -907,7 +911,7 @@ END
 GO
 
 
---PROCEDIMIENTO PARA INSERTAR PLANILLA
+--PROCEDIMIENTO PARA INSERTAR, UPDATE, DELETE, SHOW => PLANILLA
 CREATE PROC SP_INSERT_PLANILLA
 --@idtipo_planilla int,
 @id_periodo int,
@@ -926,17 +930,15 @@ AS BEGIN
 	IF(@plani=0)
 		SET @plani=1
 	ELSE
-		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)		
+		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)	
 		
 INSERT INTO Planilla(id_planilla,id_periodo, idempresa_maestra, id_mes, fecha_inicial, fecha_final, fecha_pago, 
 dias_mes, horas_mes, tope_horario_nocturno)VALUES
 (@plani, @id_periodo, @id_empMaestra, @id_mes, @fecha_inicial, @fecha_final, @fecha_pago, 
 @dias_mes, @horas_mes, @topehora_nocturno) 
-SET @mesage= '¡Registrado!'	
+SET @mesage= '¡Registrado!'
 END
 GO
-
-
 
 CREATE PROC SP_UPDATE_PLANILLA
 @id_planilla int,
@@ -946,32 +948,34 @@ UPDATE Planilla SET fecha_pago=@fecha_pago
 WHERE id_planilla=@id_planilla
 END
 GO
-EXEC SP_UPDATE_PLANILLA 4,'2020-11-29'
 
+ALTER PROC SP_DELETE_PLANILLA 
+@idplanilla int,
+@mensaje varchar(100) output
+AS BEGIN
+IF(EXISTS(SELECT pm.id_planilla FROM PlanillaManto pm JOIN Planilla p on (pm.id_planilla = p.id_planilla) 
+WHERE p.id_planilla=@idplanilla)) BEGIN
+	SET @mensaje = 'Error, la planilla tiene cálculo'
+END
+ELSE BEGIN
+	DELETE from dbo.Planilla where id_planilla=@idplanilla
+	SET @mensaje= '¡Eliminado!'
+END
+END
 GO
 
-CREATE PROC SP_SHOW_PLANILLA
+ALTER PROC SP_SHOW_PLANILLA
 @codigo_empresam int,
 @periodo int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo, p.id_mes, m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	SELECT p.id_planilla, pe.periodo, p.id_mes, p.idempresa_maestra, m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
 	p.dias_mes, p.horas_mes, p.tope_horario_nocturno
-	FROM Planilla p inner join Periodo pe on(pe.id_periodo=p.id_periodo) 
+	FROM Planilla p inner join Periodo pe on(pe.id_periodo=p.id_periodo)
 	inner join Mes m on(m.id_mes=p.id_mes)
 	where idempresa_maestra = @codigo_empresam and pe.id_periodo=@periodo
 	order by m.id_mes asc
 	END
 GO
-
-CREATE PROC SP_DELETE_PLANILLA -- modificar.
-@idplanilla int,
-@mensaje varchar(100) output
-AS BEGIN
-DELETE from Planilla where id_planilla=@idplanilla
-SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
-END
-GO
-
 
 
 /*   SCRIP PARA PERIODO       */
@@ -1126,7 +1130,7 @@ ALTER PROC SP_MODIFY_SUBSIDIOS
 @tipo_subsidio varchar(30),
 @descuento bit
 AS BEGIN
-UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio,tipo_suspencion=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
+UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio,tipo_suspension=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
                          tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios
 END
 GO
