@@ -71,7 +71,7 @@ namespace Presentacion.Vista
                 //np.Id_planilla = codigo;
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
                 np.Id_periodo = UserCache.Idperiodo;
-                np.Id_empresa = UserCache.Codigo_empresa;
+                np.Id_empresam = UserCache.Codigo_empresa;
                 np.Id_mes = Convert.ToInt32(cbxmes.SelectedValue);
                 // = cbxmes.SelectedItem.ToString(); 
                 np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());

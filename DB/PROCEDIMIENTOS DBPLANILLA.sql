@@ -23,7 +23,7 @@ END
 GO
 
 
-CREATE PROC SP_DELETE_CARGO
+ALTER PROC SP_DELETE_CARGO
 @idcargo int,
 @message varchar(100) output
 AS BEGIN
