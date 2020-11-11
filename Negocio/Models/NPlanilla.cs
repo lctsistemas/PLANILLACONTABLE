@@ -12,86 +12,23 @@ namespace Negocio.Models
     public class NPlanilla : IDisposable
     {
         String mensaje;
-        public int Id_planilla
-        {
-            get; set;
-
-        }
-
-        /*public int Id_tipo_planilla
-        {
-            get; set;
-        }*/
-
-
-
-        public int Id_periodo
-        {
-            get; set;
-        }
-
-        public int Id_empresa
-        {
-            get; set;
-        }
-
-        public int Id_mes
-        {
-            get; set;
-        }
-
-        public string Nombre_mes
-        {
-            get; set;
-        }
-
-        public DateTime Fecha_inicial
-        {
-            get; set;
-        }
-
-        public DateTime Fecha_final
-        {
-            get; set;
-        }
-
-        public DateTime Fecha_pago
-        {
-            get; set;
-        }
-
-        public int Dias_mes
-        {
-            get; set;
-        }
-
-        public int Horas_mes
-        {
-            get; set;
-        }
-
-        public Decimal Remu_basica
-        {
-            get; set;
-        }
-
-        public Decimal Asig_familiar
-        {
-            get; set;
-        }
-
-        public int Tope_horario_nocturno
-        {
-            get; set;
-        }
-
+        public int Id_planilla { get; set; }
+        /*public int Idtipo_planilla { get; set; }*/      
+        public int Id_periodo { get; set; }
+        public int Id_empresam { get; set; }
+        public int Id_mes { get; set; }
+        public string Nombre_mes { get; set; }
+        public DateTime Fecha_inicial { get; set; }
+        public DateTime Fecha_final { get; set; }
+        public DateTime Fecha_pago { get; set; }
+        public int Dias_mes { get; set; }
+        public int Horas_mes { get; set; }
+        public int Tope_horario_nocturno { get; set; }
         public EntityState state { get; set; }
 
 
         public IPlanilla rplanilla;
         private List<NPlanilla> list_planilla;
-
-        //private List<NBanco> list_banco;
 
         public NPlanilla()
         {
@@ -104,15 +41,13 @@ namespace Negocio.Models
             //pla.Id_tipo_planilla = Id_tipo_planilla;
             pla.Id_planilla = Id_planilla;
             pla.Id_periodo = Id_periodo;
-            pla.Id_empresa = Id_empresa;
+            pla.Id_empresam = Id_empresam;
             pla.Id_mes = Id_mes;
             pla.Fecha_inicial = Fecha_inicial;
             pla.Fecha_final = Fecha_final;
             pla.Fecha_pago = Fecha_pago;
             pla.Dias_mes = Dias_mes;
-            pla.Horas_mes = Horas_mes;
-            pla.Remu_basica = Remu_basica;
-            pla.Asig_familiar = Asig_familiar;
+            pla.Horas_mes = Horas_mes;        
             pla.Tope_horario_nocturno = Tope_horario_nocturno;
 
             switch (state)
@@ -129,6 +64,9 @@ namespace Negocio.Models
                     rplanilla.Delete(pla);
                     mensaje = pla.mensaje;
                     break;
+                default:
+                    mensaje = "Error";
+                    break;
 
             }
 
@@ -138,19 +76,17 @@ namespace Negocio.Models
         public List<NPlanilla> Getall()
         {
             DPlanilla dp = new DPlanilla();
-
-            dp.Id_empresa = Id_empresa;
+            dp.Id_empresam = Id_empresam;
             dp.Id_periodo = Id_periodo;
             using (DataTable dt = rplanilla.GetData(dp))
             {
                 list_planilla = new List<NPlanilla>();
                 foreach (DataRow item in dt.Rows)
                 {
-                    list_planilla.Add(new NPlanilla()
+                    list_planilla.Add(new NPlanilla() // modificar.
                     {
                         Id_planilla = Convert.ToInt32(item[0]),
-                        Id_periodo = Convert.ToInt32(item[1]),
-                        Id_empresa = Convert.ToInt32(item[2]),
+                        Id_periodo = Convert.ToInt32(item[1]),                       
                         Id_mes = Convert.ToInt32(item[3]),
                         Nombre_mes = item[4].ToString(),
                         Fecha_inicial = Convert.ToDateTime(item[5]),
@@ -158,13 +94,13 @@ namespace Negocio.Models
                         Fecha_pago = Convert.ToDateTime(item[7]),
                         Dias_mes = Convert.ToInt32(item[8]),
                         Horas_mes = Convert.ToInt32(item[9]),
-                        Remu_basica = Convert.ToDecimal(item[10]),
-                        Asig_familiar = Convert.ToDecimal(item[11]),
+                       
                         Tope_horario_nocturno = Convert.ToInt32(item[12])
                     });
                 }
-                return list_planilla;
+                
             }
+            return list_planilla;
         }
 
 

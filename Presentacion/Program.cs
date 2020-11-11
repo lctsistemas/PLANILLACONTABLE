@@ -17,9 +17,13 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new TipoContrato2());
 
 
+=======
+            Application.Run(new frmcargo());
+>>>>>>> ee8efd450f253c5cb93ef538bb267d63a219dc0f
         }
     }
 }

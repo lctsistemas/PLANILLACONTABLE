@@ -86,6 +86,7 @@ namespace Presentacion.Vista
             dgvsucursal.Columns[11].Visible = false;
 
             dgvsucursal.Columns[12].Visible = false;
+            dgvsucursal.Columns[13].Visible = false;
         }
 
         //DESABILITAR CAJAS DE TEXTO
@@ -183,15 +184,15 @@ namespace Presentacion.Vista
         {
             if (dgvsucursal.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                if (Messages.M_question("¿Desea Eliminar?") == DialogResult.Yes)
+                if (Messages.M_question("¿Desea Anular?") == DialogResult.Yes)
                 {
                     result = "";
                     using (nsu)
                     {
                         nsu.state = EntityState.Remover;
-                        nsu.eidemp_maestra = Convert.ToInt32(dgvsucursal.CurrentRow.Cells[1].Value);
+                        nsu.sidem_maestra = Convert.ToInt32(dgvsucursal.CurrentRow.Cells[1].Value);
                         result = nsu.SaveChanges();
-                        if (result.Contains("ACCESO"))
+                        if (result.Contains("Acceso"))
                         {
                             Messages.M_error(result);
                         }
@@ -205,25 +206,17 @@ namespace Presentacion.Vista
             }
             else
             {
-                Messages.M_warning("Seleccione Una Fila de la Tabla");
+                Messages.M_warning("Seleccione una fila de la tabla");
             }
         }
 
         private void btnempresa_Click(object sender, EventArgs e)
         {
-            //using (frmvista_empresa f_vist = new frmvista_empresa())
-            //{
-            frmvista_empresa f_vist = new frmvista_empresa();
-            this.AddOwnedForm(f_vist);
-            f_vist.FormBorderStyle = FormBorderStyle.None;
-            f_vist.TopLevel = false;//como ventana nivel superior
-            f_vist.Dock = DockStyle.Fill;
-            this.Controls.Add(f_vist);
-            this.Tag = f_vist;//datos sobre el control
-            f_vist.BringToFront();
-            //f_vist.StartPosition = FormStartPosition.CenterParent;
-            f_vist.Show();
-            //}
+             using (frmvista_empresa f_vist = new frmvista_empresa())
+             {           
+                this.AddOwnedForm(f_vist);
+                f_vist.ShowDialog();
+            }
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)

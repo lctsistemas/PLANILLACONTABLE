@@ -138,12 +138,10 @@ namespace Presentacion.Vista
         }
 
         private void btnusuario_Click(object sender, EventArgs e)
-        {            
-            frmvista_usuario f_vist = frmvista_usuario.Getinstance();
+        {
+           frmvista_usuario f_vist = frmvista_usuario.Getinstance();           
             this.AddOwnedForm(f_vist);
-            f_vist.ShowDialog();
-           
-            
+            f_vist.ShowDialog();                      
         }
 
         private void frmempresa_Load(object sender, EventArgs e)
