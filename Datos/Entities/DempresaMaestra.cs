@@ -5,7 +5,7 @@ namespace Datos.Entities
 {
     public class DempresaMaestra
     {
-        private int idempresa_maestra;
+        //private int idempresa_maestra;
         private String razon_social;
         private String localidad;
         private String direccion;
@@ -27,11 +27,11 @@ namespace Datos.Entities
         private Int32 sid_empresa;
 
         //METODOS GET AND SET EMPRESA MAESTRA
-        public Int32 Idempresa_maestra
-        {
-            get { return idempresa_maestra; }
-            set { idempresa_maestra = value; }
-        }
+        //public Int32 Idempresa_maestra
+        //{
+        //    get { return idempresa_maestra; }
+        //    set { idempresa_maestra = value; }
+        //}
 
         public String Razon_social
         {

@@ -80,16 +80,12 @@ namespace Presentacion.Vista
                 np.Dias_mes = Convert.ToInt32(txtdia.Text.Trim());
                 np.Horas_mes = Convert.ToInt32(txthora.Text.Trim());              
                 np.Tope_horario_nocturno = Convert.ToInt32(txttope.Text.ToString());
-
-
-                bool valida = new ValidacionDatos(np).Validate();
-                if (valida)
-                {
+               
 
                     result = np.GuardarCambios();
 
                     Messages.M_info(result);
-                }
+                
 
                 
             }

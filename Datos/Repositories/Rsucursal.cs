@@ -108,17 +108,19 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "SP_REMOVE_SUCURSAL";
 
-                    cmd.Parameters.Add("@id_maestra", SqlDbType.Int).Value = entiti.Sidem_maestra;
+                    cmd.Parameters.AddWithValue("@id_maestra", entiti.Sidem_maestra);
                     cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mesages = cmd.Parameters["@mesage"].Value.ToString();
                     cmd.Parameters.Clear();
-                    return result;
+                   
                 }
             }
+            return result;
         }
         public DataTable GetData(DempresaMaestra entiti)
         {
+            DataTable dt=null;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
                 cnn.Open();
@@ -131,15 +133,15 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
                     da.SelectCommand = cmd;
 
-                    using (DataTable dt = new DataTable())
+                    using (dt = new DataTable())
                     {
                         da.Fill(dt);
-                        da.Dispose();
-                        return dt;
+                        da.Dispose();                        
                     }
                 }
 
             }
+            return dt;
         }
 
     }

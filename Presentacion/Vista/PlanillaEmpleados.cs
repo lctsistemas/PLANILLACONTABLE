@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class PlanillaEmpleados : Form
+    public partial class FrmPlanillaEmpleados : Form
     {
         String result;
         private NPlanilla np = new NPlanilla();
-        public PlanillaEmpleados()
+        public FrmPlanillaEmpleados()
         {
             InitializeComponent();
         }
@@ -98,20 +98,16 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[13].Width = 100;
             dgvplanilla.Columns[13].Visible = false;
 
-        }
-
-        private void btnagregar_Click(object sender, EventArgs e)
+        }     
+     
+        private void tbtnnuevo_Click(object sender, EventArgs e)
         {
             FrmPlanilla fr = FrmPlanilla.GetInstance();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
-           // ShowPlanilla();
-
         }
 
-        
-
-        private void btnmodificar_Click(object sender, EventArgs e)
+        private void tbtnmodificar_Click(object sender, EventArgs e)
         {
             np.state = EntityState.Modificar;
             frmModificarPlanilla formodi = new frmModificarPlanilla();
@@ -125,7 +121,7 @@ namespace Presentacion.Vista
             ShowPlanilla();
         }
 
-        private void btneliminar_Click(object sender, EventArgs e)
+        private void tbtneliminar_Click(object sender, EventArgs e)
         {
             result = "";
             if (dgvplanilla.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
@@ -150,13 +146,19 @@ namespace Presentacion.Vista
             }
         }
 
-        private void btnplanillamant_Click(object sender, EventArgs e)
+        private void tbtcalculo_Click(object sender, EventArgs e)
         {
             PlanillaMensual fr = PlanillaMensual.GetInstance();
-            fr.txtmes.Text= dgvplanilla.CurrentRow.Cells[3].Value.ToString();
+            fr.txtmes.Text = dgvplanilla.CurrentRow.Cells[3].Value.ToString();
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
             ShowPlanilla();
+        }
+
+        private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -36,22 +36,25 @@
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.dgvvista_emp = new System.Windows.Forms.DataGridView();
             this.lbltotal = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btncerrar = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_emp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtbuscar
             // 
-            this.txtbuscar.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtbuscar.BackColor = System.Drawing.Color.White;
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbuscar.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtbuscar.Location = new System.Drawing.Point(66, 18);
+            this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtbuscar.Location = new System.Drawing.Point(71, 15);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(298, 16);
+            this.txtbuscar.Size = new System.Drawing.Size(298, 19);
             this.txtbuscar.TabIndex = 0;
             this.txtbuscar.WordWrap = false;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
@@ -63,7 +66,7 @@
             this.dgvvista_emp.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvvista_emp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvvista_emp.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvvista_emp.BackgroundColor = System.Drawing.Color.White;
             this.dgvvista_emp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvvista_emp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvvista_emp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -86,7 +89,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvvista_emp.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvvista_emp.EnableHeadersVisualStyles = false;
-            this.dgvvista_emp.Location = new System.Drawing.Point(5, 60);
+            this.dgvvista_emp.Location = new System.Drawing.Point(8, 57);
             this.dgvvista_emp.Name = "dgvvista_emp";
             this.dgvvista_emp.ReadOnly = true;
             this.dgvvista_emp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -103,7 +106,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
             this.dgvvista_emp.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvvista_emp.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvvista_emp.Size = new System.Drawing.Size(784, 301);
+            this.dgvvista_emp.Size = new System.Drawing.Size(755, 301);
             this.dgvvista_emp.TabIndex = 4;
             this.dgvvista_emp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvvista_emp_CellDoubleClick);
             // 
@@ -112,71 +115,92 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.DimGray;
-            this.lbltotal.Location = new System.Drawing.Point(434, 41);
+            this.lbltotal.Location = new System.Drawing.Point(439, 38);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(11, 17);
             this.lbltotal.TabIndex = 5;
             this.lbltotal.Text = "l";
             // 
-            // label1
+            // panel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(10, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Buscar: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(63, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(302, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "_________________________________________________";
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btncerrar);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.dgvvista_emp);
+            this.panel1.Controls.Add(this.txtbuscar);
+            this.panel1.Controls.Add(this.lbltotal);
+            this.panel1.Controls.Add(this.shapeContainer2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(774, 367);
+            this.panel1.TabIndex = 8;
             // 
             // btncerrar
             // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.BackColor = System.Drawing.Color.Transparent;
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp2;
-            this.btncerrar.Location = new System.Drawing.Point(768, 7);
+            this.btncerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrar.ForeColor = System.Drawing.Color.Crimson;
+            this.btncerrar.Location = new System.Drawing.Point(741, 8);
             this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(27, 22);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 8;
-            this.btncerrar.TabStop = false;
+            this.btncerrar.Size = new System.Drawing.Size(20, 20);
+            this.btncerrar.TabIndex = 11;
+            this.btncerrar.Text = "X";
+            this.btncerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(30, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // shapeContainer2
+            // 
+            this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer2.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer2.Name = "shapeContainer2";
+            this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer2.Size = new System.Drawing.Size(772, 365);
+            this.shapeContainer2.TabIndex = 10;
+            this.shapeContainer2.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 68;
+            this.lineShape1.X2 = 374;
+            this.lineShape1.Y1 = 38;
+            this.lineShape1.Y2 = 38;
             // 
             // frmvista_empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 386);
-            this.Controls.Add(this.btncerrar);
-            this.Controls.Add(this.txtbuscar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbltotal);
-            this.Controls.Add(this.dgvvista_emp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.ClientSize = new System.Drawing.Size(774, 367);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmvista_empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EMPRESAS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmvista_empresa_FormClosing);
             this.Load += new System.EventHandler(this.Vista_empresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_emp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -184,8 +208,10 @@
         private System.Windows.Forms.TextBox txtbuscar;
         private System.Windows.Forms.DataGridView dgvvista_emp;
         private System.Windows.Forms.Label lbltotal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label btncerrar;
     }
 }

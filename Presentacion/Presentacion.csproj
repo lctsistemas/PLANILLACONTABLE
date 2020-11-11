@@ -100,23 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Subvista\Vista_cargo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Subvista\Vista_cargo.Designer.cs">
-      <DependentUpon>Vista_cargo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Subvista\Vista_empresa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Subvista\Vista_empresa.Designer.cs">
       <DependentUpon>Vista_empresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Subvista\Vista_login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Subvista\Vista_login.Designer.cs">
-      <DependentUpon>Vista_login.cs</DependentUpon>
     </Compile>
     <Compile Include="Subvista\Vista_SBS.cs">
       <SubType>Form</SubType>
@@ -189,12 +177,6 @@
     </Compile>
     <Compile Include="Vista\Empresa.Designer.cs">
       <DependentUpon>Empresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Vista\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Form1.designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FrmPlanillaMensual2.cs">
       <SubType>Form</SubType>
@@ -294,14 +276,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Subvista\Vista_cargo.resx">
-      <DependentUpon>Vista_cargo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Subvista\Vista_empresa.resx">
       <DependentUpon>Vista_empresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Subvista\Vista_login.resx">
-      <DependentUpon>Vista_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Subvista\Vista_SBS.resx">
       <DependentUpon>Vista_SBS.cs</DependentUpon>
@@ -338,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FrmPlanillaMensual2.resx">
       <DependentUpon>FrmPlanillaMensual2.cs</DependentUpon>
@@ -581,6 +554,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planilla.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
