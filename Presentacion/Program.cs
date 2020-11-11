@@ -17,7 +17,12 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmcargo());
+=======
+            Application.Run(new Banco2());
+
+>>>>>>> 1eaf8bed196a6fa14c75ddf6b3555f893388787b
 
         }
     }

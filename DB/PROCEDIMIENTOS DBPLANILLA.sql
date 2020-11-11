@@ -727,15 +727,18 @@ IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(c.id_banco=b.id_banc
 	BEGIN
 		DECLARE @cod_banco varchar(20);
 		SET @cod_banco=(SELECT b.nombre_banco from Banco b WHERE b.id_banco=@id_banco)
-		SET @message='EL BANCO ('+@cod_banco+') ESTA SIENDO USADO'  
+		SET @message='El banco ('+@cod_banco+') esta en uso.'  
 	END
 ELSE
 	BEGIN 
 		DELETE from Banco where id_banco=@id_banco
-		SET @message='¡Eliminado!'
+		SET @message='¡Banco eliminado correctamente!'
 	END
 END
 GO
+
+SELECT * FROM Contrato
+
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
 ALTER PROC SP_SHOW_BANCO
@@ -780,7 +783,7 @@ AS BEGIN
 SELECT id_tipocontrato, tiempo_contrato from Tipo_contrato;
 END
 GO
-
+exec SP_SHOW_TIP_CONT
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
  
  --PROCEDIMIENTO LOGIN USUARIO

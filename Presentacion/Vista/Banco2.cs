@@ -85,13 +85,18 @@ namespace Presentacion.Vista
                         {
                             nb.state = EntityState.Remover;
                             nb.IdBanco = Convert.ToInt32(dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
+                            //MessageBox.Show("id banco es: "+nb.IdBanco);
                             mensaje = nb.GuardarCambios();
-                            if (!mensaje.Equals(""))
+                            if (mensaje.Contains ("ESTA SIENDO USADO")  )
                             {
-                                Fill_Banco();
-
+                                Messages.M_error(mensaje);
                             }
-                            Messages.M_info(mensaje);
+                            else
+                            {
+                                Messages.M_info(mensaje);
+                                Fill_Banco();
+                            }
+                               
                             nb.state = EntityState.Guardar;
                         }
                     }
@@ -102,7 +107,7 @@ namespace Presentacion.Vista
         private void Tabla()
         {
             dgvsubsidio.Columns["dgvtxtidbanco"].Visible = false;
-            dgvsubsidio.Columns["dgvtxtbanco"].ReadOnly = true;
+            dgvsubsidio.Columns["dgvtxtbanco"].ReadOnly = false;
         }
     }
 }

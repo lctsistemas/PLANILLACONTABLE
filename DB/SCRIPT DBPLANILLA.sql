@@ -455,3 +455,8 @@ aporte_essalud decimal(8,2) null,
 transporte decimal(8,2) null
 )
 GO
+
+fasfasdfasdfasdfasdfasdfas
+masd  aslslos dlos demas.
+que ? XD
+la otra sala.
