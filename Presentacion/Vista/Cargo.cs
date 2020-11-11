@@ -34,9 +34,8 @@ namespace Presentacion.Vista
         {
             using (nc)
             {
-
                 dgvcargo.DataSource = nc.Getall();
-                lbltotal.Text = "TOTAL REGISTRO: " + dgvcargo.Rows.Count;
+                lbltotal.Text = "Total registro: " + dgvcargo.Rows.Count;
             }
         }
 
@@ -52,7 +51,7 @@ namespace Presentacion.Vista
             dgvcargo.Columns[1].Width = 150;
 
             dgvcargo.Columns[2].HeaderText = "DESCRIPCION";
-            dgvcargo.Columns[2].Width = 200;
+            dgvcargo.Columns[2].Width = 300;
 
         }
 
@@ -67,6 +66,7 @@ namespace Presentacion.Vista
             else
                 return false;
         }
+
 
         //HABILITAR CONTROLES
         private void Habilitar(bool v)
@@ -101,13 +101,9 @@ namespace Presentacion.Vista
                 nc.nombre_cargo = txtnom_cargo.Text.Trim().ToUpper();
                 nc.descripcion = txtdescrip.Text.Trim().ToUpper();
 
-                bool valida = new ValidacionDatos(nc).Validate();
-                if (valida)
-                {
-                    result = nc.SaveChanges();
-                    ShowCargo();
-                    Messages.M_info(result);
-                }
+                result = nc.SaveChanges();
+                ShowCargo();
+                Messages.M_info(result);
             }
         }
 

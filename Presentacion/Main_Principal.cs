@@ -220,7 +220,7 @@ namespace Presentacion
 
         private void btnplanilla2_Click(object sender, EventArgs e)
         {
-            OpenForm<PlanillaEmpleados>();
+            OpenForm<FrmPlanillaEmpleados>();
         }
 
         private void btncalculo_Click(object sender, EventArgs e)

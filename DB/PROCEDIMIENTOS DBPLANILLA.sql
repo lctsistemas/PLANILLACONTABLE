@@ -23,7 +23,7 @@ END
 GO
 
 
-CREATE PROC SP_DELETE_CARGO
+ALTER PROC SP_DELETE_CARGO
 @idcargo int,
 @message varchar(100) output
 AS BEGIN
@@ -389,7 +389,7 @@ ALTER PROC SP_REMOVE_EMPRESA
 @id_maestra int,
 @mesage varchar(50) OUTPUT
 AS BEGIN	
-	IF(EXISTS(SELECT em.id_em_maestra FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra
+	IF(EXISTS(SELECT e.id_em_maestra FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra
 	WHERE em.id_em_maestra=@id_maestra))
 		BEGIN
 			SET @mesage ='Acceso denagado, Empresa tiene colaboradores.'
@@ -404,18 +404,19 @@ GO
 
 
 
-CREATE PROC SP_REMOVE_SUCURSAL
+ALTER PROC SP_REMOVE_SUCURSAL
 @id_maestra int,
 @mesage varchar(50) OUTPUT
 AS BEGIN	
-	IF(EXISTS(SELECT * FROM dbo.Empresa_maestra em join dbo.Empleado e on em.id_em_maestra= e.id_em_maestra WHERE em.id_em_maestra=@id_maestra))
+	IF(EXISTS(SELECT e.id_em_maestra FROM dbo.Empresa_maestra em join dbo.Empleado e on 
+	em.id_em_maestra= e.id_em_maestra WHERE em.id_em_maestra=@id_maestra))
 		BEGIN
-			SET @mesage ='ACCESO DENEGADO'
+			SET @mesage ='Acceso denagado, Sucursal tiene colaboradores.'
 		END
 	ELSE
 		BEGIN
 			UPDATE dbo.Empresa_maestra SET estado_eliminado='ANULADO' WHERE id_em_maestra=@id_maestra
-			SET @mesage='SUCURSAL ELIMINADO'
+			SET @mesage='¡Anulado!'
 		END
 END
 GO
@@ -441,6 +442,7 @@ dbo.Empresa e on e.id_empresa=s.id_empresa join dbo.Usuario usu on e.id_usuario=
 WHERE em.estado_eliminado='NO ANULADO' ORDER BY S.id_sucursal DESC 
 END
 GO
+
 
 /*         PROCEDIMIENTO PARA USUARIO            */
 ALTER PROC SP_INSERT_USUARIO(
@@ -672,29 +674,6 @@ ELSE
 	END
 END
 GO
-<<<<<<< HEAD
-
-
---GENERAR CODIGO Tipo Planilla
-CREATE PROC SP_GENERAR_TipoPlanilla
-(@tipoPlan int output)
-AS BEGIN
-SET @tipoPlan=(SELECT count(tp.id_tipo_planilla) FROM dbo.tipo_planilla tp)
-IF(@tipoPlan=0)
-	BEGIN
-		SET @tipoPlan=1		
-	END
-ELSE
-	BEGIN
-		SET @tipoPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM dbo.tipo_planilla tp)
-	END
-END
-GO
-
-
---GENERAR CODIGO REGIMEN
-=======
->>>>>>> Carlos
 
 
 
@@ -860,12 +839,12 @@ descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codig
 END
 GO
 
-CREATE PROC SP_DELETE_REGIMEN
+ALTER PROC SP_DELETE_REGIMEN
 @codigo_regimen int,
 @mensaje varchar(100) output
 AS BEGIN
 DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
-SET @mensaje= 'Régimen Eliminado Correctamente.'
+SET @mensaje= '¡Eliminado!'
 END
 --END
 GO
@@ -926,20 +905,17 @@ GO
 
 
 --PROCEDIMIENTO PARA INSERTAR PLANILLA
-alter PROC SP_INSERT_PLANILLA
---@id_planilla int,
---@id_tipo_planilla varchar(20),
+CREATE PROC SP_INSERT_PLANILLA
+--@idtipo_planilla int,
 @id_periodo int,
-@id_empresa int,
+@id_empMaestra int,
 @id_mes int,
 @fecha_inicial date,
 @fecha_final date,
 @fecha_pago date,
 @dias_mes int,
 @horas_mes int,
-@remu_basica decimal(10,2),
-@asig_familiar decimal(10,2),
-@tope_horario_nocturno int,
+@topehora_nocturno decimal(8,2),
 @mesage varchar(100) output
 AS BEGIN
 	DECLARE @plani int
@@ -947,19 +923,19 @@ AS BEGIN
 	IF(@plani=0)
 		SET @plani=1
 	ELSE
-		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)
+		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)		
 		
-INSERT INTO Planilla(id_planilla,id_periodo,id_empresa,id_mes,fecha_inicial , fecha_final,fecha_pago, 
-dias_mes,horas_mes,remu_basica,asig_familiar,tope_horario_nocturno)VALUES
-(@plani,@id_periodo,@id_empresa,@id_mes,@fecha_inicial, @fecha_final, @fecha_pago, 
-@dias_mes,@horas_mes,@remu_basica,@asig_familiar,@tope_horario_nocturno) 
-SET @mesage= 'PLANILLA REGISTRADA CORRECTAMENTE'	
+INSERT INTO Planilla(id_planilla,id_periodo, idempresa_maestra, id_mes, fecha_inicial, fecha_final, fecha_pago, 
+dias_mes, horas_mes, tope_horario_nocturno)VALUES
+(@plani, @id_periodo, @id_empMaestra, @id_mes, @fecha_inicial, @fecha_final, @fecha_pago, 
+@dias_mes, @horas_mes, @topehora_nocturno) 
+SET @mesage= '¡Registrado!'	
 END
 GO
 
 
 
-alter PROC SP_UPDATE_PLANILLA
+CREATE PROC SP_UPDATE_PLANILLA
 @id_planilla int,
 @fecha_pago date
 AS BEGIN
@@ -970,24 +946,21 @@ GO
 EXEC SP_UPDATE_PLANILLA 4,'2020-11-29'
 
 GO
-alter PROC SP_SHOW_PLANILLA
-@codigo_empresa int,
+
+CREATE PROC SP_SHOW_PLANILLA
+@codigo_empresam int,
 @periodo int
 AS BEGIN
-	SELECT p.id_planilla, pe.periodo,p.id_empresa,p.id_mes,m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
-	p.dias_mes,p.horas_mes,p.remu_basica,p.asig_familiar,p.tope_horario_nocturno
-	FROM Planilla p 
-	inner join Periodo pe
-	on(pe.id_periodo=p.id_periodo) 
-	inner join Mes m
-	on(m.id_mes=p.id_mes)
-	where id_empresa=@codigo_empresa and pe.id_periodo=@periodo
+	SELECT p.id_planilla, pe.periodo, p.id_mes, m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
+	p.dias_mes, p.horas_mes, p.tope_horario_nocturno
+	FROM Planilla p inner join Periodo pe on(pe.id_periodo=p.id_periodo) 
+	inner join Mes m on(m.id_mes=p.id_mes)
+	where idempresa_maestra = @codigo_empresam and pe.id_periodo=@periodo
 	order by m.id_mes asc
 	END
 GO
-exec SP_SHOW_PLANILLA 2,1
-GO
-CREATE PROC SP_DELETE_PLANILLA
+
+CREATE PROC SP_DELETE_PLANILLA -- modificar.
 @idplanilla int,
 @mensaje varchar(100) output
 AS BEGIN
@@ -1007,17 +980,10 @@ AS BEGIN
 END
 GO
 
-<<<<<<< HEAD
--- SCRIPT PARA ESSALUD
-CREATE PROCEDURE SP_ADD_REG_SAL(
-@id_regimen_salud int,
-=======
-
 
 
 ALTER PROCEDURE SP_ADD_REG_SAL(
 --@id_regimen_salud int,
->>>>>>> 1025941f78a75d9300207f0f21bde5067e348976
 @cod_regi_salud int,
 @regimen_salud varchar(80),
 @mensaje varchar(100) output)

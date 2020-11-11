@@ -13,8 +13,7 @@ namespace Presentacion.Subvista
         private static frmvista_usuario _instance;
         public frmvista_usuario()
         {
-            InitializeComponent();
-            Tooltip.Title(txtbuscar, "Buscar por nombre o código", true);
+            InitializeComponent();           
             Vista_user();
             Tabla();
         }
@@ -46,11 +45,11 @@ namespace Presentacion.Subvista
             dgvvista_user.Columns[0].Width = 50;
             dgvvista_user.Columns[0].Visible = false;
 
-            dgvvista_user.Columns[1].HeaderText = "ACCESO USUARIO";
+            dgvvista_user.Columns[1].HeaderText = "CODIGO ACCESO";
             dgvvista_user.Columns[1].Width = 150;
 
             dgvvista_user.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvvista_user.Columns[2].Width = 250;
+            dgvvista_user.Columns[2].Width = 280;
 
             dgvvista_user.Columns[3].HeaderText = "CONTRASEÑA";
             dgvvista_user.Columns[3].Width = 100;
@@ -71,7 +70,8 @@ namespace Presentacion.Subvista
         private void frmvista_usuario_Load(object sender, EventArgs e)
         {
             
-            txtbuscar.Focus();
+            txtbuscar.Focus();            
+            Tooltip.Title(txtbuscar, "Buscar por nombre o codigo", true);
         }
 
         private void dgvvista_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -95,13 +95,7 @@ namespace Presentacion.Subvista
         {
             _instance = null;
         }
-
       
-        private void btncerrar_MouseMove(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-            btncerrar.ForeColor = Color.White;
-        }
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
@@ -116,7 +110,8 @@ namespace Presentacion.Subvista
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
-
+            btncerrar.BackColor = Color.Crimson;
+            btncerrar.ForeColor = Color.White;
         }
     }
 }

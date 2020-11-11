@@ -12,11 +12,9 @@ namespace Negocio
     {
 
         String mensaje;
-        List<NSucursal> list_sucursal;
-        //public int idempresa_maestra { get; set; }
+        List<NSucursal> list_sucursal;      
         public String estado { get; set; }
-        public Int32 eidemp_maestra { get; set; }
-        //public Int32 sidsucursal { get; set; }
+        public Int32 eidemp_maestra { get; set; }        
         public Int32 sidempresa { get; set; }
         public String scodigo_sucursal { get; set; }
         public String razon_social { get; set; }
@@ -28,7 +26,7 @@ namespace Negocio
         public String usuario { get; set; }
         public String empresa { get; set; }
         public String search { get; set; }//para buscar los datos   
-
+        public Int32 sidem_maestra { get; set; }
         public EntityState state { private get; set; }
         private IEmpresa_maestra sucursal_reposi;
 
@@ -55,6 +53,7 @@ namespace Negocio
                 de.Scodigo_sucursal = scodigo_sucursal;
                 de.Eidemp_maestra = eidemp_maestra;
                 de.Sid_empresa = sidempresa;
+                de.Sidem_maestra = sidem_maestra;
 
                 switch (state)
                 {

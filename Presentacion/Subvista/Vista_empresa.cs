@@ -106,22 +106,18 @@ namespace Presentacion.Subvista
             }
         }
 
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+    
         private void frmvista_empresa_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
         }
 
-        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        private void btncerrards_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
         }
 
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        private void btncerrarsd_MouseLeave(object sender, EventArgs e)
         {
             btncerrar.BackColor = Color.Transparent;
         }
@@ -129,6 +125,23 @@ namespace Presentacion.Subvista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvvista_emp.DataSource = ne.Search(txtbuscar.Text.Trim());
+        }
+       
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+            btncerrar.ForeColor = Color.White;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Transparent;
+            btncerrar.ForeColor = Color.Crimson;
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -4,7 +4,6 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 
 namespace Negocio.Models
@@ -12,27 +11,19 @@ namespace Negocio.Models
     public class Ncargo : IDisposable
     {
         private List<Ncargo> listacargo;
-        public int idcargo { get; set; }
-
-        [Required(ErrorMessage = "El campo Cargo es obligatorio.")]
-        [StringLength(maximumLength: 40, MinimumLength = 4, ErrorMessage = "Campo Cargo de 4 caracteres como minimo.")]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Cargo solo permite letras.")]
-        public string nombre_cargo { get; set; }
-
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo descripcion solo permite letras.")]
+        public int idcargo { get; set; }        
+        public string nombre_cargo { get; set; }      
         public string descripcion { get; set; }
 
         public EntityState state { private get; set; }//esto me muestra en datagridview->then ponemos private
         private IRepository cargo_repository;
 
         //PODEMOS VALIDAR DATOS CON: System.ComponentModel.DataAnnotations;
-
         public Ncargo()
         {
             cargo_repository = new Rcargo();
         }
-
-        //GopherStyleUriParser
+        
         //METODO ADD,EDIT, DELETE
         public string SaveChanges()
         {
@@ -75,7 +66,7 @@ namespace Negocio.Models
         }
         //METODO MOSTRAR
 
-        public List<Ncargo> Getall()
+        public IEnumerable<Ncargo> Getall()
         {
             using (var dt = cargo_repository.GetData(null))
             {
