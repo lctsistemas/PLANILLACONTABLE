@@ -352,10 +352,8 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Banco2.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.frmMDIParent.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmPlanilla.resources
-<<<<<<< HEAD
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoContrato2.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmPlanillaEmpleados.resources
-=======
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.frmMDIParent.resources
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmPlanilla.resources
 >>>>>>> 1eaf8bed196a6fa14c75ddf6b3555f893388787b
