@@ -74,10 +74,10 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SP_DEL_BANCO";
+                    cmd.CommandText = "SP_DEL_TIP_CONT";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    //cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
+                    cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
                     cmd.Parameters.Add("@message", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.Mensaje = cmd.Parameters["@message"].Value.ToString();

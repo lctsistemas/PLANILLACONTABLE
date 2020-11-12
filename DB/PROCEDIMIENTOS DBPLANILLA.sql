@@ -788,6 +788,27 @@ SELECT id_tipocontrato, tiempo_contrato from Tipo_contrato;
 END
 GO
 exec SP_SHOW_TIP_CONT
+
+go
+
+alter PROC SP_DEL_TIP_CONT
+@id_tcontrato int,
+@message varchar(100) output
+AS BEGIN 
+IF(EXISTS(SELECT t.id_tipocontrato from Tipo_contrato t join Contrato c on(c.id_tipocontrato=t.id_tipocontrato) where c.id_tipocontrato=t.id_tipocontrato))
+	BEGIN
+		DECLARE @cod_Tcontrato varchar(20);
+		SET @cod_Tcontrato=(SELECT t.tiempo_contrato from Tipo_contrato t WHERE t.id_tipocontrato=@id_tcontrato)
+		SET @message='El tipo de contrato ('+@cod_Tcontrato+') esta en uso.'  
+	END
+ELSE
+	BEGIN 
+		DELETE from Tipo_contrato where id_tipocontrato=@id_tcontrato
+		SET @message='¡El tipo de contrato se ha eliminado correctamente!'
+	END
+END
+GO
+
  ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
  
  --PROCEDIMIENTO LOGIN USUARIO

@@ -9,15 +9,17 @@ namespace Presentacion
 {
     static class Program
     {
-        /// <summary>
-        /// Punto de entrada principal para la aplicación.o
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frminicio());
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e28e439e6d2c1770c5cc88843a17ab7e960b88db
         }
     }
 }
