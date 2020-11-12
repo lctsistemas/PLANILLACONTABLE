@@ -15,11 +15,7 @@ namespace Presentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frminicio());
-<<<<<<< HEAD
-=======
 
-
->>>>>>> e28e439e6d2c1770c5cc88843a17ab7e960b88db
         }
     }
 }
