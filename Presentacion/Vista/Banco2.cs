@@ -109,5 +109,45 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns["dgvtxtidbanco"].Visible = false;
             dgvsubsidio.Columns["dgvtxtbanco"].ReadOnly = false;
         }
+
+        private void lblbanco_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.SteelBlue;
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtBanco_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtBanco, "Campo requerido!");
+            txtBanco.Focus();
+        }
+
+        
     }
 }

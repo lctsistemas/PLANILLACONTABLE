@@ -15,9 +15,8 @@ namespace Negocio.Models
         public int iddocumento { get; set; }
         public string cod_doc { get; set; }
 
-        [Display(Name = "Documento")]
-        [Required]
-        [RegularExpression("^[a-zA-Z. /]+$")]
+        //[Required]
+        //[RegularExpression("^[a-zA-Z. /]+$")]
         public string nombre_documento { get; set; }
 
         public string descripcion { get; set; }

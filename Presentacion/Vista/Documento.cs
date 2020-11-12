@@ -104,9 +104,8 @@ namespace Presentacion.Vista
                 {
                     result = nd.SaveChanges();
                     ShowDocument();
-                    Messages.M_info(result);
                     limpiar();
-                }
+                } 
             }
         }
         //VALIATE
@@ -231,6 +230,9 @@ namespace Presentacion.Vista
 
         }
 
-       
+        private void txtcoddoc_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtcoddoc, "Campo codigo documento requerido!");
+        }
     }
 }

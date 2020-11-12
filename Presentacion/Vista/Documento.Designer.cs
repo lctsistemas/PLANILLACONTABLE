@@ -164,6 +164,7 @@
             this.txtcoddoc.Size = new System.Drawing.Size(105, 23);
             this.txtcoddoc.TabIndex = 7;
             this.txtcoddoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcoddoc.Validating += new System.ComponentModel.CancelEventHandler(this.txtcoddoc_Validating);
             // 
             // txtdocumento
             // 
