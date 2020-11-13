@@ -133,6 +133,7 @@ namespace Presentacion.Vista
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             using (ne) { ne.state = EntityState.Guardar; }
+            tabempresa.SelectedIndex = 1;
             Limpiar();
             ValidateError.validate.Clear();
         }
@@ -307,6 +308,11 @@ namespace Presentacion.Vista
             txtrazon_social.Text = respuesta.razon_social.ToString();
             txtdomicilio.Text = respuesta.domicilio_fiscal.ToString();
             
+        }
+
+        private void cboregimen_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cboregimen, "Campo requerido");
         }
     }
 }

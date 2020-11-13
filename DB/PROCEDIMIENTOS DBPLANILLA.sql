@@ -985,7 +985,7 @@ END
 END
 GO
 
-ALTER PROC SP_SHOW_PLANILLA
+CREATE PROC SP_SHOW_PLANILLA
 @codigo_empresam int,
 @periodo int
 AS BEGIN
@@ -1000,7 +1000,7 @@ GO
 
 
 /*   SCRIP PARA PERIODO       */
-ALTER PROC SP_SHOW_PERIODO
+CREATE PROC SP_SHOW_PERIODO
 @periodo int,
 @idperiodo int output
 AS BEGIN
@@ -1010,7 +1010,7 @@ GO
 
 
 
-ALTER PROCEDURE SP_ADD_REG_SAL(
+CREATE PROCEDURE SP_ADD_REG_SAL(
 --@id_regimen_salud int,
 @cod_regi_salud int,
 @regimen_salud varchar(80),

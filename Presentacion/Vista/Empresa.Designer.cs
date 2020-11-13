@@ -254,6 +254,7 @@
             this.cboregimen.Name = "cboregimen";
             this.cboregimen.Size = new System.Drawing.Size(310, 25);
             this.cboregimen.TabIndex = 8;
+            this.cboregimen.Validating += new System.ComponentModel.CancelEventHandler(this.cboregimen_Validating);
             // 
             // btnusuario
             // 
