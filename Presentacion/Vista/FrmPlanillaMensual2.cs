@@ -18,19 +18,16 @@ namespace Presentacion.Vista
     {
         private const string Subsidiado = "SUBSIDIADOS";
         private const string NoSubsidiado = "NO SUBSIDIADOS";
+        public int xdia_vacaciones = 0; // el valor es enviado desde el form susbidios.
+
         NplanillaM nplam;
-        int suel { get; set; }
         public FrmPlanillaMensual2()
         {
             InitializeComponent();
             //dgvplanilla1.Rows.Add();
             dgvplanilla1.AutoGenerateColumns = false;
         }
-
-
-        //METODO BORRR CEROS
-        
-
+       
         //TABLA
         private void TablaPlanilla() {
             dgvplanilla1.Columns["ape_nom"].Frozen = true;
@@ -38,6 +35,10 @@ namespace Presentacion.Vista
 
             dgvplanilla1.Columns["id_contrato"].Visible = false;
             dgvplanilla1.Columns["id_planilla_manto"].Visible = false;
+
+            dgvplanilla1.Columns["valor_comision"].Visible = true;
+            dgvplanilla1.Columns["valor_seguro"].Visible = true;
+            dgvplanilla1.Columns["valor_aporte"].Visible = true;
 
             dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
             dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
@@ -95,8 +96,8 @@ namespace Presentacion.Vista
         {
             using (nplam =new NplanillaM())
             {
-                nplam.Id_mes = 10;
-                nplam.Id_empreMaestra = 2;
+                nplam.Id_mes = 9;
+                nplam.Id_empreMaestra = 1;
                 dgvplanilla1.DataSource = nplam.Show_planillaM();
             }        
             
@@ -207,6 +208,22 @@ namespace Presentacion.Vista
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // DESCUENTO O.N.P  Y A.F.P
+        private void Descuento_aportes()
+        {
+            DataGridViewRow dgr = dgvplanilla1.CurrentRow;
+
+            double comi = 0, segu = 0, apor = 0;
+            comi = (Convert.ToDouble(dgr.Cells["valor_comision"].Value) / 100);
+            segu = (Convert.ToDouble(dgr.Cells["valor_seguro"].Value) / 100);
+            apor = (Convert.ToDouble(dgr.Cells["valor_aporte"].Value) / 100);
+
+            MessageBox.Show("comi: " + comi + "\n segu: " + segu + "\n apor: " + apor);
+           
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             dgvplanilla1.Rows.Add();
@@ -489,7 +506,9 @@ namespace Presentacion.Vista
             if (e.RowIndex != -1)
             {
                 int dias = 0;
-                double monto = 0;
+                double monto = 0, monto_v = 0;
+                double xvacaciones = 0; //prueba
+
                 //MessageBox.Show(""+e.RowIndex);
                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
                 {
@@ -508,7 +527,7 @@ namespace Presentacion.Vista
                     dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
                     TotalRemuneracion();
                 }
-
+                
                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
                 {                    
                     PlanillaCache.Subsidiado = NoSubsidiado;
@@ -532,8 +551,11 @@ namespace Presentacion.Vista
                     else
                         dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
 
+                    xvacaciones = Calculo.MontoSubsidios(xdia_vacaciones, 930);
                     monto = Calculo.MontoSubsidios(dias, 930);
-                    dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto.ToString("N2");
+
+                    monto_v = (monto - xvacaciones);
+                    dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_v.ToString("N2");
                     TotalRemuneracion();
                 }
             }
@@ -669,6 +691,29 @@ namespace Presentacion.Vista
         private void tolbarraerramientas_Click(object sender, EventArgs e)
         {            
             toolbotones.Visible = tolbarraerramientas.Checked;
+        }
+
+        private void btnver_Click(object sender, EventArgs e)
+        {
+
+            //if (dgvplanilla1.CurrentRow.Cells["a_familiar"].Value == null)
+            //{
+            //    MessageBox.Show("del data es null");
+
+            //}else if(dgvplanilla1.CurrentRow.Cells["a_familiar"].Value.ToString() == string.Empty)
+            //{
+            //    MessageBox.Show("el valor no es null esta vacio.");
+            //}
+            //else
+            //{
+
+            //    MessageBox.Show("el valor no es null");
+            //}
+            
+
+            Descuento_aportes();
+
+
         }
     }
 }

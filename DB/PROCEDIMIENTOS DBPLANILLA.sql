@@ -1066,7 +1066,7 @@ ALTER PROC SP_SHOW_DETSUBSIDIOS
 @idempleado int,
 @tipoSubsidio varchar(30)
 AS BEGIN
-SELECT d.id_det_subsidios, s.cod_subsidio, CONCAT(s.cod_subsidio,' - ', s.tipo_subsidio,' ', s.descripcion_subsidio) 
+SELECT d.id_det_subsidios, s.cod_subsidio, CONCAT(s.cod_subsidio,' - ', s.tipo_suspension,' ', s.descripcion_corta) 
 AS t_supension, d.dias FROM Det_subsidios d join Subsidios s on d.id_subsidios=s.id_subsidios 
 WHERE (d.id_periodo=@idperiodo and d.id_mes=@idmes) and s.tipo_subsidio= @tipoSubsidio and d.id_empleado= @idempleado
 END
@@ -1077,10 +1077,11 @@ GO
 ALTER PROC SP_SHOW_SUBSIDIOS 
 @tipo_subsidio varchar(30)
 AS BEGIN
-SELECT s.id_subsidios, cod_subsidio, tipo_subsidio, descripcion_subsidio FROM Subsidios s 
+SELECT s.id_subsidios, cod_subsidio, tipo_suspension, descripcion_corta FROM Subsidios s 
 WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
+
 
 
 --MANTENIMIENTO DETALLE DE SUBSIDIOS (ADD,UPDATE,DELETE)
@@ -1167,7 +1168,7 @@ GO
 
 ALTER PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
-SELECT id_subsidios, cod_subsidio,tipo_suspencion , descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
+SELECT id_subsidios, cod_subsidio,tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END
 GO
 
@@ -1184,7 +1185,7 @@ FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regim
 JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
-WHERE cop.idmes =10  and e.id_em_maestra=2
+WHERE cop.idmes =@idmes  and e.id_em_maestra=@id_empresaMaestra
 END
 
 SELECT * FROM Empleado
@@ -1192,4 +1193,3 @@ SELECT * FROM RegimenPensionario
 SELECT * FROM ComisionesPension
 
 
-delete FROM ComisionesPension where idcomision between 17 and 40

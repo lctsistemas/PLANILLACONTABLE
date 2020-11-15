@@ -66,18 +66,23 @@ namespace Presentacion.Vista
         //SUMAR SUMA CELDA DATAGRIDVIEW
         private void SumarDias()
         {
-            int total_sp = 0, total_si = 0, total = 0;
+            int total_sp = 0, total_si = 0, total = 0, vaca = 0;
             foreach (DataGridViewRow item in dgvsubsidio.Rows)
             {
                 int canti= Convert.ToInt32(item.Cells["canti_dias"].Value);
                 string tsusp = item.Cells["tsupension"].Value.ToString();
                 if (tsusp.Contains("S.P."))
                     total_sp += canti;
-                else if (tsusp.Contains("S.I"))
+                else if (tsusp.Contains("S.I.") && !tsusp.Contains("23 - S.I."))
                     total_si += canti;
+                else if (tsusp.Contains("23 - S.I."))
+                    vaca = canti;
             }
+
+            total_si = (total_si + vaca);
             lbltotalSp.Text = total_sp.ToString();
             lbltotalSi.Text = total_si.ToString();
+            lblvacaciones.Text = vaca.ToString();
             total = (total_sp + total_si);
             txttotaldias.Text = total.ToString();
         }
@@ -99,6 +104,7 @@ namespace Presentacion.Vista
                 frpla2.dgvplanilla1.CurrentRow.Cells[negativo].Value = lbltotalSp.Text;
 
             frpla2.dgvplanilla1.CurrentRow.Cells[positivo].Value = lbltotalSi.Text;
+            frpla2.xdia_vacaciones =Convert.ToInt32(lblvacaciones.Text);
         }
 
         //ENVIAR DIAS POR TIPO DE SUBSIDIO
@@ -152,7 +158,7 @@ namespace Presentacion.Vista
                  ndsub.Id_mes = 1;
                  ndsub.Id_periodo = 2;
                  ndsub.Dias = Convert.ToInt32(txtdias.Text.Trim());
-                 mensaje = ndsub.GuardarCambios();      
+                 mensaje = ndsub.GuardarCambios();
              }
                                   
             txtdias.Text = string.Empty;

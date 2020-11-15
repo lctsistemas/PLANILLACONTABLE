@@ -64,12 +64,12 @@
             this.lbllocalidad = new System.Windows.Forms.Label();
             this.pictmenu = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panelchildform = new System.Windows.Forms.Panel();
             this.lblid_periodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
             this.pictlct = new System.Windows.Forms.PictureBox();
-            this.panelfooter = new System.Windows.Forms.Panel();
-            this.lblhora = new System.Windows.Forms.Label();
+            this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -79,9 +79,9 @@
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.panelchildform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictlct)).BeginInit();
-            this.panelfooter.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelSideMenu
@@ -609,6 +609,17 @@
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlblhora});
+            this.statusStrip1.Location = new System.Drawing.Point(250, 638);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(678, 24);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // panelchildform
             // 
             this.panelchildform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(223)))));
@@ -618,8 +629,8 @@
             this.panelchildform.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelchildform.Location = new System.Drawing.Point(250, 43);
             this.panelchildform.Name = "panelchildform";
-            this.panelchildform.Size = new System.Drawing.Size(678, 619);
-            this.panelchildform.TabIndex = 9;
+            this.panelchildform.Size = new System.Drawing.Size(678, 595);
+            this.panelchildform.TabIndex = 12;
             // 
             // lblid_periodo
             // 
@@ -647,42 +658,29 @@
             // 
             this.pictlct.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictlct.Image = global::Presentacion.Properties.Resources.logoweb_2_300x76;
-            this.pictlct.Location = new System.Drawing.Point(156, 190);
+            this.pictlct.Location = new System.Drawing.Point(156, 178);
             this.pictlct.Name = "pictlct";
             this.pictlct.Size = new System.Drawing.Size(380, 199);
             this.pictlct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictlct.TabIndex = 1;
             this.pictlct.TabStop = false;
             // 
-            // panelfooter
+            // tlblhora
             // 
-            this.panelfooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelfooter.Controls.Add(this.lblhora);
-            this.panelfooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelfooter.Location = new System.Drawing.Point(250, 634);
-            this.panelfooter.Name = "panelfooter";
-            this.panelfooter.Size = new System.Drawing.Size(678, 28);
-            this.panelfooter.TabIndex = 10;
-            // 
-            // lblhora
-            // 
-            this.lblhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblhora.AutoSize = true;
-            this.lblhora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhora.ForeColor = System.Drawing.Color.GhostWhite;
-            this.lblhora.Location = new System.Drawing.Point(599, 7);
-            this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(53, 17);
-            this.lblhora.TabIndex = 1;
-            this.lblhora.Text = "lblhora";
+            this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.tlblhora.Name = "tlblhora";
+            this.tlblhora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tlblhora.Size = new System.Drawing.Size(44, 19);
+            this.tlblhora.Text = "HORA";
+            this.tlblhora.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // Main_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 662);
-            this.Controls.Add(this.panelfooter);
             this.Controls.Add(this.panelchildform);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.PanelSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -700,12 +698,13 @@
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.panelchildform.ResumeLayout(false);
             this.panelchildform.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictlct)).EndInit();
-            this.panelfooter.ResumeLayout(false);
-            this.panelfooter.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -728,7 +727,6 @@
         private System.Windows.Forms.Button btnempleado;
         private System.Windows.Forms.Button btnusuario;
         private System.Windows.Forms.Button btnreportes;
-        private System.Windows.Forms.PictureBox pictlct;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel2;
@@ -736,8 +734,6 @@
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Button btntipo_contrato;
         private System.Windows.Forms.Button btnbanco;
-        private System.Windows.Forms.Panel panelchildform;
-        private System.Windows.Forms.Panel panelfooter;
         private System.Windows.Forms.PictureBox pictuser;
         private System.Windows.Forms.Label lblrol;
         private System.Windows.Forms.Label lblperiodo;
@@ -746,12 +742,15 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineperiodo;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineuser;
         private System.Windows.Forms.PictureBox pictmenu;
-        private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Label lblempresa;
         private System.Windows.Forms.Label lbllocalidad;
-        private System.Windows.Forms.Label lblid_periodo;
-        private System.Windows.Forms.Label lblidempresa;
         private System.Windows.Forms.Button btnplanilla2;
         private System.Windows.Forms.Button btncalculo;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.Panel panelchildform;
+        private System.Windows.Forms.Label lblid_periodo;
+        private System.Windows.Forms.Label lblidempresa;
+        private System.Windows.Forms.PictureBox pictlct;
+        private System.Windows.Forms.ToolStripStatusLabel tlblhora;
     }
 }

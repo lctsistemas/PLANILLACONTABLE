@@ -18,9 +18,9 @@ namespace Negocio.Models
         public string Numero_documento { get; set; }
         public string Nombres { get; set; }
         public string Descrip_regipension { get; set; }
-        public decimal Comision { get; set; }
-        public decimal Seguro { get; set; }
-        public decimal Aporte { get; set; }
+        public decimal VComision { get; set; }
+        public decimal VSeguro { get; set; }
+        public decimal VAporte { get; set; }
         public string Cargop { get; set; }
         public DateTime Fecha_inicio { get; set; }
         public decimal Remune_basica { get; set; }
@@ -52,13 +52,13 @@ namespace Negocio.Models
                         Numero_documento = item[1].ToString(),
                         Nombres = item[2].ToString(),
                         Descrip_regipension = item[3].ToString(),
-                        //Comision = Convert.ToDecimal(item[4]),
-                       // Seguro = Convert.ToDecimal(item[5]),
-                        //Aporte = Convert.ToDecimal(item[6]),
+                        VComision = Convert.ToDecimal(item[4]),
+                        VSeguro = Convert.ToDecimal(item[5]),
+                        VAporte = Convert.ToDecimal(item[6]),
                         Cargop = item[7].ToString(),
                         Fecha_inicio = Convert.ToDateTime(item[8]),
                         Remune_basica =Convert.ToDecimal(item[9]),
-                        Asig_familiar=item[10].ToString() == "0.00" ? null : item[10].ToString(),
+                        Asig_familiar=item[10].ToString() == "0.00" ? string.Empty : item[10].ToString()
 
                     });
                 }
