@@ -36,9 +36,9 @@ namespace Presentacion.Vista
             dgvplanilla1.Columns["id_contrato"].Visible = false;
             dgvplanilla1.Columns["id_planilla_manto"].Visible = false;
 
-            dgvplanilla1.Columns["valor_comision"].Visible = true;
-            dgvplanilla1.Columns["valor_seguro"].Visible = true;
-            dgvplanilla1.Columns["valor_aporte"].Visible = true;
+            dgvplanilla1.Columns["valor_comision"].Visible = false;
+            dgvplanilla1.Columns["valor_seguro"].Visible = false;
+            dgvplanilla1.Columns["valor_aporte"].Visible = false;
 
             dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
             dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
@@ -113,9 +113,9 @@ namespace Presentacion.Vista
                 double tardanzasub = 0, reintegr = 0, vacacion = 0, vaca_trun = 0, grati_tru = 0, boni_tru = 0, cts_tru = 0;
                 double subtotal1 = 0, subtotal2 = 0, totalsub = 0;
 
-                if (dar.Cells["sueldo"].Value == null)
-                    suel = 0;
-                else
+                //if (dar.Cells["sueldo"].Value == null)
+                  //  suel = 0;
+                //else
                     suel = Convert.ToDouble(dar.Cells["sueldo"].Value);
 
 
@@ -205,7 +205,7 @@ namespace Presentacion.Vista
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -214,13 +214,33 @@ namespace Presentacion.Vista
         {
             DataGridViewRow dgr = dgvplanilla1.CurrentRow;
 
-            double comi = 0, segu = 0, apor = 0;
+            double comi = 0, segu = 0, apor = 0, tremu = 0;
+            double xcomi = 0, xsegu = 0, xapor = 0, xonp = 0;
             comi = (Convert.ToDouble(dgr.Cells["valor_comision"].Value) / 100);
             segu = (Convert.ToDouble(dgr.Cells["valor_seguro"].Value) / 100);
             apor = (Convert.ToDouble(dgr.Cells["valor_aporte"].Value) / 100);
 
-            MessageBox.Show("comi: " + comi + "\n segu: " + segu + "\n apor: " + apor);
-           
+            //MessageBox.Show("comi: " + comi + "\n segu: " + segu + "\n apor: " + apor);
+
+            if (dgr.Cells["totaremu"].Value == null)
+                tremu = 0;
+            else
+                tremu = Convert.ToDouble(dgr.Cells["totaremu"].Value);
+
+            if (dgr.Cells["regi_pen"].Value.ToString()=="O.N.P")
+            {
+                xonp = (tremu * comi);
+                dgr.Cells["onp"].Value = xonp.ToString("N2");
+            }
+            else
+            {
+                xcomi = (tremu * comi);
+                xsegu = (tremu * segu);
+                xapor = (tremu * apor);
+                dgr.Cells["comision"].Value = xcomi.ToString("N2");
+                dgr.Cells["seguro"].Value = xsegu.ToString("N2");
+                dgr.Cells["spp"].Value = xapor.ToString("N2");
+            }
         }
 
 
@@ -237,7 +257,7 @@ namespace Presentacion.Vista
 
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {            
-            FillTabla();
+            //FillTabla();
             TablaPlanilla();
         }      
              
@@ -260,7 +280,7 @@ namespace Presentacion.Vista
             switch (e.ColumnIndex)
             {
                 case 13:
-                case 14:
+               // case 14:
                     double horxd25 = 0;
                     Int32 hora25=0, minu25 = 0;
                     if (dar.Cells["hxd25"].Value == null)
@@ -395,7 +415,7 @@ namespace Presentacion.Vista
             switch (e.ColumnIndex)
             {
                 case 13:
-                case 14:
+               // case 14:
                 case 16:
                 case 17:
                 case 19:
@@ -469,6 +489,7 @@ namespace Presentacion.Vista
                     break;
             }
             TotalRemuneracion();
+            //Descuento_aportes();
         }
         
         //.........
