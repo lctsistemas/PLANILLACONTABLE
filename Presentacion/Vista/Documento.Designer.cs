@@ -66,9 +66,9 @@
             // 
             this.txtbuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtbuscar.Location = new System.Drawing.Point(37, 299);
+            this.txtbuscar.Location = new System.Drawing.Point(37, 281);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(331, 23);
+            this.txtbuscar.Size = new System.Drawing.Size(359, 23);
             this.txtbuscar.TabIndex = 1;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
             this.txtbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbuscar_KeyPress);
@@ -91,12 +91,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvdocumento.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvdocumento.Location = new System.Drawing.Point(8, 327);
+            this.dgvdocumento.Location = new System.Drawing.Point(8, 310);
             this.dgvdocumento.Name = "dgvdocumento";
             this.dgvdocumento.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvdocumento.RowHeadersWidth = 25;
             this.dgvdocumento.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvdocumento.Size = new System.Drawing.Size(360, 200);
+            this.dgvdocumento.Size = new System.Drawing.Size(388, 200);
             this.dgvdocumento.TabIndex = 0;
             this.dgvdocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdocumento_CellDoubleClick);
             // 
@@ -116,7 +116,7 @@
             this.paneldocumento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.paneldocumento.Location = new System.Drawing.Point(0, 0);
             this.paneldocumento.Name = "paneldocumento";
-            this.paneldocumento.Size = new System.Drawing.Size(380, 556);
+            this.paneldocumento.Size = new System.Drawing.Size(409, 539);
             this.paneldocumento.TabIndex = 4;
             // 
             // groupBox1
@@ -131,7 +131,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(5, 79);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(363, 214);
+            this.groupBox1.Size = new System.Drawing.Size(391, 196);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar";
@@ -154,7 +154,7 @@
             this.txtdescripcion.Multiline = true;
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtdescripcion.Size = new System.Drawing.Size(160, 73);
+            this.txtdescripcion.Size = new System.Drawing.Size(189, 53);
             this.txtdescripcion.TabIndex = 4;
             // 
             // txtcoddoc
@@ -171,7 +171,7 @@
             this.txtdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdocumento.Location = new System.Drawing.Point(118, 83);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(160, 22);
+            this.txtdocumento.Size = new System.Drawing.Size(189, 22);
             this.txtdocumento.TabIndex = 4;
             this.txtdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdocumento_KeyPress);
             this.txtdocumento.Validating += new System.ComponentModel.CancelEventHandler(this.txtdocumento_Validating);
@@ -203,7 +203,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 299);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 281);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 23);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,7 +221,7 @@
             this.barraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.barraTitulo.Location = new System.Drawing.Point(0, 0);
             this.barraTitulo.Name = "barraTitulo";
-            this.barraTitulo.Size = new System.Drawing.Size(378, 40);
+            this.barraTitulo.Size = new System.Drawing.Size(407, 40);
             this.barraTitulo.TabIndex = 8;
             this.barraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.barraTitulo_Paint);
             this.barraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barraTitulo_MouseDown);
@@ -230,7 +230,7 @@
             // 
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.baseline_check_box_outline_blank_white_36dp;
-            this.btnmaximizar.Location = new System.Drawing.Point(301, 6);
+            this.btnmaximizar.Location = new System.Drawing.Point(337, 6);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(33, 20);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -242,7 +242,7 @@
             // 
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(267, 7);
+            this.btnminimizar.Location = new System.Drawing.Point(303, 7);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(33, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -254,7 +254,7 @@
             // 
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp1;
-            this.btncerrar.Location = new System.Drawing.Point(335, 7);
+            this.btncerrar.Location = new System.Drawing.Point(371, 7);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Padding = new System.Windows.Forms.Padding(3);
             this.btncerrar.Size = new System.Drawing.Size(33, 20);
@@ -282,7 +282,7 @@
             // 
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.res;
-            this.btnrestaurar.Location = new System.Drawing.Point(301, 7);
+            this.btnrestaurar.Location = new System.Drawing.Point(337, 7);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(33, 20);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -296,7 +296,7 @@
             this.lbltotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(235, 530);
+            this.lbltotal.Location = new System.Drawing.Point(237, 513);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(39, 17);
             this.lbltotal.TabIndex = 5;
@@ -369,7 +369,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 556);
+            this.ClientSize = new System.Drawing.Size(409, 539);
             this.Controls.Add(this.paneldocumento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;

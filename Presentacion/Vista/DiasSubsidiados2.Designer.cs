@@ -45,6 +45,7 @@
             this.btngrabar = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblvacaciones = new System.Windows.Forms.Label();
             this.lbltotalSi = new System.Windows.Forms.Label();
             this.lbltotalSp = new System.Windows.Forms.Label();
             this.txttotaldias = new System.Windows.Forms.TextBox();
@@ -130,7 +131,7 @@
             this.dgvsubsidio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvsubsidio.RowHeadersVisible = false;
             this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvsubsidio.Size = new System.Drawing.Size(464, 150);
+            this.dgvsubsidio.Size = new System.Drawing.Size(462, 150);
             this.dgvsubsidio.TabIndex = 3;
             this.dgvsubsidio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellClick);
             this.dgvsubsidio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
@@ -220,6 +221,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblvacaciones);
             this.panel1.Controls.Add(this.lbltotalSi);
             this.panel1.Controls.Add(this.lbltotalSp);
             this.panel1.Controls.Add(this.txtdias);
@@ -237,6 +239,16 @@
             this.panel1.Size = new System.Drawing.Size(472, 243);
             this.panel1.TabIndex = 7;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // lblvacaciones
+            // 
+            this.lblvacaciones.AutoSize = true;
+            this.lblvacaciones.Location = new System.Drawing.Point(126, 218);
+            this.lblvacaciones.Name = "lblvacaciones";
+            this.lblvacaciones.Size = new System.Drawing.Size(31, 13);
+            this.lblvacaciones.TabIndex = 10;
+            this.lblvacaciones.Text = "vaca";
+            this.lblvacaciones.Visible = false;
             // 
             // lbltotalSi
             // 
@@ -341,5 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_subsidio;
         private System.Windows.Forms.Label lbltotalSi;
         private System.Windows.Forms.Label lbltotalSp;
+        private System.Windows.Forms.Label lblvacaciones;
     }
 }

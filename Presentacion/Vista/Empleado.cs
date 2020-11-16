@@ -22,7 +22,8 @@ namespace Presentacion.Vista
 
         public frmempleado()
         {
-            InitializeComponent();            
+            InitializeComponent();          
+            
             Mostrar_documento();
             Mostrar_cargo();
             Mostrar_regimenpensionario();
@@ -55,9 +56,11 @@ namespace Presentacion.Vista
         {
             dgvempleado.Columns[0].HeaderText = "ID EMPLEADO";
             dgvempleado.Columns[0].Visible = false;
+
             dgvempleado.Columns[1].Visible = false;
             dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES";
-            dgvempleado.Columns[2].Width = 230;
+            dgvempleado.Columns[2].Width = 310;
+
             dgvempleado.Columns[3].Visible = false;
             dgvempleado.Columns[4].Visible = false;
             dgvempleado.Columns[5].Visible = false;
@@ -73,8 +76,10 @@ namespace Presentacion.Vista
             dgvempleado.Columns[15].Visible = false;
             dgvempleado.Columns[16].HeaderText = "ID EMPRESA MAESTRA";
             dgvempleado.Columns[16].Visible = false;
+
             dgvempleado.Columns[17].HeaderText = "EMPRESA";
             dgvempleado.Columns[17].Visible = false;
+
             dgvempleado.Columns[18].Visible = false;
             dgvempleado.Columns[19].Visible = false;
             dgvempleado.Columns[20].Visible = false;
@@ -383,7 +388,7 @@ namespace Presentacion.Vista
             else
             {
                 Habilitar_doc(true);
-                txtnumdoc.Focus();
+                //txtnumdoc.Focus();
             }
 
             if (cbotipo_documento.SelectedIndex == 0)
@@ -392,7 +397,7 @@ namespace Presentacion.Vista
 
                 if (txtnumdoc.Text != "")
                 {
-                    txtnumdoc.Focus();
+                   // txtnumdoc.Focus();
                 }
             }
             else if (cbotipo_documento.SelectedIndex == 1)
@@ -401,7 +406,7 @@ namespace Presentacion.Vista
                 if (txtnumdoc.Text != "")
                 {
                     txtnumdoc.Text = "";
-                    txtnumdoc.Focus();
+                    //txtnumdoc.Focus();
                 }
             }
             else if (cbotipo_documento.SelectedIndex == 2)
@@ -410,7 +415,7 @@ namespace Presentacion.Vista
                 if (txtnumdoc.Text != "")
                 {
                     txtnumdoc.Text = "";
-                    txtnumdoc.Focus();
+                    //txtnumdoc.Focus();
                 }
             }
         }
@@ -554,6 +559,7 @@ namespace Presentacion.Vista
                     emple_contra.state = EntityState.Modificar;
                     emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
                     DataRow dr = emple_contra.ListaEmple_total(emple_contra).Rows[0];
+
                     txtcodigo.Text = dr["codigo"].ToString();
                     txtNombre.Text = dr["nombre_empleado"].ToString();
                     txtApePat.Text = dr["ape_paterno"].ToString();
@@ -665,5 +671,7 @@ namespace Presentacion.Vista
                 }
             }
         }
+
+     
     }
 }

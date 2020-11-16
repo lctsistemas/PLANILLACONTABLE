@@ -32,22 +32,7 @@ namespace Presentacion.Vista
             }
         }
 
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnmaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void btnminimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
+        //DISEÑO A TABLA        
         private void Tabla()
         {
             dgvplanilla.Columns[0].HeaderText = "Id planilla";
@@ -70,15 +55,15 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[4].Width = 100;
 
             dgvplanilla.Columns[5].HeaderText = "FECHA INICIAL";
-            dgvplanilla.Columns[5].Width = 80;
+            dgvplanilla.Columns[5].Width = 140;
             dgvplanilla.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvplanilla.Columns[6].HeaderText = "FECHA FINAL";
-            dgvplanilla.Columns[6].Width = 80;
+            dgvplanilla.Columns[6].Width = 140;
             dgvplanilla.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvplanilla.Columns[7].HeaderText = "FECHA PAGO";
-            dgvplanilla.Columns[7].Width = 80;
+            dgvplanilla.Columns[7].Width = 140;
             dgvplanilla.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvplanilla.Columns[8].HeaderText = "DIAS";
@@ -90,7 +75,7 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvplanilla.Columns[10].HeaderText = "TOPE HORA NOCTURNA";
-            dgvplanilla.Columns[10].Width = 90;
+            dgvplanilla.Columns[10].Width = 140;
             dgvplanilla.Columns[10].DefaultCellStyle.Format = "N2";
             dgvplanilla.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
@@ -167,6 +152,30 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnrestaurar.Visible = true;
+            btnmaximizar.Visible = false;
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
     }
 }

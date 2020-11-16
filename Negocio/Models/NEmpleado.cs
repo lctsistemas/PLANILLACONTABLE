@@ -36,7 +36,7 @@ namespace Negocio.Models
 
         //METODOS SET AND GET DE CONTRATO
         public Int32 cid_contrato { get; set; }
-        public Int32 cid_empleado { get; set; }//eliminar
+       // public Int32 cid_empleado { get; set; }//eliminar
 
         [Display(Name = "Banco")]
         [Required]

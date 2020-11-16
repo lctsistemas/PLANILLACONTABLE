@@ -119,7 +119,7 @@ INSERT INTO RegimenPensionario(descripcion_corta, descripcion,tipo_regimen) VALU
 ('IM','INTEGRA - MIXTA','SPP'),('IF','INTEGRA - FLUJO','SPP'),
 ('PM','PRIMA - MIXTA','SPP'),('PF','PRIMA - FLUJO','SPP'),
 ('PRM','PROFUTURO - MIXTA','SPP'),('PRF','PROFUTURO - FLUJO','SPP'),
-('O.N.P','DECRETO LEY 19990-ONP','SNP')
+('DECRETO LEY 19990-ONP','O.N.P','SNP')
 GO
 
 -- INSERTAR COMISIONES PENSIONES
@@ -133,4 +133,4 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, idmes, idper
 GO
 
 sp_rename  '[dbo].[REGIMEN_SALUD]','Regimen_salud'
---en el procedimiento yo le cambie con minuscula en salud 
+--en el procedimiento yo le cambie con minuscula en salud

@@ -40,7 +40,7 @@ namespace Presentacion
             hideSubmenu();
             fullScreen();
             CargarDatos();
-            lblhora.Text = DateTime.Now.ToString("HH : mm : ss");
+            tlblhora.Text = DateTime.Now.ToString("HH : mm : ss");
         }
 
         private void hideSubmenu()
