@@ -81,6 +81,7 @@
             this.txtregsal.Name = "txtregsal";
             this.txtregsal.Size = new System.Drawing.Size(178, 20);
             this.txtregsal.TabIndex = 86;
+            this.txtregsal.Validating += new System.ComponentModel.CancelEventHandler(this.txtregsal_Validating);
             // 
             // txtcodregsal
             // 
@@ -88,6 +89,7 @@
             this.txtcodregsal.Name = "txtcodregsal";
             this.txtcodregsal.Size = new System.Drawing.Size(100, 20);
             this.txtcodregsal.TabIndex = 85;
+            this.txtcodregsal.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodregsal_Validating);
             // 
             // label3
             // 

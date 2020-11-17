@@ -154,5 +154,20 @@ namespace Presentacion.Vista
 
             using (nrs) { nrs.state = EntityState.Guardar; }
         }
+
+        private void txtcodregsal_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtcodregsal.Text == "")
+            {
+                e.Cancel = true;
+                txtcodregsal.Select(0, txtcodregsal.Text.Length);
+                ValidateError.Validate_text(txtcodregsal, "Campo Requerido");
+            }
+        }
+
+        private void txtregsal_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtregsal, "Campo Requerido");
+        }
     }
 }

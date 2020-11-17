@@ -96,15 +96,17 @@ namespace Presentacion.Vista
 
             using (nd)
             {
-                nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
-                nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
-                nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
+                
+                    nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
+                    nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
+                    nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
+
                 bool validar = new ValidacionDatos(nd).Validate();
                 if (validar)
                 {
-                    result = nd.SaveChanges();
-                    ShowDocument();
-                    limpiar();
+                   result = nd.SaveChanges();
+                   ShowDocument();
+                   limpiar();
                 } 
             }
         }
@@ -233,6 +235,16 @@ namespace Presentacion.Vista
         private void txtcoddoc_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtcoddoc, "Campo codigo documento requerido!");
+        }
+
+        private void txtcoddoc_Validated(object sender, EventArgs e)
+        {
+            ValidateError.Validate_text(txtcoddoc, "Campo requerido");
+        }
+
+        private void txtdocumento_Validated(object sender, EventArgs e)
+        {
+            ValidateError.Validate_text(txtdocumento, "Campo requerido");
         }
     }
 }

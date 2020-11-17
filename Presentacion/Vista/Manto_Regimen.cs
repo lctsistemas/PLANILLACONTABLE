@@ -148,5 +148,25 @@ namespace Presentacion.Vista
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
         }
+
+        private void txtdescripcion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (txtdescripcion.Text == "")
+            {
+                e.Cancel = true;
+                txtdescripcion.Select(0, txtdescripcion.Text.Length);
+                ValidateError.Validate_text(txtdescripcion, "Campo Requerido");
+            }
+        }
+
+        private void txtdescCorta_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdescCorta, "Campo Requerido");
+        }
+
+        private void cbxregimen_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbxregimen, "Campo Requerido");
+        }
     }
 }
