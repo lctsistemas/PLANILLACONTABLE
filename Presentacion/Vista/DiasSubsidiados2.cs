@@ -247,5 +247,10 @@ namespace Presentacion.Vista
         {
             _intancia = null;
         }
+
+        private void txtdias_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdias, "Ingrese el numero dias");
+        }
     }
 }

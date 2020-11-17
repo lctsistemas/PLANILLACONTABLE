@@ -39,7 +39,17 @@ namespace Presentacion.Vista
             }
         }
 
-       
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtregsal.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
         //MODIFICAR DATAGRIDVIEW
         private void Tabla()
         {

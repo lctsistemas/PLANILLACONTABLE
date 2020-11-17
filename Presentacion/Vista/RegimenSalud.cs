@@ -32,21 +32,33 @@ namespace Presentacion.Vista
             }
         }
 
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtcodregsal.Text) || String.IsNullOrWhiteSpace(txtregsal.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar())
+            {
+                ValidateChildren();
+                return;
+            }
             result = "";
             using (nrs)
             {               
                 nrs.Cod_regi_salud = Convert.ToInt32(txtcodregsal.Text.ToString());
                 nrs.Descripcion =txtregsal.Text.ToString();
 
-                bool valida = new ValidacionDatos(nrs).Validate();
-                if (valida)
-                {
-                    result = nrs.GuardarCambios();
-                    Messages.M_info(result);
-                }
-
+                result = nrs.GuardarCambios();
+                Messages.M_info(result);
+           
                 Showregimensalud();
                 limpiar();               
             }
@@ -157,12 +169,9 @@ namespace Presentacion.Vista
 
         private void txtcodregsal_Validating(object sender, CancelEventArgs e)
         {
-            if (txtcodregsal.Text == "")
-            {
-                e.Cancel = true;
-                txtcodregsal.Select(0, txtcodregsal.Text.Length);
+           
                 ValidateError.Validate_text(txtcodregsal, "Campo Requerido");
-            }
+
         }
 
         private void txtregsal_Validating(object sender, CancelEventArgs e)

@@ -36,9 +36,10 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtBanco.Text))
+            if (String.IsNullOrWhiteSpace(txtBanco.Text)) { 
+                ValidateChildren();
                 return;
-
+            }
             mensaje = "";
             using (nb = new NBanco())
             {

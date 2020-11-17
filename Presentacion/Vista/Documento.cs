@@ -93,6 +93,12 @@ namespace Presentacion.Vista
         //SAVE CHANGE
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtdocumento.Text) || string.IsNullOrWhiteSpace(txtcoddoc.Text))
+            {
+                ValidateChildren();
+                return;
+            }
+           
 
             using (nd)
             {
@@ -101,13 +107,11 @@ namespace Presentacion.Vista
                     nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
                     nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
 
-                bool validar = new ValidacionDatos(nd).Validate();
-                if (validar)
-                {
+               
                    result = nd.SaveChanges();
                    ShowDocument();
                    limpiar();
-                } 
+                
             }
         }
         //VALIATE

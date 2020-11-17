@@ -29,11 +29,25 @@ namespace Presentacion.Vista
                 dgvTcontrato.DataSource = nt.MostrarTcontrato();
             }
         }
-        private void btnguardar_Click(object sender, EventArgs e)
+        private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtTipoContrato.Text))
-                return;
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
 
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            if (Validar())
+            {
+                ValidateChildren();
+                return;
+            }
+            
             mensaje = "";
             using (nt = new Ntipocontrato())
             {

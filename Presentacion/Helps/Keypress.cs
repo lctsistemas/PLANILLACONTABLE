@@ -44,7 +44,7 @@ namespace Presentacion.Helps
                 {
                     e.Handled = false;
                 }
-                else if (Char.IsSeparator(e.KeyChar))
+                else if (!Char.IsSeparator(e.KeyChar))
                 {
                     e.Handled = true;
                 }
@@ -62,6 +62,7 @@ namespace Presentacion.Helps
 
         public static void SoloLetras(KeyPressEventArgs e)
         {
+            //que permite espacios, / .
             try
             {
                 if (Char.IsLetter(e.KeyChar))

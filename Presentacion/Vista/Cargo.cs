@@ -96,6 +96,11 @@ namespace Presentacion.Vista
         //GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
         {
+
+            if (Validar())
+            {
+                return;
+            }
             using (nc)
             {
                 nc.nombre_cargo = txtnom_cargo.Text.Trim().ToUpper();

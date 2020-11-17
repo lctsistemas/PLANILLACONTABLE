@@ -14,9 +14,7 @@ namespace Negocio.Models
         private string mensaje;
         public int iddocumento { get; set; }
         public string cod_doc { get; set; }
-
-        //[Required]
-        //[RegularExpression("^[a-zA-Z. /]+$")]
+        
         public string nombre_documento { get; set; }
 
         public string descripcion { get; set; }

@@ -193,6 +193,7 @@
             this.txtdias.TabIndex = 4;
             this.txtdias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtdias.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdias_KeyPress);
+            this.txtdias.Validating += new System.ComponentModel.CancelEventHandler(this.txtdias_Validating);
             // 
             // btngrabar
             // 

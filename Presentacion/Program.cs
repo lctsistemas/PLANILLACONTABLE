@@ -14,11 +14,8 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new frmdocumento());
-=======
-            Application.Run(new frminicio());
->>>>>>> 92f4b3c1b6af91a4471189158c39ef83786401bb
+            Application.Run(new RegimenSalud());
+
 
         }
     }
