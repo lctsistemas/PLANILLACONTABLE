@@ -96,6 +96,7 @@ namespace Presentacion.Vista
             dgvempleado.Columns[31].Visible = false;
             dgvempleado.Columns[32].Visible = false;
             dgvempleado.Columns[33].Visible = false;
+            //dgvempleado.Columns[34].Visible = false;
         }
 
         private void Habilitar_doc(bool v)

@@ -57,26 +57,27 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.panelplanilla = new System.Windows.Forms.Panel();
+            this.btnver = new System.Windows.Forms.Button();
             this.grobconceptos = new System.Windows.Forms.GroupBox();
-            this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox18 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox17 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkrecar_consumo = new System.Windows.Forms.CheckBox();
+            this.chkotro_descuento = new System.Windows.Forms.CheckBox();
+            this.chkprestamo = new System.Windows.Forms.CheckBox();
+            this.chkadelanto = new System.Windows.Forms.CheckBox();
+            this.chkvaca = new System.Windows.Forms.CheckBox();
+            this.chkgrati = new System.Windows.Forms.CheckBox();
+            this.chkretencion_judi = new System.Windows.Forms.CheckBox();
+            this.chktotal_extras = new System.Windows.Forms.CheckBox();
+            this.chkessavida = new System.Windows.Forms.CheckBox();
+            this.chksubsidio = new System.Windows.Forms.CheckBox();
+            this.chkpres_alime = new System.Windows.Forms.CheckBox();
+            this.chkrentaquinta = new System.Windows.Forms.CheckBox();
+            this.chktrunca = new System.Windows.Forms.CheckBox();
+            this.chktardanza = new System.Windows.Forms.CheckBox();
+            this.chkotro_reintegro = new System.Windows.Forms.CheckBox();
+            this.chkferiado = new System.Windows.Forms.CheckBox();
+            this.chkboni_nocturna = new System.Windows.Forms.CheckBox();
+            this.chkhnocturna = new System.Windows.Forms.CheckBox();
+            this.chkhdiurnas = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -91,20 +92,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvplanilla2 = new System.Windows.Forms.DataGridView();
-            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nosubsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_planilla_manto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,6 +125,7 @@
             this.montoferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hrboninocturna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montoboninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unomayo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.htarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mtarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.montotarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,6 +139,10 @@
             this.montoposi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.otros_reintegros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prestacion_alimenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vacaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tvaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tgrati = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -161,6 +153,7 @@
             this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.essalud_vida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adelanto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.renta5cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,7 +163,40 @@
             this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnver = new System.Windows.Forms.Button();
+            this.recargo_consumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reintegro_grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reintegro_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkrgrati = new System.Windows.Forms.CheckBox();
+            this.chkrboni = new System.Windows.Forms.CheckBox();
+            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primeromayo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tardanza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nosubsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dreintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dotro_reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pres_alimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.truncas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dadelanto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dprestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dretencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dotrosdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtotales_varios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recargo_consu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.r_grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picsave_conceptos = new System.Windows.Forms.PictureBox();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -178,6 +204,7 @@
             this.groupplanilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsave_conceptos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuarchivos
@@ -221,15 +248,15 @@
             // 
             this.tollistaconceptos.CheckOnClick = true;
             this.tollistaconceptos.Name = "tollistaconceptos";
-            this.tollistaconceptos.Size = new System.Drawing.Size(189, 22);
-            this.tollistaconceptos.Text = "&Lista de conceptos";
+            this.tollistaconceptos.Size = new System.Drawing.Size(230, 22);
+            this.tollistaconceptos.Text = "&Mantenimiento de conceptos";
             this.tollistaconceptos.Click += new System.EventHandler(this.tollistaconceptos_Click);
             // 
             // tolbarraerramientas
             // 
             this.tolbarraerramientas.CheckOnClick = true;
             this.tolbarraerramientas.Name = "tolbarraerramientas";
-            this.tolbarraerramientas.Size = new System.Drawing.Size(189, 22);
+            this.tolbarraerramientas.Size = new System.Drawing.Size(230, 22);
             this.tolbarraerramientas.Text = "&Barra de herramientas";
             this.tolbarraerramientas.Click += new System.EventHandler(this.tolbarraerramientas_Click);
             // 
@@ -237,7 +264,7 @@
             // 
             this.toolStripMenuItem3.CheckOnClick = true;
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(189, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(230, 22);
             this.toolStripMenuItem3.Text = "tool";
             // 
             // toolbotones
@@ -298,230 +325,270 @@
             this.panelplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelplanilla.Location = new System.Drawing.Point(0, 24);
             this.panelplanilla.Name = "panelplanilla";
-            this.panelplanilla.Size = new System.Drawing.Size(1243, 601);
+            this.panelplanilla.Size = new System.Drawing.Size(1243, 581);
             this.panelplanilla.TabIndex = 11;
+            // 
+            // btnver
+            // 
+            this.btnver.Location = new System.Drawing.Point(345, 12);
+            this.btnver.Name = "btnver";
+            this.btnver.Size = new System.Drawing.Size(75, 23);
+            this.btnver.TabIndex = 15;
+            this.btnver.Text = "button2";
+            this.btnver.UseVisualStyleBackColor = true;
+            this.btnver.Click += new System.EventHandler(this.btnver_Click);
             // 
             // grobconceptos
             // 
-            this.grobconceptos.Controls.Add(this.checkBox20);
-            this.grobconceptos.Controls.Add(this.checkBox19);
-            this.grobconceptos.Controls.Add(this.checkBox16);
-            this.grobconceptos.Controls.Add(this.checkBox15);
-            this.grobconceptos.Controls.Add(this.checkBox12);
-            this.grobconceptos.Controls.Add(this.checkBox11);
-            this.grobconceptos.Controls.Add(this.checkBox18);
-            this.grobconceptos.Controls.Add(this.checkBox8);
-            this.grobconceptos.Controls.Add(this.checkBox14);
-            this.grobconceptos.Controls.Add(this.checkBox7);
-            this.grobconceptos.Controls.Add(this.checkBox10);
-            this.grobconceptos.Controls.Add(this.checkBox17);
-            this.grobconceptos.Controls.Add(this.checkBox13);
-            this.grobconceptos.Controls.Add(this.checkBox6);
-            this.grobconceptos.Controls.Add(this.checkBox9);
-            this.grobconceptos.Controls.Add(this.checkBox3);
-            this.grobconceptos.Controls.Add(this.checkBox5);
-            this.grobconceptos.Controls.Add(this.checkBox2);
-            this.grobconceptos.Controls.Add(this.checkBox1);
-            this.grobconceptos.Location = new System.Drawing.Point(648, 16);
+            this.grobconceptos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grobconceptos.Controls.Add(this.picsave_conceptos);
+            this.grobconceptos.Controls.Add(this.chkrboni);
+            this.grobconceptos.Controls.Add(this.chkrgrati);
+            this.grobconceptos.Controls.Add(this.chkrecar_consumo);
+            this.grobconceptos.Controls.Add(this.chkotro_descuento);
+            this.grobconceptos.Controls.Add(this.chkprestamo);
+            this.grobconceptos.Controls.Add(this.chkadelanto);
+            this.grobconceptos.Controls.Add(this.chkvaca);
+            this.grobconceptos.Controls.Add(this.chkgrati);
+            this.grobconceptos.Controls.Add(this.chkretencion_judi);
+            this.grobconceptos.Controls.Add(this.chktotal_extras);
+            this.grobconceptos.Controls.Add(this.chkessavida);
+            this.grobconceptos.Controls.Add(this.chksubsidio);
+            this.grobconceptos.Controls.Add(this.chkpres_alime);
+            this.grobconceptos.Controls.Add(this.chkrentaquinta);
+            this.grobconceptos.Controls.Add(this.chktrunca);
+            this.grobconceptos.Controls.Add(this.chktardanza);
+            this.grobconceptos.Controls.Add(this.chkotro_reintegro);
+            this.grobconceptos.Controls.Add(this.chkferiado);
+            this.grobconceptos.Controls.Add(this.chkboni_nocturna);
+            this.grobconceptos.Controls.Add(this.chkhnocturna);
+            this.grobconceptos.Controls.Add(this.chkhdiurnas);
+            this.grobconceptos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.grobconceptos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grobconceptos.Location = new System.Drawing.Point(440, 16);
             this.grobconceptos.Name = "grobconceptos";
-            this.grobconceptos.Size = new System.Drawing.Size(583, 117);
+            this.grobconceptos.Size = new System.Drawing.Size(791, 156);
             this.grobconceptos.TabIndex = 14;
             this.grobconceptos.TabStop = false;
-            this.grobconceptos.Text = "Lista de conceptos";
+            this.grobconceptos.Text = "Conceptos";
             this.grobconceptos.Visible = false;
             // 
-            // checkBox20
+            // chkrecar_consumo
             // 
-            this.checkBox20.AutoSize = true;
-            this.checkBox20.Location = new System.Drawing.Point(442, 85);
-            this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(80, 17);
-            this.checkBox20.TabIndex = 0;
-            this.checkBox20.Text = "checkBox1";
-            this.checkBox20.UseVisualStyleBackColor = true;
+            this.chkrecar_consumo.AutoSize = true;
+            this.chkrecar_consumo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkrecar_consumo.Location = new System.Drawing.Point(635, 50);
+            this.chkrecar_consumo.Name = "chkrecar_consumo";
+            this.chkrecar_consumo.Size = new System.Drawing.Size(136, 21);
+            this.chkrecar_consumo.TabIndex = 0;
+            this.chkrecar_consumo.Text = "Recargo Consumo";
+            this.chkrecar_consumo.UseVisualStyleBackColor = true;
             // 
-            // checkBox19
+            // chkotro_descuento
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(442, 62);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(80, 17);
-            this.checkBox19.TabIndex = 0;
-            this.checkBox19.Text = "checkBox1";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.chkotro_descuento.AutoSize = true;
+            this.chkotro_descuento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkotro_descuento.Location = new System.Drawing.Point(635, 27);
+            this.chkotro_descuento.Name = "chkotro_descuento";
+            this.chkotro_descuento.Size = new System.Drawing.Size(132, 21);
+            this.chkotro_descuento.TabIndex = 0;
+            this.chkotro_descuento.Text = "Otros Descuentos";
+            this.chkotro_descuento.UseVisualStyleBackColor = true;
             // 
-            // checkBox16
+            // chkprestamo
             // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Location = new System.Drawing.Point(334, 85);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(80, 17);
-            this.checkBox16.TabIndex = 0;
-            this.checkBox16.Text = "checkBox1";
-            this.checkBox16.UseVisualStyleBackColor = true;
+            this.chkprestamo.AutoSize = true;
+            this.chkprestamo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkprestamo.Location = new System.Drawing.Point(501, 73);
+            this.chkprestamo.Name = "chkprestamo";
+            this.chkprestamo.Size = new System.Drawing.Size(83, 21);
+            this.chkprestamo.TabIndex = 0;
+            this.chkprestamo.Text = "Prestamo";
+            this.chkprestamo.UseVisualStyleBackColor = true;
             // 
-            // checkBox15
+            // chkadelanto
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(334, 62);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(80, 17);
-            this.checkBox15.TabIndex = 0;
-            this.checkBox15.Text = "checkBox1";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.chkadelanto.AutoSize = true;
+            this.chkadelanto.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkadelanto.Location = new System.Drawing.Point(501, 50);
+            this.chkadelanto.Name = "chkadelanto";
+            this.chkadelanto.Size = new System.Drawing.Size(83, 21);
+            this.chkadelanto.TabIndex = 0;
+            this.chkadelanto.Text = "Adelanto";
+            this.chkadelanto.UseVisualStyleBackColor = true;
             // 
-            // checkBox12
+            // chkvaca
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(225, 85);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(80, 17);
-            this.checkBox12.TabIndex = 0;
-            this.checkBox12.Text = "checkBox1";
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.chkvaca.AutoSize = true;
+            this.chkvaca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkvaca.Location = new System.Drawing.Point(330, 27);
+            this.chkvaca.Name = "chkvaca";
+            this.chkvaca.Size = new System.Drawing.Size(99, 21);
+            this.chkvaca.TabIndex = 0;
+            this.chkvaca.Text = "Vacaciones";
+            this.chkvaca.UseVisualStyleBackColor = true;
             // 
-            // checkBox11
+            // chkgrati
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(225, 62);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(80, 17);
-            this.checkBox11.TabIndex = 0;
-            this.checkBox11.Text = "checkBox1";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.chkgrati.AutoSize = true;
+            this.chkgrati.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkgrati.Location = new System.Drawing.Point(169, 119);
+            this.chkgrati.Name = "chkgrati";
+            this.chkgrati.Size = new System.Drawing.Size(106, 21);
+            this.chkgrati.TabIndex = 0;
+            this.chkgrati.Text = "Gratificación";
+            this.chkgrati.UseVisualStyleBackColor = true;
             // 
-            // checkBox18
+            // chkretencion_judi
             // 
-            this.checkBox18.AutoSize = true;
-            this.checkBox18.Location = new System.Drawing.Point(442, 40);
-            this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(80, 17);
-            this.checkBox18.TabIndex = 0;
-            this.checkBox18.Text = "checkBox1";
-            this.checkBox18.UseVisualStyleBackColor = true;
+            this.chkretencion_judi.AutoSize = true;
+            this.chkretencion_judi.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkretencion_judi.Location = new System.Drawing.Point(501, 119);
+            this.chkretencion_judi.Name = "chkretencion_judi";
+            this.chkretencion_judi.Size = new System.Drawing.Size(137, 21);
+            this.chkretencion_judi.TabIndex = 0;
+            this.chkretencion_judi.Text = "Retención Judicial";
+            this.chkretencion_judi.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // chktotal_extras
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(111, 87);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(80, 17);
-            this.checkBox8.TabIndex = 0;
-            this.checkBox8.Text = "checkBox1";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.chktotal_extras.AutoSize = true;
+            this.chktotal_extras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chktotal_extras.Location = new System.Drawing.Point(169, 50);
+            this.chktotal_extras.Name = "chktotal_extras";
+            this.chktotal_extras.Size = new System.Drawing.Size(129, 21);
+            this.chktotal_extras.TabIndex = 0;
+            this.chktotal_extras.Text = "Total Horas Extras";
+            this.chktotal_extras.UseVisualStyleBackColor = true;
             // 
-            // checkBox14
+            // chkessavida
             // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Location = new System.Drawing.Point(334, 40);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(80, 17);
-            this.checkBox14.TabIndex = 0;
-            this.checkBox14.Text = "checkBox1";
-            this.checkBox14.UseVisualStyleBackColor = true;
+            this.chkessavida.AutoSize = true;
+            this.chkessavida.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkessavida.Location = new System.Drawing.Point(501, 27);
+            this.chkessavida.Name = "chkessavida";
+            this.chkessavida.Size = new System.Drawing.Size(99, 21);
+            this.chkessavida.TabIndex = 0;
+            this.chkessavida.Text = "Essalud vida";
+            this.chkessavida.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // chksubsidio
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(111, 64);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(80, 17);
-            this.checkBox7.TabIndex = 0;
-            this.checkBox7.Text = "checkBox1";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chksubsidio.AutoSize = true;
+            this.chksubsidio.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chksubsidio.Location = new System.Drawing.Point(169, 27);
+            this.chksubsidio.Name = "chksubsidio";
+            this.chksubsidio.Size = new System.Drawing.Size(81, 21);
+            this.chksubsidio.TabIndex = 0;
+            this.chksubsidio.Text = "Subsidios";
+            this.chksubsidio.UseVisualStyleBackColor = true;
             // 
-            // checkBox10
+            // chkpres_alime
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(225, 40);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(80, 17);
-            this.checkBox10.TabIndex = 0;
-            this.checkBox10.Text = "checkBox1";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.chkpres_alime.AutoSize = true;
+            this.chkpres_alime.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkpres_alime.Location = new System.Drawing.Point(169, 96);
+            this.chkpres_alime.Name = "chkpres_alime";
+            this.chkpres_alime.Size = new System.Drawing.Size(162, 21);
+            this.chkpres_alime.TabIndex = 0;
+            this.chkpres_alime.Text = "Prestación Alimentaria";
+            this.chkpres_alime.UseVisualStyleBackColor = true;
             // 
-            // checkBox17
+            // chkrentaquinta
             // 
-            this.checkBox17.AutoSize = true;
-            this.checkBox17.Location = new System.Drawing.Point(442, 17);
-            this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(80, 17);
-            this.checkBox17.TabIndex = 0;
-            this.checkBox17.Text = "checkBox1";
-            this.checkBox17.UseVisualStyleBackColor = true;
+            this.chkrentaquinta.AutoSize = true;
+            this.chkrentaquinta.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkrentaquinta.Location = new System.Drawing.Point(501, 96);
+            this.chkrentaquinta.Name = "chkrentaquinta";
+            this.chkrentaquinta.Size = new System.Drawing.Size(169, 21);
+            this.chkrentaquinta.TabIndex = 0;
+            this.chkrentaquinta.Text = "Renta Quinta Categoria";
+            this.chkrentaquinta.UseVisualStyleBackColor = true;
             // 
-            // checkBox13
+            // chktrunca
             // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Location = new System.Drawing.Point(334, 17);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(80, 17);
-            this.checkBox13.TabIndex = 0;
-            this.checkBox13.Text = "checkBox1";
-            this.checkBox13.UseVisualStyleBackColor = true;
+            this.chktrunca.AutoSize = true;
+            this.chktrunca.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chktrunca.Location = new System.Drawing.Point(330, 50);
+            this.chktrunca.Name = "chktrunca";
+            this.chktrunca.Size = new System.Drawing.Size(71, 21);
+            this.chktrunca.TabIndex = 0;
+            this.chktrunca.Text = "Truncas";
+            this.chktrunca.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chktardanza
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(111, 42);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(80, 17);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.Text = "checkBox1";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chktardanza.AutoSize = true;
+            this.chktardanza.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chktardanza.Location = new System.Drawing.Point(6, 119);
+            this.chktardanza.Name = "chktardanza";
+            this.chktardanza.Size = new System.Drawing.Size(85, 21);
+            this.chktardanza.TabIndex = 0;
+            this.chktardanza.Text = "Tardanzas";
+            this.chktardanza.UseVisualStyleBackColor = true;
             // 
-            // checkBox9
+            // chkotro_reintegro
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(225, 17);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(80, 17);
-            this.checkBox9.TabIndex = 0;
-            this.checkBox9.Text = "checkBox1";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.chkotro_reintegro.AutoSize = true;
+            this.chkotro_reintegro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkotro_reintegro.Location = new System.Drawing.Point(169, 73);
+            this.chkotro_reintegro.Name = "chkotro_reintegro";
+            this.chkotro_reintegro.Size = new System.Drawing.Size(125, 21);
+            this.chkotro_reintegro.TabIndex = 0;
+            this.chkotro_reintegro.Text = "Otros Reintegros";
+            this.chkotro_reintegro.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkferiado
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 85);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(80, 17);
-            this.checkBox3.TabIndex = 0;
-            this.checkBox3.Text = "checkBox1";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkferiado.AutoSize = true;
+            this.chkferiado.FlatAppearance.BorderColor = System.Drawing.Color.Maroon;
+            this.chkferiado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkferiado.Location = new System.Drawing.Point(6, 73);
+            this.chkferiado.Name = "chkferiado";
+            this.chkferiado.Size = new System.Drawing.Size(134, 21);
+            this.chkferiado.TabIndex = 0;
+            this.chkferiado.Text = "Feriado dominical";
+            this.chkferiado.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkboni_nocturna
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(111, 19);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(80, 17);
-            this.checkBox5.TabIndex = 0;
-            this.checkBox5.Text = "checkBox1";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkboni_nocturna.AutoSize = true;
+            this.chkboni_nocturna.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkboni_nocturna.Location = new System.Drawing.Point(6, 96);
+            this.chkboni_nocturna.Name = "chkboni_nocturna";
+            this.chkboni_nocturna.Size = new System.Drawing.Size(160, 21);
+            this.chkboni_nocturna.TabIndex = 0;
+            this.chkboni_nocturna.Text = "Bonificación Nocturna";
+            this.chkboni_nocturna.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkhnocturna
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 62);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "checkBox1";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkhnocturna.AutoSize = true;
+            this.chkhnocturna.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.chkhnocturna.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkhnocturna.Location = new System.Drawing.Point(6, 50);
+            this.chkhnocturna.Name = "chkhnocturna";
+            this.chkhnocturna.Size = new System.Drawing.Size(161, 21);
+            this.chkhnocturna.TabIndex = 0;
+            this.chkhnocturna.Text = "Horas Extras Nocturnas";
+            this.chkhnocturna.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkhdiurnas
             // 
-            this.checkBox1.Location = new System.Drawing.Point(6, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(104, 34);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Horas extras diurnas";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkhdiurnas.AutoSize = true;
+            this.chkhdiurnas.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.chkhdiurnas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkhdiurnas.Location = new System.Drawing.Point(6, 27);
+            this.chkhdiurnas.Name = "chkhdiurnas";
+            this.chkhdiurnas.Size = new System.Drawing.Size(143, 21);
+            this.chkhdiurnas.TabIndex = 0;
+            this.chkhdiurnas.Text = "Horas Extras Diurnas";
+            this.chkhdiurnas.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(740, 535);
+            this.button1.Location = new System.Drawing.Point(345, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -534,7 +601,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(85, 16);
+            this.label6.Location = new System.Drawing.Point(85, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 17);
             this.label6.TabIndex = 13;
@@ -548,7 +615,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Planilla Mensual"});
-            this.comboBox1.Location = new System.Drawing.Point(113, 49);
+            this.comboBox1.Location = new System.Drawing.Point(113, 38);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(142, 25);
             this.comboBox1.TabIndex = 12;
@@ -561,9 +628,9 @@
             this.groupplanilla.Controls.Add(this.txtal);
             this.groupplanilla.Controls.Add(this.txtdel);
             this.groupplanilla.Controls.Add(this.txtpago);
-            this.groupplanilla.Location = new System.Drawing.Point(3, 80);
+            this.groupplanilla.Location = new System.Drawing.Point(6, 69);
             this.groupplanilla.Name = "groupplanilla";
-            this.groupplanilla.Size = new System.Drawing.Size(612, 53);
+            this.groupplanilla.Size = new System.Drawing.Size(428, 103);
             this.groupplanilla.TabIndex = 9;
             this.groupplanilla.TabStop = false;
             // 
@@ -572,7 +639,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(462, 25);
+            this.label3.Location = new System.Drawing.Point(203, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 17);
             this.label3.TabIndex = 4;
@@ -583,7 +650,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(271, 25);
+            this.label2.Location = new System.Drawing.Point(12, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 17);
             this.label2.TabIndex = 4;
@@ -594,7 +661,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(16, 23);
+            this.label1.Location = new System.Drawing.Point(12, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 4;
@@ -605,7 +672,7 @@
             this.txtal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtal.Location = new System.Drawing.Point(494, 25);
+            this.txtal.Location = new System.Drawing.Point(235, 21);
             this.txtal.Mask = "00 - 00 - 0000";
             this.txtal.Name = "txtal";
             this.txtal.Size = new System.Drawing.Size(109, 15);
@@ -618,7 +685,7 @@
             this.txtdel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtdel.Location = new System.Drawing.Point(311, 25);
+            this.txtdel.Location = new System.Drawing.Point(52, 21);
             this.txtdel.Mask = "00 - 00 - 0000";
             this.txtdel.Name = "txtdel";
             this.txtdel.Size = new System.Drawing.Size(109, 15);
@@ -631,7 +698,7 @@
             this.txtpago.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpago.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtpago.Location = new System.Drawing.Point(126, 23);
+            this.txtpago.Location = new System.Drawing.Point(122, 61);
             this.txtpago.Mask = "00 - 00 - 0000";
             this.txtpago.Name = "txtpago";
             this.txtpago.Size = new System.Drawing.Size(109, 15);
@@ -650,9 +717,9 @@
             this.dgvplanilla1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.NullValue = null;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -693,6 +760,7 @@
             this.montoferiado,
             this.hrboninocturna,
             this.montoboninocturno,
+            this.unomayo,
             this.htarde,
             this.mtarde,
             this.montotarde,
@@ -706,6 +774,10 @@
             this.montoposi,
             this.thoras,
             this.reintegro,
+            this.otros_reintegros,
+            this.prestacion_alimenta,
+            this.grati,
+            this.boni,
             this.vacaciones,
             this.tvaca,
             this.tgrati,
@@ -716,6 +788,7 @@
             this.comision,
             this.seguro,
             this.spp,
+            this.essalud_vida,
             this.adelanto,
             this.prestamo,
             this.renta5cate,
@@ -724,7 +797,10 @@
             this.totades,
             this.topagar,
             this.aportsalud,
-            this.transporte});
+            this.transporte,
+            this.recargo_consumo,
+            this.reintegro_grati,
+            this.reintegro_boni});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -735,7 +811,7 @@
             this.dgvplanilla1.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvplanilla1.EnableHeadersVisualStyles = false;
             this.dgvplanilla1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgvplanilla1.Location = new System.Drawing.Point(3, 172);
+            this.dgvplanilla1.Location = new System.Drawing.Point(4, 216);
             this.dgvplanilla1.Name = "dgvplanilla1";
             this.dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -749,7 +825,7 @@
             this.dgvplanilla1.RowHeadersWidth = 25;
             this.dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvplanilla1.Size = new System.Drawing.Size(1231, 334);
+            this.dgvplanilla1.Size = new System.Drawing.Size(1229, 334);
             this.dgvplanilla1.TabIndex = 8;
             this.dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellContentClick);
@@ -765,7 +841,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(5, 52);
+            this.label5.Location = new System.Drawing.Point(5, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 17);
             this.label5.TabIndex = 10;
@@ -776,7 +852,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(3, 16);
+            this.label4.Location = new System.Drawing.Point(5, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 11;
@@ -797,9 +873,9 @@
             this.dgvplanilla2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvplanilla2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -812,137 +888,39 @@
             this.hxnocturnas,
             this.feriado,
             this.boninocturno,
+            this.primeromayo,
             this.tardanza,
             this.subsi,
             this.nosubsi,
             this.thorax,
+            this.dreintegro,
+            this.dotro_reintegro,
+            this.pres_alimen,
+            this.grati_boni,
+            this.dvaca,
             this.truncas,
             this.tremu,
             this.descuentoafp,
-            this.fin});
+            this.dvida,
+            this.dadelanto,
+            this.dprestamo,
+            this.drenta,
+            this.dretencion,
+            this.dotrosdes,
+            this.dtotales_varios,
+            this.recargo_consu,
+            this.r_grati_boni});
             this.dgvplanilla2.EnableHeadersVisualStyles = false;
             this.dgvplanilla2.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgvplanilla2.Location = new System.Drawing.Point(3, 139);
+            this.dgvplanilla2.Location = new System.Drawing.Point(4, 183);
             this.dgvplanilla2.Name = "dgvplanilla2";
             this.dgvplanilla2.ReadOnly = true;
             this.dgvplanilla2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvplanilla2.RowHeadersWidth = 25;
             this.dgvplanilla2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvplanilla2.Size = new System.Drawing.Size(1231, 39);
+            this.dgvplanilla2.Size = new System.Drawing.Size(1229, 38);
             this.dgvplanilla2.TabIndex = 7;
-            // 
-            // valor1
-            // 
-            this.valor1.HeaderText = "";
-            this.valor1.Name = "valor1";
-            this.valor1.ReadOnly = true;
-            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor1.Width = 320;
-            // 
-            // valor2
-            // 
-            this.valor2.HeaderText = "";
-            this.valor2.Name = "valor2";
-            this.valor2.ReadOnly = true;
-            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor2.Width = 628;
-            // 
-            // hxdiurnas
-            // 
-            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
-            this.hxdiurnas.Name = "hxdiurnas";
-            this.hxdiurnas.ReadOnly = true;
-            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxdiurnas.Width = 220;
-            // 
-            // hxnocturnas
-            // 
-            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNOS";
-            this.hxnocturnas.Name = "hxnocturnas";
-            this.hxnocturnas.ReadOnly = true;
-            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxnocturnas.Width = 220;
-            // 
-            // feriado
-            // 
-            this.feriado.HeaderText = "FERIADO | DOMINICAL";
-            this.feriado.Name = "feriado";
-            this.feriado.ReadOnly = true;
-            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.feriado.Width = 110;
-            // 
-            // boninocturno
-            // 
-            this.boninocturno.HeaderText = "BONI. NOCTURNA";
-            this.boninocturno.Name = "boninocturno";
-            this.boninocturno.ReadOnly = true;
-            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.boninocturno.Width = 80;
-            // 
-            // tardanza
-            // 
-            this.tardanza.HeaderText = "TARDANZA";
-            this.tardanza.Name = "tardanza";
-            this.tardanza.ReadOnly = true;
-            this.tardanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tardanza.Width = 110;
-            // 
-            // subsi
-            // 
-            this.subsi.HeaderText = "SUBSIDIADOS";
-            this.subsi.Name = "subsi";
-            this.subsi.ReadOnly = true;
-            this.subsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.subsi.Width = 110;
-            // 
-            // nosubsi
-            // 
-            this.nosubsi.HeaderText = "NO SUBSIDIADOS/NO LABORADO";
-            this.nosubsi.Name = "nosubsi";
-            this.nosubsi.ReadOnly = true;
-            this.nosubsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nosubsi.Width = 190;
-            // 
-            // thorax
-            // 
-            this.thorax.HeaderText = "";
-            this.thorax.Name = "thorax";
-            this.thorax.ReadOnly = true;
-            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thorax.Width = 213;
-            // 
-            // truncas
-            // 
-            this.truncas.HeaderText = "TRUNCAS";
-            this.truncas.Name = "truncas";
-            this.truncas.ReadOnly = true;
-            this.truncas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.truncas.Width = 280;
-            // 
-            // tremu
-            // 
-            this.tremu.HeaderText = "";
-            this.tremu.Name = "tremu";
-            this.tremu.ReadOnly = true;
-            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tremu.Width = 160;
-            // 
-            // descuentoafp
-            // 
-            this.descuentoafp.HeaderText = "DESCUENTO AFP";
-            this.descuentoafp.Name = "descuentoafp";
-            this.descuentoafp.ReadOnly = true;
-            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.descuentoafp.Width = 210;
-            // 
-            // fin
-            // 
-            this.fin.HeaderText = "";
-            this.fin.Name = "fin";
-            this.fin.ReadOnly = true;
-            this.fin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.fin.Width = 600;
             // 
             // id_contrato
             // 
@@ -1200,6 +1178,13 @@
             this.montoboninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.montoboninocturno.Width = 50;
             // 
+            // unomayo
+            // 
+            this.unomayo.HeaderText = "1ro Mayo";
+            this.unomayo.Name = "unomayo";
+            this.unomayo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.unomayo.Width = 50;
+            // 
             // htarde
             // 
             this.htarde.HeaderText = "No. Hrs.";
@@ -1300,6 +1285,34 @@
             this.reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.reintegro.Width = 70;
             // 
+            // otros_reintegros
+            // 
+            this.otros_reintegros.HeaderText = "Otro reintegro";
+            this.otros_reintegros.Name = "otros_reintegros";
+            this.otros_reintegros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.otros_reintegros.Width = 70;
+            // 
+            // prestacion_alimenta
+            // 
+            this.prestacion_alimenta.HeaderText = "Prestacion alimentaria";
+            this.prestacion_alimenta.Name = "prestacion_alimenta";
+            this.prestacion_alimenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.prestacion_alimenta.Width = 70;
+            // 
+            // grati
+            // 
+            this.grati.HeaderText = "Grati";
+            this.grati.Name = "grati";
+            this.grati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.grati.Width = 70;
+            // 
+            // boni
+            // 
+            this.boni.HeaderText = "Boni";
+            this.boni.Name = "boni";
+            this.boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.boni.Width = 70;
+            // 
             // vacaciones
             // 
             this.vacaciones.HeaderText = "Vacaciones del Mes";
@@ -1373,6 +1386,13 @@
             this.spp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.spp.Width = 70;
             // 
+            // essalud_vida
+            // 
+            this.essalud_vida.HeaderText = "Essalud Vida";
+            this.essalud_vida.Name = "essalud_vida";
+            this.essalud_vida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.essalud_vida.Width = 60;
+            // 
             // adelanto
             // 
             this.adelanto.HeaderText = "Adelanto";
@@ -1436,21 +1456,290 @@
             this.transporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.transporte.Width = 70;
             // 
-            // btnver
+            // recargo_consumo
             // 
-            this.btnver.Location = new System.Drawing.Point(485, 54);
-            this.btnver.Name = "btnver";
-            this.btnver.Size = new System.Drawing.Size(75, 23);
-            this.btnver.TabIndex = 15;
-            this.btnver.Text = "button2";
-            this.btnver.UseVisualStyleBackColor = true;
-            this.btnver.Click += new System.EventHandler(this.btnver_Click);
+            this.recargo_consumo.HeaderText = "Recargo consumo";
+            this.recargo_consumo.Name = "recargo_consumo";
+            this.recargo_consumo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.recargo_consumo.Width = 70;
+            // 
+            // reintegro_grati
+            // 
+            this.reintegro_grati.HeaderText = "Reintegro grati";
+            this.reintegro_grati.Name = "reintegro_grati";
+            this.reintegro_grati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reintegro_grati.Width = 70;
+            // 
+            // reintegro_boni
+            // 
+            this.reintegro_boni.HeaderText = "Reintegro boni";
+            this.reintegro_boni.Name = "reintegro_boni";
+            this.reintegro_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reintegro_boni.Width = 70;
+            // 
+            // chkrgrati
+            // 
+            this.chkrgrati.AutoSize = true;
+            this.chkrgrati.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkrgrati.Location = new System.Drawing.Point(330, 73);
+            this.chkrgrati.Name = "chkrgrati";
+            this.chkrgrati.Size = new System.Drawing.Size(167, 21);
+            this.chkrgrati.TabIndex = 1;
+            this.chkrgrati.Text = "Reintegro Gratificación";
+            this.chkrgrati.UseVisualStyleBackColor = true;
+            // 
+            // chkrboni
+            // 
+            this.chkrboni.AutoSize = true;
+            this.chkrboni.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkrboni.Location = new System.Drawing.Point(330, 96);
+            this.chkrboni.Name = "chkrboni";
+            this.chkrboni.Size = new System.Drawing.Size(162, 21);
+            this.chkrboni.TabIndex = 1;
+            this.chkrboni.Text = "Reintegro Bonificación";
+            this.chkrboni.UseVisualStyleBackColor = true;
+            // 
+            // valor1
+            // 
+            this.valor1.HeaderText = "";
+            this.valor1.Name = "valor1";
+            this.valor1.ReadOnly = true;
+            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor1.Width = 320;
+            // 
+            // valor2
+            // 
+            this.valor2.HeaderText = "";
+            this.valor2.Name = "valor2";
+            this.valor2.ReadOnly = true;
+            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor2.Width = 628;
+            // 
+            // hxdiurnas
+            // 
+            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
+            this.hxdiurnas.Name = "hxdiurnas";
+            this.hxdiurnas.ReadOnly = true;
+            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxdiurnas.Width = 220;
+            // 
+            // hxnocturnas
+            // 
+            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNOS";
+            this.hxnocturnas.Name = "hxnocturnas";
+            this.hxnocturnas.ReadOnly = true;
+            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxnocturnas.Width = 220;
+            // 
+            // feriado
+            // 
+            this.feriado.HeaderText = "FERIADO | DOMINICAL";
+            this.feriado.Name = "feriado";
+            this.feriado.ReadOnly = true;
+            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.feriado.Width = 110;
+            // 
+            // boninocturno
+            // 
+            this.boninocturno.HeaderText = "BONI. NOCTURNA";
+            this.boninocturno.Name = "boninocturno";
+            this.boninocturno.ReadOnly = true;
+            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.boninocturno.Width = 80;
+            // 
+            // primeromayo
+            // 
+            this.primeromayo.HeaderText = "";
+            this.primeromayo.Name = "primeromayo";
+            this.primeromayo.ReadOnly = true;
+            this.primeromayo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.primeromayo.Width = 50;
+            // 
+            // tardanza
+            // 
+            this.tardanza.HeaderText = "TARDANZA";
+            this.tardanza.Name = "tardanza";
+            this.tardanza.ReadOnly = true;
+            this.tardanza.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tardanza.Width = 110;
+            // 
+            // subsi
+            // 
+            this.subsi.HeaderText = "SUBSIDIADOS";
+            this.subsi.Name = "subsi";
+            this.subsi.ReadOnly = true;
+            this.subsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.subsi.Width = 110;
+            // 
+            // nosubsi
+            // 
+            this.nosubsi.HeaderText = "NO SUBSIDIADOS/NO LABORADO";
+            this.nosubsi.Name = "nosubsi";
+            this.nosubsi.ReadOnly = true;
+            this.nosubsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nosubsi.Width = 190;
+            // 
+            // thorax
+            // 
+            this.thorax.HeaderText = "";
+            this.thorax.Name = "thorax";
+            this.thorax.ReadOnly = true;
+            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thorax.Width = 73;
+            // 
+            // dreintegro
+            // 
+            this.dreintegro.HeaderText = "";
+            this.dreintegro.Name = "dreintegro";
+            this.dreintegro.ReadOnly = true;
+            this.dreintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dreintegro.Width = 70;
+            // 
+            // dotro_reintegro
+            // 
+            this.dotro_reintegro.HeaderText = "";
+            this.dotro_reintegro.Name = "dotro_reintegro";
+            this.dotro_reintegro.ReadOnly = true;
+            this.dotro_reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dotro_reintegro.Width = 70;
+            // 
+            // pres_alimen
+            // 
+            this.pres_alimen.HeaderText = "";
+            this.pres_alimen.Name = "pres_alimen";
+            this.pres_alimen.ReadOnly = true;
+            this.pres_alimen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.pres_alimen.Width = 70;
+            // 
+            // grati_boni
+            // 
+            this.grati_boni.HeaderText = "Gratif. - Boni. F.Patrias y Navidad";
+            this.grati_boni.Name = "grati_boni";
+            this.grati_boni.ReadOnly = true;
+            this.grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.grati_boni.Width = 140;
+            // 
+            // dvaca
+            // 
+            this.dvaca.HeaderText = "";
+            this.dvaca.Name = "dvaca";
+            this.dvaca.ReadOnly = true;
+            this.dvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dvaca.Width = 70;
+            // 
+            // truncas
+            // 
+            this.truncas.HeaderText = "TRUNCAS";
+            this.truncas.Name = "truncas";
+            this.truncas.ReadOnly = true;
+            this.truncas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.truncas.Width = 280;
+            // 
+            // tremu
+            // 
+            this.tremu.HeaderText = "";
+            this.tremu.Name = "tremu";
+            this.tremu.ReadOnly = true;
+            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tremu.Width = 160;
+            // 
+            // descuentoafp
+            // 
+            this.descuentoafp.HeaderText = "DESCUENTO AFP";
+            this.descuentoafp.Name = "descuentoafp";
+            this.descuentoafp.ReadOnly = true;
+            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.descuentoafp.Width = 210;
+            // 
+            // dvida
+            // 
+            this.dvida.HeaderText = "";
+            this.dvida.Name = "dvida";
+            this.dvida.ReadOnly = true;
+            this.dvida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dvida.Width = 60;
+            // 
+            // dadelanto
+            // 
+            this.dadelanto.HeaderText = "";
+            this.dadelanto.Name = "dadelanto";
+            this.dadelanto.ReadOnly = true;
+            this.dadelanto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dadelanto.Width = 60;
+            // 
+            // dprestamo
+            // 
+            this.dprestamo.HeaderText = "";
+            this.dprestamo.Name = "dprestamo";
+            this.dprestamo.ReadOnly = true;
+            this.dprestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dprestamo.Width = 60;
+            // 
+            // drenta
+            // 
+            this.drenta.HeaderText = "";
+            this.drenta.Name = "drenta";
+            this.drenta.ReadOnly = true;
+            this.drenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.drenta.Width = 60;
+            // 
+            // dretencion
+            // 
+            this.dretencion.HeaderText = "";
+            this.dretencion.Name = "dretencion";
+            this.dretencion.ReadOnly = true;
+            this.dretencion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dretencion.Width = 60;
+            // 
+            // dotrosdes
+            // 
+            this.dotrosdes.HeaderText = "";
+            this.dotrosdes.Name = "dotrosdes";
+            this.dotrosdes.ReadOnly = true;
+            this.dotrosdes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dotrosdes.Width = 60;
+            // 
+            // dtotales_varios
+            // 
+            this.dtotales_varios.HeaderText = "";
+            this.dtotales_varios.Name = "dtotales_varios";
+            this.dtotales_varios.ReadOnly = true;
+            this.dtotales_varios.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dtotales_varios.Width = 300;
+            // 
+            // recargo_consu
+            // 
+            this.recargo_consu.HeaderText = "";
+            this.recargo_consu.Name = "recargo_consu";
+            this.recargo_consu.ReadOnly = true;
+            this.recargo_consu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.recargo_consu.Width = 70;
+            // 
+            // r_grati_boni
+            // 
+            this.r_grati_boni.HeaderText = "RECARGO GRATIF. Y BONIF.";
+            this.r_grati_boni.Name = "r_grati_boni";
+            this.r_grati_boni.ReadOnly = true;
+            this.r_grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.r_grati_boni.Width = 140;
+            // 
+            // picsave_conceptos
+            // 
+            this.picsave_conceptos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picsave_conceptos.Image = global::Presentacion.Properties.Resources.Save_37110;
+            this.picsave_conceptos.Location = new System.Drawing.Point(729, 109);
+            this.picsave_conceptos.Name = "picsave_conceptos";
+            this.picsave_conceptos.Size = new System.Drawing.Size(38, 30);
+            this.picsave_conceptos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picsave_conceptos.TabIndex = 2;
+            this.picsave_conceptos.TabStop = false;
+            this.picsave_conceptos.Click += new System.EventHandler(this.picsave_conceptos_Click);
             // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 625);
+            this.ClientSize = new System.Drawing.Size(1243, 605);
             this.Controls.Add(this.panelplanilla);
             this.Controls.Add(this.toolbotones);
             this.Controls.Add(this.menuarchivos);
@@ -1471,6 +1760,7 @@
             this.groupplanilla.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvplanilla2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picsave_conceptos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1504,40 +1794,27 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvplanilla2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subsi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nosubsi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn truncas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin;
         private System.Windows.Forms.GroupBox grobconceptos;
-        private System.Windows.Forms.CheckBox checkBox20;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox18;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox14;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox17;
-        private System.Windows.Forms.CheckBox checkBox13;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkrecar_consumo;
+        private System.Windows.Forms.CheckBox chkotro_descuento;
+        private System.Windows.Forms.CheckBox chkprestamo;
+        private System.Windows.Forms.CheckBox chkadelanto;
+        private System.Windows.Forms.CheckBox chkvaca;
+        private System.Windows.Forms.CheckBox chkgrati;
+        private System.Windows.Forms.CheckBox chkretencion_judi;
+        private System.Windows.Forms.CheckBox chktotal_extras;
+        private System.Windows.Forms.CheckBox chkessavida;
+        private System.Windows.Forms.CheckBox chksubsidio;
+        private System.Windows.Forms.CheckBox chkpres_alime;
+        private System.Windows.Forms.CheckBox chkrentaquinta;
+        private System.Windows.Forms.CheckBox chktrunca;
+        private System.Windows.Forms.CheckBox chktardanza;
+        private System.Windows.Forms.CheckBox chkotro_reintegro;
+        private System.Windows.Forms.CheckBox chkferiado;
+        private System.Windows.Forms.CheckBox chkboni_nocturna;
+        private System.Windows.Forms.CheckBox chkhnocturna;
+        private System.Windows.Forms.CheckBox chkhdiurnas;
+        private System.Windows.Forms.Button btnver;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_contrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_planilla_manto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -1571,6 +1848,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn montoferiado;
         private System.Windows.Forms.DataGridViewTextBoxColumn hrboninocturna;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoboninocturno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unomayo;
         private System.Windows.Forms.DataGridViewTextBoxColumn htarde;
         private System.Windows.Forms.DataGridViewTextBoxColumn mtarde;
         private System.Windows.Forms.DataGridViewTextBoxColumn montotarde;
@@ -1584,6 +1862,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn montoposi;
         private System.Windows.Forms.DataGridViewTextBoxColumn thoras;
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn otros_reintegros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prestacion_alimenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boni;
         private System.Windows.Forms.DataGridViewTextBoxColumn vacaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn tvaca;
         private System.Windows.Forms.DataGridViewTextBoxColumn tgrati;
@@ -1594,6 +1876,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comision;
         private System.Windows.Forms.DataGridViewTextBoxColumn seguro;
         private System.Windows.Forms.DataGridViewTextBoxColumn spp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn essalud_vida;
         private System.Windows.Forms.DataGridViewTextBoxColumn adelanto;
         private System.Windows.Forms.DataGridViewTextBoxColumn prestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn renta5cate;
@@ -1603,6 +1886,39 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn topagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn aportsalud;
         private System.Windows.Forms.DataGridViewTextBoxColumn transporte;
-        private System.Windows.Forms.Button btnver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_grati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_boni;
+        private System.Windows.Forms.CheckBox chkrboni;
+        private System.Windows.Forms.CheckBox chkrgrati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn primeromayo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nosubsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dreintegro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dotro_reintegro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pres_alimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grati_boni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvaca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn truncas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dadelanto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dprestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dretencion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dotrosdes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtotales_varios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn r_grati_boni;
+        private System.Windows.Forms.PictureBox picsave_conceptos;
     }
 }
