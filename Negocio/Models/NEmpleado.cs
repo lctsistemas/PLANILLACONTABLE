@@ -5,7 +5,6 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 namespace Negocio.Models
 {
@@ -22,9 +21,7 @@ namespace Negocio.Models
         public DateTime Fec_nac { get; set; }
         public String Nacionalidad { get; set; }
         public String Tipo_genero { get; set; }
-        public String Direccion { get; set; }
-
-        [RegularExpression("([0-9]+)", ErrorMessage = "identification number must be only numbers")]
+        public String Direccion { get; set; }       
         public String Telefono { get; set; }
         public String Num_doc { get; set; }
         public String Estado { get; set; }
@@ -36,22 +33,13 @@ namespace Negocio.Models
 
         //METODOS SET AND GET DE CONTRATO
         public Int32 cid_contrato { get; set; }
-       // public Int32 cid_empleado { get; set; }//eliminar
-
-        [Display(Name = "Banco")]
-        [Required]
+       // public Int32 cid_empleado { get; set; }//eliminar        
         public Int32 cid_banco { get; set; }
         public Int32 cid_tcontrato { get; set; }
         public DateTime cfecha_inicio { get; set; }
         public DateTime cfecha_fin { get; set; }
-        public String cnum_cuenta { get; set; }
-
-        [Display(Name = "Remuneracion Basica")]
-        [Required]
-        public Decimal cremu_basica { get; set; }
-
-        [Display(Name = "Asignacion familiar")]
-        [Required]
+        public String cnum_cuenta { get; set; }     
+        public Decimal cremu_basica { get; set; }       
         public Decimal casig_fami { get; set; }
         
         public int cid_salud { get; set; }
