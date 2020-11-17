@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helps\Calculo.cs" />
+    <Compile Include="Helps\ExtensionMethods.cs" />
     <Compile Include="Helps\ValidacionDatos.cs" />
     <Compile Include="Helps\WindowsMove.cs" />
     <Compile Include="Main_Principal.cs">

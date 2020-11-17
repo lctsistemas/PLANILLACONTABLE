@@ -26,6 +26,9 @@ namespace Presentacion.Vista
             InitializeComponent();
             //dgvplanilla1.Rows.Add();
             dgvplanilla1.AutoGenerateColumns = false;
+            this.dgvplanilla2.DoubleBuffered(true);
+            this.dgvplanilla1.DoubleBuffered(true);
+            
         }
        
         //TABLA
@@ -259,6 +262,7 @@ namespace Presentacion.Vista
         {            
             //FillTabla();
             TablaPlanilla();
+            Tooltip.Title(picsave_conceptos, "Guardar cambios", false);
         }      
              
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -734,6 +738,11 @@ namespace Presentacion.Vista
 
             Descuento_aportes();
 
+
+        }
+
+        private void picsave_conceptos_Click(object sender, EventArgs e)
+        {
 
         }
     }
