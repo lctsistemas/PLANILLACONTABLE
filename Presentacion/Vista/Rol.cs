@@ -57,8 +57,13 @@ namespace Presentacion.Vista
         //GUARDAR
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtrol.Text))
+            if (String.IsNullOrWhiteSpace(txtrol.Text)) {
+
+                ValidateChildren();
                 return;
+
+            }
+                
 
             using (nr)
             {
@@ -124,6 +129,11 @@ namespace Presentacion.Vista
         private void txtrol_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.SoloLetras(e);
+        }
+
+        private void txtrol_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtrol, "Rol requerido!");
         }
     }
 }

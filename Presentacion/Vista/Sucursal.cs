@@ -42,6 +42,17 @@ namespace Presentacion.Vista
 
         }
 
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtcodigo_sucursal.Text) || String.IsNullOrWhiteSpace(txtrazon_social.Text) || String.IsNullOrWhiteSpace(txtlocalidad.Text) || String.IsNullOrWhiteSpace(txtdireccion.Text) || String.IsNullOrWhiteSpace(txtdomicilio.Text) || String.IsNullOrWhiteSpace(txtruc.Text) || String.IsNullOrWhiteSpace(txtregimen.Text) || String.IsNullOrWhiteSpace(txtusuario.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
         //MODIFICANDO TABLA
         private void Tabla()
         {
@@ -116,6 +127,10 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar())
+            {
+                return;
+            }
             result = "";
             using (nsu)
             {
@@ -303,6 +318,46 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void txtcodigo_sucursal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtcodigo_sucursal, "Codigo de sucursal requerido!");
+        }
+
+        private void txtrazon_social_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtrazon_social, "Razon social requerida!");
+        }
+
+        private void txtlocalidad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtlocalidad, "Localidad requerida!");
+        }
+
+        private void txtdireccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdireccion, "Direccion requerida!");
+        }
+
+        private void txtdomicilio_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdomicilio, "Domicilio fiscal requerido!");
+        }
+
+        private void txtruc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtruc, "RUC requerido!");
+        }
+
+        private void txtregimen_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtregimen, "Regimen requerida!");
+        }
+
+        private void txtusuario_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtusuario, "Usuario requerido!");
         }
     }
 }

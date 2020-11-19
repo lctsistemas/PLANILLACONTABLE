@@ -515,7 +515,7 @@ SELECT u.id_usuario, u.codigo_usuario, u.nombre_usuario, u.contrasena, u.genero,
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
-
+EXEC SP_SHOW_USER
 
 /*     PROCEDIMIENTO ROL     */
 ALTER PROC SP_INSERT_ROL

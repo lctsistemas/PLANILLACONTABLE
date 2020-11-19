@@ -41,7 +41,7 @@ namespace Presentacion.Vista
 
         private bool Validar()
         {
-            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text) || String.IsNullOrWhiteSpace(txtpassword.Text))
+            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text) || String.IsNullOrWhiteSpace(txtpassword.Text) || String.IsNullOrWhiteSpace(cbogenero.Text) || String.IsNullOrWhiteSpace(cborol.Text))
             {
                 ValidateChildren();
                 return true;
@@ -138,6 +138,10 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar())
+            {
+                return;
+            }
             result = "";
             using (nu)
             {
@@ -261,6 +265,31 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Normal;
             btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
+        }
+
+        private void cbogenero_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbogenero, "Campo genero requerido!");
+        }
+
+        private void cborol_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cborol, "Campo rol requerido!");
+        }
+
+        private void txtacceso_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtacceso, "Codigo de acceso requerido!");
+        }
+
+        private void txtnom_usuario_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtnom_usuario, "Nombre de usuario requerido!");
+        }
+
+        private void txtpassword_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtpassword, "Contraseña requerida!");
         }
     }
 }

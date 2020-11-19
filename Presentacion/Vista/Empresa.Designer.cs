@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabempresa = new System.Windows.Forms.TabControl();
             this.tablista_empresa = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -147,20 +147,20 @@
             // 
             this.dgvempresa.AllowUserToAddRows = false;
             this.dgvempresa.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvempresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvempresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvempresa.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvempresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempresa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvempresa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dgvempresa.ColumnHeadersHeight = 30;
             this.dgvempresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvempresa.EnableHeadersVisualStyles = false;
@@ -168,18 +168,18 @@
             this.dgvempresa.Name = "dgvempresa";
             this.dgvempresa.ReadOnly = true;
             this.dgvempresa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgvempresa.RowHeadersWidth = 30;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvempresa.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvempresa.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.dgvempresa.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvempresa.Size = new System.Drawing.Size(858, 305);
             this.dgvempresa.TabIndex = 1;
@@ -281,6 +281,7 @@
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(310, 23);
             this.txtusuario.TabIndex = 9;
+            this.txtusuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtusuario_Validating);
             // 
             // txtruc
             // 
@@ -292,6 +293,7 @@
             this.txtruc.TabIndex = 7;
             this.txtruc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtruc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtruc_KeyPress);
+            this.txtruc.Validating += new System.ComponentModel.CancelEventHandler(this.txtruc_Validating);
             // 
             // txtdomicilio
             // 
@@ -300,6 +302,7 @@
             this.txtdomicilio.Name = "txtdomicilio";
             this.txtdomicilio.Size = new System.Drawing.Size(376, 23);
             this.txtdomicilio.TabIndex = 6;
+            this.txtdomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.txtdomicilio_Validating);
             // 
             // txtdireccion
             // 
@@ -308,6 +311,7 @@
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(376, 23);
             this.txtdireccion.TabIndex = 5;
+            this.txtdireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtdireccion_Validating);
             // 
             // txtlocalidad
             // 
@@ -316,6 +320,7 @@
             this.txtlocalidad.Name = "txtlocalidad";
             this.txtlocalidad.Size = new System.Drawing.Size(376, 23);
             this.txtlocalidad.TabIndex = 4;
+            this.txtlocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.txtlocalidad_Validating);
             // 
             // txtrazon_social
             // 
@@ -324,6 +329,7 @@
             this.txtrazon_social.Name = "txtrazon_social";
             this.txtrazon_social.Size = new System.Drawing.Size(376, 23);
             this.txtrazon_social.TabIndex = 3;
+            this.txtrazon_social.Validating += new System.ComponentModel.CancelEventHandler(this.txtrazon_social_Validating);
             // 
             // txtcodigo_empresa
             // 
@@ -333,6 +339,7 @@
             this.txtcodigo_empresa.Size = new System.Drawing.Size(133, 23);
             this.txtcodigo_empresa.TabIndex = 2;
             this.txtcodigo_empresa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcodigo_empresa.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_empresa_Validating);
             // 
             // label8
             // 

@@ -81,9 +81,25 @@ namespace Presentacion.Vista
             }
         }
 
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtdescripcion.Text)|| String.IsNullOrWhiteSpace(txtdescCorta.Text)|| String.IsNullOrWhiteSpace(cbxregimen.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
             result = "";
+            if (Validar())
+            {
+                ValidateChildren();
+                return;
+            }
             using (nr)
             {
                 nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
@@ -151,12 +167,8 @@ namespace Presentacion.Vista
 
         private void txtdescripcion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (txtdescripcion.Text == "")
-            {
-                e.Cancel = true;
-                txtdescripcion.Select(0, txtdescripcion.Text.Length);
                 ValidateError.Validate_text(txtdescripcion, "Campo Requerido");
-            }
+
         }
 
         private void txtdescCorta_Validating(object sender, System.ComponentModel.CancelEventArgs e)

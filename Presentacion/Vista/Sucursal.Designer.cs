@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmsucursal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelsucursal = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
@@ -183,11 +183,13 @@
             // 
             resources.ApplyResources(this.txtregimen, "txtregimen");
             this.txtregimen.Name = "txtregimen";
+            this.txtregimen.Validating += new System.ComponentModel.CancelEventHandler(this.txtregimen_Validating);
             // 
             // txtusuario
             // 
             resources.ApplyResources(this.txtusuario, "txtusuario");
             this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtusuario_Validating);
             // 
             // txtidempresa
             // 
@@ -198,31 +200,37 @@
             // 
             resources.ApplyResources(this.txtruc, "txtruc");
             this.txtruc.Name = "txtruc";
+            this.txtruc.Validating += new System.ComponentModel.CancelEventHandler(this.txtruc_Validating);
             // 
             // txtdomicilio
             // 
             resources.ApplyResources(this.txtdomicilio, "txtdomicilio");
             this.txtdomicilio.Name = "txtdomicilio";
+            this.txtdomicilio.Validating += new System.ComponentModel.CancelEventHandler(this.txtdomicilio_Validating);
             // 
             // txtdireccion
             // 
             resources.ApplyResources(this.txtdireccion, "txtdireccion");
             this.txtdireccion.Name = "txtdireccion";
+            this.txtdireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtdireccion_Validating);
             // 
             // txtlocalidad
             // 
             resources.ApplyResources(this.txtlocalidad, "txtlocalidad");
             this.txtlocalidad.Name = "txtlocalidad";
+            this.txtlocalidad.Validating += new System.ComponentModel.CancelEventHandler(this.txtlocalidad_Validating);
             // 
             // txtrazon_social
             // 
             resources.ApplyResources(this.txtrazon_social, "txtrazon_social");
             this.txtrazon_social.Name = "txtrazon_social";
+            this.txtrazon_social.Validating += new System.ComponentModel.CancelEventHandler(this.txtrazon_social_Validating);
             // 
             // txtcodigo_sucursal
             // 
             resources.ApplyResources(this.txtcodigo_sucursal, "txtcodigo_sucursal");
             this.txtcodigo_sucursal.Name = "txtcodigo_sucursal";
+            this.txtcodigo_sucursal.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodigo_sucursal_Validating);
             // 
             // label8
             // 
@@ -337,37 +345,37 @@
             this.dgvsucursal.AllowUserToAddRows = false;
             this.dgvsucursal.AllowUserToDeleteRows = false;
             this.dgvsucursal.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvsucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvsucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
             this.dgvsucursal.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvsucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvsucursal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvsucursal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
             resources.ApplyResources(this.dgvsucursal, "dgvsucursal");
             this.dgvsucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvsucursal.EnableHeadersVisualStyles = false;
             this.dgvsucursal.Name = "dgvsucursal";
             this.dgvsucursal.ReadOnly = true;
             this.dgvsucursal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsucursal.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DimGray;
-            this.dgvsucursal.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsucursal.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.DimGray;
+            this.dgvsucursal.RowsDefaultCellStyle = dataGridViewCellStyle32;
             this.dgvsucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellDoubleClick);
             // 
             // label9

@@ -99,9 +99,23 @@ namespace Presentacion.Vista
             cboregimen.Items.Add("Régimen MYPE Tributario");
             cboregimen.Items.Add("Régimen General");
         }
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtruc.Text) || String.IsNullOrWhiteSpace(txtcodigo_empresa.Text) || String.IsNullOrWhiteSpace(txtrazon_social.Text) || String.IsNullOrWhiteSpace(txtlocalidad.Text) || String.IsNullOrWhiteSpace(txtdireccion.Text) || String.IsNullOrWhiteSpace(txtdomicilio.Text) || String.IsNullOrWhiteSpace(cboregimen.Text) || String.IsNullOrWhiteSpace(txtusuario.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
         //BOTON GUARDAR
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar()){
+                ValidateChildren();
+                return;
+            }
             result = "";
             using (ne)
             {
@@ -313,6 +327,41 @@ namespace Presentacion.Vista
         private void cboregimen_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ValidateError.Validate_combo(cboregimen, "Campo requerido");
+        }
+
+        private void txtruc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtruc, "Campo RUC requerido");
+        }
+
+        private void txtcodigo_empresa_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtcodigo_empresa, "Codigo de empresa requerido");
+        }
+
+        private void txtrazon_social_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtrazon_social, "Campo razon social requerido");
+        }
+
+        private void txtlocalidad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtlocalidad, "Campo localidad requerido");
+        }
+
+        private void txtdireccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdireccion, "Campo direccion requerido");
+        }
+
+        private void txtdomicilio_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdomicilio, "Campo domicilio requerido");
+        }
+
+        private void txtusuario_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtusuario, "Campo usuario requerido");
         }
     }
 }

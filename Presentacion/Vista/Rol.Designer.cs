@@ -73,7 +73,7 @@
             this.tabrol.Name = "tabrol";
             this.tabrol.Padding = new System.Drawing.Point(20, 5);
             this.tabrol.SelectedIndex = 0;
-            this.tabrol.Size = new System.Drawing.Size(229, 272);
+            this.tabrol.Size = new System.Drawing.Size(241, 272);
             this.tabrol.TabIndex = 3;
             // 
             // tablista
@@ -112,7 +112,7 @@
             this.tabgestion.Location = new System.Drawing.Point(4, 29);
             this.tabgestion.Name = "tabgestion";
             this.tabgestion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabgestion.Size = new System.Drawing.Size(221, 239);
+            this.tabgestion.Size = new System.Drawing.Size(233, 239);
             this.tabgestion.TabIndex = 1;
             this.tabgestion.Text = "GESTION ROL";
             // 
@@ -136,6 +136,7 @@
             this.txtrol.Size = new System.Drawing.Size(202, 16);
             this.txtrol.TabIndex = 4;
             this.txtrol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrol_KeyPress);
+            this.txtrol.Validating += new System.ComponentModel.CancelEventHandler(this.txtrol_Validating);
             // 
             // btnsave
             // 
@@ -181,7 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(229, 272);
+            this.ClientSize = new System.Drawing.Size(241, 272);
             this.Controls.Add(this.tabrol);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
