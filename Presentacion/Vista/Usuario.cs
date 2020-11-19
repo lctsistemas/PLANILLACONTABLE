@@ -41,7 +41,7 @@ namespace Presentacion.Vista
 
         private bool Validar()
         {
-            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtregsal.Text))
+            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text) || String.IsNullOrWhiteSpace(txtpassword.Text))
             {
                 ValidateChildren();
                 return true;
