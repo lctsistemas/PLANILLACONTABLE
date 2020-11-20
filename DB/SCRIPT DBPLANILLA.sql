@@ -457,7 +457,31 @@ transporte decimal(8,2) null
 )
 GO
 
-fasfasdfasdfasdfasdfasdfas
-masd  aslslos dlos demas.
-que ? XD
-la otra sala.
+-- CONCEPTOS PARA PLANILLA
+CREATE TABLE Conceptos(
+id_conceptos int not null,
+id_mes int,
+id_planilla int,
+hextraDiurna bit not null,
+hextraNocturna bit not null,
+feriadoDomi bit not null,
+boniNocturna bit not null,
+primeroMayo bit not null,
+tarda bit not null, -- tardanza
+subsi bit not null,--subsidios
+thoraex bit not null, --total horas extras
+otroreinte bit not null, --otro reintegro
+prest_aliment bit not null, --prestacion alimentaria
+gratif bit not null, --gratificacion
+vaca bit not null, --vacaciones
+truncas bit not null,
+reinte_gratiboni bit not null, --reintegro grati y boni
+essa_vida bit not null, --essalud vida
+adela bit not null, --adelanto
+presta bit not null, --prestamo
+rentquinta bit not null, --renta de quinta categoria
+reten_judici bit not null, --retencion judicial
+otrodescu bit not null, --otro descuento
+recarg_consu bit not null --recargo consumo
+)
+GO

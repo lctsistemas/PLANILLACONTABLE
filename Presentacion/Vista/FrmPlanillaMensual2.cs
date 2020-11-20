@@ -21,76 +21,77 @@ namespace Presentacion.Vista
         public int xdia_vacaciones = 0; // el valor es enviado desde el form susbidios.
 
         NplanillaM nplam;
+        NConceptos nconcepto;
         public FrmPlanillaMensual2()
         {
             InitializeComponent();
             //dgvplanilla1.Rows.Add();
-            dgvplanilla1.AutoGenerateColumns = false;
-            this.dgvplanilla2.DoubleBuffered(true);
-            this.dgvplanilla1.DoubleBuffered(true);
+            Dgvplanilla1.AutoGenerateColumns = false;
+            this.Dgvplanilla2.DoubleBuffered(true);
+            this.Dgvplanilla1.DoubleBuffered(true);
             
         }
        
         //TABLA
         private void TablaPlanilla() {
-            dgvplanilla1.Columns["ape_nom"].Frozen = true;
-            dgvplanilla2.Columns["valor1"].Frozen = true;
+            Dgvplanilla1.Columns["ape_nom"].Frozen = true;
+            Dgvplanilla2.Columns["valor1"].Frozen = true;
 
-            dgvplanilla1.Columns["id_contrato"].Visible = false;
-            dgvplanilla1.Columns["id_planilla_manto"].Visible = false;
+            Dgvplanilla1.Columns["id_contrato"].Visible = false;
+            Dgvplanilla1.Columns["id_planilla_manto"].Visible = false;
 
-            dgvplanilla1.Columns["valor_comision"].Visible = false;
-            dgvplanilla1.Columns["valor_seguro"].Visible = false;
-            dgvplanilla1.Columns["valor_aporte"].Visible = false;
+            Dgvplanilla1.Columns["valor_comision"].Visible = false;
+            Dgvplanilla1.Columns["valor_seguro"].Visible = false;
+            Dgvplanilla1.Columns["valor_aporte"].Visible = false;
 
-            dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
-            dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
-            dgvplanilla1.Columns["a_familiar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
+            Dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;            
+            Dgvplanilla1.Columns["a_familiar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dgvplanilla1.Columns["dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvplanilla1.Columns["dia_dominical"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvplanilla1.Columns["hora_trabajada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["dia_dominical"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["hora_trabajada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dgvplanilla1.Columns["montod25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montod25"].ReadOnly = true;
-            dgvplanilla1.Columns["montod35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montod35"].ReadOnly = true;
+            Dgvplanilla1.Columns["montod25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montod25"].ReadOnly = true;
+            Dgvplanilla1.Columns["montod35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montod35"].ReadOnly = true;
 
-            dgvplanilla1.Columns["monton25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["monton25"].ReadOnly = true;
-            dgvplanilla1.Columns["monton35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["monton35"].ReadOnly = true;
+            Dgvplanilla1.Columns["monton25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["monton25"].ReadOnly = true;
+            Dgvplanilla1.Columns["monton35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["monton35"].ReadOnly = true;
 
-            dgvplanilla1.Columns["montoferiado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montoferiado"].ReadOnly = true;
+            Dgvplanilla1.Columns["montoferiado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montoferiado"].ReadOnly = true;
 
-            dgvplanilla1.Columns["montoboninocturno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montoboninocturno"].ReadOnly = true;
+            Dgvplanilla1.Columns["montoboninocturno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montoboninocturno"].ReadOnly = true;
 
-            dgvplanilla1.Columns["montotarde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montotarde"].ReadOnly = true;
+            Dgvplanilla1.Columns["montotarde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montotarde"].ReadOnly = true;
 
             //subsidios
-            dgvplanilla1.Columns["ndias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvplanilla1.Columns["ndias"].ReadOnly = true;
-            dgvplanilla1.Columns["montosub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montosub"].ReadOnly = true;
-            dgvplanilla1.Columns["ndiasnega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvplanilla1.Columns["ndiasnega"].ReadOnly = true;
-            dgvplanilla1.Columns["montonega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montonega"].ReadOnly = true;
-            dgvplanilla1.Columns["ndiasposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvplanilla1.Columns["ndiasposi"].ReadOnly = true;
-            dgvplanilla1.Columns["montoposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["montoposi"].ReadOnly = true;
+            Dgvplanilla1.Columns["ndias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["ndias"].ReadOnly = true;
+            Dgvplanilla1.Columns["montosub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montosub"].ReadOnly = true;
+            Dgvplanilla1.Columns["ndiasnega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["ndiasnega"].ReadOnly = true;
+            Dgvplanilla1.Columns["montonega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montonega"].ReadOnly = true;
+            Dgvplanilla1.Columns["ndiasposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["ndiasposi"].ReadOnly = true;
+            Dgvplanilla1.Columns["montoposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montoposi"].ReadOnly = true;
 
-            dgvplanilla1.Columns["thoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["thoras"].ReadOnly = true;
+            Dgvplanilla1.Columns["thoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["thoras"].ReadOnly = true;
 
-            dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvplanilla1.Columns["totaremu"].ReadOnly = true;
+            Dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["totaremu"].ReadOnly = true;
 
-            dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
+            Dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
            // dgvplanilla1.Columns["hxdiurnas"].Background
         }
 
@@ -101,7 +102,7 @@ namespace Presentacion.Vista
             {
                 nplam.Id_mes = 9;
                 nplam.Id_empreMaestra = 1;
-                dgvplanilla1.DataSource = nplam.Show_planillaM();
+                Dgvplanilla1.DataSource = nplam.Show_planillaM();
             }        
             
         }
@@ -109,7 +110,7 @@ namespace Presentacion.Vista
         //TOTAL REMUNERACION
         private void TotalRemuneracion()
         {
-            DataGridViewRow dar = dgvplanilla1.CurrentRow;
+            DataGridViewRow dar = Dgvplanilla1.CurrentRow;
             try
             {
                 double suel = 0, asigfami = 0, monto_sub = 0, montonegasub = 0, montoposisub = 0, totalHorasEx = 0;
@@ -215,7 +216,7 @@ namespace Presentacion.Vista
         // DESCUENTO O.N.P  Y A.F.P
         private void Descuento_aportes()
         {
-            DataGridViewRow dgr = dgvplanilla1.CurrentRow;
+            DataGridViewRow dgr = Dgvplanilla1.CurrentRow;
 
             double comi = 0, segu = 0, apor = 0, tremu = 0;
             double xcomi = 0, xsegu = 0, xapor = 0, xonp = 0;
@@ -249,20 +250,20 @@ namespace Presentacion.Vista
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dgvplanilla1.Rows.Add();
+            Dgvplanilla1.Rows.Add();
             //dgvplanilla1.BeginEdit(true);
         }
 
         private void dgvplanilla1_Scroll(object sender, ScrollEventArgs e)
         {
-            dgvplanilla2.HorizontalScrollingOffset = dgvplanilla1.HorizontalScrollingOffset;
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
         }
 
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {            
             //FillTabla();
             TablaPlanilla();
-            Tooltip.Title(picsave_conceptos, "Guardar cambios", false);
+            Tooltip.Title(Picsave_conceptos, "Guardar cambios", false);
         }      
              
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -279,7 +280,7 @@ namespace Presentacion.Vista
             //    dgvplanilla1.Rows[e.RowIndex].Cells[35].Value = subtotal.ToString("#.##");//total remu.
             //}                             
 
-            DataGridViewRow dar = dgvplanilla1.CurrentRow;
+            DataGridViewRow dar = Dgvplanilla1.CurrentRow;
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
             {
@@ -535,52 +536,52 @@ namespace Presentacion.Vista
                 double xvacaciones = 0; //prueba
 
                 //MessageBox.Show(""+e.RowIndex);
-                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
+                if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
                 {
                     //Messages.M_info("seleccione el boton susbidio");
                     PlanillaCache.Subsidiado = Subsidiado;
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
                     this.AddOwnedForm(fr2);
-                    fr2.ShowDialog(dgvplanilla1);
+                    fr2.ShowDialog(Dgvplanilla1);
 
-                    if (dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null)
+                    if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null)
                         dias = 0;
                     else
-                        dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value);
+                        dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value);
 
                     monto = Calculo.MontoSubsidios(dias,930,93);
-                    dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
+                    Dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
                     TotalRemuneracion();
                 }
                 
-                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+                if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
                 {                    
                     PlanillaCache.Subsidiado = NoSubsidiado;
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
 
                     this.AddOwnedForm(fr2);
-                    fr2.ShowDialog(dgvplanilla1);
+                    fr2.ShowDialog(Dgvplanilla1);
 
                    //MONTO NEGATIVO.
-                    if (dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value == null)
+                    if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value == null)
                         dias = 0;
                     else
-                        dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value);
+                        dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value);
 
                     monto = Calculo.MontoSubsidios(dias, 930);
-                    dgvplanilla1.Rows[e.RowIndex].Cells["montonega"].Value = monto.ToString("N2");
+                    Dgvplanilla1.Rows[e.RowIndex].Cells["montonega"].Value = monto.ToString("N2");
                     
                     //MONTO POSITIVO
-                    if (dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value == null)
+                    if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value == null)
                         dias = 0;
                     else
-                        dias = Convert.ToInt32(dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
+                        dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
 
                     xvacaciones = Calculo.MontoSubsidios(xdia_vacaciones, 930);
                     monto = Calculo.MontoSubsidios(dias, 930);
 
                     monto_v = (monto - xvacaciones);
-                    dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_v.ToString("N2");
+                    Dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_v.ToString("N2");
                     TotalRemuneracion();
                 }
             }
@@ -741,9 +742,396 @@ namespace Presentacion.Vista
 
         }
 
-        private void picsave_conceptos_Click(object sender, EventArgs e)
+        private void Picsave_conceptos_Click(object sender, EventArgs e)
         {
+            //DataGridViewCellContextMenuStripNeededEventArgs
+            string mensaje = "";
+            using (nconcepto = new NConceptos())
+            {
+                if (Txtidconcepto.Text.Trim() != string.Empty)
+                    nconcepto.Id_conceptos = Convert.ToInt32(Txtidconcepto.Text);
+
+                nconcepto.Id_mes = 2;
+                nconcepto.Id_planilla = 2;
+                nconcepto.HextraDiurna = Chkhdiurnas.Checked;
+                nconcepto.HextraNocturna = Chkhnocturna.Checked;
+                nconcepto.FeriadoDomi = Chkferiado.Checked;
+                nconcepto.BoniNocturna = Chkboni_nocturna.Checked;
+                nconcepto.PrimeroMayo = Chkprimeromayo.Checked;
+                nconcepto.Tarda = Chktardanza.Checked;
+                nconcepto.Subsi = Chksubsidio.Checked;
+                nconcepto.Thoraex = Chktotal_extras.Checked;
+                nconcepto.Otroreinte = Chkotro_reintegro.Checked;
+                nconcepto.Prest_aliment = Chkpres_alime.Checked;
+                nconcepto.Gratif = Chkgrati.Checked;
+                nconcepto.Vaca = Chkvaca.Checked;
+                nconcepto.Truncas = Chktrunca.Checked;
+                nconcepto.Reinte_gratiboni = Chkrgrati.Checked;
+                nconcepto.Essa_vida = Chkessavida.Checked;
+                nconcepto.Adela = Chkadelanto.Checked;
+                nconcepto.Presta = Chkprestamo.Checked;
+                nconcepto.Rentquinta = Chkrentaquinta.Checked;
+                nconcepto.Reten_judici = Chkretencion_judi.Checked;
+                nconcepto.Otrodescu = Chkotro_descuento.Checked;
+                nconcepto.Recarg_consu = Chkrecar_consumo.Checked;
+                mensaje = nconcepto.SaveChanges();
+                Lblsave_estado.Text = mensaje;
+
+            }
+        }
+
+        private void Picsave_conceptos_MouseLeave(object sender, EventArgs e)
+        {
+            Lblsave_estado.Text = string.Empty;
+        }
+
+        #region CHECKED CONCEPTOS PARA LOS CAMPOS DE LA PLANILLA
+        private void Chkhdiurnas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkhdiurnas.Checked == true)
+                HorasDirunas(false);
+            else
+                HorasDirunas(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkhnocturna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkhnocturna.Checked == true)
+                HorasNocturnas(false);
+            else
+                HorasNocturnas(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkferiado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkferiado.Checked == true)
+                FeriadoDominical(false);
+            else
+                FeriadoDominical(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkboni_nocturna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkboni_nocturna.Checked == true)
+                BoniNocturna(false);
+            else
+                BoniNocturna(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkprimeromayo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkprimeromayo.Checked == true)
+                PrimeroMayo(false);
+            else
+                PrimeroMayo(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chktardanza_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chktardanza.Checked == true)
+                Tardanza(false);
+            else
+                Tardanza(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
 
         }
+
+        private void Chksubsidio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chksubsidio.Checked == true)
+                Subsidios(false);
+            else
+                Subsidios(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chktotal_extras_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chktotal_extras.Checked == true)
+                TotalHorasExtras(false);
+            else
+                TotalHorasExtras(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkotro_reintegro_CheckedChanged(object sender, EventArgs e)
+        {
+            if(Chkotro_reintegro.Checked == true)
+                OtroReintegro(false);
+            else
+                OtroReintegro(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkpres_alime_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkpres_alime.Checked == true)
+                PrestacionAlimentaria(false);
+            else
+                PrestacionAlimentaria(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkgrati_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkgrati.Checked == true)
+                Gratificacion(false);
+            else
+                Gratificacion(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkvaca_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkvaca.Checked == true)
+                Vacaciones(false);
+            else
+                Vacaciones(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chktrunca_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chktrunca.Checked == true)
+                Truncas(false);
+            else
+                Truncas(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkrgrati_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkrgrati.Checked == true)
+                ReintegroGrati(false);
+            else
+                ReintegroGrati(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkessavida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkessavida.Checked == true)
+                EssaludVida(false);
+            else
+                EssaludVida(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkadelanto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkadelanto.Checked == true)
+                Adelanto(false);
+            else
+                Adelanto(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkprestamo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkprestamo.Checked == true)
+                Prestamo(false);
+            else
+                Prestamo(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkrentaquinta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkrentaquinta.Checked == true)
+                RentaQuinta(false);
+            else
+                RentaQuinta(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkretencion_judi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkretencion_judi.Checked == true)
+                RetencionJudicial(false);
+            else
+                RetencionJudicial(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkotro_descuento_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkotro_descuento.Checked == true)
+                OtrosDescuentos(false);
+            else
+                OtrosDescuentos(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+
+        private void Chkrecar_consumo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chkrecar_consumo.Checked == true)
+                RecargoConsumo(false);
+            else
+                RecargoConsumo(true);
+            Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
+        }
+        #endregion
+
+
+        #region METODOS PARA OCULTAR COLUMNAS DE LA TABLA
+        private void HorasDirunas(bool v)
+        {
+            Dgvplanilla2.Columns["hxdiurnas"].Visible = v;
+            Dgvplanilla1.Columns["hxd25"].Visible = v;
+            Dgvplanilla1.Columns["minud25"].Visible = v;
+            Dgvplanilla1.Columns["montod25"].Visible = v;
+            Dgvplanilla1.Columns["hxd35"].Visible = v;
+            Dgvplanilla1.Columns["minud35"].Visible = v;
+            Dgvplanilla1.Columns["montod35"].Visible = v;
+        }
+
+        private void HorasNocturnas(bool v)
+        {
+            Dgvplanilla2.Columns["hxnocturnas"].Visible = v;
+            Dgvplanilla1.Columns["hxn25"].Visible = v;
+            Dgvplanilla1.Columns["minun25"].Visible = v;
+            Dgvplanilla1.Columns["monton25"].Visible = v;
+            Dgvplanilla1.Columns["hxn35"].Visible = v;
+            Dgvplanilla1.Columns["minun35"].Visible = v;
+            Dgvplanilla1.Columns["monton35"].Visible = v;
+        }
+
+        private void FeriadoDominical(bool v)
+        {
+            Dgvplanilla2.Columns["feriado"].Visible = v;
+            Dgvplanilla1.Columns["hrferiado"].Visible = v;
+            Dgvplanilla1.Columns["minuferiado"].Visible = v;
+            Dgvplanilla1.Columns["montoferiado"].Visible = v;
+
+        }
+
+        private void BoniNocturna(bool v)
+        {
+            Dgvplanilla2.Columns["boninocturno"].Visible = v;
+            Dgvplanilla1.Columns["hrboninocturna"].Visible = v;
+            Dgvplanilla1.Columns["montoboninocturno"].Visible = v;
+        }
+
+        private void PrimeroMayo(bool v)
+        {
+            Dgvplanilla2.Columns["primeromayo"].Visible = v;
+            Dgvplanilla1.Columns["unomayo"].Visible = v;
+        }
+
+        private void Tardanza(bool v)
+        {
+            Dgvplanilla2.Columns["tardanza"].Visible = v;
+            Dgvplanilla1.Columns["htarde"].Visible = v;
+            Dgvplanilla1.Columns["mtarde"].Visible = v;
+            Dgvplanilla1.Columns["montotarde"].Visible = v;
+
+        }
+
+        private void Subsidios(bool v)
+        {
+            Dgvplanilla2.Columns["subsi"].Visible = v;
+            Dgvplanilla1.Columns["btnsubsidio"].Visible = v;
+            Dgvplanilla1.Columns["ndias"].Visible = v;
+            Dgvplanilla1.Columns["montosub"].Visible = v;
+        }
+
+        private void TotalHorasExtras(bool v)
+        {
+            Dgvplanilla2.Columns["thorax"].Visible = v;
+            Dgvplanilla1.Columns["thoras"].Visible = v;
+        }
+
+        private void OtroReintegro(bool v)
+        {
+            Dgvplanilla2.Columns["dreintegro"].Visible = v;
+            Dgvplanilla1.Columns["otros_reintegros"].Visible = v;
+        }
+
+        private void PrestacionAlimentaria(bool v)
+        {
+            Dgvplanilla2.Columns["pres_alimen"].Visible = v;
+            Dgvplanilla1.Columns["prestacion_alimenta"].Visible = v;
+        }
+
+        private void Gratificacion(bool v)
+        {
+            Dgvplanilla2.Columns["grati_boni"].Visible = v;
+            Dgvplanilla1.Columns["grati"].Visible = v;
+            Dgvplanilla1.Columns["boni"].Visible = v;
+        }
+
+        private void Vacaciones(bool v)
+        {
+            Dgvplanilla2.Columns["dvaca"].Visible = v;
+            Dgvplanilla1.Columns["vacaciones"].Visible = v;
+        }
+
+
+        private void Truncas(bool v)
+        {
+            Dgvplanilla2.Columns["truncas"].Visible = v;
+            Dgvplanilla1.Columns["tvaca"].Visible = v;
+            Dgvplanilla1.Columns["tgrati"].Visible = v;
+            Dgvplanilla1.Columns["tboni"].Visible = v;
+            Dgvplanilla1.Columns["tcts"].Visible = v;
+        }
+
+        private void ReintegroGrati(bool v)
+        {
+            Dgvplanilla2.Columns["r_grati_boni"].Visible = v;
+            Dgvplanilla1.Columns["reintegro_grati"].Visible = v;
+            Dgvplanilla1.Columns["reintegro_boni"].Visible = v;
+        }
+
+        private void EssaludVida(bool v)
+        {
+            Dgvplanilla2.Columns["dvida"].Visible = v;
+            Dgvplanilla1.Columns["essalud_vida"].Visible = v;
+        }
+
+        private void Adelanto(bool v)
+        {
+            Dgvplanilla2.Columns["dadelanto"].Visible = v;
+            Dgvplanilla1.Columns["adelanto"].Visible = v;
+        }
+
+        private void Prestamo(bool v)
+        {
+            Dgvplanilla2.Columns["dprestamo"].Visible = v;
+            Dgvplanilla1.Columns["prestamo"].Visible = v;
+        }
+
+        private void RentaQuinta(bool v)
+        {
+            Dgvplanilla2.Columns["drenta"].Visible = v;
+            Dgvplanilla1.Columns["renta5cate"].Visible = v;
+        }
+
+        private void RetencionJudicial(bool v)
+        {
+            Dgvplanilla2.Columns["dretencion"].Visible = v;
+            Dgvplanilla1.Columns["retencionj"].Visible = v;
+        }
+
+        private void OtrosDescuentos(bool v)
+        {
+            Dgvplanilla2.Columns["dotrosdes"].Visible = v;
+            Dgvplanilla1.Columns["otrodes"].Visible = v;
+        }
+
+        private void RecargoConsumo(bool v)
+        {
+            Dgvplanilla2.Columns["recargo_consu"].Visible = v;
+            Dgvplanilla1.Columns["recargo_consumo"].Visible = v;
+        }
+
+        #endregion
+
+
     }
 }
