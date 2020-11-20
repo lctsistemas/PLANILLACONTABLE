@@ -17,6 +17,7 @@ alter table SUBSIDIOS ADD CONSTRAINT pk_idsubsidios PRIMARY KEY(id_subsidios)
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetsubsidios PRIMARY KEY(id_det_subsidios)
 
 alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanillam PRIMARY KEY(idplanilla_manto)
+alter table dbo.Conceptos ADD CONSTRAINT PK_idconcepto PRIMARY KEY(id_conceptos)
 
 --FOREIGN KEY 
 ALTER TABLE Grati_manto ADD CONSTRAINT FK_id_MesGrati FOREIGN KEY(id_meses)REFERENCES Meses_maestra
@@ -24,9 +25,6 @@ ALTER TABLE Faltas ADD CONSTRAINT FK_id_MesFalta FOREIGN KEY(id_meses)REFERENCES
 ALTER TABLE cts ADD CONSTRAINT FK_id_PerCts FOREIGN KEY(id_periodo)REFERENCES Periodo
 ALTER TABLE Gratificaciones ADD CONSTRAINT FK_id_PerGrati FOREIGN KEY(id_periodo)REFERENCES Periodo
 ALTER TABLE cts_manto ADD CONSTRAINT FK_id_MesCts FOREIGN KEY(id_meses)REFERENCES Meses_maestra
---ALTER TABLE Periodo ADD CONSTRAINT fk_id_MesPeriodo FOREIGN KEY(id_meses) REFERENCES Meses_maestra
---ALTER TABLE Periodo ADD CONSTRAINT fk_id_mesper FOREIGN KEY(id_mes) REFERENCES Mes
---ALTER TABLE Planilla ADD CONSTRAINT fk_idtipo_planilla FOREIGN KEY(id_tipo_planilla) REFERENCES tipo_planilla
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFERENCES dbo.periodo
 
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(idempresa_maestra) REFERENCES dbo.Empresa_maestra(id_em_maestra)
@@ -38,7 +36,10 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_iddetmes FOREIGN KEY(id_mes) REFEREN
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REFERENCES Empleado
 
 ALTER TABLE planillaManto ADD CONSTRAINT FK_idcontratop FOREIGN KEY (id_contrato) REFERENCES Contrato
-alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanilla  FOREIGN KEY (id_planilla) REFERENCES planilla(id_planilla)
+alter table dbo.PlanillaManto ADD CONSTRAINT PK_idplanilla  FOREIGN KEY (id_planilla) REFERENCES planilla(id_planilla) --MODIFICAR EL CONSTRAINT
+
+alter table dbo.Conceptos ADD CONSTRAINT FK_idplaniconcep FOREIGN KEY (id_planilla) REFERENCES Planilla
+alter table dbo.Conceptos ADD CONSTRAINT FK_idmesconcep FOREIGN KEY (id_mes) REFERENCES Mes
 
 GO
 
@@ -68,8 +69,10 @@ GO
 	--PRIMARY KEY USUARIO Y ROL
 ALTER TABLE Usuario ADD CONSTRAINT PK_idusuario PRIMARY KEY(id_usuario)
 ALTER TABLE Rol ADD CONSTRAINT PK_idrol PRIMARY KEY(id_rol)
+
 	--FOREIGN KEY EN USUARIO Y EMPRESA
 ALTER TABLE Empresa ADD CONSTRAINT FK_idusuario FOREIGN KEY(id_usuario)REFERENCES Usuario
+
 	--FOREIGN KEY EN USUARIO Y ROL
 ALTER TABLE Usuario ADD CONSTRAINT FK_idrol FOREIGN KEY(id_rol)REFERENCES Rol
 GO

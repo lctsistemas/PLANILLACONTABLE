@@ -515,7 +515,7 @@ SELECT u.id_usuario, u.codigo_usuario, u.nombre_usuario, u.contrasena, u.genero,
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
-EXEC SP_SHOW_USER
+
 
 /*     PROCEDIMIENTO ROL     */
 ALTER PROC SP_INSERT_ROL
@@ -1000,7 +1000,7 @@ GO
 
 
 /*   SCRIP PARA PERIODO       */
-CREATE PROC SP_SHOW_PERIODO
+ALTER PROC SP_SHOW_PERIODO
 @periodo int,
 @idperiodo int output
 AS BEGIN
@@ -1174,7 +1174,7 @@ GO
 
 /* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
 
-alter PROC SP_ShowPlanillaManto
+ALTER PROC SP_ShowPlanillaManto
 @idmes int,
 @id_empresaMaestra int
 AS BEGIN
@@ -1191,5 +1191,70 @@ END
 SELECT * FROM Empleado
 SELECT * FROM RegimenPensionario
 SELECT * FROM ComisionesPension
+GO
 
 
+/* PROCEDIMIENTO PARA CONCEPTOS DE PLANILLA */
+ALTER PROC SP_RegistroConceptos
+@id_conceptos int,
+@id_mes int,
+@id_planilla int,
+@hextraDiurna bit,
+@hextraNocturna bit,
+@feriadoDomi bit,
+@boniNocturna bit,
+@primeroMayo bit,
+@tarda bit, -- tardanza
+@subsi bit,--subsidios
+@thoraex bit, --total horas extras
+@otroreinte bit, --otro reintegro
+@prest_aliment bit, --prestacion alimentaria
+@gratif bit, --gratificacion
+@vaca bit, --vacaciones
+@truncas bit,
+@reinte_gratiboni bit, --reintegro grati y boni
+@essa_vida bit , --essalud vida
+@adela bit, --adelanto
+@presta bit, --prestamo
+@rentquinta bit, --renta de quinta categoria
+@reten_judici bit, --retencion judicial
+@otrodescu bit, --otro descuento
+@recarg_consu bit --recargo consumo
+AS BEGIN 
+IF(NOT EXISTS(SELECT c.id_planilla FROM dbo.Conceptos c join Planilla p on c.id_planilla = p.id_planilla 
+WHERE c.id_planilla=@id_planilla))
+BEGIN
+	--DECLARE @idconcepto int
+	SET @id_conceptos=(SELECT count(c.id_conceptos) FROM dbo.Conceptos c)
+	IF(@id_conceptos=0)	
+		SET @id_conceptos=1		
+	ELSE
+	SET @id_conceptos=(SELECT MAX(c.id_conceptos) + 1 FROM dbo.Conceptos c)
+
+	INSERT INTO dbo.Conceptos(id_conceptos, id_mes, id_planilla, hextraDiurna, hextraNocturna, feriadoDomi, 
+	boniNocturna, primeroMayo, tarda, subsi, thoraex, otroreinte, prest_aliment, gratif, vaca, truncas, 
+	reinte_gratiboni, essa_vida, adela, presta, rentquinta, reten_judici, otrodescu, recarg_consu) VALUES
+	(@id_conceptos, @id_mes, @id_planilla, @hextraDiurna, @hextraNocturna, @feriadoDomi, @boniNocturna, @primeroMayo, 
+	@tarda, @subsi, @thoraex, @otroreinte, @prest_aliment, @gratif, @vaca, @truncas, @reinte_gratiboni, @essa_vida, 
+	@adela, @presta, @rentquinta, @reten_judici, @otrodescu, @recarg_consu)
+END
+ELSE
+BEGIN
+	UPDATE dbo.Conceptos SET hextraDiurna=@hextraDiurna, hextraNocturna=@hextraNocturna, feriadoDomi=@feriadoDomi, 
+	boniNocturna=@boniNocturna, primeroMayo=@primeroMayo, tarda=@tarda, subsi=@subsi, thoraex=@thoraex, otroreinte=@otroreinte, 
+	prest_aliment=@prest_aliment, gratif=@gratif, vaca=@vaca, truncas=@truncas, reinte_gratiboni=@reinte_gratiboni,
+	essa_vida=@essa_vida, adela=@adela, presta=@presta, rentquinta=@rentquinta, reten_judici=@reten_judici,
+	otrodescu=@otrodescu, recarg_consu=@recarg_consu WHERE id_conceptos=@id_conceptos
+END
+END
+GO
+
+---
+--para leer las estadisticas, importante para ver el rendimiento de las consultas.
+SET STATISTICS IO, TIME OFF
+SET STATISTICS IO, TIME ON
+--
+--Inclue Actual Execution Plan
+GO
+select * from Conceptos
+delete from Conceptos

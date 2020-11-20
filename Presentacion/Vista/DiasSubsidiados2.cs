@@ -101,9 +101,9 @@ namespace Presentacion.Vista
         {
             FrmPlanillaMensual2 frpla2 = (FrmPlanillaMensual2)Owner;
             if (val)
-                frpla2.dgvplanilla1.CurrentRow.Cells[negativo].Value = lbltotalSp.Text;
+                frpla2.Dgvplanilla1.CurrentRow.Cells[negativo].Value = lbltotalSp.Text;
 
-            frpla2.dgvplanilla1.CurrentRow.Cells[positivo].Value = lbltotalSi.Text;
+            frpla2.Dgvplanilla1.CurrentRow.Cells[positivo].Value = lbltotalSi.Text;
             frpla2.xdia_vacaciones =Convert.ToInt32(lblvacaciones.Text);
         }
 

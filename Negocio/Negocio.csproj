@@ -48,6 +48,7 @@
     <Compile Include="Models\Nafp.cs" />
     <Compile Include="Models\NBanco.cs" />
     <Compile Include="Models\Ncargo.cs" />
+    <Compile Include="Models\NConceptos.cs" />
     <Compile Include="Models\NDiasSubsidiados.cs" />
     <Compile Include="Models\Ndocumento.cs" />
     <Compile Include="Models\NEmpleado.cs" />
