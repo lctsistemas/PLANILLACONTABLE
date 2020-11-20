@@ -87,6 +87,7 @@
             this.cbxmes.Size = new System.Drawing.Size(100, 25);
             this.cbxmes.TabIndex = 3;
             this.cbxmes.TextChanged += new System.EventHandler(this.cbxmes_TextChanged);
+            this.cbxmes.Validating += new System.ComponentModel.CancelEventHandler(this.cbxmes_Validating);
             // 
             // lineShape4
             // 
@@ -175,6 +176,7 @@
             this.txtdia.Name = "txtdia";
             this.txtdia.Size = new System.Drawing.Size(100, 20);
             this.txtdia.TabIndex = 12;
+            this.txtdia.Validating += new System.ComponentModel.CancelEventHandler(this.txtdia_Validating);
             // 
             // label9
             // 
@@ -204,6 +206,7 @@
             this.txthora.Name = "txthora";
             this.txthora.Size = new System.Drawing.Size(100, 20);
             this.txthora.TabIndex = 19;
+            this.txthora.Validating += new System.ComponentModel.CancelEventHandler(this.txthora_Validating);
             // 
             // txttope
             // 
@@ -211,6 +214,7 @@
             this.txttope.Name = "txttope";
             this.txttope.Size = new System.Drawing.Size(100, 20);
             this.txttope.TabIndex = 20;
+            this.txttope.Validating += new System.ComponentModel.CancelEventHandler(this.txttope_Validating);
             // 
             // dtppago
             // 
