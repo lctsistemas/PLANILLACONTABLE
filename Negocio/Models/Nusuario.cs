@@ -91,8 +91,9 @@ namespace Negocio.Models
                         codigo_usu = item[1].ToString(),
                         nombre_refe = item[2].ToString(),
                         password = item[3].ToString(),
-                        idrol = Convert.ToInt32(item[4]),
-                        name_rol = item[5].ToString()
+                        genero = item[4].ToString(),
+                        idrol = Convert.ToInt32(item[5]),
+                        name_rol = item[6].ToString()
                     });
                 }              
             }

@@ -18,8 +18,10 @@ namespace Presentacion.Vista
 
         private void Prueba_Load(object sender, EventArgs e)
         {
+            
             ShowPlanilla();
             Tabla();
+            dgvplanilla.DoubleBuffered(true);
         }
 
         private void ShowPlanilla()
@@ -83,8 +85,8 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[11].Width = 50;
             dgvplanilla.Columns[11].Visible = false;
 
-        }     
-     
+        }             
+
         private void tbtnnuevo_Click(object sender, EventArgs e)
         {
             FrmPlanilla fr = FrmPlanilla.GetInstance();
@@ -141,11 +143,31 @@ namespace Presentacion.Vista
 
         private void tbtcalculo_Click(object sender, EventArgs e)
         {
-            PlanillaMensual fr = PlanillaMensual.GetInstance();
-            fr.txtmes.Text = dgvplanilla.CurrentRow.Cells[3].Value.ToString();
-            fr.StartPosition = FormStartPosition.CenterParent;
-            fr.ShowDialog();
-            ShowPlanilla();
+            DateTime del, al, pago;
+            FrmPlanillaMensual2 plm = new FrmPlanillaMensual2(); // el new lo voy  a cambiar con limpiando instancia. por mientras asi, para el lunes lo cambio
+            this.AddOwnedForm(plm);
+            this.toolmenu.Visible = false;
+            this.btncerrar.Enabled = false;
+
+            plm.Lblperiodo.Text = (dgvplanilla.CurrentRow.Cells[1].Value.ToString() + " - " + dgvplanilla.CurrentRow.Cells[4].Value.ToString());
+            
+            del= Convert.ToDateTime(dgvplanilla.CurrentRow.Cells[5].Value);
+            plm.TxtfechaInicio.Text = del.ToString("dd,MM,yyyy");
+
+            al = Convert.ToDateTime(dgvplanilla.CurrentRow.Cells[6].Value);
+            plm.TxtfechaFin.Text = al.ToString("dd,MM,yyyy");
+
+            pago = Convert.ToDateTime(dgvplanilla.CurrentRow.Cells[7].Value);
+            plm.Txtpago.Text =pago.ToString("dd,MM,yyyy");
+
+            plm.FormBorderStyle = FormBorderStyle.None;
+            plm.TopLevel = false;//como ventana nivel superior
+            plm.Dock = DockStyle.Fill;
+            this.Controls.Add(plm);
+            this.Tag = plm;//datos sobre el control
+            plm.BringToFront();
+            //f_vist.StartPosition = FormStartPosition.CenterParent;
+            plm.Show();
         }
 
         private void paneltitulo_MouseDown(object sender, MouseEventArgs e)

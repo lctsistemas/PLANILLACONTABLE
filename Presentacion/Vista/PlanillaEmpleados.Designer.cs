@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paneltitulo = new System.Windows.Forms.Panel();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(956, 40);
+            this.paneltitulo.Size = new System.Drawing.Size(956, 35);
             this.paneltitulo.TabIndex = 90;
             this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
             // 
@@ -91,7 +91,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(7, 9);
+            this.label16.Location = new System.Drawing.Point(11, 5);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 24);
             this.label16.TabIndex = 0;
@@ -148,7 +148,7 @@
             this.tbtneliminar,
             this.toolStripSeparator3,
             this.tbtcalculo});
-            this.toolmenu.Location = new System.Drawing.Point(0, 40);
+            this.toolmenu.Location = new System.Drawing.Point(0, 35);
             this.toolmenu.Name = "toolmenu";
             this.toolmenu.Size = new System.Drawing.Size(956, 25);
             this.toolmenu.TabIndex = 95;
@@ -217,38 +217,40 @@
             this.dgvplanilla.AllowUserToAddRows = false;
             this.dgvplanilla.AllowUserToResizeColumns = false;
             this.dgvplanilla.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvplanilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvplanilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvplanilla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvplanilla.BackgroundColor = System.Drawing.Color.White;
             this.dgvplanilla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvplanilla.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvplanilla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvplanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvplanilla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvplanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvplanilla.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvplanilla.Location = new System.Drawing.Point(6, 32);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvplanilla.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvplanilla.Location = new System.Drawing.Point(8, 27);
             this.dgvplanilla.MultiSelect = false;
             this.dgvplanilla.Name = "dgvplanilla";
             this.dgvplanilla.ReadOnly = true;
             this.dgvplanilla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvplanilla.RowHeadersWidth = 25;
-            this.dgvplanilla.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvplanilla.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvplanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvplanilla.Size = new System.Drawing.Size(937, 363);
+            this.dgvplanilla.Size = new System.Drawing.Size(937, 493);
             this.dgvplanilla.TabIndex = 96;
             // 
             // panelcrearplanilla
@@ -257,16 +259,16 @@
             this.panelcrearplanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelcrearplanilla.Controls.Add(this.dgvplanilla);
             this.panelcrearplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelcrearplanilla.Location = new System.Drawing.Point(0, 65);
+            this.panelcrearplanilla.Location = new System.Drawing.Point(0, 60);
             this.panelcrearplanilla.Name = "panelcrearplanilla";
-            this.panelcrearplanilla.Size = new System.Drawing.Size(956, 403);
+            this.panelcrearplanilla.Size = new System.Drawing.Size(956, 538);
             this.panelcrearplanilla.TabIndex = 97;
             // 
             // FrmPlanillaEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 468);
+            this.ClientSize = new System.Drawing.Size(956, 598);
             this.Controls.Add(this.panelcrearplanilla);
             this.Controls.Add(this.toolmenu);
             this.Controls.Add(this.paneltitulo);
@@ -290,13 +292,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.Panel paneltitulo;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox btnrestaurar;
-        private System.Windows.Forms.ToolStrip toolmenu;
         private System.Windows.Forms.ToolStripButton tbtnnuevo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton tbtnmodificar;
@@ -306,5 +306,7 @@
         private System.Windows.Forms.ToolStripButton tbtcalculo;
         private System.Windows.Forms.DataGridView dgvplanilla;
         private System.Windows.Forms.Panel panelcrearplanilla;
+        public System.Windows.Forms.PictureBox btncerrar;
+        public System.Windows.Forms.ToolStrip toolmenu;
     }
 }

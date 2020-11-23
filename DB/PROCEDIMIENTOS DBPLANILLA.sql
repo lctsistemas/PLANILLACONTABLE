@@ -1256,5 +1256,5 @@ SET STATISTICS IO, TIME ON
 --
 --Inclue Actual Execution Plan
 GO
-select * from Conceptos
+select * from ComisionesPension c join RegimenPensionario r on c.codigo_regimen=r.codigo_regimen
 delete from Conceptos

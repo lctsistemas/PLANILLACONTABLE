@@ -58,7 +58,7 @@ namespace Negocio.Models
                         Cargop = item[7].ToString(),
                         Fecha_inicio = Convert.ToDateTime(item[8]),
                         Remune_basica =Convert.ToDecimal(item[9]),
-                        Asig_familiar=item[10].ToString() == "0.00" ? string.Empty : item[10].ToString()
+                        Asig_familiar=item[10].ToString() == "0.00" ? null : item[10].ToString()
 
                     });
                 }

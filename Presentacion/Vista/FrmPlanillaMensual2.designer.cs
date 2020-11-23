@@ -59,6 +59,9 @@
             this.panelplanilla = new System.Windows.Forms.Panel();
             this.btnver = new System.Windows.Forms.Button();
             this.grobconceptos = new System.Windows.Forms.GroupBox();
+            this.Lblsave_estado = new System.Windows.Forms.Label();
+            this.Txtidconcepto = new System.Windows.Forms.TextBox();
+            this.Chkprimeromayo = new System.Windows.Forms.CheckBox();
             this.Picsave_conceptos = new System.Windows.Forms.PictureBox();
             this.Chkrgrati = new System.Windows.Forms.CheckBox();
             this.Chkrecar_consumo = new System.Windows.Forms.CheckBox();
@@ -87,8 +90,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Txtal = new System.Windows.Forms.MaskedTextBox();
-            this.Txtdel = new System.Windows.Forms.MaskedTextBox();
+            this.TxtfechaFin = new System.Windows.Forms.MaskedTextBox();
+            this.TxtfechaInicio = new System.Windows.Forms.MaskedTextBox();
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.Dgvplanilla1 = new System.Windows.Forms.DataGridView();
             this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -168,9 +171,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Dgvplanilla2 = new System.Windows.Forms.DataGridView();
-            this.Chkprimeromayo = new System.Windows.Forms.CheckBox();
-            this.Lblsave_estado = new System.Windows.Forms.Label();
-            this.Txtidconcepto = new System.Windows.Forms.TextBox();
             this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -377,6 +377,38 @@
             this.grobconceptos.TabStop = false;
             this.grobconceptos.Text = "Conceptos";
             this.grobconceptos.Visible = false;
+            // 
+            // Lblsave_estado
+            // 
+            this.Lblsave_estado.AutoSize = true;
+            this.Lblsave_estado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblsave_estado.ForeColor = System.Drawing.Color.MediumBlue;
+            this.Lblsave_estado.Location = new System.Drawing.Point(703, 82);
+            this.Lblsave_estado.Name = "Lblsave_estado";
+            this.Lblsave_estado.Size = new System.Drawing.Size(0, 15);
+            this.Lblsave_estado.TabIndex = 20;
+            // 
+            // Txtidconcepto
+            // 
+            this.Txtidconcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Txtidconcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtidconcepto.Location = new System.Drawing.Point(721, 132);
+            this.Txtidconcepto.Name = "Txtidconcepto";
+            this.Txtidconcepto.Size = new System.Drawing.Size(36, 20);
+            this.Txtidconcepto.TabIndex = 19;
+            this.Txtidconcepto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Chkprimeromayo
+            // 
+            this.Chkprimeromayo.AutoSize = true;
+            this.Chkprimeromayo.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.Chkprimeromayo.Location = new System.Drawing.Point(6, 119);
+            this.Chkprimeromayo.Name = "Chkprimeromayo";
+            this.Chkprimeromayo.Size = new System.Drawing.Size(127, 21);
+            this.Chkprimeromayo.TabIndex = 3;
+            this.Chkprimeromayo.Text = "Primero de Mayo";
+            this.Chkprimeromayo.UseVisualStyleBackColor = true;
+            this.Chkprimeromayo.CheckedChanged += new System.EventHandler(this.Chkprimeromayo_CheckedChanged);
             // 
             // Picsave_conceptos
             // 
@@ -646,11 +678,11 @@
             // Lblperiodo
             // 
             this.Lblperiodo.AutoSize = true;
-            this.Lblperiodo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblperiodo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lblperiodo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Lblperiodo.Location = new System.Drawing.Point(85, 12);
             this.Lblperiodo.Name = "Lblperiodo";
-            this.Lblperiodo.Size = new System.Drawing.Size(82, 17);
+            this.Lblperiodo.Size = new System.Drawing.Size(87, 17);
             this.Lblperiodo.TabIndex = 13;
             this.Lblperiodo.Text = "Marzo - 2020";
             // 
@@ -662,7 +694,7 @@
             this.Cbotipoplanilla.FormattingEnabled = true;
             this.Cbotipoplanilla.Items.AddRange(new object[] {
             "Planilla Mensual"});
-            this.Cbotipoplanilla.Location = new System.Drawing.Point(113, 38);
+            this.Cbotipoplanilla.Location = new System.Drawing.Point(124, 38);
             this.Cbotipoplanilla.Name = "Cbotipoplanilla";
             this.Cbotipoplanilla.Size = new System.Drawing.Size(142, 25);
             this.Cbotipoplanilla.TabIndex = 12;
@@ -672,8 +704,8 @@
             this.Groupplanilla.Controls.Add(this.label3);
             this.Groupplanilla.Controls.Add(this.label2);
             this.Groupplanilla.Controls.Add(this.label1);
-            this.Groupplanilla.Controls.Add(this.Txtal);
-            this.Groupplanilla.Controls.Add(this.Txtdel);
+            this.Groupplanilla.Controls.Add(this.TxtfechaFin);
+            this.Groupplanilla.Controls.Add(this.TxtfechaInicio);
             this.Groupplanilla.Controls.Add(this.Txtpago);
             this.Groupplanilla.Location = new System.Drawing.Point(6, 69);
             this.Groupplanilla.Name = "Groupplanilla";
@@ -684,71 +716,74 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(203, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 17);
+            this.label3.Size = new System.Drawing.Size(28, 17);
             this.label3.TabIndex = 4;
             this.label3.Text = "Al :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(12, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Del :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(12, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 17);
+            this.label1.Size = new System.Drawing.Size(115, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Fecha de Pago :";
             // 
-            // Txtal
+            // TxtfechaFin
             // 
-            this.Txtal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txtal.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txtal.Location = new System.Drawing.Point(235, 21);
-            this.Txtal.Mask = "00 - 00 - 0000";
-            this.Txtal.Name = "Txtal";
-            this.Txtal.Size = new System.Drawing.Size(109, 15);
-            this.Txtal.TabIndex = 4;
-            this.Txtal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Txtal.ValidatingType = typeof(System.DateTime);
+            this.TxtfechaFin.BackColor = System.Drawing.Color.White;
+            this.TxtfechaFin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtfechaFin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtfechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtfechaFin.Location = new System.Drawing.Point(235, 21);
+            this.TxtfechaFin.Mask = "00 - 00 - 0000";
+            this.TxtfechaFin.Name = "TxtfechaFin";
+            this.TxtfechaFin.Size = new System.Drawing.Size(109, 16);
+            this.TxtfechaFin.TabIndex = 4;
+            this.TxtfechaFin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtfechaFin.ValidatingType = typeof(System.DateTime);
             // 
-            // Txtdel
+            // TxtfechaInicio
             // 
-            this.Txtdel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txtdel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtdel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txtdel.Location = new System.Drawing.Point(52, 21);
-            this.Txtdel.Mask = "00 - 00 - 0000";
-            this.Txtdel.Name = "Txtdel";
-            this.Txtdel.Size = new System.Drawing.Size(109, 15);
-            this.Txtdel.TabIndex = 4;
-            this.Txtdel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Txtdel.ValidatingType = typeof(System.DateTime);
+            this.TxtfechaInicio.BackColor = System.Drawing.Color.White;
+            this.TxtfechaInicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtfechaInicio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtfechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TxtfechaInicio.Location = new System.Drawing.Point(52, 21);
+            this.TxtfechaInicio.Mask = "00 - 00 - 0000";
+            this.TxtfechaInicio.Name = "TxtfechaInicio";
+            this.TxtfechaInicio.Size = new System.Drawing.Size(109, 16);
+            this.TxtfechaInicio.TabIndex = 4;
+            this.TxtfechaInicio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TxtfechaInicio.ValidatingType = typeof(System.DateTime);
             // 
             // Txtpago
             // 
+            this.Txtpago.BackColor = System.Drawing.Color.White;
             this.Txtpago.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txtpago.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtpago.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtpago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Txtpago.Location = new System.Drawing.Point(122, 61);
+            this.Txtpago.Location = new System.Drawing.Point(131, 61);
             this.Txtpago.Mask = "00 - 00 - 0000";
             this.Txtpago.Name = "Txtpago";
-            this.Txtpago.Size = new System.Drawing.Size(109, 15);
+            this.Txtpago.Size = new System.Drawing.Size(109, 16);
             this.Txtpago.TabIndex = 4;
             this.Txtpago.ValidatingType = typeof(System.DateTime);
             // 
@@ -1441,22 +1476,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(5, 41);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 17);
+            this.label5.Size = new System.Drawing.Size(113, 17);
             this.label5.TabIndex = 10;
             this.label5.Text = "Tipo de Planilla :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(5, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
             // 
@@ -1523,38 +1558,6 @@
             this.Dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Dgvplanilla2.Size = new System.Drawing.Size(1229, 38);
             this.Dgvplanilla2.TabIndex = 7;
-            // 
-            // Chkprimeromayo
-            // 
-            this.Chkprimeromayo.AutoSize = true;
-            this.Chkprimeromayo.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.Chkprimeromayo.Location = new System.Drawing.Point(6, 119);
-            this.Chkprimeromayo.Name = "Chkprimeromayo";
-            this.Chkprimeromayo.Size = new System.Drawing.Size(127, 21);
-            this.Chkprimeromayo.TabIndex = 3;
-            this.Chkprimeromayo.Text = "Primero de Mayo";
-            this.Chkprimeromayo.UseVisualStyleBackColor = true;
-            this.Chkprimeromayo.CheckedChanged += new System.EventHandler(this.Chkprimeromayo_CheckedChanged);
-            // 
-            // Lblsave_estado
-            // 
-            this.Lblsave_estado.AutoSize = true;
-            this.Lblsave_estado.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lblsave_estado.ForeColor = System.Drawing.Color.MediumBlue;
-            this.Lblsave_estado.Location = new System.Drawing.Point(703, 82);
-            this.Lblsave_estado.Name = "Lblsave_estado";
-            this.Lblsave_estado.Size = new System.Drawing.Size(0, 15);
-            this.Lblsave_estado.TabIndex = 20;
-            // 
-            // Txtidconcepto
-            // 
-            this.Txtidconcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Txtidconcepto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtidconcepto.Location = new System.Drawing.Point(721, 132);
-            this.Txtidconcepto.Name = "Txtidconcepto";
-            this.Txtidconcepto.Size = new System.Drawing.Size(36, 20);
-            this.Txtidconcepto.TabIndex = 19;
-            this.Txtidconcepto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // valor1
             // 
@@ -1826,15 +1829,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Panel panelplanilla;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label Lblperiodo;
         private System.Windows.Forms.ComboBox Cbotipoplanilla;
         private System.Windows.Forms.GroupBox Groupplanilla;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox Txtal;
-        private System.Windows.Forms.MaskedTextBox Txtdel;
-        private System.Windows.Forms.MaskedTextBox Txtpago;
         public System.Windows.Forms.DataGridView Dgvplanilla1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1967,5 +1966,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dtotales_varios;
         private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consu;
         private System.Windows.Forms.DataGridViewTextBoxColumn r_grati_boni;
+        public System.Windows.Forms.Label Lblperiodo;
+        public System.Windows.Forms.MaskedTextBox TxtfechaFin;
+        public System.Windows.Forms.MaskedTextBox TxtfechaInicio;
+        public System.Windows.Forms.MaskedTextBox Txtpago;
     }
 }

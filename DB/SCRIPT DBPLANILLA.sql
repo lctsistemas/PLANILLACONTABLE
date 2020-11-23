@@ -419,6 +419,8 @@ monto_feriado decimal(5,2) null,
 --boni nocturna
 hora_boni int null,
 monto_boni decimal(5,2) null,
+--primero de mayo
+uno_mayo decimal(5,2)null,
 --tardanzas
 hora_tarde int null,
 minuto_tarde int null,
@@ -432,28 +434,38 @@ monto_subnegativo decimal(6,2) null,
 dia_subpositivo int null,
 monto_subpositivo decimal(6,2) null,
 --otros
-total_horaex decimal(8,2) null,
-reintegro decimal(8,2) null,
-vacaciones decimal(8,2) null,
+total_horaex decimal(7,2) null,
+reintegro decimal(6,2) null,
+otro_reintegro decimal(6,2)null,
+pre_alimentaria decimal(6,2)null, --prestacion alimentaria
+gratiex decimal(7,2)null, --gratificacion extraordinaria
+boniex decimal(7,2) null, --bonificacion 9%
+vacaciones decimal(7,2) null,
 --truncas
-vaca_trunca decimal(8,2) null,
-grati_trunca decimal(8,2) null,
-boni_trunca decimal(8,2) null,
-cts_trunca decimal(8,2) null,
---otro y afp
-total_remuneracion decimal(9, 2),
+vaca_trunca decimal(7,2) null,
+grati_trunca decimal(7,2) null,
+boni_trunca decimal(7,2) null,
+cts_trunca decimal(7,2) null,
+--tota remu, onp y afp
+total_remuneracion decimal(8, 2),
 descuento_onp decimal (8,2) null,
-des_spp decimal(8,2) null,
-des_seguro decimal (8,2)null,
 des_comision decimal(8,2)null,
-adelanto decimal(8,2) null,
-prestamo decimal(8,2) null,
-renta_quinta decimal(8,2) null,
-retencion_judicial decimal(8,2) null,
-otro_des decimal(8,2) null,
+des_seguro decimal (8,2)null,
+des_spp decimal(8,2) null,
+--descuentos
+essalud_vida decimal(6,2) null,
+adelanto decimal(6,2) null,
+prestamo decimal(6,2) null,
+renta_quinta decimal(7,2) null,
+retencion_judicial decimal(6,2) null,
+otro_des decimal(6,2) null,
+total_desc decimal(7,2)null,
 total_pagar decimal(8,2) null,
-aporte_essalud decimal(8,2) null,
-transporte decimal(8,2) null
+aporte_essalud decimal(7,2) null,
+transporte decimal(6,2) null,
+recargo_consumo decimal(6,2)null,
+reintegro_grati decimal(7,2)null,
+reintegro_boni decimal(7,2)null
 )
 GO
 
