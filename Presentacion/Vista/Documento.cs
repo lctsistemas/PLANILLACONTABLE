@@ -42,7 +42,7 @@ namespace Presentacion.Vista
             dgvdocumento.Columns[2].Width = 130;
 
             dgvdocumento.Columns[3].HeaderText = "DESCRIPCION";
-            dgvdocumento.Columns[3].Width = 250;
+            dgvdocumento.Columns[3].Width = 183;
             
         }
         //VALIDAR CONTROLES

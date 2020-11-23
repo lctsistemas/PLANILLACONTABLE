@@ -91,7 +91,7 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             Dgvplanilla1.Columns["totaremu"].ReadOnly = true;
 
-            Dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
+            //Dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
            // dgvplanilla1.Columns["hxdiurnas"].Background
         }
 
@@ -117,9 +117,9 @@ namespace Presentacion.Vista
                 double tardanzasub = 0, reintegr = 0, vacacion = 0, vaca_trun = 0, grati_tru = 0, boni_tru = 0, cts_tru = 0;
                 double subtotal1 = 0, subtotal2 = 0, totalsub = 0;
 
-                //if (dar.Cells["sueldo"].Value == null)
-                  //  suel = 0;
-                //else
+                if (dar.Cells["sueldo"].Value == null)
+                    suel = 0;
+                else
                     suel = Convert.ToDouble(dar.Cells["sueldo"].Value);
 
 
@@ -172,25 +172,25 @@ namespace Presentacion.Vista
 
 
                 if (dar.Cells["vacaciones"].Value == null)
-                    vacacion = 0.00;
+                    vacacion = 0;
                 else
                     vacacion = Convert.ToDouble(dar.Cells["vacaciones"].Value);
 
 
                 if (dar.Cells["tvaca"].Value == null)
-                    vaca_trun = 0.00;
+                    vaca_trun = 0;
                 else
                     vaca_trun = Convert.ToDouble(dar.Cells["tvaca"].Value);
 
 
                 if (dar.Cells["tgrati"].Value == null)
-                    grati_tru = 0.00;
+                    grati_tru = 0;
                 else
                     grati_tru = Convert.ToDouble(dar.Cells["tgrati"].Value);
 
 
                 if (dar.Cells["tboni"].Value == null)
-                    boni_tru = 0.00;
+                    boni_tru = 0;
                 else
                     boni_tru = Convert.ToDouble(dar.Cells["tboni"].Value);
 
@@ -247,6 +247,25 @@ namespace Presentacion.Vista
             }
         }
 
+        //METODO HORAS DIARIAS.
+        private int HorasDiarias(DataGridViewRow dgr, int hrboninoc)
+        {
+            int pdias = 0, pdiaDominical = 0, horaTrabajada = 0;
+            if (dgr.Cells["dias"].Value == null)
+                pdias = 0;
+            else
+                pdias = Convert.ToInt32(dgr.Cells["dias"].Value);
+
+
+            if (dgr.Cells["dia_dominical"].Value == null)
+                pdiaDominical = 0;
+            else
+                pdiaDominical = Convert.ToInt32(dgr.Cells["dia_dominical"].Value);
+
+            horaTrabajada = (((pdias - pdiaDominical) * 8) - hrboninoc);
+
+            return horaTrabajada;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -261,9 +280,12 @@ namespace Presentacion.Vista
 
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {            
-            //FillTabla();
+            FillTabla();
             TablaPlanilla();
             Tooltip.Title(Picsave_conceptos, "Guardar cambios", false);
+            TxtfechaInicio.ReadOnly = true;
+            TxtfechaFin.ReadOnly = true;
+            Txtpago.ReadOnly = true;
         }      
              
         private void dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -284,8 +306,8 @@ namespace Presentacion.Vista
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
             {
-                case 13:
-               // case 14:
+                case 16:
+                case 17:
                     double horxd25 = 0;
                     Int32 hora25=0, minu25 = 0;
                     if (dar.Cells["hxd25"].Value == null)
@@ -302,8 +324,8 @@ namespace Presentacion.Vista
                     horxd25 = Calculo.HoraExDiurna(930, 0, 0.25, hora25, minu25);
                     dar.Cells["montod25"].Value = horxd25.ToString("N2");
                     break;
-                case 16:
-                case 17:
+                case 19:
+                case 20:
                     double horxd35 = 0;
                     Int32 hora35 = 0, minu35 = 0;
                     if (dar.Cells["hxd35"].Value == null)
@@ -320,8 +342,8 @@ namespace Presentacion.Vista
                     horxd35 = Calculo.HoraExDiurna(930, 0, 0.35, hora35,minu35);
                     dar.Cells["montod35"].Value = horxd35.ToString("N2");
                     break;
-                case 19:
-                case 20:
+                case 22:
+                case 23:
                     double horxn25 = 0;
                     Int32 nhora25 = 0, nminu25 = 0;
                     if (dar.Cells["hxn25"].Value == null)
@@ -339,8 +361,8 @@ namespace Presentacion.Vista
                     dar.Cells["monton25"].Value = horxn25.ToString("N2");
                     break;
 
-                case 22:
-                case 23:
+                case 25:
+                case 26:
                     double horxn35 = 0;
                     Int32 nhora35 = 0, nminu35 = 0;
                     if (dar.Cells["hxn35"].Value == null)
@@ -358,8 +380,8 @@ namespace Presentacion.Vista
                     dar.Cells["monton35"].Value = horxn35.ToString("N2");
                     break;
 
-                case 25:
-                case 26:                
+                case 28:
+                case 29:                
                     double hferi = 0;
                     Int32 horaferiado = 0, minutoferi = 0;
                     if (dar.Cells["hrferiado"].Value == null)
@@ -377,7 +399,7 @@ namespace Presentacion.Vista
                     dar.Cells["montoferiado"].Value = hferi.ToString("N2");
                     break;
 
-                case 28:
+                case 31:
                     double boninoc = 0;
                     int horanoc = 0, h_trabajada = 0;
                     if (dar.Cells["hrboninocturna"].Value == null)
@@ -392,8 +414,8 @@ namespace Presentacion.Vista
                     dar.Cells["hora_trabajada"].Value = h_trabajada.ToString();
                     break;
 
-                case 30:
-                case 31:
+                case 34:
+                case 35:
                     double importe_tarde = 0;
                     Int32 horatarde = 0, minutarde = 0;
                     if (dar.Cells["htarde"].Value == null)
@@ -419,8 +441,6 @@ namespace Presentacion.Vista
             // TOTAL HORAS EXTRAS.
             switch (e.ColumnIndex)
             {
-                case 13:
-               // case 14:
                 case 16:
                 case 17:
                 case 19:
@@ -430,6 +450,8 @@ namespace Presentacion.Vista
                 case 25:
                 case 26:
                 case 28:
+                case 29:
+                case 31:
 
                     double montoD25 = 0, montoD35 = 0, montoN25 = 0, montoN35 = 0, feriado = 0, boniNoct = 0;
                     double totalHorasExt = 0;
@@ -476,8 +498,8 @@ namespace Presentacion.Vista
 
                     break;
 
-                case 8:
-                case 9:
+                case 11:
+                case 12:
                     int pboniNocturno = 0, hr_trabajada = 0;
 
                     if (dar.Cells["hrboninocturna"].Value == null)
@@ -494,37 +516,20 @@ namespace Presentacion.Vista
                     break;
             }
             TotalRemuneracion();
-            //Descuento_aportes();
+            Descuento_aportes();
         }
         
         //.........
 
-
-        //METODO HORAS DIARIAS.
-        private int HorasDiarias(DataGridViewRow dgr, int hrboninoc)
-        {
-            int pdias = 0, pdiaDominical = 0, horaTrabajada = 0;            
-            if (dgr.Cells["dias"].Value == null)
-                pdias = 0;
-            else
-                pdias = Convert.ToInt32(dgr.Cells["dias"].Value);
-
-
-            if (dgr.Cells["dia_dominical"].Value == null)
-                pdiaDominical = 0;
-            else
-                pdiaDominical = Convert.ToInt32(dgr.Cells["dia_dominical"].Value);
-
-            horaTrabajada = (((pdias - pdiaDominical) * 8) - hrboninoc);
-
-            return horaTrabajada;
-        }
-
-        //-----
-      
+              
         private void tbtnsalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FrmPlanillaEmpleados plaem = (FrmPlanillaEmpleados)Owner;
+           
+                plaem.btncerrar.Enabled = true;
+                plaem.toolmenu.Visible = true;
+           
+                this.Close();
         }
 
         private void dgvplanilla1_CellContentClick(object sender, DataGridViewCellEventArgs e)
