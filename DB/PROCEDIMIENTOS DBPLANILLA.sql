@@ -204,6 +204,12 @@ END
 GO
 
 
+select * from Empleado
+select * from Contrato
+has insertatdo mal
+asu cuando he registrado 
+uhm y como hago en ese caso
+
 /*      CONTRATO SEGUN EMPLEADO REGISTRADO     */
 ALTER PROCEDURE SP_INSERT_CONTRATO(
 @id_banco int,
@@ -511,7 +517,7 @@ GO
 
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario, u.nombre_usuario, u.contrasena, u.genero, u.id_rol, r.descrip_rol FROM 
+SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
