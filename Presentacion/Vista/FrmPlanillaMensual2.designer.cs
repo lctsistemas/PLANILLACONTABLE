@@ -1795,6 +1795,7 @@
             this.MainMenuStrip = this.menuarchivos;
             this.Name = "FrmPlanillaMensual2";
             this.Text = "PlanillaMensual";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPlanillaMensual2_FormClosing);
             this.Load += new System.EventHandler(this.FrmPlanillaMensual_Load);
             this.menuarchivos.ResumeLayout(false);
             this.menuarchivos.PerformLayout();

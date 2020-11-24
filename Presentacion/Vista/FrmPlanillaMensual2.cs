@@ -18,7 +18,8 @@ namespace Presentacion.Vista
     {
         private const string Subsidiado = "SUBSIDIADOS";
         private const string NoSubsidiado = "NO SUBSIDIADOS";
-        public int xdia_vacaciones = 0; // el valor es enviado desde el form susbidios.
+        public int xdia_vacaciones = 0; // el valor es enviado desde el formulario susbidios.
+        private static FrmPlanillaMensual2 _intancia;
 
         NplanillaM nplam;
         NConceptos nconcepto;
@@ -30,6 +31,15 @@ namespace Presentacion.Vista
             this.Dgvplanilla2.DoubleBuffered(true);
             this.Dgvplanilla1.DoubleBuffered(true);
             
+        }
+
+        //METODO LLAMAR FORMULARIO EN OTRO SIN CARGAR MUCHAS INSTANCIAS.
+        public static FrmPlanillaMensual2 Getinstancia()
+        {
+            if (_intancia == null)
+                _intancia = new FrmPlanillaMensual2();
+
+            return _intancia;
         }
        
         //TABLA
@@ -547,7 +557,7 @@ namespace Presentacion.Vista
                     PlanillaCache.Subsidiado = Subsidiado;
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
                     this.AddOwnedForm(fr2);
-                    fr2.ShowDialog(Dgvplanilla1);
+                    fr2.ShowDialog();
 
                     if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null)
                         dias = 0;
@@ -565,7 +575,7 @@ namespace Presentacion.Vista
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
 
                     this.AddOwnedForm(fr2);
-                    fr2.ShowDialog(Dgvplanilla1);
+                    fr2.ShowDialog();
 
                    //MONTO NEGATIVO.
                     if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value == null)
@@ -741,10 +751,7 @@ namespace Presentacion.Vista
             //    MessageBox.Show("el valor no es null");
             //}
             
-
             Descuento_aportes();
-
-
         }
 
         private void Picsave_conceptos_Click(object sender, EventArgs e)
@@ -1012,7 +1019,6 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["hrferiado"].Visible = v;
             Dgvplanilla1.Columns["minuferiado"].Visible = v;
             Dgvplanilla1.Columns["montoferiado"].Visible = v;
-
         }
 
         private void BoniNocturna(bool v)
@@ -1034,7 +1040,6 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["htarde"].Visible = v;
             Dgvplanilla1.Columns["mtarde"].Visible = v;
             Dgvplanilla1.Columns["montotarde"].Visible = v;
-
         }
 
         private void Subsidios(bool v)
@@ -1134,9 +1139,11 @@ namespace Presentacion.Vista
             Dgvplanilla2.Columns["recargo_consu"].Visible = v;
             Dgvplanilla1.Columns["recargo_consumo"].Visible = v;
         }
-
         #endregion
 
-
+        private void FrmPlanillaMensual2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _intancia = null;
+        }
     }
 }
