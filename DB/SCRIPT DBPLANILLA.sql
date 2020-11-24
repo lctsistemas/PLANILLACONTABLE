@@ -115,6 +115,9 @@ id_rol int not null
 )
 GO
 
+sp_rename 'Usuario.referencia', 'nombre_usuario'
+ALTER TABLE dbo.Usuario Alter column genero char(1) NOT  null;
+
 --TABLA: ROL PARA EL USUARIO
 CREATE TABLE Rol(
 id_rol int identity(1,1),

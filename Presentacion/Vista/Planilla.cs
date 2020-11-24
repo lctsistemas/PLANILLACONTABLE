@@ -21,7 +21,16 @@ namespace Presentacion.Vista
             
         }
 
-        
+        private bool Validar()
+        {
+            if (String.IsNullOrWhiteSpace(txtdia.Text) || String.IsNullOrWhiteSpace(txthora.Text) || String.IsNullOrWhiteSpace(txttope.Text) || String.IsNullOrWhiteSpace(cbxmes.Text))
+            {
+                ValidateChildren();
+                return true;
+            }
+            else
+                return false;
+        }
 
         private void LlenarMes()
         {
@@ -65,6 +74,11 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (Validar())
+            {
+                return;
+            }
+
             result = "";
             using (np)
             {
@@ -133,6 +147,26 @@ namespace Presentacion.Vista
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbxmes_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbxmes, "Mes requerido!");
+        }
+
+        private void txtdia_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdia, "Campo dia requerido!");
+        }
+
+        private void txthora_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txthora, "Codigo de hora requerido!");
+        }
+
+        private void txttope_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txttope, "Tope horario nocturno requerido!");
         }
     }
 }
