@@ -144,7 +144,8 @@ namespace Presentacion.Vista
         private void tbtcalculo_Click(object sender, EventArgs e)
         {
             DateTime del, al, pago;
-            FrmPlanillaMensual2 plm = new FrmPlanillaMensual2(); // el new lo voy  a cambiar con limpiando instancia. por mientras asi, para el lunes lo cambio
+            FrmPlanillaMensual2 plm = FrmPlanillaMensual2.Getinstancia();
+           
             this.AddOwnedForm(plm);
             this.toolmenu.Visible = false;
             this.btncerrar.Enabled = false;
