@@ -34,11 +34,11 @@ namespace Presentacion.Vista
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvempleado = new System.Windows.Forms.DataGridView();
             this.lblcantidad_registro = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
@@ -145,48 +145,48 @@ namespace Presentacion.Vista
             this.dgvempleado.AllowUserToAddRows = false;
             this.dgvempleado.AllowUserToDeleteRows = false;
             this.dgvempleado.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvempleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.dgvempleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvempleado.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvempleado.ColumnHeadersHeight = 40;
             this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvempleado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvempleado.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvempleado.EnableHeadersVisualStyles = false;
             this.dgvempleado.Location = new System.Drawing.Point(4, 78);
             this.dgvempleado.MultiSelect = false;
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvempleado.RowHeadersWidth = 20;
             this.dgvempleado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvempleado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvempleado.Size = new System.Drawing.Size(274, 445);
             this.dgvempleado.TabIndex = 18;
@@ -329,6 +329,7 @@ namespace Presentacion.Vista
             this.txtasig.Name = "txtasig";
             this.txtasig.Size = new System.Drawing.Size(128, 22);
             this.txtasig.TabIndex = 27;
+            this.txtasig.Validating += new System.ComponentModel.CancelEventHandler(this.txtasig_Validating);
             // 
             // lblasig
             // 
@@ -373,6 +374,7 @@ namespace Presentacion.Vista
             this.txtremune.Name = "txtremune";
             this.txtremune.Size = new System.Drawing.Size(140, 22);
             this.txtremune.TabIndex = 25;
+            this.txtremune.Validating += new System.ComponentModel.CancelEventHandler(this.txtremune_Validating);
             // 
             // cbotipocontra
             // 
@@ -383,6 +385,7 @@ namespace Presentacion.Vista
             this.cbotipocontra.Name = "cbotipocontra";
             this.cbotipocontra.Size = new System.Drawing.Size(140, 25);
             this.cbotipocontra.TabIndex = 33;
+            this.cbotipocontra.Validating += new System.ComponentModel.CancelEventHandler(this.cbotipocontra_Validating);
             // 
             // lblremu
             // 
@@ -435,6 +438,7 @@ namespace Presentacion.Vista
             this.cboperiodicidad.Name = "cboperiodicidad";
             this.cboperiodicidad.Size = new System.Drawing.Size(128, 25);
             this.cboperiodicidad.TabIndex = 48;
+            this.cboperiodicidad.Validating += new System.ComponentModel.CancelEventHandler(this.cboperiodicidad_Validating);
             // 
             // txtnum_cuenta
             // 
@@ -464,6 +468,7 @@ namespace Presentacion.Vista
             this.cbotipopago.Name = "cbotipopago";
             this.cbotipopago.Size = new System.Drawing.Size(141, 25);
             this.cbotipopago.TabIndex = 47;
+            this.cbotipopago.Validating += new System.ComponentModel.CancelEventHandler(this.cbotipopago_Validating);
             // 
             // label20
             // 
@@ -487,6 +492,7 @@ namespace Presentacion.Vista
             this.cbobanco.Name = "cbobanco";
             this.cbobanco.Size = new System.Drawing.Size(140, 25);
             this.cbobanco.TabIndex = 38;
+            this.cbobanco.Validating += new System.ComponentModel.CancelEventHandler(this.cbobanco_Validating);
             // 
             // lblcts
             // 
@@ -540,6 +546,7 @@ namespace Presentacion.Vista
             this.cbotipo_moneda.Name = "cbotipo_moneda";
             this.cbotipo_moneda.Size = new System.Drawing.Size(121, 25);
             this.cbotipo_moneda.TabIndex = 41;
+            this.cbotipo_moneda.Validating += new System.ComponentModel.CancelEventHandler(this.cbotipo_moneda_Validating);
             // 
             // lbltipomoneda
             // 
@@ -753,6 +760,7 @@ namespace Presentacion.Vista
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(133, 25);
             this.cboestado.TabIndex = 76;
+            this.cboestado.Validating += new System.ComponentModel.CancelEventHandler(this.cboestado_Validating);
             // 
             // lblafp
             // 
@@ -774,6 +782,7 @@ namespace Presentacion.Vista
             this.cbocargo.Name = "cbocargo";
             this.cbocargo.Size = new System.Drawing.Size(173, 25);
             this.cbocargo.TabIndex = 62;
+            this.cbocargo.Validating += new System.ComponentModel.CancelEventHandler(this.cbocargo_Validating);
             // 
             // cbore_pensionario
             // 
@@ -787,6 +796,7 @@ namespace Presentacion.Vista
             this.cbore_pensionario.Name = "cbore_pensionario";
             this.cbore_pensionario.Size = new System.Drawing.Size(173, 25);
             this.cbore_pensionario.TabIndex = 61;
+            this.cbore_pensionario.Validating += new System.ComponentModel.CancelEventHandler(this.cbore_pensionario_Validating);
             // 
             // label15
             // 
@@ -1013,7 +1023,6 @@ namespace Presentacion.Vista
             this.txtdire.Name = "txtdire";
             this.txtdire.Size = new System.Drawing.Size(274, 22);
             this.txtdire.TabIndex = 54;
-            this.txtdire.Validating += new System.ComponentModel.CancelEventHandler(this.txtdire_Validating);
             // 
             // label7
             // 
@@ -1035,7 +1044,6 @@ namespace Presentacion.Vista
             this.txttele.Size = new System.Drawing.Size(123, 22);
             this.txttele.TabIndex = 56;
             this.txttele.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttele_KeyPress);
-            this.txttele.Validating += new System.ComponentModel.CancelEventHandler(this.txttele_Validating);
             // 
             // tabEmpleado
             // 
