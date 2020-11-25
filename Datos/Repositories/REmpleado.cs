@@ -22,24 +22,25 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
-                    cmd.CommandText = "SP_AGR_EMPL";
+                    cmd.CommandText = "SP_ADD_EMPLEADO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     
-                    cmd.Parameters.Add("@codigo", SqlDbType.VarChar, 20).Value = entiti.Codigo;
-                    cmd.Parameters.Add("@nom_emp", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
-                    cmd.Parameters.Add("@ape_pat", SqlDbType.VarChar, 50).Value = entiti.Ape_pat;
-                    cmd.Parameters.Add("@ape_mat", SqlDbType.VarChar, 50).Value = entiti.Ape_mat;
-                    cmd.Parameters.Add("@fec_nac", SqlDbType.Date).Value = entiti.Fec_nac;
-                    cmd.Parameters.Add("@nacionalidad", SqlDbType.VarChar, 30).Value = entiti.Nacionalidad;
-                    cmd.Parameters.Add("@tip_ge", SqlDbType.VarChar, 12).Value = entiti.Tipo_genero;
-                    cmd.Parameters.Add("@direccion", SqlDbType.VarChar, 250).Value = entiti.Direccion;
-                    cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 15).Value = entiti.Telefono;
-                    cmd.Parameters.Add("@num_doc", SqlDbType.VarChar, 20).Value = entiti.Num_doc;
-                    cmd.Parameters.Add("@estado", SqlDbType.VarChar, 20).Value = entiti.Estado;
-                    cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = entiti.Codigo_regimen;
-                    cmd.Parameters.Add("@id_documento", SqlDbType.Int).Value = entiti.Id_doc;
-                    cmd.Parameters.Add("@id_cargo", SqlDbType.Int).Value = entiti.Id_cargo;
-                    cmd.Parameters.Add("@id_empresa_maestra", SqlDbType.Int).Value = entiti.Id_emp_maestra;//aqui pudes llamar ese id que esta en cache o si no.
+                    cmd.Parameters.AddWithValue("@codigo", entiti.Codigo);
+                    cmd.Parameters.AddWithValue("@nom_emp", entiti.Nom_emp);
+                    cmd.Parameters.AddWithValue("@ape_pat", entiti.Ape_pat);
+                    cmd.Parameters.AddWithValue("@ape_mat", entiti.Ape_mat);
+                    cmd.Parameters.AddWithValue("@fec_nac", entiti.Fec_nac);
+                    cmd.Parameters.AddWithValue("@nacionalidad", entiti.Nacionalidad);
+                    cmd.Parameters.AddWithValue("@tip_ge", entiti.Tipo_genero);
+                    cmd.Parameters.AddWithValue("@direccion", entiti.Direccion);
+                    cmd.Parameters.AddWithValue("@telefono", entiti.Telefono);
+                    cmd.Parameters.AddWithValue("@num_doc", entiti.Num_doc);
+                    cmd.Parameters.AddWithValue("@estado", entiti.Estado);
+                    cmd.Parameters.AddWithValue("@codigo_regimen", entiti.Codigo_regimen);
+                    cmd.Parameters.AddWithValue("@id_documento", entiti.Id_doc);
+                    cmd.Parameters.AddWithValue("@id_cargo", entiti.Id_cargo);
+                    cmd.Parameters.AddWithValue("@id_empresa_maestra", entiti.Id_emp_maestra); //aqui pudes llamar ese id que esta en cache o si no.
+                    cmd.Parameters.AddWithValue("@jornada_laboral", entiti.Jornada_laboral);
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
@@ -100,20 +101,21 @@ namespace Datos.Repositories
                         cmd.CommandText = "SP_UPDATE_EMPLEADO";
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.Add("@codigo", SqlDbType.VarChar, 20).Value = entiti.Codigo;
-                        cmd.Parameters.Add("@nom_emp", SqlDbType.VarChar, 50).Value = entiti.Nom_emp;
-                        cmd.Parameters.Add("@ape_pat", SqlDbType.VarChar, 50).Value = entiti.Ape_pat;
-                        cmd.Parameters.Add("@ape_mat", SqlDbType.VarChar, 50).Value = entiti.Ape_mat;
-                        cmd.Parameters.Add("@fec_nac", SqlDbType.Date).Value = entiti.Fec_nac;
-                        cmd.Parameters.Add("@nacionalidad", SqlDbType.VarChar, 30).Value = entiti.Nacionalidad;
-                        cmd.Parameters.Add("@tip_ge", SqlDbType.VarChar, 12).Value = entiti.Tipo_genero;
-                        cmd.Parameters.Add("@direccion", SqlDbType.VarChar, 250).Value = entiti.Direccion;
-                        cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 15).Value = entiti.Telefono;
-                        cmd.Parameters.Add("@num_doc", SqlDbType.VarChar, 20).Value = entiti.Num_doc;
-                        cmd.Parameters.Add("@estado", SqlDbType.VarChar, 20).Value = entiti.Estado;
-                        cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = entiti.Codigo_regimen;
-                        cmd.Parameters.Add("@id_documento", SqlDbType.Int).Value = entiti.Id_doc;
-                        cmd.Parameters.Add("@id_cargo", SqlDbType.Int).Value = entiti.Id_cargo;
+                        cmd.Parameters.AddWithValue("@codigo", entiti.Codigo);
+                        cmd.Parameters.AddWithValue("@nom_emp", entiti.Nom_emp);
+                        cmd.Parameters.AddWithValue("@ape_pat", entiti.Ape_pat);
+                        cmd.Parameters.AddWithValue("@ape_mat", entiti.Ape_mat);
+                        cmd.Parameters.AddWithValue("@fec_nac", entiti.Fec_nac);
+                        cmd.Parameters.AddWithValue("@nacionalidad", entiti.Nacionalidad);
+                        cmd.Parameters.AddWithValue("@tip_ge", entiti.Tipo_genero);
+                        cmd.Parameters.AddWithValue("@direccion", entiti.Direccion);
+                        cmd.Parameters.AddWithValue("@telefono", entiti.Telefono);
+                        cmd.Parameters.AddWithValue("@num_doc", entiti.Num_doc);
+                        cmd.Parameters.AddWithValue("@estado", entiti.Estado);
+                        cmd.Parameters.AddWithValue("@codigo_regimen", entiti.Codigo_regimen);
+                        cmd.Parameters.AddWithValue("@id_documento",  entiti.Id_doc);
+                        cmd.Parameters.AddWithValue("@id_cargo", entiti.Id_cargo);
+                        cmd.Parameters.AddWithValue("@jornada_laboral", entiti.Jornada_laboral);
                         cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                         result = cmd.ExecuteNonQuery();
                     }
@@ -177,15 +179,17 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SP_ELIM_EMPLEADO";
+                    cmd.CommandText = "SP_ANULAR_EMPLEADO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_emp", SqlDbType.Int).Value = entiti.Id_empleado;
+                    cmd.Parameters.AddWithValue("@id_emp", entiti.Id_empleado);
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    return result;
+                    entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
 
         public int Delete(Dcontrato entiti)
@@ -204,7 +208,7 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SP_SHOW_EMP";
+                    cmd.CommandText = "SP_SHOW_EMPLEADO";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@codigo_empresa", SqlDbType.Int).Value = entiti.Id_emp_maestra;
                     da.SelectCommand = cmd;

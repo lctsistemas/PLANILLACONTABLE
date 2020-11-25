@@ -84,6 +84,8 @@ namespace Presentacion.Vista
             this.txtnumdoc = new System.Windows.Forms.TextBox();
             this.linkconsulta = new System.Windows.Forms.LinkLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Cbojornada_laboral = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.linkcargo = new System.Windows.Forms.LinkLabel();
             this.cboestado = new System.Windows.Forms.ComboBox();
             this.lblafp = new System.Windows.Forms.Label();
@@ -221,7 +223,7 @@ namespace Presentacion.Vista
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(25, 9);
+            this.label16.Location = new System.Drawing.Point(25, 5);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(196, 24);
             this.label16.TabIndex = 0;
@@ -238,7 +240,7 @@ namespace Presentacion.Vista
             this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(1110, 40);
+            this.paneltitulo.Size = new System.Drawing.Size(1110, 35);
             this.paneltitulo.TabIndex = 81;
             this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
             // 
@@ -691,7 +693,7 @@ namespace Presentacion.Vista
             // 
             // txtnumdoc
             // 
-            this.txtnumdoc.Location = new System.Drawing.Point(333, 56);
+            this.txtnumdoc.Location = new System.Drawing.Point(333, 54);
             this.txtnumdoc.Name = "txtnumdoc";
             this.txtnumdoc.Size = new System.Drawing.Size(132, 23);
             this.txtnumdoc.TabIndex = 80;
@@ -716,6 +718,8 @@ namespace Presentacion.Vista
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.Cbojornada_laboral);
+            this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.linkcargo);
             this.groupBox3.Controls.Add(this.cboestado);
             this.groupBox3.Controls.Add(this.lblafp);
@@ -731,12 +735,33 @@ namespace Presentacion.Vista
             this.groupBox3.TabIndex = 78;
             this.groupBox3.TabStop = false;
             // 
+            // Cbojornada_laboral
+            // 
+            this.Cbojornada_laboral.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cbojornada_laboral.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbojornada_laboral.FormattingEnabled = true;
+            this.Cbojornada_laboral.Location = new System.Drawing.Point(16, 174);
+            this.Cbojornada_laboral.Name = "Cbojornada_laboral";
+            this.Cbojornada_laboral.Size = new System.Drawing.Size(135, 25);
+            this.Cbojornada_laboral.TabIndex = 79;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.DimGray;
+            this.label17.Location = new System.Drawing.Point(15, 154);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 17);
+            this.label17.TabIndex = 78;
+            this.label17.Text = "Jornada laboral";
+            // 
             // linkcargo
             // 
             this.linkcargo.AutoSize = true;
             this.linkcargo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkcargo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkcargo.Location = new System.Drawing.Point(194, 112);
+            this.linkcargo.Location = new System.Drawing.Point(194, 115);
             this.linkcargo.Name = "linkcargo";
             this.linkcargo.Size = new System.Drawing.Size(51, 17);
             this.linkcargo.TabIndex = 77;
@@ -749,7 +774,7 @@ namespace Presentacion.Vista
             this.cboestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboestado.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboestado.FormattingEnabled = true;
-            this.cboestado.Location = new System.Drawing.Point(18, 170);
+            this.cboestado.Location = new System.Drawing.Point(18, 234);
             this.cboestado.Name = "cboestado";
             this.cboestado.Size = new System.Drawing.Size(133, 25);
             this.cboestado.TabIndex = 76;
@@ -759,7 +784,7 @@ namespace Presentacion.Vista
             this.lblafp.AutoSize = true;
             this.lblafp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblafp.ForeColor = System.Drawing.Color.DimGray;
-            this.lblafp.Location = new System.Drawing.Point(13, 32);
+            this.lblafp.Location = new System.Drawing.Point(13, 31);
             this.lblafp.Name = "lblafp";
             this.lblafp.Size = new System.Drawing.Size(143, 17);
             this.lblafp.TabIndex = 67;
@@ -770,20 +795,21 @@ namespace Presentacion.Vista
             this.cbocargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbocargo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbocargo.FormattingEnabled = true;
-            this.cbocargo.Location = new System.Drawing.Point(16, 109);
+            this.cbocargo.Location = new System.Drawing.Point(16, 115);
             this.cbocargo.Name = "cbocargo";
             this.cbocargo.Size = new System.Drawing.Size(173, 25);
             this.cbocargo.TabIndex = 62;
             // 
             // cbore_pensionario
             // 
-            this.cbore_pensionario.DropDownHeight = 111;
             this.cbore_pensionario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbore_pensionario.DropDownWidth = 168;
             this.cbore_pensionario.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbore_pensionario.FormattingEnabled = true;
             this.cbore_pensionario.IntegralHeight = false;
-            this.cbore_pensionario.Location = new System.Drawing.Point(16, 53);
+            this.cbore_pensionario.ItemHeight = 17;
+            this.cbore_pensionario.Location = new System.Drawing.Point(16, 54);
+            this.cbore_pensionario.MaxDropDownItems = 9;
             this.cbore_pensionario.Name = "cbore_pensionario";
             this.cbore_pensionario.Size = new System.Drawing.Size(173, 25);
             this.cbore_pensionario.TabIndex = 61;
@@ -793,7 +819,7 @@ namespace Presentacion.Vista
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.DimGray;
-            this.label15.Location = new System.Drawing.Point(15, 93);
+            this.label15.Location = new System.Drawing.Point(15, 94);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(50, 17);
             this.label15.TabIndex = 71;
@@ -804,7 +830,7 @@ namespace Presentacion.Vista
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DimGray;
-            this.label12.Location = new System.Drawing.Point(15, 153);
+            this.label12.Location = new System.Drawing.Point(15, 215);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 60;
@@ -906,7 +932,7 @@ namespace Presentacion.Vista
             this.cbogenero.FormattingEnabled = true;
             this.cbogenero.Location = new System.Drawing.Point(12, 294);
             this.cbogenero.Name = "cbogenero";
-            this.cbogenero.Size = new System.Drawing.Size(130, 25);
+            this.cbogenero.Size = new System.Drawing.Size(132, 25);
             this.cbogenero.TabIndex = 49;
             this.cbogenero.Validating += new System.ComponentModel.CancelEventHandler(this.cbxgene_Validating);
             // 
@@ -915,7 +941,7 @@ namespace Presentacion.Vista
             this.txtApePat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApePat.Location = new System.Drawing.Point(13, 174);
             this.txtApePat.Name = "txtApePat";
-            this.txtApePat.Size = new System.Drawing.Size(129, 22);
+            this.txtApePat.Size = new System.Drawing.Size(131, 22);
             this.txtApePat.TabIndex = 43;
             this.txtApePat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApePat_KeyPress);
             this.txtApePat.Validating += new System.ComponentModel.CancelEventHandler(this.txtApePat_Validating);
@@ -936,7 +962,7 @@ namespace Presentacion.Vista
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(334, 33);
+            this.label10.Location = new System.Drawing.Point(334, 31);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 17);
             this.label10.TabIndex = 58;
@@ -947,7 +973,7 @@ namespace Presentacion.Vista
             this.txtApeMat.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApeMat.Location = new System.Drawing.Point(12, 234);
             this.txtApeMat.Name = "txtApeMat";
-            this.txtApeMat.Size = new System.Drawing.Size(130, 22);
+            this.txtApeMat.Size = new System.Drawing.Size(132, 22);
             this.txtApeMat.TabIndex = 45;
             this.txtApeMat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApeMat_KeyPress);
             this.txtApeMat.Validating += new System.ComponentModel.CancelEventHandler(this.txtApeMat_Validating);
@@ -1011,7 +1037,7 @@ namespace Presentacion.Vista
             this.txtdire.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdire.Location = new System.Drawing.Point(191, 115);
             this.txtdire.Name = "txtdire";
-            this.txtdire.Size = new System.Drawing.Size(274, 22);
+            this.txtdire.Size = new System.Drawing.Size(352, 22);
             this.txtdire.TabIndex = 54;
             this.txtdire.Validating += new System.ComponentModel.CancelEventHandler(this.txtdire_Validating);
             // 
@@ -1130,11 +1156,11 @@ namespace Presentacion.Vista
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
             this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneliminar.Location = new System.Drawing.Point(498, 44);
+            this.btneliminar.Location = new System.Drawing.Point(499, 45);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(99, 27);
             this.btneliminar.TabIndex = 64;
-            this.btneliminar.Text = "&Eliminar";
+            this.btneliminar.Text = "&Anular";
             this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
@@ -1306,5 +1332,7 @@ namespace Presentacion.Vista
         private PictureBox pictureBox1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private ComboBox Cbojornada_laboral;
+        private Label label17;
     }
 }

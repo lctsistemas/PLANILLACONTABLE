@@ -12,7 +12,7 @@ ape_paterno varchar(50) not null,
 ape_materno varchar(50) not null,
 fecha_nacimiento date not null,
 nacionalidad varchar(30) not null,
-tipo_genero varchar(12) CONSTRAINT CHK_genero CHECK(tipo_genero in ('Femenino','Masculino')),
+tipo_genero varchar(12) not null,
 direccion varchar(250)null,
 telefono varchar(15)null,
 numero_documento varchar(20) not null,
@@ -21,11 +21,13 @@ codigo_regimen int not null,
 id_documento int not null,
 id_cargo int not null,
 id_em_maestra int not null,
+jornada_laboral varchar(11) not null,
 eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado in ('ANULADO','NO ANULADO')),
 )
 GO
 
---ALTER TABLE Empleado DROP CONSTRAINT  UNQ_docu 
+--ALTER TABLE dbo.Empleado ADD Jornada_laboral varchar(11) null
+--select len('PART - TIME')
 
 
 --TABLA: CARGO
@@ -115,8 +117,6 @@ id_rol int not null
 )
 GO
 
-sp_rename 'Usuario.referencia', 'nombre_usuario'
-ALTER TABLE dbo.Usuario Alter column genero char(1) NOT  null;
 
 --TABLA: ROL PARA EL USUARIO
 CREATE TABLE Rol(
@@ -125,7 +125,7 @@ descrip_rol varchar(30)not null
 )
 GO
 
-delete from Empleado
+
 --BANCO
 CREATE TABLE Banco(
 id_banco int not null, 
@@ -139,8 +139,8 @@ INSERT INTO Banco VALUES(2,'Banco Continental');
 INSERT INTO Banco VALUES(3,'Bcp');
 INSERT INTO Banco VALUES(4,'Scotiabank');
 INSERT INTO Banco VALUES(5,'Interbank');
-
 GO
+
 --TIPO DE CONTRATO 
 CREATE TABLE Tipo_contrato(
 id_tipocontrato int not null,
@@ -173,11 +173,10 @@ cuenta_cts nvarchar(50) null,
 cussp varchar(70) null,
 id_rsalud int 
 )
+
 GO
 alter table dbo.contrato drop column estado
 alter table dbo.contrato alter column [asignacion_familiar] decimal(5,2) null
-alter table contrato drop constraint [CK__Contrato__estado__4959E263]
-
 GO
 
 --Meses_maestra
