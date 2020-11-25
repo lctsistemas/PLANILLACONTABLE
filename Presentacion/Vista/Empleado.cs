@@ -266,7 +266,9 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(txtApeMat.Text) ||
                 string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocargo.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtnumdoc.Text) ||
-                string.IsNullOrEmpty(cbogenero.Text))
+                string.IsNullOrEmpty(cbogenero.Text) || string.IsNullOrEmpty(txtremune.Text) || string.IsNullOrEmpty(cbotipopago.Text)
+                || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbotipo_moneda.Text)
+                || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text))
             {
                 ValidateChildren();
                 return true;
@@ -276,6 +278,7 @@ namespace Presentacion.Vista
                 return false;
             }
         }
+
 
 
         private void Empleado_Load(object sender, EventArgs e)
@@ -289,6 +292,7 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            
             if (Validar_campos())
             {
                 Messages.M_warning("Ingrese todos los campos por favor");
@@ -356,23 +360,22 @@ namespace Presentacion.Vista
                 emple_contra.ccts = txtcts.Text.Trim();
                 emple_contra.ccussp = txtcussp.Text.Trim();
 
-                bool valida = new ValidacionDatos(emple_contra).Validate();
+                //bool valida = new ValidacionDatos(emple_contra).Validate();
 
-                if (valida)
-                {
-                    result = emple_contra.GuardarCambios();
+ 
+                result = emple_contra.GuardarCambios();
 
-                    if (result.Contains("ya se encuentra registrado"))
-                    {
-                        Messages.M_warning(result);
-                    }
-                    else
-                    {
-                        mostrarEmpleado();
-                        Messages.M_info(result);
-                        limpiar();
-                    }
-                }                
+               if (result.Contains("ya se encuentra registrado"))
+               {
+                  Messages.M_warning(result);
+               }
+               else
+               {
+                    mostrarEmpleado();
+                    Messages.M_info(result);
+                    limpiar();
+               }
+                              
                 
             }
         }
@@ -475,15 +478,7 @@ namespace Presentacion.Vista
             ValidateError.Validate_text(txtnumdoc, "Campo requerido");
         }
 
-        private void txtdire_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtdire, "Campo requerido");
-        }
-
-        private void txttele_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txttele, "Campo requerido");
-        }
+       
 
         private void txtnac_Validating(object sender, CancelEventArgs e)
         {
@@ -681,6 +676,54 @@ namespace Presentacion.Vista
             }
         }
 
-     
+        private void cbobanco_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbobanco, "Campo banco requerido");
+        }
+
+        private void cbotipopago_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbotipopago, "Campo tipo de pago requerido");
+        }
+
+        private void cbotipo_moneda_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbotipo_moneda, "Campo tipo de moneda requerido");
+        }
+
+        private void cboperiodicidad_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cboperiodicidad, "Campo periodicidad requerido");
+        }
+
+        private void txtremune_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtremune, "Campo remuneracion requerido");
+        }
+
+        private void cbore_pensionario_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbore_pensionario, "Campo regimen requerido");
+        }
+
+        private void cbocargo_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbocargo, "Campo cargo requerido");
+        }
+
+        private void cboestado_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cboestado, "Campo estado requerido");
+        }
+
+        private void cbotipocontra_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbotipocontra, "Campo tipo contrato requerido");
+        }
+
+        private void txtasig_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtasig, "Campo asignacion familiar requerido");
+        }
     }
 }
