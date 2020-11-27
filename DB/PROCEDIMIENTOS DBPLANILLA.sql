@@ -102,7 +102,7 @@ GO
 
 
 /*        PROCEDIMIENTO ALMACENADO PARA EMPLEADO      */
-CREATE PROC SP_ADD_EMPLEADO(
+ALTER PROC SP_ADD_EMPLEADO(
 @codigo varchar(20),--sera número de documento.
 @nom_emp varchar(50),
 @ape_pat varchar(50),
@@ -125,7 +125,7 @@ DECLARE @RazonSocial VARCHAR(50)
 SET @RazonSocial =(SELECT em.razon_social from Empleado e JOIN  Empresa_maestra em ON (e.id_em_maestra=em.id_em_maestra) 
 WHERE e.estado='ACTIVO' AND e.codigo=@codigo)
 IF(@RazonSocial != '')
-	PRINT 'Colaborador está (ACTIVO) EN: '+ @RazonSocial
+	SET @mensaje = 'Colaborador está (ACTIVO) EN: '+ @RazonSocial
 ELSE 		
 	BEGIN
 	DECLARE @idempleado int
@@ -189,10 +189,10 @@ END
 GO
 
 
-CREATE PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
+ALTER PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 @codigo_empresa int
 AS BEGIN 
-SELECT e.id_empleado, e.ape_paterno, e.ape_materno, e.nombre_empleado,
+SELECT e.id_empleado, e.codigo, e.ape_paterno, e.ape_materno, e.nombre_empleado,
 em.id_em_maestra ,em.razon_social AS 'EMPRESA' FROM Empleado e INNER JOIN Empresa_maestra em 
 on(e.id_em_maestra=em.id_em_maestra) WHERE e.eliminado_estado='NO ANULADO' AND e.id_em_maestra=@codigo_empresa 
 ORDER BY e.id_empleado DESC
@@ -469,19 +469,18 @@ ALTER PROC SP_INSERT_USUARIO(
 @id_rol int,
 @mesage varchar(100) output)
 AS BEGIN
-DECLARE @usu int
-SET @usu=(SELECT count(u.id_usuario) FROM dbo.Usuario u)
-IF(@usu=0)
-	SET @usu=1	
-ELSE
-	SET @usu=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
-
 IF(EXISTS(SELECT u.codigo_usuario FROM dbo.Usuario u WHERE U.codigo_usuario=@codigo_usu))
 	BEGIN
 	SET @mesage= 'Usuario ('+@codigo_usu+' ) ya existe.'
 	END
 ELSE
 	BEGIN
+	DECLARE @usu int
+	SET @usu=(SELECT count(u.id_usuario) FROM dbo.Usuario u)
+	IF(@usu=0)
+		SET @usu=1	
+	ELSE
+		SET @usu=(SELECT MAX(u.id_usuario)+1 FROM dbo.Usuario u)
 	INSERT INTO dbo.Usuario(id_usuario, codigo_usuario, nombre_usuario, contrasena, genero, id_rol)VALUES
 	(@usu, @codigo_usu, @nom_user, @passwor,@genero, @id_rol)
 	SET @mesage= '¡Usuario registrado!'
@@ -527,11 +526,10 @@ GO
 
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol FROM 
+SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol, genero FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
-
 
 /*     PROCEDIMIENTO ROL     */
 ALTER PROC SP_INSERT_ROL
@@ -540,7 +538,6 @@ AS BEGIN
 INSERT INTO dbo.Rol(descrip_rol)VALUES(@rol)
 END
 GO
-
 
 ALTER PROC SP_UPDATE_ROL
 (@rol varchar(30),

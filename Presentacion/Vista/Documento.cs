@@ -39,10 +39,10 @@ namespace Presentacion.Vista
             dgvdocumento.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvdocumento.Columns[2].HeaderText = "DOCUMENTO";
-            dgvdocumento.Columns[2].Width = 130;
+            dgvdocumento.Columns[2].Width = 140;
 
             dgvdocumento.Columns[3].HeaderText = "DESCRIPCION";
-            dgvdocumento.Columns[3].Width = 183;
+            dgvdocumento.Columns[3].Width = 217;
             
         }
         //VALIDAR CONTROLES

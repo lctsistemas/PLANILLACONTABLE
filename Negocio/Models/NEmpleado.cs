@@ -132,7 +132,7 @@ namespace Negocio.Models
             }
             catch (Exception ex)
             {
-                ex.ToString();
+                mensaje = ex.ToString();
             }
             finally
             { }
@@ -140,6 +140,20 @@ namespace Negocio.Models
             return mensaje;
         }          
 
+
+        //VALIDACION SI EXISTE EL CODIGO.
+        public bool Existe(string id)
+        {
+            //System.Windows.Forms.MessageBox.Show("canti "+ listaemp.Count);
+            foreach (NEmpleado item in listaemp)
+            {
+                if (item.Codigo==id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public IEnumerable<NEmpleado> listar_empleado()
         {
@@ -155,9 +169,10 @@ namespace Negocio.Models
                     listaemp.Add(new NEmpleado()
                     {
                         Id_empleado = Convert.ToInt32(item[0]),
-                        Nom_emp = (item[1].ToString() + " " + item[2].ToString() + ",  " + item[3].ToString()),
-                        Id_emp_maestra = Convert.ToInt32(item[4]),
-                        Empresa = item[5].ToString(),
+                        Codigo=item[1].ToString(),
+                        Nom_emp = (item[2].ToString() + " " + item[3].ToString() + ",  " + item[4].ToString()),
+                        Id_emp_maestra = Convert.ToInt32(item[5]),
+                        Empresa = item[6].ToString(),
                     });
                 }               
             }
@@ -169,7 +184,14 @@ namespace Negocio.Models
             return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
+        //public bool Exite(string id)
+        //{
+        //    return listaemp.FindAll(e => e.codigo_usu.Contains(id));
+        //}
+
+
         //CONTRATO
+
         public DataTable ListaEmple_total(NEmpleado entiti)
         {
             Dcontrato dcon = new Dcontrato();

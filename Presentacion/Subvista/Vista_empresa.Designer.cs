@@ -64,6 +64,8 @@
             this.dgvvista_emp.AllowUserToAddRows = false;
             this.dgvvista_emp.AllowUserToDeleteRows = false;
             this.dgvvista_emp.AllowUserToOrderColumns = true;
+            this.dgvvista_emp.AllowUserToResizeColumns = false;
+            this.dgvvista_emp.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvvista_emp.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvvista_emp.BackgroundColor = System.Drawing.Color.White;
@@ -90,6 +92,7 @@
             this.dgvvista_emp.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvvista_emp.EnableHeadersVisualStyles = false;
             this.dgvvista_emp.Location = new System.Drawing.Point(8, 57);
+            this.dgvvista_emp.MultiSelect = false;
             this.dgvvista_emp.Name = "dgvvista_emp";
             this.dgvvista_emp.ReadOnly = true;
             this.dgvvista_emp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -106,6 +109,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DimGray;
             this.dgvvista_emp.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvvista_emp.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgvvista_emp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvvista_emp.Size = new System.Drawing.Size(755, 301);
             this.dgvvista_emp.TabIndex = 4;
             this.dgvvista_emp.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvvista_emp_CellDoubleClick);
@@ -194,7 +198,6 @@
             this.Name = "frmvista_empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EMPRESAS";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmvista_empresa_FormClosing);
             this.Load += new System.EventHandler(this.Vista_empresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_emp)).EndInit();
             this.panel1.ResumeLayout(false);

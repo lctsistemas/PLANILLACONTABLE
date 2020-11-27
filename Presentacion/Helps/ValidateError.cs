@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-
-
+using System.Drawing;
 namespace Presentacion.Helps
 {
     public class ValidateError
@@ -28,6 +27,7 @@ namespace Presentacion.Helps
 
         public static void Validate_text(TextBox txt, string m)
         {
+
             //validate.Icon = Properties.Resources.java2;
             validate.BlinkStyle = ErrorBlinkStyle.NeverBlink;
             // validate.BlinkRate = 250 velocidad en milesegundos en que parpadea

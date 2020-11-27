@@ -68,7 +68,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(756, 388);
+            this.panel1.Size = new System.Drawing.Size(777, 388);
             this.panel1.TabIndex = 9;
             // 
             // pictbuscar
@@ -86,6 +86,8 @@
             this.dgvvista_user.AllowUserToAddRows = false;
             this.dgvvista_user.AllowUserToDeleteRows = false;
             this.dgvvista_user.AllowUserToOrderColumns = true;
+            this.dgvvista_user.AllowUserToResizeColumns = false;
+            this.dgvvista_user.AllowUserToResizeRows = false;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvvista_user.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvvista_user.BackgroundColor = System.Drawing.Color.White;
@@ -111,7 +113,8 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvvista_user.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvvista_user.EnableHeadersVisualStyles = false;
-            this.dgvvista_user.Location = new System.Drawing.Point(8, 55);
+            this.dgvvista_user.Location = new System.Drawing.Point(7, 55);
+            this.dgvvista_user.MultiSelect = false;
             this.dgvvista_user.Name = "dgvvista_user";
             this.dgvvista_user.ReadOnly = true;
             this.dgvvista_user.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -128,7 +131,8 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DimGray;
             this.dgvvista_user.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvvista_user.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dgvvista_user.Size = new System.Drawing.Size(728, 326);
+            this.dgvvista_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvvista_user.Size = new System.Drawing.Size(757, 326);
             this.dgvvista_user.TabIndex = 1;
             this.dgvvista_user.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvvista_user_CellDoubleClick);
             // 
@@ -137,7 +141,7 @@
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncerrar.ForeColor = System.Drawing.Color.Crimson;
-            this.btncerrar.Location = new System.Drawing.Point(719, 10);
+            this.btncerrar.Location = new System.Drawing.Point(744, 8);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(20, 20);
             this.btncerrar.TabIndex = 6;
@@ -178,7 +182,7 @@
             this.shapeContainer2.Name = "shapeContainer2";
             this.shapeContainer2.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(754, 386);
+            this.shapeContainer2.Size = new System.Drawing.Size(775, 386);
             this.shapeContainer2.TabIndex = 9;
             this.shapeContainer2.TabStop = false;
             // 
@@ -187,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(756, 388);
+            this.ClientSize = new System.Drawing.Size(777, 388);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
