@@ -65,11 +65,12 @@
             this.pictmenu = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelchildform = new System.Windows.Forms.Panel();
             this.lblid_periodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
             this.pictlct = new System.Windows.Forms.PictureBox();
-            this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -123,6 +124,7 @@
             // panelregistro
             // 
             this.panelregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelregistro.Controls.Add(this.button1);
             this.panelregistro.Controls.Add(this.panel9);
             this.panelregistro.Controls.Add(this.btncalculo);
             this.panelregistro.Controls.Add(this.btntipo_contrato);
@@ -620,6 +622,15 @@
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // tlblhora
+            // 
+            this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.tlblhora.Name = "tlblhora";
+            this.tlblhora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tlblhora.Size = new System.Drawing.Size(44, 19);
+            this.tlblhora.Text = "HORA";
+            this.tlblhora.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            // 
             // panelchildform
             // 
             this.panelchildform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(219)))), ((int)(((byte)(223)))));
@@ -665,14 +676,21 @@
             this.pictlct.TabIndex = 1;
             this.pictlct.TabStop = false;
             // 
-            // tlblhora
+            // button1
             // 
-            this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.tlblhora.Name = "tlblhora";
-            this.tlblhora.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tlblhora.Size = new System.Drawing.Size(44, 19);
-            this.tlblhora.Text = "HORA";
-            this.tlblhora.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(233, 30);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Calculo Planilla";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Main_Principal
             // 
@@ -752,5 +770,6 @@
         private System.Windows.Forms.Label lblidempresa;
         private System.Windows.Forms.PictureBox pictlct;
         private System.Windows.Forms.ToolStripStatusLabel tlblhora;
+        private System.Windows.Forms.Button button1;
     }
 }
