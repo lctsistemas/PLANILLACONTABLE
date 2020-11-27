@@ -318,17 +318,14 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
 
         private void txtcodigo_sucursal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtcodigo_sucursal, "Codigo de sucursal requerido!");
-        }
-
-        private void txtrazon_social_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtrazon_social, "Razon social requerida!");
-        }
+            ValidateError.Validate_text(txtcodigo_sucursal, "¡Código de sucursal requerido!");
+        }       
 
         private void txtlocalidad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -337,27 +334,12 @@ namespace Presentacion.Vista
 
         private void txtdireccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtdireccion, "Direccion requerida!");
+            ValidateError.Validate_text(txtdireccion, "¡Dirección requerida!");
         }
-
-        private void txtdomicilio_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtdomicilio, "Domicilio fiscal requerido!");
-        }
-
-        private void txtruc_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtruc, "RUC requerido!");
-        }
-
-        private void txtregimen_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtregimen, "Regimen requerida!");
-        }
-
+       
         private void txtusuario_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtusuario, "Usuario requerido!");
+            ValidateError.Validate_text(txtusuario, "¡Usuario requerido!");
         }
     }
 }

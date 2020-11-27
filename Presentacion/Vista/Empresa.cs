@@ -277,6 +277,8 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
 
         private void btnmaximizar_MouseLeave(object sender, EventArgs e)

@@ -49,7 +49,7 @@ namespace Presentacion.Subvista
             dgvvista_user.Columns[1].Width = 150;
 
             dgvvista_user.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvvista_user.Columns[2].Width = 280;
+            dgvvista_user.Columns[2].Width = 300;
 
             dgvvista_user.Columns[3].HeaderText = "CONTRASEÑA";
             dgvvista_user.Columns[3].Width = 100;
@@ -58,13 +58,16 @@ namespace Presentacion.Subvista
             dgvvista_user.Columns[4].HeaderText = "CODIGO ROL";
             dgvvista_user.Columns[4].Width = 50;
             dgvvista_user.Columns[4].Visible = false;
-            
-            dgvvista_user.Columns[5].Visible=false;//idrol
 
-            dgvvista_user.Columns[6].HeaderText = "ROL";
-            dgvvista_user.Columns[6].Width = 200;
+            dgvvista_user.Columns[5].HeaderText = "ROLES";
+            dgvvista_user.Columns[5].Width = 230;
+          
+            dgvvista_user.Columns[6].HeaderText = "GENERO";
+            dgvvista_user.Columns[6].Width = 50;
+            dgvvista_user.Columns[6].Visible = false;
 
             dgvvista_user.Columns[7].Visible = false;//STATE
+                                      
         }
 
         private void frmvista_usuario_Load(object sender, EventArgs e)

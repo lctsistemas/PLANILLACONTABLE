@@ -25,11 +25,10 @@ namespace Negocio.Models
         public int Idusuario { get { return idusuario; } set { idusuario = value; } }
         public string Codigo_usu { get { return codigo_usu; } set { codigo_usu = value; } }
         public string Nombre_refe { get { return nombre_refe; } set { nombre_refe = value; } }
-        public string Password { get { return password; } set { password = value; } }
-        public string Genero { get { return genero; } set { genero = value; } }
+        public string Password { get { return password; } set { password = value; } }       
         public int Idrol { get { return idrol; } set { idrol = value; } }       
-
         public String name_rol { get; set; }
+        public string Genero { get { return genero; } set { genero = value; } }
         public EntityState state { get; set; }
 
         public Nusuario()
@@ -92,7 +91,8 @@ namespace Negocio.Models
                         nombre_refe = item[2].ToString(),
                         password = item[3].ToString(),
                         idrol = Convert.ToInt32(item[4]),
-                        name_rol = item[5].ToString()
+                        name_rol = item[5].ToString(),
+                        genero = item[6].ToString()
                     });
                 }              
             }

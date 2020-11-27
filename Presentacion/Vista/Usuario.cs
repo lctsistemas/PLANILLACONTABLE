@@ -61,21 +61,21 @@ namespace Presentacion.Vista
             dgvusuario.Columns[1].Width = 150;
 
             dgvusuario.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvusuario.Columns[2].Width = 270;
+            dgvusuario.Columns[2].Width = 300;
 
             dgvusuario.Columns[3].HeaderText = "CONTRASEÑA";
-            dgvusuario.Columns[3].Width = 100;
+            dgvusuario.Columns[3].Width = 100;           
 
-            dgvusuario.Columns[4].HeaderText = "genero";
+            dgvusuario.Columns[4].HeaderText = "CODIGO ROL";
             dgvusuario.Columns[4].Width = 50;
             dgvusuario.Columns[4].Visible = false;
 
-            dgvusuario.Columns[5].HeaderText = "CODIGO ROL";
-            dgvusuario.Columns[5].Width = 50;
-            dgvusuario.Columns[5].Visible = false;
+            dgvusuario.Columns[5].HeaderText = "ROL";
+            dgvusuario.Columns[5].Width = 220;
 
-            dgvusuario.Columns[6].HeaderText = "ROL";
-            dgvusuario.Columns[6].Width = 220;
+            dgvusuario.Columns[6].HeaderText = "GENERO";
+            dgvusuario.Columns[6].Width = 50;
+            dgvusuario.Columns[6].Visible = false;
 
             dgvusuario.Columns[7].HeaderText = "STATE";
             dgvusuario.Columns[7].Width = 50;
@@ -173,13 +173,13 @@ namespace Presentacion.Vista
                 using (nu)
                 {
                     nu.state = EntityState.Modificar;
-                    nu.Idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario                   
+                    nu.Idusuario = Convert.ToInt32(r.Cells[0].Value);//idusuario              
                     txtacceso.Text = r.Cells[1].Value.ToString();//codigo acceso
                     txtnom_usuario.Text = r.Cells[2].Value.ToString();//referencia
-                    txtpassword.Text = r.Cells[3].Value.ToString();//contrasena
-                    cbogenero.Text = r.Cells[4].Value.ToString();//genero
-                    cborol.SelectedValue = r.Cells[5].Value.ToString();//idrol
-                    cborol.Text = r.Cells[6].Value.ToString();//rol
+                    txtpassword.Text = r.Cells[3].Value.ToString();//contrasena                    
+                    cborol.SelectedValue = r.Cells[4].Value.ToString();//idrol
+                    cborol.Text = r.Cells[5].Value.ToString();//rol
+                    cbogenero.Text = r.Cells[6].Value.ToString();//genero
                     tabuser.SelectedIndex = 1;
                     Habilitar(true);
                     ValidateError.validate.Clear();
@@ -251,6 +251,8 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
 
         private void btnmaximizar_Click(object sender, EventArgs e)

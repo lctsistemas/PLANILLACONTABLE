@@ -62,7 +62,7 @@ namespace Presentacion.Vista
 
             dgvempleado.Columns[1].Visible = false;
             dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES";
-            dgvempleado.Columns[2].Width = 310;
+            dgvempleado.Columns[2].Width = 320;
 
             dgvempleado.Columns[3].Visible = false;
             dgvempleado.Columns[4].Visible = false;
@@ -267,7 +267,8 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocargo.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtnumdoc.Text) ||
                 string.IsNullOrEmpty(cbogenero.Text) || string.IsNullOrEmpty(txtremune.Text) || string.IsNullOrEmpty(cbotipopago.Text)
-                || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbotipo_moneda.Text)
+                || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)
+                || string.IsNullOrEmpty(cbotipo_moneda.Text)
                 || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text))
             {
                 ValidateChildren();
@@ -295,7 +296,7 @@ namespace Presentacion.Vista
             
             if (Validar_campos())
             {
-                Messages.M_warning("Ingrese todos los campos por favor");
+                //Messages.M_warning("Ingrese todos los campos por favor");
                 return;
             }
 
@@ -321,8 +322,15 @@ namespace Presentacion.Vista
             result = "";
             using (emple_contra)
             {
-                //EMPLEADO                
+                if (emple_contra.Existe(txtnumdoc.Text.Trim()))
+                {
+                    Messages.M_error("Código ya existe.");
+                    txtnumdoc.Focus();
+                    txtnumdoc.SelectAll();
+                    return;
+                }
 
+                //EMPLEADO                
                 emple_contra.Codigo = txtcodigo.Text.Trim();
                 emple_contra.Nom_emp = txtNombre.Text.Trim();
                 emple_contra.Ape_pat = txtApePat.Text.Trim();
@@ -362,21 +370,16 @@ namespace Presentacion.Vista
 
                 //bool valida = new ValidacionDatos(emple_contra).Validate();
 
- 
                 result = emple_contra.GuardarCambios();
 
-               if (result.Contains("ya se encuentra registrado"))
-               {
-                  Messages.M_warning(result);
-               }
-               else
-               {
+                if (result.Contains("ya se encuentra registrado"))
+                    Messages.M_warning(result);
+                else
+                {
                     mostrarEmpleado();
                     Messages.M_info(result);
                     limpiar();
-               }
-                              
-                
+                }
             }
         }
 
@@ -385,6 +388,10 @@ namespace Presentacion.Vista
             using (emple_contra) { emple_contra.state = EntityState.Guardar; }
             //Habilitar(true);
             limpiar();
+         
+
+
+
         }
 
         private void cmbtipdoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -498,7 +505,7 @@ namespace Presentacion.Vista
         private void btneliminar_Click(object sender, EventArgs e)
         {
             result = "";
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != 0 || dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 DialogResult re = Messages.M_question("¿Deseas Anular al colaborador?");
                 if (re == DialogResult.Yes)
@@ -536,12 +543,14 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            btnminimizar.Visible = true;
+            btnrestaurar.Visible = true;
             btnmaximizar.Visible = false;
 
         }

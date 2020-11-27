@@ -94,7 +94,7 @@ namespace Presentacion.Subvista
             if (dgvvista_emp.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
                 frmsucursal su = (frmsucursal)Owner;
-                //frmsucursal su = frmsucursal.Getinstancia();
+                
                 su.txtidempresa.Text = ro.Cells[4].Value.ToString();
                 su.txtcodigo_sucursal.Text = ro.Cells[5].Value.ToString();
                 su.txtrazon_social.Text = ro.Cells[6].Value.ToString();
@@ -107,11 +107,6 @@ namespace Presentacion.Subvista
         }
 
     
-        private void frmvista_empresa_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Dispose();
-        }
-
         private void btncerrards_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
