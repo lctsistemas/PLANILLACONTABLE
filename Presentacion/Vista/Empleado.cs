@@ -22,7 +22,7 @@ namespace Presentacion.Vista
 
         public frmempleado()
         {
-            InitializeComponent();          
+            InitializeComponent();       
             
             Mostrar_documento();
             Mostrar_cargo();
@@ -50,6 +50,9 @@ namespace Presentacion.Vista
 
             String[] estado = { "ACTIVO", "CESADO" };
             cboestado.Items.AddRange(estado);
+
+            String[] jornada = { "FULL-TIME", "PART-TIME" };
+            Cbojornada_laboral.Items.AddRange(jornada);
         }
 
         private void Tabla()
@@ -96,7 +99,7 @@ namespace Presentacion.Vista
             dgvempleado.Columns[31].Visible = false;
             dgvempleado.Columns[32].Visible = false;
             dgvempleado.Columns[33].Visible = false;
-            //dgvempleado.Columns[34].Visible = false;
+            dgvempleado.Columns[34].Visible = false;
         }
 
         private void Habilitar_doc(bool v)
@@ -198,7 +201,7 @@ namespace Presentacion.Vista
             {
                 emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
                 dgvempleado.DataSource = emple_contra.listar_empleado();
-                lblcantidad_registro.Text = "Registro:  " + dgvempleado.RowCount;
+                lblcantidad_registro.Text = "Total registro:  " + dgvempleado.RowCount;
             }
         }
 
@@ -334,6 +337,7 @@ namespace Presentacion.Vista
                 emple_contra.Codigo_regimen = Convert.ToInt32(cbore_pensionario.SelectedValue);
                 emple_contra.Id_doc = Convert.ToInt32(cbotipo_documento.SelectedValue);
                 emple_contra.Id_cargo = Convert.ToInt32(cbocargo.SelectedValue);
+                emple_contra.Jornada_laboral = Cbojornada_laboral.SelectedItem.ToString();
                 emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
 
                 //CONTRATO               
@@ -496,7 +500,7 @@ namespace Presentacion.Vista
             result = "";
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != 0 || dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                DialogResult re = Messages.M_question("¿Deseas eliminar al empleado?");
+                DialogResult re = Messages.M_question("¿Deseas Anular al colaborador?");
                 if (re == DialogResult.Yes)
                 {
                     using (emple_contra)
@@ -504,7 +508,10 @@ namespace Presentacion.Vista
                         emple_contra.state = EntityState.Remover;
                         emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
                         result = emple_contra.GuardarCambios();
-                        Messages.M_info(result);
+                        if (result.Contains("No puedes Anular"))
+                            Messages.M_error(result);
+                        else
+                            Messages.M_info(result);
                         btnguardar.Enabled = false;
                     }
                 }
@@ -573,6 +580,7 @@ namespace Presentacion.Vista
                     cbotipo_documento.Text = dr["nombre"].ToString();
                     cbocargo.SelectedValue = dr["id_cargo"].ToString();
                     cbocargo.Text = dr["nombre_cargo"].ToString();
+                    Cbojornada_laboral.Text = dr["jornada_laboral"].ToString();
                     cbobanco.SelectedValue = dr["id_banco"].ToString();
                     cbobanco.Text = dr["nombre_banco"].ToString();
                     cbotipocontra.SelectedValue = dr["id_tipocontrato"].ToString();

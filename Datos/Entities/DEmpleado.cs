@@ -21,6 +21,7 @@ namespace Datos.Entities
         private Int32 id_doc;
         private Int32 id_cargo;
         private Int32 id_em_maestra;
+        private String jornada_laboral;
         public String mensaje { get; set; }
 
         //METODOS GET AND SET
@@ -40,6 +41,7 @@ namespace Datos.Entities
         public int Id_doc { get { return id_doc; } set { id_doc = value; } }
         public int Id_cargo { get { return id_cargo; } set { id_cargo = value; } }
         public int Id_emp_maestra { get { return id_em_maestra; } set { id_em_maestra = value; } }
+        public string Jornada_laboral{ get { return jornada_laboral; } set { jornada_laboral = value; } }
 
         public DEmpleado()
         {

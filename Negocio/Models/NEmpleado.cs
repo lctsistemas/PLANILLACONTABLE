@@ -27,10 +27,10 @@ namespace Negocio.Models
         public String Estado { get; set; }
         public Int32 Codigo_regimen { get; set; }
         public Int32 Id_doc { get; set; }
-        public Int32 Id_cargo { get; set; }
+        public Int32 Id_cargo { get; set; }        
         public Int32 Id_emp_maestra { get; set; }//
         public String Empresa { get; set; }//
-
+        public string Jornada_laboral { get; set; }
         //METODOS SET AND GET DE CONTRATO
         public Int32 cid_contrato { get; set; }
        // public Int32 cid_empleado { get; set; }//eliminar        
@@ -65,6 +65,7 @@ namespace Negocio.Models
             mensaje = "";
             try
             {
+                //estas instancias se puede simplificar, implementar eso.
                 DEmpleado emp = new DEmpleado();
                 Dcontrato dcon = new Dcontrato();
 
@@ -84,6 +85,7 @@ namespace Negocio.Models
                 emp.Id_doc = Id_doc;
                 emp.Id_cargo = Id_cargo;
                 emp.Id_emp_maestra = Id_emp_maestra;
+                emp.Jornada_laboral = Jornada_laboral;
 
                 //METODOS DE CONTRATO
                 dcon.Id_contrato = cid_contrato;
@@ -120,7 +122,7 @@ namespace Negocio.Models
 
                     case EntityState.Remover:
                         Rempleado.Delete(emp);
-                        mensaje = "¡Eliminado correctamente!";
+                        mensaje = emp.mensaje;
                         break;
 
                     default:

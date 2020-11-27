@@ -102,7 +102,7 @@ GO
 
 
 /*        PROCEDIMIENTO ALMACENADO PARA EMPLEADO      */
-ALTER PROC SP_AGR_EMPL(
+CREATE PROC SP_ADD_EMPLEADO(
 @codigo varchar(20),--sera número de documento.
 @nom_emp varchar(50),
 @ape_pat varchar(50),
@@ -118,26 +118,29 @@ ALTER PROC SP_AGR_EMPL(
 @id_documento int,
 @id_cargo int,
 @id_empresa_maestra int,
+@jornada_laboral varchar(11),
 @mensaje varchar(100) output)
 AS BEGIN 
-	DECLARE @empleado int
-	SET @empleado=(SELECT count(e.id_empleado) FROM dbo.Empleado e)
-	IF(@empleado=0)	
-		SET @empleado=1	
-	ELSE
-		SET @empleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
-
-IF(EXISTS(SELECT e.numero_documento FROM Empleado e WHERE e.numero_documento=@num_doc))
-	BEGIN 
-	SET @mensaje ='El número de documento ('+@num_doc+') ya se encuentra registrado'
-	END
-ELSE 
+DECLARE @RazonSocial VARCHAR(50)
+SET @RazonSocial =(SELECT em.razon_social from Empleado e JOIN  Empresa_maestra em ON (e.id_em_maestra=em.id_em_maestra) 
+WHERE e.estado='ACTIVO' AND e.codigo=@codigo)
+IF(@RazonSocial != '')
+	PRINT 'Colaborador está (ACTIVO) EN: '+ @RazonSocial
+ELSE 		
 	BEGIN
+	DECLARE @idempleado int
+	SET @idempleado=(SELECT count(e.id_empleado) FROM dbo.Empleado e)
+	IF(@idempleado=0)	
+		SET @idempleado=1	
+	ELSE
+		SET @idempleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
+
 		INSERT INTO dbo.Empleado(id_empleado,codigo,nombre_empleado, ape_paterno, ape_materno, fecha_nacimiento, nacionalidad, 
-		tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra, eliminado_estado) 
-		VALUES (@empleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
-		@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, 'NO ANULADO')
-		SET @mensaje= '¡Empleado registrado correctamente!'
+		tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra,
+		jornada_laboral ,eliminado_estado) 
+		VALUES (@idempleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
+		@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, @jornada_laboral, 'NO ANULADO')
+		SET @mensaje= '¡Colaborador registrado!'
 	END	
 END
 GO
@@ -155,6 +158,7 @@ ALTER PROC SP_UPDATE_EMPLEADO
 @telefono varchar(15),
 @num_doc varchar(20),
 @estado varchar(20),
+@jornada_laboral varchar(11),
 @codigo_regimen int,
 @id_documento int,
 @id_cargo int,
@@ -162,21 +166,30 @@ ALTER PROC SP_UPDATE_EMPLEADO
 AS BEGIN 
  UPDATE Empleado SET codigo=@codigo, nombre_empleado=@nom_emp, ape_paterno=@ape_pat, ape_materno=@ape_mat,
  fecha_nacimiento=@fec_nac, nacionalidad=@nacionalidad, tipo_genero=@tip_ge, direccion=@direccion,
- telefono=@telefono, numero_documento=@num_doc, estado=@estado ,codigo_regimen=@codigo_regimen,
+ telefono=@telefono, numero_documento=@num_doc, estado=@estado, jornada_laboral=@jornada_laboral, codigo_regimen=@codigo_regimen,
  id_documento=@id_documento, id_cargo=@id_cargo WHERE id_empleado=@id_empleado
 END
 GO
 
-ALTER PROC SP_ELIM_EMPLEADO -- CORREGIR ESTE PROCE. URGENTE DE ACUERDO A VALIDACION
-(@id_emp int)
+
+
+ALTER PROC SP_ANULAR_EMPLEADO
+(@id_emp int,
+@mensaje varchar(100) OUTPUT)
 AS BEGIN 
+IF(EXISTS(SELECT ds.id_empleado FROM Det_subsidios ds JOIN Empleado e ON (ds.id_empleado=e.id_empleado) 
+WHERE ds.id_empleado=@id_emp))
+SET @mensaje='No puedes Anular, Otra tabla hace refencia al colaborador'
+ELSE
+BEGIN
 UPDATE dbo.Empleado SET eliminado_estado='ANULADO' WHERE id_empleado=@id_emp;
-DELETE from Contrato where id_empleado=@id_emp;
+SET  @mensaje='!Colaborador Anulado!'
+END
 END
 GO
 
 
-ALTER PROC SP_SHOW_EMP --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
+CREATE PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 @codigo_empresa int
 AS BEGIN 
 SELECT e.id_empleado, e.ape_paterno, e.ape_materno, e.nombre_empleado,
@@ -191,7 +204,7 @@ ALTER PROC SP_SHOW_EMPLEADO_CONTRATO
 AS BEGIN 
 SELECT e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
 e.nacionalidad, e.tipo_genero, e.direccion, e.telefono, e.numero_documento, e.estado, e.codigo_regimen, 
-r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, co.id_banco, b.nombre_banco,
+r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, e.jornada_laboral, co.id_banco, b.nombre_banco,
 co.id_tipocontrato, ti.tiempo_contrato, co.fecha_inicio, co.fecha_fin, co.numero_cuenta, 
 co.remuneracion_basica, co.asignacion_familiar, co.id_rsalud, re.descripcion_rsalud, co.tipo_pago, co.periodicidad, 
 co.tipo_moneda, co.cuenta_cts, co.cussp 
@@ -203,13 +216,10 @@ WHERE e.id_empleado=@codigo_empleado
 END
 GO
 
-
 select * from Empleado
 select * from Contrato
-has insertatdo mal
-asu cuando he registrado 
-uhm y como hago en ese caso
 
+GO
 /*      CONTRATO SEGUN EMPLEADO REGISTRADO     */
 ALTER PROCEDURE SP_INSERT_CONTRATO(
 @id_banco int,
