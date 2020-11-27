@@ -167,12 +167,12 @@ namespace Presentacion
                            
         private void btnbanco_Click(object sender, EventArgs e)
         {
-            OpenForm<Banco>();
+            OpenForm<Banco2>();
         }
 
         private void btntipo_contrato_Click(object sender, EventArgs e)
         {
-            OpenForm<TipoContrato>();
+            OpenForm<TipoContrato2>();
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
