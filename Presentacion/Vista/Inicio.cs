@@ -290,5 +290,17 @@ namespace Login_inicio
             UserCache.Idperiodo=Getidperiodo();
             UserCache.Periodo = numeric_periodo.Value.ToString();
         }
+
+        private void Cbouser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtuser.Text = Cbouser.SelectedItem.ToString();
+            txtuser.ForeColor = Color.LightGray;
+        }
+
+        private void cboroles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtroles.Text = cboroles.SelectedItem.ToString();
+            txtroles.ForeColor = Color.LightCyan;
+        }
     }
 }
