@@ -28,8 +28,8 @@ namespace Presentacion.Vista
         {
             using (np)
             {
-                np.Id_empresam = UserCache.Codigo_empresa;
-                np.Id_periodo = UserCache.Idperiodo;
+                np.Id_empresam = 1; //UserCache.Codigo_empresa;
+                np.Id_periodo = 2; //UserCache.Idperiodo;
                 dgvplanilla.DataSource = np.Getall();
             }
         }

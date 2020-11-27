@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnnuevo = new System.Windows.Forms.ToolStripButton();
+            this.btnguardar = new System.Windows.Forms.ToolStripButton();
+            this.btnedit = new System.Windows.Forms.ToolStripButton();
+            this.btnborrar = new System.Windows.Forms.ToolStripButton();
+            this.btnbuscar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtdescSubsi = new System.Windows.Forms.TextBox();
@@ -46,11 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnnuevo = new System.Windows.Forms.ToolStripButton();
-            this.btnguardar = new System.Windows.Forms.ToolStripButton();
-            this.btnedit = new System.Windows.Forms.ToolStripButton();
-            this.btnbuscar = new System.Windows.Forms.ToolStripButton();
-            this.btnborrar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
@@ -66,9 +66,56 @@
             this.btnbuscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(726, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(742, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnnuevo
+            // 
+            this.btnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
+            this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnnuevo.Name = "btnnuevo";
+            this.btnnuevo.Size = new System.Drawing.Size(62, 22);
+            this.btnnuevo.Text = "Nuevo";
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.Save_37110;
+            this.btnguardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(23, 22);
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
+            // btnedit
+            // 
+            this.btnedit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnedit.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
+            this.btnedit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(23, 22);
+            this.btnedit.Text = "Editar";
+            // 
+            // btnborrar
+            // 
+            this.btnborrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnborrar.Image = global::Presentacion.Properties.Resources.borrar3;
+            this.btnborrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnborrar.Name = "btnborrar";
+            this.btnborrar.Size = new System.Drawing.Size(23, 22);
+            this.btnborrar.Text = "Eliminar";
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnbuscar.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.btnbuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(23, 22);
+            this.btnbuscar.Text = "Buscar";
             // 
             // panel1
             // 
@@ -144,29 +191,29 @@
             this.dgvsubsidio.AllowUserToAddRows = false;
             this.dgvsubsidio.AllowUserToResizeColumns = false;
             this.dgvsubsidio.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            this.dgvsubsidio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            this.dgvsubsidio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvsubsidio.BackgroundColor = System.Drawing.SystemColors.MenuBar;
             this.dgvsubsidio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvsubsidio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvsubsidio.ColumnHeadersHeight = 35;
             this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(242)))), ((int)(((byte)(248)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvsubsidio.EnableHeadersVisualStyles = false;
             this.dgvsubsidio.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.dgvsubsidio.Location = new System.Drawing.Point(12, 146);
@@ -174,12 +221,12 @@
             this.dgvsubsidio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvsubsidio.RowHeadersWidth = 25;
             this.dgvsubsidio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvsubsidio.Size = new System.Drawing.Size(697, 264);
             this.dgvsubsidio.TabIndex = 86;
             this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
@@ -246,59 +293,11 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Descripcion corta";
             // 
-            // btnnuevo
-            // 
-            this.btnnuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
-            this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.Size = new System.Drawing.Size(23, 22);
-            this.btnnuevo.Text = "Nuevo";
-            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.Save_37110;
-            this.btnguardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(23, 22);
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // btnedit
-            // 
-            this.btnedit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnedit.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
-            this.btnedit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(23, 22);
-            this.btnedit.Text = "Editar";
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnbuscar.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
-            this.btnbuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(23, 22);
-            this.btnbuscar.Text = "Buscar";
-            // 
-            // btnborrar
-            // 
-            this.btnborrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnborrar.Image = global::Presentacion.Properties.Resources.borrar3;
-            this.btnborrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnborrar.Name = "btnborrar";
-            this.btnborrar.Size = new System.Drawing.Size(23, 22);
-            this.btnborrar.Text = "Eliminar";
-            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
-            // 
             // frmsubsidios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 450);
+            this.ClientSize = new System.Drawing.Size(742, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmsubsidios";
