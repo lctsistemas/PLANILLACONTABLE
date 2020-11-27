@@ -22,6 +22,7 @@ namespace Login_inicio
             //Tooltip.Title(lblminimizar,"Minimizar",false);
         }
 
+        //PARA USER
         private void txtuser_Enter(object sender, EventArgs e)
         {
             if (txtuser.Text.Equals("USUARIO"))
@@ -30,7 +31,6 @@ namespace Login_inicio
                 txtuser.ForeColor = Color.LightGray;
             }
         }
-
         private void txtuser_Leave(object sender, EventArgs e)
         {
             //cuando sale del foco
@@ -41,6 +41,26 @@ namespace Login_inicio
             }
         }
 
+        //PARA ROLES
+        private void txtroles_Enter(object sender, EventArgs e)
+        {
+            if (txtroles.Text.Trim().Equals("ROL"))
+            {
+                txtroles.Text = String.Empty;
+                txtroles.ForeColor = Color.LightGray;
+            }
+        }
+
+        private void txtroles_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtroles.Text))
+            {
+                txtroles.Text = "ROL";
+                txtroles.ForeColor = Color.DimGray;
+            }
+        }
+
+        //PARA PASSWORD
         private void txtpass_Enter(object sender, EventArgs e)
         {
             if (txtpass.Text.Equals("CONTRASEÑA"))
@@ -231,7 +251,7 @@ namespace Login_inicio
 
         private void lblcerrar_MouseLeave(object sender, EventArgs e)
         {
-            lblcerrar.BackColor = Color.FromArgb(15, 15, 15);
+            lblcerrar.BackColor = Color.FromArgb(33, 33, 33);
             lblcerrar.ForeColor = Color.DimGray;
         }
 
@@ -248,7 +268,7 @@ namespace Login_inicio
 
         private void lblminimizar_MouseLeave(object sender, EventArgs e)
         {
-            lblminimizar.BackColor = Color.FromArgb(15, 15, 15);
+            lblminimizar.BackColor = Color.FromArgb(33, 33, 33);
             lblminimizar.ForeColor = Color.DimGray;
         }
 
@@ -302,5 +322,7 @@ namespace Login_inicio
             txtroles.Text = cboroles.SelectedItem.ToString();
             txtroles.ForeColor = Color.LightCyan;
         }
+
+        
     }
 }
