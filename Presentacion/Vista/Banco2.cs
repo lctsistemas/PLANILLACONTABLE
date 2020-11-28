@@ -124,6 +124,10 @@ namespace Presentacion.Vista
         {
             dgvsubsidio.Columns["dgvtxtidbanco"].Visible = false;
             dgvsubsidio.Columns["dgvtxtbanco"].ReadOnly = false;
+
+            dgvsubsidio.Columns[4].HeaderText = "entidad";
+            dgvsubsidio.Columns[4].Width = 100;
+            dgvsubsidio.Columns[4].Visible = false;
         }
 
         private void lblbanco_MouseDown(object sender, MouseEventArgs e)

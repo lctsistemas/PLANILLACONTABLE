@@ -34,19 +34,11 @@ namespace Presentacion.Vista
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.dgvempleado = new System.Windows.Forms.DataGridView();
             this.lblcantidad_registro = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
@@ -155,20 +147,12 @@ namespace Presentacion.Vista
             this.dgvempleado.AllowUserToAddRows = false;
             this.dgvempleado.AllowUserToDeleteRows = false;
             this.dgvempleado.AllowUserToOrderColumns = true;
-<<<<<<< HEAD
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvempleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
-=======
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvempleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvempleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.dgvempleado.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvempleado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,33 +171,12 @@ namespace Presentacion.Vista
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvempleado.DefaultCellStyle = dataGridViewCellStyle8;
-=======
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvempleado.ColumnHeadersHeight = 40;
-            this.dgvempleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvempleado.DefaultCellStyle = dataGridViewCellStyle13;
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.dgvempleado.EnableHeadersVisualStyles = false;
             this.dgvempleado.Location = new System.Drawing.Point(4, 78);
             this.dgvempleado.MultiSelect = false;
             this.dgvempleado.Name = "dgvempleado";
             this.dgvempleado.ReadOnly = true;
             this.dgvempleado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -226,20 +189,6 @@ namespace Presentacion.Vista
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
             this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle10;
-=======
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvempleado.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvempleado.RowHeadersWidth = 25;
-            this.dgvempleado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            this.dgvempleado.RowsDefaultCellStyle = dataGridViewCellStyle15;
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.dgvempleado.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvempleado.Size = new System.Drawing.Size(274, 445);
             this.dgvempleado.TabIndex = 18;

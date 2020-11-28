@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.lbltotal = new System.Windows.Forms.Label();
             this.txtdescrip = new System.Windows.Forms.TextBox();
             this.txtnom_cargo = new System.Windows.Forms.TextBox();
@@ -48,11 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
-=======
-            this.btnmaximizar = new System.Windows.Forms.PictureBox();
-            this.btnrestaurar = new System.Windows.Forms.PictureBox();
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.dgvcargo = new System.Windows.Forms.DataGridView();
             this.btnnuevo = new System.Windows.Forms.Button();
@@ -149,11 +137,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
-<<<<<<< HEAD
             this.pictureBox1.Location = new System.Drawing.Point(10, 263);
-=======
-            this.pictureBox1.Location = new System.Drawing.Point(10, 260);
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(34, 21);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,11 +152,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-<<<<<<< HEAD
             this.groupBox1.Location = new System.Drawing.Point(10, 79);
-=======
-            this.groupBox1.Location = new System.Drawing.Point(10, 76);
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(427, 172);
             this.groupBox1.TabIndex = 18;
@@ -261,28 +241,14 @@
             this.dgvcargo.AllowUserToAddRows = false;
             this.dgvcargo.AllowUserToDeleteRows = false;
             this.dgvcargo.AllowUserToOrderColumns = true;
-<<<<<<< HEAD
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvcargo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-=======
-            this.dgvcargo.AllowUserToResizeColumns = false;
-            this.dgvcargo.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvcargo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
->>>>>>> 575fe8e9d07e9f60285f09959581323e5a341a30
             this.dgvcargo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvcargo.BackgroundColor = System.Drawing.Color.White;
             this.dgvcargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcargo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvcargo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcargo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            
             this.dgvcargo.ColumnHeadersHeight = 27;
             this.dgvcargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -300,13 +266,7 @@
             this.dgvcargo.Name = "dgvcargo";
             this.dgvcargo.ReadOnly = true;
             this.dgvcargo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcargo.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            
             this.dgvcargo.RowHeadersWidth = 25;
             this.dgvcargo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvcargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

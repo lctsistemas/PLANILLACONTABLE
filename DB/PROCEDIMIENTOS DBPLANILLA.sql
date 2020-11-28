@@ -189,7 +189,7 @@ END
 GO
 
 
-ALTER PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
+CREATE PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 @codigo_empresa int
 AS BEGIN 
 SELECT e.id_empleado, e.codigo, e.ape_paterno, e.ape_materno, e.nombre_empleado,
@@ -526,7 +526,7 @@ GO
 
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol, genero FROM 
+SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol, u.genero FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
