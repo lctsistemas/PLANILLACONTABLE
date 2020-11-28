@@ -283,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 252);
+            this.ClientSize = new System.Drawing.Size(464, 252);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.label3);
@@ -291,6 +291,7 @@
             this.Controls.Add(this.txttotaldias);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvTcontrato);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TipoContrato2";
             this.Text = "TipoContrato2";
             this.panel2.ResumeLayout(false);
