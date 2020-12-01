@@ -8,13 +8,12 @@ using Presentacion.Helps;
 
 namespace Presentacion
 {
-    public partial class Main_Principal : Form
+    public partial class FrmMain_principal : Form
     {
-        public Main_Principal()
+        public FrmMain_principal()
         {
             InitializeComponent();
-            Tooltip.Title(btncerrar, "Cerrar sesión", false);
-            Tooltip.Title(pictmenu, "Menu", false);
+           
 
         }
         //para maximizar toda la pantalla
@@ -24,23 +23,28 @@ namespace Presentacion
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
 
-        //CARGAR DATOS AL MEMORY CACHE.
+        //CARGAR DATOS DE MEMORY CACHE.
         private void CargarDatos()
         {
+            if (UserCache.Genero.Equals("F"))
+                pictuser.Image = Properties.Resources.administradora;
             lblusuario.Text = UserCache.NombreUser;
             lblrol.Text = UserCache.RolUser;
-            lblempresa.Text = UserCache.Empresa_Sucursal + ":  " + UserCache.Empresa;
-            lbllocalidad.Text ="LOCALIDAD:  " + UserCache.Localidad_empresa;
+            lblempresa.Text = UserCache.Empresa_Sucursal + ":  " + UserCache.Empresa + "  |  LOCALIDAD: "+ UserCache.Localidad_empresa;
+            lblruc.Text = UserCache.Ruc;           
             lblperiodo.Text = "PERIODO:  " + UserCache.Periodo;
             lblid_periodo.Text = "id periodo: " + UserCache.Idperiodo.ToString();
             lblidempresa.Text = "id empresa: " + UserCache.Codigo_empresa.ToString();
         }
         private void Main_Principal_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            Tooltip.Title(btncerrar, "Cerrar sesión", false);
+            Tooltip.Title(pictmenu, "Menu", false);
             hideSubmenu();
             fullScreen();
             CargarDatos();
-            tlblhora.Text = DateTime.Now.ToString("HH : mm : ss");
+            //tlblhora.Text = DateTime.Now.ToString("HH : mm : ss");
         }
 
         private void hideSubmenu()
@@ -226,6 +230,13 @@ namespace Presentacion
         private void btncalculo_Click(object sender, EventArgs e)
         {
             OpenFormFill<FrmPlanillaMensual2>();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string fecha = DateTime.Now.ToLongDateString();
+            string hora = DateTime.Now.ToLongTimeString();
+            tlblhora.Text = fecha + "   |   " + hora;
         }
     }
 }

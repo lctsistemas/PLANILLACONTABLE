@@ -62,18 +62,19 @@
             // 
             this.txtuser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuser.ForeColor = System.Drawing.Color.DimGray;
             this.txtuser.Location = new System.Drawing.Point(67, 113);
             this.txtuser.Multiline = true;
             this.txtuser.Name = "txtuser";
-            this.txtuser.ReadOnly = true;
-            this.txtuser.Size = new System.Drawing.Size(424, 25);
+            this.txtuser.Size = new System.Drawing.Size(424, 26);
             this.txtuser.TabIndex = 1;
             this.txtuser.Text = "USUARIO";
             this.txtuser.WordWrap = false;
             this.txtuser.TextChanged += new System.EventHandler(this.txtuser_TextChanged);
             this.txtuser.Enter += new System.EventHandler(this.txtuser_Enter);
+            this.txtuser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtuser_KeyPress);
             this.txtuser.Leave += new System.EventHandler(this.txtuser_Leave);
             // 
             // txtpass
@@ -85,7 +86,7 @@
             this.txtpass.Location = new System.Drawing.Point(67, 277);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(442, 20);
-            this.txtpass.TabIndex = 2;
+            this.txtpass.TabIndex = 3;
             this.txtpass.Text = "CONTRASEÑA";
             this.txtpass.TextChanged += new System.EventHandler(this.txtpass_TextChanged);
             this.txtpass.Enter += new System.EventHandler(this.txtpass_Enter);
@@ -116,7 +117,7 @@
             this.btnlogin.Location = new System.Drawing.Point(27, 536);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(482, 40);
-            this.btnlogin.TabIndex = 3;
+            this.btnlogin.TabIndex = 4;
             this.btnlogin.Text = "&ACCEDER";
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
@@ -156,11 +157,11 @@
             // 
             this.lblerror.AutoSize = true;
             this.lblerror.BackColor = System.Drawing.Color.Transparent;
-            this.lblerror.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerror.ForeColor = System.Drawing.Color.Crimson;
-            this.lblerror.Location = new System.Drawing.Point(112, 499);
+            this.lblerror.Location = new System.Drawing.Point(31, 496);
             this.lblerror.Name = "lblerror";
-            this.lblerror.Size = new System.Drawing.Size(36, 17);
+            this.lblerror.Size = new System.Drawing.Size(37, 17);
             this.lblerror.TabIndex = 10;
             this.lblerror.Text = "error";
             this.lblerror.Visible = false;
@@ -171,10 +172,11 @@
             this.dgvlogin.AllowUserToDeleteRows = false;
             this.dgvlogin.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvlogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.dgvlogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvlogin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvlogin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
@@ -200,10 +202,10 @@
             this.dgvlogin.ReadOnly = true;
             this.dgvlogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvlogin.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvlogin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvlogin.Size = new System.Drawing.Size(482, 171);
@@ -244,18 +246,13 @@
             this.Cbouser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Cbouser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cbouser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cbouser.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cbouser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbouser.ForeColor = System.Drawing.Color.White;
             this.Cbouser.FormattingEnabled = true;
-            this.Cbouser.ItemHeight = 17;
-            this.Cbouser.Items.AddRange(new object[] {
-            "ELEMENTO 1",
-            "ELEMENTO 2",
-            "ELEMENTO 3",
-            "ELEMENTO 4"});
+            this.Cbouser.ItemHeight = 18;
             this.Cbouser.Location = new System.Drawing.Point(27, 113);
             this.Cbouser.Name = "Cbouser";
-            this.Cbouser.Size = new System.Drawing.Size(482, 25);
+            this.Cbouser.Size = new System.Drawing.Size(482, 26);
             this.Cbouser.TabIndex = 18;
             this.Cbouser.SelectedIndexChanged += new System.EventHandler(this.Cbouser_SelectedIndexChanged);
             // 
@@ -264,9 +261,10 @@
             this.cboroles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.cboroles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cboroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboroles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboroles.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboroles.ForeColor = System.Drawing.Color.White;
             this.cboroles.FormattingEnabled = true;
+            this.cboroles.ItemHeight = 18;
             this.cboroles.Items.AddRange(new object[] {
             "ELEMENTO 1",
             "ELEMENTO 2",
@@ -274,7 +272,7 @@
             "ELEMENTO 4"});
             this.cboroles.Location = new System.Drawing.Point(27, 195);
             this.cboroles.Name = "cboroles";
-            this.cboroles.Size = new System.Drawing.Size(482, 25);
+            this.cboroles.Size = new System.Drawing.Size(482, 26);
             this.cboroles.TabIndex = 18;
             this.cboroles.SelectedIndexChanged += new System.EventHandler(this.cboroles_SelectedIndexChanged);
             // 
@@ -298,8 +296,9 @@
             this.txtroles.Location = new System.Drawing.Point(67, 195);
             this.txtroles.Multiline = true;
             this.txtroles.Name = "txtroles";
-            this.txtroles.Size = new System.Drawing.Size(424, 25);
-            this.txtroles.TabIndex = 21;
+            this.txtroles.ReadOnly = true;
+            this.txtroles.Size = new System.Drawing.Size(424, 26);
+            this.txtroles.TabIndex = 2;
             this.txtroles.Text = "ROL";
             this.txtroles.Enter += new System.EventHandler(this.txtroles_Enter);
             this.txtroles.Leave += new System.EventHandler(this.txtroles_Leave);

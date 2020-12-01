@@ -73,6 +73,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administradora {
+            get {
+                object obj = ResourceManager.GetObject("administradora", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar {
             get {
                 object obj = ResourceManager.GetObject("agregar", resourceCulture);
@@ -586,6 +596,16 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap errorx {
             get {
                 object obj = ResourceManager.GetObject("errorx", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gerente {
+            get {
+                object obj = ResourceManager.GetObject("gerente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

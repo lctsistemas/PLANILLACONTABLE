@@ -18,8 +18,33 @@ namespace Login_inicio
         public frminicio()
         {
             InitializeComponent();
-            //Tooltip.Title(lblcerrar,"Cerrar",false);
-            //Tooltip.Title(lblminimizar,"Minimizar",false);
+            Fill_user();
+            Fill_rol();
+            
+        }
+
+        //LLAMAR USUARIO PARA CARGAR EN COMBOBOX
+        private void Fill_user()
+        {
+            using (Nusuario nusu = new Nusuario())               
+            {
+                Cbouser.DataSource = nusu.Getall();
+                Cbouser.DisplayMember = "nombre_refe";
+                Cbouser.ValueMember = "idusuario";
+                Cbouser.Text = null;
+            }
+        }
+
+        //LLAMAR ROL PARA CARGAR EN COMBOBOX
+        private void Fill_rol()
+        {
+            using (Nrol nr=new Nrol())
+            {
+                cboroles.DataSource = nr.Getall();
+                cboroles.DisplayMember = "nombre_rol";
+                cboroles.ValueMember = "idrol";
+                cboroles.Text = null;
+            }
         }
 
         //PARA USER
@@ -90,79 +115,66 @@ namespace Login_inicio
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        //PROPIEDADES DE LISTVIEW
-        private void Properties_listview()
-        {
-            /*lstlista.Columns.Clear();
-            lstlista.Items.Clear();
-            lstlista.View = View.Details;
-            lstlista.GridLines = true;
-            
-            lstlista.FullRowSelect = false;
-            lstlista.Scrollable = true;
-            lstlista.HideSelection = false;*/
-
-            //agregamos columnas
-
-            /*lstlista.Columns.Add("SUCURSAL",200,HorizontalAlignment.Left);
-            lstlista.Columns.Add("EMPRESA",200,HorizontalAlignment.Left);*/
-        }
-
+       
         private void btnlogin_Click(object sender, EventArgs e)
         {
             if (txtuser.Text != "USUARIO")
             {
-                if (txtpass.Text != "CONTRASEÑA")
+                if (txtroles.Text != "ROL")
                 {
-                    using (nlo = new Nlogin())
+                    if (txtpass.Text != "CONTRASEÑA")
                     {
-                        lis_empresa = new List<object>();
-                        bool validarLogin = nlo.Login(txtuser.Text.Trim(), txtpass.Text.Trim());
-                        if (validarLogin)
+                        using (nlo = new Nlogin())
                         {
-                            if (nlo.Business(lis_empresa))
+                            lis_empresa = new List<object>();
+                            bool validarLogin = nlo.Login(txtuser.Text.Trim(), txtroles.Text.Trim(), txtpass.Text.Trim());
+                            if (validarLogin)
                             {
-                                dgvlogin.DataSource = lis_empresa;
-                                Ocultarcolumna();
-                                BloquearAcceso(true);
-                                if (activo)
+                                if (nlo.Business(lis_empresa))
                                 {
-                                    Main_Principal mainmenu = new Main_Principal();
-                                    mainmenu.Show();
-                                    mainmenu.FormClosed += Logout;//revisar
-                                    this.Hide();
-                                }
-                            }
-                            else
-                            {
-                                if (dgvlogin.Rows.Count <= 0)
-                                    Messages.M_warning("No se le asigno empresas. \n Por favor consulte con el\n Administrador");
-                                else
+                                    dgvlogin.DataSource = lis_empresa;
+                                    Ocultarcolumna();
+                                    BloquearAcceso(true);
+                                    if (activo)
+                                    {
+                                        FrmMain_principal mainmenu = new FrmMain_principal();
+                                        mainmenu.Show();
+                                        mainmenu.FormClosed += Logout;//revisar
+                                        this.Hide();
+                                    }
+                                }else
+                                {
                                     dgvlogin.DataSource = null;
+                                    if (dgvlogin.Rows.Count <= 0)
+                                        Messages.M_warning("No se le asigno empresas. \n Por favor consulte con el \n Administrador");                                    
+                                }
+
+                                msgError("");
+                            }else
+                            {
+                                msgError("Datos incorrecto. \n Por favor Intente de Nuevo");
+                                txtpass.Text = "CONTRASEÑA";
+                                txtpass.UseSystemPasswordChar = false;
+                                txtuser.Focus();
                             }
 
-                            msgError("");
                         }
-                        else
-                        {
-                            msgError("Incorrecto Nombre Usuario o Contraseña. \n Por favor Intente de Nuevo. ");
-                            txtpass.Text = "CONTRASEÑA";
-                            txtpass.UseSystemPasswordChar = false;
-                            txtuser.Focus();
-                        }
+
                     }
+                    else
+                        msgError("Por favor ingrese \n contraseña");
                 }
                 else
-                    msgError("please enter password");
+                    msgError("Por favor seleccione \n un rol");
             }
             else
-                msgError("please enter username");
+                msgError("Por favor seleccione \n un usuario");
         }
 
 
         private void msgError(string msg)
         {
-            lblerror.Text = "  " + msg;
+            lblerror.Text = " " +msg;
             lblerror.Visible = true;
         }
 
@@ -179,13 +191,14 @@ namespace Login_inicio
         }
 
         private void Ocultarcolumna()
-        {
-            dgvlogin.Columns[0].Width = 200;
-            dgvlogin.Columns[3].Width = 200;
-            dgvlogin.Columns[1].Visible = false;
-            dgvlogin.Columns[2].Visible = false;
-            dgvlogin.Columns[4].Visible = false;
-            dgvlogin.Columns[5].Visible = false;
+        {            
+            dgvlogin.Columns[1].Width = 241;//nombre empresa.
+            dgvlogin.Columns[4].Width = 241;//nombre sucursal.
+            dgvlogin.Columns[0].Visible = false;//ruc
+            dgvlogin.Columns[2].Visible = false;//codigo empresa
+            dgvlogin.Columns[3].Visible = false;//localidad empresa
+            dgvlogin.Columns[5].Visible = false;//codigo sucursal
+            dgvlogin.Columns[6].Visible = false;//localidad sucursal
         }
 
         private void frminicio_FormClosing(object sender, FormClosingEventArgs e)
@@ -215,9 +228,10 @@ namespace Login_inicio
             activo = false;
             if (dgvlogin.Columns[e.ColumnIndex].Name == "EMPRESA")
             {
-                UserCache.Empresa = dgvlogin.CurrentRow.Cells[0].Value.ToString();
-                UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[1].Value);
-                UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[2].Value.ToString();
+                UserCache.Ruc = dgvlogin.CurrentRow.Cells[0].Value.ToString();
+                UserCache.Empresa = dgvlogin.CurrentRow.Cells[1].Value.ToString();
+                UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[2].Value);
+                UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[3].Value.ToString();
                 UserCache.Periodo = numeric_periodo.Value.ToString();
                 UserCache.Idperiodo = Getidperiodo();
                 UserCache.Empresa_Sucursal = "EMPRESA";
@@ -227,9 +241,10 @@ namespace Login_inicio
             {
                 try
                 {
-                    UserCache.Empresa = dgvlogin.CurrentRow.Cells[3].Value.ToString();
-                    UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[4].Value);
-                    UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[5].Value.ToString();
+                    UserCache.Ruc = dgvlogin.CurrentRow.Cells[0].Value.ToString();
+                    UserCache.Empresa = dgvlogin.CurrentRow.Cells[4].Value.ToString();
+                    UserCache.Codigo_empresa = Convert.ToInt32(dgvlogin.CurrentRow.Cells[5].Value);
+                    UserCache.Localidad_empresa = dgvlogin.CurrentRow.Cells[6].Value.ToString();
                     UserCache.Periodo = numeric_periodo.Value.ToString();
                     UserCache.Idperiodo = Getidperiodo();
                     UserCache.Empresa_Sucursal = "SUCURSAL";
@@ -313,16 +328,20 @@ namespace Login_inicio
 
         private void Cbouser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtuser.Text = Cbouser.SelectedItem.ToString();
+            txtuser.Text = Cbouser.Text.Trim();
             txtuser.ForeColor = Color.LightGray;
         }
 
         private void cboroles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtroles.Text = cboroles.SelectedItem.ToString();
+            txtroles.Text = cboroles.Text.Trim();
             txtroles.ForeColor = Color.LightCyan;
         }
 
-        
+        private void txtuser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //ESTAMOS BLOQUEANDO LA TECLA ENTER.
+            Keypress.Text(e, txtuser);
+        }
     }
 }
