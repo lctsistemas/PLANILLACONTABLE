@@ -35,10 +35,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnnuevo = new System.Windows.Forms.ToolStripButton();
             this.btnguardar = new System.Windows.Forms.ToolStripButton();
-<<<<<<< HEAD
-            this.btnedit = new System.Windows.Forms.ToolStripButton();
-=======
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
             this.btnborrar = new System.Windows.Forms.ToolStripButton();
             this.btnbuscar = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,18 +50,11 @@
             this.txtdescCorta = new System.Windows.Forms.TextBox();
             this.cbxtiposub = new System.Windows.Forms.ComboBox();
             this.checkDescuento = new System.Windows.Forms.CheckBox();
-<<<<<<< HEAD
-            this.txtdescCorta = new System.Windows.Forms.TextBox();
-            this.txtcodigosubsidio = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-=======
+                                              
             this.dgvsubsidio = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,28 +72,21 @@
             this.btnbuscar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-<<<<<<< HEAD
-            this.toolStrip1.Size = new System.Drawing.Size(742, 25);
-=======
+
             this.toolStrip1.Size = new System.Drawing.Size(740, 25);
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
+
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnnuevo
             // 
-<<<<<<< HEAD
+
             this.btnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
             this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(62, 22);
-=======
-            this.btnnuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
-            this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnnuevo.Name = "btnnuevo";
-            this.btnnuevo.Size = new System.Drawing.Size(23, 22);
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
+
+
             this.btnnuevo.Text = "Nuevo";
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
@@ -118,18 +100,9 @@
             this.btnguardar.Text = "Guardar";
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-<<<<<<< HEAD
-            // btnedit
+            
             // 
-            this.btnedit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnedit.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
-            this.btnedit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(23, 22);
-            this.btnedit.Text = "Editar";
-            // 
-=======
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
+
             // btnborrar
             // 
             this.btnborrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -339,7 +312,6 @@
             this.dgvsubsidio.TabIndex = 86;
             this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
             // 
-<<<<<<< HEAD
             // checkDescuento
             // 
             this.checkDescuento.AutoSize = true;
@@ -401,7 +373,7 @@
             this.label3.Size = new System.Drawing.Size(123, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Descripcion corta";
-=======
+
             // label6
             // 
             this.label6.AutoSize = true;
@@ -443,20 +415,17 @@
             this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseHover += new System.EventHandler(this.btncerrar_MouseHover);
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
             // 
             // frmsubsidios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(742, 450);
-=======
+
             this.ClientSize = new System.Drawing.Size(740, 466);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.btnminimizar);
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
+
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmsubsidios";
