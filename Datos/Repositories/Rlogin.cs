@@ -8,7 +8,7 @@ namespace Datos.Repositories
 {
     public class Rlogin
     {
-        public bool Login(string user, string pass)
+        public bool Login(string user, string roles, string pass)
         {
             using (SqlConnection cn = RConexion.Getconectar())
             {
@@ -20,16 +20,17 @@ namespace Datos.Repositories
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@user", user);
+                    cmd.Parameters.AddWithValue("@descrip_rol", roles);
                     cmd.Parameters.AddWithValue("@pass", pass);
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.HasRows)
                     {
                         while (dr.Read())
                         {
-                            UserCache.IdUser = dr.GetInt32(0);
-                            UserCache.CodigoUser = dr.GetString(1);
-                            UserCache.NombreUser = dr.GetString(2);
-                            UserCache.RolUser = dr.GetString(3);
+                            UserCache.IdUser = dr.GetInt32(0);                            
+                            UserCache.NombreUser = dr.GetString(1);//muestra el dato en el formulario principal
+                            UserCache.Genero = dr.GetString(2);//para validar la imagen en el formulario principal. la foto.
+                            UserCache.RolUser = dr.GetString(3);//muestra el dato en el formulario principal
                         }
                         dr.Close();
                         return true;

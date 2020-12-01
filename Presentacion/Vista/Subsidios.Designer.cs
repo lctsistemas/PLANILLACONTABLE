@@ -49,6 +49,7 @@
             this.txtdescCorta = new System.Windows.Forms.TextBox();
             this.cbxtiposub = new System.Windows.Forms.ComboBox();
             this.checkDescuento = new System.Windows.Forms.CheckBox();
+                                              
             this.dgvsubsidio = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
@@ -75,16 +76,27 @@
             this.toolStripSeparator4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
+
             this.toolStrip1.Size = new System.Drawing.Size(740, 25);
+
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnnuevo
             // 
+<<<<<<< HEAD
+=======
+
+>>>>>>> d289b87bdd284cf16762bf3e4333b71df863d068
             this.btnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
             this.btnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnnuevo.Name = "btnnuevo";
             this.btnnuevo.Size = new System.Drawing.Size(62, 22);
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> d289b87bdd284cf16762bf3e4333b71df863d068
             this.btnnuevo.Text = "Nuevo";
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
@@ -97,6 +109,9 @@
             this.btnguardar.Text = "Guardar";
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
+            
+            // 
+
             // btnborrar
             // 
             this.btnborrar.Image = global::Presentacion.Properties.Resources.borrar3;
@@ -296,6 +311,68 @@
             this.dgvsubsidio.TabIndex = 86;
             this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
             // 
+            // checkDescuento
+            // 
+            this.checkDescuento.AutoSize = true;
+            this.checkDescuento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDescuento.ForeColor = System.Drawing.Color.White;
+            this.checkDescuento.Location = new System.Drawing.Point(531, 112);
+            this.checkDescuento.Name = "checkDescuento";
+            this.checkDescuento.Size = new System.Drawing.Size(94, 20);
+            this.checkDescuento.TabIndex = 10;
+            this.checkDescuento.Text = "Descuento";
+            this.checkDescuento.UseVisualStyleBackColor = true;
+            // 
+            // txtdescCorta
+            // 
+            this.txtdescCorta.Location = new System.Drawing.Point(370, 49);
+            this.txtdescCorta.Name = "txtdescCorta";
+            this.txtdescCorta.Size = new System.Drawing.Size(210, 20);
+            this.txtdescCorta.TabIndex = 8;
+            // 
+            // txtcodigosubsidio
+            // 
+            this.txtcodigosubsidio.Location = new System.Drawing.Point(54, 49);
+            this.txtcodigosubsidio.Name = "txtcodigosubsidio";
+            this.txtcodigosubsidio.Size = new System.Drawing.Size(100, 20);
+            this.txtcodigosubsidio.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(367, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Tipo Subsidio";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(51, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 16);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Codigo Subsidio";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(367, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Descripcion corta";
+
             // label6
             // 
             this.label6.AutoSize = true;
@@ -357,10 +434,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(740, 466);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.btnminimizar);
+
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmsubsidios";

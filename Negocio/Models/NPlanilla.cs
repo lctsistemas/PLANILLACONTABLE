@@ -13,7 +13,7 @@ namespace Negocio.Models
     {
         String mensaje;
         public int Id_planilla { get; set; }
-        /*public int Idtipo_planilla { get; set; }*/      
+        /*public int Idtipo_planilla { get; set; }*/
         public int Id_periodo { get; set; }
         public int Id_mes { get; set; }
         public int Id_empresam { get; set; }        
@@ -25,7 +25,6 @@ namespace Negocio.Models
         public int Horas_mes { get; set; }
         public decimal Tope_horario_nocturno { get; set; }
         public EntityState state { get; set; }
-
 
         public IPlanilla rplanilla;
         private List<NPlanilla> list_planilla;
@@ -82,7 +81,22 @@ namespace Negocio.Models
             return mensaje;
         }
 
-        public List<NPlanilla> Getall()
+
+        //VALIDACION SI EXISTE EL CODIGO.
+        public bool Existe(int id)
+        {
+            //System.Windows.Forms.MessageBox.Show("canti "+ list_planilla.Count);
+            foreach (NPlanilla item in list_planilla)
+            {
+                if (item.Id_mes == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public IEnumerable<NPlanilla> Getall()
         {
             DPlanilla dp = new DPlanilla();
             dp.Id_empresam = Id_empresam;

@@ -6,9 +6,9 @@ namespace Negocio.Models
 {
     public class Nlogin : IDisposable
     {
-        public bool Login(string user, string pass)
+        public bool Login(string user, string roles, string pass)
         {
-            return new Rlogin().Login(user, pass);
+            return new Rlogin().Login(user, roles, pass);
         }
 
         public bool Business(List<object> li)

@@ -358,4 +358,6 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmPlanilla.resources
 >>>>>>> 1eaf8bed196a6fa14c75ddf6b3555f893388787b
 C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmPlanillaEmpleados.resources
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.FrmMain_principal.resources
 C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csproj.CoreCompileInputs.cache
+>>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1

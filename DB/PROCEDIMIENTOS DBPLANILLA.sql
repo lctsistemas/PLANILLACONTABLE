@@ -1,7 +1,6 @@
 USE Planilla_lct
 GO
 
-
 /*    PROCEDIMIENTOD ALMACENADOS PARA CARGO    */
 CREATE PROC SP_REGISTRAR_CARGO
 @nom varchar(40),
@@ -12,7 +11,6 @@ VALUES(@nom,@descripcion)
 END 
 GO
 
-
 CREATE PROC SP_UPDATE_CARGO
 @idcargo int,
 @nom varchar(40),
@@ -21,7 +19,6 @@ AS BEGIN
 UPDATE Cargo SET nombre_cargo=@nom, descripcion=@descripcion WHERE id_cargo=@idcargo
 END
 GO
-
 
 ALTER PROC SP_DELETE_CARGO
 @idcargo int,
@@ -827,24 +824,26 @@ GO
  --PROCEDIMIENTO LOGIN USUARIO
  ALTER PROC SP_LOGIN_USUARIO
  @user varchar(50),
+ @descrip_rol varchar(30),
  @pass varchar(10)
  AS BEGIN
- select u.id_usuario, u.codigo_usuario, u.nombre_usuario, r.descrip_rol from Usuario u join Rol r on u.id_rol=r.id_rol 
- WHERE (u.codigo_usuario=@user or nombre_usuario=@user) and contrasena=@pass
+ select u.id_usuario, u.nombre_usuario, u.genero, r.descrip_rol from Usuario u join Rol r on u.id_rol=r.id_rol 
+ WHERE (u.codigo_usuario=@user or nombre_usuario=@user)  and r.descrip_rol=@descrip_rol and u.contrasena=@pass
  END
  GO
 
-
+ select u.id_usuario, u.codigo_usuario from Usuario u
  -- SEGUN EL CODIGO DE USUARIO MOSTRAR LAS EMPRESAS QUE EL USUARIO TIENE A CARGO TAMBIEN LAS SUCURSALES.
 ALTER PROC SP_EMPRESAS_USUARIO
 @codigo_user int
 AS BEGIN
-SELECT (SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA, 
+SELECT (SELECT ema.ruc FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS [RUC], 
+(SELECT ema.razon_social FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS EMPRESA, 
 e.id_em_maestra AS [codigo_empresa],
 (SELECT ema.localidad FROM dbo.Empresa_maestra ema WHERE ema.id_em_maestra=e.id_em_maestra) AS [LOCALIDAD_EMPRESA],
 em.razon_social AS SUCURSAL,s.id_em_maestra AS[codigo_sucursal], em.localidad AS [LOCALIDAD_SUCURSAL]
-FROM dbo.Empresa_maestra em join dbo.Sucursal s on em.id_em_maestra=s.id_em_maestra  right join 
-dbo.Empresa e on e.id_empresa=s.id_empresa where e.id_usuario=@codigo_user
+FROM dbo.Empresa_maestra em join dbo.Sucursal s on (em.id_em_maestra=s.id_em_maestra)  right join 
+dbo.Empresa e on (e.id_empresa=s.id_empresa) where e.id_usuario=@codigo_user
 END
 GO
 ------------------------------------------------------FIN LOGIN ---------------------------------------------------------------------

@@ -500,6 +500,9 @@ recarg_consu bit not null --recargo consumo
 )
 GO
 
+<<<<<<< HEAD
+select * from Planilla
+=======
 CREATE TABLE TIPO_PLANILLA 
 (
 	id_tipo_planilla int not null,
@@ -507,3 +510,4 @@ CREATE TABLE TIPO_PLANILLA
 )
 
 GO
+>>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1

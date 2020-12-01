@@ -2,19 +2,19 @@
 
 namespace Presentacion.Helps
 {
-    public class Tooltip
+    public static class Tooltip
     {
         private static ToolTip t = new ToolTip();
 
-        public Tooltip()
-        {
+        //public  Tooltip()
+        //{
             //t.IsBalloon = true;
             //t.ToolTipIcon = ToolTipIcon.None;
             //t.BackColor =Color.SteelBlue;
             //t.ForeColor = Color.White;
             //t.AutomaticDelay = 400;
             //t.InitialDelay = 400;
-        }
+        //}
 
         public static void Title(Control ctr, string alert, bool ballon)
         {

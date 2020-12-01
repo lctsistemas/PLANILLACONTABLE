@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class Main_Principal
+    partial class FrmMain_principal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelSideMenu = new System.Windows.Forms.Panel();
             this.btnreportes = new System.Windows.Forms.Button();
             this.panelregistro = new System.Windows.Forms.Panel();
@@ -60,8 +61,8 @@
             this.lineperiodo = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineuser = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.lblruc = new System.Windows.Forms.Label();
             this.lblempresa = new System.Windows.Forms.Label();
-            this.lbllocalidad = new System.Windows.Forms.Label();
             this.pictmenu = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -70,7 +71,10 @@
             this.lblid_periodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
             this.pictlct = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+
+            this.tlblotrodato = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -124,7 +128,6 @@
             // panelregistro
             // 
             this.panelregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelregistro.Controls.Add(this.button1);
             this.panelregistro.Controls.Add(this.panel9);
             this.panelregistro.Controls.Add(this.btncalculo);
             this.panelregistro.Controls.Add(this.btntipo_contrato);
@@ -487,7 +490,7 @@
             // 
             // lblperiodo
             // 
-            this.lblperiodo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblperiodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblperiodo.ForeColor = System.Drawing.Color.White;
             this.lblperiodo.Location = new System.Drawing.Point(43, 16);
             this.lblperiodo.Name = "lblperiodo";
@@ -553,8 +556,8 @@
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.BarraTitulo.Controls.Add(this.lblruc);
             this.BarraTitulo.Controls.Add(this.lblempresa);
-            this.BarraTitulo.Controls.Add(this.lbllocalidad);
             this.BarraTitulo.Controls.Add(this.pictmenu);
             this.BarraTitulo.Controls.Add(this.btncerrar);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -564,27 +567,28 @@
             this.BarraTitulo.TabIndex = 8;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
+            // lblruc
+            // 
+            this.lblruc.AutoSize = true;
+            this.lblruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblruc.ForeColor = System.Drawing.Color.White;
+            this.lblruc.Location = new System.Drawing.Point(64, 13);
+            this.lblruc.Name = "lblruc";
+            this.lblruc.Size = new System.Drawing.Size(29, 18);
+            this.lblruc.TabIndex = 23;
+            this.lblruc.Text = "ruc";
+            // 
             // lblempresa
             // 
-            this.lblempresa.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblempresa.AutoSize = true;
+            this.lblempresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblempresa.ForeColor = System.Drawing.Color.White;
-            this.lblempresa.Location = new System.Drawing.Point(65, 5);
+            this.lblempresa.Location = new System.Drawing.Point(182, 13);
             this.lblempresa.Name = "lblempresa";
-            this.lblempresa.Size = new System.Drawing.Size(223, 34);
+            this.lblempresa.Size = new System.Drawing.Size(93, 18);
             this.lblempresa.TabIndex = 22;
             this.lblempresa.Text = "razon  social";
             this.lblempresa.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // lbllocalidad
-            // 
-            this.lbllocalidad.AutoSize = true;
-            this.lbllocalidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllocalidad.ForeColor = System.Drawing.Color.White;
-            this.lbllocalidad.Location = new System.Drawing.Point(335, 22);
-            this.lbllocalidad.Name = "lbllocalidad";
-            this.lbllocalidad.Size = new System.Drawing.Size(70, 17);
-            this.lbllocalidad.TabIndex = 21;
-            this.lbllocalidad.Text = "localidad";
             // 
             // pictmenu
             // 
@@ -614,10 +618,10 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlblotrodato,
             this.tlblhora});
             this.statusStrip1.Location = new System.Drawing.Point(250, 638);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusStrip1.Size = new System.Drawing.Size(678, 24);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
@@ -627,8 +631,11 @@
             this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.tlblhora.Name = "tlblhora";
             this.tlblhora.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tlblhora.Size = new System.Drawing.Size(44, 19);
+            this.tlblhora.Size = new System.Drawing.Size(595, 19);
+            this.tlblhora.Spring = true;
             this.tlblhora.Text = "HORA";
+            this.tlblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.tlblhora.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // panelchildform
@@ -676,23 +683,33 @@
             this.pictlct.TabIndex = 1;
             this.pictlct.TabStop = false;
             // 
+            // tlblotrodato
+            // 
+            this.tlblotrodato.Name = "tlblotrodato";
+            this.tlblotrodato.Size = new System.Drawing.Size(68, 19);
+            this.tlblotrodato.Text = "Otros datos";
+            this.tlblotrodato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // button1
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(233, 30);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Calculo Planilla";
-            this.button1.UseVisualStyleBackColor = true;
+            //this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            //this.button1.FlatAppearance.BorderSize = 0;
+            //this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            //this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            //this.button1.ForeColor = System.Drawing.Color.White;
+            //this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.button1.Location = new System.Drawing.Point(0, 180);
+            //this.button1.Name = "button1";
+            //this.button1.Size = new System.Drawing.Size(233, 30);
+            //this.button1.TabIndex = 22;
+            //this.button1.Text = "Calculo Planilla";
+            //this.button1.UseVisualStyleBackColor = true;
             // 
-            // Main_Principal
+            // FrmMain_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -703,7 +720,7 @@
             this.Controls.Add(this.PanelSideMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.Name = "Main_Principal";
+            this.Name = "FrmMain_principal";
             this.Text = "Main_Principal";
             this.Load += new System.EventHandler(this.Main_Principal_Load);
             this.PanelSideMenu.ResumeLayout(false);
@@ -761,7 +778,6 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineuser;
         private System.Windows.Forms.PictureBox pictmenu;
         private System.Windows.Forms.Label lblempresa;
-        private System.Windows.Forms.Label lbllocalidad;
         private System.Windows.Forms.Button btnplanilla2;
         private System.Windows.Forms.Button btncalculo;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -770,6 +786,9 @@
         private System.Windows.Forms.Label lblidempresa;
         private System.Windows.Forms.PictureBox pictlct;
         private System.Windows.Forms.ToolStripStatusLabel tlblhora;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblruc;
+        private System.Windows.Forms.ToolStripStatusLabel tlblotrodato;
+        private System.Windows.Forms.Timer timer1;
+
     }
 }
