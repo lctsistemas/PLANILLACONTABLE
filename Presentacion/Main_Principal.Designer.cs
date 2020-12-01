@@ -71,8 +71,12 @@
             this.lblid_periodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
             this.pictlct = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
             this.tlblotrodato = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+=======
+            this.button1 = new System.Windows.Forms.Button();
+>>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -126,6 +130,7 @@
             // panelregistro
             // 
             this.panelregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelregistro.Controls.Add(this.button1);
             this.panelregistro.Controls.Add(this.panel9);
             this.panelregistro.Controls.Add(this.btncalculo);
             this.panelregistro.Controls.Add(this.btntipo_contrato);
@@ -629,10 +634,15 @@
             this.tlblhora.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.tlblhora.Name = "tlblhora";
             this.tlblhora.RightToLeft = System.Windows.Forms.RightToLeft.No;
+<<<<<<< HEAD
             this.tlblhora.Size = new System.Drawing.Size(595, 19);
             this.tlblhora.Spring = true;
             this.tlblhora.Text = "HORA";
             this.tlblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+=======
+            this.tlblhora.Size = new System.Drawing.Size(44, 19);
+            this.tlblhora.Text = "HORA";
+>>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
             this.tlblhora.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // panelchildform
@@ -680,6 +690,7 @@
             this.pictlct.TabIndex = 1;
             this.pictlct.TabStop = false;
             // 
+<<<<<<< HEAD
             // tlblotrodato
             // 
             this.tlblotrodato.Name = "tlblotrodato";
@@ -690,6 +701,23 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+=======
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(233, 30);
+            this.button1.TabIndex = 22;
+            this.button1.Text = "Calculo Planilla";
+            this.button1.UseVisualStyleBackColor = true;
+>>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
             // 
             // FrmMain_principal
             // 
@@ -768,8 +796,12 @@
         private System.Windows.Forms.Label lblidempresa;
         private System.Windows.Forms.PictureBox pictlct;
         private System.Windows.Forms.ToolStripStatusLabel tlblhora;
+<<<<<<< HEAD
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.ToolStripStatusLabel tlblotrodato;
         private System.Windows.Forms.Timer timer1;
+=======
+        private System.Windows.Forms.Button button1;
+>>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
     }
 }

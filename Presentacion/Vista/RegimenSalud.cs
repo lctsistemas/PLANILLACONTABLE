@@ -71,10 +71,10 @@ namespace Presentacion.Vista
             dgvregimensalud.Columns[0].Visible = false;
 
             dgvregimensalud.Columns[1].HeaderText = "Cod. regimen salud";
-            dgvregimensalud.Columns[1].Width = 150;
+            dgvregimensalud.Columns[1].Width = 120;
 
             dgvregimensalud.Columns[2].HeaderText = "Regimen Salud";
-            dgvregimensalud.Columns[2].Width = 300;
+            dgvregimensalud.Columns[2].Width = 250;
 
             dgvregimensalud.Columns[3].HeaderText = "state";
             dgvregimensalud.Columns[3].Width = 100;
@@ -177,6 +177,56 @@ namespace Presentacion.Vista
         private void txtregsal_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtregsal, "Campo Requerido");
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+      
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+        }
+
+        private void btncerrar_MouseHover(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.SteelBlue;
+
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.SteelBlue;
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
     }
 }
