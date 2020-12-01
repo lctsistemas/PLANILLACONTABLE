@@ -499,3 +499,11 @@ otrodescu bit not null, --otro descuento
 recarg_consu bit not null --recargo consumo
 )
 GO
+
+CREATE TABLE TIPO_PLANILLA 
+(
+	id_tipo_planilla int not null,
+	tipo_planilla varchar(30) 
+)
+
+GO

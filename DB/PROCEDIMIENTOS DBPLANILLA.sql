@@ -1133,7 +1133,7 @@ GO
 ------------------------------------------------------------------------
 --MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
 
-ALTER PROC SP_ADD_SUBSIDIOS
+create PROC SP_ADD_SUBSIDIOS
 @id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
@@ -1155,8 +1155,9 @@ SET @mensaje= '¡Registrado!'
 END
 GO
 
+exec SP_ADD_SUBSIDIOS 18,30,'S.P','PR','PRUEBA','NO',1,'';
 
-ALTER PROC SP_MODIFY_SUBSIDIOS
+create PROC SP_MODIFY_SUBSIDIOS
 @id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
@@ -1170,7 +1171,7 @@ UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio,tipo_suspension=@tipo_suspen
 END
 GO
 
-alter PROC SP_BORRAR_SUBSIDIOS
+create PROC SP_BORRAR_SUBSIDIOS
 @id_subsidios int,
 @mensaje varchar(100) output
 AS BEGIN
@@ -1179,12 +1180,12 @@ SET @mensaje= 'SUBSIDIO ELIMINADO CORRECTAMENTE'
 END
 GO
 
-ALTER PROC SP_MOSTRAR_SUBSIDIOS 
+alter PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
-SELECT id_subsidios, cod_subsidio,tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
+SELECT id_subsidios, cod_subsidio,tipo_suspension, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END
 GO
-
+exec SP_MOSTRAR_SUBSIDIOS
 /* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
 
 ALTER PROC SP_ShowPlanillaManto

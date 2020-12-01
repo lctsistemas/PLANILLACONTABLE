@@ -99,3 +99,4 @@ C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CoreC
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.dll
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.pdb
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache

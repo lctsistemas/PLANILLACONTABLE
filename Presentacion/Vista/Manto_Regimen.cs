@@ -2,6 +2,7 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -179,6 +180,53 @@ namespace Presentacion.Vista
         private void cbxregimen_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ValidateError.Validate_combo(cbxregimen, "Campo Requerido");
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+        }
+
+        private void btncerrar_MouseHover(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.SteelBlue;
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.SteelBlue;
+        }
+
+        private void btnminimizar_MouseHover(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void label5_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

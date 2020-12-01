@@ -38,3 +38,4 @@ C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CoreC
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CopyComplete
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.dll
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.pdb
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache

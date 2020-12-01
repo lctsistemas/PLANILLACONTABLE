@@ -41,7 +41,7 @@ namespace Presentacion.Vista
 
 
             dgvsubsidio.Columns[2].HeaderText = "Tipo de suspension";
-            dgvsubsidio.Columns[2].Width = 80;
+            dgvsubsidio.Columns[2].Width = 120;
 
             dgvsubsidio.Columns[3].HeaderText = "Descripcion corta";
             dgvsubsidio.Columns[3].Width = 200;
@@ -173,6 +173,31 @@ namespace Presentacion.Vista
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
             limpiar();
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+        }
+
+        private void btncerrar_MouseHover(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.White;
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.White;
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
     }
 }
