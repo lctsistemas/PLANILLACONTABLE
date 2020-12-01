@@ -388,10 +388,6 @@ namespace Presentacion.Vista
             using (emple_contra) { emple_contra.state = EntityState.Guardar; }
             //Habilitar(true);
             limpiar();
-         
-
-
-
         }
 
         private void cmbtipdoc_SelectedIndexChanged(object sender, EventArgs e)
