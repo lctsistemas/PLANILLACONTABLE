@@ -28,8 +28,8 @@ namespace Presentacion.Vista
         {
             using (np)
             {
-                np.Id_empresam = UserCache.Codigo_empresa;
-                np.Id_periodo = UserCache.Idperiodo;
+                np.Id_empresam = 1; //UserCache.Codigo_empresa;
+                np.Id_periodo = 2; //UserCache.Idperiodo;
                 dgvplanilla.DataSource = np.Getall();
             }
         }
@@ -85,11 +85,27 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[11].Width = 50;
             dgvplanilla.Columns[11].Visible = false;
 
-        }             
+        }
+        
+
+        //METODO PARA VER SI EL  MES EXISTE
+        public bool Existe(int x)
+        {
+            using (np)
+            {
+                if (np.Existe(x))
+                {
+                    return true;
+                }
+                return false;
+            }
+            
+        }
 
         private void tbtnnuevo_Click(object sender, EventArgs e)
         {
             FrmPlanilla fr = FrmPlanilla.GetInstance();
+            this.AddOwnedForm(fr);
             fr.StartPosition = FormStartPosition.CenterParent;
             fr.ShowDialog();
             ShowPlanilla();
@@ -175,6 +191,8 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -200,5 +218,7 @@ namespace Presentacion.Vista
             btnrestaurar.Visible = false;
             btnmaximizar.Visible = true;
         }
+
+       
     }
 }

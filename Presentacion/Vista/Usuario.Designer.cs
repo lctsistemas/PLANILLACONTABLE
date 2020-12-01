@@ -62,6 +62,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabuser.SuspendLayout();
             this.tablista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuario)).BeginInit();
@@ -204,6 +205,7 @@
             // tabgestion
             // 
             this.tabgestion.BackColor = System.Drawing.SystemColors.Window;
+            this.tabgestion.Controls.Add(this.comboBox1);
             this.tabgestion.Controls.Add(this.cbogenero);
             this.tabgestion.Controls.Add(this.btnrol);
             this.tabgestion.Controls.Add(this.txtacceso);
@@ -498,6 +500,23 @@
             this.btnrestaurar.TabStop = false;
             this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.comboBox1.ForeColor = System.Drawing.Color.White;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ELEMENTO 1",
+            "ELEMENTO 2",
+            "ELEMENTO 3",
+            "ELEMENTO 4"});
+            this.comboBox1.Location = new System.Drawing.Point(169, 302);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(287, 29);
+            this.comboBox1.TabIndex = 89;
+            // 
             // frmusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,5 +586,6 @@
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.ComboBox cbogenero;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

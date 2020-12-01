@@ -499,3 +499,5 @@ otrodescu bit not null, --otro descuento
 recarg_consu bit not null --recargo consumo
 )
 GO
+
+select * from Planilla

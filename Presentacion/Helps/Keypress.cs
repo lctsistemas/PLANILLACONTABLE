@@ -5,11 +5,12 @@ namespace Presentacion.Helps
 {
     public class Keypress
     {
+        #region SON PRUEBAS
         public static void Text(KeyPressEventArgs e, TextBox txt)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter) || e.KeyChar == Convert.ToChar(Keys.Tab))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                txt.Focus();
+                e.Handled = true;
             }
 
         }
@@ -31,7 +32,9 @@ namespace Presentacion.Helps
         //    }
 
         //}
+        #endregion
 
+        //METODOS QUE SE VAN USAR.
         public static void SoloNumeros(KeyPressEventArgs e)
         {
             try

@@ -63,9 +63,9 @@ namespace Negocio.Models
         }
 
         //METODO SHOW
-        public List<Nrol> Getall()
+        public IEnumerable<Nrol> Getall()
         {
-            using (var dt = rol_repository.GetData(null))
+            using (DataTable dt = rol_repository.GetData(null))
             {
                 list_rol = new List<Nrol>();
                 foreach (DataRow item in dt.Rows)
@@ -75,9 +75,9 @@ namespace Negocio.Models
                         idrol = Convert.ToInt32(item[0]),//id_rol
                         nombre_rol = item[1].ToString()//rol
                     });
-                }
-                return list_rol;
+                }                
             }
+            return list_rol;
         }
         //...
 

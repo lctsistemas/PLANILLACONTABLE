@@ -79,7 +79,7 @@ namespace Negocio.Models
         //METODO SHOW
         public List<Nusuario> Getall()
         {
-            using (var dt = usu_repository.GetData(null))
+            using (DataTable dt = usu_repository.GetData(null))
             {
                 list_usu = new List<Nusuario>();
                 foreach (DataRow item in dt.Rows)
