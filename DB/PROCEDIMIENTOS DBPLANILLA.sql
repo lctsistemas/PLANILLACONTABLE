@@ -186,7 +186,7 @@ END
 GO
 
 
-ALTER PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
+CREATE PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 @codigo_empresa int
 AS BEGIN 
 SELECT e.id_empleado, e.codigo, e.ape_paterno, e.ape_materno, e.nombre_empleado,
@@ -523,7 +523,7 @@ GO
 
 ALTER PROC SP_SHOW_USER
 AS BEGIN	
-SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol, genero FROM 
+SELECT u.id_usuario, u.codigo_usuario,u.nombre_usuario, u.contrasena, u.id_rol, r.descrip_rol, u.genero FROM 
 dbo.Usuario u join Rol r on u.id_rol=r.id_rol ORDER BY u.id_usuario DESC
 END
 GO
@@ -832,7 +832,7 @@ GO
  END
  GO
 
- select u.id_usuario, u.codigo_usuario from Usuario u
+ --select u.id_usuario, u.codigo_usuario from Usuario u
  -- SEGUN EL CODIGO DE USUARIO MOSTRAR LAS EMPRESAS QUE EL USUARIO TIENE A CARGO TAMBIEN LAS SUCURSALES.
 ALTER PROC SP_EMPRESAS_USUARIO
 @codigo_user int
@@ -1132,7 +1132,7 @@ GO
 ------------------------------------------------------------------------
 --MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
 
-ALTER PROC SP_ADD_SUBSIDIOS
+create PROC SP_ADD_SUBSIDIOS
 @id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
@@ -1154,8 +1154,9 @@ SET @mensaje= '¡Registrado!'
 END
 GO
 
+exec SP_ADD_SUBSIDIOS 18,30,'S.P','PR','PRUEBA','NO',1,'';
 
-ALTER PROC SP_MODIFY_SUBSIDIOS
+create PROC SP_MODIFY_SUBSIDIOS
 @id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
@@ -1169,7 +1170,7 @@ UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio,tipo_suspension=@tipo_suspen
 END
 GO
 
-alter PROC SP_BORRAR_SUBSIDIOS
+create PROC SP_BORRAR_SUBSIDIOS
 @id_subsidios int,
 @mensaje varchar(100) output
 AS BEGIN
@@ -1178,12 +1179,12 @@ SET @mensaje= 'SUBSIDIO ELIMINADO CORRECTAMENTE'
 END
 GO
 
-ALTER PROC SP_MOSTRAR_SUBSIDIOS 
+alter PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
-SELECT id_subsidios, cod_subsidio,tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
+SELECT id_subsidios, cod_subsidio,tipo_suspension, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END
 GO
-
+exec SP_MOSTRAR_SUBSIDIOS
 /* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
 
 ALTER PROC SP_ShowPlanillaManto

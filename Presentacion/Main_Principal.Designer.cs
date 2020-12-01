@@ -71,8 +71,10 @@
             this.lblid_periodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
             this.pictlct = new System.Windows.Forms.PictureBox();
+
             this.tlblotrodato = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -633,6 +635,7 @@
             this.tlblhora.Spring = true;
             this.tlblhora.Text = "HORA";
             this.tlblhora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+
             this.tlblhora.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
             // 
             // panelchildform
@@ -690,6 +693,21 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // button1
+            // 
+            //this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            //this.button1.FlatAppearance.BorderSize = 0;
+            //this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            //this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            //this.button1.ForeColor = System.Drawing.Color.White;
+            //this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.button1.Location = new System.Drawing.Point(0, 180);
+            //this.button1.Name = "button1";
+            //this.button1.Size = new System.Drawing.Size(233, 30);
+            //this.button1.TabIndex = 22;
+            //this.button1.Text = "Calculo Planilla";
+            //this.button1.UseVisualStyleBackColor = true;
             // 
             // FrmMain_principal
             // 
@@ -771,5 +789,6 @@
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.ToolStripStatusLabel tlblotrodato;
         private System.Windows.Forms.Timer timer1;
+
     }
 }

@@ -10,7 +10,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 
 using Presentacion.Subvista;
-
+using System.Drawing;
 
 namespace Presentacion.Vista
 {
@@ -388,10 +388,6 @@ namespace Presentacion.Vista
             using (emple_contra) { emple_contra.state = EntityState.Guardar; }
             //Habilitar(true);
             limpiar();
-         
-
-
-
         }
 
         private void cmbtipdoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -733,6 +729,16 @@ namespace Presentacion.Vista
         private void txtasig_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtasig, "Campo asignacion familiar requerido");
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.SteelBlue;
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
     }
 }

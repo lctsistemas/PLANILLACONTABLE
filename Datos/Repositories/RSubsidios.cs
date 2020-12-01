@@ -57,7 +57,6 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
-                    System.Windows.Forms.MessageBox.Show("delete:  " + result);
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();
                     return result;
@@ -88,7 +87,6 @@ namespace Datos.Repositories
 
 
                     result = cmd.ExecuteNonQuery();
-                    System.Windows.Forms.MessageBox.Show("update:  " + result);
                     cmd.Parameters.Clear();
                     return result;
                 }

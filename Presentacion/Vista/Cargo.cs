@@ -192,19 +192,7 @@ namespace Presentacion.Vista
             this.Close();
         }
 
-        private void btnmaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnminimizar.Visible = true;
-            btnmaximizar.Visible = false;
-        }
-
-        private void btnrestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
-        }
+       
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
@@ -243,6 +231,16 @@ namespace Presentacion.Vista
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.SoloLetras(e);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.SteelBlue;
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
     }
 }

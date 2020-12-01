@@ -107,7 +107,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvdocumento.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvdocumento.EnableHeadersVisualStyles = false;
-            this.dgvdocumento.Location = new System.Drawing.Point(6, 307);
+            this.dgvdocumento.Location = new System.Drawing.Point(6, 308);
             this.dgvdocumento.MultiSelect = false;
             this.dgvdocumento.Name = "dgvdocumento";
             this.dgvdocumento.ReadOnly = true;
@@ -239,7 +239,7 @@
             // 
             // barraTitulo
             // 
-            this.barraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(113)))), ((int)(((byte)(163)))));
+            this.barraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.barraTitulo.Controls.Add(this.btnmaximizar);
             this.barraTitulo.Controls.Add(this.btnminimizar);
             this.barraTitulo.Controls.Add(this.btncerrar);
