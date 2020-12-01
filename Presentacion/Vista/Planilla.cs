@@ -18,7 +18,7 @@ namespace Presentacion.Vista
         {
             InitializeComponent();
             UserCache.Periodo = "2020";            
-            Initialize();
+            //Initialize();
             
         }
         
@@ -72,7 +72,7 @@ namespace Presentacion.Vista
         private void Mes_actual()
         {
             int mact = DateTime.Now.Month;
-            cbxmes.SelectedIndex = (mact - 1);            
+            cbxmes.SelectedIndex = (mact - 1);
         }
         
                 
