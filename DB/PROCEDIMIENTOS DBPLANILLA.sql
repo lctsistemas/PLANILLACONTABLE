@@ -832,7 +832,7 @@ GO
  END
  GO
 
- select u.id_usuario, u.codigo_usuario from Usuario u
+ --select u.id_usuario, u.codigo_usuario from Usuario u
  -- SEGUN EL CODIGO DE USUARIO MOSTRAR LAS EMPRESAS QUE EL USUARIO TIENE A CARGO TAMBIEN LAS SUCURSALES.
 ALTER PROC SP_EMPRESAS_USUARIO
 @codigo_user int

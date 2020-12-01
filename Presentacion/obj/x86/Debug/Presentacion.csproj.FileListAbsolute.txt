@@ -361,3 +361,5 @@ C:\Users\mramirez\source\repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.FrmMain_principal.resources
 C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.csproj.CoreCompileInputs.cache
 >>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.FrmMain_principal.resources
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\bin\Debug\Bunifu_UI_v1.5.3.dll
