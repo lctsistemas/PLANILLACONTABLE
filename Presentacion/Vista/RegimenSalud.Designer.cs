@@ -250,7 +250,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvregimensalud.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvregimensalud.ColumnHeadersHeight = 27;
+            this.dgvregimensalud.ColumnHeadersHeight = 34;
             this.dgvregimensalud.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -268,14 +268,15 @@
             this.dgvregimensalud.ReadOnly = true;
             this.dgvregimensalud.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Empty;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgvregimensalud.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvregimensalud.RowHeadersWidth = 25;
-            this.dgvregimensalud.Size = new System.Drawing.Size(427, 293);
+            this.dgvregimensalud.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvregimensalud.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvregimensalud.Size = new System.Drawing.Size(427, 282);
             this.dgvregimensalud.TabIndex = 97;
             this.dgvregimensalud.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimensalud_CellDoubleClick);
             // 
@@ -285,7 +286,7 @@
             this.lbltotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(242, 500);
+            this.lbltotal.Location = new System.Drawing.Point(240, 494);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(39, 17);
             this.lbltotal.TabIndex = 98;
@@ -295,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 529);
+            this.ClientSize = new System.Drawing.Size(450, 537);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvregimensalud);
             this.Controls.Add(this.groupBox1);
