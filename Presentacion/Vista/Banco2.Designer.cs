@@ -110,10 +110,10 @@
             // lblbanco
             // 
             this.lblbanco.AutoSize = true;
-            this.lblbanco.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbanco.Location = new System.Drawing.Point(212, 4);
+            this.lblbanco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbanco.Location = new System.Drawing.Point(201, 4);
             this.lblbanco.Name = "lblbanco";
-            this.lblbanco.Size = new System.Drawing.Size(46, 16);
+            this.lblbanco.Size = new System.Drawing.Size(59, 19);
             this.lblbanco.TabIndex = 95;
             this.lblbanco.Text = "Banco";
             this.lblbanco.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblbanco_MouseDown);
@@ -130,7 +130,7 @@
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(319, 32);
+            this.btnguardar.Location = new System.Drawing.Point(333, 31);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(101, 24);
             this.btnguardar.TabIndex = 93;
@@ -142,15 +142,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(11, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Ingresar Banco :";
             // 
             // txtBanco
             // 
-            this.txtBanco.Location = new System.Drawing.Point(102, 35);
+            this.txtBanco.Location = new System.Drawing.Point(120, 35);
             this.txtBanco.Name = "txtBanco";
             this.txtBanco.Size = new System.Drawing.Size(185, 20);
             this.txtBanco.TabIndex = 10;
