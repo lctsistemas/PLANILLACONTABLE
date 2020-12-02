@@ -63,10 +63,10 @@ namespace Presentacion.Vista
             dgvregimen.Columns[1].Width = 150;
 
             dgvregimen.Columns[2].HeaderText = "DES. CORTA";
-            dgvregimen.Columns[2].Width = 70;
+            dgvregimen.Columns[2].Width = 140;
 
             dgvregimen.Columns[3].HeaderText = "TIPO REGIMEN";
-            dgvregimen.Columns[3].Width = 70;
+            dgvregimen.Columns[3].Width = 217;
 
             dgvregimen.Columns[4].HeaderText = "";
             dgvregimen.Columns[4].Width = 100;
@@ -79,6 +79,7 @@ namespace Presentacion.Vista
             using (nr)
             {
                 dgvregimen.DataSource = nr.Getall();
+                lbltotal.Text = "Total registro: " + dgvregimen.Rows.Count;
             }
         }
 

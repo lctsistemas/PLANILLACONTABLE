@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgvregimensalud = new System.Windows.Forms.DataGridView();
+            this.lbltotal = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -54,7 +55,7 @@
             // 
             // txtregsal
             // 
-            this.txtregsal.Location = new System.Drawing.Point(205, 83);
+            this.txtregsal.Location = new System.Drawing.Point(205, 68);
             this.txtregsal.Name = "txtregsal";
             this.txtregsal.Size = new System.Drawing.Size(178, 23);
             this.txtregsal.TabIndex = 86;
@@ -62,7 +63,7 @@
             // 
             // txtcodregsal
             // 
-            this.txtcodregsal.Location = new System.Drawing.Point(205, 36);
+            this.txtcodregsal.Location = new System.Drawing.Point(205, 26);
             this.txtcodregsal.Name = "txtcodregsal";
             this.txtcodregsal.Size = new System.Drawing.Size(100, 23);
             this.txtcodregsal.TabIndex = 85;
@@ -74,9 +75,10 @@
             this.panel3.Controls.Add(this.btnminimizar);
             this.panel3.Controls.Add(this.btncerrar);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(0, -1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(448, 40);
+            this.panel3.Size = new System.Drawing.Size(450, 40);
             this.panel3.TabIndex = 91;
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
@@ -86,7 +88,7 @@
             this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(369, 3);
+            this.btnminimizar.Location = new System.Drawing.Point(367, 8);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -102,7 +104,7 @@
             this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-            this.btncerrar.Location = new System.Drawing.Point(410, 3);
+            this.btncerrar.Location = new System.Drawing.Point(408, 8);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,9 +122,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 23);
+            this.label1.Size = new System.Drawing.Size(156, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "REGIMEN PENSIONARIO";
+            this.label1.Text = "REGIMEN SALUD";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // btnNuevo
@@ -197,7 +199,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(9, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(427, 133);
+            this.groupBox1.Size = new System.Drawing.Size(427, 108);
             this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar";
@@ -209,7 +211,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(27, 37);
+            this.label4.Location = new System.Drawing.Point(27, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 17);
             this.label4.TabIndex = 10;
@@ -222,7 +224,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(27, 83);
+            this.label5.Location = new System.Drawing.Point(27, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 17);
             this.label5.TabIndex = 11;
@@ -260,28 +262,41 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvregimensalud.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvregimensalud.EnableHeadersVisualStyles = false;
-            this.dgvregimensalud.Location = new System.Drawing.Point(30, 217);
+            this.dgvregimensalud.Location = new System.Drawing.Point(9, 192);
             this.dgvregimensalud.MultiSelect = false;
             this.dgvregimensalud.Name = "dgvregimensalud";
             this.dgvregimensalud.ReadOnly = true;
-            this.dgvregimensalud.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvregimensalud.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Empty;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgvregimensalud.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvregimensalud.RowHeadersWidth = 25;
-            this.dgvregimensalud.Size = new System.Drawing.Size(400, 293);
+            this.dgvregimensalud.Size = new System.Drawing.Size(427, 293);
             this.dgvregimensalud.TabIndex = 97;
             this.dgvregimensalud.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimensalud_CellDoubleClick);
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbltotal.Location = new System.Drawing.Point(242, 500);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(39, 17);
+            this.lbltotal.TabIndex = 98;
+            this.lbltotal.Text = "Total";
             // 
             // RegimenSalud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 535);
+            this.ClientSize = new System.Drawing.Size(450, 529);
+            this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvregimensalud);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
@@ -300,6 +315,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvregimensalud)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -317,5 +333,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvregimensalud;
+        private System.Windows.Forms.Label lbltotal;
     }
 }
