@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlanillaMensual2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuarchivos = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,6 +120,34 @@
             this.reintegro_grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reintegro_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dgvplanilla2 = new System.Windows.Forms.DataGridView();
+            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primermayo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tardanz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nosubsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dreintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dotro_reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pres_alimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtrunca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dadelanto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dprestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dretencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dotrosdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtotales_varios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recargo_consu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.r_grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnver = new System.Windows.Forms.Button();
             this.grobconceptos = new System.Windows.Forms.GroupBox();
             this.Lblsave_estado = new System.Windows.Forms.Label();
@@ -158,34 +186,6 @@
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxnocturnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feriado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primermayo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tardanz = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nosubsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thorax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dreintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dotro_reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pres_alimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtrunca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentoafp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dadelanto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dprestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dretencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dotrosdes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtotales_varios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recargo_consu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.r_grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -321,8 +321,8 @@
             // 
             this.Dgvplanilla1.AllowUserToResizeColumns = false;
             this.Dgvplanilla1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.Dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.Dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgvplanilla1.BackgroundColor = System.Drawing.Color.White;
             this.Dgvplanilla1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -986,6 +986,230 @@
             this.Dgvplanilla2.Size = new System.Drawing.Size(1225, 68);
             this.Dgvplanilla2.TabIndex = 16;
             // 
+            // valor1
+            // 
+            this.valor1.HeaderText = "";
+            this.valor1.Name = "valor1";
+            this.valor1.ReadOnly = true;
+            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor1.Width = 320;
+            // 
+            // valor2
+            // 
+            this.valor2.HeaderText = "";
+            this.valor2.Name = "valor2";
+            this.valor2.ReadOnly = true;
+            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor2.Width = 628;
+            // 
+            // hxdiurnas
+            // 
+            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
+            this.hxdiurnas.Name = "hxdiurnas";
+            this.hxdiurnas.ReadOnly = true;
+            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxdiurnas.Width = 220;
+            // 
+            // hxnocturnas
+            // 
+            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNAS";
+            this.hxnocturnas.Name = "hxnocturnas";
+            this.hxnocturnas.ReadOnly = true;
+            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxnocturnas.Width = 220;
+            // 
+            // feriado
+            // 
+            this.feriado.HeaderText = "FERIADO | DOMINICAL";
+            this.feriado.Name = "feriado";
+            this.feriado.ReadOnly = true;
+            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.feriado.Width = 110;
+            // 
+            // boninocturno
+            // 
+            this.boninocturno.HeaderText = "BONI. NOCTURNA";
+            this.boninocturno.Name = "boninocturno";
+            this.boninocturno.ReadOnly = true;
+            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.boninocturno.Width = 80;
+            // 
+            // primermayo
+            // 
+            this.primermayo.HeaderText = "";
+            this.primermayo.Name = "primermayo";
+            this.primermayo.ReadOnly = true;
+            this.primermayo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.primermayo.Width = 50;
+            // 
+            // tardanz
+            // 
+            this.tardanz.HeaderText = "TARDANZA";
+            this.tardanz.Name = "tardanz";
+            this.tardanz.ReadOnly = true;
+            this.tardanz.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tardanz.Width = 110;
+            // 
+            // subsi
+            // 
+            this.subsi.HeaderText = "SUBSIDIADOS";
+            this.subsi.Name = "subsi";
+            this.subsi.ReadOnly = true;
+            this.subsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.subsi.Width = 110;
+            // 
+            // nosubsi
+            // 
+            this.nosubsi.HeaderText = "NO SUBSIDIADOS/NO LABORADO";
+            this.nosubsi.Name = "nosubsi";
+            this.nosubsi.ReadOnly = true;
+            this.nosubsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.nosubsi.Width = 190;
+            // 
+            // thorax
+            // 
+            this.thorax.HeaderText = "";
+            this.thorax.Name = "thorax";
+            this.thorax.ReadOnly = true;
+            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thorax.Width = 73;
+            // 
+            // dreintegro
+            // 
+            this.dreintegro.HeaderText = "";
+            this.dreintegro.Name = "dreintegro";
+            this.dreintegro.ReadOnly = true;
+            this.dreintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dreintegro.Width = 70;
+            // 
+            // dotro_reintegro
+            // 
+            this.dotro_reintegro.HeaderText = "";
+            this.dotro_reintegro.Name = "dotro_reintegro";
+            this.dotro_reintegro.ReadOnly = true;
+            this.dotro_reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dotro_reintegro.Width = 70;
+            // 
+            // pres_alimen
+            // 
+            this.pres_alimen.HeaderText = "";
+            this.pres_alimen.Name = "pres_alimen";
+            this.pres_alimen.ReadOnly = true;
+            this.pres_alimen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.pres_alimen.Width = 70;
+            // 
+            // grati_boni
+            // 
+            this.grati_boni.HeaderText = "Gratif. - Boni. F.Patrias y Navidad";
+            this.grati_boni.Name = "grati_boni";
+            this.grati_boni.ReadOnly = true;
+            this.grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.grati_boni.Width = 140;
+            // 
+            // dvaca
+            // 
+            this.dvaca.HeaderText = "";
+            this.dvaca.Name = "dvaca";
+            this.dvaca.ReadOnly = true;
+            this.dvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dvaca.Width = 70;
+            // 
+            // dtrunca
+            // 
+            this.dtrunca.HeaderText = "TRUNCAS";
+            this.dtrunca.Name = "dtrunca";
+            this.dtrunca.ReadOnly = true;
+            this.dtrunca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dtrunca.Width = 280;
+            // 
+            // tremu
+            // 
+            this.tremu.HeaderText = "";
+            this.tremu.Name = "tremu";
+            this.tremu.ReadOnly = true;
+            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tremu.Width = 160;
+            // 
+            // descuentoafp
+            // 
+            this.descuentoafp.HeaderText = "DESCUENTO AFP";
+            this.descuentoafp.Name = "descuentoafp";
+            this.descuentoafp.ReadOnly = true;
+            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.descuentoafp.Width = 210;
+            // 
+            // dvida
+            // 
+            this.dvida.HeaderText = "";
+            this.dvida.Name = "dvida";
+            this.dvida.ReadOnly = true;
+            this.dvida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dvida.Width = 60;
+            // 
+            // dadelanto
+            // 
+            this.dadelanto.HeaderText = "";
+            this.dadelanto.Name = "dadelanto";
+            this.dadelanto.ReadOnly = true;
+            this.dadelanto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dadelanto.Width = 60;
+            // 
+            // dprestamo
+            // 
+            this.dprestamo.HeaderText = "";
+            this.dprestamo.Name = "dprestamo";
+            this.dprestamo.ReadOnly = true;
+            this.dprestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dprestamo.Width = 60;
+            // 
+            // drenta
+            // 
+            this.drenta.HeaderText = "";
+            this.drenta.Name = "drenta";
+            this.drenta.ReadOnly = true;
+            this.drenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.drenta.Width = 60;
+            // 
+            // dretencion
+            // 
+            this.dretencion.HeaderText = "";
+            this.dretencion.Name = "dretencion";
+            this.dretencion.ReadOnly = true;
+            this.dretencion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dretencion.Width = 60;
+            // 
+            // dotrosdes
+            // 
+            this.dotrosdes.HeaderText = "";
+            this.dotrosdes.Name = "dotrosdes";
+            this.dotrosdes.ReadOnly = true;
+            this.dotrosdes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dotrosdes.Width = 60;
+            // 
+            // dtotales_varios
+            // 
+            this.dtotales_varios.HeaderText = "";
+            this.dtotales_varios.Name = "dtotales_varios";
+            this.dtotales_varios.ReadOnly = true;
+            this.dtotales_varios.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dtotales_varios.Width = 300;
+            // 
+            // recargo_consu
+            // 
+            this.recargo_consu.HeaderText = "";
+            this.recargo_consu.Name = "recargo_consu";
+            this.recargo_consu.ReadOnly = true;
+            this.recargo_consu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.recargo_consu.Width = 70;
+            // 
+            // r_grati_boni
+            // 
+            this.r_grati_boni.HeaderText = "RECARGO GRATIF. Y BONIF";
+            this.r_grati_boni.Name = "r_grati_boni";
+            this.r_grati_boni.ReadOnly = true;
+            this.r_grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.r_grati_boni.Width = 140;
+            // 
             // btnver
             // 
             this.btnver.Location = new System.Drawing.Point(345, 12);
@@ -1464,230 +1688,6 @@
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
-            // 
-            // valor1
-            // 
-            this.valor1.HeaderText = "";
-            this.valor1.Name = "valor1";
-            this.valor1.ReadOnly = true;
-            this.valor1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor1.Width = 320;
-            // 
-            // valor2
-            // 
-            this.valor2.HeaderText = "";
-            this.valor2.Name = "valor2";
-            this.valor2.ReadOnly = true;
-            this.valor2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor2.Width = 628;
-            // 
-            // hxdiurnas
-            // 
-            this.hxdiurnas.HeaderText = "HORAS EXTRAS DIURNAS";
-            this.hxdiurnas.Name = "hxdiurnas";
-            this.hxdiurnas.ReadOnly = true;
-            this.hxdiurnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxdiurnas.Width = 220;
-            // 
-            // hxnocturnas
-            // 
-            this.hxnocturnas.HeaderText = "HORAS EXTRAS NOCTURNAS";
-            this.hxnocturnas.Name = "hxnocturnas";
-            this.hxnocturnas.ReadOnly = true;
-            this.hxnocturnas.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxnocturnas.Width = 220;
-            // 
-            // feriado
-            // 
-            this.feriado.HeaderText = "FERIADO | DOMINICAL";
-            this.feriado.Name = "feriado";
-            this.feriado.ReadOnly = true;
-            this.feriado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.feriado.Width = 110;
-            // 
-            // boninocturno
-            // 
-            this.boninocturno.HeaderText = "BONI. NOCTURNA";
-            this.boninocturno.Name = "boninocturno";
-            this.boninocturno.ReadOnly = true;
-            this.boninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.boninocturno.Width = 80;
-            // 
-            // primermayo
-            // 
-            this.primermayo.HeaderText = "";
-            this.primermayo.Name = "primermayo";
-            this.primermayo.ReadOnly = true;
-            this.primermayo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.primermayo.Width = 50;
-            // 
-            // tardanz
-            // 
-            this.tardanz.HeaderText = "TARDANZA";
-            this.tardanz.Name = "tardanz";
-            this.tardanz.ReadOnly = true;
-            this.tardanz.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tardanz.Width = 110;
-            // 
-            // subsi
-            // 
-            this.subsi.HeaderText = "SUBSIDIADOS";
-            this.subsi.Name = "subsi";
-            this.subsi.ReadOnly = true;
-            this.subsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.subsi.Width = 110;
-            // 
-            // nosubsi
-            // 
-            this.nosubsi.HeaderText = "NO SUBSIDIADOS/NO LABORADO";
-            this.nosubsi.Name = "nosubsi";
-            this.nosubsi.ReadOnly = true;
-            this.nosubsi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.nosubsi.Width = 190;
-            // 
-            // thorax
-            // 
-            this.thorax.HeaderText = "";
-            this.thorax.Name = "thorax";
-            this.thorax.ReadOnly = true;
-            this.thorax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thorax.Width = 73;
-            // 
-            // dreintegro
-            // 
-            this.dreintegro.HeaderText = "";
-            this.dreintegro.Name = "dreintegro";
-            this.dreintegro.ReadOnly = true;
-            this.dreintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dreintegro.Width = 70;
-            // 
-            // dotro_reintegro
-            // 
-            this.dotro_reintegro.HeaderText = "";
-            this.dotro_reintegro.Name = "dotro_reintegro";
-            this.dotro_reintegro.ReadOnly = true;
-            this.dotro_reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dotro_reintegro.Width = 70;
-            // 
-            // pres_alimen
-            // 
-            this.pres_alimen.HeaderText = "";
-            this.pres_alimen.Name = "pres_alimen";
-            this.pres_alimen.ReadOnly = true;
-            this.pres_alimen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.pres_alimen.Width = 70;
-            // 
-            // grati_boni
-            // 
-            this.grati_boni.HeaderText = "Gratif. - Boni. F.Patrias y Navidad";
-            this.grati_boni.Name = "grati_boni";
-            this.grati_boni.ReadOnly = true;
-            this.grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.grati_boni.Width = 140;
-            // 
-            // dvaca
-            // 
-            this.dvaca.HeaderText = "";
-            this.dvaca.Name = "dvaca";
-            this.dvaca.ReadOnly = true;
-            this.dvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dvaca.Width = 70;
-            // 
-            // dtrunca
-            // 
-            this.dtrunca.HeaderText = "TRUNCAS";
-            this.dtrunca.Name = "dtrunca";
-            this.dtrunca.ReadOnly = true;
-            this.dtrunca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dtrunca.Width = 280;
-            // 
-            // tremu
-            // 
-            this.tremu.HeaderText = "";
-            this.tremu.Name = "tremu";
-            this.tremu.ReadOnly = true;
-            this.tremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tremu.Width = 160;
-            // 
-            // descuentoafp
-            // 
-            this.descuentoafp.HeaderText = "DESCUENTO AFP";
-            this.descuentoafp.Name = "descuentoafp";
-            this.descuentoafp.ReadOnly = true;
-            this.descuentoafp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.descuentoafp.Width = 210;
-            // 
-            // dvida
-            // 
-            this.dvida.HeaderText = "";
-            this.dvida.Name = "dvida";
-            this.dvida.ReadOnly = true;
-            this.dvida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dvida.Width = 60;
-            // 
-            // dadelanto
-            // 
-            this.dadelanto.HeaderText = "";
-            this.dadelanto.Name = "dadelanto";
-            this.dadelanto.ReadOnly = true;
-            this.dadelanto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dadelanto.Width = 60;
-            // 
-            // dprestamo
-            // 
-            this.dprestamo.HeaderText = "";
-            this.dprestamo.Name = "dprestamo";
-            this.dprestamo.ReadOnly = true;
-            this.dprestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dprestamo.Width = 60;
-            // 
-            // drenta
-            // 
-            this.drenta.HeaderText = "";
-            this.drenta.Name = "drenta";
-            this.drenta.ReadOnly = true;
-            this.drenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.drenta.Width = 60;
-            // 
-            // dretencion
-            // 
-            this.dretencion.HeaderText = "";
-            this.dretencion.Name = "dretencion";
-            this.dretencion.ReadOnly = true;
-            this.dretencion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dretencion.Width = 60;
-            // 
-            // dotrosdes
-            // 
-            this.dotrosdes.HeaderText = "";
-            this.dotrosdes.Name = "dotrosdes";
-            this.dotrosdes.ReadOnly = true;
-            this.dotrosdes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dotrosdes.Width = 60;
-            // 
-            // dtotales_varios
-            // 
-            this.dtotales_varios.HeaderText = "";
-            this.dtotales_varios.Name = "dtotales_varios";
-            this.dtotales_varios.ReadOnly = true;
-            this.dtotales_varios.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dtotales_varios.Width = 300;
-            // 
-            // recargo_consu
-            // 
-            this.recargo_consu.HeaderText = "";
-            this.recargo_consu.Name = "recargo_consu";
-            this.recargo_consu.ReadOnly = true;
-            this.recargo_consu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.recargo_consu.Width = 70;
-            // 
-            // r_grati_boni
-            // 
-            this.r_grati_boni.HeaderText = "RECARGO GRATIF. Y BONIF";
-            this.r_grati_boni.Name = "r_grati_boni";
-            this.r_grati_boni.ReadOnly = true;
-            this.r_grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.r_grati_boni.Width = 140;
             // 
             // FrmPlanillaMensual2
             // 
