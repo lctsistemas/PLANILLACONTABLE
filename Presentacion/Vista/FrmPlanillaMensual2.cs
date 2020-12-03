@@ -451,8 +451,8 @@ namespace Presentacion.Vista
             {
                 case 17:
                 case 18:
+                case 20:
                 case 21:
-                case 22:
                 case 23:
                 case 24:
                 case 26:
