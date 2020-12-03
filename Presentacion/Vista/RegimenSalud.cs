@@ -70,10 +70,10 @@ namespace Presentacion.Vista
             dgvregimensalud.Columns[0].Width = 50;
             dgvregimensalud.Columns[0].Visible = false;
 
-            dgvregimensalud.Columns[1].HeaderText = "Cod. regimen salud";
+            dgvregimensalud.Columns[1].HeaderText = "COD. REGIMEN SALUD";
             dgvregimensalud.Columns[1].Width = 120;
 
-            dgvregimensalud.Columns[2].HeaderText = "Regimen Salud";
+            dgvregimensalud.Columns[2].HeaderText = "REGIMEN SALUD";
             dgvregimensalud.Columns[2].Width = 250;
 
             dgvregimensalud.Columns[3].HeaderText = "state";

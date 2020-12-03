@@ -15,7 +15,11 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FrmPlanillaMensual2());
+=======
+            Application.Run(new RegimenSalud());
+>>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
 
         }
     }
