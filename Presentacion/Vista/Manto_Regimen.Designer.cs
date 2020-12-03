@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
+
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
@@ -67,11 +65,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-<<<<<<< HEAD
-            this.panel2.Size = new System.Drawing.Size(449, 40);
-=======
             this.panel2.Size = new System.Drawing.Size(450, 35);
->>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
+
             this.panel2.TabIndex = 81;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -81,11 +76,9 @@
             this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-<<<<<<< HEAD
-            this.btnminimizar.Location = new System.Drawing.Point(363, 8);
-=======
+
             this.btnminimizar.Location = new System.Drawing.Point(364, 8);
->>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
+
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 20);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -101,11 +94,8 @@
             this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-<<<<<<< HEAD
-            this.btncerrar.Location = new System.Drawing.Point(404, 8);
-=======
+
             this.btncerrar.Location = new System.Drawing.Point(405, 8);
->>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -264,7 +254,7 @@
             // dgvregimen
             // 
             this.dgvregimen.AllowUserToAddRows = false;
-<<<<<<< HEAD
+
             this.dgvregimen.AllowUserToDeleteRows = false;
             this.dgvregimen.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -275,13 +265,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-=======
+
             this.dgvregimen.AllowUserToResizeColumns = false;
             this.dgvregimen.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
->>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
+
             this.dgvregimen.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvregimen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvregimen.BackgroundColor = System.Drawing.Color.White;
@@ -298,9 +288,6 @@
             this.dgvregimen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvregimen.ColumnHeadersHeight = 34;
             this.dgvregimen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-<<<<<<< HEAD
-            this.dgvregimen.DefaultCellStyle = dataGridViewCellStyle1;
-=======
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,7 +297,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvregimen.DefaultCellStyle = dataGridViewCellStyle3;
->>>>>>> 21bcf66f4cd16bbcc763042e48a02468fd05237f
             this.dgvregimen.EnableHeadersVisualStyles = false;
             this.dgvregimen.Location = new System.Drawing.Point(12, 228);
             this.dgvregimen.MultiSelect = false;
