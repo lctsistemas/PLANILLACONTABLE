@@ -12,23 +12,13 @@ namespace Presentacion.Vista
     {
         private Ncargo nc = new Ncargo();
         string result = "";
-        //[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        //private static extern IntPtr CreateRoundRectRgn
-        //   (
-        //       int nLeftRect,     // x-coordinate of upper-left corner
-        //       int nTopRect,      // y-coordinate of upper-left corner
-        //       int nRightRect,    // x-coordinate of lower-right corner
-        //       int nBottomRect,   // y-coordinate of lower-right corner
-        //       int nWidthEllipse, // height of ellipse
-        //       int nHeightEllipse // width of ellipse
-        //   );
         public frmcargo()
         {
             InitializeComponent();
             ShowCargo();
             this.FormBorderStyle = FormBorderStyle.None;
-            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
+
         //METODO MOSTRAR
         private void ShowCargo()
         {
@@ -210,16 +200,11 @@ namespace Presentacion.Vista
         private void frmcargo_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
-        }
-
-        private void btncerrar_MouseHover(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
+        }       
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SteelBlue;
+            btncerrar.BackColor = Color.FromArgb(64,64,64);
         }
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
@@ -235,12 +220,18 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SteelBlue;
+            btnminimizar.BackColor = Color.FromArgb(64,64,64);
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
     }
 }
+

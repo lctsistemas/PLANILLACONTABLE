@@ -97,7 +97,6 @@ id_usuario int not null
 GO
 
 --drop table Empresa, sucursal, Empresa_maestra
-
 CREATE TABLE Sucursal(
 id_sucursal int not null,
 codigo_sucursal varchar(8)CONSTRAINT UNQ_cod_sucur UNIQUE not null,
@@ -386,12 +385,14 @@ VALUES(17, '28', 'S.I.', 'DIAS LICENCIA POR PATERNIDAD','DIAS LICENCIA POR PATER
 
 GO
 
+
 --TABLA PLANILLA MANTO, AUNA FANTAN MAS CAMPOS QUE TENGO QUE PONER.
 CREATE TABLE PlanillaManto(
 idplanilla_manto int not null,
 id_contrato int not null,
 id_planilla int not null,
 id_tipo_planilla int not null,
+jornadalaboral varchar(11) not null,
 basico money not null,
 dias int null,
 dia_dominical int null,
@@ -470,7 +471,9 @@ reintegro_grati decimal(7,2)null,
 reintegro_boni decimal(7,2)null
 )
 GO
+--ALTER TABLE dbo.PlanillaManto ADD jornadalaboral varchar(11) not null
 
+GO
 -- CONCEPTOS PARA PLANILLA
 CREATE TABLE Conceptos(
 id_conceptos int not null,

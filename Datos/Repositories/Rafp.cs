@@ -69,6 +69,48 @@ namespace Datos.Repositories
             return i;
         }
 
+        //GUARDAR COMISIONES PARA ONP
+        public int SaveOnp(Dafp daf)
+        {
+            result = 0;
+            using (SqlConnection conect = RConexion.Getconectar())
+            {
+                conect.Open();
+
+                using (SqlTransaction sqltra = conect.BeginTransaction())
+                {
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.CommandText = "SP_INSERT_COMISION_ONP";
+                            cmd.Connection = conect;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Transaction = sqltra;
+
+                            cmd.Parameters.Add("@codigo_regimen", SqlDbType.Int).Value = daf.Codigo_regimen;
+                            cmd.Parameters.Add("@comision", SqlDbType.Decimal).Value = daf.Comision;                          
+                            cmd.Parameters.Add("@idmes", SqlDbType.Int).Value = daf.Idmes;
+                            cmd.Parameters.Add("@idperiodo", SqlDbType.Int).Value = daf.Idperiodo;
+                            result = cmd.ExecuteNonQuery();                                                  
+
+                        }
+
+                        sqltra.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        sqltra.Rollback();
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                        
+                    }
+
+                }
+
+            }
+            return result;
+        }
+
         //EDITAR COMISIONES
         public int Edit(Dafp daf)
         {
@@ -149,7 +191,7 @@ namespace Datos.Repositories
         }
 
         #region Mostrar comisiones AFP
-        public DataTable Show_comisionafp(Dafp entity)
+        public DataTable Show_comisionafp(Dafp entity, string tipo_regimen)
         {
             DataTable dt = null;
             using (SqlConnection conect = RConexion.Getconectar())
@@ -163,6 +205,7 @@ namespace Datos.Repositories
 
                     cmd.Parameters.AddWithValue("@idmes", entity.Idmes);
                     cmd.Parameters.AddWithValue("@idperiodo", entity.Idperiodo);
+                    cmd.Parameters.AddWithValue("@tipo_regimen", tipo_regimen);
                     SqlDataReader reader = cmd.ExecuteReader();
                     using (dt = new DataTable())
                     {

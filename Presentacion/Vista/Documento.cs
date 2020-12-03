@@ -172,25 +172,10 @@ namespace Presentacion.Vista
             this.Close();
         }
 
-        private void btnmaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnminimizar.Visible = true;
-            btnmaximizar.Visible = false;
-        }
-
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnrestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
-
-        }
+        }      
 
         private void barraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -205,12 +190,12 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(231, 76, 60);
+            btncerrar.BackColor = Color.Crimson;
         }
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(36, 113, 163);
+            btncerrar.BackColor = Color.FromArgb(64,64,64);
         }
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
