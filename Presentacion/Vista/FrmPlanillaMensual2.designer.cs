@@ -33,17 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuarchivos = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,80 +94,6 @@
             this.TxtfechaInicio = new System.Windows.Forms.MaskedTextBox();
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.Dgvplanilla1 = new System.Windows.Forms.DataGridView();
-            this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_planilla_manto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valor_aporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.f_ini = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dia_dominical = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hora_trabajada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.a_familiar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxd25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minud25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montod25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxd35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minud35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montod35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minun25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monton25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hxn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minun35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.monton35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hrferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.minuferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hrboninocturna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoboninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unomayo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.htarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mtarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montotarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnsubsidio = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ndias = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montosub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnnosubsidio = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ndiasnega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montonega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ndiasposi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.montoposi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otros_reintegros = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prestacion_alimenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vacaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tvaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tgrati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tboni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tcts = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totaremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.onp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.spp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.essalud_vida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adelanto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prestamo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.renta5cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retencionj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otrodes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totades = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.recargo_consumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reintegro_grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reintegro_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Dgvplanilla2 = new System.Windows.Forms.DataGridView();
@@ -199,6 +125,77 @@
             this.dtotales_varios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recargo_consu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.r_grati_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reintegro_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reintegro_grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recargo_consumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aportsalud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.topagar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totades = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.otrodes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retencionj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.renta5cate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.essalud_vida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.onp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totaremu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tcts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tboni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tgrati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tvaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prestacion_alimenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.otros_reintegros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reintegro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thoras = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoposi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ndiasposi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montonega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ndiasnega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnnosubsidio = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.montosub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ndias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnsubsidio = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.montotarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mtarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.htarde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unomayo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoboninocturno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hrboninocturna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montoferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minuferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hrferiado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monton35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minun35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.monton25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minun25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montod35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minud35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxd35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.montod25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minud25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hxd25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.a_familiar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hora_trabajada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dia_dominical = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.f_ini = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_aporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor_comision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_planilla_manto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -860,7 +857,6 @@
             this.prestacion_alimenta,
             this.grati,
             this.boni,
-            this.vacaciones,
             this.tvaca,
             this.tgrati,
             this.tboni,
@@ -871,8 +867,6 @@
             this.seguro,
             this.spp,
             this.essalud_vida,
-            this.adelanto,
-            this.prestamo,
             this.renta5cate,
             this.retencionj,
             this.otrodes,
@@ -893,7 +887,7 @@
             this.Dgvplanilla1.DefaultCellStyle = dataGridViewCellStyle12;
             this.Dgvplanilla1.EnableHeadersVisualStyles = false;
             this.Dgvplanilla1.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Dgvplanilla1.Location = new System.Drawing.Point(4, 216);
+            this.Dgvplanilla1.Location = new System.Drawing.Point(4, 217);
             this.Dgvplanilla1.Name = "Dgvplanilla1";
             this.Dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -907,7 +901,7 @@
             this.Dgvplanilla1.RowHeadersWidth = 25;
             this.Dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.Dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.Dgvplanilla1.Size = new System.Drawing.Size(1229, 334);
+            this.Dgvplanilla1.Size = new System.Drawing.Size(1229, 156);
             this.Dgvplanilla1.TabIndex = 8;
             this.Dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.Dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellContentClick);
@@ -917,561 +911,6 @@
             this.Dgvplanilla1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellMouseLeave);
             this.Dgvplanilla1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvplanilla1_CellStateChanged);
             this.Dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dgvplanilla1_Scroll);
-            // 
-            // id_contrato
-            // 
-            this.id_contrato.DataPropertyName = "Id_contrato";
-            this.id_contrato.HeaderText = "Id Contrato";
-            this.id_contrato.Name = "id_contrato";
-            this.id_contrato.Width = 50;
-            // 
-            // id_planilla_manto
-            // 
-            this.id_planilla_manto.HeaderText = "Id Planilla";
-            this.id_planilla_manto.Name = "id_planilla_manto";
-            this.id_planilla_manto.Width = 50;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "Numero_documento";
-            this.codigo.HeaderText = "Codigo";
-            this.codigo.Name = "codigo";
-            this.codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.codigo.Width = 70;
-            // 
-            // ape_nom
-            // 
-            this.ape_nom.DataPropertyName = "Nombres";
-            this.ape_nom.HeaderText = "Apellidos y Nombres";
-            this.ape_nom.Name = "ape_nom";
-            this.ape_nom.Width = 250;
-            // 
-            // regi_pen
-            // 
-            this.regi_pen.DataPropertyName = "Descrip_regipension";
-            this.regi_pen.HeaderText = "Regimen Pensionario";
-            this.regi_pen.Name = "regi_pen";
-            this.regi_pen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.regi_pen.Width = 120;
-            // 
-            // valor_comision
-            // 
-            this.valor_comision.DataPropertyName = "VComision";
-            this.valor_comision.HeaderText = "M comision";
-            this.valor_comision.Name = "valor_comision";
-            this.valor_comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor_comision.Width = 50;
-            // 
-            // valor_seguro
-            // 
-            this.valor_seguro.DataPropertyName = "VSeguro";
-            this.valor_seguro.HeaderText = "M seguro";
-            this.valor_seguro.Name = "valor_seguro";
-            this.valor_seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor_seguro.Width = 50;
-            // 
-            // valor_aporte
-            // 
-            this.valor_aporte.DataPropertyName = "VAporte";
-            this.valor_aporte.HeaderText = "M aporte";
-            this.valor_aporte.Name = "valor_aporte";
-            this.valor_aporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.valor_aporte.Width = 50;
-            // 
-            // cargo
-            // 
-            this.cargo.DataPropertyName = "Cargop";
-            this.cargo.HeaderText = "Cargo";
-            this.cargo.Name = "cargo";
-            this.cargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.cargo.Width = 120;
-            // 
-            // f_ini
-            // 
-            this.f_ini.DataPropertyName = "Fecha_inicio";
-            this.f_ini.HeaderText = "Fecha de Ingreso";
-            this.f_ini.Name = "f_ini";
-            this.f_ini.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.f_ini.Width = 70;
-            // 
-            // remu
-            // 
-            this.remu.DataPropertyName = "Remune_basica";
-            this.remu.HeaderText = "Basico";
-            this.remu.Name = "remu";
-            this.remu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.remu.Width = 70;
-            // 
-            // dias
-            // 
-            this.dias.HeaderText = "Dias";
-            this.dias.Name = "dias";
-            this.dias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dias.Width = 35;
-            // 
-            // dia_dominical
-            // 
-            this.dia_dominical.HeaderText = "Dia Domi nical";
-            this.dia_dominical.Name = "dia_dominical";
-            this.dia_dominical.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dia_dominical.Width = 35;
-            // 
-            // hora_trabajada
-            // 
-            this.hora_trabajada.HeaderText = "Horas Trabaja das";
-            this.hora_trabajada.Name = "hora_trabajada";
-            this.hora_trabajada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hora_trabajada.Width = 50;
-            // 
-            // sueldo
-            // 
-            this.sueldo.HeaderText = "Sueldo Basico";
-            this.sueldo.Name = "sueldo";
-            this.sueldo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.sueldo.Width = 70;
-            // 
-            // a_familiar
-            // 
-            this.a_familiar.DataPropertyName = "Asig_familiar";
-            this.a_familiar.HeaderText = "Asig. Familiar";
-            this.a_familiar.Name = "a_familiar";
-            this.a_familiar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.a_familiar.Width = 58;
-            // 
-            // hxd25
-            // 
-            this.hxd25.HeaderText = "No. Hrs.";
-            this.hxd25.Name = "hxd25";
-            this.hxd25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxd25.Width = 30;
-            // 
-            // minud25
-            // 
-            this.minud25.HeaderText = "No. Min.";
-            this.minud25.Name = "minud25";
-            this.minud25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minud25.Width = 30;
-            // 
-            // montod25
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.montod25.DefaultCellStyle = dataGridViewCellStyle3;
-            this.montod25.HeaderText = "Monto Hrs. 25%";
-            this.montod25.Name = "montod25";
-            this.montod25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montod25.Width = 50;
-            // 
-            // hxd35
-            // 
-            this.hxd35.HeaderText = "No. Hrs.";
-            this.hxd35.Name = "hxd35";
-            this.hxd35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxd35.Width = 30;
-            // 
-            // minud35
-            // 
-            this.minud35.HeaderText = "No. Min.";
-            this.minud35.Name = "minud35";
-            this.minud35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minud35.Width = 30;
-            // 
-            // montod35
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.montod35.DefaultCellStyle = dataGridViewCellStyle4;
-            this.montod35.HeaderText = "Monto Hrs. 35%";
-            this.montod35.Name = "montod35";
-            this.montod35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montod35.Width = 50;
-            // 
-            // hxn25
-            // 
-            this.hxn25.HeaderText = "No. Hrs.";
-            this.hxn25.Name = "hxn25";
-            this.hxn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxn25.Width = 30;
-            // 
-            // minun25
-            // 
-            this.minun25.HeaderText = "No. Min.";
-            this.minun25.Name = "minun25";
-            this.minun25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minun25.Width = 30;
-            // 
-            // monton25
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.monton25.DefaultCellStyle = dataGridViewCellStyle5;
-            this.monton25.HeaderText = "Monto Hrs. 25%";
-            this.monton25.Name = "monton25";
-            this.monton25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.monton25.Width = 50;
-            // 
-            // hxn35
-            // 
-            this.hxn35.HeaderText = "No. Hrs.";
-            this.hxn35.Name = "hxn35";
-            this.hxn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hxn35.Width = 30;
-            // 
-            // minun35
-            // 
-            this.minun35.HeaderText = "No. Min.";
-            this.minun35.Name = "minun35";
-            this.minun35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minun35.Width = 30;
-            // 
-            // monton35
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.monton35.DefaultCellStyle = dataGridViewCellStyle6;
-            this.monton35.HeaderText = "Monto Hrs. 35%";
-            this.monton35.Name = "monton35";
-            this.monton35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.monton35.Width = 50;
-            // 
-            // hrferiado
-            // 
-            this.hrferiado.HeaderText = "No. Hrs.";
-            this.hrferiado.Name = "hrferiado";
-            this.hrferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hrferiado.Width = 30;
-            // 
-            // minuferiado
-            // 
-            this.minuferiado.HeaderText = "No. Min.";
-            this.minuferiado.Name = "minuferiado";
-            this.minuferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.minuferiado.Width = 30;
-            // 
-            // montoferiado
-            // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.montoferiado.DefaultCellStyle = dataGridViewCellStyle7;
-            this.montoferiado.HeaderText = "Monto Hrs.";
-            this.montoferiado.Name = "montoferiado";
-            this.montoferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montoferiado.Width = 50;
-            // 
-            // hrboninocturna
-            // 
-            this.hrboninocturna.HeaderText = "No. Hrs.";
-            this.hrboninocturna.Name = "hrboninocturna";
-            this.hrboninocturna.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.hrboninocturna.Width = 30;
-            // 
-            // montoboninocturno
-            // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.montoboninocturno.DefaultCellStyle = dataGridViewCellStyle8;
-            this.montoboninocturno.HeaderText = "Monto Hrs.";
-            this.montoboninocturno.Name = "montoboninocturno";
-            this.montoboninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montoboninocturno.Width = 50;
-            // 
-            // unomayo
-            // 
-            this.unomayo.HeaderText = "1ro Mayo";
-            this.unomayo.Name = "unomayo";
-            this.unomayo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.unomayo.Width = 50;
-            // 
-            // htarde
-            // 
-            this.htarde.HeaderText = "No. Hrs.";
-            this.htarde.Name = "htarde";
-            this.htarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.htarde.Width = 30;
-            // 
-            // mtarde
-            // 
-            this.mtarde.HeaderText = "No. Min.";
-            this.mtarde.Name = "mtarde";
-            this.mtarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.mtarde.Width = 30;
-            // 
-            // montotarde
-            // 
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.montotarde.DefaultCellStyle = dataGridViewCellStyle9;
-            this.montotarde.HeaderText = "Monto Hrs.";
-            this.montotarde.Name = "montotarde";
-            this.montotarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montotarde.Width = 50;
-            // 
-            // btnsubsidio
-            // 
-            this.btnsubsidio.HeaderText = "";
-            this.btnsubsidio.Name = "btnsubsidio";
-            this.btnsubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnsubsidio.Text = "";
-            this.btnsubsidio.ToolTipText = "Subsidiado";
-            this.btnsubsidio.Width = 30;
-            // 
-            // ndias
-            // 
-            this.ndias.HeaderText = "No. Dias";
-            this.ndias.Name = "ndias";
-            this.ndias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ndias.Width = 30;
-            // 
-            // montosub
-            // 
-            this.montosub.HeaderText = "Monto";
-            this.montosub.Name = "montosub";
-            this.montosub.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montosub.Width = 50;
-            // 
-            // btnnosubsidio
-            // 
-            this.btnnosubsidio.HeaderText = "";
-            this.btnnosubsidio.Name = "btnnosubsidio";
-            this.btnnosubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.btnnosubsidio.ToolTipText = "No subsidiado";
-            this.btnnosubsidio.Width = 30;
-            // 
-            // ndiasnega
-            // 
-            this.ndiasnega.HeaderText = "No. Dias";
-            this.ndiasnega.Name = "ndiasnega";
-            this.ndiasnega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ndiasnega.Width = 30;
-            // 
-            // montonega
-            // 
-            this.montonega.HeaderText = "Monto (-)";
-            this.montonega.Name = "montonega";
-            this.montonega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montonega.Width = 50;
-            // 
-            // ndiasposi
-            // 
-            this.ndiasposi.HeaderText = "No. Dias";
-            this.ndiasposi.Name = "ndiasposi";
-            this.ndiasposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ndiasposi.Width = 30;
-            // 
-            // montoposi
-            // 
-            this.montoposi.HeaderText = "Monto (+)";
-            this.montoposi.Name = "montoposi";
-            this.montoposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.montoposi.Width = 50;
-            // 
-            // thoras
-            // 
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.thoras.DefaultCellStyle = dataGridViewCellStyle10;
-            this.thoras.HeaderText = "Total Horas Extras";
-            this.thoras.Name = "thoras";
-            this.thoras.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.thoras.Width = 73;
-            // 
-            // reintegro
-            // 
-            this.reintegro.HeaderText = "Reintegro";
-            this.reintegro.Name = "reintegro";
-            this.reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reintegro.Width = 70;
-            // 
-            // otros_reintegros
-            // 
-            this.otros_reintegros.HeaderText = "Otro reintegro";
-            this.otros_reintegros.Name = "otros_reintegros";
-            this.otros_reintegros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.otros_reintegros.Width = 70;
-            // 
-            // prestacion_alimenta
-            // 
-            this.prestacion_alimenta.HeaderText = "Prestacion alimentaria";
-            this.prestacion_alimenta.Name = "prestacion_alimenta";
-            this.prestacion_alimenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.prestacion_alimenta.Width = 70;
-            // 
-            // grati
-            // 
-            this.grati.HeaderText = "Gratificaci ón";
-            this.grati.Name = "grati";
-            this.grati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.grati.Width = 70;
-            // 
-            // boni
-            // 
-            this.boni.HeaderText = "Bonificaci ón";
-            this.boni.Name = "boni";
-            this.boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.boni.Width = 70;
-            // 
-            // vacaciones
-            // 
-            this.vacaciones.HeaderText = "Vacaciones del Mes";
-            this.vacaciones.Name = "vacaciones";
-            this.vacaciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.vacaciones.Width = 70;
-            // 
-            // tvaca
-            // 
-            this.tvaca.HeaderText = "Vacaciones Monto";
-            this.tvaca.Name = "tvaca";
-            this.tvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tvaca.Width = 70;
-            // 
-            // tgrati
-            // 
-            this.tgrati.HeaderText = "Gratif. Monto";
-            this.tgrati.Name = "tgrati";
-            this.tgrati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tgrati.Width = 70;
-            // 
-            // tboni
-            // 
-            this.tboni.HeaderText = "Bonif. Monto";
-            this.tboni.Name = "tboni";
-            this.tboni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tboni.Width = 70;
-            // 
-            // tcts
-            // 
-            this.tcts.HeaderText = "C.T.S Monto";
-            this.tcts.Name = "tcts";
-            this.tcts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.tcts.Width = 70;
-            // 
-            // totaremu
-            // 
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Maroon;
-            this.totaremu.DefaultCellStyle = dataGridViewCellStyle11;
-            this.totaremu.HeaderText = "Total Remuneración";
-            this.totaremu.Name = "totaremu";
-            this.totaremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.totaremu.Width = 90;
-            // 
-            // onp
-            // 
-            this.onp.HeaderText = "O.N.P";
-            this.onp.Name = "onp";
-            this.onp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.onp.Width = 70;
-            // 
-            // comision
-            // 
-            this.comision.HeaderText = "COMISION";
-            this.comision.Name = "comision";
-            this.comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.comision.Width = 70;
-            // 
-            // seguro
-            // 
-            this.seguro.HeaderText = "SEGURO";
-            this.seguro.Name = "seguro";
-            this.seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.seguro.Width = 70;
-            // 
-            // spp
-            // 
-            this.spp.HeaderText = "SPP";
-            this.spp.Name = "spp";
-            this.spp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.spp.Width = 70;
-            // 
-            // essalud_vida
-            // 
-            this.essalud_vida.HeaderText = "Essalud Vida";
-            this.essalud_vida.Name = "essalud_vida";
-            this.essalud_vida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.essalud_vida.Width = 60;
-            // 
-            // adelanto
-            // 
-            this.adelanto.HeaderText = "Adelanto";
-            this.adelanto.Name = "adelanto";
-            this.adelanto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.adelanto.Width = 60;
-            // 
-            // prestamo
-            // 
-            this.prestamo.HeaderText = "Prestamo";
-            this.prestamo.Name = "prestamo";
-            this.prestamo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.prestamo.Width = 60;
-            // 
-            // renta5cate
-            // 
-            this.renta5cate.HeaderText = "5Ta. Categ.";
-            this.renta5cate.Name = "renta5cate";
-            this.renta5cate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.renta5cate.Width = 60;
-            // 
-            // retencionj
-            // 
-            this.retencionj.HeaderText = "Reten. Judic.";
-            this.retencionj.Name = "retencionj";
-            this.retencionj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.retencionj.Width = 60;
-            // 
-            // otrodes
-            // 
-            this.otrodes.HeaderText = "Otros Desct.";
-            this.otrodes.Name = "otrodes";
-            this.otrodes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.otrodes.Width = 60;
-            // 
-            // totades
-            // 
-            this.totades.HeaderText = "Total Descuento";
-            this.totades.Name = "totades";
-            this.totades.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.totades.Width = 70;
-            // 
-            // topagar
-            // 
-            this.topagar.HeaderText = "Total a Pagar";
-            this.topagar.Name = "topagar";
-            this.topagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.topagar.Width = 90;
-            // 
-            // aportsalud
-            // 
-            this.aportsalud.HeaderText = "Aportes Essalud";
-            this.aportsalud.Name = "aportsalud";
-            this.aportsalud.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.aportsalud.Width = 70;
-            // 
-            // transporte
-            // 
-            this.transporte.HeaderText = "Transporte";
-            this.transporte.Name = "transporte";
-            this.transporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.transporte.Width = 70;
-            // 
-            // recargo_consumo
-            // 
-            this.recargo_consumo.HeaderText = "Recargo consumo";
-            this.recargo_consumo.Name = "recargo_consumo";
-            this.recargo_consumo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.recargo_consumo.Width = 70;
-            // 
-            // reintegro_grati
-            // 
-            this.reintegro_grati.HeaderText = "Reintegro grati";
-            this.reintegro_grati.Name = "reintegro_grati";
-            this.reintegro_grati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reintegro_grati.Width = 70;
-            // 
-            // reintegro_boni
-            // 
-            this.reintegro_boni.HeaderText = "Reintegro boni";
-            this.reintegro_boni.Name = "reintegro_boni";
-            this.reintegro_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.reintegro_boni.Width = 70;
             // 
             // label5
             // 
@@ -1783,6 +1222,540 @@
             this.r_grati_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.r_grati_boni.Width = 140;
             // 
+            // reintegro_boni
+            // 
+            this.reintegro_boni.HeaderText = "Reintegro boni";
+            this.reintegro_boni.Name = "reintegro_boni";
+            this.reintegro_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reintegro_boni.Width = 70;
+            // 
+            // reintegro_grati
+            // 
+            this.reintegro_grati.HeaderText = "Reintegro grati";
+            this.reintegro_grati.Name = "reintegro_grati";
+            this.reintegro_grati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reintegro_grati.Width = 70;
+            // 
+            // recargo_consumo
+            // 
+            this.recargo_consumo.HeaderText = "Recargo consumo";
+            this.recargo_consumo.Name = "recargo_consumo";
+            this.recargo_consumo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.recargo_consumo.Width = 70;
+            // 
+            // transporte
+            // 
+            this.transporte.HeaderText = "Transporte";
+            this.transporte.Name = "transporte";
+            this.transporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.transporte.Width = 70;
+            // 
+            // aportsalud
+            // 
+            this.aportsalud.HeaderText = "Aportes Essalud";
+            this.aportsalud.Name = "aportsalud";
+            this.aportsalud.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.aportsalud.Width = 70;
+            // 
+            // topagar
+            // 
+            this.topagar.HeaderText = "Total a Pagar";
+            this.topagar.Name = "topagar";
+            this.topagar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.topagar.Width = 90;
+            // 
+            // totades
+            // 
+            this.totades.HeaderText = "Total Descuento";
+            this.totades.Name = "totades";
+            this.totades.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.totades.Width = 70;
+            // 
+            // otrodes
+            // 
+            this.otrodes.HeaderText = "Otros Desct.";
+            this.otrodes.Name = "otrodes";
+            this.otrodes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.otrodes.Width = 60;
+            // 
+            // retencionj
+            // 
+            this.retencionj.HeaderText = "Reten. Judic.";
+            this.retencionj.Name = "retencionj";
+            this.retencionj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.retencionj.Width = 60;
+            // 
+            // renta5cate
+            // 
+            this.renta5cate.HeaderText = "5Ta. Categ.";
+            this.renta5cate.Name = "renta5cate";
+            this.renta5cate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.renta5cate.Width = 60;
+            // 
+            // essalud_vida
+            // 
+            this.essalud_vida.HeaderText = "Essalud Vida";
+            this.essalud_vida.Name = "essalud_vida";
+            this.essalud_vida.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.essalud_vida.Width = 60;
+            // 
+            // spp
+            // 
+            this.spp.HeaderText = "SPP";
+            this.spp.Name = "spp";
+            this.spp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.spp.Width = 70;
+            // 
+            // seguro
+            // 
+            this.seguro.HeaderText = "SEGURO";
+            this.seguro.Name = "seguro";
+            this.seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.seguro.Width = 70;
+            // 
+            // comision
+            // 
+            this.comision.HeaderText = "COMISION";
+            this.comision.Name = "comision";
+            this.comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.comision.Width = 70;
+            // 
+            // onp
+            // 
+            this.onp.HeaderText = "O.N.P";
+            this.onp.Name = "onp";
+            this.onp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.onp.Width = 70;
+            // 
+            // totaremu
+            // 
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Maroon;
+            this.totaremu.DefaultCellStyle = dataGridViewCellStyle11;
+            this.totaremu.HeaderText = "Total Remuneración";
+            this.totaremu.Name = "totaremu";
+            this.totaremu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.totaremu.Width = 90;
+            // 
+            // tcts
+            // 
+            this.tcts.HeaderText = "C.T.S Monto";
+            this.tcts.Name = "tcts";
+            this.tcts.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tcts.Width = 70;
+            // 
+            // tboni
+            // 
+            this.tboni.HeaderText = "Bonif. Monto";
+            this.tboni.Name = "tboni";
+            this.tboni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tboni.Width = 70;
+            // 
+            // tgrati
+            // 
+            this.tgrati.HeaderText = "Gratif. Monto";
+            this.tgrati.Name = "tgrati";
+            this.tgrati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tgrati.Width = 70;
+            // 
+            // tvaca
+            // 
+            this.tvaca.HeaderText = "Vacaciones Monto";
+            this.tvaca.Name = "tvaca";
+            this.tvaca.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.tvaca.Width = 70;
+            // 
+            // boni
+            // 
+            this.boni.HeaderText = "Bonificaci ón";
+            this.boni.Name = "boni";
+            this.boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.boni.Width = 70;
+            // 
+            // grati
+            // 
+            this.grati.HeaderText = "Gratificaci ón";
+            this.grati.Name = "grati";
+            this.grati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.grati.Width = 70;
+            // 
+            // prestacion_alimenta
+            // 
+            this.prestacion_alimenta.HeaderText = "Prestacion alimentaria";
+            this.prestacion_alimenta.Name = "prestacion_alimenta";
+            this.prestacion_alimenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.prestacion_alimenta.Width = 70;
+            // 
+            // otros_reintegros
+            // 
+            this.otros_reintegros.HeaderText = "Otro reintegro";
+            this.otros_reintegros.Name = "otros_reintegros";
+            this.otros_reintegros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.otros_reintegros.Width = 70;
+            // 
+            // reintegro
+            // 
+            this.reintegro.HeaderText = "Reintegro";
+            this.reintegro.Name = "reintegro";
+            this.reintegro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.reintegro.Width = 70;
+            // 
+            // thoras
+            // 
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.thoras.DefaultCellStyle = dataGridViewCellStyle10;
+            this.thoras.HeaderText = "Total Horas Extras";
+            this.thoras.Name = "thoras";
+            this.thoras.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.thoras.Width = 73;
+            // 
+            // montoposi
+            // 
+            this.montoposi.HeaderText = "Monto (+)";
+            this.montoposi.Name = "montoposi";
+            this.montoposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montoposi.Width = 50;
+            // 
+            // ndiasposi
+            // 
+            this.ndiasposi.HeaderText = "No. Dias";
+            this.ndiasposi.Name = "ndiasposi";
+            this.ndiasposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ndiasposi.Width = 30;
+            // 
+            // montonega
+            // 
+            this.montonega.HeaderText = "Monto (-)";
+            this.montonega.Name = "montonega";
+            this.montonega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montonega.Width = 50;
+            // 
+            // ndiasnega
+            // 
+            this.ndiasnega.HeaderText = "No. Dias";
+            this.ndiasnega.Name = "ndiasnega";
+            this.ndiasnega.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ndiasnega.Width = 30;
+            // 
+            // btnnosubsidio
+            // 
+            this.btnnosubsidio.HeaderText = "";
+            this.btnnosubsidio.Name = "btnnosubsidio";
+            this.btnnosubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnnosubsidio.ToolTipText = "No subsidiado";
+            this.btnnosubsidio.Width = 30;
+            // 
+            // montosub
+            // 
+            this.montosub.HeaderText = "Monto";
+            this.montosub.Name = "montosub";
+            this.montosub.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montosub.Width = 50;
+            // 
+            // ndias
+            // 
+            this.ndias.HeaderText = "No. Dias";
+            this.ndias.Name = "ndias";
+            this.ndias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ndias.Width = 30;
+            // 
+            // btnsubsidio
+            // 
+            this.btnsubsidio.HeaderText = "";
+            this.btnsubsidio.Name = "btnsubsidio";
+            this.btnsubsidio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.btnsubsidio.Text = "";
+            this.btnsubsidio.ToolTipText = "Subsidiado";
+            this.btnsubsidio.Width = 30;
+            // 
+            // montotarde
+            // 
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montotarde.DefaultCellStyle = dataGridViewCellStyle9;
+            this.montotarde.HeaderText = "Monto Hrs.";
+            this.montotarde.Name = "montotarde";
+            this.montotarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montotarde.Width = 50;
+            // 
+            // mtarde
+            // 
+            this.mtarde.HeaderText = "No. Min.";
+            this.mtarde.Name = "mtarde";
+            this.mtarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.mtarde.Width = 30;
+            // 
+            // htarde
+            // 
+            this.htarde.HeaderText = "No. Hrs.";
+            this.htarde.Name = "htarde";
+            this.htarde.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.htarde.Width = 30;
+            // 
+            // unomayo
+            // 
+            this.unomayo.HeaderText = "1ro Mayo";
+            this.unomayo.Name = "unomayo";
+            this.unomayo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.unomayo.Width = 50;
+            // 
+            // montoboninocturno
+            // 
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.montoboninocturno.DefaultCellStyle = dataGridViewCellStyle8;
+            this.montoboninocturno.HeaderText = "Monto Hrs.";
+            this.montoboninocturno.Name = "montoboninocturno";
+            this.montoboninocturno.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montoboninocturno.Width = 50;
+            // 
+            // hrboninocturna
+            // 
+            this.hrboninocturna.HeaderText = "No. Hrs.";
+            this.hrboninocturna.Name = "hrboninocturna";
+            this.hrboninocturna.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hrboninocturna.Width = 30;
+            // 
+            // montoferiado
+            // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montoferiado.DefaultCellStyle = dataGridViewCellStyle7;
+            this.montoferiado.HeaderText = "Monto Hrs.";
+            this.montoferiado.Name = "montoferiado";
+            this.montoferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montoferiado.Width = 50;
+            // 
+            // minuferiado
+            // 
+            this.minuferiado.HeaderText = "No. Min.";
+            this.minuferiado.Name = "minuferiado";
+            this.minuferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minuferiado.Width = 30;
+            // 
+            // hrferiado
+            // 
+            this.hrferiado.HeaderText = "No. Hrs.";
+            this.hrferiado.Name = "hrferiado";
+            this.hrferiado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hrferiado.Width = 30;
+            // 
+            // monton35
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.monton35.DefaultCellStyle = dataGridViewCellStyle6;
+            this.monton35.HeaderText = "Monto Hrs. 35%";
+            this.monton35.Name = "monton35";
+            this.monton35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.monton35.Width = 50;
+            // 
+            // minun35
+            // 
+            this.minun35.HeaderText = "No. Min.";
+            this.minun35.Name = "minun35";
+            this.minun35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minun35.Width = 30;
+            // 
+            // hxn35
+            // 
+            this.hxn35.HeaderText = "No. Hrs.";
+            this.hxn35.Name = "hxn35";
+            this.hxn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxn35.Width = 30;
+            // 
+            // monton25
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.monton25.DefaultCellStyle = dataGridViewCellStyle5;
+            this.monton25.HeaderText = "Monto Hrs. 25%";
+            this.monton25.Name = "monton25";
+            this.monton25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.monton25.Width = 50;
+            // 
+            // minun25
+            // 
+            this.minun25.HeaderText = "No. Min.";
+            this.minun25.Name = "minun25";
+            this.minun25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minun25.Width = 30;
+            // 
+            // hxn25
+            // 
+            this.hxn25.HeaderText = "No. Hrs.";
+            this.hxn25.Name = "hxn25";
+            this.hxn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxn25.Width = 30;
+            // 
+            // montod35
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montod35.DefaultCellStyle = dataGridViewCellStyle4;
+            this.montod35.HeaderText = "Monto Hrs. 35%";
+            this.montod35.Name = "montod35";
+            this.montod35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montod35.Width = 50;
+            // 
+            // minud35
+            // 
+            this.minud35.HeaderText = "No. Min.";
+            this.minud35.Name = "minud35";
+            this.minud35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minud35.Width = 30;
+            // 
+            // hxd35
+            // 
+            this.hxd35.HeaderText = "No. Hrs.";
+            this.hxd35.Name = "hxd35";
+            this.hxd35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxd35.Width = 30;
+            // 
+            // montod25
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.montod25.DefaultCellStyle = dataGridViewCellStyle3;
+            this.montod25.HeaderText = "Monto Hrs. 25%";
+            this.montod25.Name = "montod25";
+            this.montod25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.montod25.Width = 50;
+            // 
+            // minud25
+            // 
+            this.minud25.HeaderText = "No. Min.";
+            this.minud25.Name = "minud25";
+            this.minud25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.minud25.Width = 30;
+            // 
+            // hxd25
+            // 
+            this.hxd25.HeaderText = "No. Hrs.";
+            this.hxd25.Name = "hxd25";
+            this.hxd25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hxd25.Width = 30;
+            // 
+            // a_familiar
+            // 
+            this.a_familiar.DataPropertyName = "Asig_familiar";
+            this.a_familiar.HeaderText = "Asig. Familiar";
+            this.a_familiar.Name = "a_familiar";
+            this.a_familiar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.a_familiar.Width = 58;
+            // 
+            // sueldo
+            // 
+            this.sueldo.HeaderText = "Sueldo Basico";
+            this.sueldo.Name = "sueldo";
+            this.sueldo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.sueldo.Width = 70;
+            // 
+            // hora_trabajada
+            // 
+            this.hora_trabajada.HeaderText = "Horas Trabaja das";
+            this.hora_trabajada.Name = "hora_trabajada";
+            this.hora_trabajada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.hora_trabajada.Width = 50;
+            // 
+            // dia_dominical
+            // 
+            this.dia_dominical.HeaderText = "Dia Domi nical";
+            this.dia_dominical.Name = "dia_dominical";
+            this.dia_dominical.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dia_dominical.Width = 35;
+            // 
+            // dias
+            // 
+            this.dias.HeaderText = "Dias";
+            this.dias.Name = "dias";
+            this.dias.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dias.Width = 35;
+            // 
+            // remu
+            // 
+            this.remu.DataPropertyName = "Remune_basica";
+            this.remu.HeaderText = "Basico";
+            this.remu.Name = "remu";
+            this.remu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.remu.Width = 70;
+            // 
+            // f_ini
+            // 
+            this.f_ini.DataPropertyName = "Fecha_inicio";
+            this.f_ini.HeaderText = "Fecha de Ingreso";
+            this.f_ini.Name = "f_ini";
+            this.f_ini.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.f_ini.Width = 70;
+            // 
+            // cargo
+            // 
+            this.cargo.DataPropertyName = "Cargop";
+            this.cargo.HeaderText = "Cargo";
+            this.cargo.Name = "cargo";
+            this.cargo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cargo.Width = 120;
+            // 
+            // valor_aporte
+            // 
+            this.valor_aporte.DataPropertyName = "VAporte";
+            this.valor_aporte.HeaderText = "M aporte";
+            this.valor_aporte.Name = "valor_aporte";
+            this.valor_aporte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor_aporte.Width = 50;
+            // 
+            // valor_seguro
+            // 
+            this.valor_seguro.DataPropertyName = "VSeguro";
+            this.valor_seguro.HeaderText = "M seguro";
+            this.valor_seguro.Name = "valor_seguro";
+            this.valor_seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor_seguro.Width = 50;
+            // 
+            // valor_comision
+            // 
+            this.valor_comision.DataPropertyName = "VComision";
+            this.valor_comision.HeaderText = "M comision";
+            this.valor_comision.Name = "valor_comision";
+            this.valor_comision.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.valor_comision.Width = 50;
+            // 
+            // regi_pen
+            // 
+            this.regi_pen.DataPropertyName = "Descrip_regipension";
+            this.regi_pen.HeaderText = "Regimen Pensionario";
+            this.regi_pen.Name = "regi_pen";
+            this.regi_pen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.regi_pen.Width = 120;
+            // 
+            // ape_nom
+            // 
+            this.ape_nom.DataPropertyName = "Nombres";
+            this.ape_nom.HeaderText = "Apellidos y Nombres";
+            this.ape_nom.Name = "ape_nom";
+            this.ape_nom.Width = 250;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "Numero_documento";
+            this.codigo.HeaderText = "Codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.codigo.Width = 70;
+            // 
+            // id_planilla_manto
+            // 
+            this.id_planilla_manto.HeaderText = "Id Planilla";
+            this.id_planilla_manto.Name = "id_planilla_manto";
+            this.id_planilla_manto.Width = 50;
+            // 
+            // id_contrato
+            // 
+            this.id_contrato.DataPropertyName = "Id_contrato";
+            this.id_contrato.HeaderText = "Id Contrato";
+            this.id_contrato.Name = "id_contrato";
+            this.id_contrato.Width = 50;
+            // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1862,6 +1835,41 @@
         private System.Windows.Forms.Button btnver;
         private System.Windows.Forms.CheckBox Chkrgrati;
         private System.Windows.Forms.PictureBox Picsave_conceptos;
+        private System.Windows.Forms.Label Lblsave_estado;
+        private System.Windows.Forms.TextBox Txtidconcepto;
+        private System.Windows.Forms.CheckBox Chkprimeromayo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn primeromayo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nosubsi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dreintegro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dotro_reintegro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pres_alimen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grati_boni;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvaca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn truncas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dvida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dadelanto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dprestamo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn drenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dretencion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dotrosdes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtotales_varios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn r_grati_boni;
+        public System.Windows.Forms.Label Lblperiodo;
+        public System.Windows.Forms.MaskedTextBox TxtfechaFin;
+        public System.Windows.Forms.MaskedTextBox TxtfechaInicio;
+        public System.Windows.Forms.MaskedTextBox Txtpago;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_contrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_planilla_manto;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
@@ -1913,7 +1921,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn prestacion_alimenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn grati;
         private System.Windows.Forms.DataGridViewTextBoxColumn boni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vacaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn tvaca;
         private System.Windows.Forms.DataGridViewTextBoxColumn tgrati;
         private System.Windows.Forms.DataGridViewTextBoxColumn tboni;
@@ -1924,8 +1931,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn seguro;
         private System.Windows.Forms.DataGridViewTextBoxColumn spp;
         private System.Windows.Forms.DataGridViewTextBoxColumn essalud_vida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adelanto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prestamo;
         private System.Windows.Forms.DataGridViewTextBoxColumn renta5cate;
         private System.Windows.Forms.DataGridViewTextBoxColumn retencionj;
         private System.Windows.Forms.DataGridViewTextBoxColumn otrodes;
@@ -1936,40 +1941,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_grati;
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_boni;
-        private System.Windows.Forms.Label Lblsave_estado;
-        private System.Windows.Forms.TextBox Txtidconcepto;
-        private System.Windows.Forms.CheckBox Chkprimeromayo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxdiurnas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hxnocturnas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn feriado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boninocturno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn primeromayo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tardanza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subsi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nosubsi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn thorax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dreintegro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dotro_reintegro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pres_alimen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grati_boni;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dvaca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn truncas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tremu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descuentoafp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dvida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dadelanto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dprestamo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn drenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dretencion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dotrosdes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtotales_varios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn r_grati_boni;
-        public System.Windows.Forms.Label Lblperiodo;
-        public System.Windows.Forms.MaskedTextBox TxtfechaFin;
-        public System.Windows.Forms.MaskedTextBox TxtfechaInicio;
-        public System.Windows.Forms.MaskedTextBox Txtpago;
     }
 }
