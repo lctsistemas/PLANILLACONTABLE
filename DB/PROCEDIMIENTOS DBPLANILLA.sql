@@ -1322,6 +1322,19 @@ END
 END
 GO
 
+
+CREATE PROC SP_SHOW_CONCEPTOS
+@idmes int,
+@idplanilla int
+AS BEGIN
+SELECT c.id_conceptos, c.hextraDiurna, c.hextraNocturna, c.feriadoDomi, c.boniNocturna, c.primeroMayo, 
+c.tarda, c.subsi, c.thoraex, c.otroreinte, c.prest_aliment, c. gratif, c.vaca, c.truncas, c.reinte_gratiboni, 
+c.essa_vida, c.adela, c.presta, c.rentquinta, c.reten_judici, c.otrodescu, c.recarg_consu FROM dbo.Conceptos c 
+WHERE c.id_mes = @idmes AND c.id_planilla=@idplanilla
+END
+GO
+
+
 ---
 --para leer las estadisticas, importante para ver el rendimiento de las consultas.
 SET STATISTICS IO, TIME OFF
@@ -1330,4 +1343,4 @@ SET STATISTICS IO, TIME ON
 --Inclue Actual Execution Plan
 GO
 select * from ComisionesPension c join RegimenPensionario r on c.codigo_regimen=r.codigo_regimen
-delete from Conceptos
+select * from Conceptos

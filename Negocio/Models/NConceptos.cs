@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Negocio.ValueObjects;
 using Datos.Repositories;
 using Datos.Entities;
+using System.Data;
 
 namespace Negocio.Models
 {
@@ -39,6 +40,7 @@ namespace Negocio.Models
 
         public EntityState State { get; set; }
         private readonly RConceptos rconcep;
+        List<NConceptos> lista_concepto;
 
         public NConceptos()
         {
@@ -102,11 +104,34 @@ namespace Negocio.Models
             return message;
         }
 
-        
+
+        //METODO MOSTRAR
+        public List<NConceptos> Getall()
+        {
+            DConceptos d = new DConceptos();
+            d.Id_mes = Id_mes;
+            d.Id_planilla = Id_planilla;
+            using (DataTable dt = rconcep.GetData(d))
+            {
+                lista_concepto = new List<NConceptos>();
+                foreach (DataRow item in dt.Rows)
+                {
+                    lista_concepto.Add(new NConceptos()
+                    {
+                        HextraDiurna = Convert.ToBoolean(item[1])
+                        
+                    });
+
+                }
+            }
+            return lista_concepto;
+        }
+
 
         public void Dispose()
         {
             //throw new NotImplementedException();
         }
+
     }
 }

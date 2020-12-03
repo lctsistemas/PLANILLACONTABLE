@@ -60,7 +60,30 @@ namespace Datos.Repositories
 
         public DataTable GetData(DConceptos entiti)
         {
-            throw new NotImplementedException();
+            DataTable dt=null;
+            using (SqlConnection conect = RConexion.Getconectar())
+            {
+                conect.Open();                
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conect;
+                    cmd.CommandText = "SP_SHOW_CONCEPTOS";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idmes", entiti.Id_mes);
+                    cmd.Parameters.AddWithValue("@idplanilla", entiti.Id_planilla);
+                    
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    using (dt = new DataTable())
+                    {
+                        dt.Load(reader);
+                        reader.Close();
+                    }
+                }
+            }
+            return dt;
         }
+
+
     }
 }
