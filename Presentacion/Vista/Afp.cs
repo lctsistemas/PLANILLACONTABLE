@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using Comun.Cache;
 using Negocio.Models;
@@ -13,28 +14,38 @@ namespace Presentacion.Vista
         public Frmafp()
         {
             InitializeComponent();
-            Fill_mes();
-           
+            dgvonp.AutoGenerateColumns = false;
+            dgvcomision.AutoGenerateColumns = false;
+            
+        }       
+
+        // MOSTRA MES
+        private void ShowMes()
+        {
+            string[] meses = { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SETIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
+            cbomes.Items.AddRange(meses);
+            
         }
 
-        private void Fill_mes()
-        {
-            using (nafp = new Nafp())
-            {
-                cbomes.DataSource = nafp.Mostrar_mes();
-                cbomes.DisplayMember = "Mes";             
-                cbomes.ValueMember = "Idmes";                
-            }
-        }    
-
         //MOSTRAR COMISIONES AFP
-        private void Fill_comisionafp()
+        private void Fill_comisionafp(int idmeses)
         {
             using (nafp =new Nafp())
             {
-                nafp.Idmes = Convert.ToInt32(cbomes.SelectedValue);
+                nafp.Idmes = idmeses;
                 nafp.Idperiodo = UserCache.Idperiodo;
-                dgvcomision.DataSource = nafp.Show_comisionafp();
+                dgvcomision.DataSource = nafp.Show_comisionafp("SPP");
+            }
+        }
+
+        //MOSTRAR COMISIONES ONP
+        private void Fill_comisionOnp(int idmeses)
+        {
+            using (nafp = new Nafp())
+            {
+                nafp.Idmes = idmeses;
+                nafp.Idperiodo = UserCache.Idperiodo;
+                dgvonp.DataSource = nafp.Show_comisionOnp("SNP");
             }
         }
 
@@ -42,17 +53,25 @@ namespace Presentacion.Vista
         private void Tabla()
         {
             dgvcomision.Columns["id_regimen"].Visible = false;
-            dgvcomision.Columns["afp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvcomision.Columns["afp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
             dgvcomision.Columns["afp"].Width = 200;//apf
             dgvcomision.Columns["afp"].ReadOnly = true;
             dgvcomision.Columns["Id_comision"].Visible = false;
-            dgvcomision.Columns["comision"].Width = 130;
-            dgvcomision.Columns["saldo"].Width = 130;
-            dgvcomision.Columns["seguro"].Width = 130;
-            dgvcomision.Columns["aporte"].Width = 130;
-            dgvcomision.Columns["tope"].Width = 130;
-            dgvcomision.Columns[8].Visible = false;
-            dgvcomision.Columns[9].Visible = false;
+            dgvcomision.Columns["comision"].Width = 131;
+            dgvcomision.Columns["saldo"].Width = 131;
+            dgvcomision.Columns["seguro"].Width = 131;
+            dgvcomision.Columns["aporte"].Width = 131;
+            dgvcomision.Columns["tope"].Width = 131;
+            //dgvcomision.Columns[8].Visible = false;
+            //dgvcomision.Columns[9].Visible = false;
+
+            //TABLA PAR ONP
+            dgvonp.Columns["idregi"].Visible = false;
+            dgvonp.Columns["idcomi"].Visible = false;
+            dgvonp.Columns["donp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvonp.Columns["donp"].ReadOnly = true;
+            dgvonp.Columns["onpcomision"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
         }
 
         //MOSTRAR MES INICIAL
@@ -70,11 +89,13 @@ namespace Presentacion.Vista
         }
 
         private void Frmafp_Load(object sender, System.EventArgs e)
-        {            
+        {
+            ShowMes();           
             lblperiodo.Text = "Periodo:  "+ UserCache.Periodo;            
-            MesInicial();
-            Fill_comisionafp();            
+            MesInicial();                      
             Tabla();
+            chkonp.Checked = false;
+           
         }      
 
         private void btnupdate_Click(object sender, System.EventArgs e)
@@ -119,13 +140,19 @@ namespace Presentacion.Vista
                         Seguro = Convert.ToDecimal(item.Cells["seguro"].Value),
                         Aporte = Convert.ToDecimal(item.Cells["aporte"].Value),
                         Tope = Convert.ToDecimal(item.Cells["tope"].Value),
-                        Idmes = Convert.ToInt32(cbomes.SelectedValue),
+                        Idmes = Convert.ToInt32(cbomes.SelectedIndex + 1),
                         Idperiodo = UserCache.Idperiodo
-
                     });
                 }
                 string result = nafp.SaveComision();
-                Messages.M_info(result);
+                // PARA ONP
+                nafp.Codigo_regimen = Convert.ToInt32(dgvonp.CurrentRow.Cells["idregi"].Value);
+                nafp.Comision = Convert.ToDecimal(dgvonp.CurrentRow.Cells["onpcomision"].Value);
+                nafp.Idmes = Convert.ToInt32(cbomes.SelectedIndex + 1);
+                nafp.Idperiodo = UserCache.Idperiodo;
+                string verificar = nafp.SaveOnp();
+                if(!verificar.Equals(""))
+                    Messages.M_info(result);
                 nafp.ListNafp.Clear();
             }
         }
@@ -141,11 +168,75 @@ namespace Presentacion.Vista
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnbuscar_Click(object sender, EventArgs e)
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            // MessageBox.Show("values "+cbomes.SelectedValue);
-            //MessageBox.Show("index  "+cbomes.SelectedIndex);
-            Fill_comisionafp();
+            btncerrar.BackColor= Color.FromArgb(26, 32, 40);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void dgvcomision_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvcomision.Rows.Count > 0)
+            {
+                dgvcomision.BeginEdit(true);
+            }
+        }
+
+        private void dgvcomision_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewCellStyle style = e.CellStyle;
+
+            style.Font = new Font(style.Font.FontFamily, 10, FontStyle.Bold);
+            style.BackColor = Color.Beige;
+        }
+
+      
+
+        private void cbomes_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            Fill_comisionafp(Convert.ToInt32(cbomes.SelectedIndex + 1));
+            Fill_comisionOnp(Convert.ToInt32(cbomes.SelectedIndex + 1));                      
+        }
+
+        private void chkonp_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkonp.Checked == false)
+                dgvonp.Visible = false;
+            else if(chkonp.Checked==true)
+                dgvonp.Visible = true;
+        }
+
+        private void chkcopy_pega_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkcopy_pega.Checked == true)
+            {
+                if (dgvcomision.RowCount > 0)
+                {
+                    chkcopy_pega.BackColor = Color.Maroon;
+                    chkcopy_pega.Text = "PEGAR";
+                    txtidmes.Text = "" + (Convert.ToInt32(cbomes.SelectedIndex + 1));
+                }
+                else
+                    chkcopy_pega.Checked = false;               
+            }
+            else if (chkcopy_pega.Checked == false)
+            {
+                if (chkcopy_pega.Text.Equals("PEGAR"))
+                {
+                    chkcopy_pega.BackColor = Color.SteelBlue;
+                    chkcopy_pega.Text = "COPIAR";
+                    Fill_comisionafp(Convert.ToInt32(txtidmes.Text.Trim()));
+                    Fill_comisionOnp(Convert.ToInt32(txtidmes.Text.Trim()));
+                    //MessageBox.Show("PEGADO");
+                }
+                
+            }
+           
 
         }
 

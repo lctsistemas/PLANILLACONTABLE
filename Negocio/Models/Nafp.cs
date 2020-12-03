@@ -3,12 +3,17 @@ using Datos.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data;
+
+using Negocio.ValueObjects;
+
 namespace Negocio.Models
 {
     public class Nafp : IDisposable
     {
         List<Nafp> list_comisionAfp;
+        List<Nafp> list_comisionOnp;
         Dafp daf;
+        Rafp raf;
         public int Id_comision { get; set; }
         public int Codigo_regimen { get; set; }
         public string descripcion { get; set; }//nombre afp
@@ -21,10 +26,12 @@ namespace Negocio.Models
         public string Mes { get; set; }
         public int Idperiodo { private get; set; }
         public List<Nafp> ListNafp { get; set; }
+        public EntityState State { get; set; }
     
         public Nafp()
         {
             daf = new Dafp();
+            raf = new Rafp();
         }
 
         //METODO SAVE COMISION.
@@ -36,7 +43,7 @@ namespace Negocio.Models
             if (daf.DlistAfp == null)
                 daf.DlistAfp = new List<Dafp>();
 
-            Rafp raf = new Rafp();
+//            Rafp raf = new Rafp();
             foreach (Nafp item in ListNafp)
             {
                 daf.DlistAfp.Add(new Dafp()
@@ -55,11 +62,32 @@ namespace Negocio.Models
             daf.DlistAfp.Clear();
 
             if (i > 0)
-                message = "Ok";
+                message = "¡Guardado!";
             else
                 message = "Error Al Insertar";
 
             return message;
+        }
+
+        public string SaveOnp()
+        {
+            string resul;
+            daf.Codigo_regimen = Codigo_regimen;
+            daf.Comision = Comision;
+            daf.Idmes = Idmes;
+            daf.Idperiodo = Idperiodo;
+
+            switch (State)
+            {
+                case EntityState.Guardar:
+                    raf.SaveOnp(daf);
+                    resul = "ok";
+                    break;
+                default:
+                    resul = "Error en onp";
+                    break;
+            }
+            return resul;
         }
 
         //EDIT COMISION
@@ -119,14 +147,14 @@ namespace Negocio.Models
 
 
         // MOSTRAR COMISION AFP
-        public IEnumerable<Nafp> Show_comisionafp()
+        public IEnumerable<Nafp> Show_comisionafp(string tipo_regimen)
         {
             list_comisionAfp = new List<Nafp>();
             Dafp daf = new Dafp();
             daf.Idmes = Idmes;
             daf.Idperiodo = Idperiodo;
 
-            using (DataTable dt = new Rafp().Show_comisionafp(daf))
+            using (DataTable dt = new Rafp().Show_comisionafp(daf, tipo_regimen))
             {
                 foreach (DataRow item in dt.Rows)
                 {
@@ -147,13 +175,36 @@ namespace Negocio.Models
             }
             return list_comisionAfp;
         }
-        
+
+        public IEnumerable<Nafp> Show_comisionOnp(string tipo_regimen)
+        {
+            list_comisionOnp = new List<Nafp>();
+            Dafp daf = new Dafp();
+            daf.Idmes = Idmes;
+            daf.Idperiodo = Idperiodo;
+
+            using (DataTable dt = new Rafp().Show_comisionafp(daf, tipo_regimen))
+            {
+                foreach (DataRow item in dt.Rows)
+                {
+                    list_comisionOnp.Add(new Nafp()
+                    {
+                        Codigo_regimen = Convert.ToInt32(item[0]),
+                        descripcion = item[1].ToString(),
+                        Id_comision = Convert.ToInt32(item[2]),
+                        Comision = Convert.ToDecimal(item[3])                   
+                    });
+                }
+            }
+            return list_comisionOnp;
+        }
+
 
         //FILTRAR DATOS POR MES Y PERIODO
         public IEnumerable<Nusuario> Search(int idmes)
         {
             //filtrar lista con datos numericos, averiguar.
-            // return list_comisionAfp.FindAll(e => e.Idmes=);
+             //return list_comisionAfp.FindAll(e => e.Idmes=);
             return null;
         }
 

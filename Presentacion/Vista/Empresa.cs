@@ -17,8 +17,7 @@ namespace Presentacion.Vista
         public frmempresa()
         {
             InitializeComponent();
-            Show_empresa();
-            Tabla();
+           
         }
 
         private void Show_empresa()
@@ -161,6 +160,8 @@ namespace Presentacion.Vista
 
         private void frmempresa_Load(object sender, EventArgs e)
         {
+            Show_empresa();
+            Tabla();
             this.linkconsulta_ruc.Enabled = false;
             txtusuario.Enabled = false;
             txtiduser.Visible = false;
@@ -255,7 +256,7 @@ namespace Presentacion.Vista
 
         private void frmempresa_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Dispose();
+           // this.Dispose();
         }
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
@@ -265,9 +266,9 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SteelBlue;
+            btncerrar.BackColor = Color.FromArgb(26, 32, 40);
         }
-
+               
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(245, 183, 177);
@@ -283,17 +284,17 @@ namespace Presentacion.Vista
 
         private void btnmaximizar_MouseLeave(object sender, EventArgs e)
         {
-            btnmaximizar.BackColor = Color.SteelBlue;
+            btnmaximizar.BackColor = Color.FromArgb(26, 32, 40);
         }
 
         private void btnrestaurar_MouseLeave(object sender, EventArgs e)
         {
-            btnrestaurar.BackColor = Color.SteelBlue;
+            btnrestaurar.BackColor = Color.FromArgb(26, 32, 40);
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SteelBlue;
+            btnminimizar.BackColor = Color.FromArgb(26, 32, 40);
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)

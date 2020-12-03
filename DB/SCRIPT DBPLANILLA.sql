@@ -97,7 +97,6 @@ id_usuario int not null
 GO
 
 --drop table Empresa, sucursal, Empresa_maestra
-
 CREATE TABLE Sucursal(
 id_sucursal int not null,
 codigo_sucursal varchar(8)CONSTRAINT UNQ_cod_sucur UNIQUE not null,

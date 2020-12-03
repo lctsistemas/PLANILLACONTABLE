@@ -898,14 +898,14 @@ GO
 
 ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
 @idmes int =null,
-@idperiodo int=null
+@idperiodo int=null,
+@tipo_regimen varchar(10)
 AS BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
-	RegimenPensionario r left join ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
-	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen='SPP'
+	RegimenPensionario r JOIN ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
+	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen=@tipo_regimen
 END
 GO
-
 
 ALTER PROC SP_INSERT_COMISIONES
 @codigo_regimen int,
@@ -920,7 +920,59 @@ AS BEGIN
 	DECLARE @idcomi int
 	SET @idcomi=(SELECT count(c.idcomision) FROM dbo.ComisionesPension c)
 	IF(@idcomi=0)
-		SET @idcomi=1		
+		SET @idcomi=1
+	ELSE
+		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
+
+	INSERT INTO dbo.ComisionesPension(idcomision, codigo_regimen,
+	comision, saldo, seguro, aporte, tope, idmes, idperiodo) VALUES
+	(@idcomi, @codigo_regimen, @comision, @saldo, @seguro, @aporte, @tope, @idmes, @idperiodo)
+END		
+GO
+
+CREATE PROC SP_INSERT_COMISION_ONP
+@codigo_regimen int,
+@comision decimal(6,2),
+@idmes int,
+@idperiodo int
+AS BEGIN
+DECLARE @idcomi int
+	SET @idcomi=(SELECT count(c.idcomision) FROM dbo.ComisionesPension c)
+	IF(@idcomi=0)
+		SET @idcomi=1
+	ELSE
+		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
+
+	INSERT INTO dbo.ComisionesPension(idcomision, codigo_regimen,
+	comision, idmes, idperiodo) VALUES
+	(@idcomi, @codigo_regimen, @comision, @idmes, @idperiodo)
+END
+GO
+
+SELECT * FROM ComisionesPension
+delete from ComisionesPension where idmes=10
+go
+
+/*
+NO BORRAR, ES PARA FUTURAS PRUEBAS.
+ALTER PROC SP_INSERT_COMISIONES
+@codigo_regimen int,
+@comision decimal(6,2),
+@saldo decimal(6,2) ,
+@seguro decimal(6,2), 
+@aporte decimal(6,2),
+@tope  decimal(10,2),
+@idmes int,
+@idperiodo int
+AS BEGIN
+declare @men varchar(30)
+IF(NOT EXISTS(SELECT top(1) re.codigo_regimen FROM ComisionesPension co JOIN RegimenPensionario re ON(co.codigo_regimen = re.codigo_regimen) 
+WHERE co.idmes=@idmes AND co.idperiodo=@idperiodo))
+BEGIN
+	DECLARE @idcomi int
+	SET @idcomi=(SELECT count(c.idcomision) FROM dbo.ComisionesPension c)
+	IF(@idcomi=0)
+		SET @idcomi=1
 	ELSE
 		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
 
@@ -928,7 +980,14 @@ AS BEGIN
 	comision, saldo, seguro, aporte, tope, idmes, idperiodo) VALUES
 	(@idcomi, @codigo_regimen, @comision, @saldo, @seguro, @aporte, @tope, @idmes, @idperiodo)
 END
+ELSE
+	SET @men='Ya esta registrado'
+END
 GO
+
+*/
+
+go
 
 CREATE PROC SP_UPDATE_COMISIONES
 @comision decimal(6,2),
@@ -942,6 +1001,7 @@ AS BEGIN
 	aporte=@aporte, tope=@tope WHERE idcomision=@idcomision
 END
 GO
+
 
 
 --PROCEDIMIENTO PARA INSERTAR, UPDATE, DELETE, SHOW => PLANILLA
