@@ -233,12 +233,13 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvsubsidio.ColumnHeadersHeight = 35;
+            this.dgvsubsidio.ColumnHeadersHeight = 37;
             this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -265,7 +266,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dgvsubsidio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvsubsidio.Size = new System.Drawing.Size(697, 264);
             this.dgvsubsidio.TabIndex = 86;
