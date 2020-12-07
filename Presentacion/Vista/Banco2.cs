@@ -125,6 +125,9 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns["dgvtxtidbanco"].Visible = false;
             dgvsubsidio.Columns["dgvtxtbanco"].ReadOnly = false;
 
+            dgvsubsidio.Columns[3].HeaderText = "BANCO";
+            dgvsubsidio.Columns[3].Width = 200;
+
             dgvsubsidio.Columns[4].HeaderText = "estado";
             dgvsubsidio.Columns[4].Width = 100;
             dgvsubsidio.Columns[4].Visible = false;

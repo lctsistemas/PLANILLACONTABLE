@@ -64,6 +64,7 @@
     <Compile Include="Entities\DSubsidios.cs" />
     <Compile Include="Entities\Dtipocontrato.cs" />
     <Compile Include="Entities\DtipoDocumento.cs" />
+    <Compile Include="Entities\DTipoPlanilla.cs" />
     <Compile Include="Entities\Dusuario.cs" />
     <Compile Include="KeyAutomatic\KRegimen.cs" />
     <Compile Include="KeyAutomatic\KregimenSalud.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Repositories\RSubsidios.cs" />
     <Compile Include="Repositories\Rsucursal.cs" />
     <Compile Include="Repositories\Rtipocontrato.cs" />
+    <Compile Include="Repositories\RTipoPlanilla.cs" />
     <Compile Include="Repositories\Rusuario.cs" />
   </ItemGroup>
   <ItemGroup>

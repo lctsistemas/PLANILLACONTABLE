@@ -692,14 +692,60 @@ GO
 
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-alter PROC SP_REG_SALUD		--no existe proce
+alter PROC SP_REG_SALUD		
 AS BEGIN
 SELECT rs.id_regimen_salud,rs.descripcion_rsalud
 FROM REGIMEN_SALUD rs
 END
 GO
 
+--PROCEDIMIENTO PARA REGISTRAR TIPOPLANILLA
+CREATE PROC SP_INS_TIP_PLANILLA( 
+@tipoplanilla varchar(25),
+@mensaje varchar(100) output
+)
+AS BEGIN
+	DECLARE @TipPlan int
+	SET @TipPlan=(SELECT count(tp.id_tipo_planilla) FROM TIPO_PLANILLA tp)
+	IF(@TipPlan=0)
+		BEGIN
+			SET @TipPlan=1
+		END
+	ELSE	
+		SET @TipPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM TIPO_PLANILLA tp)	
+INSERT INTO TIPO_PLANILLA(id_tipo_planilla,tipo_planilla) VALUES(@TipPlan,@tipoplanilla)
+SET @mensaje= 'TIPO DE PLANILLA REGISTRADO CORRECTAMENTE'
+END
+GO
 
+--PROCEDIMENTO PARA ACTUALIZAR TIPO PLANILLA
+CREATE PROC SP_UPDATE_TIPOPLAN(
+@id_tipPlan int,
+@TipoPlanilla varchar(25)
+)
+AS BEGIN 
+UPDATE TIPO_PLANILLA SET id_tipo_planilla=@id_tipPlan,tipo_planilla=@TipoPlanilla where id_tipo_planilla=@id_tipPlan
+END;
+GO
+
+--PROCEDIMENTO PARA ELIMINAR TIPO PLANILLA
+--alter PROC SP_DEL_TIP_PLAN
+--@id_tipPlan int,
+--@message varchar(100) output
+--AS BEGIN 
+--IF(EXISTS(SELECT tp.id_tipo_planilla from TIPO_PLANILLA tp) )
+--	BEGIN
+--		DECLARE @cod_Tcontrato varchar(20);
+--		SET @cod_Tcontrato=(SELECT t.tiempo_contrato from Tipo_contrato t WHERE t.id_tipocontrato=@id_tcontrato)
+--		SET @message='El tipo de contrato ('+@cod_Tcontrato+') esta en uso.'  
+--	END
+--ELSE
+--	BEGIN 
+--		DELETE from Tipo_contrato where id_tipocontrato=@id_tcontrato
+--		SET @message='¡El tipo de contrato se ha eliminado correctamente!'
+--	END
+--END
+--GO
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
 alter PROC SP_INSERT_BANCO(

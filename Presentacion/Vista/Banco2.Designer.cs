@@ -182,16 +182,17 @@
             // dgvsubsidio
             // 
             this.dgvsubsidio.AllowUserToAddRows = false;
+            this.dgvsubsidio.AllowUserToDeleteRows = false;
+            this.dgvsubsidio.AllowUserToOrderColumns = true;
             this.dgvsubsidio.AllowUserToResizeColumns = false;
             this.dgvsubsidio.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dgvsubsidio.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvsubsidio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvsubsidio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvsubsidio.BackgroundColor = System.Drawing.Color.White;
             this.dgvsubsidio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvsubsidio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvsubsidio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvsubsidio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
@@ -201,7 +202,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvsubsidio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvsubsidio.ColumnHeadersHeight = 34;
+            this.dgvsubsidio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvsubsidio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvtxtidbanco,
             this.dgvtxtbanco,
@@ -217,7 +219,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvsubsidio.EnableHeadersVisualStyles = false;
-            this.dgvsubsidio.Location = new System.Drawing.Point(102, 62);
+            this.dgvsubsidio.Location = new System.Drawing.Point(64, 62);
             this.dgvsubsidio.Name = "dgvsubsidio";
             this.dgvsubsidio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -234,7 +236,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvsubsidio.Size = new System.Drawing.Size(262, 183);
+            this.dgvsubsidio.Size = new System.Drawing.Size(332, 183);
             this.dgvsubsidio.TabIndex = 3;
             this.dgvsubsidio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
             // 

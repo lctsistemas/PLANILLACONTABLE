@@ -20,7 +20,7 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
-                    cmd.CommandText = "SP_INSERT_BANCO";
+                    cmd.CommandText = "SP_INSERT_TIPPLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     //cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
