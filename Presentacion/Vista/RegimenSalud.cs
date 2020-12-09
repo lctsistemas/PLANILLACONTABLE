@@ -203,7 +203,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SteelBlue;
+            btncerrar.BackColor = Color.FromArgb(64, 64, 64)
 
         }
 
@@ -221,7 +221,7 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SteelBlue;
+            btnminimizar.BackColor = Color.FromArgb(64, 64, 64);
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
