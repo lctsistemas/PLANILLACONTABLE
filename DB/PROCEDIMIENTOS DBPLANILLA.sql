@@ -729,23 +729,21 @@ END;
 GO
 
 --PROCEDIMENTO PARA ELIMINAR TIPO PLANILLA
---alter PROC SP_DEL_TIP_PLAN
---@id_tipPlan int,
---@message varchar(100) output
---AS BEGIN 
---IF(EXISTS(SELECT tp.id_tipo_planilla from TIPO_PLANILLA tp) )
---	BEGIN
---		DECLARE @cod_Tcontrato varchar(20);
---		SET @cod_Tcontrato=(SELECT t.tiempo_contrato from Tipo_contrato t WHERE t.id_tipocontrato=@id_tcontrato)
---		SET @message='El tipo de contrato ('+@cod_Tcontrato+') esta en uso.'  
---	END
---ELSE
---	BEGIN 
---		DELETE from Tipo_contrato where id_tipocontrato=@id_tcontrato
---		SET @message='¡El tipo de contrato se ha eliminado correctamente!'
---	END
---END
---GO
+ALTER PROC SP_DELETE_TIP_PLAN
+@id_tipo_planilla int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from TIPO_PLANILLA where id_tipo_planilla=@id_tipo_planilla
+SET @mensaje= 'TIPO DE PLANILLA ELIMINADA CORRECTAMENTE'
+END
+GO
+
+--PROCEDIMIENTO PARA MOSTRAR TIPO PLANILLA 
+CREATE PROC SP_SHOW_TIPO_PLAN
+AS BEGIN 
+SELECT tp.id_tipo_planilla,tp.tipo_planilla from TIPO_PLANILLA tp;
+END;
+GO
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
 alter PROC SP_INSERT_BANCO(
@@ -1160,12 +1158,12 @@ GO
 
 
 GO
-CREATE PROC SP_DELETE_REG_SALUD
+ALTER PROC SP_DELETE_REG_SALUD
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN
 DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
-SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
+SET @mensaje= 'REGIMEN DE SALUD ELIMINADO CORRECTAMENTE'
 END
 GO
 
