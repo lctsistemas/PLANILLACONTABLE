@@ -723,6 +723,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logolct2_png {
+            get {
+                object obj = ResourceManager.GetObject("logolct2.png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoweb_2_300x76 {
             get {
                 object obj = ResourceManager.GetObject("logoweb-2-300x76", resourceCulture);

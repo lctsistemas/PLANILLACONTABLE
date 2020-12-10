@@ -96,8 +96,8 @@ namespace Presentacion.Vista
                     return;
                 }                                   
                 //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
-                np.Id_periodo = 2;//UserCache.Idperiodo;
-                np.Id_empresam = 1;//UserCache.Codigo_empresa;
+                np.Id_periodo = UserCache.Idperiodo;
+                np.Id_empresam = UserCache.Codigo_empresa;
                 np.Id_mes = idmes;               
                 np.Fecha_inicial = Convert.ToDateTime(dtpini.Text.Trim());
                 np.Fecha_final = Convert.ToDateTime(dtpfin.Text.Trim());
