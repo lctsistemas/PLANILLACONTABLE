@@ -30,12 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPlanillaMensual2));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
-=======
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> Carlos
+
             this.menuarchivos = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnsalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -192,7 +191,6 @@
             this.recargo_consumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reintegro_grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reintegro_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-<<<<<<< HEAD
             this.Dgvplanilla2 = new System.Windows.Forms.DataGridView();
             this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -260,8 +258,7 @@
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-=======
->>>>>>> Carlos
+
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -397,16 +394,16 @@
             // 
             this.Dgvplanilla1.AllowUserToResizeColumns = false;
             this.Dgvplanilla1.AllowUserToResizeRows = false;
-<<<<<<< HEAD
+
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.Dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-=======
+
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.Dgvplanilla1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgvplanilla1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
->>>>>>> Carlos
+
             this.Dgvplanilla1.BackgroundColor = System.Drawing.Color.White;
             this.Dgvplanilla1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -1346,7 +1343,6 @@
             this.valor_seguro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.valor_seguro.Width = 50;
             // 
-<<<<<<< HEAD
             // valor1
             // 
             this.valor1.HeaderText = "";
@@ -1572,9 +1568,8 @@
             this.r_grati_boni.Width = 140;
             // 
             // btnver
-=======
             // valor_aporte
->>>>>>> Carlos
+
             // 
             this.valor_aporte.DataPropertyName = "PVaporte";
             this.valor_aporte.HeaderText = "M aporte";
@@ -1845,8 +1840,7 @@
             this.montoposi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.montoposi.Width = 50;
             // 
-<<<<<<< HEAD
-=======
+
             // thoras
             // 
             this.thoras.HeaderText = "Total Horas Extras";
@@ -2050,7 +2044,6 @@
             this.reintegro_boni.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.reintegro_boni.Width = 70;
             // 
->>>>>>> Carlos
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
