@@ -149,6 +149,8 @@ namespace Presentacion.Vista
             this.dgvempleado.AllowUserToOrderColumns = true;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
             this.dgvempleado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvempleado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvempleado.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.dgvempleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvempleado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -199,7 +201,7 @@ namespace Presentacion.Vista
             this.lblcantidad_registro.AutoSize = true;
             this.lblcantidad_registro.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcantidad_registro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblcantidad_registro.Location = new System.Drawing.Point(632, 45);
+            this.lblcantidad_registro.Location = new System.Drawing.Point(12, 366);
             this.lblcantidad_registro.Name = "lblcantidad_registro";
             this.lblcantidad_registro.Size = new System.Drawing.Size(37, 17);
             this.lblcantidad_registro.TabIndex = 82;
@@ -220,17 +222,17 @@ namespace Presentacion.Vista
             // 
             this.label16.AutoEllipsis = true;
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(18, 5);
+            this.label16.Location = new System.Drawing.Point(18, 9);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(196, 24);
+            this.label16.Size = new System.Drawing.Size(145, 19);
             this.label16.TabIndex = 0;
             this.label16.Text = "COLABORADORES";
             // 
             // paneltitulo
             // 
-            this.paneltitulo.BackColor = System.Drawing.Color.SteelBlue;
+            this.paneltitulo.BackColor = System.Drawing.Color.SlateGray;
             this.paneltitulo.Controls.Add(this.btncerrar);
             this.paneltitulo.Controls.Add(this.label16);
             this.paneltitulo.Controls.Add(this.btnminimizar);
@@ -679,6 +681,7 @@ namespace Presentacion.Vista
             this.groupBox2.Controls.Add(this.txtnumdoc);
             this.groupBox2.Controls.Add(this.linkconsulta);
             this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.lblcantidad_registro);
             this.groupBox2.Controls.Add(this.dtfecha);
             this.groupBox2.Controls.Add(this.txtcodigo);
             this.groupBox2.Controls.Add(this.label9);
@@ -1135,7 +1138,7 @@ namespace Presentacion.Vista
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevo.Location = new System.Drawing.Point(393, 45);
+            this.btnNuevo.Location = new System.Drawing.Point(393, 40);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(99, 27);
             this.btnNuevo.TabIndex = 64;
@@ -1156,7 +1159,7 @@ namespace Presentacion.Vista
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(287, 45);
+            this.btnguardar.Location = new System.Drawing.Point(287, 40);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(99, 27);
             this.btnguardar.TabIndex = 62;
@@ -1177,7 +1180,7 @@ namespace Presentacion.Vista
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
             this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneliminar.Location = new System.Drawing.Point(499, 45);
+            this.btneliminar.Location = new System.Drawing.Point(499, 40);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(99, 27);
             this.btneliminar.TabIndex = 64;
@@ -1224,7 +1227,6 @@ namespace Presentacion.Vista
             this.ClientSize = new System.Drawing.Size(1110, 531);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.paneltitulo);
-            this.Controls.Add(this.lblcantidad_registro);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.tabEmpleado);
             this.Controls.Add(this.btnguardar);
@@ -1235,7 +1237,6 @@ namespace Presentacion.Vista
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmempleado";
-            this.Text = "EMPLEADO";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Empleado_FormClosing);
             this.Load += new System.EventHandler(this.Empleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvempleado)).EndInit();

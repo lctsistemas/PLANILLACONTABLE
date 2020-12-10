@@ -38,6 +38,7 @@ descripcion nvarchar(100) null
 )
 GO
 
+
 --TABLA: TIPO DE DOCUMENTO
 CREATE TABLE Tipo_documento(
 id_documento int identity(1,1),
@@ -72,7 +73,6 @@ idperiodo int null
 )
 GO
 
-
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
 CREATE TABLE Empresa_maestra(
 id_em_maestra int not null,
@@ -87,7 +87,6 @@ estado_eliminado varchar(15) not null
 GO
 
 --alter table Empresa_maestra alter column regimen varchar(80) not null
-
 CREATE TABLE Empresa(
 id_empresa int not null,
 codigo_empresa varchar(8)CONSTRAINT UNQ_cod_em UNIQUE not null,
@@ -116,14 +115,12 @@ id_rol int not null
 )
 GO
 
-
 --TABLA: ROL PARA EL USUARIO
 CREATE TABLE Rol(
 id_rol int identity(1,1),
 descrip_rol varchar(30)not null
 )
 GO
-
 
 --BANCO
 CREATE TABLE Banco(
@@ -293,15 +290,20 @@ descripcion_rsalud nvarchar(100) not null
 )
 
 
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(1,04,'ESSALUD AGRARIO/ACUICOLA');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(2,05,'ESSALUD PENSIONISTAS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(3,00,'ESSALUD REGULAR (Exclusivamente)');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(4,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(5,02,'ESSALUD TRABAJADORES PESQUEROS');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(6,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(7,20,'SANIDAD DE FFAA Y POLICIALES');
-insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(8,21,'SIS - MICROEMPRESA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(1,00,'ESSALUD REGULAR');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(2,21,'SIS - MICROEMPRESA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(3,04,'ESSALUD AGRARIO/ACUICOLA');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(4,05,'ESSALUD PENSIONISTAS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(5,01,'ESSALUD REGULAR Y EPS/SERV. PROPIOS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(6,02,'ESSALUD TRABAJADORES PESQUEROS');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(7,03,'ESSALUD TRABAJADORES PESQUEROS Y EPS(SERV.PROPIOS)');
+insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(8,20,'SANIDAD DE FFAA Y POLICIALES');
+
 GO
+
+
+select * from Regimen_salud 
+delete from Regimen_salud	where id_regimen_salud =3
 
 CREATE TABLE Subsidios(
 id_subsidios int not null,
@@ -392,13 +394,13 @@ idplanilla_manto int not null,
 id_contrato int not null,
 id_planilla int not null,
 id_tipo_planilla int not null,
-jornadalaboral varchar(11) not null,
-basico money not null,
+jornadalaboral varchar(11) not null,--exite en empleado
+basico money not null,--exite en empleado
 dias int null,
 dia_dominical int null,
 horas_diarias int null,
 sueldo_basico money null,
-asig_familiar decimal(5,2),
+asig_familiar decimal(5,2),--exite en empleado
 --horas diurnas 25%
 hora_dvc int null,
 minuto_dvc int null,
@@ -473,6 +475,7 @@ reintegro_boni decimal(7,2)null
 GO
 --ALTER TABLE dbo.PlanillaManto ADD jornadalaboral varchar(11) not null
 
+
 GO
 -- CONCEPTOS PARA PLANILLA
 CREATE TABLE Conceptos(
@@ -503,9 +506,8 @@ recarg_consu bit not null --recargo consumo
 )
 GO
 
-<<<<<<< HEAD
+
 select * from Planilla
-=======
 CREATE TABLE TIPO_PLANILLA 
 (
 	id_tipo_planilla int not null,
@@ -513,4 +515,4 @@ CREATE TABLE TIPO_PLANILLA
 )
 
 GO
->>>>>>> aab8cdbfd236d73c3de11e72bd43614578f258a1
+

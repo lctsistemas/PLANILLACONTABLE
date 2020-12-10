@@ -25,7 +25,7 @@ namespace Presentacion.Vista
         public FrmDiasSubsidiados2()
         {
             InitializeComponent();
-            Fillcombo(PlanillaCache.Subsidiado);            
+            Fillcombo(PlanillaCache.Subsidiado);      
             //PlanillaCache.mensaje
             
         }
@@ -55,9 +55,9 @@ namespace Presentacion.Vista
         {
             using (ndsub= new NDiasSubsidiados())
             {
-                ndsub.Id_mes = 1;
-                ndsub.Id_periodo = 2;
-                ndsub.Id_empleado = 1;
+                ndsub.Id_mes = PlanillaCache.p_idmes;
+                ndsub.Id_periodo = UserCache.Idperiodo;
+                ndsub.Id_empleado = PlanillaCache.p_idempleado;
                 ndsub.ValTipSubsidio = tipo_subsi;
                 dgvsubsidio.DataSource = ndsub.GetData();
             }
@@ -153,12 +153,12 @@ namespace Presentacion.Vista
             mensaje = "";
              using (ndsub =new NDiasSubsidiados())
              {
-                 ndsub.Id_subsidios = Convert.ToInt32(cbosubsidio.SelectedValue);
-                 ndsub.Id_empleado = 1;
-                 ndsub.Id_mes = 1;
-                 ndsub.Id_periodo = 2;
-                 ndsub.Dias = Convert.ToInt32(txtdias.Text.Trim());
-                 mensaje = ndsub.GuardarCambios();
+                ndsub.Id_subsidios = Convert.ToInt32(cbosubsidio.SelectedValue);
+                ndsub.Id_empleado = PlanillaCache.p_idempleado;
+                ndsub.Id_mes = PlanillaCache.p_idmes;
+                ndsub.Id_periodo = UserCache.Idperiodo;
+                ndsub.Dias = Convert.ToInt32(txtdias.Text.Trim());
+                mensaje = ndsub.GuardarCambios();
              }
                                   
             txtdias.Text = string.Empty;

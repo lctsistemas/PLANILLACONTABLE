@@ -143,19 +143,20 @@ namespace Negocio.Models
                 }
             }
             return list_rol;
-        }        
-
+        }
+       
 
         // MOSTRAR COMISION AFP
         public IEnumerable<Nafp> Show_comisionafp(string tipo_regimen)
         {
-            list_comisionAfp = new List<Nafp>();
+            
             Dafp daf = new Dafp();
             daf.Idmes = Idmes;
             daf.Idperiodo = Idperiodo;
 
             using (DataTable dt = new Rafp().Show_comisionafp(daf, tipo_regimen))
             {
+                list_comisionAfp = new List<Nafp>();
                 foreach (DataRow item in dt.Rows)
                 {
                     list_comisionAfp.Add(new Nafp()

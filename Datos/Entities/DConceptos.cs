@@ -14,16 +14,16 @@ namespace Datos.Entities
         private bool hextraDiurna;
         private bool hextraNocturna;
         private bool feriadoDomi;
-        private bool boniNocturna;
+        private bool boniNoctur;
         private bool primeroMayo;
         private bool tarda;
-        private bool subsi;
+        private bool subsidi;
         private bool thoraex;
         private bool otroreinte;
         private bool prest_aliment;
         private bool gratif;
         private bool vaca;
-        private bool truncas;
+        private bool trunca;
         private bool reinte_gratiboni;
         private bool essa_vida;
         private bool adela;
@@ -39,16 +39,16 @@ namespace Datos.Entities
         public bool HextraDiurna { get => hextraDiurna; set => hextraDiurna = value; }
         public bool HextraNocturna { get => hextraNocturna; set => hextraNocturna = value; }
         public bool FeriadoDomi { get => feriadoDomi; set => feriadoDomi = value; }
-        public bool BoniNocturna { get => boniNocturna; set => boniNocturna = value; }
+        public bool BoniNoctur { get => boniNoctur; set => boniNoctur = value; }
         public bool PrimeroMayo { get => primeroMayo; set => primeroMayo = value; }
         public bool Tarda { get => tarda; set => tarda = value; }
-        public bool Subsi { get => subsi; set => subsi = value; }
+        public bool Subsidi { get => subsidi; set => subsidi = value; }
         public bool Thoraex { get => thoraex; set => thoraex = value; }
         public bool Otroreinte { get => otroreinte; set => otroreinte = value; }
         public bool Prest_aliment { get => prest_aliment; set => prest_aliment = value; }
         public bool Gratif { get => gratif; set => gratif = value; }
         public bool Vaca { get => vaca; set => vaca = value; }
-        public bool Truncas { get => truncas; set => truncas = value; }
+        public bool Trunca { get => trunca; set => trunca = value; }
         public bool Reinte_gratiboni { get => reinte_gratiboni; set => reinte_gratiboni = value; }
         public bool Essa_vida { get => essa_vida; set => essa_vida = value; }
         public bool Adela { get => adela; set => adela = value; }

@@ -30,6 +30,8 @@ namespace Presentacion.Vista
             Mostar_banco();
             Mostar_tcontrato();
             MostrarRegimenSalud();
+            InitEmpty_combobox();
+
         }
 
 
@@ -37,10 +39,7 @@ namespace Presentacion.Vista
         private void Initialize()
         {
             String[] tpago = { "EFECTIVO", "DEPOSITO EN CUENTA", "OTROS" };
-            cbotipopago.Items.AddRange(tpago);
-
-            //String[] regimen_salud = { "ESSALUD REGULAR", "SIS - MICROEMPRESAS" };
-            //cboregimensalud.Items.AddRange(regimen_salud);
+            cbotipopago.Items.AddRange(tpago);          
 
             String[] periodicidad = { "MENSUAL", "QUINCENAL", "SEMANAL", "DIARIO", "OTROS" };
             cboperiodicidad.Items.AddRange(periodicidad);
@@ -199,7 +198,7 @@ namespace Presentacion.Vista
         {
             using (emple_contra)
             {
-                emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
+                emple_contra.Id_emp_maestra =UserCache.Codigo_empresa;
                 dgvempleado.DataSource = emple_contra.listar_empleado();
                 lblcantidad_registro.Text = "Total registro:  " + dgvempleado.RowCount;
             }
@@ -226,40 +225,52 @@ namespace Presentacion.Vista
                 cbotipocontra.ValueMember = "id_tcontrato";
             }
         }
+
+
+        //LIMPIAR CONTROLES
         private void limpiar()
         {
             txtNombre.Text = String.Empty;
             txtApeMat.Text = String.Empty;
             txtApePat.Text = String.Empty;
             txttele.Text = String.Empty;
-            cbogenero.Text = "";
-            cbogenero.SelectedValue = 0;
-            cbotipo_documento.Text = "";
-            cbotipo_documento.SelectedValue = 0;
-            cbocargo.Text = "";
-            cbocargo.SelectedValue = 0;
-            cbore_pensionario.Text = "";
-            cbore_pensionario.SelectedValue = 0;
+            cbogenero.Text = null;                                              
+            Cbojornada_laboral.Text = null;
+            cboestado.Text = null;                        
+            cbotipopago.Text = null;           
+            cboperiodicidad.Text = null;
+            cbotipo_moneda.Text = null;
             txtnac.Text = String.Empty;
             txtdire.Text = String.Empty;
             txtnumdoc.Text = String.Empty;
-            Bloquear_controles();
-
-
+            txtfecha_fin.Text = null;
+            txtcussp.Text = string.Empty;
+            txtnum_cuenta.Text = string.Empty;
+            txtcts.Text = string.Empty;
+            dtfecha.Value = DateTime.Today;
+            dtinicio.Value = DateTime.Today;
+            InitEmpty_combobox();
         }
 
-        //LIMPIAR CONTROLES AL INICIAR
-        private void Bloquear_controles()
+
+        //COMBOBOX INICIAR VACIOS
+        private void InitEmpty_combobox()
         {
-            cbore_pensionario.Text = null;
-            cbocargo.Text = null;
             cbotipo_documento.Text = null;
-            cbotipocontra.Text = null;
+            cbotipo_documento.SelectedValue = 0;
+            cbocargo.Text = null;
+            cbocargo.SelectedValue = 0;
+            cbore_pensionario.Text = null;
+            cbore_pensionario.SelectedValue = 0;
+            cboregimensalud.Text = null;
+            cboregimensalud.SelectedValue = 0;
             cbobanco.Text = null;
+            cbobanco.SelectedValue = 0;
+            cbotipocontra.Text = null;
+            cbotipocontra.SelectedValue = 0;
         }
 
         //VALIDAR CAMPOS
-
         private bool Validar_campos()
         {
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApePat.Text) ||
@@ -286,9 +297,8 @@ namespace Presentacion.Vista
         {
             Initialize();
             mostrarEmpleado();
-            Tabla();
-            Bloquear_controles();
-            MostrarRegimenSalud();
+            Tabla();            
+           
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
@@ -322,7 +332,7 @@ namespace Presentacion.Vista
             result = "";
             using (emple_contra)
             {
-                if (emple_contra.Existe(txtnumdoc.Text.Trim()))
+                if (emple_contra.Existe(txtnumdoc.Text.Trim()) && emple_contra.state ==EntityState.Guardar)
                 {
                     Messages.M_error("Código ya existe.");
                     txtnumdoc.Focus();
@@ -386,6 +396,7 @@ namespace Presentacion.Vista
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             using (emple_contra) { emple_contra.state = EntityState.Guardar; }
+            ValidateError.validate.Clear();
             //Habilitar(true);
             limpiar();
         }
@@ -562,46 +573,52 @@ namespace Presentacion.Vista
         {
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
             {
+                ValidateError.validate.Clear();
                 using (emple_contra)
                 {
                     emple_contra.state = EntityState.Modificar;
                     emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
                     DataRow dr = emple_contra.ListaEmple_total(emple_contra).Rows[0];
 
-                    txtcodigo.Text = dr["codigo"].ToString();
-                    txtNombre.Text = dr["nombre_empleado"].ToString();
-                    txtApePat.Text = dr["ape_paterno"].ToString();
-                    txtApeMat.Text = dr["ape_materno"].ToString();
-                    dtfecha.Value = Convert.ToDateTime(dr["fecha_nacimiento"]);
-                    txtnac.Text = dr["nacionalidad"].ToString();
-                    cbogenero.Text = dr["tipo_genero"].ToString();
-                    txtdire.Text = dr["direccion"].ToString();
-                    txttele.Text = dr["telefono"].ToString();
-                    txtnumdoc.Text = dr["numero_documento"].ToString();
-                    cboestado.Text = dr["estado"].ToString();
-                    cbore_pensionario.SelectedValue = dr["codigo_regimen"].ToString();
-                    cbore_pensionario.Text = dr["descripcion"].ToString();
-                    cbotipo_documento.SelectedValue = dr["id_documento"].ToString();
-                    cbotipo_documento.Text = dr["nombre"].ToString();
-                    cbocargo.SelectedValue = dr["id_cargo"].ToString();
-                    cbocargo.Text = dr["nombre_cargo"].ToString();
-                    Cbojornada_laboral.Text = dr["jornada_laboral"].ToString();
-                    cbobanco.SelectedValue = dr["id_banco"].ToString();
-                    cbobanco.Text = dr["nombre_banco"].ToString();
-                    cbotipocontra.SelectedValue = dr["id_tipocontrato"].ToString();
-                    cbotipocontra.Text = dr["tiempo_contrato"].ToString();
-                    dtinicio.Value = Convert.ToDateTime(dr["fecha_inicio"]);
-                    //txtfecha_fin.Text= dr["fecha_fin"].ToString();
-                    txtnum_cuenta.Text = dr["numero_cuenta"].ToString();
-                    txtremune.Text = Convert.ToDecimal(dr["remuneracion_basica"]).ToString("0.00");
-                    txtasig.Text = Convert.ToDecimal(dr["asignacion_familiar"]).ToString("0.00");
-                    cboregimensalud.SelectedValue = dr["id_rsalud"].ToString();
-                    cboregimensalud.Text = dr["descripcion_rsalud"].ToString();
-                    cbotipopago.Text = dr["tipo_pago"].ToString();
-                    cboperiodicidad.Text = dr["periodicidad"].ToString();
-                    cbotipo_moneda.Text = dr["tipo_moneda"].ToString();
-                    txtcts.Text = dr["cuenta_cts"].ToString();
-                    txtcussp.Text = dr["cussp"].ToString();
+                     txtcodigo.Text = dr["codigo"].ToString();
+                     txtNombre.Text = dr["nombre_empleado"].ToString();
+                     txtApePat.Text = dr["ape_paterno"].ToString();
+                     txtApeMat.Text = dr["ape_materno"].ToString();
+                     dtfecha.Value = Convert.ToDateTime(dr["fecha_nacimiento"]);
+                     txtnac.Text = dr["nacionalidad"].ToString();
+                     cbogenero.Text = dr["tipo_genero"].ToString();
+                     txtdire.Text = dr["direccion"].ToString();
+                     txttele.Text = dr["telefono"].ToString();
+                     txtnumdoc.Text = dr["numero_documento"].ToString();
+                     cboestado.Text = dr["estado"].ToString();
+                     cbore_pensionario.SelectedValue = dr["codigo_regimen"].ToString();
+                     cbore_pensionario.Text = dr["descripcion"].ToString();
+                     cbotipo_documento.SelectedValue = dr["id_documento"].ToString();
+                     cbotipo_documento.Text = dr["nombre"].ToString();
+                     cbocargo.SelectedValue = dr["id_cargo"].ToString();
+                     cbocargo.Text = dr["nombre_cargo"].ToString();
+                     Cbojornada_laboral.Text = dr["jornada_laboral"].ToString();
+                     cbobanco.SelectedValue = dr["id_banco"].ToString();
+                     cbobanco.Text = dr["nombre_banco"].ToString();
+                     cbotipocontra.SelectedValue = dr["id_tipocontrato"].ToString();
+                     cbotipocontra.Text = dr["tiempo_contrato"].ToString();
+                     dtinicio.Value = Convert.ToDateTime(dr["fecha_inicio"]);
+                    //txtfecha_fin.Text= dr["fecha_fin"].ToString() == "1900/01/01" ? null : dr["fecha_fin"].ToString();
+
+                    txtfecha_fin.Text = Convert.ToDateTime(dr["fecha_fin"]).ToString("dd/MM/yyyy") == "01/01/1900" ? null : Convert.ToDateTime(dr["fecha_fin"]).ToString("dd/MM/yyyy");
+                     txtnum_cuenta.Text = dr["numero_cuenta"].ToString();
+                     txtremune.Text = Convert.ToDecimal(dr["remuneracion_basica"]).ToString("N2");
+                     txtasig.Text = Convert.ToDecimal(dr["asignacion_familiar"]).ToString("N2");
+                     cboregimensalud.SelectedValue = dr["id_rsalud"].ToString();
+                     cboregimensalud.Text = dr["descripcion_rsalud"].ToString();
+                     cbotipopago.Text = dr["tipo_pago"].ToString();
+                     cboperiodicidad.Text = dr["periodicidad"].ToString();
+                     cbotipo_moneda.Text = dr["tipo_moneda"].ToString();
+                     txtcts.Text = dr["cuenta_cts"].ToString();
+                     txtcussp.Text = dr["cussp"].ToString();
+
+                    //txtfecha_fin.Text = Convert.ToDateTime(dr["fecha_fin"]).ToString("dd/MM/yyyy");// == "1900/01/01" ? null : dr["fecha_fin"].ToString();
+                    //MessageBox.Show("es: "+Convert.ToDateTime (dr["fecha_fin"]).ToString("dd/MM/yyyy"));
                 }
             }
         }
@@ -733,7 +750,7 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SteelBlue;
+            btnminimizar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
