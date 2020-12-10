@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTipoContrato = new System.Windows.Forms.TextBox();
             this.txttotaldias = new System.Windows.Forms.TextBox();
-            this.lbltotal = new System.Windows.Forms.Label();
             this.dgvTcontrato = new System.Windows.Forms.DataGridView();
             this.dgvtxtidtcontrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxttcontrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +59,10 @@
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle91.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle91.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle91.NullValue = null;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle91;
             this.dataGridViewImageColumn1.Description = "Modificar";
             this.dataGridViewImageColumn1.HeaderText = "Editar";
             this.dataGridViewImageColumn1.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
@@ -73,10 +72,10 @@
             // 
             // dataGridViewImageColumn2
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.NullValue = null;
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle92.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle92.NullValue = null;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle92;
             this.dataGridViewImageColumn2.HeaderText = "Eliminar";
             this.dataGridViewImageColumn2.Image = global::Presentacion.Properties.Resources.delete18p;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
@@ -92,7 +91,7 @@
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(464, 27);
+            this.panel2.Size = new System.Drawing.Size(392, 35);
             this.panel2.TabIndex = 102;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -101,7 +100,7 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-            this.btncerrar.Location = new System.Drawing.Point(425, 3);
+            this.btncerrar.Location = new System.Drawing.Point(353, 9);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -116,7 +115,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(158, 3);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 18);
             this.label1.TabIndex = 95;
@@ -135,7 +134,7 @@
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(320, 35);
+            this.btnguardar.Location = new System.Drawing.Point(245, 57);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(101, 24);
             this.btnguardar.TabIndex = 101;
@@ -147,15 +146,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 42);
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 100;
             this.label3.Text = "Ingresar Contrato:";
             // 
             // txtTipoContrato
             // 
-            this.txtTipoContrato.Location = new System.Drawing.Point(103, 38);
+            this.txtTipoContrato.Location = new System.Drawing.Point(32, 61);
             this.txtTipoContrato.Name = "txtTipoContrato";
             this.txtTipoContrato.Size = new System.Drawing.Size(185, 20);
             this.txtTipoContrato.TabIndex = 99;
@@ -165,22 +165,12 @@
             // 
             this.txttotaldias.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttotaldias.Enabled = false;
-            this.txttotaldias.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotaldias.Location = new System.Drawing.Point(305, 222);
+            this.txttotaldias.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txttotaldias.Location = new System.Drawing.Point(186, 284);
             this.txttotaldias.Multiline = true;
             this.txttotaldias.Name = "txttotaldias";
-            this.txttotaldias.Size = new System.Drawing.Size(60, 20);
+            this.txttotaldias.Size = new System.Drawing.Size(149, 24);
             this.txttotaldias.TabIndex = 98;
-            this.txttotaldias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Location = new System.Drawing.Point(229, 225);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(42, 13);
-            this.lbltotal.TabIndex = 97;
-            this.lbltotal.Text = "TOTAL";
             // 
             // dgvTcontrato
             // 
@@ -189,22 +179,22 @@
             this.dgvTcontrato.AllowUserToOrderColumns = true;
             this.dgvTcontrato.AllowUserToResizeColumns = false;
             this.dgvTcontrato.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.dgvTcontrato.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle93.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(247)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle93.ForeColor = System.Drawing.Color.Black;
+            this.dgvTcontrato.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle93;
             this.dgvTcontrato.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvTcontrato.BackgroundColor = System.Drawing.Color.White;
             this.dgvTcontrato.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTcontrato.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvTcontrato.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTcontrato.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle94.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle94.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle94.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle94.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle94.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle94.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle94.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTcontrato.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle94;
             this.dgvTcontrato.ColumnHeadersHeight = 34;
             this.dgvTcontrato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTcontrato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -212,34 +202,34 @@
             this.dgvtxttcontrato,
             this.modificar,
             this.eliminar});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTcontrato.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle98.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle98.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle98.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTcontrato.DefaultCellStyle = dataGridViewCellStyle98;
             this.dgvTcontrato.EnableHeadersVisualStyles = false;
-            this.dgvTcontrato.Location = new System.Drawing.Point(73, 73);
+            this.dgvTcontrato.Location = new System.Drawing.Point(32, 95);
             this.dgvTcontrato.Name = "dgvTcontrato";
             this.dgvTcontrato.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTcontrato.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle99.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle99.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTcontrato.RowHeadersDefaultCellStyle = dataGridViewCellStyle99;
             this.dgvTcontrato.RowHeadersVisible = false;
             this.dgvTcontrato.RowHeadersWidth = 42;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvTcontrato.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle100.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle100.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTcontrato.RowsDefaultCellStyle = dataGridViewCellStyle100;
             this.dgvTcontrato.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTcontrato.Size = new System.Drawing.Size(320, 143);
+            this.dgvTcontrato.Size = new System.Drawing.Size(318, 183);
             this.dgvTcontrato.TabIndex = 96;
             this.dgvTcontrato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
             // 
@@ -253,18 +243,18 @@
             // dgvtxttcontrato
             // 
             this.dgvtxttcontrato.DataPropertyName = "tiem_contrato";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvtxttcontrato.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle95.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvtxttcontrato.DefaultCellStyle = dataGridViewCellStyle95;
             this.dgvtxttcontrato.HeaderText = "Tipo Contrato";
             this.dgvtxttcontrato.Name = "dgvtxttcontrato";
-            this.dgvtxttcontrato.Width = 94;
+            this.dgvtxttcontrato.Width = 200;
             // 
             // modificar
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.NullValue = null;
-            this.modificar.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle96.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle96.NullValue = null;
+            this.modificar.DefaultCellStyle = dataGridViewCellStyle96;
             this.modificar.Description = "Modificar";
             this.modificar.HeaderText = "Editar";
             this.modificar.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
@@ -274,10 +264,10 @@
             // 
             // eliminar
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.NullValue = null;
-            this.eliminar.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle97.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle97.NullValue = null;
+            this.eliminar.DefaultCellStyle = dataGridViewCellStyle97;
             this.eliminar.HeaderText = "Eliminar";
             this.eliminar.Image = global::Presentacion.Properties.Resources.delete18p;
             this.eliminar.Name = "eliminar";
@@ -288,13 +278,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 252);
+            this.ClientSize = new System.Drawing.Size(392, 324);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTipoContrato);
             this.Controls.Add(this.txttotaldias);
-            this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvTcontrato);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TipoContrato2";
@@ -319,7 +308,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTipoContrato;
         private System.Windows.Forms.TextBox txttotaldias;
-        private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.DataGridView dgvTcontrato;
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtidtcontrato;

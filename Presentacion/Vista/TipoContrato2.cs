@@ -27,6 +27,7 @@ namespace Presentacion.Vista
             using (nt = new Ntipocontrato())
             {
                 dgvTcontrato.DataSource = nt.MostrarTcontrato();
+                txttotaldias.Text = "TOTAL REGISTROS: "+dgvTcontrato.Rows.Count;
             }
         }
         private bool Validar()
@@ -64,12 +65,15 @@ namespace Presentacion.Vista
         {
             dgvTcontrato.Columns["dgvtxtidtcontrato"].Visible = false;
 
+            //dgvTcontrato.Columns[3].HeaderText = "TIPO";
+            //dgvTcontrato.Columns[3].Width = 200;
+
             dgvTcontrato.Columns[2].HeaderText = "EDITAR";
             dgvTcontrato.Columns[2].Width = 200;
 
-            //dgvTcontrato.Columns[4].HeaderText = "estado";
-            //dgvTcontrato.Columns[4].Width = 100;
-            //dgvTcontrato.Columns[4].Visible = false;
+            dgvTcontrato.Columns[4].HeaderText = "estado";
+            dgvTcontrato.Columns[4].Width = 100;
+            dgvTcontrato.Columns[4].Visible = false;
         }
 
         private void dgvsubsidio_CellContentClick(object sender, DataGridViewCellEventArgs e)

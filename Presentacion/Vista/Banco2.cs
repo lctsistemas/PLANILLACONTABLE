@@ -45,7 +45,8 @@ namespace Presentacion.Vista
         {
             using (nb = new NBanco())
             {       
-                dgvsubsidio.DataSource = nb.Getall();
+                dgvbanco.DataSource = nb.Getall();
+                txttotaldias.Text = "TOTAL REGISTROS: " + dgvbanco.Rows.Count;
             }
         }
 
@@ -72,14 +73,14 @@ namespace Presentacion.Vista
         {
             if (e.RowIndex != -1)
             {
-                if (dgvsubsidio.Rows[e.RowIndex].Cells["modificar"].Selected)
+                if (dgvbanco.Rows[e.RowIndex].Cells["modificar"].Selected)
                 {
                     mensaje = "";
                     using (nb = new NBanco())
                     {
                         nb.state = EntityState.Modificar;
-                        nb.Nom_banco = dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtbanco"].Value.ToString();
-                        nb.IdBanco = Convert.ToInt32(dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
+                        nb.Nom_banco = dgvbanco.Rows[e.RowIndex].Cells["dgvtxtbanco"].Value.ToString();
+                        nb.IdBanco = Convert.ToInt32(dgvbanco.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
                         mensaje = nb.GuardarCambios();
                         if (!mensaje.Equals(""))
                         {
@@ -90,17 +91,17 @@ namespace Presentacion.Vista
                         nb.state = EntityState.Guardar;
                     }
                 }
-                else if (dgvsubsidio.Rows[e.RowIndex].Cells["eliminar"].Selected)
+                else if (dgvbanco.Rows[e.RowIndex].Cells["eliminar"].Selected)
                 {
                     mensaje = "";
                     using (nb = new NBanco())
                     {
-                        string cod_subsi = dgvsubsidio.CurrentRow.Cells["dgvtxtbanco"].Value.ToString();
+                        string cod_subsi = dgvbanco.CurrentRow.Cells["dgvtxtbanco"].Value.ToString();
                         DialogResult result = Messages.M_question("¿Está seguro de eliminar el tipo " + cod_subsi + "?");
                         if (result == DialogResult.Yes)
                         {
                             nb.state = EntityState.Remover;
-                            nb.IdBanco = Convert.ToInt32(dgvsubsidio.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
+                            nb.IdBanco = Convert.ToInt32(dgvbanco.Rows[e.RowIndex].Cells["dgvtxtidbanco"].Value);
                             //MessageBox.Show("id banco es: "+nb.IdBanco);
                             mensaje = nb.GuardarCambios();
                             if (mensaje.Contains ("ESTA SIENDO USADO")  )
@@ -122,15 +123,15 @@ namespace Presentacion.Vista
 
         private void Tabla()
         {
-            dgvsubsidio.Columns["dgvtxtidbanco"].Visible = false;
-            dgvsubsidio.Columns["dgvtxtbanco"].ReadOnly = false;
+            dgvbanco.Columns["dgvtxtidbanco"].Visible = false;
+            dgvbanco.Columns["dgvtxtbanco"].ReadOnly = false;
 
-            dgvsubsidio.Columns[3].HeaderText = "BANCO";
-            dgvsubsidio.Columns[3].Width = 200;
+            dgvbanco.Columns[3].HeaderText = "BANCO";
+            dgvbanco.Columns[3].Width = 200;
 
-            dgvsubsidio.Columns[4].HeaderText = "estado";
-            dgvsubsidio.Columns[4].Width = 100;
-            dgvsubsidio.Columns[4].Visible = false;
+            dgvbanco.Columns[4].HeaderText = "estado";
+            dgvbanco.Columns[4].Width = 100;
+            dgvbanco.Columns[4].Visible = false;
         }
 
         private void lblbanco_MouseDown(object sender, MouseEventArgs e)
