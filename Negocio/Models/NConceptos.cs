@@ -19,16 +19,16 @@ namespace Negocio.Models
         public bool HextraDiurna { get; set; }
         public bool HextraNocturna { get; set; }
         public bool FeriadoDomi { get; set; }
-        public bool BoniNocturna { get; set; }
+        public bool BoniNoctur { get; set; }
         public bool PrimeroMayo { get; set; }
         public bool Tarda { get; set; }
-        public bool Subsi { get; set; }
+        public bool Subsidi { get; set; }
         public bool Thoraex { get; set; }
         public bool Otroreinte { get; set; }
         public bool Prest_aliment { get; set; }
         public bool Gratif { get; set; }
         public bool Vaca { get; set; }
-        public bool Truncas { get; set; }
+        public bool Trunca { get; set; }
         public bool Reinte_gratiboni { get; set; }
         public bool Essa_vida { get; set; }
         public bool Adela { get; set; }
@@ -63,16 +63,16 @@ namespace Negocio.Models
                     dcon.HextraDiurna = HextraDiurna;
                     dcon.HextraNocturna = HextraNocturna;
                     dcon.FeriadoDomi = FeriadoDomi;
-                    dcon.BoniNocturna = BoniNocturna;
+                    dcon.BoniNoctur = BoniNoctur;
                     dcon.PrimeroMayo = PrimeroMayo;
                     dcon.Tarda = Tarda;
-                    dcon.Subsi = Subsi;
+                    dcon.Subsidi = Subsidi;
                     dcon.Thoraex = Thoraex;
                     dcon.Otroreinte = Otroreinte;
                     dcon.Prest_aliment = Prest_aliment;
                     dcon.Gratif = Gratif;
                     dcon.Vaca = Vaca;
-                    dcon.Truncas = Truncas;
+                    dcon.Trunca = Trunca;
                     dcon.Reinte_gratiboni = Reinte_gratiboni;
                     dcon.Essa_vida = Essa_vida;
                     dcon.Adela = Adela;
@@ -118,7 +118,28 @@ namespace Negocio.Models
                 {
                     lista_concepto.Add(new NConceptos()
                     {
-                        HextraDiurna = Convert.ToBoolean(item[1])
+                        Id_conceptos=Convert.ToInt32(item[0]),
+                        HextraDiurna = Convert.ToBoolean(item[1]),
+                        HextraNocturna=Convert.ToBoolean(item[2]),
+                        FeriadoDomi=Convert.ToBoolean(item[3]),
+                        BoniNoctur=Convert.ToBoolean(item[4]),
+                        PrimeroMayo=Convert.ToBoolean(item[5]),
+                        Tarda=Convert.ToBoolean(item[6]),
+                        Subsidi=Convert.ToBoolean(item[7]),
+                        Thoraex=Convert.ToBoolean(item[8]),
+                        Otroreinte=Convert.ToBoolean(item[9]),
+                        Prest_aliment=Convert.ToBoolean(item[10]),
+                        Gratif=Convert.ToBoolean(item[11]),
+                        Vaca=Convert.ToBoolean(item[12]),
+                        Trunca=Convert.ToBoolean(item[13]),
+                        Reinte_gratiboni=Convert.ToBoolean(item[14]),
+                        Essa_vida=Convert.ToBoolean(item[15]),
+                        Adela=Convert.ToBoolean(item[16]),
+                        Presta=Convert.ToBoolean(item[17]),
+                        Rentquinta=Convert.ToBoolean(item[18]),
+                        Reten_judici=Convert.ToBoolean(item[19]),
+                        Otrodescu=Convert.ToBoolean(item[20]),
+                        Recarg_consu=Convert.ToBoolean(item[21])
                         
                     });
 

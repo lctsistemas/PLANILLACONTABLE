@@ -18,8 +18,7 @@ namespace Presentacion.Vista
         NConceptos nconcepto;
         public FrmPlanillaMensual2()
         {
-            InitializeComponent();
-            //dgvplanilla1.Rows.Add();
+            InitializeComponent();            
             Dgvplanilla1.AutoGenerateColumns = false;
             this.Dgvplanilla2.DoubleBuffered(true);
             this.Dgvplanilla1.DoubleBuffered(true);
@@ -41,8 +40,8 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["ape_nom"].Frozen = true;
             Dgvplanilla2.Columns["valor1"].Frozen = true;
 
-            Dgvplanilla1.Columns["id_contrato"].Visible = false;
-            Dgvplanilla1.Columns["id_planilla_manto"].Visible = false;
+            Dgvplanilla1.Columns["id_contrato"].Visible = false;//se registrara este id
+            Dgvplanilla1.Columns["id_planilla_manto"].Visible = false;//sera para poder actualizar
             Dgvplanilla1.Columns["jornada_labo"].Visible = false;
             Dgvplanilla1.Columns["valor_comision"].Visible = false;
             Dgvplanilla1.Columns["valor_seguro"].Visible = false;
@@ -103,10 +102,12 @@ namespace Presentacion.Vista
         private void FillTabla()
         {
             using (nplam = new NplanillaM())
-            {
-                nplam.Id_mes = 9;
-                nplam.Id_empreMaestra = 1;
-                Dgvplanilla1.DataSource = nplam.Show_planillaM();
+            {             
+                nplam.PId_mes = PlanillaCache.p_idmes;
+                nplam.PId_empreMaestra = UserCache.Codigo_empresa;
+                nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
+                nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
+                Dgvplanilla1.DataSource = nplam.Show_planillaM(PlanillaCache.p_idplanilla);
             }
 
         }
@@ -281,7 +282,7 @@ namespace Presentacion.Vista
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {
             CheckConceptos();
-            //FillTabla();
+            FillTabla();
             TablaPlanilla();
             Tooltip.Title(Picsave_conceptos, "Guardar cambios", false);
             TxtfechaInicio.ReadOnly = true;
@@ -290,7 +291,6 @@ namespace Presentacion.Vista
         }
 
         // INICIO DE ENVENTOS DATAGRIDVIEW.
-
         private void Dgvplanilla1_Scroll(object sender, ScrollEventArgs e)
         {
             Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
@@ -524,7 +524,7 @@ namespace Presentacion.Vista
                     break;
             }
             TotalRemuneracion();
-            //Descuento_aportes();
+            Descuento_aportes();
         }
 
         private void Dgvplanilla1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -540,8 +540,11 @@ namespace Presentacion.Vista
                 {
                     //Messages.M_info("seleccione el boton susbidio");
                     PlanillaCache.Subsidiado = Subsidiado;
+                    PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
                     this.AddOwnedForm(fr2);
+                    fr2.lblcodigo_empledo.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
+                    fr2.lblnombre_empleado.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value.ToString();
                     fr2.ShowDialog();
 
                     if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null)
@@ -557,9 +560,11 @@ namespace Presentacion.Vista
                 if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
                 {
                     PlanillaCache.Subsidiado = NoSubsidiado;
+                    PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
-
                     this.AddOwnedForm(fr2);
+                    fr2.lblcodigo_empledo.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
+                    fr2.lblnombre_empleado.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value.ToString();
                     fr2.ShowDialog();
 
                     //MONTO NEGATIVO.
@@ -590,11 +595,10 @@ namespace Presentacion.Vista
 
         private void tbtnsalir_Click(object sender, EventArgs e)
         {
-            //FrmPlanillaEmpleados plaem = (FrmPlanillaEmpleados)Owner;
+            FrmPlanillaEmpleados plaem = (FrmPlanillaEmpleados)Owner;
 
-            //plaem.btncerrar.Enabled = true;
-            //plaem.toolmenu.Visible = true;
-
+            plaem.btncerrar.Enabled = true;
+            plaem.toolmenu.Visible = true;
             this.Close();
         }       
 
@@ -760,16 +764,16 @@ namespace Presentacion.Vista
                 nconcepto.HextraDiurna = Chkhdiurnas.Checked;
                 nconcepto.HextraNocturna = Chkhnocturna.Checked;
                 nconcepto.FeriadoDomi = Chkferiado.Checked;
-                nconcepto.BoniNocturna = Chkboni_nocturna.Checked;
+                nconcepto.BoniNoctur = Chkboni_nocturna.Checked;
                 nconcepto.PrimeroMayo = Chkprimeromayo.Checked;
                 nconcepto.Tarda = Chktardanza.Checked;
-                nconcepto.Subsi = Chksubsidio.Checked;
+                nconcepto.Subsidi = Chksubsidio.Checked;
                 nconcepto.Thoraex = Chktotal_extras.Checked;
                 nconcepto.Otroreinte = Chkotro_reintegro.Checked;
                 nconcepto.Prest_aliment = Chkpres_alime.Checked;
                 nconcepto.Gratif = Chkgrati.Checked;
                 nconcepto.Vaca = Chkvaca.Checked;
-                nconcepto.Truncas = Chktrunca.Checked;
+                nconcepto.Trunca = Chktrunca.Checked;
                 nconcepto.Reinte_gratiboni = Chkrgrati.Checked;
                 nconcepto.Essa_vida = Chkessavida.Checked;
                 nconcepto.Adela = Chkadelanto.Checked;
@@ -793,7 +797,29 @@ namespace Presentacion.Vista
                 nconcepto.Id_mes = 2;
                 nconcepto.Id_planilla = 2;
                 li = nconcepto.Getall();
+                this.Txtidconcepto.Text = li[0].Id_conceptos.ToString();
                 this.Chkhdiurnas.Checked = Convert.ToBoolean(li[0].HextraDiurna);
+                this.Chkhnocturna.Checked = Convert.ToBoolean(li[0].HextraNocturna);
+                this.Chkferiado.Checked = Convert.ToBoolean(li[0].FeriadoDomi);
+                this.Chkboni_nocturna.Checked = Convert.ToBoolean(li[0].BoniNoctur);
+                this.Chkprimeromayo.Checked = Convert.ToBoolean(li[0].PrimeroMayo);
+                this.Chktardanza.Checked = Convert.ToBoolean(li[0].Tarda);
+                this.Chksubsidio.Checked = Convert.ToBoolean(li[0].Subsidi);
+                this.Chktotal_extras.Checked = Convert.ToBoolean(li[0].Thoraex);
+                this.Chkotro_reintegro.Checked = Convert.ToBoolean(li[0].Otroreinte);
+                this.Chkpres_alime.Checked = Convert.ToBoolean(li[0].Prest_aliment);
+                this.Chkgrati.Checked = Convert.ToBoolean(li[0].Gratif);
+                this.Chkvaca.Checked = Convert.ToBoolean(li[0].Vaca);
+                this.Chktrunca.Checked = Convert.ToBoolean(li[0].Trunca);
+                this.Chkrgrati.Checked = Convert.ToBoolean(li[0].Reinte_gratiboni);
+                this.Chkessavida.Checked = Convert.ToBoolean(li[0].Essa_vida);
+                this.Chkadelanto.Checked = Convert.ToBoolean(li[0].Adela);
+                this.Chkprestamo.Checked = Convert.ToBoolean(li[0].Presta);
+                this.Chkrentaquinta.Checked = Convert.ToBoolean(li[0].Rentquinta);
+                this.Chkretencion_judi.Checked = Convert.ToBoolean(li[0].Reten_judici);
+                this.Chkotro_descuento.Checked = Convert.ToBoolean(li[0].Otrodescu);
+                this.Chkrecar_consumo.Checked = Convert.ToBoolean(li[0].Recarg_consu);
+
             }
         }
 

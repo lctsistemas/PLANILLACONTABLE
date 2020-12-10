@@ -3,6 +3,7 @@ using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -28,8 +29,8 @@ namespace Presentacion.Vista
         {
             using (np)
             {
-                np.Id_empresam = 1; //UserCache.Codigo_empresa;
-                np.Id_periodo = 2; //UserCache.Idperiodo;
+                np.Id_empresam = UserCache.Codigo_empresa;
+                np.Id_periodo = UserCache.Idperiodo;
                 dgvplanilla.DataSource = np.Getall();
             }
         }
@@ -166,6 +167,8 @@ namespace Presentacion.Vista
             this.toolmenu.Visible = false;
             this.btncerrar.Enabled = false;
 
+            PlanillaCache.p_idplanilla = Convert.ToInt32(dgvplanilla.CurrentRow.Cells[0].Value);
+            PlanillaCache.p_idmes = Convert.ToInt32(dgvplanilla.CurrentRow.Cells[2].Value);
             plm.Lblperiodo.Text = (dgvplanilla.CurrentRow.Cells[1].Value.ToString() + " - " + dgvplanilla.CurrentRow.Cells[4].Value.ToString());
             
             del= Convert.ToDateTime(dgvplanilla.CurrentRow.Cells[5].Value);
@@ -219,6 +222,14 @@ namespace Presentacion.Vista
             btnmaximizar.Visible = true;
         }
 
-       
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.SlateGray;
+        }
     }
 }

@@ -234,7 +234,7 @@
             // 
             // barraTitulo
             // 
-            this.barraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.barraTitulo.BackColor = System.Drawing.Color.SlateGray;
             this.barraTitulo.Controls.Add(this.btnminimizar);
             this.barraTitulo.Controls.Add(this.btncerrar);
             this.barraTitulo.Controls.Add(this.label4);

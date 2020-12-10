@@ -31,8 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblcodigo_empledo = new System.Windows.Forms.Label();
+            this.lblnombre_empleado = new System.Windows.Forms.Label();
             this.cbosubsidio = new System.Windows.Forms.ComboBox();
             this.dgvsubsidio = new System.Windows.Forms.DataGridView();
             this.tsupension = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,23 +56,23 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblcodigo_empledo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo - dni";
+            this.lblcodigo_empledo.AutoSize = true;
+            this.lblcodigo_empledo.Location = new System.Drawing.Point(7, 3);
+            this.lblcodigo_empledo.Name = "lblcodigo_empledo";
+            this.lblcodigo_empledo.Size = new System.Drawing.Size(63, 13);
+            this.lblcodigo_empledo.TabIndex = 0;
+            this.lblcodigo_empledo.Text = "Codigo - dni";
             // 
-            // label2
+            // lblnombre_empleado
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "-  Nombre ";
+            this.lblnombre_empleado.AutoSize = true;
+            this.lblnombre_empleado.Location = new System.Drawing.Point(76, 3);
+            this.lblnombre_empleado.Name = "lblnombre_empleado";
+            this.lblnombre_empleado.Size = new System.Drawing.Size(56, 13);
+            this.lblnombre_empleado.TabIndex = 1;
+            this.lblnombre_empleado.Text = "-  Nombre ";
             // 
             // cbosubsidio
             // 
@@ -228,9 +228,9 @@
             this.panel1.Controls.Add(this.txtdias);
             this.panel1.Controls.Add(this.txttotaldias);
             this.panel1.Controls.Add(this.lbltotal);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblcodigo_empledo);
             this.panel1.Controls.Add(this.btnsalir);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblnombre_empleado);
             this.panel1.Controls.Add(this.btngrabar);
             this.panel1.Controls.Add(this.dgvsubsidio);
             this.panel1.Controls.Add(this.cbosubsidio);
@@ -333,9 +333,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbosubsidio;
         private System.Windows.Forms.DataGridView dgvsubsidio;
         private System.Windows.Forms.TextBox txtdias;
@@ -355,5 +352,7 @@
         private System.Windows.Forms.Label lbltotalSi;
         private System.Windows.Forms.Label lbltotalSp;
         private System.Windows.Forms.Label lblvacaciones;
+        public System.Windows.Forms.Label lblcodigo_empledo;
+        public System.Windows.Forms.Label lblnombre_empleado;
     }
 }

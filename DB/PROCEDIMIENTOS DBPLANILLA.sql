@@ -185,8 +185,8 @@ END
 END
 GO
 
-
-CREATE PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
+--empleado tener que eliminar ya no ese estado, y mostrar cesado y activos.
+ALTER PROC SP_SHOW_EMPLEADO --MOSTRAR EMPLEADO Y AL SELECCIONAR MOSTRAR CONTRATO-- CONCAT(e.ape_paterno,SPACE(2), e.ape_materno,SPACE(2), e.nombre_empleado)
 @codigo_empresa int
 AS BEGIN 
 SELECT e.id_empleado, e.codigo, e.ape_paterno, e.ape_materno, e.nombre_empleado,
@@ -950,11 +950,11 @@ END
 GO
 
 SELECT * FROM ComisionesPension
-delete from ComisionesPension where idmes=10
+delete from ComisionesPension where idmes=4
 go
 
-/*
-NO BORRAR, ES PARA FUTURAS PRUEBAS.
+
+/*--NO BORRAR, ES PARA FUTURAS PRUEBAS.
 ALTER PROC SP_INSERT_COMISIONES
 @codigo_regimen int,
 @comision decimal(6,2),
@@ -966,7 +966,7 @@ ALTER PROC SP_INSERT_COMISIONES
 @idperiodo int
 AS BEGIN
 declare @men varchar(30)
-IF(NOT EXISTS(SELECT top(1) re.codigo_regimen FROM ComisionesPension co JOIN RegimenPensionario re ON(co.codigo_regimen = re.codigo_regimen) 
+IF(NOT EXISTS(SELECT top(1)  re.codigo_regimen FROM ComisionesPension co JOIN RegimenPensionario re ON(co.codigo_regimen = re.codigo_regimen) 
 WHERE co.idmes=@idmes AND co.idperiodo=@idperiodo))
 BEGIN
 	DECLARE @idcomi int
@@ -984,11 +984,10 @@ ELSE
 	SET @men='Ya esta registrado'
 END
 GO
-
 */
 
-go
 
+GO
 CREATE PROC SP_UPDATE_COMISIONES
 @comision decimal(6,2),
 @saldo decimal(6,2) ,
@@ -1119,7 +1118,7 @@ CREATE PROC SP_DELETE_REG_SALUD
 @mensaje varchar(100) output
 AS BEGIN
 DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
-SET @mensaje= 'PLANILLA ELIMINADA CORRECTAMENTE'
+SET @mensaje= '¡ELIMINADO!'
 END
 GO
 
@@ -1214,7 +1213,7 @@ SET @mensaje= '¡Registrado!'
 END
 GO
 
-exec SP_ADD_SUBSIDIOS 18,30,'S.P','PR','PRUEBA','NO',1,'';
+--exec SP_ADD_SUBSIDIOS 18,30,'S.P','PR','PRUEBA','NO',1,'';
 
 create PROC SP_MODIFY_SUBSIDIOS
 @id_subsidios int,
@@ -1235,36 +1234,65 @@ create PROC SP_BORRAR_SUBSIDIOS
 @mensaje varchar(100) output
 AS BEGIN
 DELETE FROM dbo.Subsidios WHERE id_subsidios=@id_subsidios
-SET @mensaje= 'SUBSIDIO ELIMINADO CORRECTAMENTE'
+SET @mensaje= '¡ELIMINADO!'
 END
 GO
 
-alter PROC SP_MOSTRAR_SUBSIDIOS 
+
+ALTER PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
 SELECT id_subsidios, cod_subsidio,tipo_suspension, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END
 GO
-exec SP_MOSTRAR_SUBSIDIOS
-/* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
 
+
+/* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
+   --te mostrara empleados repetidos, es por las comisiones que estas registrando mensualmente es esta tabla es el where 
 ALTER PROC SP_ShowPlanillaManto
+@idplanilla int,
 @idmes int,
-@id_empresaMaestra int
+@id_empresaMaestra int,
+@fechaini date,
+@fechafin date
 AS BEGIN
-SELECT co.id_contrato, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
-rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, co.remuneracion_basica, 
+IF(NOT EXISTS(SELECT plam.id_planilla FROM dbo.PlanillaManto plam JOIN dbo.Planilla p ON(plam.id_planilla = p.id_planilla) WHERE p.id_planilla=@idplanilla))
+BEGIN
+SELECT co.id_contrato, e.jornada_laboral, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, co.fecha_fin, co.remuneracion_basica, 
 co.asignacion_familiar
 FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
 JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
-WHERE cop.idmes =@idmes  and e.id_em_maestra=@id_empresaMaestra
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
 END
+ELSE
+BEGIN
+SELECT co.id_contrato, plama.idplanilla_manto, plama.jornadalaboral, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, plama.basico, plama.dias, plama.dia_dominical, 
+plama.horas_diarias, plama.asig_familiar, plama.hora_dvc, plama.minuto_dvc, plama.monto_dvc, plama.hora_dtc, plama.minuto_dtc, 
+plama.monto_dtc, plama.hora_nvc, plama.minuto_nvc, plama.monto_nvc, plama.hora_ntc, plama.minuto_ntc, plama.monto_ntc, plama.hora_feriado, 
+plama.minuto_feriado, plama.monto_feriado, plama.hora_boni, plama.monto_boni, plama.uno_mayo, plama.hora_tarde, plama.minuto_tarde, 
+plama.monto_tarde, plama.dia_sub, plama.monto_sub, plama.dia_subnegativo, plama.monto_subnegativo, plama.dia_subpositivo, plama.monto_subpositivo, 
+plama.total_horaex, plama.reintegro, plama.otro_reintegro, plama.pre_alimentaria, plama.gratiex, plama.boniex, plama.vacaciones, 
+plama.vaca_trunca, plama.grati_trunca, plama.boni_trunca, plama.cts_trunca, plama.total_remuneracion, plama.descuento_onp, 
+plama.des_comision, plama.des_seguro, plama.des_spp, plama.essalud_vida, plama.adelanto, plama.prestamo, plama.renta_quinta, 
+plama.retencion_judicial, plama.otro_des, plama.total_desc, plama.total_pagar, plama.aporte_essalud, plama.transporte, plama.recargo_consumo, 
+plama.reintegro_grati, plama.reintegro_boni
+FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
+JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
+JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
+JOIN Contrato co on(co.id_empleado=e.id_empleado) JOIN PlanillaManto  plama ON(plama.id_contrato=co.id_contrato)
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin
+END
+END
+GO
 
 SELECT * FROM Empleado
 SELECT * FROM RegimenPensionario
 SELECT * FROM ComisionesPension
 GO
+
 
 
 /* PROCEDIMIENTO PARA CONCEPTOS DE PLANILLA */

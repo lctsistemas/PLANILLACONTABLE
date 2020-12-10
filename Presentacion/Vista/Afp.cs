@@ -100,6 +100,9 @@ namespace Presentacion.Vista
 
         private void btnupdate_Click(object sender, System.EventArgs e)
         {
+            if (dgvcomision.RowCount == 0)
+                return;
+
             using (nafp = new Nafp())
             {
                 if (nafp.ListNafp == null)
@@ -119,12 +122,19 @@ namespace Presentacion.Vista
                 }
                 string result = nafp.EditComision();
                 Messages.M_info(result);
+                btnupdate.Enabled = false;
                 nafp.ListNafp.Clear();
             }                                    
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            if (dgvcomision.RowCount == 0)
+            {
+                btnguardar.Enabled = false;
+                return;
+            }
+                
             using (nafp = new Nafp())
             {
                 if (nafp.ListNafp == null)
@@ -151,8 +161,12 @@ namespace Presentacion.Vista
                 nafp.Idmes = Convert.ToInt32(cbomes.SelectedIndex + 1);
                 nafp.Idperiodo = UserCache.Idperiodo;
                 string verificar = nafp.SaveOnp();
-                if(!verificar.Equals(""))
+                if (!verificar.Equals(""))
+                {
                     Messages.M_info(result);
+                    btnguardar.Enabled = false;
+                }
+                   
                 nafp.ListNafp.Clear();
             }
         }
@@ -171,7 +185,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor= Color.FromArgb(26, 32, 40);
+            btncerrar.BackColor = Color.SlateGray;
         }
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
@@ -200,7 +214,9 @@ namespace Presentacion.Vista
         private void cbomes_SelectedIndexChanged(object sender, EventArgs e)
         {            
             Fill_comisionafp(Convert.ToInt32(cbomes.SelectedIndex + 1));
-            Fill_comisionOnp(Convert.ToInt32(cbomes.SelectedIndex + 1));                      
+            Fill_comisionOnp(Convert.ToInt32(cbomes.SelectedIndex + 1));
+            btnguardar.Enabled = false;
+            btnupdate.Enabled = false;
         }
 
         private void chkonp_CheckedChanged(object sender, EventArgs e)
@@ -222,24 +238,37 @@ namespace Presentacion.Vista
                     txtidmes.Text = "" + (Convert.ToInt32(cbomes.SelectedIndex + 1));
                 }
                 else
-                    chkcopy_pega.Checked = false;               
+                    chkcopy_pega.Checked = false;
             }
             else if (chkcopy_pega.Checked == false)
             {
-                if (chkcopy_pega.Text.Equals("PEGAR"))
+                if (chkcopy_pega.Text.Equals("PEGAR") && dgvcomision.Rows.Count == 0)
                 {
                     chkcopy_pega.BackColor = Color.SteelBlue;
                     chkcopy_pega.Text = "COPIAR";
                     Fill_comisionafp(Convert.ToInt32(txtidmes.Text.Trim()));
                     Fill_comisionOnp(Convert.ToInt32(txtidmes.Text.Trim()));
+                    btnguardar.Enabled = true;
                     //MessageBox.Show("PEGADO");
-                }
-                
-            }
-           
-
+                }                
+            }           
         }
 
-       
+        private void dgvcomision_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+           // btnupdate.Enabled = true;
+        }
+
+        private void dgvcomision_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvcomision.RowCount > 0 && btnguardar.Enabled==false)
+                btnupdate.Enabled = true;
+                //MessageBox.Show("cell cambio de valor");// si funciona
+        }
+
+        //private void dgvcomision_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        //{
+        //    MessageBox.Show("cell state changed");
+        //}
     }
 }

@@ -195,7 +195,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(64,64,64);
+            btncerrar.BackColor = Color.SlateGray;
         }
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
