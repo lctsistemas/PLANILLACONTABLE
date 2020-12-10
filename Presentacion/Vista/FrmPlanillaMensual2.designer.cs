@@ -191,7 +191,7 @@
             this.recargo_consumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reintegro_grati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reintegro_boni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dgvplanilla2 = new System.Windows.Forms.DataGridView();
+            //this.Dgvplanilla2 = new System.Windows.Forms.DataGridView();
             this.valor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hxdiurnas = new System.Windows.Forms.DataGridViewTextBoxColumn();
