@@ -41,7 +41,7 @@ namespace Presentacion.Vista
 
 
             dgvsubsidio.Columns[2].HeaderText = "Tipo de suspension";
-            dgvsubsidio.Columns[2].Width = 120;
+            dgvsubsidio.Columns[2].Width = 100;
 
             dgvsubsidio.Columns[3].HeaderText = "Descripcion corta";
             dgvsubsidio.Columns[3].Width = 200;
@@ -139,7 +139,7 @@ namespace Presentacion.Vista
                     ns.state = EntityState.Modificar;
                    ns.Id_subsidios = Convert.ToInt32(r.Cells[0].Value);
                     txtcodigosubsidio.Text = Convert.ToString(r.Cells[1].Value);
-                    cbxsuspension.Text= r.Cells[2].Value.ToString();
+                    cbxsuspension.Text= Convert.ToString(r.Cells[2].Value);
                     txtdescCorta.Text = Convert.ToString(r.Cells[3].Value);
                     txtdescSubsi.Text = Convert.ToString(r.Cells[4].Value);
                     cbxtiposub.Text = Convert.ToString(r.Cells[5].Value);
@@ -177,27 +177,39 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+            btncerrar.BackColor = Color.FromArgb(205, 97, 85);
         }
 
-        private void btncerrar_MouseHover(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
+        
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.White;
+            btncerrar.BackColor = Color.SteelBlue;
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.White;
+            btnminimizar.BackColor = Color.SteelBlue;
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
         }
     }
 }

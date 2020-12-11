@@ -46,4 +46,6 @@ namespace Datos.Contract
     }
 
     public interface IDiasSubsidiados : IGenerict<DDiasSubsidiados> { }
+
+    public interface ITipoPlanilla : IGenerict<DTipoPlanilla> { }
 }

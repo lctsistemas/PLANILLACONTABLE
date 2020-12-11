@@ -692,14 +692,58 @@ GO
 
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
-alter PROC SP_REG_SALUD		--no existe proce
+alter PROC SP_REG_SALUD		
 AS BEGIN
 SELECT rs.id_regimen_salud,rs.descripcion_rsalud
 FROM REGIMEN_SALUD rs
 END
 GO
 
+--PROCEDIMIENTO PARA REGISTRAR TIPOPLANILLA
+CREATE PROC SP_INS_TIP_PLANILLA( 
+@tipoplanilla varchar(25),
+@mensaje varchar(100) output
+)
+AS BEGIN
+	DECLARE @TipPlan int
+	SET @TipPlan=(SELECT count(tp.id_tipo_planilla) FROM TIPO_PLANILLA tp)
+	IF(@TipPlan=0)
+		BEGIN
+			SET @TipPlan=1
+		END
+	ELSE	
+		SET @TipPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM TIPO_PLANILLA tp)	
+INSERT INTO TIPO_PLANILLA(id_tipo_planilla,tipo_planilla) VALUES(@TipPlan,@tipoplanilla)
+SET @mensaje= 'TIPO DE PLANILLA REGISTRADO CORRECTAMENTE'
+END
+GO
 
+--PROCEDIMENTO PARA ACTUALIZAR TIPO PLANILLA
+CREATE PROC SP_UPDATE_TIPOPLAN(
+@id_tipPlan int,
+@TipoPlanilla varchar(25)
+)
+AS BEGIN 
+UPDATE TIPO_PLANILLA SET id_tipo_planilla=@id_tipPlan,tipo_planilla=@TipoPlanilla where id_tipo_planilla=@id_tipPlan
+END;
+GO
+
+--PROCEDIMENTO PARA ELIMINAR TIPO PLANILLA
+ALTER PROC SP_DELETE_TIP_PLAN
+@id_tipo_planilla int,
+@mensaje varchar(100) output
+AS BEGIN
+DELETE from TIPO_PLANILLA where id_tipo_planilla=@id_tipo_planilla
+SET @mensaje= 'TIPO DE PLANILLA ELIMINADA CORRECTAMENTE'
+END
+GO
+
+--PROCEDIMIENTO PARA MOSTRAR TIPO PLANILLA 
+CREATE PROC SP_SHOW_TIPO_PLAN
+AS BEGIN 
+SELECT tp.id_tipo_planilla,tp.tipo_planilla from TIPO_PLANILLA tp;
+END;
+GO
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
 alter PROC SP_INSERT_BANCO(
@@ -1113,12 +1157,16 @@ GO
 
 
 GO
-CREATE PROC SP_DELETE_REG_SALUD
+ALTER PROC SP_DELETE_REG_SALUD
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN
 DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
+<<<<<<< HEAD
 SET @mensaje= '¡ELIMINADO!'
+=======
+SET @mensaje= 'REGIMEN DE SALUD ELIMINADO CORRECTAMENTE'
+>>>>>>> 4524f46484f84d9f51a4288858bd83e151f44432
 END
 GO
 
