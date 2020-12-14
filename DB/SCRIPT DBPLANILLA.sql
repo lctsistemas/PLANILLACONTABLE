@@ -26,7 +26,7 @@ eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado i
 )
 GO
 
---ALTER TABLE dbo.Empleado ADD Jornada_laboral varchar(11) null
+ALTER TABLE dbo.Empleado alter column Jornada_laboral varchar(11) not null
 --select len('PART - TIME')
 
 
