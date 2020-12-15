@@ -344,11 +344,7 @@
             this.btnactualizar.ForeColor = System.Drawing.Color.White;
             this.btnactualizar.Image = global::Presentacion.Properties.Resources.baseline_update_white_18dp1;
             this.btnactualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
-            this.btnactualizar.Location = new System.Drawing.Point(0, 411);
-=======
             this.btnactualizar.Location = new System.Drawing.Point(0, 518);
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(233, 45);
             this.btnactualizar.TabIndex = 5;
@@ -623,17 +619,10 @@
             // pictmenu
             // 
             this.pictmenu.Cursor = System.Windows.Forms.Cursors.Hand;
-<<<<<<< HEAD
             this.pictmenu.Image = global::Presentacion.Properties.Resources.pmenu;
             this.pictmenu.Location = new System.Drawing.Point(4, 4);
             this.pictmenu.Name = "pictmenu";
             this.pictmenu.Size = new System.Drawing.Size(40, 35);
-=======
-            this.pictmenu.Image = global::Presentacion.Properties.Resources.Mobile_Menu_Icon;
-            this.pictmenu.Location = new System.Drawing.Point(3, 3);
-            this.pictmenu.Name = "pictmenu";
-            this.pictmenu.Size = new System.Drawing.Size(43, 37);
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.pictmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictmenu.TabIndex = 2;
             this.pictmenu.TabStop = false;
@@ -644,15 +633,9 @@
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.Salir;
-<<<<<<< HEAD
             this.btncerrar.Location = new System.Drawing.Point(640, 6);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(30, 30);
-=======
-            this.btncerrar.Location = new System.Drawing.Point(640, 3);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 35);
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btncerrar.TabIndex = 0;
             this.btncerrar.TabStop = false;
@@ -736,11 +719,9 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-<<<<<<< HEAD
             // ToolTip
             // 
             this.ToolTip.AutomaticDelay = 400;
-=======
             // btnsubsidios
             // 
             this.btnsubsidios.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -816,7 +797,6 @@
             this.btncalc.Text = "Calculo Planilla";
             this.btncalc.UseVisualStyleBackColor = false;
             this.btncalc.Click += new System.EventHandler(this.btncalc_Click);
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             // 
             // FrmMain_principal
             // 
@@ -898,13 +878,10 @@
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.ToolStripStatusLabel tlblotrodato;
         private System.Windows.Forms.Timer timer1;
-<<<<<<< HEAD
         private System.Windows.Forms.ToolTip ToolTip;
-=======
         private System.Windows.Forms.Button btnsubsidios;
         private System.Windows.Forms.Button btncalc;
         private System.Windows.Forms.Button btntipocont;
         private System.Windows.Forms.Button btnban;
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
     }
 }
