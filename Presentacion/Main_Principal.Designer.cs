@@ -50,10 +50,7 @@
             this.btnregpens = new System.Windows.Forms.Button();
             this.btnregsalud = new System.Windows.Forms.Button();
             this.btndoc = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
             this.btnemp = new System.Windows.Forms.Button();
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.btnmedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblrol = new System.Windows.Forms.Label();
@@ -76,14 +73,11 @@
             this.lblidempresa = new System.Windows.Forms.Label();
             this.pictlct = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-<<<<<<< HEAD
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-=======
             this.btnsubsidios = new System.Windows.Forms.Button();
             this.btnban = new System.Windows.Forms.Button();
             this.btntipocont = new System.Windows.Forms.Button();
             this.btncalc = new System.Windows.Forms.Button();
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -127,11 +121,7 @@
             this.btnreportes.ForeColor = System.Drawing.Color.White;
             this.btnreportes.Image = global::Presentacion.Properties.Resources.reportes;
             this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
-            this.btnreportes.Location = new System.Drawing.Point(0, 760);
-=======
             this.btnreportes.Location = new System.Drawing.Point(0, 867);
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.btnreportes.Name = "btnreportes";
             this.btnreportes.Size = new System.Drawing.Size(233, 45);
             this.btnreportes.TabIndex = 9;
@@ -280,19 +270,11 @@
             this.btnregistro.ForeColor = System.Drawing.Color.White;
             this.btnregistro.Image = global::Presentacion.Properties.Resources.empleados1;
             this.btnregistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
-            this.btnregistro.Location = new System.Drawing.Point(0, 526);
-            this.btnregistro.Name = "btnregistro";
-            this.btnregistro.Size = new System.Drawing.Size(233, 45);
-            this.btnregistro.TabIndex = 7;
-            this.btnregistro.Text = "Registro";
-=======
             this.btnregistro.Location = new System.Drawing.Point(0, 633);
             this.btnregistro.Name = "btnregistro";
             this.btnregistro.Size = new System.Drawing.Size(233, 45);
             this.btnregistro.TabIndex = 7;
             this.btnregistro.Text = "Mantenimiento";
->>>>>>> 11a55eb12caf741f2874eed70274547c211de856
             this.btnregistro.UseVisualStyleBackColor = false;
             this.btnregistro.Click += new System.EventHandler(this.btnregistro_Click);
             // 

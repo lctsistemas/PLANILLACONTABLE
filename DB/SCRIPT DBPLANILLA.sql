@@ -279,7 +279,7 @@ GO
 
 CREATE TABLE tipo_planilla(
 idtipo_planilla int not null,
-nombre_planilla varchar(30) 
+nombre_planilla varchar(30)not null
 )
 GO
 
