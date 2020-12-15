@@ -118,5 +118,10 @@ namespace Presentacion.Vista
             dgvtipoplanilla.Columns[2].Visible = false;
 
         }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -262,7 +262,7 @@ GO
 
 CREATE TABLE Planilla(
 id_planilla int not null,
---id_tipoplanilla int not null, ver si ira id_tipo_planilla
+id_tipoplanilla int not null,
 id_periodo int not null,
 idempresa_maestra int not null,
 id_mes int not null,
@@ -275,6 +275,7 @@ tope_horario_nocturno decimal(8,2)
 )
 GO
 
+--alter table Planilla add id_tipoplanilla int null; --se agrego id_tipoplanilla
 
 CREATE TABLE tipo_planilla(
 idtipo_planilla int not null,
@@ -393,7 +394,7 @@ CREATE TABLE PlanillaManto(
 idplanilla_manto int not null,
 id_contrato int not null,
 id_planilla int not null,
-id_tipo_planilla int not null,
+id_tipo_planilla int not null,--es foreing key
 jornadalaboral varchar(11) not null,--exite en empleado
 basico money not null,--exite en empleado
 dias int null,

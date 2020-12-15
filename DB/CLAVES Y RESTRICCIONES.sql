@@ -29,6 +29,8 @@ ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFEREN
 
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(idempresa_maestra) REFERENCES dbo.Empresa_maestra(id_em_maestra)
 alter table Planilla ADD CONSTRAINT FK_idmes FOREIGN KEY(id_mes) REFERENCES Mes;
+ALTER TABLE Planilla ADD CONSTRAINT Fk_idtipoplan FOREIGN KEY(id_tipoplanilla) REFERENCES dbo.TIPO_PLANILLA
+
 
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub FOREIGN KEY(id_subsidios) REFERENCES Subsidios
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idper FOREIGN KEY(id_periodo) REFERENCES Periodo
