@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PanelSideMenu = new System.Windows.Forms.Panel();
+            this.btnreportes = new System.Windows.Forms.Button();
             this.panelregistro = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btncalculo = new System.Windows.Forms.Button();
@@ -38,53 +39,53 @@
             this.btnempleado = new System.Windows.Forms.Button();
             this.btnusuario = new System.Windows.Forms.Button();
             this.btnplanilla2 = new System.Windows.Forms.Button();
+            this.btnregistro = new System.Windows.Forms.Button();
             this.panelactualizar = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnonp = new System.Windows.Forms.Button();
             this.btnafp = new System.Windows.Forms.Button();
+            this.btnactualizar = new System.Windows.Forms.Button();
             this.panelSubMenuMedia = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnsucursal = new System.Windows.Forms.Button();
             this.btncargo = new System.Windows.Forms.Button();
             this.btnempresa = new System.Windows.Forms.Button();
             this.btndoc = new System.Windows.Forms.Button();
+            this.btnmedia = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblrol = new System.Windows.Forms.Label();
             this.lblperiodo = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
+            this.pictuser = new System.Windows.Forms.PictureBox();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineperiodo = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineuser = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.lblruc = new System.Windows.Forms.Label();
             this.lblempresa = new System.Windows.Forms.Label();
+            this.pictmenu = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tlblotrodato = new System.Windows.Forms.ToolStripStatusLabel();
             this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelchildform = new System.Windows.Forms.Panel();
             this.lblid_periodo = new System.Windows.Forms.Label();
             this.lblidempresa = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictlct = new System.Windows.Forms.PictureBox();
-            this.pictmenu = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.btnreportes = new System.Windows.Forms.Button();
-            this.btnregistro = new System.Windows.Forms.Button();
-            this.btnactualizar = new System.Windows.Forms.Button();
-            this.btnmedia = new System.Windows.Forms.Button();
-            this.pictuser = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
             this.panelSubMenuMedia.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictuser)).BeginInit();
             this.BarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panelchildform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictlct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictuser)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelSideMenu
@@ -104,6 +105,24 @@
             this.PanelSideMenu.Name = "PanelSideMenu";
             this.PanelSideMenu.Size = new System.Drawing.Size(250, 662);
             this.PanelSideMenu.TabIndex = 0;
+            // 
+            // btnreportes
+            // 
+            this.btnreportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnreportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnreportes.FlatAppearance.BorderSize = 0;
+            this.btnreportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportes.ForeColor = System.Drawing.Color.White;
+            this.btnreportes.Image = global::Presentacion.Properties.Resources.reportes;
+            this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnreportes.Location = new System.Drawing.Point(0, 760);
+            this.btnreportes.Name = "btnreportes";
+            this.btnreportes.Size = new System.Drawing.Size(233, 45);
+            this.btnreportes.TabIndex = 9;
+            this.btnreportes.Text = "Reportes";
+            this.btnreportes.UseVisualStyleBackColor = false;
             // 
             // panelregistro
             // 
@@ -236,6 +255,25 @@
             this.btnplanilla2.UseVisualStyleBackColor = false;
             this.btnplanilla2.Click += new System.EventHandler(this.btnplanilla2_Click);
             // 
+            // btnregistro
+            // 
+            this.btnregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnregistro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnregistro.FlatAppearance.BorderSize = 0;
+            this.btnregistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnregistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregistro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregistro.ForeColor = System.Drawing.Color.White;
+            this.btnregistro.Image = global::Presentacion.Properties.Resources.empleados1;
+            this.btnregistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnregistro.Location = new System.Drawing.Point(0, 526);
+            this.btnregistro.Name = "btnregistro";
+            this.btnregistro.Size = new System.Drawing.Size(233, 45);
+            this.btnregistro.TabIndex = 7;
+            this.btnregistro.Text = "Registro";
+            this.btnregistro.UseVisualStyleBackColor = false;
+            this.btnregistro.Click += new System.EventHandler(this.btnregistro_Click);
+            // 
             // panelactualizar
             // 
             this.panelactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
@@ -290,6 +328,25 @@
             this.btnafp.Text = "A.F.P";
             this.btnafp.UseVisualStyleBackColor = false;
             this.btnafp.Click += new System.EventHandler(this.btnafp_Click);
+            // 
+            // btnactualizar
+            // 
+            this.btnactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnactualizar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnactualizar.FlatAppearance.BorderSize = 0;
+            this.btnactualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnactualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnactualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnactualizar.ForeColor = System.Drawing.Color.White;
+            this.btnactualizar.Image = global::Presentacion.Properties.Resources.baseline_update_white_18dp1;
+            this.btnactualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnactualizar.Location = new System.Drawing.Point(0, 411);
+            this.btnactualizar.Name = "btnactualizar";
+            this.btnactualizar.Size = new System.Drawing.Size(233, 45);
+            this.btnactualizar.TabIndex = 5;
+            this.btnactualizar.Text = "Actualizar";
+            this.btnactualizar.UseVisualStyleBackColor = false;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // panelSubMenuMedia
             // 
@@ -386,6 +443,25 @@
             this.btndoc.UseVisualStyleBackColor = false;
             this.btndoc.Click += new System.EventHandler(this.btndoc_Click);
             // 
+            // btnmedia
+            // 
+            this.btnmedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnmedia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnmedia.FlatAppearance.BorderSize = 0;
+            this.btnmedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnmedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmedia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmedia.ForeColor = System.Drawing.Color.White;
+            this.btnmedia.Image = global::Presentacion.Properties.Resources.baseline_build_white_18dp21;
+            this.btnmedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmedia.Location = new System.Drawing.Point(0, 233);
+            this.btnmedia.Name = "btnmedia";
+            this.btnmedia.Size = new System.Drawing.Size(233, 45);
+            this.btnmedia.TabIndex = 4;
+            this.btnmedia.Text = "Mantenimiento";
+            this.btnmedia.UseVisualStyleBackColor = false;
+            this.btnmedia.Click += new System.EventHandler(this.btnmedia_Click);
+            // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
@@ -433,6 +509,16 @@
             this.lblusuario.Text = "USER";
             this.lblusuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictuser
+            // 
+            this.pictuser.Image = global::Presentacion.Properties.Resources.Administrador;
+            this.pictuser.Location = new System.Drawing.Point(57, 43);
+            this.pictuser.Name = "pictuser";
+            this.pictuser.Size = new System.Drawing.Size(108, 108);
+            this.pictuser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictuser.TabIndex = 1;
+            this.pictuser.TabStop = false;
+            // 
             // shapeContainer2
             // 
             this.shapeContainer2.Location = new System.Drawing.Point(0, 0);
@@ -468,7 +554,7 @@
             // 
             // BarraTitulo
             // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(116)))), ((int)(((byte)(166)))));
+            this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(90)))), ((int)(((byte)(100)))));
             this.BarraTitulo.Controls.Add(this.lblruc);
             this.BarraTitulo.Controls.Add(this.lblempresa);
             this.BarraTitulo.Controls.Add(this.pictmenu);
@@ -483,11 +569,11 @@
             // lblruc
             // 
             this.lblruc.AutoSize = true;
-            this.lblruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblruc.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblruc.ForeColor = System.Drawing.Color.White;
             this.lblruc.Location = new System.Drawing.Point(64, 13);
             this.lblruc.Name = "lblruc";
-            this.lblruc.Size = new System.Drawing.Size(29, 18);
+            this.lblruc.Size = new System.Drawing.Size(28, 18);
             this.lblruc.TabIndex = 23;
             this.lblruc.Text = "ruc";
             // 
@@ -502,6 +588,31 @@
             this.lblempresa.TabIndex = 22;
             this.lblempresa.Text = "razon  social";
             this.lblempresa.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // pictmenu
+            // 
+            this.pictmenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictmenu.Image = global::Presentacion.Properties.Resources.pmenu;
+            this.pictmenu.Location = new System.Drawing.Point(4, 4);
+            this.pictmenu.Name = "pictmenu";
+            this.pictmenu.Size = new System.Drawing.Size(40, 35);
+            this.pictmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictmenu.TabIndex = 2;
+            this.pictmenu.TabStop = false;
+            this.pictmenu.Click += new System.EventHandler(this.pictmenu_Click);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.Salir;
+            this.btncerrar.Location = new System.Drawing.Point(640, 6);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(30, 30);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncerrar.TabIndex = 0;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             // 
             // statusStrip1
             // 
@@ -566,10 +677,6 @@
             this.lblidempresa.TabIndex = 20;
             this.lblidempresa.Text = "id empresa";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pictlct
             // 
             this.pictlct.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -581,115 +688,13 @@
             this.pictlct.TabIndex = 1;
             this.pictlct.TabStop = false;
             // 
-            // pictmenu
+            // timer1
             // 
-            this.pictmenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictmenu.Image = global::Presentacion.Properties.Resources.Mobile_Menu_Icon;
-            this.pictmenu.Location = new System.Drawing.Point(3, 3);
-            this.pictmenu.Name = "pictmenu";
-            this.pictmenu.Size = new System.Drawing.Size(43, 37);
-            this.pictmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictmenu.TabIndex = 2;
-            this.pictmenu.TabStop = false;
-            this.pictmenu.Click += new System.EventHandler(this.pictmenu_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btncerrar
+            // ToolTip
             // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.Salir;
-            this.btncerrar.Location = new System.Drawing.Point(640, 3);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 35);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 0;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
-            // btnreportes
-            // 
-            this.btnreportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnreportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnreportes.FlatAppearance.BorderSize = 0;
-            this.btnreportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportes.ForeColor = System.Drawing.Color.White;
-            this.btnreportes.Image = global::Presentacion.Properties.Resources.reportes;
-            this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnreportes.Location = new System.Drawing.Point(0, 760);
-            this.btnreportes.Name = "btnreportes";
-            this.btnreportes.Size = new System.Drawing.Size(233, 45);
-            this.btnreportes.TabIndex = 9;
-            this.btnreportes.Text = "Reportes";
-            this.btnreportes.UseVisualStyleBackColor = false;
-            // 
-            // btnregistro
-            // 
-            this.btnregistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnregistro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnregistro.FlatAppearance.BorderSize = 0;
-            this.btnregistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnregistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregistro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnregistro.ForeColor = System.Drawing.Color.White;
-            this.btnregistro.Image = global::Presentacion.Properties.Resources.empleados1;
-            this.btnregistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnregistro.Location = new System.Drawing.Point(0, 526);
-            this.btnregistro.Name = "btnregistro";
-            this.btnregistro.Size = new System.Drawing.Size(233, 45);
-            this.btnregistro.TabIndex = 7;
-            this.btnregistro.Text = "Registro";
-            this.btnregistro.UseVisualStyleBackColor = false;
-            this.btnregistro.Click += new System.EventHandler(this.btnregistro_Click);
-            // 
-            // btnactualizar
-            // 
-            this.btnactualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnactualizar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnactualizar.FlatAppearance.BorderSize = 0;
-            this.btnactualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnactualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnactualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnactualizar.ForeColor = System.Drawing.Color.White;
-            this.btnactualizar.Image = global::Presentacion.Properties.Resources.baseline_update_white_18dp1;
-            this.btnactualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnactualizar.Location = new System.Drawing.Point(0, 411);
-            this.btnactualizar.Name = "btnactualizar";
-            this.btnactualizar.Size = new System.Drawing.Size(233, 45);
-            this.btnactualizar.TabIndex = 5;
-            this.btnactualizar.Text = "Actualizar";
-            this.btnactualizar.UseVisualStyleBackColor = false;
-            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
-            // 
-            // btnmedia
-            // 
-            this.btnmedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnmedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnmedia.FlatAppearance.BorderSize = 0;
-            this.btnmedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnmedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmedia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmedia.ForeColor = System.Drawing.Color.White;
-            this.btnmedia.Image = global::Presentacion.Properties.Resources.baseline_build_white_18dp21;
-            this.btnmedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmedia.Location = new System.Drawing.Point(0, 233);
-            this.btnmedia.Name = "btnmedia";
-            this.btnmedia.Size = new System.Drawing.Size(233, 45);
-            this.btnmedia.TabIndex = 4;
-            this.btnmedia.Text = "Mantenimiento";
-            this.btnmedia.UseVisualStyleBackColor = false;
-            this.btnmedia.Click += new System.EventHandler(this.btnmedia_Click);
-            // 
-            // pictuser
-            // 
-            this.pictuser.Image = global::Presentacion.Properties.Resources.Administrador;
-            this.pictuser.Location = new System.Drawing.Point(57, 43);
-            this.pictuser.Name = "pictuser";
-            this.pictuser.Size = new System.Drawing.Size(108, 108);
-            this.pictuser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictuser.TabIndex = 1;
-            this.pictuser.TabStop = false;
+            this.ToolTip.AutomaticDelay = 400;
             // 
             // FrmMain_principal
             // 
@@ -710,16 +715,16 @@
             this.panelactualizar.ResumeLayout(false);
             this.panelSubMenuMedia.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictuser)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panelchildform.ResumeLayout(false);
             this.panelchildform.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictlct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictuser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -771,6 +776,6 @@
         private System.Windows.Forms.Label lblruc;
         private System.Windows.Forms.ToolStripStatusLabel tlblotrodato;
         private System.Windows.Forms.Timer timer1;
-
+        private System.Windows.Forms.ToolTip ToolTip;
     }
 }
