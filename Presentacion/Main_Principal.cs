@@ -38,9 +38,9 @@ namespace Presentacion
         }
         private void Main_Principal_Load(object sender, EventArgs e)
         {
-            timer1.Start();
-            Tooltip.Title(btncerrar, "Cerrar sesión", false);
-            Tooltip.Title(pictmenu, "Menu", false);
+            ToolTip.SetToolTip(pictmenu, "Menu");
+            ToolTip.SetToolTip(btncerrar, "Cerrar sesión");
+            timer1.Start();            
             hideSubmenu();
             fullScreen();
             CargarDatos();

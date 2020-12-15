@@ -20,7 +20,10 @@ namespace Login_inicio
             InitializeComponent();
             Fill_user();
             Fill_rol();
-            
+            IniciarPlaceHolder();
+
+
+
         }
 
         //LLAMAR USUARIO PARA CARGAR EN COMBOBOX
@@ -78,12 +81,18 @@ namespace Login_inicio
 
         private void txtroles_Leave(object sender, EventArgs e)
         {
+            IniciarPlaceHolder();
+        }
+
+        void IniciarPlaceHolder()
+        {
             if (String.IsNullOrWhiteSpace(txtroles.Text))
             {
                 txtroles.Text = "ROL";
                 txtroles.ForeColor = Color.DimGray;
             }
         }
+
 
         //PARA PASSWORD
         private void txtpass_Enter(object sender, EventArgs e)
@@ -93,6 +102,7 @@ namespace Login_inicio
                 txtpass.Text = String.Empty;
                 txtpass.ForeColor = Color.LightGray;
                 txtpass.UseSystemPasswordChar = true;
+                //txtpass.PasswordChar = Convert.ToChar("*");
             }
         }
 
