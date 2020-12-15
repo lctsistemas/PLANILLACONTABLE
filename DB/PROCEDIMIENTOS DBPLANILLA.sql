@@ -1287,7 +1287,7 @@ END
 GO
 
 
-ALTER PROC SP_MOSTRAR_SUBSIDIOS 
+CREATE PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
 SELECT id_subsidios, cod_subsidio,tipo_suspension, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END

@@ -47,6 +47,10 @@
             this.btnactualizar = new System.Windows.Forms.Button();
             this.panelSubMenuMedia = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btncalc = new System.Windows.Forms.Button();
+            this.btntipocont = new System.Windows.Forms.Button();
+            this.btnban = new System.Windows.Forms.Button();
+            this.btnsubsidios = new System.Windows.Forms.Button();
             this.btnregpens = new System.Windows.Forms.Button();
             this.btnregsalud = new System.Windows.Forms.Button();
             this.btndoc = new System.Windows.Forms.Button();
@@ -74,10 +78,6 @@
             this.pictlct = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.btnsubsidios = new System.Windows.Forms.Button();
-            this.btnban = new System.Windows.Forms.Button();
-            this.btntipocont = new System.Windows.Forms.Button();
-            this.btncalc = new System.Windows.Forms.Button();
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -378,6 +378,82 @@
             this.panel2.Size = new System.Drawing.Size(5, 240);
             this.panel2.TabIndex = 10;
             // 
+            // btncalc
+            // 
+            this.btncalc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btncalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btncalc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btncalc.FlatAppearance.BorderSize = 0;
+            this.btncalc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btncalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncalc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncalc.ForeColor = System.Drawing.Color.White;
+            this.btncalc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncalc.Location = new System.Drawing.Point(0, 210);
+            this.btncalc.Name = "btncalc";
+            this.btncalc.Size = new System.Drawing.Size(233, 30);
+            this.btncalc.TabIndex = 14;
+            this.btncalc.Text = "Calculo Planilla";
+            this.btncalc.UseVisualStyleBackColor = false;
+            this.btncalc.Click += new System.EventHandler(this.btncalc_Click);
+            // 
+            // btntipocont
+            // 
+            this.btntipocont.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btntipocont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btntipocont.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btntipocont.FlatAppearance.BorderSize = 0;
+            this.btntipocont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btntipocont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btntipocont.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntipocont.ForeColor = System.Drawing.Color.White;
+            this.btntipocont.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btntipocont.Location = new System.Drawing.Point(0, 180);
+            this.btntipocont.Name = "btntipocont";
+            this.btntipocont.Size = new System.Drawing.Size(233, 30);
+            this.btntipocont.TabIndex = 13;
+            this.btntipocont.Text = "Tipo Contrato";
+            this.btntipocont.UseVisualStyleBackColor = false;
+            this.btntipocont.Click += new System.EventHandler(this.btntipocont_Click);
+            // 
+            // btnban
+            // 
+            this.btnban.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnban.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnban.FlatAppearance.BorderSize = 0;
+            this.btnban.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnban.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnban.ForeColor = System.Drawing.Color.White;
+            this.btnban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnban.Location = new System.Drawing.Point(0, 150);
+            this.btnban.Name = "btnban";
+            this.btnban.Size = new System.Drawing.Size(233, 30);
+            this.btnban.TabIndex = 12;
+            this.btnban.Text = "Banco";
+            this.btnban.UseVisualStyleBackColor = false;
+            this.btnban.Click += new System.EventHandler(this.btnban_Click);
+            // 
+            // btnsubsidios
+            // 
+            this.btnsubsidios.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnsubsidios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnsubsidios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnsubsidios.FlatAppearance.BorderSize = 0;
+            this.btnsubsidios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnsubsidios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnsubsidios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsubsidios.ForeColor = System.Drawing.Color.White;
+            this.btnsubsidios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnsubsidios.Location = new System.Drawing.Point(0, 120);
+            this.btnsubsidios.Name = "btnsubsidios";
+            this.btnsubsidios.Size = new System.Drawing.Size(233, 30);
+            this.btnsubsidios.TabIndex = 11;
+            this.btnsubsidios.Text = "Subsidios";
+            this.btnsubsidios.UseVisualStyleBackColor = false;
+            this.btnsubsidios.Click += new System.EventHandler(this.btnsubsidios_Click);
+            // 
             // btnregpens
             // 
             this.btnregpens.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -467,25 +543,6 @@
             this.btnmedia.Size = new System.Drawing.Size(233, 45);
             this.btnmedia.TabIndex = 4;
             this.btnmedia.Text = "Registro";
-            this.btnmedia.UseVisualStyleBackColor = false;
-            this.btnmedia.Click += new System.EventHandler(this.btnmedia_Click);
-            // 
-            // btnmedia
-            // 
-            this.btnmedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnmedia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnmedia.FlatAppearance.BorderSize = 0;
-            this.btnmedia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnmedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmedia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmedia.ForeColor = System.Drawing.Color.White;
-            this.btnmedia.Image = global::Presentacion.Properties.Resources.baseline_build_white_18dp21;
-            this.btnmedia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmedia.Location = new System.Drawing.Point(0, 233);
-            this.btnmedia.Name = "btnmedia";
-            this.btnmedia.Size = new System.Drawing.Size(233, 45);
-            this.btnmedia.TabIndex = 4;
-            this.btnmedia.Text = "Mantenimiento";
             this.btnmedia.UseVisualStyleBackColor = false;
             this.btnmedia.Click += new System.EventHandler(this.btnmedia_Click);
             // 
@@ -722,81 +779,6 @@
             // ToolTip
             // 
             this.ToolTip.AutomaticDelay = 400;
-            // btnsubsidios
-            // 
-            this.btnsubsidios.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnsubsidios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnsubsidios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnsubsidios.FlatAppearance.BorderSize = 0;
-            this.btnsubsidios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnsubsidios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnsubsidios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsubsidios.ForeColor = System.Drawing.Color.White;
-            this.btnsubsidios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsubsidios.Location = new System.Drawing.Point(0, 120);
-            this.btnsubsidios.Name = "btnsubsidios";
-            this.btnsubsidios.Size = new System.Drawing.Size(233, 30);
-            this.btnsubsidios.TabIndex = 11;
-            this.btnsubsidios.Text = "Subsidios";
-            this.btnsubsidios.UseVisualStyleBackColor = false;
-            this.btnsubsidios.Click += new System.EventHandler(this.btnsubsidios_Click);
-            // 
-            // btnban
-            // 
-            this.btnban.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnban.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnban.FlatAppearance.BorderSize = 0;
-            this.btnban.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnban.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnban.ForeColor = System.Drawing.Color.White;
-            this.btnban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnban.Location = new System.Drawing.Point(0, 150);
-            this.btnban.Name = "btnban";
-            this.btnban.Size = new System.Drawing.Size(233, 30);
-            this.btnban.TabIndex = 12;
-            this.btnban.Text = "Banco";
-            this.btnban.UseVisualStyleBackColor = false;
-            this.btnban.Click += new System.EventHandler(this.btnban_Click);
-            // 
-            // btntipocont
-            // 
-            this.btntipocont.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btntipocont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btntipocont.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btntipocont.FlatAppearance.BorderSize = 0;
-            this.btntipocont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btntipocont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btntipocont.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntipocont.ForeColor = System.Drawing.Color.White;
-            this.btntipocont.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btntipocont.Location = new System.Drawing.Point(0, 180);
-            this.btntipocont.Name = "btntipocont";
-            this.btntipocont.Size = new System.Drawing.Size(233, 30);
-            this.btntipocont.TabIndex = 13;
-            this.btntipocont.Text = "Tipo Contrato";
-            this.btntipocont.UseVisualStyleBackColor = false;
-            this.btntipocont.Click += new System.EventHandler(this.btntipocont_Click);
-            // 
-            // btncalc
-            // 
-            this.btncalc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btncalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btncalc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btncalc.FlatAppearance.BorderSize = 0;
-            this.btncalc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btncalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncalc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncalc.ForeColor = System.Drawing.Color.White;
-            this.btncalc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncalc.Location = new System.Drawing.Point(0, 210);
-            this.btncalc.Name = "btncalc";
-            this.btncalc.Size = new System.Drawing.Size(233, 30);
-            this.btncalc.TabIndex = 14;
-            this.btncalc.Text = "Calculo Planilla";
-            this.btncalc.UseVisualStyleBackColor = false;
-            this.btncalc.Click += new System.EventHandler(this.btncalc_Click);
             // 
             // FrmMain_principal
             // 
