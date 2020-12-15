@@ -1157,7 +1157,7 @@ GO
 
 
 GO
-ALTER PROC SP_DELETE_REG_SALUD
+ALTER PROC SP_DELETE_REGSALUD
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN

@@ -73,26 +73,6 @@ namespace Presentacion
             showSubMenu(panelSubMenuMedia);
         }
 
-        private void btndoc_Click(object sender, EventArgs e)
-        {
-            OpenForm<frmdocumento>();
-        }
-
-        private void btnempresa_Click(object sender, EventArgs e)
-        {
-            OpenForm<frmempresa>();
-        }
-
-        private void btncargo_Click(object sender, EventArgs e)
-        {
-            OpenForm<frmcargo>();
-        }
-
-        private void btnsucursal_Click(object sender, EventArgs e)
-        {
-            OpenForm<frmsucursal>();
-            
-        }
 
         private void btnafp_Click(object sender, EventArgs e)
         {
@@ -103,10 +83,6 @@ namespace Presentacion
             OpenForm<frmusuario>();
         }
 
-        private void btnempleado_Click(object sender, EventArgs e)
-        {
-            OpenForm<frmempleado>();
-        }
 
         private void btnactualizar_Click(object sender, EventArgs e)
         {
@@ -168,16 +144,6 @@ namespace Presentacion
         {
           
         }
-                           
-        private void btnbanco_Click(object sender, EventArgs e)
-        {
-            OpenForm<Banco2>();
-        }
-
-        private void btntipo_contrato_Click(object sender, EventArgs e)
-        {
-            OpenForm<TipoContrato2>();
-        }
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
@@ -229,7 +195,7 @@ namespace Presentacion
 
         private void btncalculo_Click(object sender, EventArgs e)
         {
-            OpenFormFill<FrmPlanillaMensual2>();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -237,6 +203,66 @@ namespace Presentacion
             string fecha = DateTime.Now.ToLongDateString();
             string hora = DateTime.Now.ToLongTimeString();
             tlblhora.Text = fecha + "   |   " + hora;
+        }
+
+        private void btnemp_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmempleado>();
+        }
+
+        private void btndoc_Click_1(object sender, EventArgs e)
+        {
+            OpenForm<frmdocumento>();
+        }
+
+        private void btnregsalud_Click(object sender, EventArgs e)
+        {
+            OpenForm<RegimenSalud>();
+        }
+
+        private void btnregpens_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmManto_Regimen>();
+        }
+
+        private void btnsubsidios_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmsubsidios>();
+        }
+
+        private void btnban_Click(object sender, EventArgs e)
+        {
+            OpenForm<Banco2>();
+        }
+
+        private void btntipocont_Click(object sender, EventArgs e)
+        {
+            OpenForm<TipoContrato2>();
+        }
+
+        private void btncalc_Click(object sender, EventArgs e)
+        {
+            OpenFormFill<FrmPlanillaMensual2>();
+        }
+
+        private void btnempresa_Click_1(object sender, EventArgs e)
+        {
+            OpenFormFill<frmempresa>();
+        }
+
+        private void btnsucursal_Click_1(object sender, EventArgs e)
+        {
+            OpenForm<frmsucursal>();
+        }
+
+        private void btntipoplanilla_Click(object sender, EventArgs e)
+        {
+            OpenForm<TipoPlanilla>();
+        }
+
+        private void btncargo_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmcargo>();
         }
     }
 }

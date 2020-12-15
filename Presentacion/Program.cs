@@ -15,7 +15,11 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frmvista_usuario());
+=======
+            Application.Run(new TipoPlanilla());
+>>>>>>> 11a55eb12caf741f2874eed70274547c211de856
 
         }
     }
