@@ -46,6 +46,7 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["valor_comision"].Visible = false;
             Dgvplanilla1.Columns["valor_seguro"].Visible = false;
             Dgvplanilla1.Columns["valor_aporte"].Visible = false;
+            Dgvplanilla1.Columns["cod_document"].Visible = false;
 
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -543,7 +544,7 @@ namespace Presentacion.Vista
                     PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
                     this.AddOwnedForm(fr2);
-                    fr2.lblcodigo_empledo.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
+                    fr2.lblcodigo_empledo.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["cod_document"].Value.ToString() +" - "+ Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
                     fr2.lblnombre_empleado.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value.ToString();
                     fr2.ShowDialog();
 
@@ -563,7 +564,7 @@ namespace Presentacion.Vista
                     PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
                     this.AddOwnedForm(fr2);
-                    fr2.lblcodigo_empledo.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
+                    fr2.lblcodigo_empledo.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["cod_document"].Value.ToString() + " - " + Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
                     fr2.lblnombre_empleado.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value.ToString();
                     fr2.ShowDialog();
 

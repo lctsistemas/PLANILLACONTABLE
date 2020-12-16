@@ -29,7 +29,7 @@ namespace Presentacion.Subvista
 
         private void Tabla()
         {
-            dgvvista_emp.Columns[0].HeaderText = "CODIGO";//codigo empresa maestra
+            dgvvista_emp.Columns[0].HeaderText = "ID";//codigo empresa maestra
             dgvvista_emp.Columns[0].Width = 30;
             dgvvista_emp.Columns[0].Visible = false;
 
@@ -49,10 +49,10 @@ namespace Presentacion.Subvista
             dgvvista_emp.Columns[4].Width = 30;
             dgvvista_emp.Columns[4].Visible = false;
 
-            dgvvista_emp.Columns[5].HeaderText = "CODIGO EMPRESA";
+            dgvvista_emp.Columns[5].HeaderText = "CODIGO";
             dgvvista_emp.Columns[5].Width = 80;
 
-            dgvvista_emp.Columns[6].HeaderText = "RAZON SOCIAL";
+            dgvvista_emp.Columns[6].HeaderText = "RAZON SOCIAL O DENOMINACION";
             dgvvista_emp.Columns[6].Width = 350;
 
             dgvvista_emp.Columns[7].HeaderText = "LOCALIDAD";

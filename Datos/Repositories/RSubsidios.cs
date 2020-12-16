@@ -23,22 +23,47 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_ADD_SUBSIDIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
-                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Int).Value = entiti.Cod_subsidios;                  
-                    cmd.Parameters.Add("@tipo_suspension", SqlDbType.VarChar,10).Value = entiti.Tipo_supension;
-                    cmd.Parameters.Add("@descripcion_corta", SqlDbType.NVarChar,70).Value = entiti.Descrip_corta;
-                    cmd.Parameters.Add("@descripcion_subsidio", SqlDbType.NVarChar,100).Value = entiti.Descripcion_subsidio;
-                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar,30).Value = entiti.Tipo_subsidio;
-                    cmd.Parameters.Add("@descuento", SqlDbType.Bit).Value = entiti.Descuento;
+                    cmd.Parameters.AddWithValue("@cod_subsidio", entiti.Cod_subsidios); 
+                    cmd.Parameters.AddWithValue("@tipo_suspension", entiti.Tipo_supension);
+                    cmd.Parameters.AddWithValue("@descripcion_corta", entiti.Descrip_corta);
+                    cmd.Parameters.AddWithValue("@descripcion_subsidio", entiti.Descripcion_subsidio);
+                    cmd.Parameters.AddWithValue("@tipo_subsidio", entiti.Tipo_subsidio);
+                    cmd.Parameters.AddWithValue("@descuento", entiti.Descuento);
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
-
-
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-
                     cmd.Parameters.Clear();
                 }
             }
+            return result;
+        }      
+
+        public int Edit(DSubsidios entiti)
+        {
+            result = 0;
+            using (SqlConnection cnn = RConexion.Getconectar())
+            {
+                cnn.Open();
+                cmd = null;
+                using (cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn;
+                    cmd.CommandText = "SP_MODIFY_SUBSIDIOS";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@cod_subsidio", entiti.Cod_subsidios);
+                    cmd.Parameters.AddWithValue("@tipo_suspension", entiti.Tipo_supension);
+                    cmd.Parameters.AddWithValue("@descripcion_corta", entiti.Descrip_corta);
+                    cmd.Parameters.AddWithValue("@descrip_subsidio", entiti.Descripcion_subsidio);
+                    cmd.Parameters.AddWithValue("@tipo_subsidio", entiti.Tipo_subsidio);
+                    cmd.Parameters.AddWithValue("@descuento", entiti.Descuento);
+                    cmd.Parameters.AddWithValue("@id_subsidios", entiti.Id_subsidios);
+
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();                    
+                }
+            }
+
             return result;
         }
 
@@ -58,35 +83,6 @@ namespace Datos.Repositories
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();
-                    return result;
-                }
-            }
-        }
-
-        public int Edit(DSubsidios entiti)
-        {
-            result = 0;
-            using (SqlConnection cnn = RConexion.Getconectar())
-            {
-                cnn.Open();
-                cmd = null;
-                using (cmd = new SqlCommand())
-                {
-                    cmd.Connection = cnn;
-                    cmd.CommandText = "SP_MODIFY_SUBSIDIOS";
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
-                    cmd.Parameters.Add("@cod_subsidio", SqlDbType.Char,2).Value = entiti.Cod_subsidios;
-                    cmd.Parameters.Add("@tipo_suspension", SqlDbType.VarChar, 10).Value = entiti.Tipo_supension;
-                    cmd.Parameters.Add("@descripcion_corta", SqlDbType.NVarChar, 70).Value = entiti.Descrip_corta;
-                    cmd.Parameters.Add("@descrip_subsidio", SqlDbType.NVarChar, 100).Value = entiti.Descripcion_subsidio;
-                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar, 30).Value = entiti.Tipo_subsidio;
-                    cmd.Parameters.Add("@descuento", SqlDbType.Bit).Value = entiti.Descuento;
-
-
-                    result = cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                     return result;
                 }
@@ -133,7 +129,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SHOW_SUBSIDIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@tipo_subsidio", SqlDbType.VarChar, 30).Value = Entity.Tipo_subsidio;
+                    cmd.Parameters.AddWithValue("@tipo_subsidio", Entity.Tipo_subsidio);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     using (dt = new DataTable())

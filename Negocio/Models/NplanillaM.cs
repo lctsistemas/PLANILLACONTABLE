@@ -14,6 +14,7 @@ namespace Negocio.Models
     {
         public int PId_contrato { get; set;}
         public string PJornada_laboral { get; set; }
+        public string PCod_documento { get; set; }
         public int PId_mes { get; set;}
         public int PId_empreMaestra { get; set;}
         public string PNumero_documento { get; set;}
@@ -53,21 +54,22 @@ namespace Negocio.Models
                     list_planillam.Add(new NplanillaM()
                     {
                         PId_contrato = Convert.ToInt32(item[0]),
-                        PJornada_laboral=item[1].ToString(),
-                        PNumero_documento = item[2].ToString(),
-                        PNombres = item[3].ToString(),
-                        PDescrip_regipension = item[4].ToString(),
-                        PVcomision = Convert.ToDecimal(item[5]),
-                        //PVseguro = Convert.ToDecimal(item[6]),
-                        PVseguro = item[6] == null ? 0 : Convert.ToDecimal(item[6]),
-                        //PVaporte = Convert.ToDecimal(item[7]),
-                        PVaporte=item[7] ==null ? 0: Convert.ToDecimal(item[7]),
-                        PCargop = item[8].ToString(),
-                        PFecha_inicio = Convert.ToDateTime(item[9]),
-                        //PFecha_fin=Convert.ToDateTime(item[10]),
-                        PRemune_basica = Convert.ToDecimal(item[11]),
-                        PAsig_familiar = item[12].ToString() == "0.00" ? null : item[12].ToString()
-                        //PAsig_familiar = item[12].ToString()
+                        PJornada_laboral = item[1].ToString(),
+                        PCod_documento = item[2].ToString(),
+                        PNumero_documento = item[3].ToString(),
+                        PNombres = item[4].ToString(),
+                        PDescrip_regipension = item[5].ToString(),
+                        PVcomision = Convert.ToDecimal(item[6]),
+                        //PVseguro = Convert.ToDecimal(item[7]),
+                        PVseguro = item[7] == null ? 0 : Convert.ToDecimal(item[7]),
+                        //PVaporte = Convert.ToDecimal(item[8]),
+                        PVaporte = item[8] == null ? 0 : Convert.ToDecimal(item[8]),
+                        PCargop = item[9].ToString(),
+                        PFecha_inicio = Convert.ToDateTime(item[10]),
+                        //PFecha_fin=Convert.ToDateTime(item[11]),
+                        PRemune_basica = Convert.ToDecimal(item[12]),
+                        PAsig_familiar = item[13].ToString() == "0.00" ? null : item[13].ToString()
+                       
 
                     });
                 }

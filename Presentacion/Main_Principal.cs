@@ -247,7 +247,7 @@ namespace Presentacion
 
         private void btnempresa_Click_1(object sender, EventArgs e)
         {
-            OpenFormFill<frmempresa>();
+            OpenForm<frmempresa>();
         }
 
         private void btnsucursal_Click_1(object sender, EventArgs e)

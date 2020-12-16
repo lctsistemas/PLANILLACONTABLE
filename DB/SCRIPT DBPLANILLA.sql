@@ -289,7 +289,7 @@ id_regimen_salud int not null,
 cod_regi_salud char(2) not null,
 descripcion_rsalud nvarchar(100) not null
 )
-
+GO
 
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(1,00,'ESSALUD REGULAR');
 insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VALUES(2,21,'SIS - MICROEMPRESA');
@@ -303,24 +303,21 @@ insert into REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud) VA
 GO
 
 
-select * from Regimen_salud 
-delete from Regimen_salud	where id_regimen_salud =3
-
 CREATE TABLE Subsidios(
 id_subsidios int not null,
 cod_subsidio char(2) not null,
 tipo_suspencion varchar(10)not null, -- S.P. AND S.I.
 descripcion_corta nvarchar(70) not null,
-descripcion_subsidio nvarchar(100) not null,
-tipo_subsidio varchar(30) not null, --SUBSIADOS Y NO SUBSIDIADOS
+descripcion_subsidio nvarchar(130) not null,
+tipo_subsidio varchar(30) not null, --SUBSIADOS Y NO SUBSIDIADOS-- ESTADO
 descuento bit not null
 )
 GO
 
-select * from dbo.Subsidios
-
+--SELECT len('LICENCIA PARA DESEMPEÑAR CARGO CÍVICO Y PARA CUMPLIR CON EL SERVICIO MILITAR OBLIGATORIO')
 --ALTER TABLE SUBSIDIOS ALTER COLUMN cod_subsidio char(2) not null
 --ALTER TABLE SUBSIDIOS add  descripcion_corta nvarchar(70) not null
+--ALTER TABLE SUBSIDIOS ALTER COLUMN descripcion_subsidio nvarchar(130) not null
 
 CREATE TABLE Det_subsidios(
 id_det_subsidios int not null,
@@ -332,8 +329,6 @@ dias int not null
 )
 GO
 
-
-SELECT * FROM SUBSIDIOS
 
 insert into SUBSIDIOS(id_subsidios,cod_subsidio, tipo_suspencion, descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
 VALUES(1, '01', 'S.P.', 'SANCION DISCIPLINARIA', 'SANCION DISCIPLINARIA','NO SUBSIDIADOS', 1);

@@ -61,18 +61,18 @@
             this.lblcodigo_empledo.AutoSize = true;
             this.lblcodigo_empledo.Location = new System.Drawing.Point(7, 3);
             this.lblcodigo_empledo.Name = "lblcodigo_empledo";
-            this.lblcodigo_empledo.Size = new System.Drawing.Size(63, 13);
+            this.lblcodigo_empledo.Size = new System.Drawing.Size(69, 13);
             this.lblcodigo_empledo.TabIndex = 0;
-            this.lblcodigo_empledo.Text = "Codigo - dni";
+            this.lblcodigo_empledo.Text = "tcod - codigo";
             // 
             // lblnombre_empleado
             // 
             this.lblnombre_empleado.AutoSize = true;
-            this.lblnombre_empleado.Location = new System.Drawing.Point(76, 3);
+            this.lblnombre_empleado.Location = new System.Drawing.Point(111, 3);
             this.lblnombre_empleado.Name = "lblnombre_empleado";
-            this.lblnombre_empleado.Size = new System.Drawing.Size(56, 13);
+            this.lblnombre_empleado.Size = new System.Drawing.Size(44, 13);
             this.lblnombre_empleado.TabIndex = 1;
-            this.lblnombre_empleado.Text = "-  Nombre ";
+            this.lblnombre_empleado.Text = "Nombre";
             // 
             // cbosubsidio
             // 
