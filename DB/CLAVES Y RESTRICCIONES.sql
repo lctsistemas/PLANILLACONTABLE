@@ -9,7 +9,7 @@ alter table Descuentos ADD CONSTRAINT pk_id_desc PRIMARY KEY(id_descuentos)
 alter table Periodo ADD CONSTRAINT pk_id_periodo PRIMARY KEY(id_periodo)
 alter table Mes ADD CONSTRAINT pk_id_mes PRIMARY KEY(id_mes)
 alter table Planilla ADD CONSTRAINT pk_id_planilla PRIMARY KEY(id_planilla)
-alter table tipo_planilla ADD CONSTRAINT pk_idTipo_planilla PRIMARY KEY(id_tipo_planilla)
+alter table tipo_planilla ADD CONSTRAINT pk_idtip_planilla PRIMARY KEY(idtipo_planilla)
 alter table ComisionesPension ADD CONSTRAINT pk_comision PRIMARY KEY(idcomision)
 alter table Regimen_salud ADD CONSTRAINT pk_regimensalud PRIMARY KEY(id_regimen_salud)
 alter table RegimenPensionario ADD CONSTRAINT pk_idregimen PRIMARY KEY(codigo_regimen)
@@ -29,7 +29,7 @@ ALTER TABLE Planilla ADD CONSTRAINT Fk_idperiodo FOREIGN KEY(id_periodo) REFEREN
 
 ALTER TABLE Planilla ADD CONSTRAINT Fk_idemp_plan FOREIGN KEY(idempresa_maestra) REFERENCES dbo.Empresa_maestra(id_em_maestra)
 alter table Planilla ADD CONSTRAINT FK_idmes FOREIGN KEY(id_mes) REFERENCES Mes;
-ALTER TABLE Planilla ADD CONSTRAINT Fk_idtipoplan FOREIGN KEY(id_tipoplanilla) REFERENCES dbo.TIPO_PLANILLA
+ALTER TABLE Planilla ADD CONSTRAINT Fk_idtipoplan FOREIGN KEY(id_tipoplanilla) REFERENCES dbo.TIPO_PLANILLA(idtipo_planilla)
 
 
 alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idsub FOREIGN KEY(id_subsidios) REFERENCES Subsidios
@@ -39,12 +39,11 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REF
 
 ALTER TABLE planillaManto ADD CONSTRAINT FK_idcontratop FOREIGN KEY (id_contrato) REFERENCES Contrato
 ALTER table dbo.PlanillaManto ADD CONSTRAINT FK_idplanilla  FOREIGN KEY (id_planilla) REFERENCES planilla(id_planilla)
+--ALTER table dbo.PlanillaManto ADD CONSTRAINT FK_idtip_planilla  FOREIGN KEY (id_tipo_planilla) REFERENCES dbo.TIPO_PLANILLA(idtipo_planilla)
 
 alter table dbo.Conceptos ADD CONSTRAINT FK_idplaniconcep FOREIGN KEY (id_planilla) REFERENCES Planilla
 alter table dbo.Conceptos ADD CONSTRAINT FK_idmesconcep FOREIGN KEY (id_mes) REFERENCES Mes
-
 GO
-
 
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_periodo FOREIGN KEY(idperiodo) REFERENCES Periodo(id_periodo)
 ALTER TABLE ComisionesPension ADD CONSTRAINT fk_mes FOREIGN KEY(idmes) REFERENCES Mes(id_mes)

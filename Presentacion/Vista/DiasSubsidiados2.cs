@@ -63,7 +63,7 @@ namespace Presentacion.Vista
             }
         }
 
-        //SUMAR SUMA CELDA DATAGRIDVIEW
+        //SUMAR SUMA CELDA DATAGRIDVIEW | IMPORTANTE ANALIZAR Y SIMPLIFICAR CODIGO
         private void SumarDias()
         {
             int total_sp = 0, total_si = 0, total = 0, vaca = 0;

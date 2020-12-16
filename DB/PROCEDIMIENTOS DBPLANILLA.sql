@@ -1134,9 +1134,8 @@ GO
 
 
 CREATE PROCEDURE SP_ADD_REG_SAL(
---@id_regimen_salud int,
-@cod_regi_salud int,
-@regimen_salud varchar(80),
+@cod_regi_salud char(2),
+@descripcion_rsalud nvarchar(100),
 @mensaje varchar(100) output)
 AS BEGIN
 DECLARE @reg_salud int
@@ -1146,19 +1145,29 @@ IF(@reg_salud=0)
 ELSE
 	SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
 
+<<<<<<< HEAD
 INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud)
 VALUES(@reg_salud,@cod_regi_salud,@regimen_salud)
 SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
+=======
+INSERT INTO REGIMEN_SALUD(id_regimen_salud, cod_regi_salud, descripcion_rsalud)
+VALUES(@reg_salud, @cod_regi_salud, @descripcion_rsalud)
+SET @mensaje= '¡Registrado!'
+>>>>>>> 0fa71823dbbf39aacd6126e9c7a4f99364cf901c
 END
 GO
 
 
 CREATE PROC SP_UPDATE_REG_SALUD
 @id_regimen_salud int,
-@cod_regimen_salud int,
-@regimen_salud varchar(80)
+@cod_regimen_salud char(2),
+@descripcion_rsalud nvarchar(100)
 AS BEGIN
+<<<<<<< HEAD
 UPDATE REGIMEN_SALUD SET cod_regi_salud=@cod_regimen_salud,descripcion_rsalud=@regimen_salud
+=======
+UPDATE REGIMEN_SALUD SET cod_regi_salud=@cod_regimen_salud, descripcion_rsalud=@descripcion_rsalud
+>>>>>>> 0fa71823dbbf39aacd6126e9c7a4f99364cf901c
 WHERE id_regimen_salud=@id_regimen_salud
 END
 GO
@@ -1190,7 +1199,7 @@ GO
 
 
 --- SCRIPT SUBSIDIOS
-ALTER PROC SP_SHOW_DETSUBSIDIOS 
+ALTER PROC SP_SHOW_DETSUBSIDIOS -- nos muestra lo que registramos
 @idmes int,
 @idperiodo int,
 @idempleado int,
@@ -1203,8 +1212,7 @@ END
 GO
 
 
---MOSTRAR EN COMBOBOX SUBSIDIOS
-ALTER PROC SP_SHOW_SUBSIDIOS 
+ALTER PROC SP_SHOW_SUBSIDIOS --MOSTRAR EN COMBOBOX SUBSIDIOS
 @tipo_subsidio varchar(30)
 AS BEGIN
 SELECT s.id_subsidios, cod_subsidio, tipo_suspension, descripcion_corta FROM Subsidios s 
@@ -1250,12 +1258,12 @@ GO
 ------------------------------------------------------------------------
 --MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
 
-create PROC SP_ADD_SUBSIDIOS
-@id_subsidios int,
+CREATE PROC SP_ADD_SUBSIDIOS
+--@id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
 @descripcion_corta nvarchar(70),
-@descripcion_subsidio nvarchar(100),
+@descripcion_subsidio nvarchar(130),
 @tipo_subsidio varchar(30),
 @descuento bit,
 @mensaje varchar(100) output
@@ -1274,17 +1282,18 @@ GO
 
 --exec SP_ADD_SUBSIDIOS 18,30,'S.P','PR','PRUEBA','NO',1,'';
 
-create PROC SP_MODIFY_SUBSIDIOS
-@id_subsidios int,
+ALTER PROC SP_MODIFY_SUBSIDIOS
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
 @descripcion_corta nvarchar(70),
-@descrip_subsidio nvarchar(100),
+@descrip_subsidio nvarchar(130),
 @tipo_subsidio varchar(30),
-@descuento bit
+@descuento bit,
+@id_subsidios int
 AS BEGIN
-UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio,tipo_suspension=@tipo_suspension,descripcion_corta=@descripcion_corta,descripcion_subsidio=@descrip_subsidio,
-                         tipo_subsidio=@tipo_subsidio,descuento=@descuento WHERE id_subsidios=@id_subsidios
+UPDATE dbo.Subsidios SET cod_subsidio=@cod_subsidio, tipo_suspension=@tipo_suspension, 
+descripcion_corta=@descripcion_corta, descripcion_subsidio=@descrip_subsidio,
+tipo_subsidio=@tipo_subsidio, descuento=@descuento WHERE id_subsidios=@id_subsidios
 END
 GO
 
@@ -1298,7 +1307,7 @@ END
 GO
 
 
-ALTER PROC SP_MOSTRAR_SUBSIDIOS 
+CREATE PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
 SELECT id_subsidios, cod_subsidio,tipo_suspension, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
 END
@@ -1316,18 +1325,19 @@ ALTER PROC SP_ShowPlanillaManto
 AS BEGIN
 IF(NOT EXISTS(SELECT plam.id_planilla FROM dbo.PlanillaManto plam JOIN dbo.Planilla p ON(plam.id_planilla = p.id_planilla) WHERE p.id_planilla=@idplanilla))
 BEGIN
-SELECT co.id_contrato, e.jornada_laboral, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+SELECT co.id_contrato, e.jornada_laboral,do.codigo_doc, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
 rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, co.fecha_fin, co.remuneracion_basica, 
 co.asignacion_familiar
 FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
 JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
+JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
 WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
 END
 ELSE
 BEGIN
-SELECT co.id_contrato, plama.idplanilla_manto, plama.jornadalaboral, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+SELECT co.id_contrato, plama.idplanilla_manto, plama.jornadalaboral, do.codigo_doc, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
 rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, plama.basico, plama.dias, plama.dia_dominical, 
 plama.horas_diarias, plama.asig_familiar, plama.hora_dvc, plama.minuto_dvc, plama.monto_dvc, plama.hora_dtc, plama.minuto_dtc, 
 plama.monto_dtc, plama.hora_nvc, plama.minuto_nvc, plama.monto_nvc, plama.hora_ntc, plama.minuto_ntc, plama.monto_ntc, plama.hora_feriado, 
@@ -1340,6 +1350,7 @@ plama.retencion_judicial, plama.otro_des, plama.total_desc, plama.total_pagar, p
 plama.reintegro_grati, plama.reintegro_boni
 FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
 JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
+JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado) JOIN PlanillaManto  plama ON(plama.id_contrato=co.id_contrato)
 WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin

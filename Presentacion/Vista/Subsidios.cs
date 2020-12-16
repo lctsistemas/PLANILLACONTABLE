@@ -36,40 +36,50 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns[0].Width = 100;
             dgvsubsidio.Columns[0].Visible = false;
 
-            dgvsubsidio.Columns[1].HeaderText = "Codigo subsudio";
-            dgvsubsidio.Columns[1].Width = 80;
+            dgvsubsidio.Columns[1].HeaderText = "CODI GO";
+            dgvsubsidio.Columns[1].Width = 50;
+            dgvsubsidio.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            dgvsubsidio.Columns[2].HeaderText = "TIPO DE SUSPENSION";
+            dgvsubsidio.Columns[2].Width = 90;
+            dgvsubsidio.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvsubsidio.Columns[2].HeaderText = "Tipo de suspension";
-            dgvsubsidio.Columns[2].Width = 100;
-
-            dgvsubsidio.Columns[3].HeaderText = "Descripcion corta";
+            dgvsubsidio.Columns[3].HeaderText = "DESCRIPCION CORTA";
             dgvsubsidio.Columns[3].Width = 200;
 
-            dgvsubsidio.Columns[4].HeaderText = "Descripcion subsidio";
+            dgvsubsidio.Columns[4].HeaderText = "DESCRIPCION LARGA";
             dgvsubsidio.Columns[4].Width = 250;
 
-            dgvsubsidio.Columns[5].HeaderText = "Tipo Subsidio";
-            dgvsubsidio.Columns[5].Width = 120;
+            dgvsubsidio.Columns[5].HeaderText = "ESTADO";
+            dgvsubsidio.Columns[5].Width = 100;
 
-            dgvsubsidio.Columns[6].HeaderText = "Descuento";
+            dgvsubsidio.Columns[6].HeaderText = "DESCUENTO";
             dgvsubsidio.Columns[6].Width = 80;
 
             dgvsubsidio.Columns[7].HeaderText = "state";
-            dgvsubsidio.Columns[7].Width = 100;
+            dgvsubsidio.Columns[7].Width = 50;
             dgvsubsidio.Columns[7].Visible = false;
 
-            foreach (DataGridViewColumn col in dgvsubsidio.Columns)
-            {
-                col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                col.HeaderCell.Style.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Pixel);
-            }
+            //foreach (DataGridViewColumn col in dgvsubsidio.Columns)
+            //{
+            //    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //    col.HeaderCell.Style.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Pixel);
+            //}
         }
 
-        private void btnnuevo_Click(object sender, EventArgs e)
+      
+        private void limpiar()
         {
-            Habilitar(true);
+            txtcodigosubsidio.Text = String.Empty;
+            cbxtiposub.Text = null;
+            txtdescCorta.Text = String.Empty;
+            txtdescSubsi.Text = String.Empty;
+            cbxsuspension.Text = null;
+            checkDescuento.Checked = false;
+
+            using (ns) { ns.state = EntityState.Guardar; }
         }
+
 
         private void Habilitar(bool estado)
         {
@@ -78,15 +88,21 @@ namespace Presentacion.Vista
             txtdescCorta.Enabled = estado;
             txtdescSubsi.Enabled = estado;
             cbxtiposub.Enabled = estado;
+            checkDescuento.Enabled = estado;
             txtcodigosubsidio.Focus();
         }
 
-        private void btnguardar_Click(object sender, EventArgs e)
+        private void tbtnnuevo_Click(object sender, EventArgs e)
+        {
+            Habilitar(true);
+            limpiar();
+        }
+
+        private void tbtnguardar_Click(object sender, EventArgs e)
         {
             result = "";
             using (ns)
-            {
-                //ns.Id_subsidios = Convert.ToInt32(tx.Text.Trim());
+            {                
                 ns.Cod_subsidios = txtcodigosubsidio.Text.Trim();
                 ns.Tipo_suspension = cbxsuspension.SelectedItem.ToString();
                 ns.Descripcion_corta = txtdescCorta.Text.Trim();
@@ -94,62 +110,15 @@ namespace Presentacion.Vista
                 ns.Tipo_subsidio = cbxtiposub.Text.Trim();
                 ns.Descuento = Convert.ToBoolean(checkDescuento.Checked);
 
-                bool valida = new ValidacionDatos(ns).Validate();
-                if (valida)
-                {
-                    result = ns.SaveChanges();
-                    Messages.M_info(result);
-                }
+                result = ns.SaveChanges();
+                Messages.M_info(result);
+
                 ShowSubsidio();
                 limpiar();
             }
         }
 
-        private void Subsidios_Load(object sender, EventArgs e)
-        {
-            ShowSubsidio();
-            Tabla();
-            Habilitar(false);
-            cbxsuspension.Items.Add("S.P");
-            cbxsuspension.Items.Add("S.I");
-
-            cbxtiposub.Items.Add("SUBSIDIADOS");
-            cbxtiposub.Items.Add("NO SUBSIDIADOS");
-        }
-
-        private void limpiar()
-        {
-            txtcodigosubsidio.Text = String.Empty;
-            cbxtiposub.Text = String.Empty;
-            txtdescCorta.Text = String.Empty;
-            txtdescSubsi.Text = String.Empty;
-            cbxsuspension.Text = String.Empty;
-
-            using (ns) { ns.state = EntityState.Guardar; }
-        }
-
-        private void dgvsubsidio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow r = dgvsubsidio.CurrentRow;
-            Habilitar(true);
-            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
-            {
-                using (ns)
-                {
-                    ns.state = EntityState.Modificar;
-                   ns.Id_subsidios = Convert.ToInt32(r.Cells[0].Value);
-                    txtcodigosubsidio.Text = Convert.ToString(r.Cells[1].Value);
-                    cbxsuspension.Text= Convert.ToString(r.Cells[2].Value);
-                    txtdescCorta.Text = Convert.ToString(r.Cells[3].Value);
-                    txtdescSubsi.Text = Convert.ToString(r.Cells[4].Value);
-                    cbxtiposub.Text = Convert.ToString(r.Cells[5].Value);
-                    checkDescuento.Checked =Convert.ToBoolean(r.Cells[6].Value);
-                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER     
-                }
-            }
-        }
-
-        private void btnborrar_Click(object sender, EventArgs e)
+        private void tbtneliminar_Click(object sender, EventArgs e)
         {
             result = "";
             if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
@@ -172,24 +141,56 @@ namespace Presentacion.Vista
             {
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
-            limpiar();
+
         }
+
+        private void Subsidios_Load(object sender, EventArgs e)
+        {
+            ShowSubsidio();
+            Tabla();
+            Habilitar(false);
+            cbxsuspension.Items.Add("S.P.");
+            cbxsuspension.Items.Add("S.I.");
+
+            cbxtiposub.Items.Add("SUBSIDIADOS");
+            cbxtiposub.Items.Add("NO SUBSIDIADOS");
+        }      
+
+        private void dgvsubsidio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow r = dgvsubsidio.CurrentRow;
+            Habilitar(true);
+            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            {
+                using (ns)
+                {
+                    ns.state = EntityState.Modificar;
+                    ns.Id_subsidios = Convert.ToInt32(r.Cells[0].Value);
+                    txtcodigosubsidio.Text = Convert.ToString(r.Cells[1].Value);
+                    cbxsuspension.SelectedItem = r.Cells[2].Value.ToString();
+                    txtdescCorta.Text = Convert.ToString(r.Cells[3].Value);
+                    txtdescSubsi.Text = Convert.ToString(r.Cells[4].Value);
+                    cbxtiposub.Text = Convert.ToString(r.Cells[5].Value);
+                    checkDescuento.Checked = Convert.ToBoolean(r.Cells[6].Value);
+                    ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
+                   
+                }
+            }
+        }      
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(205, 97, 85);
+            btncerrar.BackColor = Color.Crimson;
         }
-
         
-
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SteelBlue;
+            btncerrar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SteelBlue;
+            btnminimizar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
@@ -211,5 +212,13 @@ namespace Presentacion.Vista
         {
             btncerrar.BackColor = Color.Crimson;
         }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        
     }
 }

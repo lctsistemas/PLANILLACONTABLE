@@ -62,7 +62,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnrestaurar = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabuser.SuspendLayout();
             this.tablista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvusuario)).BeginInit();
@@ -151,15 +150,16 @@
             this.dgvusuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvusuario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvusuario.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvusuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvusuario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(234)))), ((int)(((byte)(248)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvusuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -169,10 +169,12 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvusuario.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvusuario.EnableHeadersVisualStyles = false;
             this.dgvusuario.Location = new System.Drawing.Point(5, 94);
             this.dgvusuario.MultiSelect = false;
             this.dgvusuario.Name = "dgvusuario";
@@ -187,6 +189,8 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvusuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvusuario.RowHeadersWidth = 25;
+            this.dgvusuario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvusuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvusuario.Size = new System.Drawing.Size(841, 334);
             this.dgvusuario.TabIndex = 4;
             this.dgvusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuario_CellDoubleClick);
@@ -205,7 +209,6 @@
             // tabgestion
             // 
             this.tabgestion.BackColor = System.Drawing.SystemColors.Window;
-            this.tabgestion.Controls.Add(this.comboBox1);
             this.tabgestion.Controls.Add(this.cbogenero);
             this.tabgestion.Controls.Add(this.btnrol);
             this.tabgestion.Controls.Add(this.txtacceso);
@@ -346,7 +349,7 @@
             // 
             // btnremover
             // 
-            this.btnremover.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnremover.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.btnremover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnremover.FlatAppearance.BorderSize = 0;
             this.btnremover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -365,7 +368,7 @@
             // 
             // btnnuevo
             // 
-            this.btnnuevo.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnnuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnnuevo.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnnuevo.FlatAppearance.BorderSize = 0;
@@ -385,7 +388,7 @@
             // 
             // btnguardar
             // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnguardar.FlatAppearance.BorderSize = 0;
@@ -437,7 +440,7 @@
             // 
             // paneltitulo_user
             // 
-            this.paneltitulo_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(113)))), ((int)(((byte)(163)))));
+            this.paneltitulo_user.BackColor = System.Drawing.Color.SlateGray;
             this.paneltitulo_user.Controls.Add(this.btnmaximizar);
             this.paneltitulo_user.Controls.Add(this.pictureBox1);
             this.paneltitulo_user.Controls.Add(this.btncerrar);
@@ -479,11 +482,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(9, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 23);
+            this.label7.Size = new System.Drawing.Size(75, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "USUARIO";
             // 
@@ -499,23 +502,6 @@
             this.btnrestaurar.TabIndex = 3;
             this.btnrestaurar.TabStop = false;
             this.btnrestaurar.Click += new System.EventHandler(this.btnrestaurar_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ELEMENTO 1",
-            "ELEMENTO 2",
-            "ELEMENTO 3",
-            "ELEMENTO 4"});
-            this.comboBox1.Location = new System.Drawing.Point(169, 302);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(287, 29);
-            this.comboBox1.TabIndex = 89;
             // 
             // frmusuario
             // 
@@ -586,6 +572,5 @@
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.ComboBox cbogenero;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

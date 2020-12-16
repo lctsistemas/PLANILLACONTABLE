@@ -117,6 +117,7 @@
             this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_planilla_manto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jornada_labo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cod_document = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ape_nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.regi_pen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -345,6 +346,7 @@
             this.id_contrato,
             this.id_planilla_manto,
             this.jornada_labo,
+            this.cod_document,
             this.codigo,
             this.ape_nom,
             this.regi_pen,
@@ -1146,7 +1148,7 @@
             // 
             this.TxtfechaFin.BackColor = System.Drawing.Color.White;
             this.TxtfechaFin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtfechaFin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtfechaFin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtfechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtfechaFin.Location = new System.Drawing.Point(235, 21);
             this.TxtfechaFin.Mask = "00 - 00 - 0000";
@@ -1160,7 +1162,7 @@
             // 
             this.TxtfechaInicio.BackColor = System.Drawing.Color.White;
             this.TxtfechaInicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtfechaInicio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtfechaInicio.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtfechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TxtfechaInicio.Location = new System.Drawing.Point(52, 21);
             this.TxtfechaInicio.Mask = "00 - 00 - 0000";
@@ -1174,7 +1176,7 @@
             // 
             this.Txtpago.BackColor = System.Drawing.Color.White;
             this.Txtpago.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Txtpago.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtpago.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtpago.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txtpago.Location = new System.Drawing.Point(131, 61);
             this.Txtpago.Mask = "00 - 00 - 0000";
@@ -1227,6 +1229,14 @@
             this.jornada_labo.Name = "jornada_labo";
             this.jornada_labo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.jornada_labo.Width = 70;
+            // 
+            // cod_document
+            // 
+            this.cod_document.DataPropertyName = "PCod_documento";
+            this.cod_document.HeaderText = "Cod doc";
+            this.cod_document.Name = "cod_document";
+            this.cod_document.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.cod_document.Width = 50;
             // 
             // codigo
             // 
@@ -1859,6 +1869,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_contrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_planilla_manto;
         private System.Windows.Forms.DataGridViewTextBoxColumn jornada_labo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cod_document;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ape_nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn regi_pen;

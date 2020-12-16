@@ -14,9 +14,7 @@ namespace Negocio.Models
         public int Id_subsidios { get; set; }
         public string Cod_subsidios { get; set; }
         public string Tipo_suspension { get; set; }
-
         public string Descripcion_corta { get; set; }
-
         public string Descripcion_subsidio { get; set; }
         public string Tipo_subsidio { get; set; }
         public bool Descuento { get; set; }
@@ -53,7 +51,7 @@ namespace Negocio.Models
                         break;
                     case EntityState.Modificar:
                         rsubsidios.Edit(ds);
-                        mensaje = "Successfully Edited!";
+                        mensaje = "¡Modificado!";
                         break;
                     case EntityState.Remover:
                         rsubsidios.Delete(ds);

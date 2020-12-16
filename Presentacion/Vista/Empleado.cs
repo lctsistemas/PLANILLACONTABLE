@@ -9,7 +9,6 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-using Presentacion.Subvista;
 using System.Drawing;
 
 namespace Presentacion.Vista
@@ -198,7 +197,7 @@ namespace Presentacion.Vista
         {
             using (emple_contra)
             {
-                emple_contra.Id_emp_maestra =UserCache.Codigo_empresa;
+                emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
                 dgvempleado.DataSource = emple_contra.listar_empleado();
                 lblcantidad_registro.Text = "Total registro:  " + dgvempleado.RowCount;
             }
@@ -280,7 +279,8 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(cbogenero.Text) || string.IsNullOrEmpty(txtremune.Text) || string.IsNullOrEmpty(cbotipopago.Text)
                 || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)
                 || string.IsNullOrEmpty(cbotipo_moneda.Text)
-                || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text))
+                || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text) || !cbore_pensionario.Text.Contains("O.N.P") 
+                || cbotipopago.Text.Contains("DEPOSITO EN CUENTA"))
             {
                 ValidateChildren();
                 return true;
@@ -303,12 +303,9 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            
             if (Validar_campos())
-            {
-                //Messages.M_warning("Ingrese todos los campos por favor");
                 return;
-            }
+            
 
             //if (btnValidar_telefono() == false)
             //{
@@ -378,10 +375,7 @@ namespace Presentacion.Vista
                 emple_contra.ccts = txtcts.Text.Trim();
                 emple_contra.ccussp = txtcussp.Text.Trim();
 
-                //bool valida = new ValidacionDatos(emple_contra).Validate();
-
                 result = emple_contra.GuardarCambios();
-
                 if (result.Contains("ya se encuentra registrado"))
                     Messages.M_warning(result);
                 else
@@ -747,15 +741,50 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtasig, "Campo asignacion familiar requerido");
         }
+        private void txtcussp_Validating(object sender, CancelEventArgs e)
+        {
+            if (!cbore_pensionario.Text.Contains("O.N.P") && cbore_pensionario.Text != string.Empty)
+            {
+                ValidateError.Validate_text(txtcussp, "Requerido");
+            }
+            else
+                ValidateError.Validate_text(txtcussp, null);
+          
+        }
+
+        private void txtnum_cuenta_Validating(object sender, CancelEventArgs e)
+        {
+            if (cbotipopago.Text.Contains("DEPOSITO EN CUENTA") && cbotipopago.Text != string.Empty)
+            {
+                ValidateError.Validate_text(txtnum_cuenta, "Requerido");
+            }
+            else
+                ValidateError.Validate_text(txtnum_cuenta, null);
+        }
+
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
             btnminimizar.BackColor = Color.SlateGray;
         }
-
+       
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
+
+        private void cbore_pensionario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbore_pensionario.Text.Contains("O.N.P"))
+                ValidateError.validate.SetError(txtcussp, null);
+        }
+
+        private void cbotipopago_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!cbotipopago.Text.Contains("DEPOSITO EN CUENTA"))
+                ValidateError.validate.SetError(txtnum_cuenta,null);
+        }
+
+       
     }
 }
