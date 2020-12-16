@@ -57,7 +57,7 @@ namespace Presentacion.Vista
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(434, 35);
+            this.panel1.Size = new System.Drawing.Size(399, 35);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -65,7 +65,7 @@ namespace Presentacion.Vista
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(158, 5);
+            this.label1.Location = new System.Drawing.Point(127, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 26);
             this.label1.TabIndex = 0;
@@ -78,7 +78,7 @@ namespace Presentacion.Vista
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(410, 67);
+            this.groupBox1.Size = new System.Drawing.Size(369, 67);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar";
@@ -153,7 +153,7 @@ namespace Presentacion.Vista
             this.dgvtipoplanilla.RowHeadersWidth = 25;
             this.dgvtipoplanilla.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvtipoplanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvtipoplanilla.Size = new System.Drawing.Size(410, 150);
+            this.dgvtipoplanilla.Size = new System.Drawing.Size(369, 150);
             this.dgvtipoplanilla.TabIndex = 2;
             // 
             // btneliminar
@@ -220,7 +220,7 @@ namespace Presentacion.Vista
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-            this.btncerrar.Location = new System.Drawing.Point(387, 5);
+            this.btncerrar.Location = new System.Drawing.Point(352, 5);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 20);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +232,7 @@ namespace Presentacion.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 304);
+            this.ClientSize = new System.Drawing.Size(399, 304);
             this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.btnagregar);
             this.Controls.Add(this.btnguardar);

@@ -48,7 +48,7 @@ namespace Datos.Repositories
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SP_DELETE_REG_SALUD";
+                    cmd.CommandText = "SP_DELETE_REGSALUD";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;

@@ -112,10 +112,10 @@ namespace Datos.Repositories
                         cmd.Parameters.AddWithValue("@telefono", entiti.Telefono);
                         cmd.Parameters.AddWithValue("@num_doc", entiti.Num_doc);
                         cmd.Parameters.AddWithValue("@estado", entiti.Estado);
+                        cmd.Parameters.AddWithValue("@jornada_laboral", entiti.Jornada_laboral);
                         cmd.Parameters.AddWithValue("@codigo_regimen", entiti.Codigo_regimen);
                         cmd.Parameters.AddWithValue("@id_documento",  entiti.Id_doc);
                         cmd.Parameters.AddWithValue("@id_cargo", entiti.Id_cargo);
-                        cmd.Parameters.AddWithValue("@jornada_laboral", entiti.Jornada_laboral);
                         cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
                         result = cmd.ExecuteNonQuery();
                     }

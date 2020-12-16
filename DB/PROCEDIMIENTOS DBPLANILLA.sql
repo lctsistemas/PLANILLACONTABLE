@@ -201,7 +201,7 @@ ALTER PROC SP_SHOW_EMPLEADO_CONTRATO
 AS BEGIN 
 SELECT e.codigo, e.nombre_empleado, e.ape_paterno, e.ape_materno,e.fecha_nacimiento,
 e.nacionalidad, e.tipo_genero, e.direccion, e.telefono, e.numero_documento, e.estado, e.codigo_regimen, 
-r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, e.jornada_laboral, co.id_banco, b.nombre_banco,
+r.descripcion, e.id_documento, t.nombre, e.id_cargo, c.nombre_cargo, e.Jornada_laboral, co.id_banco, b.nombre_banco,
 co.id_tipocontrato, ti.tiempo_contrato, co.fecha_inicio, co.fecha_fin, co.numero_cuenta, 
 co.remuneracion_basica, co.asignacion_familiar, co.id_rsalud, re.descripcion_rsalud, co.tipo_pago, co.periodicidad, 
 co.tipo_moneda, co.cuenta_cts, co.cussp 
@@ -733,8 +733,16 @@ ALTER PROC SP_DELETE_TIP_PLAN
 @id_tipo_planilla int,
 @mensaje varchar(100) output
 AS BEGIN
-DELETE from TIPO_PLANILLA where id_tipo_planilla=@id_tipo_planilla
-SET @mensaje= 'TIPO DE PLANILLA ELIMINADA CORRECTAMENTE'
+IF(EXISTS(SELECT p.id_tipoplanilla from Planilla p join TIPO_PLANILLA tp on(tp.id_tipo_planilla=p.id_tipoplanilla)
+	WHERE p.id_tipoplanilla=@id_tipo_planilla))
+	BEGIN 
+	SET @mensaje= 'Error, el tipo de planilla esta en uso'
+	END 
+ELSE 
+	BEGIN
+	DELETE from TIPO_PLANILLA where id_tipo_planilla=@id_tipo_planilla
+	SET @mensaje= 'TIPO DE PLANILLA ELIMINADA CORRECTAMENTE'
+	END
 END
 GO
 
@@ -1138,7 +1146,7 @@ IF(@reg_salud=0)
 ELSE
 	SET @reg_salud=(SELECT MAX(rs.id_regimen_salud)+1 FROM REGIMEN_SALUD rs)
 
-INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,regimen_salud)
+INSERT INTO REGIMEN_SALUD(id_regimen_salud,cod_regi_salud,descripcion_rsalud)
 VALUES(@reg_salud,@cod_regi_salud,@regimen_salud)
 SET @mensaje= 'REGIMEN DE SALUD REGISTRADO CORRECTAMENTE'
 END
@@ -1150,23 +1158,26 @@ CREATE PROC SP_UPDATE_REG_SALUD
 @cod_regimen_salud int,
 @regimen_salud varchar(80)
 AS BEGIN
-UPDATE REGIMEN_SALUD SET cod_regi_salud=@cod_regimen_salud,regimen_salud=@regimen_salud
+UPDATE REGIMEN_SALUD SET cod_regi_salud=@cod_regimen_salud,descripcion_rsalud=@regimen_salud
 WHERE id_regimen_salud=@id_regimen_salud
 END
 GO
 
-
 GO
-ALTER PROC SP_DELETE_REGSALUD
+create PROC SP_DELETE_REGSALUD
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN
-DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
-<<<<<<< HEAD
-SET @mensaje= '¡ELIMINADO!'
-=======
-SET @mensaje= 'REGIMEN DE SALUD ELIMINADO CORRECTAMENTE'
->>>>>>> 4524f46484f84d9f51a4288858bd83e151f44432
+IF(EXISTS(SELECT c.id_rsalud  from Contrato c join Regimen_salud r on(r.id_regimen_salud=c.id_rsalud)
+	WHERE r.id_regimen_salud=@id_regimen_salud))
+	BEGIN
+		SET @mensaje= 'Error, el regimen salud esta asignado a un contrato'
+	END
+ELSE
+	BEGIN 
+		DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
+		SET @mensaje= 'REGIMEN DE SALUD ELIMINADO CORRECTAMENTE'
+	END
 END
 GO
 
