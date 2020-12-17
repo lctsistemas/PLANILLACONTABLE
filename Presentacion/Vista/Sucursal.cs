@@ -16,6 +16,7 @@ namespace Presentacion.Vista
         public frmsucursal()
         {
             InitializeComponent();
+            ExtensionMethods.DoubleBuffered(dgvsucursal,true);
             To_disable(false);
             Show_sucursal();
             Tabla();
@@ -31,13 +32,19 @@ namespace Presentacion.Vista
             return _instancia;
         }
 
+        //TOTAL REGISTRO
+        private void TotalDatos()
+        {
+            lbltotal.Text = "Registro Total: " + dgvsucursal.Rows.Count;
+        }
+
         //MOSTRAR SUCURSAL
         private void Show_sucursal()
         {
             using (nsu)
             {
                 dgvsucursal.DataSource = nsu.Getall();
-                lbltotal.Text = "Registro Total: " + dgvsucursal.Rows.Count;
+                TotalDatos();
             }
 
         }
@@ -69,31 +76,32 @@ namespace Presentacion.Vista
             dgvsucursal.Columns[2].Visible = false;
 
             dgvsucursal.Columns[3].HeaderText = "CODIGO";
-            dgvsucursal.Columns[3].Width = 100;
+            dgvsucursal.Columns[3].Width = 80;
+            dgvsucursal.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvsucursal.Columns[4].HeaderText = "RAZON SOCIAL";
-            dgvsucursal.Columns[4].Width = 350;
+            dgvsucursal.Columns[4].HeaderText = "RAZON SOCIAL O DENOMINACION";
+            dgvsucursal.Columns[4].Width = 250;
 
             dgvsucursal.Columns[5].HeaderText = "LOCALIDAD";
-            dgvsucursal.Columns[5].Width = 250;
+            dgvsucursal.Columns[5].Width = 200;
 
             dgvsucursal.Columns[6].HeaderText = "DIRECCION";
-            dgvsucursal.Columns[6].Width = 370;
+            dgvsucursal.Columns[6].Width = 350;
 
             dgvsucursal.Columns[7].HeaderText = "DOMICILIO FISCAL";
-            dgvsucursal.Columns[7].Width = 370;
+            dgvsucursal.Columns[7].Width = 320;
 
             dgvsucursal.Columns[8].HeaderText = "RUC";
             dgvsucursal.Columns[8].Width = 90;
 
             dgvsucursal.Columns[9].HeaderText = "REGIMEN";
-            dgvsucursal.Columns[9].Width = 270;
+            dgvsucursal.Columns[9].Width = 250;
 
             dgvsucursal.Columns[10].HeaderText = "USUARIO";
-            dgvsucursal.Columns[10].Width = 270;
+            dgvsucursal.Columns[10].Width = 250;
 
             dgvsucursal.Columns[11].HeaderText = "EMPRESA";
-            dgvsucursal.Columns[11].Width = 270;
+            dgvsucursal.Columns[11].Width = 250;
             dgvsucursal.Columns[11].Visible = false;
 
             dgvsucursal.Columns[12].Visible = false;
@@ -192,7 +200,7 @@ namespace Presentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvsucursal.DataSource = nsu.Search(txtbuscar.Text.Trim());
-            lbltotal.Text = "Registro Total: " + dgvsucursal.Rows.Count;
+            TotalDatos();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -276,7 +284,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SteelBlue;
+            btncerrar.BackColor = Color.SlateGray;
         }
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
@@ -291,7 +299,7 @@ namespace Presentacion.Vista
 
         private void btnmaximizar_MouseLeave(object sender, EventArgs e)
         {
-            btnmaximizar.BackColor = Color.SteelBlue;
+            btnmaximizar.BackColor = Color.SlateGray;
         }
 
         private void btnrestaurar_MouseMove(object sender, MouseEventArgs e)
@@ -301,7 +309,7 @@ namespace Presentacion.Vista
 
         private void btnrestaurar_MouseLeave(object sender, EventArgs e)
         {
-            btnrestaurar.BackColor = Color.SteelBlue;
+            btnrestaurar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
@@ -311,7 +319,7 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SteelBlue;
+            btnminimizar.BackColor = Color.SlateGray;
         }
 
         private void panelsucursal_MouseDown(object sender, MouseEventArgs e)
@@ -341,5 +349,7 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtusuario, "¡Usuario requerido!");
         }
+
+      
     }
 }

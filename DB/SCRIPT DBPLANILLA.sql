@@ -76,7 +76,7 @@ GO
 /*TABLA EMPRESA MAESTRA: EMPRESA => SUCURSAL*/
 CREATE TABLE Empresa_maestra(
 id_em_maestra int not null,
-razon_social varchar(50) not null,
+razon_social varchar(100) not null,
 localidad varchar(50) not null,
 direccion nvarchar(250) not null,
 domicilio_fiscal nvarchar(250) not null,
@@ -85,7 +85,7 @@ regimen varchar(80) not null,
 estado_eliminado varchar(15) not null
 )
 GO
-
+--ALTER TABLE dbo.empresa_maestra alter column razon_social varchar(100) not null -- SE CAMBIO EL 17/12/2020
 --alter table Empresa_maestra alter column regimen varchar(80) not null
 CREATE TABLE Empresa(
 id_empresa int not null,

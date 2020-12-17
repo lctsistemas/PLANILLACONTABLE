@@ -17,7 +17,13 @@ namespace Presentacion.Vista
         public frmempresa()
         {
             InitializeComponent();
-           
+            ExtensionMethods.DoubleBuffered(dgvempresa, true);
+        }
+
+        //TOTAL REGISTRO DE LA TABLA
+        private void TotalDatos()
+        {
+            lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
         }
 
         private void Show_empresa()
@@ -26,7 +32,7 @@ namespace Presentacion.Vista
             {
 
                 dgvempresa.DataSource = ne.Getall();
-                lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
+                TotalDatos();
             }
         }
         private void Tabla()
@@ -52,28 +58,29 @@ namespace Presentacion.Vista
             dgvempresa.Columns[4].Visible = false;
 
             dgvempresa.Columns[5].HeaderText = "CODIGO";
-            dgvempresa.Columns[5].Width = 100;
+            dgvempresa.Columns[5].Width = 80;
+            dgvempresa.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvempresa.Columns[6].HeaderText = "RAZON SOCIAL";
-            dgvempresa.Columns[6].Width = 350;
+            dgvempresa.Columns[6].HeaderText = "RAZON SOCIAL O DENOMINACION";
+            dgvempresa.Columns[6].Width = 250;
 
             dgvempresa.Columns[7].HeaderText = "LOCALIDAD";
-            dgvempresa.Columns[7].Width = 250;
+            dgvempresa.Columns[7].Width = 200;
 
             dgvempresa.Columns[8].HeaderText = "DIRECCION";
-            dgvempresa.Columns[8].Width = 370;
+            dgvempresa.Columns[8].Width = 350;
 
             dgvempresa.Columns[9].HeaderText = "DOMICILIO FISCAL";
-            dgvempresa.Columns[9].Width = 370;
+            dgvempresa.Columns[9].Width = 320;
 
             dgvempresa.Columns[10].HeaderText = "RUC";
             dgvempresa.Columns[10].Width = 90;
 
             dgvempresa.Columns[11].HeaderText = "REGIMEN";
-            dgvempresa.Columns[11].Width = 270;
+            dgvempresa.Columns[11].Width = 250;
 
             dgvempresa.Columns[12].HeaderText = "USUARIO";
-            dgvempresa.Columns[12].Width = 270;
+            dgvempresa.Columns[12].Width = 250;
 
         }
 
@@ -173,6 +180,7 @@ namespace Presentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvempresa.DataSource = ne.Search(txtbuscar.Text.Trim());
+            TotalDatos();
         }
 
         private void dgvempresa_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -266,7 +274,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(26, 32, 40);
+            btncerrar.BackColor = Color.SlateGray;
         }
                
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
@@ -289,12 +297,12 @@ namespace Presentacion.Vista
 
         private void btnrestaurar_MouseLeave(object sender, EventArgs e)
         {
-            btnrestaurar.BackColor = Color.FromArgb(26, 32, 40);
+            btnrestaurar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(26, 32, 40);
+            btnminimizar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
@@ -366,5 +374,7 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtusuario, "Campo usuario requerido");
         }
+
+     
     }
 }

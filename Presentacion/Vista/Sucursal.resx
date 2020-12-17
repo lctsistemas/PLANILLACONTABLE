@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 14.25pt, style=Bold</value>
+    <value>Century Gothic, 12pt, style=Bold</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -133,7 +133,7 @@
     <value>12, 5</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 23</value>
+    <value>85, 19</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnminimizar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>794, 6</value>
+    <value>794, 5</value>
   </data>
   <data name="btnminimizar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -190,7 +190,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnmaximizar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>830, 6</value>
+    <value>830, 5</value>
   </data>
   <data name="btnmaximizar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -220,7 +220,7 @@
     <value>NoControl</value>
   </data>
   <data name="btncerrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>866, 6</value>
+    <value>866, 5</value>
   </data>
   <data name="btncerrar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -250,7 +250,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnrestaurar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>830, 6</value>
+    <value>830, 5</value>
   </data>
   <data name="btnrestaurar.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 20</value>
@@ -300,32 +300,26 @@
   <data name="&gt;&gt;panelsucursal.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnempresa.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnempresa.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 9.75pt</value>
-  </data>
   <data name="btnempresa.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnempresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>507, 281</value>
+    <value>559, 334</value>
   </data>
   <data name="btnempresa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 22</value>
+    <value>39, 35</value>
+  </data>
+  <data name="btnempresa.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="btnempresa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnempresa.Text" xml:space="preserve">
-    <value>...</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;btnempresa.Name" xml:space="preserve">
     <value>btnempresa</value>
   </data>
   <data name="&gt;&gt;btnempresa.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnempresa.Parent" xml:space="preserve">
     <value>tabgestion_empresa</value>
@@ -337,10 +331,10 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtregimen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 239</value>
+    <value>187, 301</value>
   </data>
   <data name="txtregimen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 23</value>
+    <value>347, 23</value>
   </data>
   <data name="txtregimen.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -361,10 +355,10 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtusuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 280</value>
+    <value>187, 343</value>
   </data>
   <data name="txtusuario.Size" type="System.Drawing.Size, System.Drawing">
-    <value>310, 23</value>
+    <value>347, 23</value>
   </data>
   <data name="txtusuario.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -385,7 +379,7 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtidempresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 280</value>
+    <value>617, 340</value>
   </data>
   <data name="txtidempresa.Size" type="System.Drawing.Size, System.Drawing">
     <value>38, 23</value>
@@ -412,7 +406,7 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtruc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 199</value>
+    <value>187, 61</value>
   </data>
   <data name="txtruc.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 23</value>
@@ -439,10 +433,16 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtdomicilio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 165</value>
+    <value>187, 241</value>
+  </data>
+  <data name="txtdomicilio.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtdomicilio.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
   </data>
   <data name="txtdomicilio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 23</value>
+    <value>411, 41</value>
   </data>
   <data name="txtdomicilio.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -463,10 +463,16 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtdireccion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 127</value>
+    <value>187, 181</value>
+  </data>
+  <data name="txtdireccion.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtdireccion.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
   </data>
   <data name="txtdireccion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 23</value>
+    <value>411, 41</value>
   </data>
   <data name="txtdireccion.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -487,10 +493,10 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtlocalidad.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 91</value>
+    <value>187, 140</value>
   </data>
   <data name="txtlocalidad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 23</value>
+    <value>411, 23</value>
   </data>
   <data name="txtlocalidad.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -511,10 +517,10 @@
     <value>Century Gothic, 9.75pt</value>
   </data>
   <data name="txtrazon_social.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 56</value>
+    <value>187, 99</value>
   </data>
   <data name="txtrazon_social.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 23</value>
+    <value>411, 23</value>
   </data>
   <data name="txtrazon_social.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -538,7 +544,7 @@
     <value>187, 22</value>
   </data>
   <data name="txtcodigo_sucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 23</value>
+    <value>162, 23</value>
   </data>
   <data name="txtcodigo_sucursal.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -568,7 +574,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 283</value>
+    <value>33, 346</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 17</value>
@@ -601,7 +607,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 91</value>
+    <value>33, 140</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 17</value>
@@ -657,9 +663,6 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 9.75pt</value>
   </data>
@@ -667,16 +670,16 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 56</value>
+    <value>33, 92</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 17</value>
+    <value>125, 35</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>RAZON SOCIAL</value>
+    <value>RAZON SOCIAL O DENOMINACION</value>
   </data>
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
@@ -700,7 +703,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 130</value>
+    <value>33, 184</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 17</value>
@@ -733,7 +736,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 244</value>
+    <value>33, 306</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 17</value>
@@ -766,7 +769,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 168</value>
+    <value>33, 244</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 17</value>
@@ -799,7 +802,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 207</value>
+    <value>33, 64</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 17</value>
@@ -829,7 +832,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabgestion_empresa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>897, 412</value>
+    <value>897, 426</value>
   </data>
   <data name="tabgestion_empresa.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -848,6 +851,219 @@
   </data>
   <data name="&gt;&gt;tabgestion_empresa.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="txtbuscar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 11.25pt</value>
+  </data>
+  <data name="txtbuscar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 34</value>
+  </data>
+  <data name="txtbuscar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 19</value>
+  </data>
+  <data name="txtbuscar.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.Name" xml:space="preserve">
+    <value>txtbuscar</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;txtbuscar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 11.25pt</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbltotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbltotal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="lbltotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbltotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 67</value>
+  </data>
+  <data name="lbltotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 17</value>
+  </data>
+  <data name="lbltotal.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbltotal.Text" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;lbltotal.Name" xml:space="preserve">
+    <value>lbltotal</value>
+  </data>
+  <data name="&gt;&gt;lbltotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbltotal.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;lbltotal.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dgvsucursal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="dgvsucursal.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="dgvsucursal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 88</value>
+  </data>
+  <data name="dgvsucursal.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="dgvsucursal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>888, 335</value>
+  </data>
+  <data name="dgvsucursal.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.Name" xml:space="preserve">
+    <value>dgvsucursal</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 44</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>470, 16</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>__________________________________________________________________</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tablista_empresa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 37</value>
+  </data>
+  <data name="tablista_empresa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tablista_empresa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>897, 428</value>
+  </data>
+  <data name="tablista_empresa.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tablista_empresa.Text" xml:space="preserve">
+    <value>LISTA  SUCURSAL</value>
+  </data>
+  <data name="&gt;&gt;tablista_empresa.Name" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;tablista_empresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tablista_empresa.Parent" xml:space="preserve">
+    <value>tapsucursal</value>
+  </data>
+  <data name="&gt;&gt;tablista_empresa.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tapsucursal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="tapsucursal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="tapsucursal.ItemSize" type="System.Drawing.Size, System.Drawing">
+    <value>159, 33</value>
+  </data>
+  <data name="tapsucursal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 71</value>
+  </data>
+  <data name="tapsucursal.Padding" type="System.Drawing.Point, System.Drawing">
+    <value>20, 5</value>
+  </data>
+  <data name="tapsucursal.ShowToolTips" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tapsucursal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>905, 469</value>
+  </data>
+  <data name="tapsucursal.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tapsucursal.Name" xml:space="preserve">
+    <value>tapsucursal</value>
+  </data>
+  <data name="&gt;&gt;tapsucursal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tapsucursal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tapsucursal.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="btnnuevo.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -927,186 +1143,6 @@
   <data name="&gt;&gt;btnguardar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="txtbuscar.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 11.25pt</value>
-  </data>
-  <data name="txtbuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 34</value>
-  </data>
-  <data name="txtbuscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 19</value>
-  </data>
-  <data name="txtbuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txtbuscar.Name" xml:space="preserve">
-    <value>txtbuscar</value>
-  </data>
-  <data name="&gt;&gt;txtbuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtbuscar.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;txtbuscar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label11.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 11.25pt</value>
-  </data>
-  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 14</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 20</value>
-  </data>
-  <data name="label11.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Buscar</value>
-  </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
-  </data>
-  <data name="&gt;&gt;label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbltotal.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbltotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 9.75pt</value>
-  </data>
-  <data name="lbltotal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbltotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>577, 44</value>
-  </data>
-  <data name="lbltotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
-  </data>
-  <data name="lbltotal.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbltotal.Text" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;lbltotal.Name" xml:space="preserve">
-    <value>lbltotal</value>
-  </data>
-  <data name="&gt;&gt;lbltotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbltotal.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;lbltotal.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="dgvsucursal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="dgvsucursal.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
-  <data name="dgvsucursal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 72</value>
-  </data>
-  <data name="dgvsucursal.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="dgvsucursal.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="dgvsucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>883, 340</value>
-  </data>
-  <data name="dgvsucursal.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.Name" xml:space="preserve">
-    <value>dgvsucursal</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 44</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 16</value>
-  </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>__________________________________________________________________</value>
-  </data>
-  <data name="&gt;&gt;label9.Name" xml:space="preserve">
-    <value>label9</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="tablista_empresa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 37</value>
-  </data>
-  <data name="tablista_empresa.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tablista_empresa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>897, 412</value>
-  </data>
-  <data name="tablista_empresa.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="tablista_empresa.Text" xml:space="preserve">
-    <value>LISTA  SUCURSAL</value>
-  </data>
-  <data name="&gt;&gt;tablista_empresa.Name" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;tablista_empresa.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tablista_empresa.Parent" xml:space="preserve">
-    <value>tapsucursal</value>
-  </data>
-  <data name="&gt;&gt;tablista_empresa.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="btneliminar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -1146,42 +1182,6 @@
   <data name="&gt;&gt;btneliminar.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="tapsucursal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="tapsucursal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="tapsucursal.ItemSize" type="System.Drawing.Size, System.Drawing">
-    <value>159, 33</value>
-  </data>
-  <data name="tapsucursal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 71</value>
-  </data>
-  <data name="tapsucursal.Padding" type="System.Drawing.Point, System.Drawing">
-    <value>20, 5</value>
-  </data>
-  <data name="tapsucursal.ShowToolTips" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tapsucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>905, 453</value>
-  </data>
-  <data name="tapsucursal.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;tapsucursal.Name" xml:space="preserve">
-    <value>tapsucursal</value>
-  </data>
-  <data name="&gt;&gt;tapsucursal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tapsucursal.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tapsucursal.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1189,7 +1189,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>907, 530</value>
+    <value>907, 540</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Sucursal</value>

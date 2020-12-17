@@ -67,8 +67,9 @@
             // 
             this.txtcodregsal.Location = new System.Drawing.Point(205, 26);
             this.txtcodregsal.Name = "txtcodregsal";
-            this.txtcodregsal.Size = new System.Drawing.Size(100, 23);
+            this.txtcodregsal.Size = new System.Drawing.Size(90, 23);
             this.txtcodregsal.TabIndex = 85;
+            this.txtcodregsal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtcodregsal.Validating += new System.ComponentModel.CancelEventHandler(this.txtcodregsal_Validating);
             // 
             // panel3
