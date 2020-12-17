@@ -26,7 +26,11 @@ eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado i
 )
 GO
 
-ALTER TABLE dbo.Empleado alter column Jornada_laboral varchar(11) not null
+ALTER TABLE dbo.Empleado alter column jornada_laboral varchar(11) not null
+
+EXECUTE sp_rename 'Empleado.Jornada_laboral', 'jornada_laboral', 'COLUMN';
+
+
 --select len('PART - TIME')
 
 

@@ -46,8 +46,13 @@ namespace Datos.Repositories
                 cmd = null;
                 using (cmd = new SqlCommand())
                 {
+<<<<<<< HEAD
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_UPDATE_REG_SALUD";
+=======
+                    cmd.Connection = conn;
+                    cmd.CommandText = "SP_DELETE_REGSALUD";
+>>>>>>> 9ecc0a3925277b6f0d6e3a348e63b93b44d2521a
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@id_regimen_salud", entiti.Id_regimen_salud);
