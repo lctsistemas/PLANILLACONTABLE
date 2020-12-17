@@ -140,11 +140,6 @@ namespace Presentacion
             }
         }
 
-        private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
-        {
-          
-        }
-
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -167,9 +162,9 @@ namespace Presentacion
         }
         private void HideTextButton()
         {
-            btnmedia.Text = "";
-            btnactualizar.Text = "";
             btnregistro.Text = "";
+            btnactualizar.Text = "";
+            btnmanteni.Text = "";
             btnreportes.Text = "";
             lineuser.Visible = false;
             lineperiodo.Visible = false;
@@ -178,10 +173,10 @@ namespace Presentacion
 
         private void ShowTextButton()
         {
-            btnmedia.Text = "&Mantenimiento";
-            btnactualizar.Text = "&Actualizar";
-            btnregistro.Text = "R&egistro";
-            btnreportes.Text = "&Repostes";
+            btnregistro.Text = "R&EGISTRO";
+            btnactualizar.Text = "&ACTUALIZAR";
+            btnmanteni.Text = "&MANTENIMIENTO";
+            btnreportes.Text = "&REPORTES";
             lineuser.Visible = true;
             lineperiodo.Visible = true;
             lblusuario.Visible = true;
@@ -217,7 +212,7 @@ namespace Presentacion
 
         private void btnregsalud_Click(object sender, EventArgs e)
         {
-            OpenForm<RegimenSalud>();
+            OpenForm<FrmRegimenSalud>();
         }
 
         private void btnregpens_Click(object sender, EventArgs e)

@@ -22,11 +22,15 @@ namespace Presentacion.Subvista
             using (ne = new Nempresa())
             {
                 dgvvista_emp.DataSource = ne.Getall();
-                lbltotal.Text = "Total Registro: " + dgvvista_emp.RowCount;
+                TotalDatos();
             }
         }
 
-
+        //TOTAL DATOS DE TABLA
+        private void TotalDatos()
+        {
+            lbltotal.Text = "Total Registro: " + dgvvista_emp.RowCount;
+        }
         private void Tabla()
         {
             dgvvista_emp.Columns[0].HeaderText = "ID";//codigo empresa maestra
@@ -51,12 +55,13 @@ namespace Presentacion.Subvista
 
             dgvvista_emp.Columns[5].HeaderText = "CODIGO";
             dgvvista_emp.Columns[5].Width = 80;
+            dgvvista_emp.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvvista_emp.Columns[6].HeaderText = "RAZON SOCIAL O DENOMINACION";
-            dgvvista_emp.Columns[6].Width = 350;
+            dgvvista_emp.Columns[6].Width = 370;
 
             dgvvista_emp.Columns[7].HeaderText = "LOCALIDAD";
-            dgvvista_emp.Columns[7].Width = 250;
+            dgvvista_emp.Columns[7].Width = 262;
 
             dgvvista_emp.Columns[8].HeaderText = "DIRECCION";
             dgvvista_emp.Columns[8].Width = 370;
@@ -120,6 +125,7 @@ namespace Presentacion.Subvista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvvista_emp.DataSource = ne.Search(txtbuscar.Text.Trim());
+            TotalDatos();
         }
        
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)

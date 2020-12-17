@@ -13,25 +13,14 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class RegimenSalud : Form
+    public partial class FrmRegimenSalud : Form
     {
         String result;
         private NRegimenSalud nrs = new NRegimenSalud();
-        private Int32 codigo;
-        public RegimenSalud()
+        public FrmRegimenSalud()
         {
             InitializeComponent();
         }
-
-        private void GenerarCodigo()
-        {
-            codigo = 0;
-            using (nrs)
-            {
-                codigo = nrs.GetCodigo();
-            }
-        }
-
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtcodregsal.Text) || String.IsNullOrWhiteSpace(txtregsal.Text))
@@ -52,8 +41,8 @@ namespace Presentacion.Vista
             }
             result = "";
             using (nrs)
-            {               
-                nrs.Cod_regi_salud = Convert.ToInt32(txtcodregsal.Text.ToString());
+            {
+                nrs.Cod_regi_salud = txtcodregsal.Text.Trim();
                 nrs.Descripcion =txtregsal.Text.ToString();
 
                 result = nrs.GuardarCambios();
@@ -68,13 +57,14 @@ namespace Presentacion.Vista
         {
             dgvregimensalud.Columns[0].HeaderText = "Id_regimen_salud";
             dgvregimensalud.Columns[0].Width = 50;
-            dgvregimensalud.Columns[0].Visible = false;
+            dgvregimensalud.Columns[0].Visible = false;            
 
             dgvregimensalud.Columns[1].HeaderText = "COD. REGIMEN SALUD";
             dgvregimensalud.Columns[1].Width = 120;
+            dgvregimensalud.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvregimensalud.Columns[2].HeaderText = "REGIMEN SALUD";
-            dgvregimensalud.Columns[2].Width = 250;
+            dgvregimensalud.Columns[2].Width = 285;
 
             dgvregimensalud.Columns[3].HeaderText = "state";
             dgvregimensalud.Columns[3].Width = 100;
@@ -87,6 +77,7 @@ namespace Presentacion.Vista
             using (nrs)
             {
                 dgvregimensalud.DataSource = nrs.Getall();
+                lbltotal.Text = "Total registro:  " + dgvregimensalud.RowCount;
             }
         }
 
@@ -96,7 +87,7 @@ namespace Presentacion.Vista
             using (nrs) { nrs.state = EntityState.Guardar; }
             Habilitar(true);
             limpiar();
-            //GenerarCodigo();
+          
         }
 
         private void RegimenSalud_Load(object sender, EventArgs e)
@@ -104,7 +95,7 @@ namespace Presentacion.Vista
             Showregimensalud();
             Habilitar(false);
             Tabla();
-           // GenerarCodigo();
+          
         }
 
         private void Habilitar(bool v)
@@ -195,15 +186,13 @@ namespace Presentacion.Vista
         {
             btncerrar.BackColor = Color.FromArgb(245, 183, 177);
         }
-
-        private void btncerrar_MouseHover(object sender, EventArgs e)
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
         }
-
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(64, 64, 64);
+            btncerrar.BackColor = Color.SlateGray;
 
         }
 
@@ -221,12 +210,14 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(64, 64, 64);
+            btnminimizar.BackColor = Color.SlateGray;
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
         }
+
+       
     }
 }

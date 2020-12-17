@@ -27,6 +27,11 @@ namespace Presentacion.Subvista
             return _instance;
         }
 
+        //TOTAL REGISTRO DE TABLA
+        private void TotalDatos()
+        {
+            lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
+        }
 
         private void Vista_user()
         {
@@ -34,7 +39,7 @@ namespace Presentacion.Subvista
             {
 
                 dgvvista_user.DataSource = nu.Getall();
-                lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
+                TotalDatos();
             }
         }
 
@@ -49,7 +54,7 @@ namespace Presentacion.Subvista
             dgvvista_user.Columns[1].Width = 150;
 
             dgvvista_user.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvvista_user.Columns[2].Width = 300;
+            dgvvista_user.Columns[2].Width = 345;
 
             dgvvista_user.Columns[3].HeaderText = "CONTRASEÑA";
             dgvvista_user.Columns[3].Width = 100;
@@ -91,7 +96,7 @@ namespace Presentacion.Subvista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvvista_user.DataSource = nu.Search(txtbuscar.Text.Trim());
-            lblcantidad.Text = "Total Registro: " + dgvvista_user.RowCount;
+            TotalDatos();
         }
 
         private void frmvista_usuario_FormClosing(object sender, FormClosingEventArgs e)

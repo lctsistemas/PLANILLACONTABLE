@@ -813,6 +813,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pempresa {
+            get {
+                object obj = ResourceManager.GetObject("pempresa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap planilla {
             get {
                 object obj = ResourceManager.GetObject("planilla", resourceCulture);
@@ -826,6 +836,16 @@ namespace Presentacion.Properties {
         internal static System.Drawing.Bitmap pmenu {
             get {
                 object obj = ResourceManager.GetObject("pmenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap puser {
+            get {
+                object obj = ResourceManager.GetObject("puser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
