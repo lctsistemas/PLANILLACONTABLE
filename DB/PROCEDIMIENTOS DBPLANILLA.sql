@@ -1052,14 +1052,7 @@ END
 GO
 
 GO
-<<<<<<< HEAD
-ALTER PROC SP_DELETE_REGSALUD -- FALTA MODIFICAR.
-@id_regimen_salud int,
-@mensaje varchar(100) output
-AS BEGIN
-DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
-SET @mensaje= '¡ELIMINADO!'
-=======
+
 create PROC SP_DELETE_REGSALUD
 @id_regimen_salud int,
 @mensaje varchar(100) output
@@ -1074,7 +1067,6 @@ ELSE
 		DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
 		SET @mensaje= 'REGIMEN DE SALUD ELIMINADO CORRECTAMENTE'
 	END
->>>>>>> 9ecc0a3925277b6f0d6e3a348e63b93b44d2521a
 END
 GO
 
