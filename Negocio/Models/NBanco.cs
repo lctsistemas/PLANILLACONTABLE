@@ -1,6 +1,5 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
-using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;

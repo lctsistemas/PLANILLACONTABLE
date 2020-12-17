@@ -569,127 +569,6 @@ AS
 SELECT id_rol, descrip_rol FROM dbo.Rol ORDER BY id_rol DESC
 GO
 
-<<<<<<< HEAD
-
-
-
-
---GENERAR CODIGO MESES_MAESTRA
-CREATE PROC SP_GENERAR_MESESMAESTRA
-(@mesesm int output)
-AS BEGIN
-SET @mesesm=(SELECT count(mm.id_meses_maestra) FROM dbo.Meses_maestra mm)
-IF(@mesesm=0)
-	BEGIN
-		SET @mesesm=1		
-	END
-ELSE
-	BEGIN
-		SET @mesesm=(SELECT MAX(mm.id_meses_maestra)+1 FROM dbo.Meses_maestra mm)		
-	END
-END
-GO
-=======
----------- PROCEDIMIENTOS GENERAR CODIGO AUTOMATICO ------------
->>>>>>> Carlos
-
---GENERAR CODIGO GRATI_MANTO
-CREATE PROC SP_GENERAR_GRATIMANTO
-(@gratimant int output)
-AS BEGIN
-SET @gratimant=(SELECT count(gm.id_grati) FROM dbo.Grati_manto gm)
-IF(@gratimant=0)
-	BEGIN
-		SET @gratimant=1		
-	END
-ELSE
-	BEGIN
-		SET @gratimant=(SELECT MAX(gm.id_grati)+1 FROM dbo.Grati_manto gm)		
-	END
-END
-GO
-
---GENERAR CODIGO FALTAS
-CREATE PROC SP_GENERAR_FALTAS
-(@faltas int output)
-AS BEGIN
-SET @faltas=(SELECT count(f.id_falta) FROM dbo.Faltas f)
-IF(@faltas=0)
-	BEGIN
-		SET @faltas=1		
-	END
-ELSE
-	BEGIN
-		SET @faltas=(SELECT MAX(f.id_falta)+1 FROM dbo.Faltas f)
-	END
-END
-GO
-
---GENERAR CODIGO CTS
-CREATE PROC SP_GENERAR_CTS
-(@cts int output)
-AS BEGIN
-SET @cts=(SELECT count(ct.id_cts) FROM dbo.cts ct)
-IF(@cts=0)
-	BEGIN
-		SET @cts=1		
-	END
-ELSE
-	BEGIN
-		SET @cts=(SELECT MAX(c.id_cts)+1 FROM dbo.cts c)
-	END
-END
-GO
-
---GENERAR CODIGO GRATIFICACIONES
-CREATE PROC SP_GENERAR_GRATI
-(@grati int output)
-AS BEGIN
-SET @grati=(SELECT count(g.id_grati) FROM dbo.Gratificaciones g)
-IF(@grati=0)
-	BEGIN
-		SET @grati=1
-	END
-ELSE
-	BEGIN
-		SET @grati=(SELECT MAX(c.id_grati)+1 FROM dbo.Gratificaciones c)
-	END
-END
-GO
-
---GENERAR CODIGO CTS_MANTO
-CREATE PROC SP_GENERAR_CTSMANTO
-(@ctsmanto int output)
-AS BEGIN
-SET @ctsmanto=(SELECT count(cm.id_cts_manto) FROM dbo.cts_manto cm)
-IF(@ctsmanto=0)
-	BEGIN
-		SET @ctsmanto=1		
-	END
-ELSE
-	BEGIN
-		SET @ctsmanto=(SELECT MAX(cm.id_cts_manto)+1 FROM dbo.cts_manto cm)
-	END
-END
-GO
-
---GENERAR CODIGO Descuentos
-CREATE PROC SP_GENERAR_Descuentos
-(@desc int output)
-AS BEGIN
-SET @desc=(SELECT count(d.id_descuentos) FROM dbo.Descuentos d)
-IF(@desc=0)
-	BEGIN
-		SET @desc=1		
-	END
-ELSE
-	BEGIN
-		SET @desc=(SELECT MAX(d.id_descuentos)+1 FROM dbo.Descuentos d)
-	END
-END
-GO
-
-
 
 ----	PROCEDIMIENTOS PARA LLENAR COMBOMBOX
 alter PROC SP_REG_SALUD		
@@ -974,7 +853,7 @@ AS BEGIN
 END		
 GO
 
-CREATE PROC SP_INSERT_COMISION_ONP
+ALTER PROC SP_INSERT_COMISION_ONP
 @codigo_regimen int,
 @comision decimal(6,2),
 @idmes int,
@@ -988,13 +867,13 @@ DECLARE @idcomi int
 		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
 
 	INSERT INTO dbo.ComisionesPension(idcomision, codigo_regimen,
-	comision, idmes, idperiodo) VALUES
-	(@idcomi, @codigo_regimen, @comision, @idmes, @idperiodo)
+	comision, saldo, seguro, aporte, tope,idmes, idperiodo) VALUES
+	(@idcomi, @codigo_regimen, @comision, 0, 0, 0, 0, @idmes, @idperiodo)
 END
 GO
 
 SELECT * FROM ComisionesPension
-delete from ComisionesPension where idmes=4
+delete from ComisionesPension where idmes=11
 go
 
 
@@ -1047,7 +926,7 @@ GO
 
 
 
---PROCEDIMIENTO PARA INSERTAR, UPDATE, DELETE, SHOW => PLANILLA
+--  PROCEDIMIENTO PARA INSERTAR, UPDATE, DELETE, SHOW => PLANILLA
 CREATE PROC SP_INSERT_PLANILLA
 --@idtipo_planilla int,
 @id_periodo int,
@@ -1124,8 +1003,8 @@ END
 GO
 
 
-
-CREATE PROCEDURE SP_ADD_REG_SAL(
+-- PROCEDIMIENTO PARA REGIMEN SALUD (ADD, UPDATE, DELETE Y SHOW)
+ALTER PROCEDURE SP_ADD_REG_SAL(
 @cod_regi_salud char(2),
 @descripcion_rsalud nvarchar(100),
 @mensaje varchar(100) output)
@@ -1144,7 +1023,7 @@ END
 GO
 
 
-CREATE PROC SP_UPDATE_REG_SALUD
+ALTER PROC SP_UPDATE_REG_SALUD
 @id_regimen_salud int,
 @cod_regimen_salud char(2),
 @descripcion_rsalud nvarchar(100)
@@ -1155,16 +1034,12 @@ END
 GO
 
 GO
-ALTER PROC SP_DELETE_REGSALUD
+ALTER PROC SP_DELETE_REGSALUD -- FALTA MODIFICAR.
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN
 DELETE from REGIMEN_SALUD where id_regimen_salud=@id_regimen_salud
-<<<<<<< HEAD
 SET @mensaje= '¡ELIMINADO!'
-=======
-SET @mensaje= 'REGIMEN DE SALUD ELIMINADO CORRECTAMENTE'
->>>>>>> 4524f46484f84d9f51a4288858bd83e151f44432
 END
 GO
 
@@ -1176,7 +1051,7 @@ END
 GO
 
 
---- SCRIPT SUBSIDIOS
+---   SCRIPT SUBSIDIOS
 ALTER PROC SP_SHOW_DETSUBSIDIOS -- nos muestra lo que registramos
 @idmes int,
 @idperiodo int,

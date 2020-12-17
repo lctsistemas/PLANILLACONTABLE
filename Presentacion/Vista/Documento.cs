@@ -24,9 +24,16 @@ namespace Presentacion.Vista
             using (nd)
             {               
                 dgvdocumento.DataSource = nd.Getall();
-                lbltotal.Text = "Total registro: " + dgvdocumento.Rows.Count;
+                TotalRegistro();
             }
         }
+
+        //TOTAL REGISTRO DE TABLA
+        private void TotalRegistro()
+        {
+            lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
+        }
+
         //MODIFICAR DATAGRIDVIEW
         private void Tabla()
         {
@@ -102,16 +109,17 @@ namespace Presentacion.Vista
 
             using (nd)
             {
-                
-                    nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
-                    nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
-                    nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
 
-               
-                   result = nd.SaveChanges();
-                   ShowDocument();
-                   limpiar();
-                
+                nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
+                nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
+                nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
+
+
+                result = nd.SaveChanges();
+                ShowDocument();
+                Messages.M_info(result);
+                limpiar();
+
             }
         }
         //VALIATE
@@ -123,7 +131,7 @@ namespace Presentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvdocumento.DataSource = nd.Search(txtbuscar.Text.Trim());
-            lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
+            TotalRegistro();
         }
 
         //TABLA
@@ -155,16 +163,20 @@ namespace Presentacion.Vista
                     nd.state = EntityState.Remover;
                     nd.iddocumento = Convert.ToInt32(dgvdocumento.CurrentRow.Cells[0].Value);
                     result = nd.SaveChanges();
-                    ShowDocument();
-                    Messages.M_info(result);
-                }
 
+                    if (result.Contains("esta en uso."))
+                        Messages.M_error(result);
+                    else
+                    {
+                        ShowDocument();
+                        Messages.M_info(result);
+                    }                                                            
+                }
             }
             else
             {
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
-
         }
 
         private void btncerrar_Click(object sender, EventArgs e)

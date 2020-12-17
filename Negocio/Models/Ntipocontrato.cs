@@ -1,6 +1,5 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
-using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
@@ -78,12 +77,7 @@ namespace Negocio.Models
                 }
                 return list_tcontrato;
             }
-        }
-
-        public int Getcodigo()
-        {
-            return new Ktipocontrato().GetCodigo();
-        }
+        }    
 
         public void Dispose()
         {

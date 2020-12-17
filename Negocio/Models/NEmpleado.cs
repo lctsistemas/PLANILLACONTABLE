@@ -1,6 +1,5 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
-using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
@@ -184,12 +183,7 @@ namespace Negocio.Models
             return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
-        //public bool Exite(string id)
-        //{
-        //    return listaemp.FindAll(e => e.codigo_usu.Contains(id));
-        //}
-
-
+        
         //CONTRATO
 
         public DataTable ListaEmple_total(NEmpleado entiti)

@@ -1,6 +1,5 @@
 ﻿using Datos.Contract;
 using Datos.Entities;
-using Datos.KeyAutomatic;
 using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
@@ -93,9 +92,5 @@ namespace Negocio.Models
 
         }
 
-        public int Getcodigo()
-        {
-            return new KRegimen().Getcodigo();
-        }
     }
 }

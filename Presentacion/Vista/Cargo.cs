@@ -25,10 +25,15 @@ namespace Presentacion.Vista
             using (nc)
             {
                 dgvcargo.DataSource = nc.Getall();
-                lbltotal.Text = "Total registro: " + dgvcargo.Rows.Count;
+                TotalDatos();
             }
         }
 
+        //TOTAL REGISTRO EN TABLA
+        private void TotalDatos()
+        {
+            lbltotal.Text = "Total registro: " + dgvcargo.Rows.Count;
+        }
 
         //MODIFICAR DATAGRIDVIEW
         private void Tabla()
@@ -117,6 +122,7 @@ namespace Presentacion.Vista
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             dgvcargo.DataSource = nc.Search(txtbuscar.Text.Trim());
+            TotalDatos();
 
         }
         //DELETE
@@ -133,8 +139,15 @@ namespace Presentacion.Vista
                         nc.state = EntityState.Remover;
                         nc.idcargo = Convert.ToInt32(dgvcargo.CurrentRow.Cells[0].Value);
                         result = nc.SaveChanges();
-                        ShowCargo();
-                        Messages.M_info(result);
+
+                        if (result.Contains("esta en uso"))
+                            Messages.M_error(result);
+                        else
+                        {
+                            ShowCargo();
+                            Messages.M_info(result);
+                        }
+                        
                     }
                 }
 
@@ -161,6 +174,7 @@ namespace Presentacion.Vista
                     txtnom_cargo.Text = Convert.ToString(r.Cells[1].Value);
                     txtdescrip.Text = Convert.ToString(r.Cells[2].Value);
                     ValidateError.validate.Clear();//LIMPIA LOS ERRORPROVIDER
+                    Habilitar(true);
                 }
             }
 

@@ -27,6 +27,7 @@ namespace Presentacion.Vista
             using (ns)
             {
                 dgvsubsidio.DataSource = ns.Getall();
+                lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
             }
         }
 

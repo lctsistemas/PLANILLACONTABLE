@@ -365,3 +365,4 @@ C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoPlanilla.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoPlanilla.resources
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmRegimenSalud.resources

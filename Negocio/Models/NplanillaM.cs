@@ -59,14 +59,11 @@ namespace Negocio.Models
                         PNumero_documento = item[3].ToString(),
                         PNombres = item[4].ToString(),
                         PDescrip_regipension = item[5].ToString(),
-                        PVcomision = Convert.ToDecimal(item[6]),
-                        //PVseguro = Convert.ToDecimal(item[7]),
-                        PVseguro = item[7] == null ? 0 : Convert.ToDecimal(item[7]),
-                        //PVaporte = Convert.ToDecimal(item[8]),
-                        PVaporte = item[8] == null ? 0 : Convert.ToDecimal(item[8]),
+                        PVcomision = Convert.ToDecimal(item[6]),                        
+                        PVseguro = Convert.ToDecimal(item[7]),                    
+                        PVaporte = Convert.ToDecimal(item[8]),
                         PCargop = item[9].ToString(),
-                        PFecha_inicio = Convert.ToDateTime(item[10]),
-                        //PFecha_fin=Convert.ToDateTime(item[11]),
+                        PFecha_inicio = Convert.ToDateTime(item[10]),                        
                         PRemune_basica = Convert.ToDecimal(item[12]),
                         PAsig_familiar = item[13].ToString() == "0.00" ? null : item[13].ToString()
                        

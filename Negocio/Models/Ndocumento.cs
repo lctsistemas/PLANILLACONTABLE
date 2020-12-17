@@ -48,12 +48,12 @@ namespace Negocio.Models
                 {
                     case EntityState.Guardar:
                         docu_repsository.Add(rt);
-                        mensaje = "Successfully Recod!";
+                        mensaje = "¡Registrado!";
                         break;
 
                     case EntityState.Modificar:
                         docu_repsository.Edit(rt);
-                        mensaje = "Successfully Edited!";
+                        mensaje = "¡Modificado!";
                         break;
                     case EntityState.Remover:
                         docu_repsository.Delete(rt);
