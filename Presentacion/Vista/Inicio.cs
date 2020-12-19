@@ -26,6 +26,13 @@ namespace Login_inicio
 
         }
 
+        //MOVER FORMULARIO
+        private void MoverVentana()
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         //LLAMAR USUARIO PARA CARGAR EN COMBOBOX
         private void Fill_user()
         {
@@ -114,12 +121,7 @@ namespace Login_inicio
                 txtpass.ForeColor = Color.DimGray;
                 txtpass.UseSystemPasswordChar = false;
             }
-        }
-
-        private void lblcerrar_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        }      
 
         private void btnminimizar_Click(object sender, EventArgs e)
         {
@@ -218,8 +220,7 @@ namespace Login_inicio
 
         private void frminicio_MouseDown(object sender, MouseEventArgs e)
         {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            MoverVentana();
         }
 
         private void frminicio_Load(object sender, EventArgs e)
@@ -268,16 +269,19 @@ namespace Login_inicio
             }
         }
 
+        //botones
+        private void lblcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         private void lblcerrar_MouseMove(object sender, MouseEventArgs e)
         {
-            lblcerrar.BackColor = Color.Crimson;
-            lblcerrar.ForeColor = Color.White;
+            lblcerrar.BackColor = Color.Crimson;         
         }
 
         private void lblcerrar_MouseLeave(object sender, EventArgs e)
         {
-            lblcerrar.BackColor = Color.FromArgb(33, 33, 33);
-            lblcerrar.ForeColor = Color.DimGray;
+            lblcerrar.BackColor = Color.FromArgb(33, 33, 33);           
         }
 
         private void lblcerrar_MouseDown(object sender, MouseEventArgs e)
@@ -285,23 +289,26 @@ namespace Login_inicio
             lblcerrar.BackColor = Color.FromArgb(123, 36, 28);
         }
 
+        //minimizar
         private void lblminimizar_MouseMove(object sender, MouseEventArgs e)
         {
-            lblminimizar.BackColor = Color.FromArgb(33, 47, 61);
-            lblminimizar.ForeColor = Color.White;
+            lblminimizar.BackColor = Color.FromArgb(51,51,51);          
         }
 
         private void lblminimizar_MouseLeave(object sender, EventArgs e)
         {
             lblminimizar.BackColor = Color.FromArgb(33, 33, 33);
-            lblminimizar.ForeColor = Color.DimGray;
         }
 
         private void lblminimizar_MouseDown(object sender, MouseEventArgs e)
         {
-            lblminimizar.BackColor = Color.FromArgb(123, 36, 28);
+            lblminimizar.BackColor = Color.FromArgb(60,60,60);
         }
-
+        private void lblminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        //...
         private void txtuser_TextChanged(object sender, EventArgs e)
         {
             activo = false;
@@ -352,6 +359,11 @@ namespace Login_inicio
         {
             //ESTAMOS BLOQUEANDO LA TECLA ENTER.
             Keypress.Text(e, txtuser);
+        }
+
+        private void panelinicio_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverVentana();
         }
     }
 }

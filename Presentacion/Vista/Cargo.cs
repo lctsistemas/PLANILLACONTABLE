@@ -193,17 +193,14 @@ namespace Presentacion.Vista
 
         private void btncerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+           this.Close();
         }
-
-       
-
+      
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
 
         }
-
 
         private void barratitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -223,7 +220,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
         }
 
     
@@ -239,12 +236,17 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
+            btnminimizar.BackColor = Color.FromArgb(100,115,129);            
         }
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
         }
     }
 }

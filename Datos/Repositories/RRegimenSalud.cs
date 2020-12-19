@@ -48,8 +48,8 @@ namespace Datos.Repositories
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_UPDATE_REG_SALUD";
-                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@id_regimen_salud", entiti.Id_regimen_salud);
                     cmd.Parameters.AddWithValue("@cod_regimen_salud", entiti.Cod_regi_salud);
                     cmd.Parameters.AddWithValue("@descripcion_rsalud", entiti.Descripcion);
