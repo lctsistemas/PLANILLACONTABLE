@@ -88,7 +88,7 @@ namespace Presentacion.Vista
                     nr.state = EntityState.Modificar;
                     nr.idrol = Convert.ToInt32(dgvrol.CurrentRow.Cells[0].Value);//idrol
                     txtrol.Text = dgvrol.CurrentRow.Cells[1].Value.ToString();//nombre rol
-                    tabrol.SelectedIndex = 1;
+                    
                 }
             }
         }

@@ -38,24 +38,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.barratitulo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.dgvcargo = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.barratitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltotal
@@ -78,7 +78,7 @@
             this.txtdescrip.Multiline = true;
             this.txtdescrip.Name = "txtdescrip";
             this.txtdescrip.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtdescrip.Size = new System.Drawing.Size(189, 75);
+            this.txtdescrip.Size = new System.Drawing.Size(224, 75);
             this.txtdescrip.TabIndex = 13;
             // 
             // txtnom_cargo
@@ -86,7 +86,7 @@
             this.txtnom_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnom_cargo.Location = new System.Drawing.Point(167, 34);
             this.txtnom_cargo.Name = "txtnom_cargo";
-            this.txtnom_cargo.Size = new System.Drawing.Size(192, 22);
+            this.txtnom_cargo.Size = new System.Drawing.Size(224, 22);
             this.txtnom_cargo.TabIndex = 12;
             this.txtnom_cargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnom_cargo_KeyPress);
             this.txtnom_cargo.Validating += new System.ComponentModel.CancelEventHandler(this.txtnom_cargo_Validating);
@@ -96,11 +96,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(27, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 17);
+            this.label1.Size = new System.Drawing.Size(97, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Nombre Cargo";
             // 
@@ -109,11 +109,11 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(27, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 11;
             this.label2.Text = "Descripción";
             // 
@@ -136,16 +136,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(459, 535);
             this.panel2.TabIndex = 15;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 260);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -177,47 +167,15 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 5);
+            this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 19);
+            this.label3.Size = new System.Drawing.Size(97, 35);
             this.label3.TabIndex = 1;
             this.label3.Text = "CARGO";
-            // 
-            // btnminimizar
-            // 
-            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(378, 5);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnminimizar.TabIndex = 0;
-            this.btnminimizar.TabStop = false;
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
-            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
-            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-            this.btncerrar.Location = new System.Drawing.Point(416, 5);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 20);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 0;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
-            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
-            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtbuscar
             // 
@@ -283,7 +241,52 @@
             this.dgvcargo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvcargo.Size = new System.Drawing.Size(437, 208);
             this.dgvcargo.TabIndex = 0;
+            this.dgvcargo.TabStop = false;
             this.dgvcargo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcargo_CellDoubleClick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 260);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.btnminimizar.Location = new System.Drawing.Point(387, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimizar.TabIndex = 0;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.btncerrar.Location = new System.Drawing.Point(422, 0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 35);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 0;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
             // btnnuevo
             // 
@@ -291,7 +294,7 @@
             this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnnuevo.FlatAppearance.BorderSize = 0;
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnnuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnuevo.ForeColor = System.Drawing.Color.White;
             this.btnnuevo.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
             this.btnnuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -310,7 +313,7 @@
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
             this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -329,7 +332,7 @@
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderSize = 0;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -356,14 +359,13 @@
             this.Load += new System.EventHandler(this.frmcargo_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.barratitulo.ResumeLayout(false);
-            this.barratitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).EndInit();
             this.ResumeLayout(false);
 
         }

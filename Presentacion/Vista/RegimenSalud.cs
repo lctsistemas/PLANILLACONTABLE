@@ -19,8 +19,27 @@ namespace Presentacion.Vista
         private NRegimenSalud nrs = new NRegimenSalud();
         public FrmRegimenSalud()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
+      
+
+        //private void myBoton_GotFocus(object sender, EventArgs e)
+        //{
+        //    btnclose.Enabled = false;
+        //}
+        //protected override bool ShowFocusCues
+        //{
+        //    get
+        //    {
+        //        //return base.ShowFocusCues;
+        //        return false;
+        //        //base.ShowFocusCues;
+        //    }
+             
+        //}
+        
+
+
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtcodregsal.Text) || String.IsNullOrWhiteSpace(txtregsal.Text))
@@ -170,32 +189,6 @@ namespace Presentacion.Vista
             ValidateError.Validate_text(txtregsal, "Campo Requerido");
         }
 
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-      
-
-        private void btnminimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
-        {
-            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
-        }
-        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.SlateGray;
-
-        }
-
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
@@ -206,6 +199,28 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }         
+     
+
+        #region BOTONES CERRAR Y MINIMIZAR
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.SlateGray;
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165,171,179);
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
@@ -215,9 +230,18 @@ namespace Presentacion.Vista
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
+            btnminimizar.BackColor = Color.FromArgb(100,115,129);
         }
 
-       
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
     }
 }

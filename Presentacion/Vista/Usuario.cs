@@ -11,7 +11,7 @@ namespace Presentacion.Vista
     {
         private Nusuario nu = new Nusuario();
         private String result;
-       
+
         public frmusuario()
         {
             InitializeComponent();
@@ -41,8 +41,8 @@ namespace Presentacion.Vista
 
         private bool Validar()
         {
-            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text) 
-                || String.IsNullOrWhiteSpace(txtpassword.Text) || String.IsNullOrWhiteSpace(cbogenero.Text) 
+            if (String.IsNullOrWhiteSpace(txtacceso.Text) || String.IsNullOrWhiteSpace(txtnom_usuario.Text)
+                || String.IsNullOrWhiteSpace(txtpassword.Text) || String.IsNullOrWhiteSpace(cbogenero.Text)
                 || String.IsNullOrWhiteSpace(cborol.Text))
             {
                 ValidateChildren();
@@ -66,7 +66,7 @@ namespace Presentacion.Vista
             dgvusuario.Columns[2].Width = 300;
 
             dgvusuario.Columns[3].HeaderText = "CONTRASEÑA";
-            dgvusuario.Columns[3].Width = 100;           
+            dgvusuario.Columns[3].Width = 100;
 
             dgvusuario.Columns[4].HeaderText = "CODIGO ROL";
             dgvusuario.Columns[4].Width = 50;
@@ -112,13 +112,13 @@ namespace Presentacion.Vista
         private void frmusuario_Load(object sender, EventArgs e)
         {
             cbogenero.Items.Add("M");
-            cbogenero.Items.Add("F");            
+            cbogenero.Items.Add("F");
             Tooltip.Title(btnrol, "Registrar Rol", true);
             Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo", true);
             Tabla();
             Habilitar(false);
             cborol.Text = "";
-            cborol.SelectedValue = 0;            
+            cborol.SelectedValue = 0;
         }
 
         //FORMULARIO ROL
@@ -133,7 +133,7 @@ namespace Presentacion.Vista
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            using (nu) { nu.state = EntityState.Guardar; }            
+            using (nu) { nu.state = EntityState.Guardar; }
             Habilitar(true);
             limpiar();
         }
@@ -152,11 +152,11 @@ namespace Presentacion.Vista
                 nu.Password = txtpassword.Text.Trim();
                 nu.Genero = cbogenero.SelectedItem.ToString();
                 nu.Idrol = Convert.ToInt32(cborol.SelectedValue);
-               
+
                 result = nu.SaveChanges();
                 Messages.M_info(result);
                 ShowUser();
-                limpiar();                                         
+                limpiar();
             }
         }
 
@@ -295,5 +295,37 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtpassword, "Contraseña requerida!");
         }
+
+        private void btnrestaurar_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btnrestaurar_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnrestaurar_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btnmaximizar_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btnmaximizar_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmaximizar_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+
     }
 }

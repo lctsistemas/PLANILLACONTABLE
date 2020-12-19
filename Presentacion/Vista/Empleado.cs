@@ -485,9 +485,7 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtnumdoc, "Campo requerido");
         }
-
        
-
         private void txtnac_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtnac, "Campo requerido");
@@ -528,40 +526,21 @@ namespace Presentacion.Vista
             {
                 Messages.M_warning("Seleccione un Fila");
             }
-        }
-
-        private void Empleado_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        }        
 
         private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
+            if(this.WindowState == FormWindowState.Normal)
+            {
+                btnmaximizar.Visible = true;
+                btnrestaurar.Visible = false;
+            }
+            
         }
 
-        private void btnmaximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btnrestaurar.Visible = true;
-            btnmaximizar.Visible = false;
-
-        }
-
-        private void btnrestaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
-        }
+      
 
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -617,10 +596,6 @@ namespace Presentacion.Vista
             }
         }
 
-        private void btnminimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
 
         private void linkpagina_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -762,17 +737,6 @@ namespace Presentacion.Vista
                 ValidateError.Validate_text(txtnum_cuenta, null);
         }
 
-
-        private void btnminimizar_MouseLeave(object sender, EventArgs e)
-        {
-            btnminimizar.BackColor = Color.SlateGray;
-        }
-       
-        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
-        }
-
         private void cbore_pensionario_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbore_pensionario.Text.Contains("O.N.P"))
@@ -783,6 +747,96 @@ namespace Presentacion.Vista
         {
             if (!cbotipopago.Text.Contains("DEPOSITO EN CUENTA"))
                 ValidateError.validate.SetError(txtnum_cuenta,null);
+        }
+
+        //cerrar
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(116,118,118);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+        //maximizar
+        private void btnmaximizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
+        private void btnmaximizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(116,118,118);
+        }
+
+        private void btnmaximizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //restaurar
+        private void btnrestaurar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnrestaurar.BackColor = Color.FromArgb(165,171,179);
+        }
+
+        private void btnrestaurar_MouseLeave(object sender, EventArgs e)
+        {
+            btnrestaurar.BackColor = Color.FromArgb(116,118,118);
+        }
+
+        private void btnrestaurar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnrestaurar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //minimizar
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165,171,179);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(116,118,118);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138,140,140) ;
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //..
+        private void btnmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btnrestaurar.Visible = true;
+            btnmaximizar.Visible = false;
+
+        }
+
+        private void btnrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btnmaximizar.Visible = true;
+            btnrestaurar.Visible = false;
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void Empleado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Dispose();
         }
 
        

@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtuser = new System.Windows.Forms.TextBox();
             this.txtpass = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
-            this.lblcerrar = new System.Windows.Forms.Label();
-            this.lblminimizar = new System.Windows.Forms.Label();
             this.lblerror = new System.Windows.Forms.Label();
             this.dgvlogin = new System.Windows.Forms.DataGridView();
             this.numeric_periodo = new System.Windows.Forms.NumericUpDown();
@@ -50,12 +48,18 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelinicio = new System.Windows.Forms.Panel();
+            this.lblminimizar = new System.Windows.Forms.PictureBox();
+            this.lblcerrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvlogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_periodo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelinicio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lblminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // txtuser
@@ -122,37 +126,6 @@
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
-            // lblcerrar
-            // 
-            this.lblcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblcerrar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcerrar.ForeColor = System.Drawing.Color.LightGray;
-            this.lblcerrar.Location = new System.Drawing.Point(503, 9);
-            this.lblcerrar.Name = "lblcerrar";
-            this.lblcerrar.Size = new System.Drawing.Size(28, 26);
-            this.lblcerrar.TabIndex = 7;
-            this.lblcerrar.Text = "X";
-            this.lblcerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblcerrar.Click += new System.EventHandler(this.lblcerrar_Click);
-            this.lblcerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseDown);
-            this.lblcerrar.MouseLeave += new System.EventHandler(this.lblcerrar_MouseLeave);
-            this.lblcerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseMove);
-            // 
-            // lblminimizar
-            // 
-            this.lblminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblminimizar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblminimizar.ForeColor = System.Drawing.Color.LightGray;
-            this.lblminimizar.Location = new System.Drawing.Point(472, 9);
-            this.lblminimizar.Name = "lblminimizar";
-            this.lblminimizar.Size = new System.Drawing.Size(28, 26);
-            this.lblminimizar.TabIndex = 7;
-            this.lblminimizar.Text = "▬";
-            this.lblminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
-            this.lblminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblminimizar_MouseDown);
-            this.lblminimizar.MouseLeave += new System.EventHandler(this.lblminimizar_MouseLeave);
-            this.lblminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblminimizar_MouseMove);
-            // 
             // lblerror
             // 
             this.lblerror.AutoSize = true;
@@ -175,26 +148,26 @@
             this.dgvlogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvlogin.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvlogin.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Crimson;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Crimson;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlogin.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvlogin.ColumnHeadersHeight = 30;
             this.dgvlogin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvlogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvlogin.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvlogin.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvlogin.EnableHeadersVisualStyles = false;
             this.dgvlogin.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvlogin.Location = new System.Drawing.Point(27, 320);
@@ -202,11 +175,11 @@
             this.dgvlogin.ReadOnly = true;
             this.dgvlogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvlogin.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvlogin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvlogin.Size = new System.Drawing.Size(482, 171);
             this.dgvlogin.TabIndex = 15;
@@ -358,12 +331,55 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Presentacion.Properties.Resources.logolct2_png;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(50, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelinicio
+            // 
+            this.panelinicio.Controls.Add(this.lblminimizar);
+            this.panelinicio.Controls.Add(this.lblcerrar);
+            this.panelinicio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelinicio.Location = new System.Drawing.Point(0, 0);
+            this.panelinicio.Name = "panelinicio";
+            this.panelinicio.Size = new System.Drawing.Size(540, 35);
+            this.panelinicio.TabIndex = 24;
+            this.panelinicio.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelinicio_MouseDown);
+            // 
+            // lblminimizar
+            // 
+            this.lblminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.lblminimizar.Location = new System.Drawing.Point(470, 0);
+            this.lblminimizar.Name = "lblminimizar";
+            this.lblminimizar.Size = new System.Drawing.Size(35, 35);
+            this.lblminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.lblminimizar.TabIndex = 13;
+            this.lblminimizar.TabStop = false;
+            this.lblminimizar.Click += new System.EventHandler(this.lblminimizar_Click);
+            this.lblminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblminimizar_MouseDown);
+            this.lblminimizar.MouseLeave += new System.EventHandler(this.lblminimizar_MouseLeave);
+            this.lblminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblminimizar_MouseMove);
+            // 
+            // lblcerrar
+            // 
+            this.lblcerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblcerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblcerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.lblcerrar.Location = new System.Drawing.Point(505, 0);
+            this.lblcerrar.Name = "lblcerrar";
+            this.lblcerrar.Size = new System.Drawing.Size(35, 35);
+            this.lblcerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.lblcerrar.TabIndex = 12;
+            this.lblcerrar.TabStop = false;
+            this.lblcerrar.Click += new System.EventHandler(this.lblcerrar_Click);
+            this.lblcerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseDown);
+            this.lblcerrar.MouseLeave += new System.EventHandler(this.lblcerrar_MouseLeave);
+            this.lblcerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lblcerrar_MouseMove);
             // 
             // frminicio
             // 
@@ -373,14 +389,12 @@
             this.ClientSize = new System.Drawing.Size(540, 588);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtroles);
             this.Controls.Add(this.cboroles);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.numeric_periodo);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvlogin);
-            this.Controls.Add(this.lblminimizar);
-            this.Controls.Add(this.lblcerrar);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtpass);
@@ -390,6 +404,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.panelinicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frminicio";
             this.Opacity = 0.95D;
@@ -404,6 +419,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelinicio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lblminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblcerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,8 +432,6 @@
         private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnlogin;
-        private System.Windows.Forms.Label lblcerrar;
-        private System.Windows.Forms.Label lblminimizar;
         private System.Windows.Forms.Label lblerror;
         private System.Windows.Forms.DataGridView dgvlogin;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -429,6 +445,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelinicio;
+        private System.Windows.Forms.PictureBox lblcerrar;
+        private System.Windows.Forms.PictureBox lblminimizar;
     }
 }
 

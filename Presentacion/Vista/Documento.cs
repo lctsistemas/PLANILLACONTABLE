@@ -200,6 +200,7 @@ namespace Presentacion.Vista
             this.Dispose();
         }
 
+        #region boton cerrar y minimizar
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
@@ -212,20 +213,28 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(205, 97, 85);
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
         }
-
-        private void barraTitulo_Paint(object sender, PaintEventArgs e)
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
         {
-
+            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
         }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.SlateGray;
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(100, 115, 129);
+        }
+        #endregion
 
         private void txtdocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Keypress.SoloLetras(e);
         }
-
-
 
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -247,5 +256,7 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtdocumento, "Campo requerido");
         }
+
+        
     }
 }
