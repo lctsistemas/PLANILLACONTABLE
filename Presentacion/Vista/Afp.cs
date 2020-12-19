@@ -181,18 +181,7 @@ namespace Presentacion.Vista
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.SlateGray;
-        }
-
-        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
-
+       
         private void dgvcomision_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvcomision.Rows.Count > 0)
@@ -244,7 +233,7 @@ namespace Presentacion.Vista
             {
                 if (chkcopy_pega.Text.Equals("PEGAR") && dgvcomision.Rows.Count == 0)
                 {
-                    chkcopy_pega.BackColor = Color.SteelBlue;
+                    chkcopy_pega.BackColor = Color.FromArgb(160,160,160);
                     chkcopy_pega.Text = "COPIAR";
                     Fill_comisionafp(Convert.ToInt32(txtidmes.Text.Trim()));
                     Fill_comisionOnp(Convert.ToInt32(txtidmes.Text.Trim()));
@@ -265,6 +254,43 @@ namespace Presentacion.Vista
                 btnupdate.Enabled = true;
                 //MessageBox.Show("cell cambio de valor");// si funciona
         }
+
+        //BOTONES COLOR
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
+        //MINIMIZAR
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165,171,179);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(116,118,118);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(130,140,140);
+        }
+        //..
 
         //private void dgvcomision_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         //{

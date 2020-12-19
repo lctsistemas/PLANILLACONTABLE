@@ -121,5 +121,10 @@ namespace Presentacion.Subvista
             btncerrar.BackColor = Color.Crimson;
             btncerrar.ForeColor = Color.White;
         }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
     }
 }

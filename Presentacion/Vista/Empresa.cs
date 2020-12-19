@@ -262,9 +262,15 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void frmempresa_FormClosing(object sender, FormClosingEventArgs e)
+        //botones colores
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-           // this.Dispose();
+            btncerrar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241, 112, 122);
         }
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
@@ -272,53 +278,73 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.Crimson;
         }
 
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        //restaurar
+        private void btnrestaurar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.SlateGray;
+            btnrestaurar.BackColor = Color.FromArgb(165, 171, 179);
         }
-               
-        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+
+        private void btnrestaurar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+            btnrestaurar.BackColor = Color.FromArgb(116, 118, 118);
         }
+
+        private void btnrestaurar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnrestaurar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //maximizar
+        private void btnmaximizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
+
+        private void btnmaximizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnmaximizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //minimizar
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //..
+
+        private void frmempresa_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           // this.Dispose();
+        }
+
+        
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
-        }
 
-        private void btnmaximizar_MouseLeave(object sender, EventArgs e)
-        {
-            btnmaximizar.BackColor = Color.FromArgb(26, 32, 40);
+            if(this.WindowState == FormWindowState.Normal)
+            {
+                btnrestaurar.Visible = false;
+                btnmaximizar.Visible = true;
+            }
+            
         }
-
-        private void btnrestaurar_MouseLeave(object sender, EventArgs e)
-        {
-            btnrestaurar.BackColor = Color.SlateGray;
-        }
-
-        private void btnminimizar_MouseLeave(object sender, EventArgs e)
-        {
-            btnminimizar.BackColor = Color.SlateGray;
-        }
-
-        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);//plomito oscuro
-        }
-
-        private void btnrestaurar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnrestaurar.BackColor = Color.FromArgb(31, 97, 141);
-        }
-
-        private void btnmaximizar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnmaximizar.BackColor = Color.FromArgb(31, 97, 141);
-        }
+      
 
         private void txtruc_KeyPress(object sender, KeyPressEventArgs e)
         {

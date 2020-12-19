@@ -192,10 +192,10 @@ namespace Presentacion.Vista
 
         private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
         {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
+            //WindowsMove.ReleaseCapture();
+            //WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            //btnrestaurar.Visible = false;
+            //btnmaximizar.Visible = true;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -205,9 +205,9 @@ namespace Presentacion.Vista
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            btnrestaurar.Visible = true;
-            btnmaximizar.Visible = false;
+            //this.WindowState = FormWindowState.Maximized;
+            //btnrestaurar.Visible = true;
+            //btnmaximizar.Visible = false;
         }
 
         private void btnminimizar_Click(object sender, EventArgs e)
@@ -217,9 +217,20 @@ namespace Presentacion.Vista
 
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
-            btnrestaurar.Visible = false;
-            btnmaximizar.Visible = true;
+            //this.WindowState = FormWindowState.Normal;
+            //btnrestaurar.Visible = false;
+            //btnmaximizar.Visible = true;
+        }      
+
+        //botones colores
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241, 112, 122);
         }
 
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
@@ -227,9 +238,52 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.Crimson;
         }
 
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        //restaurar
+        private void btnrestaurar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.SlateGray;
+            btnrestaurar.BackColor = Color.FromArgb(165, 171, 179);
         }
+
+        private void btnrestaurar_MouseLeave(object sender, EventArgs e)
+        {
+            btnrestaurar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnrestaurar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnrestaurar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //maximizar
+        private void btnmaximizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
+
+        private void btnmaximizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnmaximizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnmaximizar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //minimizar
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //..
+
     }
 }
