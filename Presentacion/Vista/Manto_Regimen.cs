@@ -187,37 +187,43 @@ namespace Presentacion.Vista
         {
             this.Close();
         }
-
+        
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //BOTONES COLORES
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
-        }
-
-        private void btncerrar_MouseHover(object sender, EventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }      
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.FromArgb(245, 183, 177);
+            btncerrar.BackColor = Color.FromArgb(116,118,118);
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(64, 64, 64);
+            btnminimizar.BackColor = Color.FromArgb(116,118,118);
         }
-
-        private void btnminimizar_MouseHover(object sender, EventArgs e)
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
+            btncerrar.BackColor = Color.Crimson;
         }
 
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165,171,179);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138,140,140);
+        }
+
+        //ventana y titulo
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
@@ -229,5 +235,7 @@ namespace Presentacion.Vista
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+       
     }
 }

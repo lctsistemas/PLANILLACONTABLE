@@ -21,8 +21,8 @@ namespace Datos.Repositories
                     cmd.Connection = connect;
                     cmd.CommandText = "SP_INSERT_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    // cmd.Parameters.Add("@idtipo_planilla", SqlDbType.Int).Value = entiti.Id_tipo_planilla;                  
+                    
+                    cmd.Parameters.AddWithValue("@idtipo_planilla", entiti.Idtipo_planilla);                  
                     cmd.Parameters.AddWithValue("@id_periodo", entiti.Id_periodo);
                     cmd.Parameters.AddWithValue("@id_empMaestra", entiti.Id_empresam);
                     cmd.Parameters.AddWithValue("@id_mes", entiti.Id_mes);
@@ -32,7 +32,7 @@ namespace Datos.Repositories
                     cmd.Parameters.AddWithValue("@dias_mes",  entiti.Dias_mes);
                     cmd.Parameters.AddWithValue("@horas_mes", entiti.Horas_mes);                
                     cmd.Parameters.AddWithValue("@topehora_nocturno", entiti.Tope_horario_nocturno);
-                    cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@mesage", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
 
                     entiti.mensaje = cmd.Parameters["@mesage"].Value.ToString();

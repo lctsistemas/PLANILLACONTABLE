@@ -81,10 +81,13 @@ namespace Presentacion.Vista
             dgvplanilla.Columns[10].Width = 140;
             dgvplanilla.Columns[10].DefaultCellStyle.Format = "N2";
             dgvplanilla.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+           
+            dgvplanilla.Columns[11].Visible = false; // id tipo de planilla.
+            dgvplanilla.Columns[12].HeaderText = "TIPO DE PLANILLA";
+            dgvplanilla.Columns[12].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dgvplanilla.Columns[11].HeaderText = "ESTADO";
-            dgvplanilla.Columns[11].Width = 50;
-            dgvplanilla.Columns[11].Visible = false;
+            dgvplanilla.Columns[12].Width = 100;
+            dgvplanilla.Columns[13].Visible = false; // estado de guardar, modificar, eliminar
 
         }
         

@@ -579,48 +579,46 @@ END
 GO
 
 --PROCEDIMIENTO PARA REGISTRAR TIPOPLANILLA
-CREATE PROC SP_INS_TIP_PLANILLA( 
-@tipoplanilla varchar(25),
-@mensaje varchar(100) output
+CREATE PROC SP_REGISTRAR_TipPLANILLA( 
+@nombre_planilla varchar(30),
+@mensaje varchar(20) OUTPUT
 )
 AS BEGIN
 	DECLARE @TipPlan int
-	SET @TipPlan=(SELECT count(tp.id_tipo_planilla) FROM TIPO_PLANILLA tp)
+	SET @TipPlan=(SELECT count(tp.idtipo_planilla) FROM TIPO_PLANILLA tp)
 	IF(@TipPlan=0)
 		BEGIN
 			SET @TipPlan=1
 		END
 	ELSE	
-		SET @TipPlan=(SELECT MAX(tp.id_tipo_planilla)+1 FROM TIPO_PLANILLA tp)	
-INSERT INTO TIPO_PLANILLA(id_tipo_planilla,tipo_planilla) VALUES(@TipPlan,@tipoplanilla)
-SET @mensaje= 'TIPO DE PLANILLA REGISTRADO CORRECTAMENTE'
+		SET @TipPlan=(SELECT MAX(tp.idtipo_planilla)+1 FROM TIPO_PLANILLA tp)	
+INSERT INTO TIPO_PLANILLA(idtipo_planilla, nombre_planilla) VALUES(@TipPlan, @nombre_planilla)
+SET @mensaje= '¡Registrado!'
 END
 GO
 
---PROCEDIMENTO PARA ACTUALIZAR TIPO PLANILLA
-CREATE PROC SP_UPDATE_TIPOPLAN(
-@id_tipPlan int,
-@TipoPlanilla varchar(25)
+CREATE PROC SP_UPDATE_TIPOPLANILLA(
+@id_tipPlanilla int,
+@nombre_planilla varchar(30)
 )
 AS BEGIN 
-UPDATE TIPO_PLANILLA SET id_tipo_planilla=@id_tipPlan,tipo_planilla=@TipoPlanilla where id_tipo_planilla=@id_tipPlan
-END;
+UPDATE TIPO_PLANILLA SET nombre_planilla=@nombre_planilla where idtipo_planilla=@id_tipPlanilla
+END
 GO
 
---PROCEDIMENTO PARA ELIMINAR TIPO PLANILLA
-ALTER PROC SP_DELETE_TIP_PLAN
-@id_tipo_planilla int,
-@mensaje varchar(100) output
+ALTER PROC SP_DELETE_TIP_PLANILLA
+@idtipo_planilla int,
+@mensaje varchar(50) output
 AS BEGIN
-IF(EXISTS(SELECT p.id_tipoplanilla from Planilla p join TIPO_PLANILLA tp on(tp.id_tipo_planilla=p.id_tipoplanilla)
-	WHERE p.id_tipoplanilla=@id_tipo_planilla))
+IF(EXISTS(SELECT p.id_tipoplanilla from Planilla p join TIPO_PLANILLA tp on(p.id_tipoplanilla=tp.idtipo_planilla)
+	WHERE p.id_tipoplanilla = @idtipo_planilla))
 	BEGIN 
 	SET @mensaje= 'Error, el tipo de planilla esta en uso'
 	END 
 ELSE 
 	BEGIN
-	DELETE from TIPO_PLANILLA where id_tipo_planilla=@id_tipo_planilla
-	SET @mensaje= 'TIPO DE PLANILLA ELIMINADA CORRECTAMENTE'
+	DELETE from TIPO_PLANILLA where idtipo_planilla=@idtipo_planilla
+	SET @mensaje= '¡Eliminado!'
 	END
 END
 GO
@@ -628,32 +626,31 @@ GO
 --PROCEDIMIENTO PARA MOSTRAR TIPO PLANILLA 
 CREATE PROC SP_SHOW_TIPO_PLAN
 AS BEGIN 
-SELECT tp.id_tipo_planilla,tp.tipo_planilla from TIPO_PLANILLA tp;
-END;
+SELECT tp.idtipo_planilla,tp.nombre_planilla from TIPO_PLANILLA tp;
+END
 GO
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
-alter PROC SP_INSERT_BANCO(
---@id_banco int,
+ALTER PROC SP_INSERT_BANCO(
 @nombre_banco varchar(25),
-@mensaje varchar(100) output
+@mensaje varchar(30) output
 )
 AS BEGIN
-	DECLARE @Banco int
-	SET @Banco=(SELECT count(b.id_banco) FROM Banco b)
-	IF(@Banco=0)
+	DECLARE @idbanco int
+	SET @idbanco=(SELECT count(b.id_banco) FROM Banco b)
+	IF(@idbanco=0)
 		BEGIN
-			SET @Banco=1
+			SET @idbanco=1
 		END
 	ELSE	
-		SET @Banco=(SELECT MAX(b.id_banco)+1 FROM Banco b)	
-INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@Banco,@nombre_banco)
-SET @mensaje= 'BANCO REGISTRADO CORRECTAMENTE'
+		SET @idbanco=(SELECT MAX(b.id_banco)+1 FROM Banco b)	
+INSERT INTO BANCO(id_banco,nombre_banco) VALUES(@idbanco, @nombre_banco)
+SET @mensaje= '¡Registrado!'
 END
 GO
 
 --PROCEDIMENTO PARA ACTUALIZAR BANCO
-CREATE PROC SP_UPDATE_BANCO(
+ALTER PROC SP_UPDATE_BANCO(
 @id_banco int,
 @nombre_banco varchar(25)
 )
@@ -677,19 +674,18 @@ IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(c.id_banco=b.id_banc
 ELSE
 	BEGIN 
 		DELETE from Banco where id_banco=@id_banco
-		SET @message='¡Banco eliminado correctamente!'
+		SET @message='¡Banco eliminado!'
 	END
 END
 GO
 
-SELECT * FROM Contrato
 
 
 --PROCEDIMIENTO PARA MOSTRAR BANCO 
 ALTER PROC SP_SHOW_BANCO
 AS BEGIN 
-SELECT b.id_banco,b.nombre_banco from Banco b;
-END;
+SELECT b.id_banco,b.nombre_banco from Banco b
+END
 GO
 
 
@@ -935,8 +931,9 @@ GO
 
 
 --  PROCEDIMIENTO PARA INSERTAR, UPDATE, DELETE, SHOW => PLANILLA
-CREATE PROC SP_INSERT_PLANILLA
+ALTER PROC SP_INSERT_PLANILLA
 --@idtipo_planilla int,
+@idtipo_planilla int,
 @id_periodo int,
 @id_empMaestra int,
 @id_mes int,
@@ -946,7 +943,7 @@ CREATE PROC SP_INSERT_PLANILLA
 @dias_mes int,
 @horas_mes int,
 @topehora_nocturno decimal(8,2),
-@mesage varchar(100) output
+@mesage varchar(50) output
 AS BEGIN
 	DECLARE @plani int
 	SET @plani=(SELECT count(p.id_planilla) FROM dbo.Planilla p)
@@ -955,9 +952,9 @@ AS BEGIN
 	ELSE
 		SET @plani=(SELECT MAX(p.id_planilla)+1 FROM dbo.Planilla p)	
 		
-INSERT INTO Planilla(id_planilla,id_periodo, idempresa_maestra, id_mes, fecha_inicial, fecha_final, fecha_pago, 
+INSERT INTO Planilla(id_planilla, id_tipoplanilla, id_periodo, idempresa_maestra, id_mes, fecha_inicial, fecha_final, fecha_pago, 
 dias_mes, horas_mes, tope_horario_nocturno)VALUES
-(@plani, @id_periodo, @id_empMaestra, @id_mes, @fecha_inicial, @fecha_final, @fecha_pago, 
+(@plani, @idtipo_planilla, @id_periodo, @id_empMaestra, @id_mes, @fecha_inicial, @fecha_final, @fecha_pago, 
 @dias_mes, @horas_mes, @topehora_nocturno) 
 SET @mesage= '¡Registrado!'
 END
@@ -987,14 +984,14 @@ END
 END
 GO
 
-CREATE PROC SP_SHOW_PLANILLA
+ALTER PROC SP_SHOW_PLANILLA
 @codigo_empresam int,
 @periodo int
 AS BEGIN
 	SELECT p.id_planilla, pe.periodo, p.id_mes, p.idempresa_maestra, m.nombre_mes, p.fecha_inicial , p.fecha_final,p.fecha_pago,
-	p.dias_mes, p.horas_mes, p.tope_horario_nocturno
+	p.dias_mes, p.horas_mes, p.tope_horario_nocturno, tp.idtipo_planilla, tp.nombre_planilla
 	FROM Planilla p inner join Periodo pe on(pe.id_periodo=p.id_periodo)
-	inner join Mes m on(m.id_mes=p.id_mes)
+	inner join Mes m on(m.id_mes=p.id_mes) JOIN tipo_planilla tp on(p.id_tipoplanilla=tp.idtipo_planilla)
 	where idempresa_maestra = @codigo_empresam and pe.id_periodo=@periodo
 	order by m.id_mes asc
 	END

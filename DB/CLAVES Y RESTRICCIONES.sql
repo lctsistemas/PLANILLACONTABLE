@@ -39,7 +39,7 @@ alter table DET_SUBSIDIOS ADD CONSTRAINT Fk_idemple FOREIGN KEY(id_empleado) REF
 
 ALTER TABLE planillaManto ADD CONSTRAINT FK_idcontratop FOREIGN KEY (id_contrato) REFERENCES Contrato
 ALTER table dbo.PlanillaManto ADD CONSTRAINT FK_idplanilla  FOREIGN KEY (id_planilla) REFERENCES planilla(id_planilla)
---ALTER table dbo.PlanillaManto ADD CONSTRAINT FK_idtip_planilla  FOREIGN KEY (id_tipo_planilla) REFERENCES dbo.TIPO_PLANILLA(idtipo_planilla)
+ALTER table dbo.PlanillaManto ADD CONSTRAINT FK_idtip_planilla  FOREIGN KEY (id_tipo_planilla) REFERENCES dbo.TIPO_PLANILLA(idtipo_planilla)
 
 alter table dbo.Conceptos ADD CONSTRAINT FK_idplaniconcep FOREIGN KEY (id_planilla) REFERENCES Planilla
 alter table dbo.Conceptos ADD CONSTRAINT FK_idmesconcep FOREIGN KEY (id_mes) REFERENCES Mes

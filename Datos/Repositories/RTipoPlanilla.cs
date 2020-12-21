@@ -23,20 +23,18 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
-                    cmd.CommandText = "SP_INS_TIP_PLANILLA";
+                    cmd.CommandText = "SP_REGISTRAR_TipPLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    cmd.Parameters.AddWithValue("@nombre_planilla", entiti.TipoPlanilla);
 
-                    //cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.IdBanco;
-                    cmd.Parameters.Add("@tipoplanilla", SqlDbType.VarChar, 25).Value = entiti.TipoPlanilla;
-
-                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 30).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();
-
-                    return result;
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
 
         public int Delete(DTipoPlanilla entiti)
@@ -48,17 +46,17 @@ namespace Datos.Repositories
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SP_DELETE_TIP_PLAN";
+                    cmd.CommandText = "SP_DELETE_TIP_PLANILLA";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_tipo_planilla", SqlDbType.Int).Value = entiti.Idtipoplanilla;
-                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@idtipo_planilla", entiti.Idtipoplanilla);
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();
-                    return result;
                 }
             }
+            return result;
         }
 
         public int Edit(DTipoPlanilla entiti)

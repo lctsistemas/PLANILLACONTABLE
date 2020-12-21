@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Comun.Cache;
 using Presentacion.Helps;
+using System.Drawing;
 
 namespace Presentacion
 {
@@ -39,7 +40,7 @@ namespace Presentacion
         private void Main_Principal_Load(object sender, EventArgs e)
         {
             ToolTip.SetToolTip(pictmenu, "Menu");
-            ToolTip.SetToolTip(btncerrar, "Cerrar sesión");
+            //ToolTip.SetToolTip(btncerrar, "Cerrar sesión");
             timer1.Start();            
             hideSubmenu();
             fullScreen();
@@ -232,7 +233,7 @@ namespace Presentacion
 
         private void btntipocont_Click(object sender, EventArgs e)
         {
-            OpenForm<TipoContrato2>();
+            OpenForm<FrmTipoContrato2>();
         }
 
         private void btncalc_Click(object sender, EventArgs e)
@@ -259,5 +260,43 @@ namespace Presentacion
         {
             OpenForm<frmcargo>();
         }
+
+        //BOTONES COLORES
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(27, 79, 144);
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(123,36,28);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        //MINIMIZAR
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(31,92,167);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(27, 79, 144);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(23,69,125);
+        }
+        //..
     }
 }

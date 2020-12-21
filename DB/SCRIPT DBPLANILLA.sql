@@ -16,21 +16,19 @@ tipo_genero varchar(12) not null,
 direccion varchar(250)null,
 telefono varchar(15)null,
 numero_documento varchar(20) not null,
-estado varchar (20)not null,
+estado varchar (20)not null, -- ACTIVO, CESADO
 codigo_regimen int not null,
 id_documento int not null,
 id_cargo int not null,
 id_em_maestra int not null,
 jornada_laboral varchar(11) not null,
-eliminado_estado varchar(15) CONSTRAINT CHK_elim_estado check(eliminado_estado in ('ANULADO','NO ANULADO')),
+eliminado_estado varchar(15) --('ANULADO','NO ANULADO'))
 )
 GO
 
-ALTER TABLE dbo.Empleado alter column jornada_laboral varchar(11) not null
-
-EXECUTE sp_rename 'Empleado.Jornada_laboral', 'jornada_laboral', 'COLUMN';
-
-
+--ALTER TABLE EMPLEADO DROP CONSTRAINT CHK_elim_estado
+--ALTER TABLE dbo.Empleado alter column jornada_laboral varchar(11) not null
+--EXECUTE sp_rename 'Empleado.Jornada_laboral', 'jornada_laboral', 'COLUMN';
 --select len('PART - TIME')
 
 
@@ -506,13 +504,4 @@ recarg_consu bit not null --recargo consumo
 )
 GO
 
-
-select * from Planilla
-CREATE TABLE TIPO_PLANILLA 
-(
-	id_tipo_planilla int not null,
-	tipo_planilla varchar(30) 
-)
-
-GO
 

@@ -38,24 +38,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.barratitulo = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtbuscar = new System.Windows.Forms.TextBox();
-            this.dgvcargo = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.dgvcargo = new System.Windows.Forms.DataGridView();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.barratitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltotal
@@ -137,6 +137,16 @@
             this.panel2.Size = new System.Drawing.Size(459, 535);
             this.panel2.TabIndex = 15;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 260);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -154,7 +164,7 @@
             // 
             // barratitulo
             // 
-            this.barratitulo.BackColor = System.Drawing.Color.SlateGray;
+            this.barratitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.barratitulo.Controls.Add(this.label3);
             this.barratitulo.Controls.Add(this.btnminimizar);
             this.barratitulo.Controls.Add(this.btncerrar);
@@ -176,6 +186,40 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "CARGO";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.btnminimizar.Location = new System.Drawing.Point(387, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimizar.TabIndex = 0;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.btncerrar.Location = new System.Drawing.Point(422, 0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 35);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 0;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
             // txtbuscar
             // 
@@ -244,53 +288,9 @@
             this.dgvcargo.TabStop = false;
             this.dgvcargo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcargo_CellDoubleClick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.loupe_78956__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 260);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnminimizar
-            // 
-            this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
-            this.btnminimizar.Location = new System.Drawing.Point(387, 0);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnminimizar.TabIndex = 0;
-            this.btnminimizar.TabStop = false;
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
-            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
-            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
-            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
-            this.btncerrar.Location = new System.Drawing.Point(422, 0);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 35);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btncerrar.TabIndex = 0;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
-            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
-            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
-            // 
             // btnnuevo
             // 
-            this.btnnuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.btnnuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnnuevo.FlatAppearance.BorderSize = 0;
             this.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -309,7 +309,7 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.btneliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btneliminar.FlatAppearance.BorderSize = 0;
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -328,7 +328,7 @@
             // 
             // btnguardar
             // 
-            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
             this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderSize = 0;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -359,13 +359,13 @@
             this.Load += new System.EventHandler(this.frmcargo_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.barratitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcargo)).EndInit();
             this.ResumeLayout(false);
 
         }

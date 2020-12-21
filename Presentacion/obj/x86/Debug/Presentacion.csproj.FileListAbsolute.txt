@@ -367,3 +367,4 @@ C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.TipoPlanilla.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmRegimenSalud.resources
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.FrmVista_rol.resources
+C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.FrmTipoContrato2.resources

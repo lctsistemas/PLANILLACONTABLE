@@ -15,8 +15,8 @@ namespace Negocio.Models
     {
         String mensaje;
         public Int32 IdTipoPlanilla { get; set; }
-
         public String Tipo_Planilla { get; set; }
+
         public EntityState state { get; set; }
         private ITipoPlanilla Rtipoplanilla;
         private List<NTipoPlanilla> list_tipo_plan;
@@ -68,6 +68,7 @@ namespace Negocio.Models
             }
             return list_tipo_plan;
         }
+
         public void Dispose()
         {
             //throw new NotImplementedException();

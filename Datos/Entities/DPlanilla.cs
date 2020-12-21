@@ -5,7 +5,7 @@ namespace Datos.Entities
     public class DPlanilla
     {
         private Int32 id_planilla;
-        //Int32 idtipo_planilla;
+        private Int32 idtipo_planilla;
         private Int32 id_periodo;
         private Int32 id_empresam;
         private Int32 id_mes;      
@@ -16,7 +16,7 @@ namespace Datos.Entities
         private Int32 horas_mes;     
         private decimal tope_horario_nocturno;
 
-        public DPlanilla(int id_planilla, int id_periodo, int id_empresam, int id_mes, DateTime fecha_inicial,
+       /* public DPlanilla(int id_planilla, int id_periodo, int id_empresam, int id_mes, DateTime fecha_inicial,
             DateTime fecha_final, DateTime fecha_pago, int dias_mes, int horas_mes, decimal tope_horario_nocturno)
         {
             this.id_planilla = id_planilla;
@@ -29,12 +29,13 @@ namespace Datos.Entities
             this.dias_mes = dias_mes;
             this.horas_mes = horas_mes;         
             this.tope_horario_nocturno = tope_horario_nocturno;
-        }
+        }*/
 
-        public DPlanilla() { }
+       // public DPlanilla() { }
 
         public String mensaje { get; set; }
         public int Id_planilla { get => id_planilla; set => id_planilla = value; }
+        public int Idtipo_planilla { get => idtipo_planilla; set => idtipo_planilla = value; }
         public int Id_periodo { get => id_periodo; set => id_periodo = value; }
         public int Id_empresam { get => id_empresam; set => id_empresam = value; }
         public int Id_mes { get => id_mes; set => id_mes = value; }      

@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbltotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,8 +49,6 @@
             this.checkDescuento = new System.Windows.Forms.CheckBox();
             this.dgvsubsidio = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tbtnnuevo = new System.Windows.Forms.ToolStripButton();
@@ -58,14 +57,19 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tbtneliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.lbltotal = new System.Windows.Forms.Label();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btnmaximizar = new System.Windows.Forms.PictureBox();
+            this.btnrestaurar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.panel2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,8 +82,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(839, 582);
+            this.panel1.Size = new System.Drawing.Size(906, 582);
             this.panel1.TabIndex = 9;
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbltotal.Location = new System.Drawing.Point(720, 557);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(41, 15);
+            this.lbltotal.TabIndex = 87;
+            this.lbltotal.Text = "label7";
             // 
             // groupBox1
             // 
@@ -99,7 +114,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(11, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(815, 184);
+            this.groupBox1.Size = new System.Drawing.Size(881, 184);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar";
@@ -108,11 +123,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(25, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Codigo Subsidio";
             // 
@@ -120,11 +135,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(407, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 17);
+            this.label5.Size = new System.Drawing.Size(114, 16);
             this.label5.TabIndex = 91;
             this.label5.Text = "Descripcion larga";
             // 
@@ -132,11 +147,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(407, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(122, 17);
+            this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Descripcion corta";
             // 
@@ -145,18 +160,18 @@
             this.txtdescSubsi.Location = new System.Drawing.Point(410, 114);
             this.txtdescSubsi.Multiline = true;
             this.txtdescSubsi.Name = "txtdescSubsi";
-            this.txtdescSubsi.Size = new System.Drawing.Size(363, 41);
+            this.txtdescSubsi.Size = new System.Drawing.Size(420, 41);
             this.txtdescSubsi.TabIndex = 90;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label2.Location = new System.Drawing.Point(25, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 17);
+            this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Estado";
             // 
@@ -181,11 +196,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(203, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 17);
+            this.label4.Size = new System.Drawing.Size(127, 16);
             this.label4.TabIndex = 88;
             this.label4.Text = "Tipo de suspension";
             // 
@@ -194,7 +209,7 @@
             this.txtdescCorta.Location = new System.Drawing.Point(410, 47);
             this.txtdescCorta.Multiline = true;
             this.txtdescCorta.Name = "txtdescCorta";
-            this.txtdescCorta.Size = new System.Drawing.Size(363, 41);
+            this.txtdescCorta.Size = new System.Drawing.Size(420, 41);
             this.txtdescCorta.TabIndex = 8;
             // 
             // cbxtiposub
@@ -209,11 +224,11 @@
             // checkDescuento
             // 
             this.checkDescuento.AutoSize = true;
-            this.checkDescuento.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkDescuento.ForeColor = System.Drawing.Color.Black;
+            this.checkDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.checkDescuento.Location = new System.Drawing.Point(206, 116);
             this.checkDescuento.Name = "checkDescuento";
-            this.checkDescuento.Size = new System.Drawing.Size(96, 21);
+            this.checkDescuento.Size = new System.Drawing.Size(92, 20);
             this.checkDescuento.TabIndex = 10;
             this.checkDescuento.Text = "Descuento";
             this.checkDescuento.UseVisualStyleBackColor = true;
@@ -267,68 +282,37 @@
             this.dgvsubsidio.RowHeadersWidth = 25;
             this.dgvsubsidio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvsubsidio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvsubsidio.Size = new System.Drawing.Size(815, 301);
+            this.dgvsubsidio.Size = new System.Drawing.Size(880, 301);
             this.dgvsubsidio.TabIndex = 86;
             this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(9, 5);
+            this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(361, 19);
+            this.label6.Size = new System.Drawing.Size(438, 35);
             this.label6.TabIndex = 1;
             this.label6.Text = "TIPO DE SUSPENSION DE LA RELACION LABORAL";
-            // 
-            // btnminimizar
-            // 
-            this.btnminimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnminimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Image = global::Presentacion.Properties.Resources.minimazar;
-            this.btnminimizar.Location = new System.Drawing.Point(753, 5);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 20);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnminimizar.TabIndex = 0;
-            this.btnminimizar.TabStop = false;
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
-            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
-            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-            this.btncerrar.Location = new System.Drawing.Point(791, 5);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 20);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 0;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
-            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
-            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SlateGray;
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.btncerrar);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
             this.panel2.Controls.Add(this.btnminimizar);
+            this.panel2.Controls.Add(this.btnmaximizar);
+            this.panel2.Controls.Add(this.btnrestaurar);
+            this.panel2.Controls.Add(this.btncerrar);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(839, 35);
+            this.panel2.Size = new System.Drawing.Size(906, 35);
             this.panel2.TabIndex = 92;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -346,7 +330,7 @@
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(3, 1, 1, 1);
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip2.Size = new System.Drawing.Size(839, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(906, 25);
             this.toolStrip2.TabIndex = 93;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -392,22 +376,69 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
-            // lbltotal
+            // btnminimizar
             // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(681, 557);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(41, 15);
-            this.lbltotal.TabIndex = 87;
-            this.lbltotal.Text = "label7";
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.btnminimizar.Location = new System.Drawing.Point(766, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimizar.TabIndex = 16;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
+            // 
+            // btnmaximizar
+            // 
+            this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmaximizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnmaximizar.Image = global::Presentacion.Properties.Resources.maxi_18dp;
+            this.btnmaximizar.Location = new System.Drawing.Point(801, 0);
+            this.btnmaximizar.Name = "btnmaximizar";
+            this.btnmaximizar.Size = new System.Drawing.Size(35, 35);
+            this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnmaximizar.TabIndex = 17;
+            this.btnmaximizar.TabStop = false;
+            this.btnmaximizar.Visible = false;
+            // 
+            // btnrestaurar
+            // 
+            this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnrestaurar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnrestaurar.Image = global::Presentacion.Properties.Resources.restore_18dp;
+            this.btnrestaurar.Location = new System.Drawing.Point(836, 0);
+            this.btnrestaurar.Name = "btnrestaurar";
+            this.btnrestaurar.Size = new System.Drawing.Size(35, 35);
+            this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnrestaurar.TabIndex = 18;
+            this.btnrestaurar.TabStop = false;
+            this.btnrestaurar.Visible = false;
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.btncerrar.Location = new System.Drawing.Point(871, 0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 35);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 19;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
             // frmsubsidios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 582);
+            this.ClientSize = new System.Drawing.Size(906, 582);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -421,12 +452,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnrestaurar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,8 +480,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvsubsidio;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox btnminimizar;
-        private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton tbtnnuevo;
@@ -459,5 +489,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.PictureBox btnmaximizar;
+        private System.Windows.Forms.PictureBox btnrestaurar;
+        private System.Windows.Forms.PictureBox btncerrar;
     }
 }

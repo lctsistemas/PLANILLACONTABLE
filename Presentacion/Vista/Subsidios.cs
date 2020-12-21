@@ -46,10 +46,10 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvsubsidio.Columns[3].HeaderText = "DESCRIPCION CORTA";
-            dgvsubsidio.Columns[3].Width = 200;
+            dgvsubsidio.Columns[3].Width = 220;
 
             dgvsubsidio.Columns[4].HeaderText = "DESCRIPCION LARGA";
-            dgvsubsidio.Columns[4].Width = 250;
+            dgvsubsidio.Columns[4].Width = 295;
 
             dgvsubsidio.Columns[5].HeaderText = "ESTADO";
             dgvsubsidio.Columns[5].Width = 100;
@@ -181,24 +181,31 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
-            btncerrar.BackColor = Color.Crimson;
+            btncerrar.BackColor = Color.FromArgb(241,112,122);
         }
         
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SlateGray;
+            btncerrar.BackColor = Color.FromArgb(116,118,118);
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SlateGray;
+            btnminimizar.BackColor = Color.FromArgb(116,118,118);
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(31, 97, 141);
+            btnminimizar.BackColor = Color.FromArgb(138,140,140);
         }
-
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165,171,179);
+        }
         private void btncerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -209,17 +216,13 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
+        
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
         
     }
 }

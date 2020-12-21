@@ -11,8 +11,7 @@ namespace Negocio.Models
     public class NPlanilla : IDisposable
     {
         String mensaje;
-        public int Id_planilla { get; set; }
-        /*public int Idtipo_planilla { get; set; }*/
+        public int Id_planilla { get; set; }       
         public int Id_periodo { get; set; }
         public int Id_mes { get; set; }
         public int Id_empresam { get; set; }        
@@ -23,6 +22,8 @@ namespace Negocio.Models
         public int Dias_mes { get; set; }
         public int Horas_mes { get; set; }
         public decimal Tope_horario_nocturno { get; set; }
+        public int Idtipo_planilla { get; set; }
+        public String nombre_tipplanilla { get; private set; }
         public EntityState state { get; set; }
 
         public IPlanilla rplanilla;
@@ -39,7 +40,7 @@ namespace Negocio.Models
             try
             {
                 DPlanilla pla = new DPlanilla();
-                //pla.Id_tipo_planilla = Id_tipo_planilla;
+                pla.Idtipo_planilla = Idtipo_planilla;
                 pla.Id_planilla = Id_planilla;
                 pla.Id_periodo = Id_periodo;
                 pla.Id_empresam = Id_empresam;
@@ -108,7 +109,7 @@ namespace Negocio.Models
                     list_planilla.Add(new NPlanilla() // modificar.
                     {
                         Id_planilla = Convert.ToInt32(item[0]),
-                        Id_periodo = Convert.ToInt32(item[1]),                       
+                        Id_periodo = Convert.ToInt32(item[1]),    
                         Id_mes = Convert.ToInt32(item[2]),
                         Id_empresam=Convert.ToInt32(item[3]),
                         Nombre_mes = item[4].ToString(),
@@ -116,8 +117,11 @@ namespace Negocio.Models
                         Fecha_final = Convert.ToDateTime(item[6]),
                         Fecha_pago = Convert.ToDateTime(item[7]),
                         Dias_mes = Convert.ToInt32(item[8]),
-                        Horas_mes = Convert.ToInt32(item[9]),                       
-                        Tope_horario_nocturno = Convert.ToInt32(item[10])
+                        Horas_mes = Convert.ToInt32(item[9]),                
+                        Tope_horario_nocturno = Convert.ToInt32(item[10]),
+                        Idtipo_planilla=Convert.ToInt32(item[11]),
+                        nombre_tipplanilla=item[12].ToString()
+                        
                     });
                 }
                 

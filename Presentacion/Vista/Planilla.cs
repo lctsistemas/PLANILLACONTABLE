@@ -42,6 +42,7 @@ namespace Presentacion.Vista
                 return false;
         }
 
+        //LLENAR MES EN COMBOBOX
         private void LlenarMes()
         {
             using (naf = new Nafp())
@@ -49,6 +50,17 @@ namespace Presentacion.Vista
                 cbxmes.DataSource = naf.Mostrar_mes();
                 cbxmes.DisplayMember = "Mes";
                 cbxmes.ValueMember = "Idmes";
+            }
+        }
+
+        //LLENAR TIPO DE PLANILLA EN COMBOBOX
+        private void LlenarTipoPlanilla()
+        {
+            using (NTipoPlanilla ntp= new NTipoPlanilla())
+            {
+                cbotipoplanilla.DataSource = ntp.Getall();
+                cbotipoplanilla.DisplayMember = "Tipo_Planilla";
+                cbotipoplanilla.ValueMember = "IdTipoPlanilla";
             }
         }
 
@@ -94,8 +106,8 @@ namespace Presentacion.Vista
                 {
                     Messages.M_error("La planilla de "+ cbxmes.Text+ " ya existe.");
                     return;
-                }                                   
-                //np.Id_tipo_planilla = txtdescripcion.Text.Trim().ToUpper();
+                }
+                np.Idtipo_planilla = Convert.ToInt32(cbotipoplanilla.SelectedValue);
                 np.Id_periodo = UserCache.Idperiodo;
                 np.Id_empresam = UserCache.Codigo_empresa;
                 np.Id_mes = idmes;               
@@ -119,6 +131,7 @@ namespace Presentacion.Vista
                lblyear.Text = UserCache.Periodo.ToString();
                         
             LlenarMes();
+            LlenarTipoPlanilla();
             Mes_actual();
         }
 

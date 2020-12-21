@@ -68,7 +68,6 @@
             this.lblruc = new System.Windows.Forms.Label();
             this.lblempresa = new System.Windows.Forms.Label();
             this.pictmenu = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tlblotrodato = new System.Windows.Forms.ToolStripStatusLabel();
             this.tlblhora = new System.Windows.Forms.ToolStripStatusLabel();
@@ -78,6 +77,8 @@
             this.pictlct = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.PanelSideMenu.SuspendLayout();
             this.panelregistro.SuspendLayout();
             this.panelactualizar.SuspendLayout();
@@ -86,10 +87,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictuser)).BeginInit();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.panelchildform.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictlct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelSideMenu
@@ -117,7 +119,7 @@
             this.btnreportes.FlatAppearance.BorderSize = 0;
             this.btnreportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnreportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnreportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreportes.ForeColor = System.Drawing.Color.White;
             this.btnreportes.Image = global::Presentacion.Properties.Resources.reportes;
             this.btnreportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +127,7 @@
             this.btnreportes.Name = "btnreportes";
             this.btnreportes.Size = new System.Drawing.Size(233, 45);
             this.btnreportes.TabIndex = 9;
-            this.btnreportes.Text = "Reportes";
+            this.btnreportes.Text = "REPORTES";
             this.btnreportes.UseVisualStyleBackColor = false;
             // 
             // panelregistro
@@ -154,121 +156,121 @@
             // 
             // btncargo
             // 
-            this.btncargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btncargo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btncargo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btncargo.FlatAppearance.BorderSize = 0;
-            this.btncargo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btncargo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btncargo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncargo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncargo.ForeColor = System.Drawing.Color.White;
             this.btncargo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncargo.Location = new System.Drawing.Point(0, 150);
             this.btncargo.Name = "btncargo";
-            this.btncargo.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btncargo.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btncargo.Size = new System.Drawing.Size(233, 30);
             this.btncargo.TabIndex = 21;
             this.btncargo.Text = "Cargo";
-            this.btncargo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncargo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncargo.UseVisualStyleBackColor = false;
             this.btncargo.Click += new System.EventHandler(this.btncargo_Click);
             // 
             // btntipoplanilla
             // 
-            this.btntipoplanilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btntipoplanilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btntipoplanilla.Dock = System.Windows.Forms.DockStyle.Top;
             this.btntipoplanilla.FlatAppearance.BorderSize = 0;
-            this.btntipoplanilla.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btntipoplanilla.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btntipoplanilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntipoplanilla.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntipoplanilla.ForeColor = System.Drawing.Color.White;
             this.btntipoplanilla.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntipoplanilla.Location = new System.Drawing.Point(0, 120);
             this.btntipoplanilla.Name = "btntipoplanilla";
-            this.btntipoplanilla.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btntipoplanilla.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btntipoplanilla.Size = new System.Drawing.Size(233, 30);
             this.btntipoplanilla.TabIndex = 12;
             this.btntipoplanilla.Text = "Tipo Planilla";
-            this.btntipoplanilla.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btntipoplanilla.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntipoplanilla.UseVisualStyleBackColor = false;
             this.btntipoplanilla.Click += new System.EventHandler(this.btntipoplanilla_Click);
             // 
             // btnsucursal
             // 
-            this.btnsucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnsucursal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnsucursal.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnsucursal.FlatAppearance.BorderSize = 0;
-            this.btnsucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnsucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnsucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsucursal.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsucursal.ForeColor = System.Drawing.Color.White;
             this.btnsucursal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsucursal.Location = new System.Drawing.Point(0, 90);
             this.btnsucursal.Name = "btnsucursal";
-            this.btnsucursal.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnsucursal.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnsucursal.Size = new System.Drawing.Size(233, 30);
             this.btnsucursal.TabIndex = 11;
             this.btnsucursal.Text = "Sucursal";
-            this.btnsucursal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnsucursal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsucursal.UseVisualStyleBackColor = false;
             this.btnsucursal.Click += new System.EventHandler(this.btnsucursal_Click_1);
             // 
             // btnempresa
             // 
-            this.btnempresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnempresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnempresa.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnempresa.FlatAppearance.BorderSize = 0;
-            this.btnempresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnempresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnempresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnempresa.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnempresa.ForeColor = System.Drawing.Color.White;
             this.btnempresa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnempresa.Location = new System.Drawing.Point(0, 60);
             this.btnempresa.Name = "btnempresa";
-            this.btnempresa.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnempresa.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnempresa.Size = new System.Drawing.Size(233, 30);
             this.btnempresa.TabIndex = 6;
             this.btnempresa.Text = "Empresa";
-            this.btnempresa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnempresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnempresa.UseVisualStyleBackColor = false;
             this.btnempresa.Click += new System.EventHandler(this.btnempresa_Click_1);
             // 
             // btnusuario
             // 
-            this.btnusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnusuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnusuario.FlatAppearance.BorderSize = 0;
-            this.btnusuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnusuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnusuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnusuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnusuario.ForeColor = System.Drawing.Color.White;
             this.btnusuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnusuario.Location = new System.Drawing.Point(0, 30);
             this.btnusuario.Name = "btnusuario";
-            this.btnusuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnusuario.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnusuario.Size = new System.Drawing.Size(233, 30);
             this.btnusuario.TabIndex = 7;
             this.btnusuario.Text = "Usuario";
-            this.btnusuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnusuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnusuario.UseVisualStyleBackColor = false;
             this.btnusuario.Click += new System.EventHandler(this.btnusuario_Click);
             // 
             // btnplanilla2
             // 
-            this.btnplanilla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnplanilla2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnplanilla2.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnplanilla2.FlatAppearance.BorderSize = 0;
-            this.btnplanilla2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnplanilla2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnplanilla2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnplanilla2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplanilla2.ForeColor = System.Drawing.Color.White;
             this.btnplanilla2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnplanilla2.Location = new System.Drawing.Point(0, 0);
             this.btnplanilla2.Name = "btnplanilla2";
-            this.btnplanilla2.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnplanilla2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnplanilla2.Size = new System.Drawing.Size(233, 30);
             this.btnplanilla2.TabIndex = 13;
             this.btnplanilla2.Text = "Planilla";
-            this.btnplanilla2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnplanilla2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnplanilla2.UseVisualStyleBackColor = false;
             this.btnplanilla2.Click += new System.EventHandler(this.btnplanilla2_Click);
             // 
@@ -279,7 +281,7 @@
             this.btnmanteni.FlatAppearance.BorderSize = 0;
             this.btnmanteni.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnmanteni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmanteni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanteni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanteni.ForeColor = System.Drawing.Color.White;
             this.btnmanteni.Image = global::Presentacion.Properties.Resources.empleados1;
             this.btnmanteni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -313,36 +315,40 @@
             // 
             // btnonp
             // 
-            this.btnonp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnonp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnonp.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnonp.FlatAppearance.BorderSize = 0;
-            this.btnonp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnonp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnonp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnonp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnonp.ForeColor = System.Drawing.Color.White;
             this.btnonp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnonp.Location = new System.Drawing.Point(0, 30);
             this.btnonp.Name = "btnonp";
+            this.btnonp.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnonp.Size = new System.Drawing.Size(233, 30);
             this.btnonp.TabIndex = 6;
             this.btnonp.Text = "Tabla O.N.P";
+            this.btnonp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnonp.UseVisualStyleBackColor = false;
             // 
             // btnafp
             // 
-            this.btnafp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnafp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnafp.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnafp.FlatAppearance.BorderSize = 0;
-            this.btnafp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnafp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnafp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnafp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnafp.ForeColor = System.Drawing.Color.White;
             this.btnafp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnafp.Location = new System.Drawing.Point(0, 0);
             this.btnafp.Name = "btnafp";
+            this.btnafp.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnafp.Size = new System.Drawing.Size(233, 30);
             this.btnafp.TabIndex = 7;
             this.btnafp.Text = "A.F.P";
+            this.btnafp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnafp.UseVisualStyleBackColor = false;
             this.btnafp.Click += new System.EventHandler(this.btnafp_Click);
             // 
@@ -353,7 +359,7 @@
             this.btnactualizar.FlatAppearance.BorderSize = 0;
             this.btnactualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnactualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnactualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnactualizar.ForeColor = System.Drawing.Color.White;
             this.btnactualizar.Image = global::Presentacion.Properties.Resources.baseline_update_white_18dp1;
             this.btnactualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,7 +367,7 @@
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(233, 45);
             this.btnactualizar.TabIndex = 5;
-            this.btnactualizar.Text = "Actualizar";
+            this.btnactualizar.Text = "ACTUALIZAR";
             this.btnactualizar.UseVisualStyleBackColor = false;
             this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
@@ -394,165 +400,165 @@
             // btncalc
             // 
             this.btncalc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btncalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btncalc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btncalc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btncalc.FlatAppearance.BorderSize = 0;
-            this.btncalc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btncalc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btncalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncalc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncalc.ForeColor = System.Drawing.Color.White;
             this.btncalc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncalc.Location = new System.Drawing.Point(0, 210);
             this.btncalc.Name = "btncalc";
-            this.btncalc.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btncalc.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btncalc.Size = new System.Drawing.Size(233, 30);
             this.btncalc.TabIndex = 14;
             this.btncalc.Text = "Calculo Planilla";
-            this.btncalc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncalc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncalc.UseVisualStyleBackColor = false;
             this.btncalc.Click += new System.EventHandler(this.btncalc_Click);
             // 
             // btntipocont
             // 
             this.btntipocont.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btntipocont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btntipocont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btntipocont.Dock = System.Windows.Forms.DockStyle.Top;
             this.btntipocont.FlatAppearance.BorderSize = 0;
-            this.btntipocont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btntipocont.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btntipocont.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntipocont.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btntipocont.ForeColor = System.Drawing.Color.White;
             this.btntipocont.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntipocont.Location = new System.Drawing.Point(0, 180);
             this.btntipocont.Name = "btntipocont";
-            this.btntipocont.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btntipocont.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btntipocont.Size = new System.Drawing.Size(233, 30);
             this.btntipocont.TabIndex = 13;
             this.btntipocont.Text = "Tipo Contrato";
-            this.btntipocont.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btntipocont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntipocont.UseVisualStyleBackColor = false;
             this.btntipocont.Click += new System.EventHandler(this.btntipocont_Click);
             // 
             // btnban
             // 
             this.btnban.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnban.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnban.FlatAppearance.BorderSize = 0;
-            this.btnban.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnban.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnban.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnban.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnban.ForeColor = System.Drawing.Color.White;
             this.btnban.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnban.Location = new System.Drawing.Point(0, 150);
             this.btnban.Name = "btnban";
-            this.btnban.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnban.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnban.Size = new System.Drawing.Size(233, 30);
             this.btnban.TabIndex = 12;
             this.btnban.Text = "Banco";
-            this.btnban.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnban.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnban.UseVisualStyleBackColor = false;
             this.btnban.Click += new System.EventHandler(this.btnban_Click);
             // 
             // btnsubsidios
             // 
             this.btnsubsidios.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnsubsidios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnsubsidios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnsubsidios.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnsubsidios.FlatAppearance.BorderSize = 0;
-            this.btnsubsidios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnsubsidios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnsubsidios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsubsidios.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsubsidios.ForeColor = System.Drawing.Color.White;
             this.btnsubsidios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsubsidios.Location = new System.Drawing.Point(0, 120);
             this.btnsubsidios.Name = "btnsubsidios";
-            this.btnsubsidios.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnsubsidios.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnsubsidios.Size = new System.Drawing.Size(233, 30);
             this.btnsubsidios.TabIndex = 11;
             this.btnsubsidios.Text = "Subsidios";
-            this.btnsubsidios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnsubsidios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnsubsidios.UseVisualStyleBackColor = false;
             this.btnsubsidios.Click += new System.EventHandler(this.btnsubsidios_Click);
             // 
             // btnregpens
             // 
             this.btnregpens.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnregpens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnregpens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnregpens.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnregpens.FlatAppearance.BorderSize = 0;
-            this.btnregpens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnregpens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnregpens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregpens.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregpens.ForeColor = System.Drawing.Color.White;
             this.btnregpens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnregpens.Location = new System.Drawing.Point(0, 90);
             this.btnregpens.Name = "btnregpens";
-            this.btnregpens.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnregpens.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnregpens.Size = new System.Drawing.Size(233, 30);
             this.btnregpens.TabIndex = 5;
             this.btnregpens.Text = "Regimen Pensionario";
-            this.btnregpens.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnregpens.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnregpens.UseVisualStyleBackColor = false;
             this.btnregpens.Click += new System.EventHandler(this.btnregpens_Click);
             // 
             // btnregsalud
             // 
-            this.btnregsalud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnregsalud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnregsalud.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnregsalud.FlatAppearance.BorderSize = 0;
-            this.btnregsalud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnregsalud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnregsalud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregsalud.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregsalud.ForeColor = System.Drawing.Color.White;
             this.btnregsalud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnregsalud.Location = new System.Drawing.Point(0, 60);
             this.btnregsalud.Name = "btnregsalud";
-            this.btnregsalud.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnregsalud.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnregsalud.Size = new System.Drawing.Size(233, 30);
             this.btnregsalud.TabIndex = 8;
             this.btnregsalud.Text = "Regimen Salud";
-            this.btnregsalud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnregsalud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnregsalud.UseVisualStyleBackColor = false;
             this.btnregsalud.Click += new System.EventHandler(this.btnregsalud_Click);
             // 
             // btndoc
             // 
-            this.btndoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btndoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btndoc.Dock = System.Windows.Forms.DockStyle.Top;
             this.btndoc.FlatAppearance.BorderSize = 0;
-            this.btndoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btndoc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btndoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btndoc.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndoc.ForeColor = System.Drawing.Color.White;
             this.btndoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btndoc.Location = new System.Drawing.Point(0, 30);
             this.btndoc.Name = "btndoc";
-            this.btndoc.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btndoc.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btndoc.Size = new System.Drawing.Size(233, 30);
             this.btndoc.TabIndex = 6;
             this.btndoc.Text = "Tipo Documento";
-            this.btndoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btndoc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btndoc.UseVisualStyleBackColor = false;
             this.btndoc.Click += new System.EventHandler(this.btndoc_Click_1);
             // 
             // btnemp
             // 
-            this.btnemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(73)))), ((int)(((byte)(73)))));
+            this.btnemp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
             this.btnemp.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnemp.FlatAppearance.BorderSize = 0;
-            this.btnemp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnemp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
             this.btnemp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnemp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnemp.ForeColor = System.Drawing.Color.White;
             this.btnemp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnemp.Location = new System.Drawing.Point(0, 0);
             this.btnemp.Name = "btnemp";
-            this.btnemp.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnemp.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnemp.Size = new System.Drawing.Size(233, 30);
             this.btnemp.TabIndex = 7;
             this.btnemp.Text = "Empleado";
-            this.btnemp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnemp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnemp.UseVisualStyleBackColor = false;
             this.btnemp.Click += new System.EventHandler(this.btnemp_Click);
             // 
@@ -563,7 +569,7 @@
             this.btnregistro.FlatAppearance.BorderSize = 0;
             this.btnregistro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnregistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnregistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregistro.ForeColor = System.Drawing.Color.White;
             this.btnregistro.Image = global::Presentacion.Properties.Resources.baseline_build_white_18dp21;
             this.btnregistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -668,10 +674,11 @@
             // BarraTitulo
             // 
             this.BarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(79)))), ((int)(((byte)(144)))));
+            this.BarraTitulo.Controls.Add(this.btnminimizar);
+            this.BarraTitulo.Controls.Add(this.btncerrar);
             this.BarraTitulo.Controls.Add(this.lblruc);
             this.BarraTitulo.Controls.Add(this.lblempresa);
             this.BarraTitulo.Controls.Add(this.pictmenu);
-            this.BarraTitulo.Controls.Add(this.btncerrar);
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(250, 0);
             this.BarraTitulo.Name = "BarraTitulo";
@@ -713,19 +720,6 @@
             this.pictmenu.TabStop = false;
             this.pictmenu.Click += new System.EventHandler(this.pictmenu_Click);
             // 
-            // btncerrar
-            // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.Salir;
-            this.btncerrar.Location = new System.Drawing.Point(640, 6);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(30, 30);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 0;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -734,6 +728,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(250, 638);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(678, 24);
+            this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -808,6 +803,38 @@
             // 
             this.ToolTip.AutomaticDelay = 400;
             // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.btnminimizar.Location = new System.Drawing.Point(608, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 43);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimizar.TabIndex = 24;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.btncerrar.Location = new System.Drawing.Point(643, 0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 43);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 25;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            // 
             // FrmMain_principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -831,12 +858,13 @@
             this.BarraTitulo.ResumeLayout(false);
             this.BarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictmenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.panelchildform.ResumeLayout(false);
             this.panelchildform.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictlct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -865,7 +893,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.Button btntipoplanilla;
         private System.Windows.Forms.Button btnsucursal;
         private System.Windows.Forms.PictureBox pictuser;
@@ -893,5 +920,7 @@
         private System.Windows.Forms.Button btncalc;
         private System.Windows.Forms.Button btntipocont;
         private System.Windows.Forms.Button btnban;
+        private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.PictureBox btncerrar;
     }
 }

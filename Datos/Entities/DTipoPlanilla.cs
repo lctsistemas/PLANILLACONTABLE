@@ -10,7 +10,6 @@ namespace Datos.Entities
     {
         private int idtipoplanilla;
         private string tipoplanilla;
-
         public string mensaje { get; set; }
 
         public int Idtipoplanilla { get => idtipoplanilla; set => idtipoplanilla = value; }

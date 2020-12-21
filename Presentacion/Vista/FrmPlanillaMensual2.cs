@@ -760,8 +760,8 @@ namespace Presentacion.Vista
                 if (Txtidconcepto.Text.Trim() != string.Empty)
                     nconcepto.Id_conceptos = Convert.ToInt32(Txtidconcepto.Text);
 
-                nconcepto.Id_mes = 2;
-                nconcepto.Id_planilla = 2;
+                nconcepto.Id_mes = 2; //falta  asignar
+                nconcepto.Id_planilla = 2; //fañta asignar
                 nconcepto.HextraDiurna = Chkhdiurnas.Checked;
                 nconcepto.HextraNocturna = Chkhnocturna.Checked;
                 nconcepto.FeriadoDomi = Chkferiado.Checked;

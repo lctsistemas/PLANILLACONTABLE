@@ -208,7 +208,7 @@ namespace Presentacion.Vista
 
         private void btncerrar_MouseLeave(object sender, EventArgs e)
         {
-            btncerrar.BackColor = Color.SlateGray;
+            btncerrar.BackColor = Color.FromArgb(116,118,118);
         }
 
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
@@ -217,17 +217,17 @@ namespace Presentacion.Vista
         }
         private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
+            btnminimizar.BackColor = Color.FromArgb(165,171,179);
         }
 
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
-            btnminimizar.BackColor = Color.SlateGray;
+            btnminimizar.BackColor = Color.FromArgb(116,118,118);
         }
 
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
-            btnminimizar.BackColor = Color.FromArgb(100, 115, 129);
+            btnminimizar.BackColor = Color.FromArgb(138,140,140);
         }
         #endregion
 
@@ -239,7 +239,6 @@ namespace Presentacion.Vista
         private void txtbuscar_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Keypress.SoloLetras(e);
-
         }
 
         private void txtcoddoc_Validating(object sender, CancelEventArgs e)
