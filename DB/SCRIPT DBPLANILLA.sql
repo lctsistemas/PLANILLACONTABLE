@@ -198,7 +198,6 @@ num_dias int null
 )
 GO
 
---drop table Meses_maestra
 CREATE TABLE Grati_manto(
 id_grati int not null,
 id_meses int not null,

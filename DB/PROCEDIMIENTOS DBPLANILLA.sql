@@ -1044,7 +1044,12 @@ DBCC DROPCLEANBUFFERS WITH NO_INFOMSGS
 GO
 
 GO
+<<<<<<< HEAD
 CREATE PROC SP_DELETE_REGSALUD -- FALTA MODIFICAR.
+=======
+
+create PROC SP_DELETE_REGSALUD
+>>>>>>> 28dcf47b6ce34ec49a8229d009ccf268fb4c1fb5
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN

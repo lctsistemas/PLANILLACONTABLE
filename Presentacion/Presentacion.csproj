@@ -121,12 +121,6 @@
     <Compile Include="Vista\Afp.Designer.cs">
       <DependentUpon>Afp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Banco.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\Banco.Designer.cs">
-      <DependentUpon>Banco.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\Banco2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,12 +235,6 @@
     <Compile Include="Vista\Sucursal.Designer.cs">
       <DependentUpon>Sucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\TipoContrato.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vista\TipoContrato.Designer.cs">
-      <DependentUpon>TipoContrato.cs</DependentUpon>
-    </Compile>
     <Compile Include="Vista\TipoContrato2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,9 +275,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Afp.resx">
       <DependentUpon>Afp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Banco.resx">
-      <DependentUpon>Banco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Banco2.resx">
       <DependentUpon>Banco2.cs</DependentUpon>
@@ -347,9 +332,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Sucursal.resx">
       <DependentUpon>Sucursal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\TipoContrato.resx">
-      <DependentUpon>TipoContrato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\TipoContrato2.resx">
       <DependentUpon>TipoContrato2.cs</DependentUpon>
