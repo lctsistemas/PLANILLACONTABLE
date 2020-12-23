@@ -283,7 +283,7 @@ idtipo_planilla int not null,
 nombre_planilla varchar(30)not null
 )
 GO
-
+alter table dbo.tipo_planilla alter column nombre_planilla varchar(30) not null
 
 CREATE TABLE Regimen_salud( --falta modificar el procedi.. add modi delet
 id_regimen_salud int not null,

@@ -1,4 +1,5 @@
-﻿using Negocio.Models;
+﻿using Comun.Cache;
+using Negocio.Models;
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
@@ -20,6 +21,7 @@ namespace Presentacion.Vista
         public frmsubsidios()
         {
             InitializeComponent();
+            Permisos();
         }
 
         private void ShowSubsidio()
@@ -28,6 +30,15 @@ namespace Presentacion.Vista
             {
                 dgvsubsidio.DataSource = ns.Getall();
                 lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
+            }
+        }
+
+        //PERMISOS
+        private  void Permisos()
+        {
+            if (UserCache.RolUser==Rol.Auxiliar)
+            {
+                this.barra_herramientas.Enabled = false;
             }
         }
 
@@ -46,10 +57,10 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvsubsidio.Columns[3].HeaderText = "DESCRIPCION CORTA";
-            dgvsubsidio.Columns[3].Width = 220;
+            dgvsubsidio.Columns[3].Width = 231;
 
             dgvsubsidio.Columns[4].HeaderText = "DESCRIPCION LARGA";
-            dgvsubsidio.Columns[4].Width = 295;
+            dgvsubsidio.Columns[4].Width = 315;
 
             dgvsubsidio.Columns[5].HeaderText = "ESTADO";
             dgvsubsidio.Columns[5].Width = 100;
@@ -216,13 +227,22 @@ namespace Presentacion.Vista
             this.WindowState = FormWindowState.Minimized;
         }
 
-        
+        //MOVER VENTAS FORMULARIO
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void Mover()
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            Mover();
+        }
+
+        private void label6_MouseDown(object sender, MouseEventArgs e)
+        {
+            Mover();
+        }
     }
 }

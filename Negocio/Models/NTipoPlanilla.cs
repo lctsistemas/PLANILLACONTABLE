@@ -41,7 +41,7 @@ namespace Negocio.Models
 
                 case EntityState.Modificar:
                     Rtipoplanilla.Edit(tipoPlanilla);
-                    mensaje = "Successfully Edited!";
+                    mensaje = "¡Modificado!";
                     break;
 
                 case EntityState.Remover:

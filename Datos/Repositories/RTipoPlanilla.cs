@@ -13,14 +13,14 @@ namespace Datos.Repositories
     public class RTipoPlanilla : ITipoPlanilla
     {
         Int32 result;
-        SqlCommand cmd;
+        
         public int Add(DTipoPlanilla entiti)
         {
             result = 0;
             using (SqlConnection connect = RConexion.Getconectar())
             {
                 connect.Open();
-                using (cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = connect;
                     cmd.CommandText = "SP_REGISTRAR_TipPLANILLA";
@@ -32,6 +32,28 @@ namespace Datos.Repositories
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();                    
+                }
+            }
+            return result;
+        }
+        
+        public int Edit(DTipoPlanilla entiti)
+        {
+            result = 0;
+            using (SqlConnection connect = RConexion.Getconectar())
+            {
+                connect.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = connect;
+                    cmd.CommandText = "SP_UPDATE_TIPOPLANILLA";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@nombre_planilla", entiti.TipoPlanilla);
+                    cmd.Parameters.AddWithValue("@id_tipPlanilla", entiti.Idtipoplanilla);
+
+                    result = cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
                 }
             }
             return result;
@@ -59,20 +81,14 @@ namespace Datos.Repositories
             return result;
         }
 
-        public int Edit(DTipoPlanilla entiti)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable GetData(DTipoPlanilla entiti)
         {
             DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
             {
-                cnn.Open();
-                cmd = null;
+                cnn.Open();                
                 SqlDataAdapter da = new SqlDataAdapter();
-                using (cmd = new SqlCommand())
+                using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
                     cmd.CommandText = "SP_SHOW_TIPO_PLAN";

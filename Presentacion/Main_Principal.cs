@@ -14,15 +14,40 @@ namespace Presentacion
         public FrmMain_principal()
         {
             InitializeComponent();
-           
-
+            Permisos();
+            
         }
+
         //para maximizar toda la pantalla
         public void fullScreen()
         {
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
+
+        //PERMISOS DE ACCESO
+        private void Permisos()
+        {
+            MessageBox.Show("Bienvenido: " + UserCache.RolUser);
+            if (UserCache.RolUser == Rol.Auxiliar)
+            {               
+                btntipoplanilla.Enabled = false;
+                btntipocontrato.Enabled = false;
+                btnregsalud.Enabled = false;
+                btnrol.Enabled = false;
+                btnmantenimiento.Enabled = false;
+                //btnregimen_pensionario.Enabled = false;
+                //btncomisionesafp.Enabled = false;
+                btnempresa.Enabled = false;
+                btnsucursal.Enabled = false;
+                btnusurio.Enabled = false;
+            }else if (UserCache.RolUser==Rol.Contabilidad)
+            {
+                btnrol.Enabled = false;
+            }
+           
+        }
+
 
         //CARGAR DATOS DE MEMORY CACHE.
         private void CargarDatos()
@@ -69,23 +94,12 @@ namespace Presentacion
         }
 
 
-        private void btnmedia_Click(object sender, EventArgs e)
+        private void btnconfiguracion_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubMenuMedia);
-        }
+        }       
 
-
-        private void btnafp_Click(object sender, EventArgs e)
-        {
-            OpenForm<Frmafp>();
-        }
-        private void btnusuario_Click(object sender, EventArgs e)
-        {
-            OpenForm<frmusuario>();
-        }
-
-
-        private void btnactualizar_Click(object sender, EventArgs e)
+        private void btnmantenimiento_Click(object sender, EventArgs e)
         {
             showSubMenu(panelactualizar);
         }
@@ -163,9 +177,9 @@ namespace Presentacion
         }
         private void HideTextButton()
         {
+            btnconfiguracion.Text = "";
+            btnmantenimiento.Text = "";
             btnregistro.Text = "";
-            btnactualizar.Text = "";
-            btnmanteni.Text = "";
             btnreportes.Text = "";
             lineuser.Visible = false;
             lineperiodo.Visible = false;
@@ -174,26 +188,19 @@ namespace Presentacion
 
         private void ShowTextButton()
         {
-            btnregistro.Text = "R&EGISTRO";
-            btnactualizar.Text = "&ACTUALIZAR";
-            btnmanteni.Text = "&MANTENIMIENTO";
-            btnreportes.Text = "&REPORTES";
+            btnconfiguracion.Text = "&CONFIGURACION";
+            btnmantenimiento.Text = "&MANTENIMIENTO";
+            btnregistro.Text = "&REGISTRO";
+            btnreportes.Text = "R&EPORTES";
             lineuser.Visible = true;
             lineperiodo.Visible = true;
             lblusuario.Visible = true;
         }
 
 
-        private void btnplanilla2_Click(object sender, EventArgs e)
-        {
-            OpenFormFill<FrmPlanillaEmpleados>();
-        }
+        
 
-        private void btncalculo_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void timer1_Tick(object sender, EventArgs e)
         {
             string fecha = DateTime.Now.ToLongDateString();
@@ -201,64 +208,73 @@ namespace Presentacion
             tlblhora.Text = fecha + "   |   " + hora;
         }
 
-        private void btnemp_Click(object sender, EventArgs e)
+        //BOTONES PARA ABRIL FORMULARIOS
+        private void btnregimen_pensionario_Click(object sender, EventArgs e)
         {
-            OpenForm<frmempleado>();
+            OpenForm<FrmManto_Regimen>();
+        }
+        private void btnempresa_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmempresa>();
+        }
+        private void btntipocontrato_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmTipoContrato>();
         }
 
-        private void btndoc_Click_1(object sender, EventArgs e)
+        private void btntipoplanilla_Click(object sender, EventArgs e)
         {
-            OpenForm<frmdocumento>();
-        }
+            OpenForm<FrmTipoPlanilla>();
+        }     
 
         private void btnregsalud_Click(object sender, EventArgs e)
         {
             OpenForm<FrmRegimenSalud>();
         }
 
-        private void btnregpens_Click(object sender, EventArgs e)
-        {
-            OpenForm<FrmManto_Regimen>();
-        }
-
-        private void btnsubsidios_Click(object sender, EventArgs e)
+        private void btnsubsidiados_Click(object sender, EventArgs e)
         {
             OpenForm<frmsubsidios>();
-        }
-
-        private void btnban_Click(object sender, EventArgs e)
-        {
-            OpenForm<Banco2>();
-        }
-
-        private void btntipocont_Click(object sender, EventArgs e)
-        {
-            OpenForm<FrmTipoContrato2>();
-        }
-
-        private void btncalc_Click(object sender, EventArgs e)
-        {
-            OpenFormFill<FrmPlanillaMensual2>();
-        }
-
-        private void btnempresa_Click_1(object sender, EventArgs e)
-        {
-            OpenForm<frmempresa>();
-        }
-
-        private void btnsucursal_Click_1(object sender, EventArgs e)
-        {
-            OpenForm<frmsucursal>();
-        }
-
-        private void btntipoplanilla_Click(object sender, EventArgs e)
-        {
-            OpenForm<TipoPlanilla>();
         }
 
         private void btncargo_Click(object sender, EventArgs e)
         {
             OpenForm<frmcargo>();
+        }
+
+        private void btntipodocumento_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmdocumento>();
+        }
+
+        private void btnrol_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmrol>();
+        }      
+
+        private void btnsucursal_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmsucursal>();
+        }
+
+        private void btnusurio_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmusuario>();
+        }
+
+        private void btnplanilla_Click(object sender, EventArgs e)
+        {
+            OpenFormFill<FrmPlanillaEmpleados>();
+        }
+
+        private void btncomisionesafp_Click(object sender, EventArgs e)
+        {
+            OpenForm<Frmafp>();
+        }
+
+        private void btnempleado_Click(object sender, EventArgs e)
+        {
+            OpenForm<frmempleado>();
         }
 
         //BOTONES COLORES
@@ -297,6 +313,11 @@ namespace Presentacion
         {
             btnminimizar.BackColor = Color.FromArgb(23,69,125);
         }
+
+       
+
+
+
         //..
     }
 }

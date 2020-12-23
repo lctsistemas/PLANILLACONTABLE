@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace Presentacion.Vista
 {
-    public partial class FrmTipoContrato2 : Form
+    public partial class FrmTipoContrato : Form
     {
         Ntipocontrato nt;
         string mensaje;
-        public FrmTipoContrato2()
+        public FrmTipoContrato()
         {
             InitializeComponent();
             Fill_TipoContrato();
@@ -27,16 +27,13 @@ namespace Presentacion.Vista
             using (nt = new Ntipocontrato())
             {
                 dgvTcontrato.DataSource = nt.MostrarTcontrato();
-                txttotaldias.Text = "TOTAL REGISTROS: "+dgvTcontrato.Rows.Count;
+                lbltotal.Text = "Total registro:  "+dgvTcontrato.Rows.Count;
             }
         }
         private bool Validar()
         {
-            if (String.IsNullOrWhiteSpace(txtTipoContrato.Text))
-            {
-                ValidateChildren();
-                return true;
-            }
+            if (String.IsNullOrWhiteSpace(txtTipoContrato.Text))                          
+                return true;            
             else
                 return false;
         }
@@ -65,8 +62,6 @@ namespace Presentacion.Vista
         {
             dgvTcontrato.Columns["dgvtxtidtcontrato"].Visible = false;
 
-            //dgvTcontrato.Columns[3].HeaderText = "TIPO";
-            //dgvTcontrato.Columns[3].Width = 200;
 
             dgvTcontrato.Columns[2].HeaderText = "EDITAR";
             dgvTcontrato.Columns[2].Width = 200;
@@ -104,13 +99,13 @@ namespace Presentacion.Vista
                     using (nt = new Ntipocontrato())
                     {
                         string cod_subsi = dgvTcontrato.CurrentRow.Cells["dgvtxttcontrato"].Value.ToString();
-                        DialogResult result = Messages.M_question("¿Está seguro de eliminar el tipo " + cod_subsi + "?");
+                        DialogResult result = Messages.M_question("¿Está seguro de eliminar el " + cod_subsi + "?");
                         if (result == DialogResult.Yes)
                         {
                             nt.state = EntityState.Remover;
                             nt.id_tcontrato = Convert.ToInt32(dgvTcontrato.Rows[e.RowIndex].Cells["dgvtxtidtcontrato"].Value);
                             mensaje = nt.GuardarCambios();
-                            if (mensaje.Contains("ESTA SIENDO USADO"))
+                            if (mensaje.Contains("esta asignado."))
                             {
                                 Messages.M_error(mensaje);
                             }
@@ -128,8 +123,7 @@ namespace Presentacion.Vista
 
         private void txtTipoContrato_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtTipoContrato, "Campo requerido!");
-            txtTipoContrato.Focus();
+            ValidateError.Validate_text(txtTipoContrato, "Campo requerido!");            
         }
 
         private void label1_MouseDown(object sender, MouseEventArgs e)

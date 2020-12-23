@@ -36,24 +36,18 @@ namespace Negocio.Models
             switch (state)
             {
                 case EntityState.Guardar:
-
                     tcontrato_repository.Add(dtipocontrato);
                     mensaje = dtipocontrato.Mensaje;
-
                     break;
 
                 case EntityState.Modificar:
-
                     tcontrato_repository.Edit(dtipocontrato);
-                    mensaje = "Successfully Edited!";
-
+                    mensaje = "¡Modificado!";
                     break;
 
                 case EntityState.Remover:
-
                     tcontrato_repository.Delete(dtipocontrato);
                     mensaje = dtipocontrato.Mensaje;
-
                     break;
             }
 
@@ -74,9 +68,9 @@ namespace Negocio.Models
                         id_tcontrato = Convert.ToInt32(item[0]),
                         tiem_contrato = item[1].ToString()
                     });
-                }
-                return list_tcontrato;
+                }                
             }
+            return list_tcontrato;
         }    
 
         public void Dispose()

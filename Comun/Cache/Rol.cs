@@ -2,10 +2,10 @@
 {
     public struct Rol
     {
-        public const string Administrador = "Administrador";
-        public const string Auxiliar = "Auxiliar Contable";
-        public const string Asistente = "Asistente contable";
-        public const string Sistemas = "Sistemas";
-        public const string Contabilidad = "Contabilidad";
+        public const string Auxiliar = "AUXILIAR CONTABLE";
+        public const string Contabilidad = "CONTABILIDAD";
+        public const string Administracion = "ADMINISTRACION";
+        public const string Jefa_planilla = "JEFA DE PLANILLA";
+        public const string System= "SYSTEM";
     }
 }

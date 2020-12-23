@@ -252,5 +252,17 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtdias, "Ingrese el numero dias");
         }
+
+        private void btnsalir_MouseLeave(object sender, EventArgs e)
+        {
+            btnsalir.BackColor = Color.White;
+            btnsalir.ForeColor = Color.Black;
+        }
+
+        private void btnsalir_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnsalir.BackColor = Color.Crimson;
+            btnsalir.ForeColor = Color.White;
+        }
     }
 }

@@ -578,8 +578,8 @@ FROM REGIMEN_SALUD rs
 END
 GO
 
---PROCEDIMIENTO PARA REGISTRAR TIPOPLANILLA
-CREATE PROC SP_REGISTRAR_TipPLANILLA( 
+--PROCEDIMIENTO PARA REGISTRAR TIPO DE PLANILLA
+ALTER PROC SP_REGISTRAR_TipPLANILLA( 
 @nombre_planilla varchar(30),
 @mensaje varchar(20) OUTPUT
 )
@@ -597,9 +597,9 @@ SET @mensaje= '¡Registrado!'
 END
 GO
 
-CREATE PROC SP_UPDATE_TIPOPLANILLA(
-@id_tipPlanilla int,
-@nombre_planilla varchar(30)
+ALTER PROC SP_UPDATE_TIPOPLANILLA(
+@nombre_planilla varchar(30),
+@id_tipPlanilla int
 )
 AS BEGIN 
 UPDATE TIPO_PLANILLA SET nombre_planilla=@nombre_planilla where idtipo_planilla=@id_tipPlanilla
@@ -623,7 +623,7 @@ ELSE
 END
 GO
 
---PROCEDIMIENTO PARA MOSTRAR TIPO PLANILLA 
+
 CREATE PROC SP_SHOW_TIPO_PLAN
 AS BEGIN 
 SELECT tp.idtipo_planilla,tp.nombre_planilla from TIPO_PLANILLA tp;
@@ -717,7 +717,6 @@ UPDATE Tipo_contrato SET tiempo_contrato=@tipo_contrato where id_tipocontrato=@i
 END;
 GO
 
-
 --PROCEDIMIENTO PARA MOSTRAR TIPO CONTRATO 
 ALTER PROC SP_SHOW_TIP_CONT
 AS BEGIN 
@@ -725,28 +724,27 @@ SELECT id_tipocontrato, tiempo_contrato from Tipo_contrato;
 END
 GO
 exec SP_SHOW_TIP_CONT
+GO
 
-go
-
-alter PROC SP_DEL_TIP_CONT
+ALTER PROC SP_DELETE_TIPCONTRATO
 @id_tcontrato int,
 @message varchar(100) output
 AS BEGIN 
-IF(EXISTS(SELECT t.id_tipocontrato from Tipo_contrato t join Contrato c on(c.id_tipocontrato=t.id_tipocontrato) where c.id_tipocontrato=t.id_tipocontrato))
+IF(EXISTS(SELECT t.id_tipocontrato from Tipo_contrato t join Contrato c on(t.id_tipocontrato=c.id_tipocontrato) where t.id_tipocontrato = @id_tcontrato))
 	BEGIN
 		DECLARE @cod_Tcontrato varchar(20);
-		SET @cod_Tcontrato=(SELECT t.tiempo_contrato from Tipo_contrato t WHERE t.id_tipocontrato=@id_tcontrato)
-		SET @message='El tipo de contrato ('+@cod_Tcontrato+') esta en uso.'  
+		SET @cod_Tcontrato=(SELECT t.tiempo_contrato FROM Tipo_contrato t WHERE t.id_tipocontrato=@id_tcontrato)
+		SET @message='El ('+@cod_Tcontrato+') esta asignado.'  
 	END
 ELSE
 	BEGIN 
 		DELETE from Tipo_contrato where id_tipocontrato=@id_tcontrato
-		SET @message='¡El tipo de contrato se ha eliminado correctamente!'
+		SET @message='¡Eliminado!'
 	END
 END
 GO
 
- ------------------------------------PROCEDIMIENTO PARA LOGIN--------------------------------------------
+ ------------------------------------PROCEDIMIENTO PARA LOGIN-------------------------------------------- 
  
  --PROCEDIMIENTO LOGIN USUARIO
  ALTER PROC SP_LOGIN_USUARIO
