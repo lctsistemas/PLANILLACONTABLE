@@ -79,14 +79,14 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_BORRAR_SUBSIDIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_subsidios", SqlDbType.Int).Value = entiti.Id_subsidios;
-                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@id_subsidios", entiti.Id_subsidios);
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 60).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
-                    cmd.Parameters.Clear();
-                    return result;
+                    cmd.Parameters.Clear();                    
                 }
             }
+            return result;
         }
 
         public DataTable GetData(DSubsidios entiti)

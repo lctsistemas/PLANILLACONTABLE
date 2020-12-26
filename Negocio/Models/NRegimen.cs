@@ -4,7 +4,7 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+
 using System.Data;
 
 namespace Negocio.Models
@@ -12,19 +12,10 @@ namespace Negocio.Models
     public class NRegimen : IDisposable
     {
         String mensaje;
-        public int Codigo_Regimen { get; set; }
-
-        [Required(ErrorMessage = "El campo Descripcion es obligatorio.")]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Descripcion solo permite letras.")]
-        public String Descripcion { get; set; }
-
-        [Required(ErrorMessage = "El campo Descripcion corta es obligatorio.")]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Descripcion corta solo permite letras.")]
+        public int Codigo_Regimen { get; set; }     
+        public String Descripcion { get; set; }        
         public String Descripcion_corta { get; set; }
-
-        [Required(ErrorMessage = "El campo Tipo de regimen es obligatorio.")]
         public String Tipo_regimen { get; set; }
-
         public EntityState state { get; set; }
         private IRegimen regimen;
         private List<NRegimen> list_regimen;
@@ -53,7 +44,7 @@ namespace Negocio.Models
                         break;
                     case EntityState.Modificar:
                         regimen.Edit(dr);
-                        mensaje = "Editado correctamente";
+                        mensaje = "¡Modificado!";
                         break;
                     case EntityState.Remover:
                         regimen.Delete(dr);

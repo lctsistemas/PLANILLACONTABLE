@@ -315,8 +315,8 @@ namespace Presentacion.Vista
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
             {
-                case 17:
                 case 18:
+                case 19:
                     double horxd25 = 0;
                     Int32 hora25 = 0, minu25 = 0;
                     if (dar.Cells["hxd25"].Value == null)
@@ -333,8 +333,8 @@ namespace Presentacion.Vista
                     horxd25 = Calculo.HoraExDiurna(930, 0, 0.25, hora25, minu25);
                     dar.Cells["montod25"].Value = horxd25.ToString("N2");
                     break;
-                case 20:
                 case 21:
+                case 22:
                     double horxd35 = 0;
                     Int32 hora35 = 0, minu35 = 0;
                     if (dar.Cells["hxd35"].Value == null)
@@ -351,8 +351,8 @@ namespace Presentacion.Vista
                     horxd35 = Calculo.HoraExDiurna(930, 0, 0.35, hora35, minu35);
                     dar.Cells["montod35"].Value = horxd35.ToString("N2");
                     break;
-                case 23:
                 case 24:
+                case 25:
                     double horxn25 = 0;
                     Int32 nhora25 = 0, nminu25 = 0;
                     if (dar.Cells["hxn25"].Value == null)
@@ -370,8 +370,8 @@ namespace Presentacion.Vista
                     dar.Cells["monton25"].Value = horxn25.ToString("N2");
                     break;
 
-                case 26:
                 case 27:
+                case 28:
                     double horxn35 = 0;
                     Int32 nhora35 = 0, nminu35 = 0;
                     if (dar.Cells["hxn35"].Value == null)
@@ -389,8 +389,8 @@ namespace Presentacion.Vista
                     dar.Cells["monton35"].Value = horxn35.ToString("N2");
                     break;
 
-                case 29:
                 case 30:
+                case 31:
                     double hferi = 0;
                     Int32 horaferiado = 0, minutoferi = 0;
                     if (dar.Cells["hrferiado"].Value == null)
@@ -408,7 +408,7 @@ namespace Presentacion.Vista
                     dar.Cells["montoferiado"].Value = hferi.ToString("N2");
                     break;
 
-                case 32:
+                case 33:
                     double boninoc = 0;
                     int horanoc = 0, h_trabajada = 0;
                     if (dar.Cells["hrboninocturna"].Value == null)
@@ -423,8 +423,8 @@ namespace Presentacion.Vista
                     dar.Cells["hora_trabajada"].Value = h_trabajada.ToString();
                     break;
 
-                case 35:
                 case 36:
+                case 37:
                     double importe_tarde = 0;
                     Int32 horatarde = 0, minutarde = 0;
                     if (dar.Cells["htarde"].Value == null)
@@ -450,17 +450,17 @@ namespace Presentacion.Vista
             // TOTAL HORAS EXTRAS.
             switch (e.ColumnIndex)
             {
-                case 17:
                 case 18:
-                case 20:
+                case 19:
                 case 21:
-                case 23:
+                case 22:
                 case 24:
-                case 26:
+                case 25:
                 case 27:
-                case 29:
+                case 28:
                 case 30:
-                case 32:
+                case 31:
+                case 33:
 
                     double montoD25 = 0, montoD35 = 0, montoN25 = 0, montoN35 = 0, feriado = 0, boniNoct = 0;
                     double totalHorasExt = 0;
@@ -507,8 +507,8 @@ namespace Presentacion.Vista
 
                     break;
 
-                case 12:
                 case 13:
+                case 14:
                     int pboniNocturno = 0, hr_trabajada = 0;
 
                     if (dar.Cells["hrboninocturna"].Value == null)
@@ -713,19 +713,18 @@ namespace Presentacion.Vista
 
         private void menuarchivos_MouseDown(object sender, MouseEventArgs e)
         {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            //WindowsMove.ReleaseCapture();
+            //WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        
+        private void tbtnlistaconceptos_Click(object sender, EventArgs e)
+        {
+            grobconceptos.Visible = tbtnlistaconceptos.Checked;
         }
 
-        private void tollistaconceptos_Click(object sender, EventArgs e)
+        private void tbtnbarraerramientas_Click(object sender, EventArgs e)
         {
-            grobconceptos.Visible = tollistaconceptos.Checked;
-
-        }
-
-        private void tolbarraerramientas_Click(object sender, EventArgs e)
-        {
-            toolbotones.Visible = tolbarraerramientas.Checked;
+            toolbotones.Visible = tbtnbarraerramientas.Checked;
         }
 
         private void btnver_Click(object sender, EventArgs e)

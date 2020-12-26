@@ -35,7 +35,7 @@ namespace Presentacion.Vista
             using (nu)
             {
                 dgvusuario.DataSource = nu.Getall();
-                lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
+                lbltotal.Text = "Total Registro:  " + dgvusuario.RowCount;
             }
         }
 
@@ -63,17 +63,17 @@ namespace Presentacion.Vista
             dgvusuario.Columns[1].Width = 150;
 
             dgvusuario.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvusuario.Columns[2].Width = 340;
+            dgvusuario.Columns[2].Width = 350;
 
             dgvusuario.Columns[3].HeaderText = "CONTRASEÑA";
-            dgvusuario.Columns[3].Width = 100;
+            dgvusuario.Columns[3].Width = 110;
 
             dgvusuario.Columns[4].HeaderText = "CODIGO ROL";
             dgvusuario.Columns[4].Width = 50;
             dgvusuario.Columns[4].Visible = false;
 
             dgvusuario.Columns[5].HeaderText = "ROL";
-            dgvusuario.Columns[5].Width = 240;
+            dgvusuario.Columns[5].Width = 245;
 
             dgvusuario.Columns[6].HeaderText = "GENERO";
             dgvusuario.Columns[6].Width = 50;

@@ -120,7 +120,7 @@ namespace Presentacion.Vista
             dgvtipoplanilla.Columns[0].Visible = false;
 
             dgvtipoplanilla.Columns[1].HeaderText = "TIPO DE PLANILLA";
-            dgvtipoplanilla.Columns[1].Width = 355;
+            dgvtipoplanilla.Columns[1].Width = 380;
 
             dgvtipoplanilla.Columns[2].HeaderText = "state";
             dgvtipoplanilla.Columns[2].Width = 50;

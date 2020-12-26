@@ -62,7 +62,6 @@ namespace Presentacion.Vista
         {
             dgvTcontrato.Columns["dgvtxtidtcontrato"].Visible = false;
 
-
             dgvTcontrato.Columns[2].HeaderText = "EDITAR";
             dgvTcontrato.Columns[2].Width = 200;
 
@@ -186,6 +185,21 @@ namespace Presentacion.Vista
             this.Close();
         }
 
-      
+        //PRA PODER EDITAR LA TABLA
+        private void dgvTcontrato_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvTcontrato.Rows.Count > 0)
+            {
+                dgvTcontrato.BeginEdit(true);
+            }
+        }
+
+        private void dgvTcontrato_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            DataGridViewCellStyle style = e.CellStyle;
+
+            style.Font = new Font(style.Font.FontFamily, 10, FontStyle.Bold);
+            style.BackColor = Color.Beige;
+        }
     }
 }

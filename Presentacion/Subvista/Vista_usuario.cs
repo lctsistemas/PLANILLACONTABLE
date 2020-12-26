@@ -52,9 +52,10 @@ namespace Presentacion.Subvista
 
             dgvvista_user.Columns[1].HeaderText = "CODIGO ACCESO";
             dgvvista_user.Columns[1].Width = 150;
+            dgvvista_user.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvvista_user.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvvista_user.Columns[2].Width = 345;
+            dgvvista_user.Columns[2].Width = 355;
 
             dgvvista_user.Columns[3].HeaderText = "CONTRASEÑA";
             dgvvista_user.Columns[3].Width = 100;
@@ -65,7 +66,7 @@ namespace Presentacion.Subvista
             dgvvista_user.Columns[4].Visible = false;
 
             dgvvista_user.Columns[5].HeaderText = "ROLES";
-            dgvvista_user.Columns[5].Width = 230;
+            dgvvista_user.Columns[5].Width = 240;
           
             dgvvista_user.Columns[6].HeaderText = "GENERO";
             dgvvista_user.Columns[6].Width = 50;
@@ -76,8 +77,7 @@ namespace Presentacion.Subvista
         }
 
         private void frmvista_usuario_Load(object sender, EventArgs e)
-        {
-            
+        {            
             txtbuscar.Focus();            
             Tooltip.Title(txtbuscar, "Buscar por nombre o codigo", true);
         }

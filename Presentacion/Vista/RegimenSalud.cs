@@ -79,11 +79,11 @@ namespace Presentacion.Vista
             dgvregimensalud.Columns[0].Visible = false;            
 
             dgvregimensalud.Columns[1].HeaderText = "COD. REGIMEN SALUD";
-            dgvregimensalud.Columns[1].Width = 120;
+            dgvregimensalud.Columns[1].Width = 127;
             dgvregimensalud.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvregimensalud.Columns[2].HeaderText = "REGIMEN SALUD";
-            dgvregimensalud.Columns[2].Width = 285;
+            dgvregimensalud.Columns[2].Width = 300;
 
             dgvregimensalud.Columns[3].HeaderText = "state";
             dgvregimensalud.Columns[3].Width = 100;

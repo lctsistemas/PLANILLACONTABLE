@@ -135,6 +135,3 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, segur
 
 INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, idmes, idperiodo) VALUES (17,9,13.00,10,2) --ONP
 GO
-
-sp_rename  '[dbo].[REGIMEN_SALUD]','Regimen_salud'
---en el procedimiento yo le cambie con minuscula en salud

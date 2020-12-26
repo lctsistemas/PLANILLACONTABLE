@@ -127,9 +127,11 @@ GO
 --BANCO
 CREATE TABLE Banco(
 id_banco int not null, 
-nombre_banco varchar(25) not null
+nombre_banco varchar(40) not null
 )
 GO
+
+--alter table banco alter column nombre_banco varchar(40) not null --cambie el tamaño
 
 delete from banco
 INSERT INTO Banco VALUES(1,'Sin banco');

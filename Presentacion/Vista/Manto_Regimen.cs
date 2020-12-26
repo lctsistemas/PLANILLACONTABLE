@@ -60,16 +60,16 @@ namespace Presentacion.Vista
             dgvregimen.Columns[0].Visible = false;
 
             dgvregimen.Columns[1].HeaderText = "DESCRIPCION";
-            dgvregimen.Columns[1].Width = 150;
+            dgvregimen.Columns[1].Width = 158;
 
             dgvregimen.Columns[2].HeaderText = "DES. CORTA";
-            dgvregimen.Columns[2].Width = 140;
+            dgvregimen.Columns[2].Width = 148;
 
             dgvregimen.Columns[3].HeaderText = "TIPO REGIMEN";
-            dgvregimen.Columns[3].Width = 217;
+            dgvregimen.Columns[3].Width = 123;
 
-            dgvregimen.Columns[4].HeaderText = "";
-            dgvregimen.Columns[4].Width = 100;
+            dgvregimen.Columns[4].HeaderText = "ESTADO"; //ADD, EDIT, DELETE
+            dgvregimen.Columns[4].Width = 50;
             dgvregimen.Columns[4].Visible = false;
 
         }
@@ -86,8 +86,7 @@ namespace Presentacion.Vista
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtdescripcion.Text)|| String.IsNullOrWhiteSpace(txtdescCorta.Text)|| String.IsNullOrWhiteSpace(cbxregimen.Text))
-            {
-                ValidateChildren();
+            {               
                 return true;
             }
             else
@@ -106,19 +105,10 @@ namespace Presentacion.Vista
             {
                 nr.Descripcion_corta = txtdescCorta.Text.Trim().ToUpper();
                 nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
-                nr.Tipo_regimen = cbxregimen.Text.Trim();
-
-                bool valida = new ValidacionDatos(nr).Validate();
-                if (valida)
-                {
-                    if (String.IsNullOrEmpty(cbxregimen.SelectedItem.ToString().Trim()))
-                        return;
-                    result = nr.GuardarCambios();
-
-                    Messages.M_info(result);
-                    limpiar();
-                }
-
+                nr.Tipo_regimen = cbxregimen.Text.Trim();               
+                result = nr.GuardarCambios();
+                Messages.M_info(result);
+                limpiar();
                 ShowRegimen();
             }
         }
@@ -156,8 +146,14 @@ namespace Presentacion.Vista
                         nr.state = EntityState.Remover;
                         nr.Codigo_Regimen = Convert.ToInt32(dgvregimen.CurrentRow.Cells[0].Value);
                         result = nr.GuardarCambios();
-                        ShowRegimen();
-                        Messages.M_info(result);
+                        if (result.Contains("La operacion fue denegada"))
+                            Messages.M_error(result);
+                        else
+                        {
+                            ShowRegimen();
+                            Messages.M_info(result);
+                        }
+                        
                     }
                 }
             }

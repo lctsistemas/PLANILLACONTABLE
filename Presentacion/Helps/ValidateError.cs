@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.Drawing;
 namespace Presentacion.Helps
 {
-    public class ValidateError
+    public static class ValidateError
     {
         public static ErrorProvider validate = new ErrorProvider();
 

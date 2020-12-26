@@ -87,7 +87,7 @@
             this.tabuser.Name = "tabuser";
             this.tabuser.Padding = new System.Drawing.Point(20, 6);
             this.tabuser.SelectedIndex = 0;
-            this.tabuser.Size = new System.Drawing.Size(873, 476);
+            this.tabuser.Size = new System.Drawing.Size(888, 476);
             this.tabuser.TabIndex = 5;
             // 
             // tablista
@@ -101,7 +101,7 @@
             this.tablista.Location = new System.Drawing.Point(4, 37);
             this.tablista.Name = "tablista";
             this.tablista.Padding = new System.Windows.Forms.Padding(3);
-            this.tablista.Size = new System.Drawing.Size(865, 435);
+            this.tablista.Size = new System.Drawing.Size(880, 435);
             this.tablista.TabIndex = 0;
             this.tablista.Text = "LISTA USUARIO";
             // 
@@ -143,15 +143,15 @@
             this.dgvusuario.AllowUserToDeleteRows = false;
             this.dgvusuario.AllowUserToResizeColumns = false;
             this.dgvusuario.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.dgvusuario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvusuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvusuario.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dgvusuario.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dgvusuario.BackgroundColor = System.Drawing.Color.White;
             this.dgvusuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvusuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvusuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dgvusuario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
@@ -164,12 +164,12 @@
             this.dgvusuario.ColumnHeadersHeight = 35;
             this.dgvusuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvusuario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvusuario.EnableHeadersVisualStyles = false;
@@ -186,11 +186,12 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvusuario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvusuario.RowHeadersVisible = false;
             this.dgvusuario.RowHeadersWidth = 25;
             this.dgvusuario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvusuario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvusuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvusuario.Size = new System.Drawing.Size(854, 335);
+            this.dgvusuario.Size = new System.Drawing.Size(869, 335);
             this.dgvusuario.TabIndex = 4;
             this.dgvusuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvusuario_CellDoubleClick);
             // 
@@ -223,7 +224,7 @@
             this.tabgestion.Name = "tabgestion";
             this.tabgestion.Padding = new System.Windows.Forms.Padding(3);
             this.tabgestion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabgestion.Size = new System.Drawing.Size(865, 435);
+            this.tabgestion.Size = new System.Drawing.Size(880, 435);
             this.tabgestion.TabIndex = 1;
             this.tabgestion.Text = "GESTION USUARIO";
             // 
@@ -425,7 +426,7 @@
             this.paneltitulo_user.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo_user.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo_user.Name = "paneltitulo_user";
-            this.paneltitulo_user.Size = new System.Drawing.Size(873, 35);
+            this.paneltitulo_user.Size = new System.Drawing.Size(888, 35);
             this.paneltitulo_user.TabIndex = 9;
             this.paneltitulo_user.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_user_MouseDown);
             // 
@@ -434,7 +435,7 @@
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
-            this.btnminimizar.Location = new System.Drawing.Point(733, 0);
+            this.btnminimizar.Location = new System.Drawing.Point(748, 0);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 35);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -450,7 +451,7 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.maxi_18dp;
-            this.btnmaximizar.Location = new System.Drawing.Point(768, 0);
+            this.btnmaximizar.Location = new System.Drawing.Point(783, 0);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 35);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -466,7 +467,7 @@
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.restore_18dp;
-            this.btnrestaurar.Location = new System.Drawing.Point(803, 0);
+            this.btnrestaurar.Location = new System.Drawing.Point(818, 0);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 35);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -483,7 +484,7 @@
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
-            this.btncerrar.Location = new System.Drawing.Point(838, 0);
+            this.btncerrar.Location = new System.Drawing.Point(853, 0);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -512,7 +513,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(873, 549);
+            this.ClientSize = new System.Drawing.Size(888, 549);
             this.Controls.Add(this.paneltitulo_user);
             this.Controls.Add(this.btnnuevo);
             this.Controls.Add(this.tabuser);
