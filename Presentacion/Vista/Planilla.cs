@@ -17,7 +17,7 @@ namespace Presentacion.Vista
         public FrmPlanilla()
         {
             InitializeComponent();
-            UserCache.Periodo = "2020";            
+            //UserCache.Periodo = "2020";
             //Initialize();
             
         }
@@ -190,6 +190,11 @@ namespace Presentacion.Vista
         private void txttope_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ValidateError.Validate_text(txttope, "Tope horario nocturno requerido!");
+        }
+
+        private void FrmPlanilla_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            instance = null;
         }
     }
 }

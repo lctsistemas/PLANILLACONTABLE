@@ -92,8 +92,7 @@ namespace Presentacion.Vista
             txtnom_usuario.Enabled = v;
             txtpassword.Enabled = v;
             cborol.Enabled = v;
-            cbogenero.Enabled = v;
-            btnrol.Enabled = v;
+            cbogenero.Enabled = v;          
         }
 
         //LIMPIAR CONTROLES
@@ -112,8 +111,7 @@ namespace Presentacion.Vista
         private void frmusuario_Load(object sender, EventArgs e)
         {
             cbogenero.Items.Add("M");
-            cbogenero.Items.Add("F");
-            Tooltip.Title(btnrol, "Registrar Rol", true);
+            cbogenero.Items.Add("F");         
             Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo", true);
             Tabla();
             Habilitar(false);
@@ -121,14 +119,7 @@ namespace Presentacion.Vista
             cborol.SelectedValue = 0;
         }
 
-        //FORMULARIO ROL
-        private void btnrol_Click(object sender, EventArgs e)
-        {
-            frmrol fr = frmrol.GetInstance();
-            fr.StartPosition = FormStartPosition.CenterParent;
-            fr.ShowDialog();
-            ShowRol();
-        }
+       
 
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)

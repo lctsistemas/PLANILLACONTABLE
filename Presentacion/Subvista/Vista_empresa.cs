@@ -128,6 +128,7 @@ namespace Presentacion.Subvista
             TotalDatos();
         }
        
+        //COLOR BOTON CERRAR
         private void btncerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.Crimson;
@@ -148,6 +149,12 @@ namespace Presentacion.Subvista
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
+
+        private void panelvista_empresa_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

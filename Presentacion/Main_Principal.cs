@@ -28,7 +28,7 @@ namespace Presentacion
         //PERMISOS DE ACCESO
         private void Permisos()
         {
-            MessageBox.Show("Bienvenido: " + UserCache.RolUser);
+            //MessageBox.Show("Bienvenido: " + UserCache.RolUser);
             if (UserCache.RolUser == Rol.Auxiliar)
             {               
                 btntipoplanilla.Enabled = false;

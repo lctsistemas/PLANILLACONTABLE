@@ -126,5 +126,11 @@ namespace Presentacion.Subvista
         {
             btncerrar.BackColor = Color.FromArgb(241,112,122);
         }
+
+        private void panelvista_user_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

@@ -47,6 +47,7 @@
             this.btnmantenimiento = new System.Windows.Forms.Button();
             this.panelSubMenuMedia = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnrol = new System.Windows.Forms.Button();
             this.btnbanco = new System.Windows.Forms.Button();
             this.btntipodocumento = new System.Windows.Forms.Button();
             this.btncargo = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.btnregsalud = new System.Windows.Forms.Button();
             this.btntipocontrato = new System.Windows.Forms.Button();
             this.btntipoplanilla = new System.Windows.Forms.Button();
-            this.btnrol = new System.Windows.Forms.Button();
             this.btnconfiguracion = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblrol = new System.Windows.Forms.Label();
@@ -380,6 +380,27 @@
             this.panel2.Size = new System.Drawing.Size(5, 280);
             this.panel2.TabIndex = 10;
             // 
+            // btnrol
+            // 
+            this.btnrol.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
+            this.btnrol.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnrol.FlatAppearance.BorderSize = 0;
+            this.btnrol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
+            this.btnrol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnrol.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnrol.ForeColor = System.Drawing.Color.White;
+            this.btnrol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrol.Location = new System.Drawing.Point(0, 245);
+            this.btnrol.Name = "btnrol";
+            this.btnrol.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnrol.Size = new System.Drawing.Size(233, 35);
+            this.btnrol.TabIndex = 13;
+            this.btnrol.Text = "Ro&les";
+            this.btnrol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnrol.UseVisualStyleBackColor = false;
+            this.btnrol.Click += new System.EventHandler(this.btnrol_Click);
+            // 
             // btnbanco
             // 
             this.btnbanco.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -524,27 +545,6 @@
             this.btntipoplanilla.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btntipoplanilla.UseVisualStyleBackColor = false;
             this.btntipoplanilla.Click += new System.EventHandler(this.btntipoplanilla_Click);
-            // 
-            // btnrol
-            // 
-            this.btnrol.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnrol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(45)))), ((int)(((byte)(55)))));
-            this.btnrol.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnrol.FlatAppearance.BorderSize = 0;
-            this.btnrol.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(134)))), ((int)(((byte)(154)))));
-            this.btnrol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnrol.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrol.ForeColor = System.Drawing.Color.White;
-            this.btnrol.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrol.Location = new System.Drawing.Point(0, 245);
-            this.btnrol.Name = "btnrol";
-            this.btnrol.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.btnrol.Size = new System.Drawing.Size(233, 35);
-            this.btnrol.TabIndex = 13;
-            this.btnrol.Text = "Ro&les";
-            this.btnrol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnrol.UseVisualStyleBackColor = false;
-            this.btnrol.Click += new System.EventHandler(this.btnrol_Click);
             // 
             // btnconfiguracion
             // 
@@ -790,6 +790,7 @@
             this.lblid_periodo.Size = new System.Drawing.Size(75, 17);
             this.lblid_periodo.TabIndex = 19;
             this.lblid_periodo.Text = "id periodo";
+            this.lblid_periodo.Visible = false;
             // 
             // lblidempresa
             // 
@@ -801,6 +802,7 @@
             this.lblidempresa.Size = new System.Drawing.Size(80, 17);
             this.lblidempresa.TabIndex = 20;
             this.lblidempresa.Text = "id empresa";
+            this.lblidempresa.Visible = false;
             // 
             // pictlct
             // 
