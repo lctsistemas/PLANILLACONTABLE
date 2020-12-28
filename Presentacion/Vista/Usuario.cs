@@ -35,7 +35,7 @@ namespace Presentacion.Vista
             using (nu)
             {
                 dgvusuario.DataSource = nu.Getall();
-                lbltotal.Text = "Total Registro  " + dgvusuario.RowCount;
+                lbltotal.Text = "Total Registro:  " + dgvusuario.RowCount;
             }
         }
 
@@ -63,17 +63,17 @@ namespace Presentacion.Vista
             dgvusuario.Columns[1].Width = 150;
 
             dgvusuario.Columns[2].HeaderText = "NOMBRE USUARIO";
-            dgvusuario.Columns[2].Width = 340;
+            dgvusuario.Columns[2].Width = 350;
 
             dgvusuario.Columns[3].HeaderText = "CONTRASEÑA";
-            dgvusuario.Columns[3].Width = 100;
+            dgvusuario.Columns[3].Width = 110;
 
             dgvusuario.Columns[4].HeaderText = "CODIGO ROL";
             dgvusuario.Columns[4].Width = 50;
             dgvusuario.Columns[4].Visible = false;
 
             dgvusuario.Columns[5].HeaderText = "ROL";
-            dgvusuario.Columns[5].Width = 240;
+            dgvusuario.Columns[5].Width = 245;
 
             dgvusuario.Columns[6].HeaderText = "GENERO";
             dgvusuario.Columns[6].Width = 50;
@@ -92,8 +92,7 @@ namespace Presentacion.Vista
             txtnom_usuario.Enabled = v;
             txtpassword.Enabled = v;
             cborol.Enabled = v;
-            cbogenero.Enabled = v;
-            btnrol.Enabled = v;
+            cbogenero.Enabled = v;          
         }
 
         //LIMPIAR CONTROLES
@@ -112,8 +111,7 @@ namespace Presentacion.Vista
         private void frmusuario_Load(object sender, EventArgs e)
         {
             cbogenero.Items.Add("M");
-            cbogenero.Items.Add("F");
-            Tooltip.Title(btnrol, "Registrar Rol", true);
+            cbogenero.Items.Add("F");         
             Tooltip.Title(txtbuscar, "Buscar por Nombre o Codigo", true);
             Tabla();
             Habilitar(false);
@@ -121,14 +119,7 @@ namespace Presentacion.Vista
             cborol.SelectedValue = 0;
         }
 
-        //FORMULARIO ROL
-        private void btnrol_Click(object sender, EventArgs e)
-        {
-            frmrol fr = frmrol.GetInstance();
-            fr.StartPosition = FormStartPosition.CenterParent;
-            fr.ShowDialog();
-            ShowRol();
-        }
+       
 
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)

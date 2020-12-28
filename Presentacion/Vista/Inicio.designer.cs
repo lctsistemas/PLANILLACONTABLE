@@ -40,7 +40,6 @@
             this.dgvlogin = new System.Windows.Forms.DataGridView();
             this.numeric_periodo = new System.Windows.Forms.NumericUpDown();
             this.Cbouser = new System.Windows.Forms.ComboBox();
-            this.cboroles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtroles = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -70,7 +69,7 @@
             this.txtuser.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuser.ForeColor = System.Drawing.Color.Gray;
-            this.txtuser.Location = new System.Drawing.Point(67, 113);
+            this.txtuser.Location = new System.Drawing.Point(70, 113);
             this.txtuser.Multiline = true;
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(424, 26);
@@ -88,7 +87,7 @@
             this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpass.ForeColor = System.Drawing.Color.Gray;
-            this.txtpass.Location = new System.Drawing.Point(67, 277);
+            this.txtpass.Location = new System.Drawing.Point(70, 277);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(442, 20);
             this.txtpass.TabIndex = 3;
@@ -102,7 +101,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(133, 32);
+            this.label3.Location = new System.Drawing.Point(142, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(256, 36);
             this.label3.TabIndex = 12;
@@ -119,7 +118,7 @@
             this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
-            this.btnlogin.Location = new System.Drawing.Point(27, 536);
+            this.btnlogin.Location = new System.Drawing.Point(29, 326);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(482, 40);
             this.btnlogin.TabIndex = 4;
@@ -131,11 +130,11 @@
             // 
             this.lblerror.AutoSize = true;
             this.lblerror.BackColor = System.Drawing.Color.Transparent;
-            this.lblerror.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblerror.ForeColor = System.Drawing.Color.Crimson;
-            this.lblerror.Location = new System.Drawing.Point(31, 496);
+            this.lblerror.Location = new System.Drawing.Point(38, 373);
             this.lblerror.Name = "lblerror";
-            this.lblerror.Size = new System.Drawing.Size(37, 17);
+            this.lblerror.Size = new System.Drawing.Size(36, 16);
             this.lblerror.TabIndex = 10;
             this.lblerror.Text = "error";
             this.lblerror.Visible = false;
@@ -171,7 +170,7 @@
             this.dgvlogin.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvlogin.EnableHeadersVisualStyles = false;
             this.dgvlogin.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvlogin.Location = new System.Drawing.Point(27, 320);
+            this.dgvlogin.Location = new System.Drawing.Point(29, 409);
             this.dgvlogin.Name = "dgvlogin";
             this.dgvlogin.ReadOnly = true;
             this.dgvlogin.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -182,9 +181,10 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvlogin.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvlogin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvlogin.Size = new System.Drawing.Size(482, 171);
+            this.dgvlogin.Size = new System.Drawing.Size(482, 167);
             this.dgvlogin.TabIndex = 15;
             this.dgvlogin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlogin_CellClick);
+            this.dgvlogin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvlogin_CellDoubleClick);
             // 
             // numeric_periodo
             // 
@@ -192,7 +192,7 @@
             this.numeric_periodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numeric_periodo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeric_periodo.ForeColor = System.Drawing.Color.White;
-            this.numeric_periodo.Location = new System.Drawing.Point(216, 502);
+            this.numeric_periodo.Location = new System.Drawing.Point(220, 381);
             this.numeric_periodo.Maximum = new decimal(new int[] {
             2030,
             0,
@@ -224,38 +224,18 @@
             this.Cbouser.ForeColor = System.Drawing.Color.White;
             this.Cbouser.FormattingEnabled = true;
             this.Cbouser.ItemHeight = 18;
-            this.Cbouser.Location = new System.Drawing.Point(27, 113);
+            this.Cbouser.Location = new System.Drawing.Point(30, 113);
             this.Cbouser.Name = "Cbouser";
             this.Cbouser.Size = new System.Drawing.Size(482, 26);
             this.Cbouser.TabIndex = 18;
             this.Cbouser.SelectedIndexChanged += new System.EventHandler(this.Cbouser_SelectedIndexChanged);
-            // 
-            // cboroles
-            // 
-            this.cboroles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.cboroles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cboroles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboroles.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboroles.ForeColor = System.Drawing.Color.White;
-            this.cboroles.FormattingEnabled = true;
-            this.cboroles.ItemHeight = 18;
-            this.cboroles.Items.AddRange(new object[] {
-            "ELEMENTO 1",
-            "ELEMENTO 2",
-            "ELEMENTO 3",
-            "ELEMENTO 4"});
-            this.cboroles.Location = new System.Drawing.Point(27, 195);
-            this.cboroles.Name = "cboroles";
-            this.cboroles.Size = new System.Drawing.Size(482, 26);
-            this.cboroles.TabIndex = 18;
-            this.cboroles.SelectedIndexChanged += new System.EventHandler(this.cboroles_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(24, 131);
+            this.label1.Location = new System.Drawing.Point(27, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(487, 13);
             this.label1.TabIndex = 5;
@@ -267,11 +247,11 @@
             this.txtroles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtroles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtroles.ForeColor = System.Drawing.Color.Gray;
-            this.txtroles.Location = new System.Drawing.Point(67, 195);
+            this.txtroles.Location = new System.Drawing.Point(70, 195);
             this.txtroles.Multiline = true;
             this.txtroles.Name = "txtroles";
             this.txtroles.ReadOnly = true;
-            this.txtroles.Size = new System.Drawing.Size(424, 26);
+            this.txtroles.Size = new System.Drawing.Size(444, 26);
             this.txtroles.TabIndex = 2;
             this.txtroles.Text = "ROL";
             this.txtroles.Enter += new System.EventHandler(this.txtroles_Enter);
@@ -282,7 +262,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(24, 214);
+            this.label4.Location = new System.Drawing.Point(27, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(487, 13);
             this.label4.TabIndex = 5;
@@ -293,7 +273,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(24, 295);
+            this.label2.Location = new System.Drawing.Point(27, 295);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(487, 13);
             this.label2.TabIndex = 5;
@@ -302,7 +282,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Presentacion.Properties.Resources.candado;
-            this.pictureBox4.Location = new System.Drawing.Point(27, 265);
+            this.pictureBox4.Location = new System.Drawing.Point(30, 265);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -312,7 +292,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Presentacion.Properties.Resources.empleados1;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 185);
+            this.pictureBox3.Location = new System.Drawing.Point(30, 185);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -322,7 +302,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Presentacion.Properties.Resources.clientes;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 102);
+            this.pictureBox2.Location = new System.Drawing.Point(30, 102);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -392,7 +372,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtroles);
-            this.Controls.Add(this.cboroles);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.numeric_periodo);
             this.Controls.Add(this.dgvlogin);
@@ -440,7 +419,6 @@
         private System.Windows.Forms.NumericUpDown numeric_periodo;
         private System.Windows.Forms.ComboBox Cbouser;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ComboBox cboroles;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtroles;
         private System.Windows.Forms.Label label4;

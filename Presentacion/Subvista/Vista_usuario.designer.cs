@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelvista_user = new System.Windows.Forms.Panel();
             this.pictbuscar = new System.Windows.Forms.PictureBox();
             this.dgvvista_user = new System.Windows.Forms.DataGridView();
             this.btncerrar = new System.Windows.Forms.Label();
             this.lblcantidad = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.panel1.SuspendLayout();
+            this.panelvista_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictbuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_user)).BeginInit();
             this.SuspendLayout();
@@ -54,21 +54,22 @@
             this.lineShape1.Y1 = 42;
             this.lineShape1.Y2 = 42;
             // 
-            // panel1
+            // panelvista_user
             // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictbuscar);
-            this.panel1.Controls.Add(this.dgvvista_user);
-            this.panel1.Controls.Add(this.btncerrar);
-            this.panel1.Controls.Add(this.lblcantidad);
-            this.panel1.Controls.Add(this.txtbuscar);
-            this.panel1.Controls.Add(this.shapeContainer2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 388);
-            this.panel1.TabIndex = 9;
+            this.panelvista_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelvista_user.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelvista_user.Controls.Add(this.pictbuscar);
+            this.panelvista_user.Controls.Add(this.dgvvista_user);
+            this.panelvista_user.Controls.Add(this.btncerrar);
+            this.panelvista_user.Controls.Add(this.lblcantidad);
+            this.panelvista_user.Controls.Add(this.txtbuscar);
+            this.panelvista_user.Controls.Add(this.shapeContainer2);
+            this.panelvista_user.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelvista_user.Location = new System.Drawing.Point(0, 0);
+            this.panelvista_user.Name = "panelvista_user";
+            this.panelvista_user.Size = new System.Drawing.Size(777, 388);
+            this.panelvista_user.TabIndex = 9;
+            this.panelvista_user.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelvista_user_MouseDown);
             // 
             // pictbuscar
             // 
@@ -86,46 +87,46 @@
             this.dgvvista_user.AllowUserToDeleteRows = false;
             this.dgvvista_user.AllowUserToResizeColumns = false;
             this.dgvvista_user.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
-            this.dgvvista_user.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvvista_user.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvvista_user.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvvista_user.BackgroundColor = System.Drawing.Color.White;
             this.dgvvista_user.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvvista_user.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvvista_user.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvvista_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvvista_user.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvvista_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvvista_user.ColumnHeadersHeight = 35;
             this.dgvvista_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvvista_user.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvvista_user.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvvista_user.EnableHeadersVisualStyles = false;
             this.dgvvista_user.Location = new System.Drawing.Point(7, 70);
             this.dgvvista_user.MultiSelect = false;
             this.dgvvista_user.Name = "dgvvista_user";
             this.dgvvista_user.ReadOnly = true;
             this.dgvvista_user.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvvista_user.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvvista_user.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvvista_user.RowHeadersVisible = false;
             this.dgvvista_user.RowHeadersWidth = 25;
             this.dgvvista_user.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvvista_user.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -191,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(777, 388);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelvista_user);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.Name = "frmvista_usuario";
@@ -199,8 +200,8 @@
             this.Text = "VISTA USUARIO";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmvista_usuario_FormClosing);
             this.Load += new System.EventHandler(this.frmvista_usuario_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelvista_user.ResumeLayout(false);
+            this.panelvista_user.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictbuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvvista_user)).EndInit();
             this.ResumeLayout(false);
@@ -209,7 +210,7 @@
 
         #endregion
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelvista_user;
         private System.Windows.Forms.PictureBox pictbuscar;
         private System.Windows.Forms.DataGridView dgvvista_user;
         private System.Windows.Forms.Label btncerrar;

@@ -632,7 +632,7 @@ GO
 
 --PROCEDIMENTO PARA REGISTRAR BANCO
 ALTER PROC SP_INSERT_BANCO(
-@nombre_banco varchar(25),
+@nombre_banco varchar(40),
 @mensaje varchar(30) output
 )
 AS BEGIN
@@ -652,11 +652,11 @@ GO
 --PROCEDIMENTO PARA ACTUALIZAR BANCO
 ALTER PROC SP_UPDATE_BANCO(
 @id_banco int,
-@nombre_banco varchar(25)
+@nombre_banco varchar(40)
 )
 AS BEGIN 
 UPDATE Banco SET id_banco=@id_banco,nombre_banco=@nombre_banco where id_banco=@id_banco
-END;
+END
 GO
 
 --PROCEDIMENTO PARA ELIMINAR BANCO
@@ -665,16 +665,16 @@ ALTER PROC SP_DEL_BANCO(
 @message varchar(100) output
 )
 AS BEGIN 
-IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(c.id_banco=b.id_banco) where c.id_banco=@id_banco))
+IF(EXISTS(SELECT b.id_banco from Banco b join Contrato c on(b.id_banco=c.id_banco) where c.id_banco=@id_banco))
 	BEGIN
 		DECLARE @cod_banco varchar(20);
 		SET @cod_banco=(SELECT b.nombre_banco from Banco b WHERE b.id_banco=@id_banco)
-		SET @message='El banco ('+@cod_banco+') esta en uso.'  
+		SET @message='Denegado, ( '+@cod_banco+' ) esta  asignado.'  
 	END
 ELSE
 	BEGIN 
 		DELETE from Banco where id_banco=@id_banco
-		SET @message='¡Banco eliminado!'
+		SET @message='¡Eliminado!'
 	END
 END
 GO
@@ -774,15 +774,15 @@ GO
 ------------------------------------------------------FIN LOGIN ---------------------------------------------------------------------
 
 --STAR PROCEDIMIENTO PARA AGREGAR REGIMEN PENSIONARIO
-CREATE PROCEDURE SP_ADD_REGIMEN(
+ALTER PROCEDURE SP_ADD_REGIMEN(
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
 @tipo_regimen varchar(10),
-@mensaje varchar(100) output)
+@mensaje varchar(20) output)
 AS BEGIN
 INSERT INTO RegimenPensionario(descripcion_corta,descripcion,tipo_regimen)
 VALUES(@descripcion,@descripcion_corta,@tipo_regimen)
-SET @mensaje= 'Régimen Registrado Correctamente.'
+SET @mensaje= '¡Registrado!'
 END
 GO
 
@@ -797,21 +797,28 @@ CREATE PROC SP_UPDATE_REGIMEN
 @codigo_regimen int,
 @descripcion_corta varchar(30),
 @descripcion varchar(100),
-@tipo_regimen varchar(30)
+@tipo_regimen varchar(10)
 AS BEGIN
 UPDATE RegimenPensionario SET descripcion_corta=@descripcion_corta, 
 descripcion=@descripcion, tipo_regimen=@tipo_regimen WHERE codigo_regimen=@codigo_regimen
 END
 GO
 
-ALTER PROC SP_DELETE_REGIMEN
+ALTER PROC SP_DELETE_REGIMEN 
 @codigo_regimen int,
 @mensaje varchar(100) output
 AS BEGIN
-DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
-SET @mensaje= '¡Eliminado!'
+IF(EXISTS(SELECT r.codigo_regimen FROM dbo.RegimenPensionario r INNER JOIN dbo.ComisionesPension co 
+ON r.codigo_regimen=co.codigo_regimen WHERE r.codigo_regimen=@codigo_regimen)) 
+OR (EXISTS(SELECT r.codigo_regimen FROM dbo.RegimenPensionario r INNER JOIN dbo.Empleado e ON 
+r.codigo_regimen= e.codigo_regimen WHERE r.codigo_regimen=@codigo_regimen)) 
+	SET @mensaje ='La operacion fue denegada, esta (asignado)'
+ELSE 
+BEGIN
+	DELETE from RegimenPensionario where codigo_regimen=@codigo_regimen
+	SET @mensaje= '¡Eliminado!'
 END
---END
+END
 GO
 
 --STAR PROCEDIMIENTO PARA COMISIONES PENSIONES	
@@ -827,10 +834,47 @@ ALTER PROCEDURE SP_SHOW_COMISIONPENSIONES
 @tipo_regimen varchar(10)
 AS BEGIN
 	select r.codigo_regimen, r.descripcion, co.idcomision, co.comision, co.saldo, co.seguro, co.aporte, co.tope from 
-	RegimenPensionario r JOIN ComisionesPension co on r.codigo_regimen=co.codigo_regimen 
+	RegimenPensionario r  JOIN ComisionesPension co on (r.codigo_regimen=co.codigo_regimen) 
 	WHERE (co.idmes=@idmes AND idperiodo=@idperiodo) AND r.tipo_regimen=@tipo_regimen
 END
 GO
+
+CREATE PROC SP_SHOW_NUEVA_COMISION
+AS BEGIN
+select  r.codigo_regimen, r.descripcion from RegimenPensionario r
+ LEFT JOIN ComisionesPension co on (r.codigo_regimen=co.codigo_regimen) where co.codigo_regimen is null
+END
+GO
+
+CREATE PROC SP_INSERT_NUEVA_COMISIONES ---pendiente
+@codigo_regimen int,
+@comision decimal(6,2),
+@saldo decimal(6,2) ,
+@seguro decimal(6,2), 
+@aporte decimal(6,2),
+@tope  decimal(10,2),
+@idmes int,
+@idperiodo int
+AS BEGIN
+CREATE TABLE OPERA(
+id int primary key,
+nombre varchar(50)
+)
+select max(id) +1 as canti from OPERA
+
+	DECLARE @idcomi int
+	
+	IF(@idcomi=0)
+		SET @idcomi=1
+	ELSE
+		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
+
+	INSERT INTO dbo.ComisionesPension(idcomision, codigo_regimen,
+	comision, saldo, seguro, aporte, tope, idmes, idperiodo) VALUES
+	(@idcomi, @codigo_regimen, @comision, @saldo, @seguro, @aporte, @tope, @idmes, @idperiodo)
+END		
+GO
+
 
 ALTER PROC SP_INSERT_COMISIONES
 @codigo_regimen int,
@@ -1171,15 +1215,20 @@ tipo_subsidio=@tipo_subsidio, descuento=@descuento WHERE id_subsidios=@id_subsid
 END
 GO
 
-create PROC SP_BORRAR_SUBSIDIOS
+ALTER PROC SP_BORRAR_SUBSIDIOS
 @id_subsidios int,
-@mensaje varchar(100) output
+@mensaje varchar(60) output
 AS BEGIN
-DELETE FROM dbo.Subsidios WHERE id_subsidios=@id_subsidios
-SET @mensaje= '¡ELIMINADO!'
+IF(EXISTS(SELECT s.cod_subsidio FROM dbo.Subsidios s INNER JOIN dbo.Det_subsidios d ON(s.id_subsidios=d.id_subsidios) 
+WHERE d.id_subsidios = @id_subsidios))
+SET @mensaje ='Denegado, se encuentra asignado en empleado'
+ELSE
+	BEGIN
+	DELETE FROM dbo.Subsidios WHERE id_subsidios=@id_subsidios
+	SET @mensaje= '¡Eliminado!'
+	END
 END
 GO
-
 
 CREATE PROC SP_MOSTRAR_SUBSIDIOS 
 AS BEGIN
@@ -1314,5 +1363,8 @@ SET STATISTICS IO, TIME ON
 --
 --Inclue Actual Execution Plan
 GO
-select * from ComisionesPension c join RegimenPensionario r on c.codigo_regimen=r.codigo_regimen
-select * from Conceptos
+
+
+/*PENDIENTE:
+LINEA 845
+*/

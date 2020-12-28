@@ -379,6 +379,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmPlanilla";
             this.Text = "Planilla";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPlanilla_FormClosing);
             this.Load += new System.EventHandler(this.Planilla_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

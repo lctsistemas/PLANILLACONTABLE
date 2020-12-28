@@ -31,7 +31,7 @@ namespace Presentacion.Vista
         //TOTAL REGISTRO DE TABLA
         private void TotalRegistro()
         {
-            lbltotal.Text = "TOTAL REGISTRO: " + dgvdocumento.Rows.Count;
+            lbltotal.Text = "Total registro: " + dgvdocumento.Rows.Count;
         }
 
         //MODIFICAR DATAGRIDVIEW
@@ -41,15 +41,15 @@ namespace Presentacion.Vista
             dgvdocumento.Columns[0].Width = 50;
             dgvdocumento.Columns[0].Visible = false;
             
-            dgvdocumento.Columns[1].HeaderText = "CODIGO";
+            dgvdocumento.Columns[1].HeaderText = "COD.";
             dgvdocumento.Columns[1].Width = 50;
             dgvdocumento.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvdocumento.Columns[2].HeaderText = "DOCUMENTO";
-            dgvdocumento.Columns[2].Width = 140;
+            dgvdocumento.Columns[2].Width = 152;
 
             dgvdocumento.Columns[3].HeaderText = "DESCRIPCION";
-            dgvdocumento.Columns[3].Width = 217;
+            dgvdocumento.Columns[3].Width = 230;
             
         }
         //VALIDAR CONTROLES

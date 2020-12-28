@@ -12,13 +12,7 @@ namespace Negocio.Models
     public class NBanco : IDisposable
     {
         String mensaje;
-        public Int32 IdBanco { get; set; }
-
-
-        //[Required(ErrorMessage = "El campo Nombre de Banco es obligatorio.")]
-        [Display(Name = "Nombre Banco")]
-        [Required]
-        [RegularExpression("^[a-zA-Z ]+$", ErrorMessage = "El campo Nombre de Banco solo permite letras.")]
+        public Int32 IdBanco { get; set; }       
         public String Nom_banco { get; set; }
 
         public EntityState state { get; set; }
@@ -45,7 +39,7 @@ namespace Negocio.Models
 
                 case EntityState.Modificar:
                     RBanco.Edit(ban);
-                    mensaje = "Successfully Edited!";
+                    mensaje = "¡Modificado!";
                     break;
 
                 case EntityState.Remover:
@@ -79,12 +73,10 @@ namespace Negocio.Models
             }
             return list_banco;
         }
-
         
-
-        public IEnumerable<NBanco> Search(string filter)
-        {
-            return list_banco.FindAll(e => e.Nom_banco.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
-        }
+        //public IEnumerable<NBanco> Search(string filter)
+        //{
+        //    return list_banco.FindAll(e => e.Nom_banco.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
+        //}
     }
 }

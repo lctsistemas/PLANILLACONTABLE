@@ -350,17 +350,17 @@ namespace Presentacion.Vista
 
         private void txtcodigo_sucursal_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtcodigo_sucursal, "¡Código de sucursal requerido!");
+            ValidateError.Validate_text(txtcodigo_sucursal, "¡Código requerido!");
         }       
 
         private void txtlocalidad_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtlocalidad, "Localidad requerida!");
+            ValidateError.Validate_text(txtlocalidad, "Localidad requerido!");
         }
 
         private void txtdireccion_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtdireccion, "¡Dirección requerida!");
+            ValidateError.Validate_text(txtdireccion, "¡Dirección requerido!");
         }
        
         private void txtusuario_Validating(object sender, System.ComponentModel.CancelEventArgs e)

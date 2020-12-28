@@ -243,11 +243,7 @@ namespace Presentacion.Vista
             }           
         }
 
-        private void dgvcomision_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-           // btnupdate.Enabled = true;
-        }
-
+     
         private void dgvcomision_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvcomision.RowCount > 0 && btnguardar.Enabled==false)

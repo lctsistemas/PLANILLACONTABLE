@@ -42,6 +42,7 @@ namespace Presentacion.Vista
             }
         }
 
+        //DISEÑO A LA TABLA
         private void Tabla()
         {
             dgvsubsidio.Columns[0].HeaderText = "id_subsidios";
@@ -57,10 +58,10 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvsubsidio.Columns[3].HeaderText = "DESCRIPCION CORTA";
-            dgvsubsidio.Columns[3].Width = 231;
+            dgvsubsidio.Columns[3].Width = 236;
 
             dgvsubsidio.Columns[4].HeaderText = "DESCRIPCION LARGA";
-            dgvsubsidio.Columns[4].Width = 315;
+            dgvsubsidio.Columns[4].Width = 335;
 
             dgvsubsidio.Columns[5].HeaderText = "ESTADO";
             dgvsubsidio.Columns[5].Width = 100;
@@ -79,7 +80,19 @@ namespace Presentacion.Vista
             //}
         }
 
+        //VALIDAR DATOS PARA ERROR PROVIDER
+        private bool ValidarDatos()
+        {
+            if (string.IsNullOrWhiteSpace(txtcodigosubsidio.Text) || cbxsuspension.Text == string.Empty ||
+                cbxtiposub.Text == string.Empty || string.IsNullOrWhiteSpace(txtdescCorta.Text) || string.IsNullOrWhiteSpace(txtdescSubsi.Text))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
       
+        //limpiar
         private void limpiar()
         {
             txtcodigosubsidio.Text = String.Empty;
@@ -92,7 +105,7 @@ namespace Presentacion.Vista
             using (ns) { ns.state = EntityState.Guardar; }
         }
 
-
+        //habilitar controles
         private void Habilitar(bool estado)
         {
             txtcodigosubsidio.Enabled = estado;
@@ -102,19 +115,27 @@ namespace Presentacion.Vista
             cbxtiposub.Enabled = estado;
             checkDescuento.Enabled = estado;
             txtcodigosubsidio.Focus();
+            tbtnguardar.Enabled = estado;
         }
 
         private void tbtnnuevo_Click(object sender, EventArgs e)
         {
             Habilitar(true);
             limpiar();
+            
         }
 
         private void tbtnguardar_Click(object sender, EventArgs e)
         {
+            if (ValidarDatos())
+            {
+                ValidateChildren();
+                return;
+            }
+
             result = "";
             using (ns)
-            {                
+            {
                 ns.Cod_subsidios = txtcodigosubsidio.Text.Trim();
                 ns.Tipo_suspension = cbxsuspension.SelectedItem.ToString();
                 ns.Descripcion_corta = txtdescCorta.Text.Trim();
@@ -135,7 +156,7 @@ namespace Presentacion.Vista
             result = "";
             if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
-                DialogResult r = Messages.M_question("¿Desea eliminar la fila?");
+                DialogResult r = Messages.M_question("¿Desea eliminar Código ( "+dgvsubsidio.CurrentRow.Cells[1].Value.ToString()+ " ) de la fila?");
                 if (r == DialogResult.Yes)
                 {
                     using (ns)
@@ -143,11 +164,16 @@ namespace Presentacion.Vista
                         ns.state = EntityState.Remover;
                         ns.Id_subsidios = Convert.ToInt32(dgvsubsidio.CurrentRow.Cells[0].Value);
                         result = ns.SaveChanges();
-                        ShowSubsidio();
-                        Messages.M_info(result);
+                        if (result.Contains("se encuentra asignado en empleado"))
+                            Messages.M_error(result);
+                        else
+                        {
+                            ShowSubsidio();
+                            Messages.M_info(result);
+                        }
+                        
                     }
                 }
-
             }
             else
             {
@@ -190,6 +216,7 @@ namespace Presentacion.Vista
             }
         }      
 
+        //BOTONES COLOR
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(241,112,122);
@@ -243,6 +270,32 @@ namespace Presentacion.Vista
         private void label6_MouseDown(object sender, MouseEventArgs e)
         {
             Mover();
+        }
+
+        //VALIDACION PARA ERROR PROVIDER
+        private void txtcodigosubsidio_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtcodigosubsidio,"¡Requerido!");
+        }
+
+        private void cbxsuspension_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbxsuspension, "¡Requerido!");
+        }
+
+        private void cbxtiposub_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbxtiposub, "¡Requerido!");
+        }
+
+        private void txtdescCorta_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdescCorta, "¡Requerido!");
+        }
+
+        private void txtdescSubsi_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtdescSubsi, "¡Requerido!");
         }
     }
 }

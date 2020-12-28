@@ -18,11 +18,8 @@ namespace Login_inicio
         public frminicio()
         {
             InitializeComponent();
-            Fill_user();
-            Fill_rol();
+            Fill_user();            
             IniciarPlaceHolder();
-
-
 
         }
 
@@ -40,22 +37,10 @@ namespace Login_inicio
             {
                 Cbouser.DataSource = nusu.Getall();
                 Cbouser.DisplayMember = "nombre_refe";
-                Cbouser.ValueMember = "idusuario";
-                Cbouser.Text = null;
+                Cbouser.ValueMember = "name_rol";//mostrar el rol como Value. para que muestre en caja de texto ROL.
+                Cbouser.Text = null;               
             }
-        }
-
-        //LLAMAR ROL PARA CARGAR EN COMBOBOX
-        private void Fill_rol()
-        {
-            using (Nrol nr=new Nrol())
-            {
-                cboroles.DataSource = nr.Getall();
-                cboroles.DisplayMember = "nombre_rol";
-                cboroles.ValueMember = "idrol";
-                cboroles.Text = null;
-            }
-        }
+        }       
 
         //PARA USER
         private void txtuser_Enter(object sender, EventArgs e)
@@ -149,10 +134,11 @@ namespace Login_inicio
                                     BloquearAcceso(true);
                                     if (activo)
                                     {
-                                        FrmMain_principal mainmenu = new FrmMain_principal();
-                                        mainmenu.Show();
-                                        mainmenu.FormClosed += Logout;//revisar
-                                        this.Hide();
+                                        //FrmMain_principal mainmenu = new FrmMain_principal();
+                                        //mainmenu.Show();
+                                        //mainmenu.FormClosed += Logout;//revisar
+                                        //this.Hide();
+                                        //Messages.M_warning("Seleccione fila para acceder");
                                     }
                                 }else
                                 {
@@ -264,7 +250,7 @@ namespace Login_inicio
                 catch (Exception)
                 {
                     activo = false;
-                    Messages.M_error("Seleccione Una Empresa.");
+                    //Messages.M_error("Seleccione Una Empresa.");
                 }
             }
         }
@@ -346,14 +332,10 @@ namespace Login_inicio
         private void Cbouser_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtuser.Text = Cbouser.Text.Trim();
-            txtuser.ForeColor = Color.LightGray;
-        }
-
-        private void cboroles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtroles.Text = cboroles.Text.Trim();
+            txtuser.ForeColor = Color.LightCyan;
+            txtroles.Text = ""+Cbouser.SelectedValue;
             txtroles.ForeColor = Color.LightCyan;
-        }
+        }        
 
         private void txtuser_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -364,6 +346,19 @@ namespace Login_inicio
         private void panelinicio_MouseDown(object sender, MouseEventArgs e)
         {
             MoverVentana();
+        }
+
+        private void dgvlogin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (activo)
+            {
+                FrmMain_principal mainmenu = new FrmMain_principal();
+                mainmenu.Show();
+                mainmenu.FormClosed += Logout;//revisar
+                this.Hide();
+            }
+            else
+                MessageBox.Show("errorrr");
         }
     }
 }

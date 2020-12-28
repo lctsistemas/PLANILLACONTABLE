@@ -28,19 +28,20 @@ namespace Presentacion
         //PERMISOS DE ACCESO
         private void Permisos()
         {
-            MessageBox.Show("Bienvenido: " + UserCache.RolUser);
+            //MessageBox.Show("Bienvenido: " + UserCache.RolUser);
             if (UserCache.RolUser == Rol.Auxiliar)
             {               
                 btntipoplanilla.Enabled = false;
                 btntipocontrato.Enabled = false;
                 btnregsalud.Enabled = false;
                 btnrol.Enabled = false;
-                btnmantenimiento.Enabled = false;
+                btnmantenimiento.Enabled = false;//contiene sub menu botones
                 //btnregimen_pensionario.Enabled = false;
                 //btncomisionesafp.Enabled = false;
                 btnempresa.Enabled = false;
                 btnsucursal.Enabled = false;
                 btnusurio.Enabled = false;
+                btnbanco.Enabled = false;
             }else if (UserCache.RolUser==Rol.Contabilidad)
             {
                 btnrol.Enabled = false;
@@ -250,7 +251,11 @@ namespace Presentacion
         private void btnrol_Click(object sender, EventArgs e)
         {
             OpenForm<frmrol>();
-        }      
+        }
+        private void btnbanco_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmBanco2>();
+        }
 
         private void btnsucursal_Click(object sender, EventArgs e)
         {
@@ -312,12 +317,8 @@ namespace Presentacion
         private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(23,69,125);
-        }
+        }     
 
-       
-
-
-
-        //..
+        //...
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Vista
 {
-    partial class Banco2
+    partial class FrmBanco2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,78 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.lblbanco = new System.Windows.Forms.Label();
-            this.btnguardar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panelbanco = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBanco = new System.Windows.Forms.TextBox();
-            this.txttotaldias = new System.Windows.Forms.TextBox();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.dgvbanco = new System.Windows.Forms.DataGridView();
-            this.dgvtxtidbanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvtxtbanco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.bid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bnombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bmodificar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.beliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.panelcabecera = new System.Windows.Forms.Panel();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.lblbanco = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            this.panelbanco.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbanco)).BeginInit();
+            this.panelcabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelbanco
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnguardar);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtBanco);
-            this.panel1.Controls.Add(this.txttotaldias);
-            this.panel1.Controls.Add(this.dgvbanco);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(399, 324);
-            this.panel1.TabIndex = 8;
+            this.panelbanco.BackColor = System.Drawing.Color.White;
+            this.panelbanco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelbanco.Controls.Add(this.groupBox1);
+            this.panelbanco.Controls.Add(this.dgvbanco);
+            this.panelbanco.Controls.Add(this.lbltotal);
+            this.panelbanco.Controls.Add(this.panelcabecera);
+            this.panelbanco.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelbanco.Location = new System.Drawing.Point(0, 0);
+            this.panelbanco.Name = "panelbanco";
+            this.panelbanco.Size = new System.Drawing.Size(399, 372);
+            this.panelbanco.TabIndex = 8;
             // 
-            // panel2
+            // groupBox1
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btncerrar);
-            this.panel2.Controls.Add(this.lblbanco);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 35);
-            this.panel2.TabIndex = 95;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtBanco);
+            this.groupBox1.Controls.Add(this.btnguardar);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(3, 45);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(391, 80);
+            this.groupBox1.TabIndex = 98;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Registrar";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(6, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 16);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Ingresar nombre del Banco :";
+            // 
+            // txtBanco
+            // 
+            this.txtBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBanco.Location = new System.Drawing.Point(9, 41);
+            this.txtBanco.Name = "txtBanco";
+            this.txtBanco.Size = new System.Drawing.Size(230, 22);
+            this.txtBanco.TabIndex = 10;
+            this.txtBanco.Validating += new System.ComponentModel.CancelEventHandler(this.txtBanco_Validating);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnguardar.FlatAppearance.BorderSize = 0;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.White;
+            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(264, 37);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(101, 24);
+            this.btnguardar.TabIndex = 93;
+            this.btnguardar.Text = "&Guardar";
+            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
+            // dgvbanco
+            // 
+            this.dgvbanco.AllowUserToAddRows = false;
+            this.dgvbanco.AllowUserToDeleteRows = false;
+            this.dgvbanco.AllowUserToResizeColumns = false;
+            this.dgvbanco.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvbanco.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvbanco.BackgroundColor = System.Drawing.Color.White;
+            this.dgvbanco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvbanco.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvbanco.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvbanco.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvbanco.ColumnHeadersHeight = 35;
+            this.dgvbanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvbanco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bid,
+            this.bnombre,
+            this.bmodificar,
+            this.beliminar});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvbanco.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvbanco.EnableHeadersVisualStyles = false;
+            this.dgvbanco.Location = new System.Drawing.Point(3, 148);
+            this.dgvbanco.MultiSelect = false;
+            this.dgvbanco.Name = "dgvbanco";
+            this.dgvbanco.RowHeadersVisible = false;
+            this.dgvbanco.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvbanco.Size = new System.Drawing.Size(391, 207);
+            this.dgvbanco.TabIndex = 97;
+            this.dgvbanco.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbanco_CellClick);
+            this.dgvbanco.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbanco_CellContentClick);
+            this.dgvbanco.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvbanco_EditingControlShowing);
+            // 
+            // bid
+            // 
+            this.bid.DataPropertyName = "IdBanco";
+            this.bid.HeaderText = "ID";
+            this.bid.Name = "bid";
+            this.bid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.bid.Width = 50;
+            // 
+            // bnombre
+            // 
+            this.bnombre.DataPropertyName = "Nom_banco";
+            this.bnombre.HeaderText = "ENTIDAD FINANCIERA";
+            this.bnombre.Name = "bnombre";
+            this.bnombre.Width = 250;
+            // 
+            // bmodificar
+            // 
+            this.bmodificar.HeaderText = "EDITAR";
+            this.bmodificar.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
+            this.bmodificar.Name = "bmodificar";
+            this.bmodificar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.bmodificar.Width = 70;
+            // 
+            // beliminar
+            // 
+            this.beliminar.HeaderText = "ELIMINAR";
+            this.beliminar.Image = global::Presentacion.Properties.Resources.delete18p;
+            this.beliminar.Name = "beliminar";
+            this.beliminar.Width = 70;
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbltotal.Location = new System.Drawing.Point(3, 128);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(47, 17);
+            this.lbltotal.TabIndex = 96;
+            this.lbltotal.Text = "label1";
+            // 
+            // panelcabecera
+            // 
+            this.panelcabecera.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.panelcabecera.Controls.Add(this.btnminimizar);
+            this.panelcabecera.Controls.Add(this.btncerrar);
+            this.panelcabecera.Controls.Add(this.lblbanco);
+            this.panelcabecera.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelcabecera.ForeColor = System.Drawing.Color.White;
+            this.panelcabecera.Location = new System.Drawing.Point(0, 0);
+            this.panelcabecera.Name = "panelcabecera";
+            this.panelcabecera.Size = new System.Drawing.Size(397, 35);
+            this.panelcabecera.TabIndex = 95;
+            this.panelcabecera.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.btnminimizar.Location = new System.Drawing.Point(327, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimizar.TabIndex = 96;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
             // 
             // btncerrar
             // 
-            this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_36dp;
-            this.btncerrar.Location = new System.Drawing.Point(357, 8);
+            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.btncerrar.Location = new System.Drawing.Point(362, 0);
             this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 20);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncerrar.TabIndex = 96;
+            this.btncerrar.Size = new System.Drawing.Size(35, 35);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 97;
             this.btncerrar.TabStop = false;
             this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
@@ -108,180 +260,22 @@
             // 
             // lblbanco
             // 
-            this.lblbanco.AutoSize = true;
-            this.lblbanco.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblbanco.Location = new System.Drawing.Point(11, 4);
+            this.lblbanco.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblbanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblbanco.Location = new System.Drawing.Point(0, 0);
             this.lblbanco.Name = "lblbanco";
-            this.lblbanco.Size = new System.Drawing.Size(59, 19);
+            this.lblbanco.Size = new System.Drawing.Size(77, 35);
             this.lblbanco.TabIndex = 95;
-            this.lblbanco.Text = "Banco";
+            this.lblbanco.Text = "BANCO";
+            this.lblbanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblbanco.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblbanco_MouseDown);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatAppearance.BorderSize = 0;
-            this.btnguardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnguardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
-            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(257, 58);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(101, 24);
-            this.btnguardar.TabIndex = 93;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(37, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 16);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Ingresar Banco :";
-            // 
-            // txtBanco
-            // 
-            this.txtBanco.Location = new System.Drawing.Point(40, 62);
-            this.txtBanco.Name = "txtBanco";
-            this.txtBanco.Size = new System.Drawing.Size(189, 20);
-            this.txtBanco.TabIndex = 10;
-            this.txtBanco.Validating += new System.ComponentModel.CancelEventHandler(this.txtBanco_Validating);
-            // 
-            // txttotaldias
-            // 
-            this.txttotaldias.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txttotaldias.Enabled = false;
-            this.txttotaldias.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotaldias.Location = new System.Drawing.Point(184, 282);
-            this.txttotaldias.Multiline = true;
-            this.txttotaldias.Name = "txttotaldias";
-            this.txttotaldias.Size = new System.Drawing.Size(174, 28);
-            this.txttotaldias.TabIndex = 8;
-            this.txttotaldias.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dgvbanco
-            // 
-            this.dgvbanco.AllowUserToAddRows = false;
-            this.dgvbanco.AllowUserToDeleteRows = false;
-            this.dgvbanco.AllowUserToOrderColumns = true;
-            this.dgvbanco.AllowUserToResizeColumns = false;
-            this.dgvbanco.AllowUserToResizeRows = false;
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle51.ForeColor = System.Drawing.Color.Black;
-            this.dgvbanco.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle51;
-            this.dgvbanco.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvbanco.BackgroundColor = System.Drawing.Color.White;
-            this.dgvbanco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvbanco.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvbanco.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvbanco.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle52;
-            this.dgvbanco.ColumnHeadersHeight = 34;
-            this.dgvbanco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvbanco.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvtxtidbanco,
-            this.dgvtxtbanco,
-            this.modificar,
-            this.eliminar});
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle56.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle56.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle56.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle56.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle56.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle56.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvbanco.DefaultCellStyle = dataGridViewCellStyle56;
-            this.dgvbanco.EnableHeadersVisualStyles = false;
-            this.dgvbanco.Location = new System.Drawing.Point(40, 98);
-            this.dgvbanco.Name = "dgvbanco";
-            this.dgvbanco.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle57.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle57.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle57.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle57.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle57.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvbanco.RowHeadersDefaultCellStyle = dataGridViewCellStyle57;
-            this.dgvbanco.RowHeadersVisible = false;
-            this.dgvbanco.RowHeadersWidth = 42;
-            dataGridViewCellStyle58.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle58.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvbanco.RowsDefaultCellStyle = dataGridViewCellStyle58;
-            this.dgvbanco.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvbanco.Size = new System.Drawing.Size(318, 183);
-            this.dgvbanco.TabIndex = 3;
-            this.dgvbanco.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
-            // 
-            // dgvtxtidbanco
-            // 
-            this.dgvtxtidbanco.DataPropertyName = "IdBanco";
-            this.dgvtxtidbanco.HeaderText = "ID";
-            this.dgvtxtidbanco.Name = "dgvtxtidbanco";
-            this.dgvtxtidbanco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvtxtidbanco.Width = 26;
-            // 
-            // dgvtxtbanco
-            // 
-            this.dgvtxtbanco.DataPropertyName = "Nom_banco";
-            dataGridViewCellStyle53.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvtxtbanco.DefaultCellStyle = dataGridViewCellStyle53;
-            this.dgvtxtbanco.HeaderText = "Banco";
-            this.dgvtxtbanco.Name = "dgvtxtbanco";
-            this.dgvtxtbanco.Width = 80;
-            // 
-            // modificar
-            // 
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle54.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle54.NullValue = null;
-            this.modificar.DefaultCellStyle = dataGridViewCellStyle54;
-            this.modificar.Description = "Modificar";
-            this.modificar.HeaderText = "Editar";
-            this.modificar.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
-            this.modificar.Name = "modificar";
-            this.modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.modificar.Width = 52;
-            // 
-            // eliminar
-            // 
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle55.NullValue = null;
-            this.eliminar.DefaultCellStyle = dataGridViewCellStyle55;
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::Presentacion.Properties.Resources.delete18p;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.eliminar.Width = 65;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle59.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle59.NullValue = null;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewImageColumn1.Description = "Modificar";
             this.dataGridViewImageColumn1.HeaderText = "Editar";
             this.dataGridViewImageColumn1.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
@@ -291,52 +285,55 @@
             // 
             // dataGridViewImageColumn2
             // 
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle60.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle60.NullValue = null;
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewImageColumn2.HeaderText = "Eliminar";
             this.dataGridViewImageColumn2.Image = global::Presentacion.Properties.Resources.delete18p;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // Banco2
+            // FrmBanco2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 324);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(399, 372);
+            this.Controls.Add(this.panelbanco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Banco2";
-            this.Text = "Banco2";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            this.Name = "FrmBanco2";
+            this.Text = "Banco";
+            this.panelbanco.ResumeLayout(false);
+            this.panelbanco.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbanco)).EndInit();
+            this.panelcabecera.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txttotaldias;
-        private System.Windows.Forms.DataGridView dgvbanco;
+        private System.Windows.Forms.Panel panelbanco;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.TextBox txtBanco;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnguardar;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelcabecera;
         private System.Windows.Forms.Label lblbanco;
+        private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btncerrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtidbanco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvtxtbanco;
-        private System.Windows.Forms.DataGridViewImageColumn modificar;
-        private System.Windows.Forms.DataGridViewImageColumn eliminar;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.DataGridView dgvbanco;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bnombre;
+        private System.Windows.Forms.DataGridViewImageColumn bmodificar;
+        private System.Windows.Forms.DataGridViewImageColumn beliminar;
     }
 }

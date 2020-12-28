@@ -2,6 +2,7 @@
 using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -10,28 +11,21 @@ namespace Presentacion.Vista
     {
         Nrol nr = new Nrol();
         string result = "";
-        private static frmrol instance;
+    
         public frmrol()
         {
             InitializeComponent();
             ShowRol();
             Tabla();
         }
-        //METODO PARA INSTANCIAR EL FORMULARIO
-        public static frmrol GetInstance()
-        {
-            if (instance == null)
-                instance = new frmrol();
-
-            return instance;
-        }
+        
         //METODO SHOW IN DATAGRIVIEW
         private void ShowRol()
         {
             using (nr)
             {
                 dgvrol.DataSource = nr.Getall();
-                this.Text = "Gestion Rol  | Count " + dgvrol.RowCount.ToString();
+                lbltotal.Text = "Total registro:  " + dgvrol.RowCount.ToString();
             }
         }
         //MODIFICAR DATAGRIDVIEW
@@ -42,7 +36,7 @@ namespace Presentacion.Vista
             dgvrol.Columns[0].Visible = false;
 
             dgvrol.Columns[1].HeaderText = "NOMBRE ROL";
-            dgvrol.Columns[1].Width = 195;
+            dgvrol.Columns[1].Width = 344;
         }
         private void Limpiar()
         {
@@ -52,8 +46,8 @@ namespace Presentacion.Vista
         }
 
         //...........
-        private void frmrol_FormClosing(object sender, FormClosingEventArgs e)
-        { instance = null; }
+      
+
         //GUARDAR
         private void btnsave_Click(object sender, EventArgs e)
         {
@@ -61,10 +55,7 @@ namespace Presentacion.Vista
 
                 ValidateChildren();
                 return;
-
-            }
-                
-
+            }                
             using (nr)
             {
                 nr.nombre_rol = txtrol.Text.Trim().ToUpper();
@@ -134,6 +125,54 @@ namespace Presentacion.Vista
         private void txtrol_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             ValidateError.Validate_text(txtrol, "Rol requerido!");
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //BOTONES COLORES
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241, 112, 122);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+        //MINIMIZAR
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
+
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138, 140, 140);
+        }
+        //...
+        private void panelheader_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

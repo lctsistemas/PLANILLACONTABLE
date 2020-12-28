@@ -43,10 +43,10 @@ namespace Presentacion.Vista
             dgvcargo.Columns[0].Visible = false;
 
             dgvcargo.Columns[1].HeaderText = "CARGO";
-            dgvcargo.Columns[1].Width = 140;
+            dgvcargo.Columns[1].Width = 154;
 
             dgvcargo.Columns[2].HeaderText = "DESCRIPCION";
-            dgvcargo.Columns[2].Width = 261;         
+            dgvcargo.Columns[2].Width = 281;         
 
         }
 

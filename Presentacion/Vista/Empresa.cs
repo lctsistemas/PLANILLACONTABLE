@@ -81,6 +81,7 @@ namespace Presentacion.Vista
 
             dgvempresa.Columns[12].HeaderText = "USUARIO";
             dgvempresa.Columns[12].Width = 250;
+            //dgvempresa.Columns[12].SortMode = DataGridViewColumnSortMode.Automatic;
 
         }
 

@@ -32,11 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,13 +46,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTipoContrato = new System.Windows.Forms.TextBox();
             this.dgvTcontrato = new System.Windows.Forms.DataGridView();
+            this.paneltipocontrato = new System.Windows.Forms.Panel();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvtxtidtcontrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvtxttcontrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modificar = new System.Windows.Forms.DataGridViewImageColumn();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.paneltipocontrato = new System.Windows.Forms.Panel();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
@@ -192,7 +191,7 @@
             this.dgvTcontrato.AllowUserToDeleteRows = false;
             this.dgvTcontrato.AllowUserToResizeColumns = false;
             this.dgvTcontrato.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.dgvTcontrato.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTcontrato.BackgroundColor = System.Drawing.Color.White;
             this.dgvTcontrato.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -213,74 +212,35 @@
             this.dgvtxttcontrato,
             this.modificar,
             this.eliminar});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTcontrato.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTcontrato.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTcontrato.EnableHeadersVisualStyles = false;
-            this.dgvTcontrato.Location = new System.Drawing.Point(12, 155);
+            this.dgvTcontrato.Location = new System.Drawing.Point(4, 151);
             this.dgvTcontrato.MultiSelect = false;
             this.dgvTcontrato.Name = "dgvTcontrato";
             this.dgvTcontrato.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTcontrato.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTcontrato.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTcontrato.RowHeadersVisible = false;
             this.dgvTcontrato.RowHeadersWidth = 42;
             this.dgvTcontrato.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvTcontrato.Size = new System.Drawing.Size(379, 202);
+            this.dgvTcontrato.Size = new System.Drawing.Size(394, 210);
             this.dgvTcontrato.TabIndex = 96;
+            this.dgvTcontrato.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTcontrato_CellClick);
             this.dgvTcontrato.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellContentClick);
-            // 
-            // dgvtxtidtcontrato
-            // 
-            this.dgvtxtidtcontrato.DataPropertyName = "id_tcontrato";
-            this.dgvtxtidtcontrato.HeaderText = "ID";
-            this.dgvtxtidtcontrato.Name = "dgvtxtidtcontrato";
-            this.dgvtxtidtcontrato.Width = 41;
-            // 
-            // dgvtxttcontrato
-            // 
-            this.dgvtxttcontrato.DataPropertyName = "tiem_contrato";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvtxttcontrato.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvtxttcontrato.HeaderText = "TIPO CONTRATO";
-            this.dgvtxttcontrato.Name = "dgvtxttcontrato";
-            this.dgvtxttcontrato.Width = 255;
-            // 
-            // modificar
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.NullValue = null;
-            this.modificar.DefaultCellStyle = dataGridViewCellStyle6;
-            this.modificar.Description = "Modificar";
-            this.modificar.HeaderText = "EDITAR";
-            this.modificar.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
-            this.modificar.Name = "modificar";
-            this.modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.modificar.Width = 60;
-            // 
-            // eliminar
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.NullValue = null;
-            this.eliminar.DefaultCellStyle = dataGridViewCellStyle7;
-            this.eliminar.HeaderText = "ELIMI NAR";
-            this.eliminar.Image = global::Presentacion.Properties.Resources.delete18p;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.eliminar.Width = 60;
+            this.dgvTcontrato.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvTcontrato_EditingControlShowing);
             // 
             // paneltipocontrato
             // 
@@ -301,7 +261,7 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(16, 131);
+            this.lbltotal.Location = new System.Drawing.Point(10, 128);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(47, 17);
             this.lbltotal.TabIndex = 102;
@@ -314,12 +274,51 @@
             this.groupBox1.Controls.Add(this.btnguardar);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 41);
+            this.groupBox1.Location = new System.Drawing.Point(4, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(379, 84);
+            this.groupBox1.Size = new System.Drawing.Size(393, 84);
             this.groupBox1.TabIndex = 103;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar";
+            // 
+            // dgvtxtidtcontrato
+            // 
+            this.dgvtxtidtcontrato.DataPropertyName = "id_tcontrato";
+            this.dgvtxtidtcontrato.HeaderText = "ID";
+            this.dgvtxtidtcontrato.Name = "dgvtxtidtcontrato";
+            this.dgvtxtidtcontrato.Width = 41;
+            // 
+            // dgvtxttcontrato
+            // 
+            this.dgvtxttcontrato.DataPropertyName = "tiem_contrato";
+            this.dgvtxttcontrato.HeaderText = "TIPO CONTRATO";
+            this.dgvtxttcontrato.Name = "dgvtxttcontrato";
+            this.dgvtxttcontrato.Width = 261;
+            // 
+            // modificar
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.NullValue = null;
+            this.modificar.DefaultCellStyle = dataGridViewCellStyle5;
+            this.modificar.Description = "Modificar";
+            this.modificar.HeaderText = "EDITAR";
+            this.modificar.Image = global::Presentacion.Properties.Resources.baseline_edit_black_18dp;
+            this.modificar.Name = "modificar";
+            this.modificar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.modificar.Width = 60;
+            // 
+            // eliminar
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.NullValue = null;
+            this.eliminar.DefaultCellStyle = dataGridViewCellStyle6;
+            this.eliminar.HeaderText = "ELIMINAR";
+            this.eliminar.Image = global::Presentacion.Properties.Resources.delete18p;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.eliminar.Width = 70;
             // 
             // FrmTipoContrato
             // 

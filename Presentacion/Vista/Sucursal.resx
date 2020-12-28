@@ -843,6 +843,33 @@
   <data name="&gt;&gt;tabgestion_empresa.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="dgvsucursal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="dgvsucursal.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="dgvsucursal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 88</value>
+  </data>
+  <data name="dgvsucursal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>888, 335</value>
+  </data>
+  <data name="dgvsucursal.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.Name" xml:space="preserve">
+    <value>dgvsucursal</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.Parent" xml:space="preserve">
+    <value>tablista_empresa</value>
+  </data>
+  <data name="&gt;&gt;dgvsucursal.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtbuscar.Font" type="System.Drawing.Font, System.Drawing">
     <value>Century Gothic, 11.25pt</value>
   </data>
@@ -865,7 +892,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;txtbuscar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -898,7 +925,7 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lbltotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -931,36 +958,6 @@
     <value>tablista_empresa</value>
   </data>
   <data name="&gt;&gt;lbltotal.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="dgvsucursal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="dgvsucursal.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
-  <data name="dgvsucursal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 88</value>
-  </data>
-  <data name="dgvsucursal.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="dgvsucursal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 335</value>
-  </data>
-  <data name="dgvsucursal.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.Name" xml:space="preserve">
-    <value>dgvsucursal</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.Parent" xml:space="preserve">
-    <value>tablista_empresa</value>
-  </data>
-  <data name="&gt;&gt;dgvsucursal.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">

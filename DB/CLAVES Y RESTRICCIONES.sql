@@ -65,7 +65,7 @@ ALTER TABLE Sucursal ADD CONSTRAINT FK_idEmaestra FOREIGN KEY(id_em_maestra)REFE
 ALTER TABLE Sucursal ADD CONSTRAINT FK_idempresa FOREIGN KEY(id_empresa)REFERENCES Empresa
 GO
 
-
+select len('JEFA DE AFMINISTRACION Y RECUROS')
 --TABLA: USUARIO Y ROL
 	--PRIMARY KEY USUARIO Y ROL
 ALTER TABLE Usuario ADD CONSTRAINT PK_idusuario PRIMARY KEY(id_usuario)
@@ -135,6 +135,3 @@ INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, saldo, segur
 
 INSERT INTO ComisionesPension(idcomision, codigo_regimen, comision, idmes, idperiodo) VALUES (17,9,13.00,10,2) --ONP
 GO
-
-sp_rename  '[dbo].[REGIMEN_SALUD]','Regimen_salud'
---en el procedimiento yo le cambie con minuscula en salud
