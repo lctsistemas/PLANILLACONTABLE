@@ -39,7 +39,7 @@ nombre_cargo varchar(40) not null,
 descripcion nvarchar(100) null
 )
 GO
-
+select * from regimenPensionario
 
 --TABLA: TIPO DE DOCUMENTO
 CREATE TABLE Tipo_documento(
@@ -53,7 +53,7 @@ GO
 --alter table Tipo_documento add codigo_doc char(2);
 
 --TABLA: REGIMEN PENSIONARIO
-CREATE TABLE RegimenPensionario(
+CREATE TABLE RegimenPensionario( --cambiar no va identity.
 codigo_regimen int identity(1,1),
 descripcion_corta varchar(30) null,
 descripcion varchar(100) not null,
@@ -506,3 +506,4 @@ recarg_consu bit not null --recargo consumo
 GO
 
 
+select * from Empleado

@@ -116,9 +116,7 @@ namespace Login_inicio
         private void btnlogin_Click(object sender, EventArgs e)
         {
             if (txtuser.Text != "USUARIO")
-            {
-                if (txtroles.Text != "ROL")
-                {
+            {               
                     if (txtpass.Text != "CONTRASEÑA")
                     {
                         using (nlo = new Nlogin())
@@ -132,14 +130,14 @@ namespace Login_inicio
                                     dgvlogin.DataSource = lis_empresa;
                                     Ocultarcolumna();
                                     BloquearAcceso(true);
-                                    if (activo)
-                                    {
+                                    //if (activo)
+                                    //{
                                         //FrmMain_principal mainmenu = new FrmMain_principal();
                                         //mainmenu.Show();
                                         //mainmenu.FormClosed += Logout;//revisar
                                         //this.Hide();
                                         //Messages.M_warning("Seleccione fila para acceder");
-                                    }
+                                    //}
                                 }else
                                 {
                                     dgvlogin.DataSource = null;
@@ -161,9 +159,7 @@ namespace Login_inicio
                     }
                     else
                         msgError("Por favor ingrese \n contraseña");
-                }
-                else
-                    msgError("Por favor seleccione \n un rol");
+                
             }
             else
                 msgError("Por favor seleccione \n un usuario");

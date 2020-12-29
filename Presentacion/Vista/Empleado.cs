@@ -59,7 +59,7 @@ namespace Presentacion.Vista
             dgvempleado.Columns[0].Visible = false;
 
             dgvempleado.Columns[1].Visible = false;
-            dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES";
+            dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES"; // este nombre esta validando en eliminar, si cambiar este nombre tambien cambia en Eliminar
             dgvempleado.Columns[2].Width = 320;
 
             dgvempleado.Columns[3].Visible = false;
@@ -105,6 +105,12 @@ namespace Presentacion.Vista
             txtnumdoc.Enabled = v;
         }
 
+        //HABILITAR BOTONES ELIMINAR Y GURARDAR
+        private void HabilitarBoton(bool v)
+        {
+            btneliminar.Enabled = v;
+            btnguardar.Enabled = v;
+        }
         private bool btnValidar_telefono()
         {
             if (txttele.Text.Trim().Length != 9)
@@ -136,23 +142,7 @@ namespace Presentacion.Vista
                 }
             }
             return true;
-        }
-
-        private void Habilitar(bool v)
-        {
-            txtNombre.Enabled = v;
-            txtApePat.Enabled = v;
-            txtApeMat.Enabled = v;
-            cbogenero.Enabled = v;
-            cbotipo_documento.Enabled = v;
-            txtdire.Enabled = v;
-            txttele.Enabled = v;
-            dtfecha.Enabled = v;
-            txtnac.Enabled = v;
-            cbore_pensionario.Enabled = v;
-            cbocargo.Enabled = v;
-            btnguardar.Enabled = v;
-        }
+        }      
 
         private void Mostrar_cargo()
         {
@@ -229,6 +219,7 @@ namespace Presentacion.Vista
         //LIMPIAR CONTROLES
         private void limpiar()
         {
+            using (emple_contra) { emple_contra.state = EntityState.Guardar; }
             txtNombre.Text = String.Empty;
             txtApeMat.Text = String.Empty;
             txtApePat.Text = String.Empty;
@@ -277,10 +268,9 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocargo.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtnumdoc.Text) ||
                 string.IsNullOrEmpty(cbogenero.Text) || string.IsNullOrEmpty(txtremune.Text) || string.IsNullOrEmpty(cbotipopago.Text)
-                || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)
-                || string.IsNullOrEmpty(cbotipo_moneda.Text)
-                || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text) || !cbore_pensionario.Text.Contains("O.N.P") 
-                || cbotipopago.Text.Contains("DEPOSITO EN CUENTA"))
+                || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)                
+                || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text) || (!cbore_pensionario.Text.Contains("O.N.P") && string.IsNullOrWhiteSpace(txtcussp.Text))
+                || (cbotipopago.Text.Contains("DEPOSITO EN CUENTA") && string.IsNullOrWhiteSpace(txtnum_cuenta.Text)))
             {
                 ValidateChildren();
                 return true;
@@ -289,6 +279,7 @@ namespace Presentacion.Vista
             {
                 return false;
             }
+
         }
 
 
@@ -297,7 +288,8 @@ namespace Presentacion.Vista
         {
             Initialize();
             mostrarEmpleado();
-            Tabla();            
+            Tabla();
+            HabilitarBoton(false);
            
         }
 
@@ -388,10 +380,9 @@ namespace Presentacion.Vista
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            using (emple_contra) { emple_contra.state = EntityState.Guardar; }
+        {            
             ValidateError.validate.Clear();
-            //Habilitar(true);
+            btnguardar.Enabled = true;
             limpiar();
         }
 
@@ -436,6 +427,7 @@ namespace Presentacion.Vista
             }
         }
 
+        #region EVENTO KEYPRESS
         private void txttele_KeyPress(object sender, KeyPressEventArgs e)
         {
             Keypress.SoloNumeros(e);
@@ -465,67 +457,43 @@ namespace Presentacion.Vista
         {
             Keypress.SoloNumeros(e);
         }
-
-        private void txtApePat_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtApePat, "Campo requerido");
-        }
-
-        private void txtNombre_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtNombre, "Campo requerido");
-        }
-
-        private void txtApeMat_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtApeMat, "Campo requerido");
-        }
-
-        private void txtnumdoc_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtnumdoc, "Campo requerido");
-        }
-       
-        private void txtnac_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_text(txtnac, "Campo requerido");
-        }
-
-        private void cbxgene_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_combo(cbogenero, "Campo requerido");
-        }
-
-        private void cmbtipdoc_Validating(object sender, CancelEventArgs e)
-        {
-            ValidateError.Validate_combo(cbotipo_documento, "Campo requerido");
-        }
+        #endregion
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
-            result = "";
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            try
             {
-                DialogResult re = Messages.M_question("¿Deseas Anular al colaborador?");
-                if (re == DialogResult.Yes)
+                if (dgvempleado.CurrentRow.Cells[2].Selected)
                 {
-                    using (emple_contra)
+                    result = "";
+                    DialogResult re = Messages.M_question("¿Deseas Anular al colaborador?");
+                    if (re == DialogResult.Yes)
                     {
-                        emple_contra.state = EntityState.Remover;
-                        emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
-                        result = emple_contra.GuardarCambios();
-                        if (result.Contains("No puedes Anular"))
-                            Messages.M_error(result);
-                        else
-                            Messages.M_info(result);
-                        btnguardar.Enabled = false;
+                        using (emple_contra)
+                        {
+                            emple_contra.state = EntityState.Remover;
+                            emple_contra.Id_empleado = Convert.ToInt32(dgvempleado.CurrentRow.Cells[0].Value);
+                            result = emple_contra.GuardarCambios();
+                            if (result.Contains("No puedes Anular"))
+                                Messages.M_error(result);
+                            else
+                            {
+                                Messages.M_info(result);
+                                HabilitarBoton(false);
+                                mostrarEmpleado();
+                            }
+
+
+                        }
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                Messages.M_warning("Seleccione un Fila");
+                HabilitarBoton(false);
+                MessageBox.Show(ex.Message);   
             }
+          
         }        
 
         private void paneltitulo_MouseDown(object sender, MouseEventArgs e)
@@ -536,17 +504,15 @@ namespace Presentacion.Vista
             {
                 btnmaximizar.Visible = true;
                 btnrestaurar.Visible = false;
-            }
-            
+            }            
         }
-
-      
-
+     
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
             {
                 ValidateError.validate.Clear();
+                HabilitarBoton(true);
                 using (emple_contra)
                 {
                     emple_contra.state = EntityState.Modificar;
@@ -667,6 +633,43 @@ namespace Presentacion.Vista
             }
         }
 
+
+        #region VALIDACION ERROR PROVIDER
+        private void txtApePat_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtApePat, "Campo requerido");
+        }
+
+        private void txtNombre_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtNombre, "Campo requerido");
+        }
+
+        private void txtApeMat_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtApeMat, "Campo requerido");
+        }
+
+        private void txtnumdoc_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtnumdoc, "Campo requerido");
+        }
+
+        private void txtnac_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_text(txtnac, "Campo requerido");
+        }
+
+        private void cbxgene_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbogenero, "Campo requerido");
+        }
+
+        private void cmbtipdoc_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateError.Validate_combo(cbotipo_documento, "Campo requerido");
+        }
+
         private void cbobanco_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_combo(cbobanco, "Campo banco requerido");
@@ -748,6 +751,7 @@ namespace Presentacion.Vista
             if (!cbotipopago.Text.Contains("DEPOSITO EN CUENTA"))
                 ValidateError.validate.SetError(txtnum_cuenta,null);
         }
+        #endregion
 
         //cerrar
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
