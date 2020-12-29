@@ -23,28 +23,11 @@ namespace Presentacion.Vista
         }
       
 
-        //private void myBoton_GotFocus(object sender, EventArgs e)
-        //{
-        //    btnclose.Enabled = false;
-        //}
-        //protected override bool ShowFocusCues
-        //{
-        //    get
-        //    {
-        //        //return base.ShowFocusCues;
-        //        return false;
-        //        //base.ShowFocusCues;
-        //    }
-             
-        //}
-        
-
 
         private bool Validar()
         {
             if (String.IsNullOrWhiteSpace(txtcodregsal.Text) || String.IsNullOrWhiteSpace(txtregsal.Text))
-            {
-                ValidateChildren();
+            {                
                 return true;
             }
             else
@@ -102,8 +85,7 @@ namespace Presentacion.Vista
 
 
         private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            using (nrs) { nrs.state = EntityState.Guardar; }
+        {            
             Habilitar(true);
             limpiar();
           
@@ -120,6 +102,7 @@ namespace Presentacion.Vista
         private void Habilitar(bool v)
         {
             btnguardar.Enabled = v;
+            btneliminar.Enabled = false;
             txtcodregsal.Enabled = v;
             txtregsal.Enabled = v;
             txtcodregsal.Focus();
@@ -128,9 +111,10 @@ namespace Presentacion.Vista
         private void dgvregimensalud_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvregimensalud.CurrentRow;
-            Habilitar(true);
+          
             if (dgvregimensalud.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
+                Habilitar(true);
                 using (nrs)
                 {
                     nrs.state = EntityState.Modificar;
@@ -156,8 +140,15 @@ namespace Presentacion.Vista
                         nrs.state = EntityState.Remover;
                         nrs.Id_regimen_salud = Convert.ToInt32(dgvregimensalud.CurrentRow.Cells[0].Value);
                         result = nrs.GuardarCambios();
-                        Showregimensalud();
-                        Messages.M_info(result);
+                        if (result.Contains("asignado a un contrato"))
+                            Messages.M_warning(result);
+                        else
+                        {
+                            Showregimensalud();
+                            limpiar();
+                            Messages.M_info(result);
+                        }
+                       
                     }
                 }
 
@@ -166,7 +157,7 @@ namespace Presentacion.Vista
             {
                 Messages.M_warning("Seleccione una fila de la tabla");
             }
-            limpiar();
+            
         }
 
         private void limpiar()
@@ -243,5 +234,12 @@ namespace Presentacion.Vista
             this.Close();
         }
         #endregion
+
+        private void dgvregimensalud_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)            
+                btneliminar.Enabled = true;
+            
+        }
     }
 }

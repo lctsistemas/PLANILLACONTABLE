@@ -38,19 +38,19 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.btnnuevo = new System.Windows.Forms.Button();
             this.panelheader = new System.Windows.Forms.Panel();
+            this.btnminimizar = new System.Windows.Forms.PictureBox();
+            this.btncerrar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panelrol = new System.Windows.Forms.Panel();
-            this.btnminimizar = new System.Windows.Forms.PictureBox();
-            this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.lbltotal = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lbltotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrol)).BeginInit();
             this.panelheader.SuspendLayout();
-            this.panelrol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            this.panelrol.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,7 @@
             this.dgvrol.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvrol.Size = new System.Drawing.Size(345, 195);
             this.dgvrol.TabIndex = 0;
+            this.dgvrol.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvrol_CellClick);
             this.dgvrol.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvrol_CellDoubleClick);
             // 
             // btneliminar
@@ -193,6 +194,38 @@
             this.panelheader.TabIndex = 4;
             this.panelheader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelheader_MouseDown);
             // 
+            // btnminimizar
+            // 
+            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
+            this.btnminimizar.Location = new System.Drawing.Point(281, 0);
+            this.btnminimizar.Name = "btnminimizar";
+            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
+            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnminimizar.TabIndex = 16;
+            this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
+            this.btncerrar.Location = new System.Drawing.Point(316, 0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(35, 35);
+            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btncerrar.TabIndex = 17;
+            this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -232,37 +265,16 @@
             this.panelrol.Size = new System.Drawing.Size(353, 381);
             this.panelrol.TabIndex = 8;
             // 
-            // btnminimizar
+            // lbltotal
             // 
-            this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
-            this.btnminimizar.Location = new System.Drawing.Point(281, 0);
-            this.btnminimizar.Name = "btnminimizar";
-            this.btnminimizar.Size = new System.Drawing.Size(35, 35);
-            this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnminimizar.TabIndex = 16;
-            this.btnminimizar.TabStop = false;
-            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
-            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
-            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
-            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
-            // 
-            // btncerrar
-            // 
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
-            this.btncerrar.Location = new System.Drawing.Point(316, 0);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(35, 35);
-            this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btncerrar.TabIndex = 17;
-            this.btncerrar.TabStop = false;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
-            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
-            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbltotal.Location = new System.Drawing.Point(7, 161);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(44, 17);
+            this.lbltotal.TabIndex = 9;
+            this.lbltotal.Text = "TOTAL";
             // 
             // groupBox1
             // 
@@ -289,17 +301,6 @@
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(7, 161);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(44, 17);
-            this.lbltotal.TabIndex = 9;
-            this.lbltotal.Text = "TOTAL";
-            // 
             // frmrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,10 +315,10 @@
             this.Load += new System.EventHandler(this.frmrol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvrol)).EndInit();
             this.panelheader.ResumeLayout(false);
-            this.panelrol.ResumeLayout(false);
-            this.panelrol.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            this.panelrol.ResumeLayout(false);
+            this.panelrol.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

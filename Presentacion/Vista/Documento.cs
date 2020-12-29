@@ -70,12 +70,13 @@ namespace Presentacion.Vista
             txtdocumento.Enabled = v;
             txtdescripcion.Enabled = v;
             btnguardar.Enabled = v;
-            btneliminar.Enabled = v;
+            btneliminar.Enabled = false;
         }
 
         //LIMPIAR CONTROLES
         private void limpiar()
         {
+            using (nd){ nd.state = EntityState.Guardar; }
             txtdocumento.Text = String.Empty;
             txtdescripcion.Text = String.Empty;
             txtcoddoc.Text = String.Empty;
@@ -91,7 +92,7 @@ namespace Presentacion.Vista
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            nd.state = EntityState.Guardar;
+            
             ValidateError.validate.Clear();
             Habilitar(true);
             limpiar();
@@ -109,17 +110,20 @@ namespace Presentacion.Vista
 
             using (nd)
             {
-
                 nd.nombre_documento = txtdocumento.Text.Trim().ToUpper();
                 nd.descripcion = txtdescripcion.Text.Trim().ToUpper();
                 nd.cod_doc = txtcoddoc.Text.Trim().ToUpper();
 
-
                 result = nd.SaveChanges();
-                ShowDocument();
-                Messages.M_info(result);
-                limpiar();
-
+                if (result.Contains("Codigo  ya existe"))
+                    Messages.M_warning(result);
+                else
+                {
+                    ShowDocument();
+                    limpiar();
+                    Messages.M_info(result);
+                }
+                      
             }
         }
         //VALIATE
@@ -165,10 +169,11 @@ namespace Presentacion.Vista
                     result = nd.SaveChanges();
 
                     if (result.Contains("esta en uso."))
-                        Messages.M_error(result);
+                        Messages.M_warning(result);
                     else
                     {
                         ShowDocument();
+                        limpiar();
                         Messages.M_info(result);
                     }                                                            
                 }
@@ -243,19 +248,23 @@ namespace Presentacion.Vista
 
         private void txtcoddoc_Validating(object sender, CancelEventArgs e)
         {
-            ValidateError.Validate_text(txtcoddoc, "Campo codigo documento requerido!");
+            ValidateError.Validate_text(txtcoddoc, "¡Campo requerido!");
         }
 
         private void txtcoddoc_Validated(object sender, EventArgs e)
         {
-            ValidateError.Validate_text(txtcoddoc, "Campo requerido");
+            ValidateError.Validate_text(txtcoddoc, "¡Campo requerido!");
         }
 
         private void txtdocumento_Validated(object sender, EventArgs e)
         {
-            ValidateError.Validate_text(txtdocumento, "Campo requerido");
+            ValidateError.Validate_text(txtdocumento, "¡Campo requerido!");
         }
 
-        
+        private void dgvdocumento_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btneliminar.Enabled = true;
+        }
     }
 }

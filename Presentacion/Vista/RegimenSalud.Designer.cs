@@ -251,6 +251,7 @@
             this.dgvregimensalud.Size = new System.Drawing.Size(429, 299);
             this.dgvregimensalud.TabIndex = 97;
             this.dgvregimensalud.TabStop = false;
+            this.dgvregimensalud.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimensalud_CellClick);
             this.dgvregimensalud.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimensalud_CellDoubleClick);
             // 
             // lbltotal

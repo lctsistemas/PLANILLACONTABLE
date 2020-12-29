@@ -24,16 +24,16 @@ namespace Datos.Contract
     {
     }
 
-    public interface IEmpleado : IGenerict<DEmpleado>
+    public interface IEmpleado : IGenerict<DEmpleadoContrato>
     {
+        DataTable GetDataEC(DEmpleadoContrato Entity);
     }
 
     public interface IBanco : IGenerict<DBanco>
     {
     }
     public interface IRegimen : IGenerict<DRegimen> { }
-
-    public interface IContrato : IGenerict<Dcontrato> { }
+    
    
     public interface ITipo_contrato : IGenerict<Dtipocontrato> { }
 

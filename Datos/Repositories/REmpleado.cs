@@ -6,13 +6,13 @@ using System.Data.SqlClient;
 
 namespace Datos.Repositories
 {
-    public class REmpleado : IEmpleado, IContrato
+    public class REmpleado : IEmpleado
     {
         Int32 result;
         SqlCommand cmd;
 
-        //AGREGAR EMPLEADO
-        public int Add(DEmpleado entiti)
+        //AGREGAR EMPLEADO Y CONTRATO
+        public int Add(DEmpleadoContrato entiti)
         {
             result = 0;
             cmd = null;
@@ -41,7 +41,23 @@ namespace Datos.Repositories
                     cmd.Parameters.AddWithValue("@id_cargo", entiti.Id_cargo);
                     cmd.Parameters.AddWithValue("@id_empresa_maestra", entiti.Id_emp_maestra); //aqui pudes llamar ese id que esta en cache o si no.
                     cmd.Parameters.AddWithValue("@jornada_laboral", entiti.Jornada_laboral);
-                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+
+                    // INSERSION DE CONTRATO
+                    cmd.Parameters.AddWithValue("@id_banco", entiti.Cid_banco);
+                    cmd.Parameters.AddWithValue("@id_tcontrato", entiti.Cid_tcontrato);
+                    cmd.Parameters.AddWithValue("@fecha_inicio", entiti.Cfecha_inicio);
+                    cmd.Parameters.AddWithValue("@fecha_fin", entiti.Cfecha_fin);
+                    cmd.Parameters.AddWithValue("@num_cuenta", entiti.Cnum_cuenta);
+                    cmd.Parameters.AddWithValue("@remu_basica", entiti.Cremu_basica);
+                    cmd.Parameters.AddWithValue("@asig_fami", entiti.Casig_fami);
+                    cmd.Parameters.AddWithValue("@tipo_pago", entiti.Ctipo_pago);
+                    cmd.Parameters.AddWithValue("@periodicidad", entiti.Cperiodicidad);
+                    cmd.Parameters.AddWithValue("@tipo_modeda", entiti.Ctipo_moneda);
+                    cmd.Parameters.AddWithValue("@cuenta_cts", entiti.Ccts);
+                    cmd.Parameters.AddWithValue("@cussp", entiti.Ccussp);
+                    cmd.Parameters.AddWithValue("@id_salud", entiti.Cid_regimenSalud);
+
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 200).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();
@@ -49,44 +65,9 @@ namespace Datos.Repositories
             }
             return result;
         }
-
-        //AGREGAR CONTRATO
-        public int Add(Dcontrato entiti)
-        {
-            result = 0;
-            using (SqlConnection cnn = RConexion.Getconectar())
-            {
-                cnn.Open();
-                cmd = null;
-                using (cmd = new SqlCommand())
-                {
-                    cmd.Connection = cnn;
-                    cmd.CommandText = "SP_INSERT_CONTRATO";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    
-                    cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.Id_banco;
-                    cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
-                    cmd.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = entiti.Fecha_inicio;
-                    cmd.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = entiti.Fecha_fin;
-                    cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar, 30).Value = entiti.Num_cuenta;
-                    cmd.Parameters.Add("@remu_basica", SqlDbType.Money).Value = entiti.Remu_basica;
-                    cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;                    
-                    cmd.Parameters.Add("@tipo_pago", SqlDbType.VarChar, 30).Value = entiti.Tipo_pago;
-                    cmd.Parameters.Add("@periodicidad", SqlDbType.VarChar, 70).Value = entiti.Periodicidad;
-                    cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
-                    cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
-                    cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
-                    cmd.Parameters.Add("@id_salud", SqlDbType.Int).Value = entiti.Id_regimenSalud;
-
-                    result = cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                }
-            }
-            return result;
-        }
-
-        //EDITAR EMPLEADO
-        public int Edit(DEmpleado entiti)
+        
+        //EDITAR EMPLEADO Y CONTRATO
+        public int Edit(DEmpleadoContrato entiti)
         {
             result = 0;
             using (SqlConnection conn = RConexion.Getconectar())
@@ -116,8 +97,24 @@ namespace Datos.Repositories
                         cmd.Parameters.AddWithValue("@codigo_regimen", entiti.Codigo_regimen);
                         cmd.Parameters.AddWithValue("@id_documento",  entiti.Id_doc);
                         cmd.Parameters.AddWithValue("@id_cargo", entiti.Id_cargo);
-                        cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
+                        cmd.Parameters.AddWithValue("@id_empleado", entiti.Id_empleado);
+
+                        //UPDATE CONTRATO
+                        cmd.Parameters.AddWithValue("@id_banco", entiti.Cid_banco);
+                        cmd.Parameters.AddWithValue("@id_tcontrato", entiti.Cid_tcontrato);
+                        cmd.Parameters.AddWithValue("@fecha_inicio", entiti.Cfecha_inicio);
+                        cmd.Parameters.AddWithValue("@fecha_fin", entiti.Cfecha_fin);
+                        cmd.Parameters.AddWithValue("@num_cuenta", entiti.Cnum_cuenta);
+                        cmd.Parameters.AddWithValue("@remu_basica", entiti.Cremu_basica);
+                        cmd.Parameters.AddWithValue("@asig_fami", entiti.Casig_fami);
+                        cmd.Parameters.AddWithValue("@tipo_pago", entiti.Ctipo_pago);
+                        cmd.Parameters.AddWithValue("@periodicidad", entiti.Cperiodicidad);
+                        cmd.Parameters.AddWithValue("@tipo_modeda", entiti.Ctipo_moneda);
+                        cmd.Parameters.AddWithValue("@cuenta_cts", entiti.Ccts);
+                        cmd.Parameters.AddWithValue("@cussp", entiti.Ccussp);
+                        cmd.Parameters.AddWithValue("@id_salud", entiti.Cid_regimenSalud);                    
                         result = cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
                     }
                 }
                 catch (Exception ex)
@@ -126,50 +123,10 @@ namespace Datos.Repositories
                 }
             }
             return result;
-        }
+        }              
 
-        //EDITAR CONTRATO
-        public int Edit(Dcontrato entiti)
-        {
-            result = 0;
-            using (SqlConnection cnn = RConexion.Getconectar())
-            {
-                cnn.Open();
-                cmd = null;
-                try
-                {
-                    using (cmd = new SqlCommand())
-                    {
-                        cmd.Connection = cnn;
-                        cmd.CommandText = "SP_UPDATE_CONTRATO";
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        cmd.Parameters.Add("@id_banco", SqlDbType.Int).Value = entiti.Id_banco;
-                        cmd.Parameters.Add("@id_tcontrato", SqlDbType.Int).Value = entiti.Id_tcontrato;
-                        cmd.Parameters.Add("@fecha_inicio", SqlDbType.Date).Value = entiti.Fecha_inicio;
-                        cmd.Parameters.Add("@fecha_fin", SqlDbType.Date).Value = entiti.Fecha_fin;
-                        cmd.Parameters.Add("@num_cuenta", SqlDbType.VarChar, 30).Value = entiti.Num_cuenta;
-                        cmd.Parameters.Add("@remu_basica", SqlDbType.Money).Value = entiti.Remu_basica;
-                        cmd.Parameters.Add("@asig_fami", SqlDbType.Money).Value = entiti.Asig_fami;                        
-                        cmd.Parameters.Add("@tipo_pago", SqlDbType.VarChar, 30).Value = entiti.Tipo_pago;
-                        cmd.Parameters.Add("@periodicidad", SqlDbType.VarChar, 70).Value = entiti.Periodicidad;
-                        cmd.Parameters.Add("@tipo_modeda", SqlDbType.VarChar, 10).Value = entiti.Tipo_moneda;
-                        cmd.Parameters.Add("@cuenta_cts", SqlDbType.NVarChar, 50).Value = entiti.Cts;
-                        cmd.Parameters.Add("@cussp", SqlDbType.NVarChar, 70).Value = entiti.Cussp;
-                        cmd.Parameters.Add("@id_salud", SqlDbType.Int).Value = entiti.Id_regimenSalud;
-                        cmd.Parameters.Add("@id_empleado", SqlDbType.Int).Value = entiti.Id_empleado;
-                        result = cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show(ex.Message);
-                }
-            }
-            return result;
-        }
-
-        public int Delete(DEmpleado entiti)
+        //ELIMINAR O ANULAR
+        public int Delete(DEmpleadoContrato entiti)
         {
             result = 0;
             using (SqlConnection conn = RConexion.Getconectar())
@@ -190,14 +147,9 @@ namespace Datos.Repositories
                 }
             }
             return result;
-        }
+        }       
 
-        public int Delete(Dcontrato entiti)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable GetData(DEmpleado entiti)
+        public DataTable GetData(DEmpleadoContrato entiti)
         {
             DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())
@@ -224,7 +176,8 @@ namespace Datos.Repositories
             return dt;
         }
 
-        public DataTable GetData(Dcontrato entiti)
+        //RECUPERA DATOS DE EMPLEDO Y CONTRATO
+        public DataTable GetDataEC(DEmpleadoContrato entiti)
         {
             DataTable dt;
             using (SqlConnection cnn = RConexion.Getconectar())

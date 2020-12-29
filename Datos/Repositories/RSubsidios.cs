@@ -29,7 +29,7 @@ namespace Datos.Repositories
                     cmd.Parameters.AddWithValue("@descripcion_subsidio", entiti.Descripcion_subsidio);
                     cmd.Parameters.AddWithValue("@tipo_subsidio", entiti.Tipo_subsidio);
                     cmd.Parameters.AddWithValue("@descuento", entiti.Descuento);
-                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 25).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();

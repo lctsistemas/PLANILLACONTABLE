@@ -17,7 +17,7 @@ namespace Presentacion.Vista
     public partial class frmempleado : Form
     {
         String result;
-        NEmpleado emple_contra = new NEmpleado();
+        NEmpleadoContrato emple_contra = new NEmpleadoContrato();
 
         public frmempleado()
         {

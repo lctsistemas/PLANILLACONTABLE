@@ -287,7 +287,7 @@ nombre_planilla varchar(30)not null
 GO
 alter table dbo.tipo_planilla alter column nombre_planilla varchar(30) not null
 
-CREATE TABLE Regimen_salud( --falta modificar el procedi.. add modi delet
+CREATE TABLE Regimen_salud( 
 id_regimen_salud int not null,
 cod_regi_salud char(2) not null,
 descripcion_rsalud nvarchar(100) not null
@@ -505,5 +505,12 @@ recarg_consu bit not null --recargo consumo
 )
 GO
 
+/*TABLAS CON VALOR PRIMARY KEY IDENTITY
+-CARGO
+-TIPO DOCUMENTO
+-REGIMEN PENSIONARIO
+-PERIODO
 
-select * from Empleado
+*/
+go
+select * from cargo join empleado on Cargo.id_cargo=Empleado.id_cargo

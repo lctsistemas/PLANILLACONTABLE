@@ -32,6 +32,14 @@ namespace Presentacion.Vista
                 return false;
         }
 
+        //HABILITAR
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            btneliminar.Enabled = false;
+            txtTipoPlanilla.Enabled = v;
+        }
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
             if (Validar())
@@ -41,15 +49,13 @@ namespace Presentacion.Vista
             }
             result = "";
             using (ntp)
-            {
-                //ntp.IdTipoPlanilla = Convert.ToInt32(txtTipoPlanilla.Text.ToString());
+            {                
                 ntp.Tipo_Planilla = txtTipoPlanilla.Text.ToString();
 
-                result = ntp.GuardarCambios();
-                Messages.M_info(result);
-
+                result = ntp.GuardarCambios();                
                 ShowTipoplanilla();
                 limpiar();
+                Messages.M_info(result);
             }
         }
 
@@ -82,11 +88,12 @@ namespace Presentacion.Vista
                         result = ntp.GuardarCambios();
                         
                         if (result.Contains("el tipo de planilla esta en uso"))
-                            Messages.M_error(result);
+                            Messages.M_warning(result);
                         else
-                        {
-                            Messages.M_info(result);
+                        {                            
                             ShowTipoplanilla();
+                            limpiar();
+                            Messages.M_info(result);
                         }
                         
                     }
@@ -111,6 +118,7 @@ namespace Presentacion.Vista
         {
             ShowTipoplanilla();
             Tabla();
+            Habilitar(false);
         }
 
         private void Tabla()
@@ -175,6 +183,7 @@ namespace Presentacion.Vista
 
             if (dgvtipoplanilla.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
             {
+                Habilitar(true);
                 using (ntp)
                 {
                     ntp.state = EntityState.Modificar;
@@ -189,6 +198,7 @@ namespace Presentacion.Vista
         private void btnagregar_Click(object sender, EventArgs e)
         {
             limpiar();
+            Habilitar(true);
         }
 
         //MOVER VENTANA FORMULARIO
@@ -205,6 +215,12 @@ namespace Presentacion.Vista
         private void label1_MouseDown(object sender, MouseEventArgs e)
         {
             MoverVentana();
+        }
+
+        private void dgvtipoplanilla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btneliminar.Enabled = true;
         }
     }
 }

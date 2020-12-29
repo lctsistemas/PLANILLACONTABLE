@@ -82,7 +82,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 594);
+            this.panel1.Size = new System.Drawing.Size(972, 614);
             this.panel1.TabIndex = 9;
             // 
             // lbltotal
@@ -90,7 +90,7 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(740, 571);
+            this.lbltotal.Location = new System.Drawing.Point(11, 235);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(47, 17);
             this.lbltotal.TabIndex = 87;
@@ -114,7 +114,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.groupBox1.Location = new System.Drawing.Point(11, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(910, 176);
+            this.groupBox1.Size = new System.Drawing.Size(948, 168);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar";
@@ -125,7 +125,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(25, 28);
+            this.label1.Location = new System.Drawing.Point(25, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 16);
             this.label1.TabIndex = 4;
@@ -137,7 +137,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(407, 95);
+            this.label5.Location = new System.Drawing.Point(407, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 16);
             this.label5.TabIndex = 91;
@@ -149,7 +149,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(407, 28);
+            this.label3.Location = new System.Drawing.Point(407, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 6;
@@ -157,10 +157,10 @@
             // 
             // txtdescSubsi
             // 
-            this.txtdescSubsi.Location = new System.Drawing.Point(410, 114);
+            this.txtdescSubsi.Location = new System.Drawing.Point(410, 111);
             this.txtdescSubsi.Multiline = true;
             this.txtdescSubsi.Name = "txtdescSubsi";
-            this.txtdescSubsi.Size = new System.Drawing.Size(420, 41);
+            this.txtdescSubsi.Size = new System.Drawing.Size(480, 41);
             this.txtdescSubsi.TabIndex = 90;
             this.txtdescSubsi.Validating += new System.ComponentModel.CancelEventHandler(this.txtdescSubsi_Validating);
             // 
@@ -170,7 +170,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(25, 94);
+            this.label2.Location = new System.Drawing.Point(25, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 16);
             this.label2.TabIndex = 7;
@@ -180,7 +180,7 @@
             // 
             this.cbxsuspension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxsuspension.FormattingEnabled = true;
-            this.cbxsuspension.Location = new System.Drawing.Point(206, 47);
+            this.cbxsuspension.Location = new System.Drawing.Point(206, 44);
             this.cbxsuspension.Name = "cbxsuspension";
             this.cbxsuspension.Size = new System.Drawing.Size(90, 25);
             this.cbxsuspension.TabIndex = 89;
@@ -188,7 +188,7 @@
             // 
             // txtcodigosubsidio
             // 
-            this.txtcodigosubsidio.Location = new System.Drawing.Point(28, 47);
+            this.txtcodigosubsidio.Location = new System.Drawing.Point(28, 44);
             this.txtcodigosubsidio.Name = "txtcodigosubsidio";
             this.txtcodigosubsidio.Size = new System.Drawing.Size(52, 23);
             this.txtcodigosubsidio.TabIndex = 8;
@@ -201,7 +201,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(203, 28);
+            this.label4.Location = new System.Drawing.Point(203, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 16);
             this.label4.TabIndex = 88;
@@ -209,10 +209,10 @@
             // 
             // txtdescCorta
             // 
-            this.txtdescCorta.Location = new System.Drawing.Point(410, 47);
+            this.txtdescCorta.Location = new System.Drawing.Point(410, 44);
             this.txtdescCorta.Multiline = true;
             this.txtdescCorta.Name = "txtdescCorta";
-            this.txtdescCorta.Size = new System.Drawing.Size(420, 41);
+            this.txtdescCorta.Size = new System.Drawing.Size(480, 41);
             this.txtdescCorta.TabIndex = 8;
             this.txtdescCorta.Validating += new System.ComponentModel.CancelEventHandler(this.txtdescCorta_Validating);
             // 
@@ -220,7 +220,7 @@
             // 
             this.cbxtiposub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxtiposub.FormattingEnabled = true;
-            this.cbxtiposub.Location = new System.Drawing.Point(28, 114);
+            this.cbxtiposub.Location = new System.Drawing.Point(28, 111);
             this.cbxtiposub.Name = "cbxtiposub";
             this.cbxtiposub.Size = new System.Drawing.Size(140, 25);
             this.cbxtiposub.TabIndex = 87;
@@ -231,7 +231,7 @@
             this.checkDescuento.AutoSize = true;
             this.checkDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkDescuento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.checkDescuento.Location = new System.Drawing.Point(206, 116);
+            this.checkDescuento.Location = new System.Drawing.Point(206, 113);
             this.checkDescuento.Name = "checkDescuento";
             this.checkDescuento.Size = new System.Drawing.Size(92, 20);
             this.checkDescuento.TabIndex = 10;
@@ -272,7 +272,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvsubsidio.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvsubsidio.EnableHeadersVisualStyles = false;
-            this.dgvsubsidio.Location = new System.Drawing.Point(12, 242);
+            this.dgvsubsidio.Location = new System.Drawing.Point(12, 255);
             this.dgvsubsidio.MultiSelect = false;
             this.dgvsubsidio.Name = "dgvsubsidio";
             this.dgvsubsidio.ReadOnly = true;
@@ -291,8 +291,9 @@
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvsubsidio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvsubsidio.Size = new System.Drawing.Size(909, 324);
+            this.dgvsubsidio.Size = new System.Drawing.Size(947, 349);
             this.dgvsubsidio.TabIndex = 86;
+            this.dgvsubsidio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellClick);
             this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
             // 
             // label6
@@ -319,7 +320,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 35);
+            this.panel2.Size = new System.Drawing.Size(972, 35);
             this.panel2.TabIndex = 92;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -328,7 +329,7 @@
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
-            this.btnminimizar.Location = new System.Drawing.Point(794, 0);
+            this.btnminimizar.Location = new System.Drawing.Point(832, 0);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 35);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -344,7 +345,7 @@
             this.btnmaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnmaximizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnmaximizar.Image = global::Presentacion.Properties.Resources.maxi_18dp;
-            this.btnmaximizar.Location = new System.Drawing.Point(829, 0);
+            this.btnmaximizar.Location = new System.Drawing.Point(867, 0);
             this.btnmaximizar.Name = "btnmaximizar";
             this.btnmaximizar.Size = new System.Drawing.Size(35, 35);
             this.btnmaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -357,7 +358,7 @@
             this.btnrestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrestaurar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnrestaurar.Image = global::Presentacion.Properties.Resources.restore_18dp;
-            this.btnrestaurar.Location = new System.Drawing.Point(864, 0);
+            this.btnrestaurar.Location = new System.Drawing.Point(902, 0);
             this.btnrestaurar.Name = "btnrestaurar";
             this.btnrestaurar.Size = new System.Drawing.Size(35, 35);
             this.btnrestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -370,7 +371,7 @@
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
-            this.btncerrar.Location = new System.Drawing.Point(899, 0);
+            this.btncerrar.Location = new System.Drawing.Point(937, 0);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -395,7 +396,7 @@
             this.barra_herramientas.Name = "barra_herramientas";
             this.barra_herramientas.Padding = new System.Windows.Forms.Padding(3, 1, 1, 1);
             this.barra_herramientas.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.barra_herramientas.Size = new System.Drawing.Size(934, 25);
+            this.barra_herramientas.Size = new System.Drawing.Size(972, 25);
             this.barra_herramientas.TabIndex = 93;
             this.barra_herramientas.Text = "toolStrip2";
             // 
@@ -445,7 +446,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 594);
+            this.ClientSize = new System.Drawing.Size(972, 614);
             this.Controls.Add(this.barra_herramientas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
