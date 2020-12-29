@@ -116,7 +116,7 @@ namespace Negocio.Models
                         if (Rempleado.Edit(emp) > 0)
                             rcontrato.Edit(dcon);
 
-                        mensaje = "¡Editado correctamente!";
+                        mensaje = "¡Modificado";
                         break;
 
                     case EntityState.Remover:
