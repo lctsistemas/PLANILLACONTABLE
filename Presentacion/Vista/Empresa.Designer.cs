@@ -175,7 +175,7 @@
             this.dgvempresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -201,6 +201,7 @@
             this.dgvempresa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvempresa.Size = new System.Drawing.Size(888, 336);
             this.dgvempresa.TabIndex = 1;
+            this.dgvempresa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempresa_CellClick);
             this.dgvempresa.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvempresa_CellDoubleClick);
             // 
             // label11
@@ -261,7 +262,7 @@
             this.linkconsulta_ruc.AutoSize = true;
             this.linkconsulta_ruc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkconsulta_ruc.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkconsulta_ruc.Location = new System.Drawing.Point(390, 17);
+            this.linkconsulta_ruc.Location = new System.Drawing.Point(374, 55);
             this.linkconsulta_ruc.Name = "linkconsulta_ruc";
             this.linkconsulta_ruc.Size = new System.Drawing.Size(94, 17);
             this.linkconsulta_ruc.TabIndex = 17;
@@ -299,7 +300,7 @@
             // txtruc
             // 
             this.txtruc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtruc.Location = new System.Drawing.Point(187, 17);
+            this.txtruc.Location = new System.Drawing.Point(187, 55);
             this.txtruc.MaxLength = 11;
             this.txtruc.Name = "txtruc";
             this.txtruc.Size = new System.Drawing.Size(162, 22);
@@ -351,7 +352,7 @@
             // txtcodigo_empresa
             // 
             this.txtcodigo_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcodigo_empresa.Location = new System.Drawing.Point(187, 55);
+            this.txtcodigo_empresa.Location = new System.Drawing.Point(187, 18);
             this.txtcodigo_empresa.Name = "txtcodigo_empresa";
             this.txtcodigo_empresa.Size = new System.Drawing.Size(162, 22);
             this.txtcodigo_empresa.TabIndex = 2;
@@ -385,7 +386,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label2.Location = new System.Drawing.Point(33, 58);
+            this.label2.Location = new System.Drawing.Point(33, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 16);
             this.label2.TabIndex = 10;
@@ -439,7 +440,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.label5.Location = new System.Drawing.Point(33, 20);
+            this.label5.Location = new System.Drawing.Point(33, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 16);
             this.label5.TabIndex = 6;

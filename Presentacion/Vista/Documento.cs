@@ -143,7 +143,7 @@ namespace Presentacion.Vista
         {
             DataGridViewRow r = dgvdocumento.CurrentRow;
 
-            if (dgvdocumento.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvdocumento.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
                 nd.state = EntityState.Modificar;
                 nd.iddocumento = Convert.ToInt32(r.Cells[0].Value);

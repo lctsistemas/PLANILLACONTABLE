@@ -181,7 +181,7 @@ namespace Presentacion.Vista
         {
             DataGridViewRow ro = dgvtipoplanilla.CurrentRow;
 
-            if (dgvtipoplanilla.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvtipoplanilla.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex >-1)
             {
                 Habilitar(true);
                 using (ntp)

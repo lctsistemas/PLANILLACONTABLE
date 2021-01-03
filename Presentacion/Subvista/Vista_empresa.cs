@@ -107,6 +107,7 @@ namespace Presentacion.Subvista
                 su.txtruc.Text = ro.Cells[10].Value.ToString();
                 su.txtregimen.Text = ro.Cells[11].Value.ToString();
                 su.txtusuario.Text = ro.Cells[12].Value.ToString();
+                ValidateError.Validate_text(su.txtusuario,null);
                 this.Close();
             }
         }

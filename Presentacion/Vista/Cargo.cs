@@ -168,7 +168,7 @@ namespace Presentacion.Vista
         {
             DataGridViewRow r = dgvcargo.CurrentRow;
 
-            if (dgvcargo.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvcargo.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
                 using (nc)
                 {

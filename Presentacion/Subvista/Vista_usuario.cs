@@ -89,6 +89,7 @@ namespace Presentacion.Subvista
             {
                 femp.txtiduser.Text = dgvvista_user.CurrentRow.Cells[0].Value.ToString();
                 femp.txtusuario.Text = dgvvista_user.CurrentRow.Cells[2].Value.ToString();
+                ValidateError.Validate_text(femp.txtusuario,null);
                 this.Close();
             }
         }

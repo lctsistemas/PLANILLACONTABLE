@@ -509,7 +509,7 @@ namespace Presentacion.Vista
      
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
+            if (e.RowIndex > -1)
             {
                 ValidateError.validate.Clear();
                 HabilitarBoton(true);

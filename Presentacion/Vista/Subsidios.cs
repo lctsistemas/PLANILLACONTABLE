@@ -205,7 +205,7 @@ namespace Presentacion.Vista
         {
             DataGridViewRow r = dgvsubsidio.CurrentRow;
             
-            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
                 Habilitar(true);
                 using (ns)

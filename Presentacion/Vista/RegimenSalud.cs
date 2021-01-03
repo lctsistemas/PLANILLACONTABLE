@@ -112,7 +112,7 @@ namespace Presentacion.Vista
         {
             DataGridViewRow r = dgvregimensalud.CurrentRow;
           
-            if (dgvregimensalud.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvregimensalud.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
                 Habilitar(true);
                 using (nrs)

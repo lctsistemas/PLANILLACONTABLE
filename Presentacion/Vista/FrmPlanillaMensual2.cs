@@ -3,6 +3,7 @@ using Negocio.Models;
 using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentacion.Vista
@@ -47,6 +48,15 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["valor_seguro"].Visible = false;
             Dgvplanilla1.Columns["valor_aporte"].Visible = false;
             Dgvplanilla1.Columns["cod_document"].Visible = false;
+            Dgvplanilla1.Columns["codigo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["f_ini"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            Dgvplanilla1.Columns["ape_nom"].ReadOnly = true;
+            Dgvplanilla1.Columns["regi_pen"].ReadOnly = true;
+            Dgvplanilla1.Columns["codigo"].ReadOnly = true;
+            Dgvplanilla1.Columns["cargo"].ReadOnly = true;
+            Dgvplanilla1.Columns["f_ini"].ReadOnly = true;
+            Dgvplanilla1.Columns["remu"].ReadOnly = true;
 
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -605,28 +615,30 @@ namespace Presentacion.Vista
 
         private void dgvplanilla1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /* if (e.RowIndex != -1)
+            if (e.RowIndex != -1)
              {
-                 DataGridViewRow dar = dgvplanilla1.CurrentRow;
-                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
-                 {
-                     double hferi = 0;
-                     Int32 horaferiado = 0, minutoferi = 0;
-                     if (dar.Cells["hrferiado"].Value == null)
-                         horaferiado = 0;
-                     else
-                         horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;
+                //DataGridViewRow dar = dgvplanilla1.CurrentRow;
+                //if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+                //{
+                //    double hferi = 0;
+                //    Int32 horaferiado = 0, minutoferi = 0;
+                //    if (dar.Cells["hrferiado"].Value == null)
+                //        horaferiado = 0;
+                //    else
+                //        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
 
 
-                     if (dar.Cells["minuferiado"].Value == null)
-                         minutoferi = 0;
-                     else
-                         minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+                //    if (dar.Cells["minuferiado"].Value == null)
+                //        minutoferi = 0;
+                //    else
+                //        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
 
-                     hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
-                     dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
-                 }
-             }*/
+                //    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+                //    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                //}
+            }
         }
 
         private void dgvplanilla1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -686,8 +698,9 @@ namespace Presentacion.Vista
 
         private void dgvplanilla1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-
-            // MessageBox.Show("cell state changed");
+            //if(Dgvplanilla1.RowCount > 0)
+            //    Dgvplanilla1.CurrentRow.Cells["ape_nom"].Style.ForeColor = Color.Crimson;
+            //MessageBox.Show("cell state changed");
 
             //DataGridViewRow dar = dgvplanilla1.CurrentRow;
             //if (dar.Cells["btnnosubsidio"].Selected)
@@ -1181,6 +1194,27 @@ namespace Presentacion.Vista
             _intancia = null;
         }
 
+
+        //FORMATO DE COLOR A LA TABLA
+        private void Dgvplanilla1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                //Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.DarkRed;
+            }
+           
+        }             
       
+
+        private void Dgvplanilla1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = SystemColors.WindowText;
+        }
+
+        private void tbtncomi_pri_spp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

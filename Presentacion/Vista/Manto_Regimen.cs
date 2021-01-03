@@ -29,18 +29,16 @@ namespace Presentacion.Vista
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            using (nr) { nr.state = EntityState.Guardar; }
-
             Habilitar(true);
             limpiar();
-
+            ValidateError.validate.Clear();
         }
 
         private void limpiar()
         {
             txtdescripcion.Text = String.Empty;
             txtdescCorta.Text = String.Empty;
-            cbxregimen.Text = "";            
+            cbxregimen.Text = null;            
             using (nr) { nr.state = EntityState.Guardar; }
         }
 
@@ -51,6 +49,7 @@ namespace Presentacion.Vista
             txtdescCorta.Enabled = v;
             cbxregimen.Enabled = v;
             txtdescripcion.Focus();
+            btneliminar.Enabled = false;
         }
 
         private void Tabla()
@@ -107,9 +106,10 @@ namespace Presentacion.Vista
                 nr.Descripcion = txtdescripcion.Text.Trim().ToUpper();
                 nr.Tipo_regimen = cbxregimen.Text.Trim();               
                 result = nr.GuardarCambios();
+                              
+                ShowRegimen();
                 Messages.M_info(result);
                 limpiar();
-                ShowRegimen();
             }
         }
 
@@ -118,9 +118,10 @@ namespace Presentacion.Vista
         private void dgvregimen_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvregimen.CurrentRow;
-            Habilitar(true);
-            if (dgvregimen.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            
+            if (dgvregimen.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
+                Habilitar(true);
                 using (nr)
                 {
                     nr.state = EntityState.Modificar;
@@ -147,12 +148,13 @@ namespace Presentacion.Vista
                         nr.Codigo_Regimen = Convert.ToInt32(dgvregimen.CurrentRow.Cells[0].Value);
                         result = nr.GuardarCambios();
                         if (result.Contains("La operacion fue denegada"))
-                            Messages.M_error(result);
+                            Messages.M_warning(result);
                         else
                         {
                             ShowRegimen();
                             Messages.M_info(result);
                         }
+                        limpiar();
                         
                     }
                 }
@@ -232,6 +234,10 @@ namespace Presentacion.Vista
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-       
+        private void dgvregimen_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btneliminar.Enabled = true;
+        }
     }
 }

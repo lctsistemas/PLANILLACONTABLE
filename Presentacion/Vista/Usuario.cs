@@ -92,12 +92,14 @@ namespace Presentacion.Vista
             txtnom_usuario.Enabled = v;
             txtpassword.Enabled = v;
             cborol.Enabled = v;
-            cbogenero.Enabled = v;          
+            cbogenero.Enabled = v;
+            btnremover.Enabled = false;
         }
 
         //LIMPIAR CONTROLES
         private void limpiar()
         {
+            using (nu) { nu.state = EntityState.Guardar; }
             txtacceso.Text = String.Empty;
             txtnom_usuario.Text = String.Empty;
             txtpassword.Text = String.Empty;
@@ -118,14 +120,13 @@ namespace Presentacion.Vista
             cborol.Text = "";
             cborol.SelectedValue = 0;
         }
-
        
-
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            using (nu) { nu.state = EntityState.Guardar; }
+            this.tabuser.SelectedIndex = 1;
             Habilitar(true);
+            ValidateError.validate.Clear();
             limpiar();
         }
 
@@ -145,9 +146,15 @@ namespace Presentacion.Vista
                 nu.Idrol = Convert.ToInt32(cborol.SelectedValue);
 
                 result = nu.SaveChanges();
-                Messages.M_info(result);
-                ShowUser();
-                limpiar();
+                if (result.Contains("ya existe."))
+                    Messages.M_warning(result);
+                else
+                {
+                    ShowUser();
+                    Messages.M_info(result);                    
+                    limpiar();
+                }
+               
             }
         }
 
@@ -161,8 +168,8 @@ namespace Presentacion.Vista
         private void dgvusuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvusuario.CurrentRow;
-            if (dgvusuario.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
-            {
+            if (dgvusuario.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex >-1)
+            {               
                 using (nu)
                 {
                     nu.state = EntityState.Modificar;
@@ -194,13 +201,13 @@ namespace Presentacion.Vista
                         nu.Idusuario = Convert.ToInt32(dgvusuario.CurrentRow.Cells[0].Value);//idusuario
                         result = nu.SaveChanges();
                         if (result.Contains("esta asignado"))
-                            Messages.M_error(result);
+                            Messages.M_warning(result);
                         else
                         {
-                            Messages.M_info(result);
                             ShowUser();
-                            btnguardar.Enabled = false;
+                            Messages.M_info(result);                           
                         }
+                        limpiar();
                     }
                 }
             }
@@ -341,10 +348,11 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtpassword, "Contraseña requerida!");
         }
-
         
-       
-
-       
+        private void dgvusuario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btnremover.Enabled = true;
+        }
     }
 }

@@ -84,7 +84,7 @@ namespace Presentacion.Vista
         private void dgvrol_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (dgvrol.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvrol.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
                 Habilitar(true);
                 using (nr)
