@@ -3,7 +3,11 @@ using Negocio.Models;
 using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
+
+using Presentacion.Subvista;
+using System.Diagnostics;
 
 namespace Presentacion.Vista
 {
@@ -47,6 +51,15 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["valor_seguro"].Visible = false;
             Dgvplanilla1.Columns["valor_aporte"].Visible = false;
             Dgvplanilla1.Columns["cod_document"].Visible = false;
+            Dgvplanilla1.Columns["codigo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["f_ini"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            Dgvplanilla1.Columns["ape_nom"].ReadOnly = true;
+            Dgvplanilla1.Columns["regi_pen"].ReadOnly = true;
+            Dgvplanilla1.Columns["codigo"].ReadOnly = true;
+            Dgvplanilla1.Columns["cargo"].ReadOnly = true;
+            Dgvplanilla1.Columns["f_ini"].ReadOnly = true;
+            Dgvplanilla1.Columns["remu"].ReadOnly = true;
 
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -103,11 +116,11 @@ namespace Presentacion.Vista
         private void FillTabla()
         {
             using (nplam = new NplanillaM())
-            {             
-                nplam.PId_mes = PlanillaCache.p_idmes;
-                nplam.PId_empreMaestra = UserCache.Codigo_empresa;
-                nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
-                nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
+            {
+                nplam.PId_mes = 9; //PlanillaCache.p_idmes;
+                nplam.PId_empreMaestra = 1; // UserCache.Codigo_empresa;
+                //nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
+                //nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
                 Dgvplanilla1.DataSource = nplam.Show_planillaM(PlanillaCache.p_idplanilla);
             }
 
@@ -201,10 +214,10 @@ namespace Presentacion.Vista
                     boni_tru = Convert.ToDouble(dar.Cells["tboni"].Value);
 
 
-                /*if (dar.Cells["tcts"].Value == null)
-                    cts_tru = 0.00;
+                if (dar.Cells["tcts"].Value == null)
+                    cts_tru = 0;
                 else
-                    cts_tru = Convert.ToDouble(dar.Cells["tcts"].Value);*/
+                    cts_tru = Convert.ToDouble(dar.Cells["tcts"].Value);
 
                 subtotal1 = (suel + asigfami + monto_sub + montoposisub + totalHorasEx);
                 subtotal2 = (reintegr + vacacion + vaca_trun + grati_tru + boni_tru + cts_tru);
@@ -282,7 +295,7 @@ namespace Presentacion.Vista
       
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {
-            CheckConceptos();
+            //CheckConceptos();
             FillTabla();
             TablaPlanilla();
             Tooltip.Title(Picsave_conceptos, "Guardar cambios", false);
@@ -598,35 +611,37 @@ namespace Presentacion.Vista
         {
             FrmPlanillaEmpleados plaem = (FrmPlanillaEmpleados)Owner;
 
-            plaem.btncerrar.Enabled = true;
-            plaem.toolmenu.Visible = true;
+            //plaem.btncerrar.Enabled = true;
+            //plaem.toolmenu.Visible = true;
             this.Close();
         }       
 
         private void dgvplanilla1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /* if (e.RowIndex != -1)
+            if (e.RowIndex != -1)
              {
-                 DataGridViewRow dar = dgvplanilla1.CurrentRow;
-                 if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
-                 {
-                     double hferi = 0;
-                     Int32 horaferiado = 0, minutoferi = 0;
-                     if (dar.Cells["hrferiado"].Value == null)
-                         horaferiado = 0;
-                     else
-                         horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
+
+                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;
+                //DataGridViewRow dar = dgvplanilla1.CurrentRow;
+                //if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
+                //{
+                //    double hferi = 0;
+                //    Int32 horaferiado = 0, minutoferi = 0;
+                //    if (dar.Cells["hrferiado"].Value == null)
+                //        horaferiado = 0;
+                //    else
+                //        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
 
 
-                     if (dar.Cells["minuferiado"].Value == null)
-                         minutoferi = 0;
-                     else
-                         minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
+                //    if (dar.Cells["minuferiado"].Value == null)
+                //        minutoferi = 0;
+                //    else
+                //        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
 
-                     hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
-                     dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
-                 }
-             }*/
+                //    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
+                //    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
+                //}
+            }
         }
 
         private void dgvplanilla1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -686,8 +701,9 @@ namespace Presentacion.Vista
 
         private void dgvplanilla1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-
-            // MessageBox.Show("cell state changed");
+            //if(Dgvplanilla1.RowCount > 0)
+            //    Dgvplanilla1.CurrentRow.Cells["ape_nom"].Style.ForeColor = Color.Crimson;
+            //MessageBox.Show("cell state changed");
 
             //DataGridViewRow dar = dgvplanilla1.CurrentRow;
             //if (dar.Cells["btnnosubsidio"].Selected)
@@ -713,8 +729,8 @@ namespace Presentacion.Vista
 
         private void menuarchivos_MouseDown(object sender, MouseEventArgs e)
         {
-            //WindowsMove.ReleaseCapture();
-            //WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         
         private void tbtnlistaconceptos_Click(object sender, EventArgs e)
@@ -759,8 +775,8 @@ namespace Presentacion.Vista
                 if (Txtidconcepto.Text.Trim() != string.Empty)
                     nconcepto.Id_conceptos = Convert.ToInt32(Txtidconcepto.Text);
 
-                nconcepto.Id_mes = 2; //falta  asignar
-                nconcepto.Id_planilla = 2; //fañta asignar
+                nconcepto.Id_mes = PlanillaCache.p_idmes;
+                nconcepto.Id_planilla = PlanillaCache.p_idplanilla;
                 nconcepto.HextraDiurna = Chkhdiurnas.Checked;
                 nconcepto.HextraNocturna = Chkhnocturna.Checked;
                 nconcepto.FeriadoDomi = Chkferiado.Checked;
@@ -794,32 +810,40 @@ namespace Presentacion.Vista
             List<NConceptos> li;
             using (nconcepto = new NConceptos())
             {
-                nconcepto.Id_mes = 2;
-                nconcepto.Id_planilla = 2;
+                nconcepto.Id_mes = PlanillaCache.p_idmes; ;
+                nconcepto.Id_planilla = PlanillaCache.p_idplanilla;
                 li = nconcepto.Getall();
-                this.Txtidconcepto.Text = li[0].Id_conceptos.ToString();
-                this.Chkhdiurnas.Checked = Convert.ToBoolean(li[0].HextraDiurna);
-                this.Chkhnocturna.Checked = Convert.ToBoolean(li[0].HextraNocturna);
-                this.Chkferiado.Checked = Convert.ToBoolean(li[0].FeriadoDomi);
-                this.Chkboni_nocturna.Checked = Convert.ToBoolean(li[0].BoniNoctur);
-                this.Chkprimeromayo.Checked = Convert.ToBoolean(li[0].PrimeroMayo);
-                this.Chktardanza.Checked = Convert.ToBoolean(li[0].Tarda);
-                this.Chksubsidio.Checked = Convert.ToBoolean(li[0].Subsidi);
-                this.Chktotal_extras.Checked = Convert.ToBoolean(li[0].Thoraex);
-                this.Chkotro_reintegro.Checked = Convert.ToBoolean(li[0].Otroreinte);
-                this.Chkpres_alime.Checked = Convert.ToBoolean(li[0].Prest_aliment);
-                this.Chkgrati.Checked = Convert.ToBoolean(li[0].Gratif);
-                this.Chkvaca.Checked = Convert.ToBoolean(li[0].Vaca);
-                this.Chktrunca.Checked = Convert.ToBoolean(li[0].Trunca);
-                this.Chkrgrati.Checked = Convert.ToBoolean(li[0].Reinte_gratiboni);
-                this.Chkessavida.Checked = Convert.ToBoolean(li[0].Essa_vida);
-                this.Chkadelanto.Checked = Convert.ToBoolean(li[0].Adela);
-                this.Chkprestamo.Checked = Convert.ToBoolean(li[0].Presta);
-                this.Chkrentaquinta.Checked = Convert.ToBoolean(li[0].Rentquinta);
-                this.Chkretencion_judi.Checked = Convert.ToBoolean(li[0].Reten_judici);
-                this.Chkotro_descuento.Checked = Convert.ToBoolean(li[0].Otrodescu);
-                this.Chkrecar_consumo.Checked = Convert.ToBoolean(li[0].Recarg_consu);
 
+                if(li.Count <= 0)
+                {                   
+                    li.Clear();
+                }
+                else
+                {
+                   
+                    this.Txtidconcepto.Text = li[0].Id_conceptos.ToString();                    
+                    this.Chkhdiurnas.Checked = Convert.ToBoolean(li[0].HextraDiurna);
+                    this.Chkhnocturna.Checked = Convert.ToBoolean(li[0].HextraNocturna);
+                    this.Chkferiado.Checked = Convert.ToBoolean(li[0].FeriadoDomi);
+                    this.Chkboni_nocturna.Checked = Convert.ToBoolean(li[0].BoniNoctur);
+                    this.Chkprimeromayo.Checked = Convert.ToBoolean(li[0].PrimeroMayo);
+                    this.Chktardanza.Checked = Convert.ToBoolean(li[0].Tarda);
+                    this.Chksubsidio.Checked = Convert.ToBoolean(li[0].Subsidi);
+                    this.Chktotal_extras.Checked = Convert.ToBoolean(li[0].Thoraex);
+                    this.Chkotro_reintegro.Checked = Convert.ToBoolean(li[0].Otroreinte);
+                    this.Chkpres_alime.Checked = Convert.ToBoolean(li[0].Prest_aliment);
+                    this.Chkgrati.Checked = Convert.ToBoolean(li[0].Gratif);
+                    this.Chkvaca.Checked = Convert.ToBoolean(li[0].Vaca);
+                    this.Chktrunca.Checked = Convert.ToBoolean(li[0].Trunca);
+                    this.Chkrgrati.Checked = Convert.ToBoolean(li[0].Reinte_gratiboni);
+                    this.Chkessavida.Checked = Convert.ToBoolean(li[0].Essa_vida);
+                    this.Chkadelanto.Checked = Convert.ToBoolean(li[0].Adela);
+                    this.Chkprestamo.Checked = Convert.ToBoolean(li[0].Presta);
+                    this.Chkrentaquinta.Checked = Convert.ToBoolean(li[0].Rentquinta);
+                    this.Chkretencion_judi.Checked = Convert.ToBoolean(li[0].Reten_judici);
+                    this.Chkotro_descuento.Checked = Convert.ToBoolean(li[0].Otrodescu);
+                    this.Chkrecar_consumo.Checked = Convert.ToBoolean(li[0].Recarg_consu);
+                }
             }
         }
 
@@ -1181,6 +1205,89 @@ namespace Presentacion.Vista
             _intancia = null;
         }
 
+
+        //FORMATO DE COLOR A LA TABLA
+        private void Dgvplanilla1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                //Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.DarkRed;
+            }
+           
+        }             
       
+        private void Dgvplanilla1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = SystemColors.WindowText;
+        }
+
+        // VISTA DE LISTA DE COMISIONES AFP.
+        private void tbtncomi_pri_spp_Click(object sender, EventArgs e)
+        {
+            using (FrmVista_comisionesAfp fv_apf = new FrmVista_comisionesAfp())
+            {
+                fv_apf.StartPosition = FormStartPosition.CenterParent;
+                fv_apf.ShowDialog();
+            }
+        }
+
+        //ENLACES A PAGINAS WEB
+        private void Tbtsbs_Click(object sender, EventArgs e)
+        {            
+            Process.Start("https://www.sbs.gob.pe/app/spp/empleadores/comisiones_spp/paginas/comision_prima.aspx");
+        }
+
+        private void Tbtspp_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
+        }
+
+
+        //VALIDACION
+        private void Dgvplanilla1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (Dgvplanilla1.Columns[e.ColumnIndex].Name == "codigo")
+                {
+                    if (e.Value != null)
+                    {
+                        if (e.Value.GetType() != typeof(DBNull))
+                        {
+                            //condicion
+                            if (Dgvplanilla1.Rows[e.RowIndex].Cells["jornada_labo"].Value.ToString()  == "PART-TIME" )
+                            {
+                                Dgvplanilla1.Rows[e.RowIndex].Cells["codigo"].Style.BackColor = Color.SkyBlue;
+                                //Dgvplanilla1.RowHeadersDefaultCellStyle.BackColor = Color.Red;
+                            }
+                            
+                        }
+
+                    }
+                }
+            }
+        }
+
+        //coloca numeracion en header cell, pero tienes que hacer click para que se coloque.
+        //private void Dgvplanilla1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        //{
+
+        //    this.Dgvplanilla1.Rows[e.RowIndex].HeaderCell.Value = (e.RowIndex + 1).ToString();
+
+        //}
+
+
+       //this.Dgvplanilla1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgvplanilla1_RowPostPaint);
+        
+        //Coloca Numeracion en HeaderCell.
+        private void Dgvplanilla1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(Dgvplanilla1.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 8, e.RowBounds.Location.Y + 4);
+            }
+        }
+    
     }
 }

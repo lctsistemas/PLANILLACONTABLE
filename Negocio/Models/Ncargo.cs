@@ -39,11 +39,11 @@ namespace Negocio.Models
                 {
                     case EntityState.Guardar:
                         cargo_repository.Add(dc);
-                        message = "Successfully Record!";
+                        message = "¡Registrado!";
                         break;
                     case EntityState.Modificar:
                         cargo_repository.Edit(dc);
-                        message = "Successfully Edited!";
+                        message = "¡Modificado!";
                         break;
                     case EntityState.Remover:
                         cargo_repository.Delete(dc);

@@ -58,6 +58,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tablista_empresa = new System.Windows.Forms.TabPage();
+            this.dgvsucursal = new System.Windows.Forms.DataGridView();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.btnnuevo = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
-            this.dgvsucursal = new System.Windows.Forms.DataGridView();
             this.panelsucursal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
@@ -75,8 +75,8 @@
             this.tabgestion_empresa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnempresa)).BeginInit();
             this.tablista_empresa.SuspendLayout();
-            this.tapsucursal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsucursal)).BeginInit();
+            this.tapsucursal.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelsucursal
@@ -288,6 +288,47 @@
             resources.ApplyResources(this.tablista_empresa, "tablista_empresa");
             this.tablista_empresa.Name = "tablista_empresa";
             // 
+            // dgvsucursal
+            // 
+            this.dgvsucursal.AllowUserToAddRows = false;
+            this.dgvsucursal.AllowUserToDeleteRows = false;
+            this.dgvsucursal.AllowUserToResizeColumns = false;
+            this.dgvsucursal.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.dgvsucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(this.dgvsucursal, "dgvsucursal");
+            this.dgvsucursal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
+            this.dgvsucursal.BackgroundColor = System.Drawing.Color.White;
+            this.dgvsucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvsucursal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvsucursal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvsucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsucursal.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvsucursal.EnableHeadersVisualStyles = false;
+            this.dgvsucursal.MultiSelect = false;
+            this.dgvsucursal.Name = "dgvsucursal";
+            this.dgvsucursal.ReadOnly = true;
+            this.dgvsucursal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvsucursal.RowHeadersVisible = false;
+            this.dgvsucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvsucursal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellClick);
+            this.dgvsucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellDoubleClick);
+            // 
             // txtbuscar
             // 
             this.txtbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -363,46 +404,6 @@
             this.btneliminar.UseVisualStyleBackColor = false;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
-            // dgvsucursal
-            // 
-            this.dgvsucursal.AllowUserToAddRows = false;
-            this.dgvsucursal.AllowUserToDeleteRows = false;
-            this.dgvsucursal.AllowUserToResizeColumns = false;
-            this.dgvsucursal.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.dgvsucursal.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.dgvsucursal, "dgvsucursal");
-            this.dgvsucursal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
-            this.dgvsucursal.BackgroundColor = System.Drawing.Color.White;
-            this.dgvsucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvsucursal.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dgvsucursal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsucursal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvsucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsucursal.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvsucursal.EnableHeadersVisualStyles = false;
-            this.dgvsucursal.MultiSelect = false;
-            this.dgvsucursal.Name = "dgvsucursal";
-            this.dgvsucursal.ReadOnly = true;
-            this.dgvsucursal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvsucursal.RowHeadersVisible = false;
-            this.dgvsucursal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvsucursal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsucursal_CellDoubleClick);
-            // 
             // frmsucursal
             // 
             resources.ApplyResources(this, "$this");
@@ -426,8 +427,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnempresa)).EndInit();
             this.tablista_empresa.ResumeLayout(false);
             this.tablista_empresa.PerformLayout();
-            this.tapsucursal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvsucursal)).EndInit();
+            this.tapsucursal.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

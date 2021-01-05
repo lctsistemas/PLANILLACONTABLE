@@ -60,11 +60,13 @@
             this.chkonp = new System.Windows.Forms.CheckBox();
             this.txtidmes = new System.Windows.Forms.TextBox();
             this.chkcopy_pega = new System.Windows.Forms.CheckBox();
+            this.Panelsbs = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).BeginInit();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvonp)).BeginInit();
+            this.Panelsbs.SuspendLayout();
             this.SuspendLayout();
             // 
             // linkcomisiones
@@ -154,7 +156,7 @@
             this.dgvcomision.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -254,7 +256,7 @@
             this.paneltitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneltitulo.Location = new System.Drawing.Point(0, 0);
             this.paneltitulo.Name = "paneltitulo";
-            this.paneltitulo.Size = new System.Drawing.Size(907, 35);
+            this.paneltitulo.Size = new System.Drawing.Size(905, 35);
             this.paneltitulo.TabIndex = 92;
             this.paneltitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paneltitulo_MouseDown);
             // 
@@ -263,7 +265,7 @@
             this.btnminimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
-            this.btnminimizar.Location = new System.Drawing.Point(837, 0);
+            this.btnminimizar.Location = new System.Drawing.Point(835, 0);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 35);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -279,7 +281,7 @@
             this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
-            this.btncerrar.Location = new System.Drawing.Point(872, 0);
+            this.btncerrar.Location = new System.Drawing.Point(870, 0);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -333,7 +335,7 @@
             this.dgvonp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -432,6 +434,17 @@
             this.chkcopy_pega.UseVisualStyleBackColor = false;
             this.chkcopy_pega.CheckedChanged += new System.EventHandler(this.chkcopy_pega_CheckedChanged);
             // 
+            // Panelsbs
+            // 
+            this.Panelsbs.BackColor = System.Drawing.Color.White;
+            this.Panelsbs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panelsbs.Controls.Add(this.paneltitulo);
+            this.Panelsbs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Panelsbs.Location = new System.Drawing.Point(0, 0);
+            this.Panelsbs.Name = "Panelsbs";
+            this.Panelsbs.Size = new System.Drawing.Size(907, 515);
+            this.Panelsbs.TabIndex = 99;
+            // 
             // Frmafp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,12 +457,12 @@
             this.Controls.Add(this.dgvonp);
             this.Controls.Add(this.dgvcomision);
             this.Controls.Add(this.linkcomisiones);
-            this.Controls.Add(this.paneltitulo);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.cbomes);
             this.Controls.Add(this.lblperiodo);
             this.Controls.Add(this.lblmes);
+            this.Controls.Add(this.Panelsbs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frmafp";
             this.Text = "Afp";
@@ -459,6 +472,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvonp)).EndInit();
+            this.Panelsbs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +506,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn onpcomision;
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.Panel Panelsbs;
     }
 }

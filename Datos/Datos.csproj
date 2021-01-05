@@ -52,9 +52,8 @@
     <Compile Include="Entities\DBanco.cs" />
     <Compile Include="Entities\Dcargo.cs" />
     <Compile Include="Entities\DConceptos.cs" />
-    <Compile Include="Entities\Dcontrato.cs" />
     <Compile Include="Entities\DDiasSubsidiados.cs" />
-    <Compile Include="Entities\DEmpleado.cs" />
+    <Compile Include="Entities\DEmpleadoContrato.cs" />
     <Compile Include="Entities\DempresaMaestra.cs" />
     <Compile Include="Entities\DPlanilla.cs" />
     <Compile Include="Entities\DplanillaM.cs" />

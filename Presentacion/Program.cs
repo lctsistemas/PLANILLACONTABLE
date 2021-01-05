@@ -15,7 +15,12 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frminicio());
+=======
+
+            Application.Run(new FrmPlanillaMensual2());
+>>>>>>> Carlos2
 
         }
     }

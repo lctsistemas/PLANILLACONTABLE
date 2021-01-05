@@ -51,10 +51,18 @@ GO
 ALTER PROC SP_REGISTRAR_DOCUMENTO
 @nom varchar(50),
 @descripcion nvarchar(100),
-@cod_doc char(2)
+@cod_doc char(2),
+@mensaje varchar(25) OUTPUT
 AS BEGIN
-INSERT INTO Tipo_documento(nombre,descripcion,codigo_doc)
-VALUES(@nom,@descripcion,@cod_doc)
+IF(EXISTS(SELECT t.codigo_doc  FROM Tipo_documento t WHERE t.codigo_doc = @cod_doc)) -- crear index
+	SET @mensaje ='Codigo  ya existe'
+ELSE 
+BEGIN
+	INSERT INTO Tipo_documento(nombre,descripcion,codigo_doc)
+	VALUES(@nom,@descripcion,@cod_doc)
+	SET @mensaje = '¡Registrado!'
+END
+
 END
 GO
 
@@ -116,32 +124,61 @@ ALTER PROC SP_ADD_EMPLEADO(
 @id_cargo int,
 @id_empresa_maestra int,
 @jornada_laboral varchar(11),
-@mensaje varchar(100) output)
-AS BEGIN 
+--PARAMETROS DE CONTRATO
+@id_banco int,
+@id_tcontrato int,
+@fecha_inicio date,
+@fecha_fin date,
+@num_cuenta varchar(30),
+@remu_basica money,
+@asig_fami decimal(5,2),
+@tipo_pago varchar(30),
+@periodicidad varchar(70),
+@tipo_modeda varchar(10),
+@cuenta_cts nvarchar(50),
+@cussp nvarchar(70),
+@id_salud int,
+@mensaje varchar(200) output)
+AS BEGIN 	
 DECLARE @RazonSocial VARCHAR(50)
 SET @RazonSocial =(SELECT em.razon_social from Empleado e JOIN  Empresa_maestra em ON (e.id_em_maestra=em.id_em_maestra) 
-WHERE e.estado='ACTIVO' AND e.codigo=@codigo)
+WHERE e.estado='ACTIVO' AND e.codigo=@codigo) --FALTA CREAR UN INDEX PARA ESTA CONSULTA
+
 IF(@RazonSocial != '')
 	SET @mensaje = 'Colaborador está (ACTIVO) EN: '+ @RazonSocial
 ELSE 		
-	BEGIN
+BEGIN
 	DECLARE @idempleado int
 	SET @idempleado=(SELECT count(e.id_empleado) FROM dbo.Empleado e)
 	IF(@idempleado=0)	
 		SET @idempleado=1	
 	ELSE
 		SET @idempleado=(SELECT MAX(e.id_empleado)+1 FROM dbo.Empleado e)
+	BEGIN TRANSACTION 
+		BEGIN TRY	
+			INSERT INTO dbo.Empleado(id_empleado,codigo,nombre_empleado, ape_paterno, ape_materno, fecha_nacimiento, nacionalidad, 
+			tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra,
+			jornada_laboral ,eliminado_estado) 
+			VALUES (@idempleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
+			@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, @jornada_laboral, 'NO ANULADO')			
 
-		INSERT INTO dbo.Empleado(id_empleado,codigo,nombre_empleado, ape_paterno, ape_materno, fecha_nacimiento, nacionalidad, 
-		tipo_genero,direccion,telefono, numero_documento, estado, codigo_regimen, id_documento, id_cargo, id_em_maestra,
-		jornada_laboral ,eliminado_estado) 
-		VALUES (@idempleado, @codigo, @nom_emp, @ape_pat, @ape_mat, @fec_nac, @nacionalidad, @tip_ge, @direccion, @telefono, @num_doc, @estado,
-		@codigo_regimen, @id_documento, @id_cargo, @id_empresa_maestra, @jornada_laboral, 'NO ANULADO')
-		SET @mensaje= '¡Colaborador registrado!'
-	END	
-END
+			INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
+			fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, tipo_pago, 
+			periodicidad, tipo_moneda, cuenta_cts, cussp, id_rsalud)
+			VALUES(@idempleado, @idempleado, @id_banco,
+			@id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @tipo_pago, 
+			@periodicidad, @tipo_modeda, @cuenta_cts, @cussp, @id_salud)
+			SET @mensaje= '¡Colaborador registrado!'
+			COMMIT TRANSACTION
+
+		END TRY
+		BEGIN CATCH
+			SET @mensaje= ERROR_MESSAGE()
+			ROLLBACK TRANSACTION
+		END CATCH
+END	
+END 
 GO
-
 
 ALTER PROC SP_UPDATE_EMPLEADO
 (@codigo varchar(20),
@@ -159,16 +196,43 @@ ALTER PROC SP_UPDATE_EMPLEADO
 @codigo_regimen int,
 @id_documento int,
 @id_cargo int,
-@id_empleado int)
+@id_empleado int,
+--PARAMETROS DE CONTRATO
+@id_banco int,
+@id_tcontrato int,
+@fecha_inicio date,
+@fecha_fin date,
+@num_cuenta varchar(30),
+@remu_basica money,
+@asig_fami decimal(5,2),
+@tipo_pago varchar(30),
+@periodicidad varchar(70),
+@tipo_modeda varchar(10),
+@cuenta_cts nvarchar(50),
+@cussp nvarchar(70),
+@id_salud int)
+
 AS BEGIN 
- UPDATE Empleado SET codigo=@codigo, nombre_empleado=@nom_emp, ape_paterno=@ape_pat, ape_materno=@ape_mat,
- fecha_nacimiento=@fec_nac, nacionalidad=@nacionalidad, tipo_genero=@tip_ge, direccion=@direccion,
- telefono=@telefono, numero_documento=@num_doc, estado=@estado, jornada_laboral=@jornada_laboral, codigo_regimen=@codigo_regimen,
- id_documento=@id_documento, id_cargo=@id_cargo WHERE id_empleado=@id_empleado
+BEGIN TRANSACTION
+	BEGIN TRY
+		UPDATE Empleado SET codigo=@codigo, nombre_empleado=@nom_emp, ape_paterno=@ape_pat, ape_materno=@ape_mat,
+		fecha_nacimiento=@fec_nac, nacionalidad=@nacionalidad, tipo_genero=@tip_ge, direccion=@direccion,
+		telefono=@telefono, numero_documento=@num_doc, estado=@estado, jornada_laboral=@jornada_laboral, codigo_regimen=@codigo_regimen,
+		id_documento=@id_documento, id_cargo=@id_cargo WHERE id_empleado=@id_empleado
+
+		UPDATE Contrato SET id_banco=@id_banco, id_tipocontrato=@id_tcontrato, fecha_inicio=@fecha_inicio,
+		fecha_fin=@fecha_fin, numero_cuenta=@num_cuenta, remuneracion_basica=@remu_basica, 
+		asignacion_familiar=@asig_fami, tipo_pago=@tipo_pago, periodicidad=@periodicidad, 
+		tipo_moneda=@tipo_modeda, cuenta_cts=@cuenta_cts, cussp=@cussp, id_rsalud=@id_salud 
+		WHERE id_empleado=@id_empleado
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		print ERROR_MESSAGE()
+		ROLLBACK TRANSACTION
+	END CATCH
 END
 GO
-
-
 
 ALTER PROC SP_ANULAR_EMPLEADO
 (@id_emp int,
@@ -212,84 +276,8 @@ on(co.id_tipocontrato = ti.id_tipocontrato) JOIN Regimen_salud re on(co.id_rsalu
 WHERE e.id_empleado=@codigo_empleado
 END
 GO
-
-select * from Empleado
-select * from Contrato
-
+                                                                                                                                                                                                                                               
 GO
-/*      CONTRATO SEGUN EMPLEADO REGISTRADO     */
-ALTER PROCEDURE SP_INSERT_CONTRATO(
-@id_banco int,
-@id_tcontrato int,
-@fecha_inicio date,
-@fecha_fin date,
-@num_cuenta varchar(30),
-@remu_basica money,
-@asig_fami decimal(5,2),
-@tipo_pago varchar(30),
-@periodicidad varchar(70),
-@tipo_modeda varchar(10),
-@cuenta_cts nvarchar(50),
-@cussp nvarchar(70),
-@id_salud int)
-AS BEGIN
-	DECLARE @contrato int
-	SET @contrato=(SELECT count(c.id_contrato) FROM dbo.Contrato c)
-	IF(@contrato=0)
-		SET @contrato=1		
-	ELSE
-		SET @contrato=(SELECT MAX(c.id_contrato)+1 FROM dbo.Contrato c)			
-INSERT INTO dbo.Contrato(id_contrato, id_empleado, id_banco, id_tipocontrato, fecha_inicio,
-fecha_fin, numero_cuenta, remuneracion_basica, asignacion_familiar, tipo_pago, 
-periodicidad, tipo_moneda, cuenta_cts, cussp, id_rsalud)
-VALUES(@contrato, (SELECT TOP(1)id_empleado FROM Empleado ORDER BY id_empleado DESC), @id_banco, 
-@id_tcontrato, @fecha_inicio, @fecha_fin, @num_cuenta, @remu_basica, @asig_fami, @tipo_pago, 
-@periodicidad, @tipo_modeda, @cuenta_cts, @cussp, @id_salud)
-END
-GO
-
-                                                                                                                                                                                                                                                   
-ALTER PROCEDURE SP_UPDATE_CONTRATO
-(@id_banco int,
-@id_tcontrato int,
-@fecha_inicio date,
-@fecha_fin date,
-@num_cuenta varchar(30),
-@remu_basica money,
-@asig_fami decimal(5,2),
-@tipo_pago varchar(30),
-@periodicidad varchar(70),
-@tipo_modeda varchar(10),
-@cuenta_cts nvarchar(50),
-@cussp nvarchar(70),
-@id_salud int,
-@id_empleado int)
-AS BEGIN
-UPDATE Contrato SET id_banco=@id_banco, id_tipocontrato=@id_tcontrato, fecha_inicio=@fecha_inicio,
-fecha_fin=@fecha_fin, numero_cuenta=@num_cuenta, remuneracion_basica=@remu_basica, 
-asignacion_familiar=@asig_fami, tipo_pago=@tipo_pago, periodicidad=@periodicidad, 
-tipo_moneda=@tipo_modeda, cuenta_cts=@cuenta_cts, cussp=@cussp, id_rsalud=@id_salud 
-WHERE id_empleado=@id_empleado
-END
-GO
-
-CREATE PROC SP_DELETE_CONTRATO  --revisar con validacion urgente.
-@id_contrato int,
-@mensaje varchar(100) OUTPUT
-AS BEGIN
-UPDATE dbo.Contrato SET estado='ANULADO' WHERE id_contrato=@id_contrato
-END
-GO
-
-alter PROC SP_SHOW_CONTRATO
-@seach varchar(30)
-AS BEGIN
-SELECT * FROM dbo.Contrato c
-END
-GO
-GO
-
-
 /*     EMPRESA AND SUCURSAL      */
 ALTER PROC SP_INSERT_EMPRESA_MAESTRA
 @razon_social varchar(50),
@@ -558,7 +546,7 @@ END
 ELSE
 BEGIN
 	DELETE FROM dbo.Rol WHERE id_rol=@idrol
-	SET @mesage='¡Rol eliminado!'
+	SET @mesage='¡Eliminado!'
 END
 END
 GO
@@ -918,45 +906,7 @@ DECLARE @idcomi int
 END
 GO
 
-SELECT * FROM ComisionesPension
-delete from ComisionesPension where idmes=11
-go
 
-
-/*--NO BORRAR, ES PARA FUTURAS PRUEBAS.
-ALTER PROC SP_INSERT_COMISIONES
-@codigo_regimen int,
-@comision decimal(6,2),
-@saldo decimal(6,2) ,
-@seguro decimal(6,2), 
-@aporte decimal(6,2),
-@tope  decimal(10,2),
-@idmes int,
-@idperiodo int
-AS BEGIN
-declare @men varchar(30)
-IF(NOT EXISTS(SELECT top(1)  re.codigo_regimen FROM ComisionesPension co JOIN RegimenPensionario re ON(co.codigo_regimen = re.codigo_regimen) 
-WHERE co.idmes=@idmes AND co.idperiodo=@idperiodo))
-BEGIN
-	DECLARE @idcomi int
-	SET @idcomi=(SELECT count(c.idcomision) FROM dbo.ComisionesPension c)
-	IF(@idcomi=0)
-		SET @idcomi=1
-	ELSE
-		SET @idcomi=(SELECT MAX(c.idcomision)+1 FROM dbo.ComisionesPension c)
-
-	INSERT INTO dbo.ComisionesPension(idcomision, codigo_regimen,
-	comision, saldo, seguro, aporte, tope, idmes, idperiodo) VALUES
-	(@idcomi, @codigo_regimen, @comision, @saldo, @seguro, @aporte, @tope, @idmes, @idperiodo)
-END
-ELSE
-	SET @men='Ya esta registrado'
-END
-GO
-*/
-
-
-GO
 CREATE PROC SP_UPDATE_COMISIONES
 @comision decimal(6,2),
 @saldo decimal(6,2) ,
@@ -1081,24 +1031,18 @@ END
 GO
 select * from Regimen_salud
 GO
-DBCC FREEPROCCACHE WITH NO_INFOMSGS
-DBCC DROPCLEANBUFFERS WITH NO_INFOMSGS
-GO
 
 GO
-<<<<<<< HEAD
-CREATE PROC SP_DELETE_REGSALUD -- FALTA MODIFICAR.
-=======
 
-create PROC SP_DELETE_REGSALUD
->>>>>>> 28dcf47b6ce34ec49a8229d009ccf268fb4c1fb5
+
+ALTER PROC SP_DELETE_REGSALUD 
 @id_regimen_salud int,
 @mensaje varchar(100) output
 AS BEGIN
-IF(EXISTS(SELECT  c.id_rsalud  from Contrato c join Regimen_salud r on(r.id_regimen_salud=c.id_rsalud)
-	WHERE r.id_regimen_salud=@id_regimen_salud))
+IF(EXISTS(SELECT  r.id_regimen_salud  from Contrato c join Regimen_salud r on(r.id_regimen_salud=c.id_rsalud)
+	WHERE c.id_rsalud=@id_regimen_salud))
 	BEGIN
-		SET @mensaje= 'Error, regimen salud esta asignado a un contrato'
+		SET @mensaje= 'Error, Regimen Salud esta asignado a un contrato'
 	END
 ELSE
 	BEGIN 
@@ -1108,6 +1052,7 @@ ELSE
 END
 GO
 
+
 ALTER PROC SP_SHOW_REG_SALUD 
 AS BEGIN 
 SELECT rs.id_regimen_salud,rs.cod_regi_salud,rs.descripcion_rsalud
@@ -1116,7 +1061,7 @@ END
 GO
 
 
----   SCRIPT SUBSIDIOS
+/*     SCRIPT SUBSIDIOS  */
 ALTER PROC SP_SHOW_DETSUBSIDIOS -- nos muestra lo que registramos
 @idmes int,
 @idperiodo int,
@@ -1176,7 +1121,7 @@ GO
 ------------------------------------------------------------------------
 --MANTENIMIENTOS DE SUBSIDIO (ADD,UPDATE,DELETE,SHOW)
 
-CREATE PROC SP_ADD_SUBSIDIOS
+ALTER PROC SP_ADD_SUBSIDIOS
 --@id_subsidios int,
 @cod_subsidio char(2),
 @tipo_suspension varchar(10),
@@ -1184,21 +1129,24 @@ CREATE PROC SP_ADD_SUBSIDIOS
 @descripcion_subsidio nvarchar(130),
 @tipo_subsidio varchar(30),
 @descuento bit,
-@mensaje varchar(100) output
+@mensaje varchar(25) output
 AS BEGIN
-DECLARE @subsidio int
-SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.Subsidios s)
-IF(@subsidio=0)	
-	SET @subsidio=1		
+IF(EXISTS(SELECT s.cod_subsidio FROM Subsidios s WHERE s.cod_subsidio=@cod_subsidio))
+	SET @mensaje='Codigo ya existe'
 ELSE
-	SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.Subsidios s)
-INSERT INTO Subsidios(id_subsidios, cod_subsidio,tipo_suspension,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
-VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, CAST(@descuento AS BIT))
-SET @mensaje= '¡Registrado!'
+BEGIN
+	DECLARE @subsidio int
+	SET @subsidio=(SELECT count(s.id_subsidios) FROM dbo.Subsidios s)
+	IF(@subsidio=0)	
+		SET @subsidio=1		
+	ELSE
+		SET @subsidio=(SELECT MAX(s.id_subsidios) + 1 FROM dbo.Subsidios s)
+	INSERT INTO Subsidios(id_subsidios, cod_subsidio,tipo_suspension,descripcion_corta, descripcion_subsidio, tipo_subsidio, descuento)
+	VALUES(@subsidio, @cod_subsidio,@tipo_suspension,@descripcion_corta, @descripcion_subsidio, @tipo_subsidio, CAST(@descuento AS BIT))
+	SET @mensaje= '¡Registrado!'
+END
 END
 GO
-
---exec SP_ADD_SUBSIDIOS 18,30,'S.P','PR','PRUEBA','NO',1,'';
 
 ALTER PROC SP_MODIFY_SUBSIDIOS
 @cod_subsidio char(2),
@@ -1242,9 +1190,9 @@ GO
 ALTER PROC SP_ShowPlanillaManto
 @idplanilla int,
 @idmes int,
-@id_empresaMaestra int,
-@fechaini date,
-@fechafin date
+@id_empresaMaestra int
+--@fechaini date,
+--@fechafin date
 AS BEGIN
 IF(NOT EXISTS(SELECT plam.id_planilla FROM dbo.PlanillaManto plam JOIN dbo.Planilla p ON(plam.id_planilla = p.id_planilla) WHERE p.id_planilla=@idplanilla))
 BEGIN
@@ -1256,7 +1204,7 @@ JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen)
 JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
-WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) --AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
 END
 ELSE
 BEGIN
@@ -1276,7 +1224,7 @@ JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen)
 JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado) JOIN PlanillaManto  plama ON(plama.id_contrato=co.id_contrato)
-WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) --AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin
 END
 END
 GO
@@ -1316,7 +1264,7 @@ ALTER PROC SP_RegistroConceptos
 @recarg_consu bit --recargo consumo
 AS BEGIN 
 IF(NOT EXISTS(SELECT c.id_planilla FROM dbo.Conceptos c join Planilla p on c.id_planilla = p.id_planilla 
-WHERE c.id_planilla=@id_planilla))
+WHERE c.id_planilla= @id_planilla))
 BEGIN
 	--DECLARE @idconcepto int
 	SET @id_conceptos=(SELECT count(c.id_conceptos) FROM dbo.Conceptos c)
@@ -1344,23 +1292,30 @@ END
 GO
 
 
-CREATE PROC SP_SHOW_CONCEPTOS
+ALTER PROC SP_SHOW_CONCEPTOS
 @idmes int,
 @idplanilla int
 AS BEGIN
-SELECT c.id_conceptos, c.hextraDiurna, c.hextraNocturna, c.feriadoDomi, c.boniNocturna, c.primeroMayo, 
-c.tarda, c.subsi, c.thoraex, c.otroreinte, c.prest_aliment, c. gratif, c.vaca, c.truncas, c.reinte_gratiboni, 
-c.essa_vida, c.adela, c.presta, c.rentquinta, c.reten_judici, c.otrodescu, c.recarg_consu FROM dbo.Conceptos c 
-WHERE c.id_mes = @idmes AND c.id_planilla=@idplanilla
+IF(EXISTS(SELECT c.id_planilla FROM dbo.Conceptos c join Planilla p on c.id_planilla = p.id_planilla 
+WHERE c.id_planilla = @idplanilla))
+BEGIN
+	SELECT c.id_conceptos, c.hextraDiurna, c.hextraNocturna, c.feriadoDomi, c.boniNocturna, c.primeroMayo, 
+	c.tarda, c.subsi, c.thoraex, c.otroreinte, c.prest_aliment, c. gratif, c.vaca, c.truncas, c.reinte_gratiboni, 
+	c.essa_vida, c.adela, c.presta, c.rentquinta, c.reten_judici, c.otrodescu, c.recarg_consu FROM dbo.Conceptos c 
+	WHERE c.id_mes = @idmes AND c.id_planilla=@idplanilla
+END
 END
 GO
-
-
+select * from Conceptos
+delete from Conceptos
+GO
 ---
 --para leer las estadisticas, importante para ver el rendimiento de las consultas.
 SET STATISTICS IO, TIME OFF
 SET STATISTICS IO, TIME ON
---
+-- para limpiar cache y memoria de plan de ejecucion
+DBCC FREEPROCCACHE WITH NO_INFOMSGS
+DBCC DROPCLEANBUFFERS WITH NO_INFOMSGS
 --Inclue Actual Execution Plan
 GO
 

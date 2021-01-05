@@ -39,7 +39,7 @@ nombre_cargo varchar(40) not null,
 descripcion nvarchar(100) null
 )
 GO
-
+select * from regimenPensionario
 
 --TABLA: TIPO DE DOCUMENTO
 CREATE TABLE Tipo_documento(
@@ -53,7 +53,7 @@ GO
 --alter table Tipo_documento add codigo_doc char(2);
 
 --TABLA: REGIMEN PENSIONARIO
-CREATE TABLE RegimenPensionario(
+CREATE TABLE RegimenPensionario( --cambiar no va identity.
 codigo_regimen int identity(1,1),
 descripcion_corta varchar(30) null,
 descripcion varchar(100) not null,
@@ -287,7 +287,7 @@ nombre_planilla varchar(30)not null
 GO
 alter table dbo.tipo_planilla alter column nombre_planilla varchar(30) not null
 
-CREATE TABLE Regimen_salud( --falta modificar el procedi.. add modi delet
+CREATE TABLE Regimen_salud( 
 id_regimen_salud int not null,
 cod_regi_salud char(2) not null,
 descripcion_rsalud nvarchar(100) not null
@@ -505,4 +505,12 @@ recarg_consu bit not null --recargo consumo
 )
 GO
 
+/*TABLAS CON VALOR PRIMARY KEY IDENTITY
+-CARGO
+-TIPO DOCUMENTO
+-REGIMEN PENSIONARIO
+-PERIODO
 
+*/
+go
+select * from cargo join empleado on Cargo.id_cargo=Empleado.id_cargo

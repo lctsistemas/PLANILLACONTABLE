@@ -26,6 +26,13 @@ namespace Presentacion.Vista
             lbltotal.Text = "TOTAL REGISTRO:  " + dgvempresa.RowCount;
         }
 
+        //HABILITAR
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            btneliminar.Enabled = false;
+        }
+
         private void Show_empresa()
         {
             using (ne)
@@ -88,6 +95,7 @@ namespace Presentacion.Vista
         //METODO LIMPIAR
         private void Limpiar()
         {
+            using (ne) { ne.state = EntityState.Guardar; }
             txtcodigo_empresa.Text = "";
             txtrazon_social.Text = "";
             txtlocalidad.Text = String.Empty;
@@ -146,6 +154,7 @@ namespace Presentacion.Vista
                 {
                     Messages.M_info(result);
                     Show_empresa();
+                    Limpiar();
                 }
             }
             
@@ -153,10 +162,11 @@ namespace Presentacion.Vista
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            using (ne) { ne.state = EntityState.Guardar; }
+            
             tabempresa.SelectedIndex = 1;
             Limpiar();
             ValidateError.validate.Clear();
+            Habilitar(true);
         }
 
         private void btnusuario_Click(object sender, EventArgs e)
@@ -176,6 +186,7 @@ namespace Presentacion.Vista
             Tooltip.Title(btnusuario, "Seleccione Usuario", true);
             Tooltip.Title(txtbuscar, "Buscar por Razon Social", true);
             CargarRegimen();
+            Habilitar(false);
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
@@ -188,8 +199,9 @@ namespace Presentacion.Vista
         {
             DataGridViewRow ro = dgvempresa.CurrentRow;
 
-            if (dgvempresa.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvempresa.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
+                Habilitar(true);
                 using (ne)
                 {
                     ne.state = EntityState.Modificar;
@@ -229,7 +241,9 @@ namespace Presentacion.Vista
                         {
                             Messages.M_info(result);
                             Show_empresa();
+                            
                         }
+                        Limpiar();
                     }
                 }
             }
@@ -402,6 +416,11 @@ namespace Presentacion.Vista
             ValidateError.Validate_text(txtusuario, "Campo usuario requerido");
         }
 
-     
+        private void dgvempresa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btneliminar.Enabled = true;
+        }
+
     }
 }

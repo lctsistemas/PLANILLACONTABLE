@@ -122,6 +122,7 @@
             this.dgvdocumento.Size = new System.Drawing.Size(433, 217);
             this.dgvdocumento.TabIndex = 0;
             this.dgvdocumento.TabStop = false;
+            this.dgvdocumento.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdocumento_CellClick);
             this.dgvdocumento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdocumento_CellDoubleClick);
             // 
             // paneldocumento

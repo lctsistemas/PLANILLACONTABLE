@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Data;
 namespace Negocio.Models
 {
-    public class NEmpleado : IDisposable
+    public class NEmpleadoContrato : IDisposable
     {
         string mensaje;
-        List<NEmpleado> listaemp;
+        List<NEmpleadoContrato> listaemp;
         public Int32 Id_empleado { get; set; }
         public String Codigo { get; set; }
         public String Nom_emp { get; set; }
@@ -51,12 +51,12 @@ namespace Negocio.Models
 
         public EntityState state { get; set; }
         public IEmpleado Rempleado;
-        public IContrato rcontrato;
+      
 
-        public NEmpleado()
+        public NEmpleadoContrato()
         {
             Rempleado = new REmpleado();
-            rcontrato = new REmpleado();
+            
         }
 
         public String GuardarCambios()
@@ -65,9 +65,8 @@ namespace Negocio.Models
             try
             {
                 //estas instancias se puede simplificar, implementar eso.
-                DEmpleado emp = new DEmpleado();
-                Dcontrato dcon = new Dcontrato();
-
+                DEmpleadoContrato emp = new DEmpleadoContrato();
+                
                 emp.Id_empleado = Id_empleado;
                 emp.Codigo = Codigo;
                 emp.Nom_emp = Nom_emp;
@@ -87,36 +86,32 @@ namespace Negocio.Models
                 emp.Jornada_laboral = Jornada_laboral;
 
                 //METODOS DE CONTRATO
-                dcon.Id_contrato = cid_contrato;
-                dcon.Id_banco = cid_banco;
-                dcon.Id_tcontrato = cid_tcontrato;
-                dcon.Id_empleado = Id_empleado;
-                dcon.Fecha_inicio = cfecha_inicio;
-                dcon.Fecha_fin = cfecha_fin;
-                dcon.Num_cuenta = cnum_cuenta;
-                dcon.Remu_basica = cremu_basica;
-                dcon.Asig_fami = casig_fami;
-                dcon.Id_regimenSalud = cid_salud;
-                dcon.Tipo_pago = ctipo_pago;
-                dcon.Tipo_moneda = ctipo_moneda;
-                dcon.Periodicidad = cperiodicidad;
-                dcon.Cts = ccts;
-                dcon.Cussp = ccussp;
+                emp.Cid_contrato = cid_contrato;
+                emp.Cid_banco = cid_banco;
+                emp.Cid_tcontrato = cid_tcontrato;
+                emp.Cid_empleado = Id_empleado;
+                emp.Cfecha_inicio = cfecha_inicio;
+                emp.Cfecha_fin = cfecha_fin;
+                emp.Cnum_cuenta = cnum_cuenta;
+                emp.Cremu_basica = cremu_basica;
+                emp.Casig_fami = casig_fami;
+                emp.Cid_regimenSalud = cid_salud;
+                emp.Ctipo_pago = ctipo_pago;
+                emp.Ctipo_moneda = ctipo_moneda;
+                emp.Cperiodicidad = cperiodicidad;
+                emp.Ccts = ccts;
+                emp.Ccussp = ccussp;
 
                 switch (state)
                 {
                     case EntityState.Guardar:
-                        if (Rempleado.Add(emp) > 0)
-                            rcontrato.Add(dcon);
-
+                        Rempleado.Add(emp);                            
                         mensaje = emp.mensaje;
                         break;
 
                     case EntityState.Modificar:
-                        if (Rempleado.Edit(emp) > 0)
-                            rcontrato.Edit(dcon);
-
-                        mensaje = "¡Editado correctamente!";
+                        Rempleado.Edit(emp);
+                        mensaje = "¡Modificado";
                         break;
 
                     case EntityState.Remover:
@@ -144,7 +139,7 @@ namespace Negocio.Models
         public bool Existe(string id)
         {
             //System.Windows.Forms.MessageBox.Show("canti "+ listaemp.Count);
-            foreach (NEmpleado item in listaemp)
+            foreach (NEmpleadoContrato item in listaemp)
             {
                 if (item.Codigo==id)
                 {
@@ -154,18 +149,18 @@ namespace Negocio.Models
             return false;
         }
 
-        public IEnumerable<NEmpleado> listar_empleado()
+        public IEnumerable<NEmpleadoContrato> listar_empleado()
         {
-            DEmpleado de = new DEmpleado();
+            DEmpleadoContrato de = new DEmpleadoContrato();
 
             de.Id_emp_maestra = Id_emp_maestra;
             using (DataTable dt = Rempleado.GetData(de))
             {
-                listaemp = new List<NEmpleado>();
+                listaemp = new List<NEmpleadoContrato>();
 
                 foreach (DataRow item in dt.Rows)
                 {
-                    listaemp.Add(new NEmpleado()
+                    listaemp.Add(new NEmpleadoContrato()
                     {
                         Id_empleado = Convert.ToInt32(item[0]),
                         Codigo=item[1].ToString(),
@@ -178,19 +173,18 @@ namespace Negocio.Models
             return listaemp;
         }
 
-        public IEnumerable<NEmpleado> Search(String filter)
+        public IEnumerable<NEmpleadoContrato> Search(String filter)
         {
             return listaemp.FindAll(e => e.Nom_emp.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         
         //CONTRATO
-
-        public DataTable ListaEmple_total(NEmpleado entiti)
+        public DataTable ListaEmple_total(NEmpleadoContrato entiti)
         {
-            Dcontrato dcon = new Dcontrato();
+            DEmpleadoContrato dcon = new DEmpleadoContrato();
             dcon.Id_empleado = entiti.Id_empleado;
-            return new REmpleado().GetData(dcon);
+            return new REmpleado().GetDataEC(dcon);
         }
         public void Dispose()
         {

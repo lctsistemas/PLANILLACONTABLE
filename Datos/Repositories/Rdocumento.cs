@@ -22,10 +22,12 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_REGISTRAR_DOCUMENTO";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@nom", SqlDbType.VarChar, 50).Value = entiti.Nombre_documento;
-                    cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar, 100).Value = entiti.Descripcion;
-                    cmd.Parameters.Add("@cod_doc", SqlDbType.Char, 2).Value = entiti.Cod_doc;
+                    cmd.Parameters.AddWithValue("@nom", entiti.Nombre_documento);
+                    cmd.Parameters.AddWithValue("@descripcion", entiti.Descripcion);
+                    cmd.Parameters.AddWithValue("@cod_doc", entiti.Cod_doc);
+                    cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 25).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
+                    entiti.message = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();                    
                 }
             }
