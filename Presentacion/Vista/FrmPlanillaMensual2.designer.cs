@@ -43,6 +43,7 @@
             this.tbtnlistaconceptos = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnbarraerramientas = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtncomi_pri_spp = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbotones = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -193,6 +194,8 @@
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Tbtsbs = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tbtspp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -207,7 +210,8 @@
             // 
             this.menuarchivos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
-            this.verToolStripMenuItem});
+            this.verToolStripMenuItem,
+            this.ayudaToolStripMenuItem});
             this.menuarchivos.Location = new System.Drawing.Point(0, 0);
             this.menuarchivos.Name = "menuarchivos";
             this.menuarchivos.Size = new System.Drawing.Size(1243, 24);
@@ -273,11 +277,19 @@
             // 
             // tbtncomi_pri_spp
             // 
-            this.tbtncomi_pri_spp.CheckOnClick = true;
             this.tbtncomi_pri_spp.Name = "tbtncomi_pri_spp";
             this.tbtncomi_pri_spp.Size = new System.Drawing.Size(230, 22);
             this.tbtncomi_pri_spp.Text = "&Comisiones y Primas del SPP";
             this.tbtncomi_pri_spp.Click += new System.EventHandler(this.tbtncomi_pri_spp_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Tbtsbs,
+            this.Tbtspp});
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "A&yuda";
             // 
             // toolbotones
             // 
@@ -351,7 +363,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Dgvplanilla1.BackgroundColor = System.Drawing.Color.White;
             this.Dgvplanilla1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Dgvplanilla1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.Dgvplanilla1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
@@ -444,31 +455,33 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Beige;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkRed;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Dgvplanilla1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Dgvplanilla1.EnableHeadersVisualStyles = false;
+            this.Dgvplanilla1.GridColor = System.Drawing.Color.Silver;
             this.Dgvplanilla1.Location = new System.Drawing.Point(6, 219);
             this.Dgvplanilla1.Name = "Dgvplanilla1";
             this.Dgvplanilla1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.Dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Dgvplanilla1.RowHeadersWidth = 25;
+            this.Dgvplanilla1.RowHeadersWidth = 28;
             this.Dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Dgvplanilla1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Dgvplanilla1.Size = new System.Drawing.Size(1225, 354);
             this.Dgvplanilla1.TabIndex = 17;
             this.Dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.Dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellContentClick);
             this.Dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellEndEdit);
+            this.Dgvplanilla1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgvplanilla1_CellFormatting);
             this.Dgvplanilla1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellLeave);
             this.Dgvplanilla1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dgvplanilla1_CellMouseDown);
             this.Dgvplanilla1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvplanilla1_CellStateChanged);
+            this.Dgvplanilla1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgvplanilla1_RowPostPaint);
             this.Dgvplanilla1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.Dgvplanilla1_Scroll);
             // 
             // id_contrato
@@ -1065,12 +1078,13 @@
             this.recargo_consu,
             this.r_grati_boni});
             this.Dgvplanilla2.EnableHeadersVisualStyles = false;
+            this.Dgvplanilla2.GridColor = System.Drawing.Color.Silver;
             this.Dgvplanilla2.Location = new System.Drawing.Point(6, 184);
             this.Dgvplanilla2.Name = "Dgvplanilla2";
             this.Dgvplanilla2.ReadOnly = true;
-            this.Dgvplanilla2.RowHeadersWidth = 25;
+            this.Dgvplanilla2.RowHeadersWidth = 28;
             this.Dgvplanilla2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.Dgvplanilla2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgvplanilla2.Size = new System.Drawing.Size(1225, 68);
             this.Dgvplanilla2.TabIndex = 16;
             // 
@@ -1780,6 +1794,20 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
             // 
+            // Tbtsbs
+            // 
+            this.Tbtsbs.Name = "Tbtsbs";
+            this.Tbtsbs.Size = new System.Drawing.Size(224, 22);
+            this.Tbtsbs.Text = "Página Web Comisiones SBS";
+            this.Tbtsbs.Click += new System.EventHandler(this.Tbtsbs_Click);
+            // 
+            // Tbtspp
+            // 
+            this.Tbtspp.Name = "Tbtspp";
+            this.Tbtspp.Size = new System.Drawing.Size(224, 22);
+            this.Tbtspp.Text = "Consulta Afiliado en el SPP";
+            this.Tbtspp.Click += new System.EventHandler(this.Tbtspp_Click);
+            // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1972,5 +2000,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn recargo_consumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_grati;
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_boni;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Tbtsbs;
+        private System.Windows.Forms.ToolStripMenuItem Tbtspp;
     }
 }

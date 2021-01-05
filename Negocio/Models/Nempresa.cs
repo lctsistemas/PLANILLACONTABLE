@@ -64,7 +64,7 @@ namespace Negocio.Models
                         break;
                     case EntityState.Modificar:
                         empre_reposi.Edit(de);
-                        mensaje = "Successfully Edited!";
+                        mensaje = "¡Modifica!";
                         break;
                     case EntityState.Remover:
                         empre_reposi.Delete(de);

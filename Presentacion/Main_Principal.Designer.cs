@@ -790,7 +790,6 @@
             this.lblid_periodo.Size = new System.Drawing.Size(75, 17);
             this.lblid_periodo.TabIndex = 19;
             this.lblid_periodo.Text = "id periodo";
-            this.lblid_periodo.Visible = false;
             // 
             // lblidempresa
             // 
@@ -802,7 +801,6 @@
             this.lblidempresa.Size = new System.Drawing.Size(80, 17);
             this.lblidempresa.TabIndex = 20;
             this.lblidempresa.Text = "id empresa";
-            this.lblidempresa.Visible = false;
             // 
             // pictlct
             // 

@@ -565,8 +565,8 @@ namespace Presentacion.Vista
 
         private void linkpagina_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
-            Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
+            Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
+            //Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)

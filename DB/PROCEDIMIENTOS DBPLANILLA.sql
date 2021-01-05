@@ -1190,9 +1190,9 @@ GO
 ALTER PROC SP_ShowPlanillaManto
 @idplanilla int,
 @idmes int,
-@id_empresaMaestra int,
-@fechaini date,
-@fechafin date
+@id_empresaMaestra int
+--@fechaini date,
+--@fechafin date
 AS BEGIN
 IF(NOT EXISTS(SELECT plam.id_planilla FROM dbo.PlanillaManto plam JOIN dbo.Planilla p ON(plam.id_planilla = p.id_planilla) WHERE p.id_planilla=@idplanilla))
 BEGIN
@@ -1204,7 +1204,7 @@ JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen)
 JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
-WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) --AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
 END
 ELSE
 BEGIN
@@ -1224,7 +1224,7 @@ JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen)
 JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado) JOIN PlanillaManto  plama ON(plama.id_contrato=co.id_contrato)
-WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) --AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin
 END
 END
 GO
@@ -1264,7 +1264,7 @@ ALTER PROC SP_RegistroConceptos
 @recarg_consu bit --recargo consumo
 AS BEGIN 
 IF(NOT EXISTS(SELECT c.id_planilla FROM dbo.Conceptos c join Planilla p on c.id_planilla = p.id_planilla 
-WHERE c.id_planilla=@id_planilla))
+WHERE c.id_planilla= @id_planilla))
 BEGIN
 	--DECLARE @idconcepto int
 	SET @id_conceptos=(SELECT count(c.id_conceptos) FROM dbo.Conceptos c)
@@ -1292,18 +1292,23 @@ END
 GO
 
 
-CREATE PROC SP_SHOW_CONCEPTOS
+ALTER PROC SP_SHOW_CONCEPTOS
 @idmes int,
 @idplanilla int
 AS BEGIN
-SELECT c.id_conceptos, c.hextraDiurna, c.hextraNocturna, c.feriadoDomi, c.boniNocturna, c.primeroMayo, 
-c.tarda, c.subsi, c.thoraex, c.otroreinte, c.prest_aliment, c. gratif, c.vaca, c.truncas, c.reinte_gratiboni, 
-c.essa_vida, c.adela, c.presta, c.rentquinta, c.reten_judici, c.otrodescu, c.recarg_consu FROM dbo.Conceptos c 
-WHERE c.id_mes = @idmes AND c.id_planilla=@idplanilla
+IF(EXISTS(SELECT c.id_planilla FROM dbo.Conceptos c join Planilla p on c.id_planilla = p.id_planilla 
+WHERE c.id_planilla = @idplanilla))
+BEGIN
+	SELECT c.id_conceptos, c.hextraDiurna, c.hextraNocturna, c.feriadoDomi, c.boniNocturna, c.primeroMayo, 
+	c.tarda, c.subsi, c.thoraex, c.otroreinte, c.prest_aliment, c. gratif, c.vaca, c.truncas, c.reinte_gratiboni, 
+	c.essa_vida, c.adela, c.presta, c.rentquinta, c.reten_judici, c.otrodescu, c.recarg_consu FROM dbo.Conceptos c 
+	WHERE c.id_mes = @idmes AND c.id_planilla=@idplanilla
+END
 END
 GO
-
-
+select * from Conceptos
+delete from Conceptos
+GO
 ---
 --para leer las estadisticas, importante para ver el rendimiento de las consultas.
 SET STATISTICS IO, TIME OFF

@@ -23,8 +23,7 @@ namespace Presentacion.Vista
         private void ShowMes()
         {
             string[] meses = { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SETIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
-            cbomes.Items.AddRange(meses);
-            
+            cbomes.Items.AddRange(meses);            
         }
 
         //MOSTRAR COMISIONES AFP

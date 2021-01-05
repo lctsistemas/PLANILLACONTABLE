@@ -141,15 +141,14 @@ namespace Presentacion.Subvista
             btncerrar.BackColor = Color.Transparent;
             btncerrar.ForeColor = Color.Crimson;
         }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void panelvista_empresa_MouseDown(object sender, MouseEventArgs e)
