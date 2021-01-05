@@ -94,6 +94,7 @@ namespace Datos.Repositories
                         cmd1.Parameters.Add("@id_usuario", SqlDbType.Int).Value = entiti.Eidusuario;
                         cmd1.Parameters.Add("@id_emmaestra", SqlDbType.Int).Value = entiti.Eidemp_maestra;
                         result = cmd.ExecuteNonQuery();
+                        
 
                         if (result > 0)
                             result = cmd1.ExecuteNonQuery();
