@@ -17,7 +17,7 @@ namespace Presentacion.Vista
     public partial class frmempleado : Form
     {
         String result;
-        NEmpleado emple_contra = new NEmpleado();
+        NEmpleadoContrato emple_contra = new NEmpleadoContrato();
 
         public frmempleado()
         {
@@ -509,7 +509,7 @@ namespace Presentacion.Vista
      
         private void dgvempleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvempleado.Rows.GetFirstRow(DataGridViewElementStates.Selected) == -1)
+            if (e.RowIndex > -1)
             {
                 ValidateError.validate.Clear();
                 HabilitarBoton(true);
@@ -565,8 +565,8 @@ namespace Presentacion.Vista
 
         private void linkpagina_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
-            Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
+            Process.Start(@"https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
+            //Process.Start(@"https://www2.sbs.gob.pe/afiliados/paginas/Consulta.aspx");
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)

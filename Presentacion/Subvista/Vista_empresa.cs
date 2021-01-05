@@ -107,6 +107,7 @@ namespace Presentacion.Subvista
                 su.txtruc.Text = ro.Cells[10].Value.ToString();
                 su.txtregimen.Text = ro.Cells[11].Value.ToString();
                 su.txtusuario.Text = ro.Cells[12].Value.ToString();
+                ValidateError.Validate_text(su.txtusuario,null);
                 this.Close();
             }
         }
@@ -140,15 +141,14 @@ namespace Presentacion.Subvista
             btncerrar.BackColor = Color.Transparent;
             btncerrar.ForeColor = Color.Crimson;
         }
-
-        private void btncerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
         private void btncerrar_MouseDown(object sender, MouseEventArgs e)
         {
             btncerrar.BackColor = Color.FromArgb(241,112,122);
+        }
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void panelvista_empresa_MouseDown(object sender, MouseEventArgs e)

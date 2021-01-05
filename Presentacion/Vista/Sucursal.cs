@@ -32,6 +32,13 @@ namespace Presentacion.Vista
             return _instancia;
         }
 
+        //HABILITAR
+        private void Habilitar(bool v)
+        {
+            btnguardar.Enabled = v;
+            btneliminar.Enabled = false;
+        }
+
         //TOTAL REGISTRO
         private void TotalDatos()
         {
@@ -122,6 +129,7 @@ namespace Presentacion.Vista
         //LIMPIAR DATOS
         private void Limpiar()
         {
+            using (nsu) { nsu.state = EntityState.Guardar; }
             txtcodigo_sucursal.Text = "";
             txtrazon_social.Text = "";
             txtdireccion.Text = "";
@@ -160,7 +168,9 @@ namespace Presentacion.Vista
                 {
                     Messages.M_info(result);
                     Show_sucursal();
+                    Limpiar();
                 }
+                
             }
         }
 
@@ -169,14 +179,16 @@ namespace Presentacion.Vista
             txtidempresa.Visible = false;
             Tooltip.Title(txtbuscar, "Buscar por Razón Social o Codigo", true);
             Tooltip.Title(btnempresa, "Seleccione la Empresa Principal", true);
+            Habilitar(false);
         }
 
         private void dgvsucursal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow ro = dgvsucursal.CurrentRow;
 
-            if (dgvsucursal.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvsucursal.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
+                Habilitar(true);
                 using (nsu)
                 {
                     nsu.state = EntityState.Modificar;
@@ -224,6 +236,7 @@ namespace Presentacion.Vista
                             Messages.M_info(result);
                             Show_sucursal();
                         }
+                        Limpiar();
                     }
                 }
             }
@@ -243,9 +256,11 @@ namespace Presentacion.Vista
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
-        {
-            using (nsu) { nsu.state = EntityState.Guardar; }
+        {            
             Limpiar();
+            Habilitar(true);
+            ValidateError.validate.Clear();
+            tapsucursal.SelectedIndex = 1;
         }
 
         private void frmsucursal_FormClosing(object sender, FormClosingEventArgs e)
@@ -367,6 +382,11 @@ namespace Presentacion.Vista
         {
             ValidateError.Validate_text(txtusuario, "¡Usuario requerido!");
         }
-                    
+
+        private void dgvsucursal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btneliminar.Enabled = true;
+        }
     }
 }

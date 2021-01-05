@@ -287,6 +287,7 @@
             this.dgvcargo.Size = new System.Drawing.Size(437, 227);
             this.dgvcargo.TabIndex = 0;
             this.dgvcargo.TabStop = false;
+            this.dgvcargo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcargo_CellClick);
             this.dgvcargo.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcargo_CellDoubleClick);
             // 
             // btnnuevo

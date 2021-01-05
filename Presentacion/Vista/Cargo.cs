@@ -69,12 +69,14 @@ namespace Presentacion.Vista
             txtnom_cargo.Enabled = v;
             txtdescrip.Enabled = v;
             btnguardar.Enabled = v;
-            btneliminar.Enabled = v;
+            btneliminar.Enabled = false;
+           
         }
 
         //LIMPIAR CONTROLES
         private void limpiar()
         {
+            using (nc) { nc.state = EntityState.Guardar; }
             txtnom_cargo.Text = String.Empty;
             txtdescrip.Text = String.Empty;
             txtnom_cargo.Focus();
@@ -103,14 +105,14 @@ namespace Presentacion.Vista
 
                 result = nc.SaveChanges();
                 ShowCargo();
+                limpiar();
                 Messages.M_info(result);
             }
         }
 
         //NUEVO
         private void btnnuevo_Click(object sender, EventArgs e)
-        {
-            nc.state = EntityState.Guardar;
+        {            
             ValidateError.validate.Clear();
             Habilitar(true);
             limpiar();
@@ -141,10 +143,11 @@ namespace Presentacion.Vista
                         result = nc.SaveChanges();
 
                         if (result.Contains("esta en uso"))
-                            Messages.M_error(result);
+                            Messages.M_warning(result);
                         else
                         {
                             ShowCargo();
+                            limpiar();
                             Messages.M_info(result);
                         }
                         
@@ -165,7 +168,7 @@ namespace Presentacion.Vista
         {
             DataGridViewRow r = dgvcargo.CurrentRow;
 
-            if (dgvcargo.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvcargo.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
                 using (nc)
                 {
@@ -248,6 +251,12 @@ namespace Presentacion.Vista
         private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(165,171,179);
+        }
+
+        private void dgvcargo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                btneliminar.Enabled = true;
         }
     }
 }

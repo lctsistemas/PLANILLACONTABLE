@@ -54,20 +54,20 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvsubsidio.Columns[2].HeaderText = "TIPO DE SUSPENSION";
-            dgvsubsidio.Columns[2].Width = 90;
+            dgvsubsidio.Columns[2].Width = 100;
             dgvsubsidio.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             dgvsubsidio.Columns[3].HeaderText = "DESCRIPCION CORTA";
-            dgvsubsidio.Columns[3].Width = 236;
+            dgvsubsidio.Columns[3].Width = 238;
 
             dgvsubsidio.Columns[4].HeaderText = "DESCRIPCION LARGA";
-            dgvsubsidio.Columns[4].Width = 335;
+            dgvsubsidio.Columns[4].Width = 350;
 
             dgvsubsidio.Columns[5].HeaderText = "ESTADO";
             dgvsubsidio.Columns[5].Width = 100;
 
             dgvsubsidio.Columns[6].HeaderText = "DESCUENTO";
-            dgvsubsidio.Columns[6].Width = 80;
+            dgvsubsidio.Columns[6].Width = 90;
 
             dgvsubsidio.Columns[7].HeaderText = "state";
             dgvsubsidio.Columns[7].Width = 50;
@@ -116,6 +116,7 @@ namespace Presentacion.Vista
             checkDescuento.Enabled = estado;
             txtcodigosubsidio.Focus();
             tbtnguardar.Enabled = estado;
+            tbtneliminar.Enabled = false;
         }
 
         private void tbtnnuevo_Click(object sender, EventArgs e)
@@ -144,10 +145,15 @@ namespace Presentacion.Vista
                 ns.Descuento = Convert.ToBoolean(checkDescuento.Checked);
 
                 result = ns.SaveChanges();
-                Messages.M_info(result);
-
-                ShowSubsidio();
-                limpiar();
+                if (result.Contains("Codigo ya existe"))
+                    Messages.M_warning(result);
+                else
+                {
+                    ShowSubsidio();
+                    limpiar();
+                    Messages.M_info(result);
+                }
+                
             }
         }
 
@@ -165,10 +171,11 @@ namespace Presentacion.Vista
                         ns.Id_subsidios = Convert.ToInt32(dgvsubsidio.CurrentRow.Cells[0].Value);
                         result = ns.SaveChanges();
                         if (result.Contains("se encuentra asignado en empleado"))
-                            Messages.M_error(result);
+                            Messages.M_warning(result);
                         else
                         {
                             ShowSubsidio();
+                            limpiar();
                             Messages.M_info(result);
                         }
                         
@@ -197,9 +204,10 @@ namespace Presentacion.Vista
         private void dgvsubsidio_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow r = dgvsubsidio.CurrentRow;
-            Habilitar(true);
-            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            
+            if (dgvsubsidio.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
+                Habilitar(true);
                 using (ns)
                 {
                     ns.state = EntityState.Modificar;
@@ -296,6 +304,12 @@ namespace Presentacion.Vista
         private void txtdescSubsi_Validating(object sender, CancelEventArgs e)
         {
             ValidateError.Validate_text(txtdescSubsi, "¡Requerido!");
+        }
+
+        private void dgvsubsidio_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+                tbtneliminar.Enabled = true;
         }
     }
 }

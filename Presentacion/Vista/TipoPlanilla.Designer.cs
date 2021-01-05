@@ -196,6 +196,7 @@ namespace Presentacion.Vista
             this.dgvtipoplanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvtipoplanilla.Size = new System.Drawing.Size(382, 189);
             this.dgvtipoplanilla.TabIndex = 2;
+            this.dgvtipoplanilla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipoplanilla_CellClick);
             this.dgvtipoplanilla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipoplanilla_CellDoubleClick);
             // 
             // btneliminar
@@ -209,7 +210,7 @@ namespace Presentacion.Vista
             this.btneliminar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btneliminar.Image = global::Presentacion.Properties.Resources.baseline_delete_white_24dp;
             this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btneliminar.Location = new System.Drawing.Point(219, 41);
+            this.btneliminar.Location = new System.Drawing.Point(219, 40);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(99, 27);
             this.btneliminar.TabIndex = 74;
@@ -229,7 +230,7 @@ namespace Presentacion.Vista
             this.btnagregar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnagregar.Image = global::Presentacion.Properties.Resources.baseline_add_white_24dp;
             this.btnagregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnagregar.Location = new System.Drawing.Point(9, 41);
+            this.btnagregar.Location = new System.Drawing.Point(114, 41);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(99, 27);
             this.btnagregar.TabIndex = 73;
@@ -249,7 +250,7 @@ namespace Presentacion.Vista
             this.btnguardar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(114, 41);
+            this.btnguardar.Location = new System.Drawing.Point(9, 41);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(99, 27);
             this.btnguardar.TabIndex = 72;
@@ -264,10 +265,10 @@ namespace Presentacion.Vista
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lbltotal);
             this.panel2.Controls.Add(this.dgvtipoplanilla);
+            this.panel2.Controls.Add(this.btnguardar);
             this.panel2.Controls.Add(this.btneliminar);
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.btnagregar);
-            this.panel2.Controls.Add(this.btnguardar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";

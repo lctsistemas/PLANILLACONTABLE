@@ -240,6 +240,7 @@
             this.dgvregimen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvregimen.Size = new System.Drawing.Size(431, 284);
             this.dgvregimen.TabIndex = 91;
+            this.dgvregimen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimen_CellClick);
             this.dgvregimen.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregimen_CellDoubleClick);
             // 
             // lbltotal

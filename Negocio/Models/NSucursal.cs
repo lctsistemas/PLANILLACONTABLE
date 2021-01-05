@@ -63,7 +63,7 @@ namespace Negocio
                         break;
                     case EntityState.Modificar:
                         sucursal_reposi.Edit(de);
-                        mensaje = "Successfully Edited!";
+                        mensaje = "¡Modificado!";
                         break;
                     case EntityState.Remover:
                         sucursal_reposi.Delete(de);

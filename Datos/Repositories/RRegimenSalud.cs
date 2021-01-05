@@ -70,17 +70,18 @@ namespace Datos.Repositories
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SP_DELETE_REG_SALUD";
+                    cmd.CommandText = "SP_DELETE_REGSALUD";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@id_regimen_salud", SqlDbType.Int).Value = entiti.Id_regimen_salud;
+                    cmd.Parameters.AddWithValue("@id_regimen_salud", entiti.Id_regimen_salud);
                     cmd.Parameters.Add("@mensaje", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
                     result = cmd.ExecuteNonQuery();
                     entiti.mensaje = cmd.Parameters["@mensaje"].Value.ToString();
                     cmd.Parameters.Clear();
-                    return result;
+                   
                 }
             }
+            return result;
         }
 
         public DataTable GetData(DRegimenSalud entiti)

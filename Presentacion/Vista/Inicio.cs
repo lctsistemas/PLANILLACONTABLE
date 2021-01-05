@@ -346,15 +346,19 @@ namespace Login_inicio
 
         private void dgvlogin_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (activo)
+            if (e.RowIndex > -1)
             {
-                FrmMain_principal mainmenu = new FrmMain_principal();
-                mainmenu.Show();
-                mainmenu.FormClosed += Logout;//revisar
-                this.Hide();
+                if (activo)
+                {
+                    FrmMain_principal mainmenu = new FrmMain_principal();
+                    mainmenu.Show();
+                    mainmenu.FormClosed += Logout;//revisar
+                    this.Hide();
+                }
+                else
+                    MessageBox.Show("errorrr");
             }
-            else
-                MessageBox.Show("errorrr");
+            
         }
     }
 }

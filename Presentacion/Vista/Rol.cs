@@ -15,8 +15,7 @@ namespace Presentacion.Vista
         public frmrol()
         {
             InitializeComponent();
-            ShowRol();
-            Tabla();
+           
         }
         
         //METODO SHOW IN DATAGRIVIEW
@@ -45,6 +44,14 @@ namespace Presentacion.Vista
             txtrol.Focus();
         }
 
+        //HABILITAR
+        private void Habilitar(bool v)
+        {
+            btnsave.Enabled = v;
+            btneliminar.Enabled = false;
+            txtrol.Enabled = v;
+        }
+
         //...........
       
 
@@ -60,25 +67,32 @@ namespace Presentacion.Vista
             {
                 nr.nombre_rol = txtrol.Text.Trim().ToUpper();
                 result = nr.SaveChanges();
-                ShowRol();
-                Messages.M_info(result);
+                ShowRol(); 
                 Limpiar();
+                Messages.M_info(result);
+                
             }
         }
         //LOAD
         private void frmrol_Load(object sender, EventArgs e)
-        { }
+        {
+            Habilitar(false);
+            ShowRol();
+            Tabla();
+        }
         //PARA EDITAR
         private void dgvrol_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (dgvrol.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1)
+            if (dgvrol.Rows.GetFirstRow(DataGridViewElementStates.Selected) != -1 && e.RowIndex > -1)
             {
+                Habilitar(true);
                 using (nr)
                 {
                     nr.state = EntityState.Modificar;
                     nr.idrol = Convert.ToInt32(dgvrol.CurrentRow.Cells[0].Value);//idrol
                     txtrol.Text = dgvrol.CurrentRow.Cells[1].Value.ToString();//nombre rol
+                    ValidateError.validate.Clear();
                     
                 }
             }
@@ -87,6 +101,8 @@ namespace Presentacion.Vista
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             Limpiar();
+            Habilitar(true);
+            ValidateError.validate.Clear();
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -101,16 +117,19 @@ namespace Presentacion.Vista
                         nr.state = EntityState.Remover;
                         nr.idrol = Convert.ToInt32(dgvrol.CurrentRow.Cells[0].Value);
                         result = nr.SaveChanges();
-                        ShowRol();
-                        if (result.Contains("ESTA EN USO"))
+                        
+                        if (result.Contains("esta en uso."))
                         {
-                            Messages.M_error(result);
+                            Messages.M_warning(result);
                         }
                         else
                         {
+                            ShowRol();
+                            Limpiar();
                             Messages.M_info(result);
+
                         }
-                        Limpiar();
+                        
 
                     }
                 }
@@ -173,6 +192,16 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void dgvrol_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                btneliminar.Enabled = true;
+                ValidateError.validate.Clear();
+            }
+               
         }
     }
 }

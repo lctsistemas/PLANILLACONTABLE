@@ -35,9 +35,7 @@ namespace Negocio.Models
             mensaje = "";
             try
             {
-                DtipoDocumento rt = null;
-                if ( rt == null)
-                        rt = new DtipoDocumento();
+                DtipoDocumento rt = new DtipoDocumento();
 
                 rt.Iddocumento = iddocumento;
                 rt.Nombre_documento = nombre_documento;
@@ -48,7 +46,7 @@ namespace Negocio.Models
                 {
                     case EntityState.Guardar:
                         docu_repsository.Add(rt);
-                        mensaje = "¡Registrado!";
+                        mensaje = rt.message;
                         break;
 
                     case EntityState.Modificar:
