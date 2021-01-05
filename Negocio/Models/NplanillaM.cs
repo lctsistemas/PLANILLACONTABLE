@@ -59,16 +59,21 @@ namespace Negocio.Models
                         PNumero_documento = item[3].ToString(),
                         PNombres = item[4].ToString(),
                         PDescrip_regipension = item[5].ToString(),
-                        PVcomision = Convert.ToDecimal(item[6]),                        
-                        PVseguro = Convert.ToDecimal(item[7]),                    
+                        PVcomision = Convert.ToDecimal(item[6]),
+                        PVseguro = Convert.ToDecimal(item[7]),
                         PVaporte = Convert.ToDecimal(item[8]),
                         PCargop = item[9].ToString(),
-                        PFecha_inicio = Convert.ToDateTime(item[10]),                      
+                        PFecha_inicio = Convert.ToDateTime(item[10]),
                         //PFecha_fin = Convert.ToDateTime(item[11]),                      
                         PRemune_basica = Convert.ToDecimal(item[12]),
-                        PAsig_familiar = item[13].ToString() == "0.00" ? null : item[13].ToString()
-                       
-                    });
+                        //if (item[13].ToString().Replace(",",".") == "0,00" || item[13].ToString() == "0,00")
+
+                        //PAsig_familiar = item[13].ToString() == "0,00" || item[13].ToString() == "0.00" ? null : item[13].ToString(),
+
+                        PAsig_familiar = item[13].ToString().Replace(",", ".") == "0.00" ? null : item[13].ToString()
+
+                    }) ;
+                    //System.Windows.Forms.MessageBox.Show("af: " + item[13].ToString());
                 }
             }
             return list_planillam;

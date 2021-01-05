@@ -268,18 +268,12 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocargo.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtnumdoc.Text) ||
                 string.IsNullOrEmpty(cbogenero.Text) || string.IsNullOrEmpty(txtremune.Text) || string.IsNullOrEmpty(cbotipopago.Text)
-<<<<<<< HEAD
-                || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)
-                || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text) || !cbore_pensionario.Text.Contains("O.N.P") 
-                || cbotipopago.Text.Contains("DEPOSITO EN CUENTA"))
-            {                
-=======
+
                 || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)                
                 || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text) || (!cbore_pensionario.Text.Contains("O.N.P") && string.IsNullOrWhiteSpace(txtcussp.Text))
                 || (cbotipopago.Text.Contains("DEPOSITO EN CUENTA") && string.IsNullOrWhiteSpace(txtnum_cuenta.Text)))
             {
                 ValidateChildren();
->>>>>>> ba3ea9d9d63a56215810c776685b6556b95a405b
                 return true;
             }
             else

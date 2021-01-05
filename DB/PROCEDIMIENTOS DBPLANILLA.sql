@@ -170,6 +170,7 @@ BEGIN
 			@periodicidad, @tipo_modeda, @cuenta_cts, @cussp, @id_salud)
 			SET @mensaje= '¡Colaborador registrado!'
 			COMMIT TRANSACTION
+		
 
 		END TRY
 		BEGIN CATCH
