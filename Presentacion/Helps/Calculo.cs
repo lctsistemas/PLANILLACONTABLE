@@ -67,10 +67,10 @@ namespace Presentacion.Helps
         }
 
 
-        public static double MontoSubsidios(int dia, double basico, double asig_fami)
+        public static decimal MontoSubsidios(int dia, decimal basico, decimal asig_fami)
         {
-            double monto_Sub = 0;
-            double diario = (basico / 30);
+            decimal monto_Sub = 0;
+            decimal diario = (basico / 30);
 
             //le falta.
             if (dia >= 30 && dia <=31 )
@@ -84,10 +84,10 @@ namespace Presentacion.Helps
         }
 
         //SOBRECARGA.
-        public static double MontoSubsidios(int dia, double basico)
+        public static decimal MontoSubsidios(int dia, decimal basico)
         {
-            double monto_Sub = 0;
-            double diario = (basico / 30);
+            decimal monto_Sub = 0;
+            decimal diario = (basico / 30);
 
             monto_Sub = (diario * dia);
             return monto_Sub;

@@ -64,8 +64,9 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             Dgvplanilla1.Columns["a_familiar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["sueldo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            Dgvplanilla1.Columns["dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["dgv_dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Dgvplanilla1.Columns["dia_dominical"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Dgvplanilla1.Columns["hora_trabajada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
@@ -270,10 +271,10 @@ namespace Presentacion.Vista
         private int HorasDiarias(DataGridViewRow dgr, int hrboninoc)
         {
             int pdias = 0, pdiaDominical = 0, horaTrabajada = 0;
-            if (dgr.Cells["dias"].Value == null)
+            if (dgr.Cells["dgv_dias"].Value == null)
                 pdias = 0;
             else
-                pdias = Convert.ToInt32(dgr.Cells["dias"].Value);
+                pdias = Convert.ToInt32(dgr.Cells["dgv_dias"].Value);
 
 
             if (dgr.Cells["dia_dominical"].Value == null)
@@ -325,6 +326,51 @@ namespace Presentacion.Vista
             //}                             
 
             DataGridViewRow dar = Dgvplanilla1.CurrentRow;
+
+            //VAMOS A CALCULAR LOS DIAS Y SUELDO 
+            int diasMes = Convert.ToInt32(txtdiasMes.Text);
+            switch (e.ColumnIndex)
+            {
+                case 13://dias que laboro
+                    decimal p_basico = 0, p_sueldo=0;
+                    int p_dias = 0;
+
+                    p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
+                    p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
+
+                    if (diasMes == 30)
+                    {                        
+                        p_sueldo = ((p_basico / diasMes) * p_dias);
+
+                    }else if (diasMes == 31)
+                    {
+                        if (p_dias == 31)                        
+                            p_sueldo = ((p_basico / diasMes) * p_dias);                        
+                        else if (p_dias < 31 && p_dias > 0)
+                            p_sueldo = ((p_basico / 30) * p_dias);
+                          
+                    }else if(diasMes == 28)
+                    {
+                        if (p_dias == 28)
+                            p_sueldo = ((p_basico / diasMes) * p_dias);
+                        else if (p_dias < 28 && p_dias > 0)
+                            p_sueldo = ((p_basico / 30) * p_dias);
+
+                    }else if(diasMes == 29)
+                    {
+                        if (p_dias == 29)
+                            p_sueldo = ((p_basico / diasMes) * p_dias);
+                        else if (p_dias < 29 && p_dias > 0)
+                            p_sueldo = ((p_basico / 30)* p_dias);
+                    }
+
+                    dar.Cells["sueldo"].Value = p_sueldo.ToString("N2");
+                    break;
+                default:
+                    break;
+            }
+
+
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
             {
@@ -541,17 +587,26 @@ namespace Presentacion.Vista
             Descuento_aportes();
         }
 
+        //AQUI ESTAMOS USANDO TIPO DATO DECIMAL
         private void Dgvplanilla1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 int dias = 0;
-                double monto = 0, monto_v = 0;
-                double xvacaciones = 0; //prueba
+                decimal monto = 0, monto_v = 0;
+                decimal xvacaciones = 0; //prueba
+                decimal p_remu = 0, p_asigF = 0;
+
+                void ValoresInicial()
+                {
+                    p_remu = Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["remu"].Value);
+                    p_asigF = Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value);
+                }
 
                 //MessageBox.Show(""+e.RowIndex);
                 if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
                 {
+                    ValoresInicial();
                     //Messages.M_info("seleccione el boton susbidio");
                     PlanillaCache.Subsidiado = Subsidiado;
                     PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
@@ -566,13 +621,14 @@ namespace Presentacion.Vista
                     else
                         dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value);
 
-                    monto = Calculo.MontoSubsidios(dias, 930, 93);
+                    monto = Calculo.MontoSubsidios(dias, p_remu, p_asigF);
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
                     TotalRemuneracion();
                 }
 
                 if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
                 {
+                    ValoresInicial();
                     PlanillaCache.Subsidiado = NoSubsidiado;
                     PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
@@ -587,7 +643,7 @@ namespace Presentacion.Vista
                     else
                         dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value);
 
-                    monto = Calculo.MontoSubsidios(dias, 930);
+                    monto = Calculo.MontoSubsidios(dias, p_remu);
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montonega"].Value = monto.ToString("N2");
 
                     //MONTO POSITIVO
@@ -596,8 +652,8 @@ namespace Presentacion.Vista
                     else
                         dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
 
-                    xvacaciones = Calculo.MontoSubsidios(xdia_vacaciones, 930);
-                    monto = Calculo.MontoSubsidios(dias, 930);
+                    xvacaciones = Calculo.MontoSubsidios(xdia_vacaciones, p_remu);
+                    monto = Calculo.MontoSubsidios(dias, p_remu);
 
                     monto_v = (monto - xvacaciones);
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_v.ToString("N2");
@@ -727,6 +783,7 @@ namespace Presentacion.Vista
         }
 
 
+        //MOVER VENTANA
         private void menuarchivos_MouseDown(object sender, MouseEventArgs e)
         {
             WindowsMove.ReleaseCapture();
@@ -741,28 +798,7 @@ namespace Presentacion.Vista
         private void tbtnbarraerramientas_Click(object sender, EventArgs e)
         {
             toolbotones.Visible = tbtnbarraerramientas.Checked;
-        }
-
-        private void btnver_Click(object sender, EventArgs e)
-        {
-
-            //if (dgvplanilla1.CurrentRow.Cells["a_familiar"].Value == null)
-            //{
-            //    MessageBox.Show("del data es null");
-
-            //}else if(dgvplanilla1.CurrentRow.Cells["a_familiar"].Value.ToString() == string.Empty)
-            //{
-            //    MessageBox.Show("el valor no es null esta vacio.");
-            //}
-            //else
-            //{
-
-            //    MessageBox.Show("el valor no es null");
-            //}
-
-            Descuento_aportes();
-        }
-
+        }       
 
         #region METODOS PARA CONCEPTOS ADD AND SHOW.
 
@@ -1242,7 +1278,6 @@ namespace Presentacion.Vista
         {
             Process.Start("https://reportedeudas.sbs.gob.pe/ReporteSituacionPrevisional/Afil_Consulta.aspx");
         }
-
 
         //VALIDACION
         private void Dgvplanilla1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
