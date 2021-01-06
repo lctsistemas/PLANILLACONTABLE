@@ -66,6 +66,7 @@ namespace Negocio.Models
                         PFecha_inicio = Convert.ToDateTime(item[10]),
                         //PFecha_fin = Convert.ToDateTime(item[11]),                      
                         PRemune_basica = Convert.ToDecimal(item[12]),
+<<<<<<< HEAD
                         //if (item[13].ToString().Replace(",",".") == "0,00" || item[13].ToString() == "0,00")
 
                         //PAsig_familiar = item[13].ToString() == "0,00" || item[13].ToString() == "0.00" ? null : item[13].ToString(),
@@ -74,6 +75,13 @@ namespace Negocio.Models
 
                     }) ;
                     //System.Windows.Forms.MessageBox.Show("af: " + item[13].ToString());
+=======
+                        //PAsig_familiar = item[13].ToString() == "0.00" || item[13].ToString() == "0,00" ? null : item[13].ToString()
+                        PAsig_familiar = item[13].ToString() == "0.00" ? null : item[13].ToString()
+                        //PAsig_familiar = item[13].ToString().Replace(",",".") == "0.00" ? null : item[13].ToString()
+                       
+                    });
+>>>>>>> Carlos2
                 }
             }
             return list_planillam;
