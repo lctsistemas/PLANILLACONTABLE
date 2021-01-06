@@ -268,6 +268,7 @@ namespace Presentacion.Vista
                 string.IsNullOrEmpty(cbotipo_documento.Text) || string.IsNullOrEmpty(cbocargo.Text) ||
                 string.IsNullOrEmpty(txtnac.Text) || string.IsNullOrEmpty(txtnumdoc.Text) ||
                 string.IsNullOrEmpty(cbogenero.Text) || string.IsNullOrEmpty(txtremune.Text) || string.IsNullOrEmpty(cbotipopago.Text)
+
                 || string.IsNullOrEmpty(cbotipopago.Text) || string.IsNullOrEmpty(cboperiodicidad.Text) || string.IsNullOrEmpty(cbobanco.Text)                
                 || string.IsNullOrEmpty(cbotipo_moneda.Text) || string.IsNullOrEmpty(txtasig.Text) || (!cbore_pensionario.Text.Contains("O.N.P") && string.IsNullOrWhiteSpace(txtcussp.Text))
                 || (cbotipopago.Text.Contains("DEPOSITO EN CUENTA") && string.IsNullOrWhiteSpace(txtnum_cuenta.Text)))
@@ -295,10 +296,15 @@ namespace Presentacion.Vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            //FALTA CORREGIR LA VALIDACION. 
             if (Validar_campos())
+            {
+                ValidateChildren();               
                 return;
-            
+            }
 
+
+            
             //if (btnValidar_telefono() == false)
             //{
             //    Messages.M_warning("El Teléfono debe tener 9 dígitos");
