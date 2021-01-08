@@ -1309,40 +1309,63 @@ END
 GO
 
 
-CREATE PROC SP_RegistroPrivilegios
-@idprivilegios int not null,
-@idrol int not null,
-@btipopla bit not null,
-@btipocont bit not null,
-@bregimensalud bit not null,
-@bsubsinosub bit not null,
-@bcargo bit not null,
-@btipodoc bit not null,
-@bbanco bit not null,
-@broles bit not null,
-@bregimenpen bit not null,
-@bcomisiones bit not null,
-@bempleado bit not null,
-@bempresa bit not null,
-@bsucursal bit not null,
-@busuario bit not null,
-@bplanilla bit not null,
-@mensaje 
+ALTER PROC SP_RegistroPrivilegios
+@idprivilegios int,
+@idrol int,
+@btipopla bit,
+@btipocont bit,
+@bregimensalud bit,
+@bsubsinosub bit,
+@bcargo bit,
+@btipodoc bit,
+@bbanco bit,
+@broles bit,
+@bregimenpen bit,
+@bcomisiones bit,
+@bempleado bit,
+@bempresa bit,
+@bsucursal bit,
+@busuario bit,
+@bplanilla bit,
+@mensaje varchar(100) output
 AS BEGIN 
-	DECLARE @privi int
-	SET @privi=(SELECT count(p.id_privilegios) FROM dbo.PRIVILEGIOS p)
-	IF(@privi=0)
-		SET @privi=1
-	ELSE
-		SET @privi=(SELECT MAX(p.id_privilegios)+1 FROM dbo.PRIVILEGIOS p)	
+	IF(NOT EXISTS(SELECT p.id_rol FROM dbo.PRIVILEGIOS p join Rol r on p.id_rol = r.id_rol 
+	WHERE p.id_rol = r.id_rol))
+	BEGIN
+		DECLARE @privi int
+		SET @privi=(SELECT count(p.id_privilegios) FROM dbo.PRIVILEGIOS p)
+		IF(@privi=0)
+			SET @privi=1
+		ELSE
+			SET @privi=(SELECT MAX(p.id_privilegios)+1 FROM dbo.PRIVILEGIOS p)	
 	
-INSERT INTO PRIVILEGIOS(id_privilegios, id_rol, btipopla,btipocont,bregimensalud,bsubsinosub,bcargo,btipodoc,bbanco,broles,bregimenpen,bcomisiones,bempleado,bempresa,bsucursal,busuario,bplanilla)
-VALUES(@privi, @idrol, @btipopla,@btipocont,@bregimensalud,@bsubsinosub,@bcargo,@btipodoc,@bbanco,@broles,@bregimenpen,@bcomisiones,@bempleado,@bempresa,@bsucursal,@busuario,@bplanilla)
-SET @mensaje= '¡Registrado!'
+		INSERT INTO PRIVILEGIOS(id_privilegios, id_rol, btipopla,btipocont,bregimensalud,bsubsinosub,bcargo,btipodoc,bbanco,broles,bregimenpen,bcomisiones,bempleado,bempresa,bsucursal,busuario,bplanilla)
+		VALUES(@privi, @idrol, @btipopla,@btipocont,@bregimensalud,@bsubsinosub,@bcargo,@btipodoc,@bbanco,@broles,@bregimenpen,@bcomisiones,@bempleado,@bempresa,@bsucursal,@busuario,@bplanilla)
+		SET @mensaje= '¡Registrado!'
+	END
 
-
+	ELSE
+	UPDATE dbo.PRIVILEGIOS SET btipopla=@btipopla,btipocont=@btipocont,bregimensalud=@bregimensalud,bsubsinosub=@bsubsinosub,bcargo=@bcargo,
+	btipodoc=@btipodoc,bbanco=@bbanco,broles=@broles,bregimenpen=@bregimenpen,bcomisiones=@bcomisiones,bempleado=@bempleado,bempresa=@bempresa,bsucursal=@bsucursal,busuario=@busuario,bplanilla=@bplanilla
+	WHERE id_privilegios=@idprivilegios;
 END
 GO
+
+CREATE PROC SP_SHOW_PRIVILEGIOS
+@id_rol int
+AS BEGIN
+	IF(EXISTS(SELECT p.id_privilegios FROM dbo.PRIVILEGIOS p join Rol r on r.id_rol = p.id_rol 
+	WHERE p.id_rol = @id_rol))
+	BEGIN
+		SELECT p.btipopla,p.btipocont,p.bregimensalud,p.bsubsinosub,p.bcargo,p.btipodoc,p.bbanco,p.broles,p.bregimenpen,
+		p.bcomisiones,bempleado,p.bempresa,p.bsucursal,p.busuario,p.bplanilla
+		from PRIVILEGIOS p 
+		WHERE p.id_rol=@id_rol 
+		
+	END
+END
+
+
 select * from Conceptos
 delete from Conceptos
 GO
