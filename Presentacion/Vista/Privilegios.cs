@@ -39,7 +39,18 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.Crimson;
         }
 
+<<<<<<< HEAD
       
+=======
+        private void ShowSubsidio()
+        {
+            using (np)
+            {
+                //dgv.DataSource = np.get();
+                //lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
+            }
+        }
+>>>>>>> 213cd1cb9c383223f69e3524a4e8866cd72d22bd
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -68,14 +79,19 @@ namespace Presentacion.Vista
                 np.Busuario = Convert.ToBoolean(checkusuario.Checked);
                 np.Bplanilla = Convert.ToBoolean(checkplan.Checked);
 
-               
+
 
                 result = np.SaveChanges();
                 if (result.Contains("Codigo ya existe"))
                     Messages.M_warning(result);
                 else
                 {
+<<<<<<< HEAD
                     //ShowSubsidio();
+=======
+                    ShowSubsidio();
+                    //limpiar();
+>>>>>>> 213cd1cb9c383223f69e3524a4e8866cd72d22bd
                     Messages.M_info(result);
                 }
 
@@ -94,7 +110,7 @@ namespace Presentacion.Vista
 
         private bool ValidarDatos()
         {
-            if (cbxrol.Text==String.Empty)
+            if (cbxrol.Text == String.Empty)
             {
                 return false;
             }
@@ -103,10 +119,13 @@ namespace Presentacion.Vista
                 return true;
             }
         }
+<<<<<<< HEAD
 
         private void cbxrol_TextChanged(object sender, EventArgs e)
         {
 
         }
+=======
+>>>>>>> 213cd1cb9c383223f69e3524a4e8866cd72d22bd
     }
 }
