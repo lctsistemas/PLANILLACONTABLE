@@ -1326,8 +1326,8 @@ ALTER PROC SP_RegistroPrivilegios
 @bempresa bit,
 @bsucursal bit,
 @busuario bit,
-@bplanilla bit,
-@mensaje varchar(100) output
+@bplanilla bit
+--@mensaje varchar(100) output
 AS BEGIN 
 	IF(NOT EXISTS(SELECT p.id_rol FROM dbo.PRIVILEGIOS p join Rol r on p.id_rol = r.id_rol 
 	WHERE p.id_rol = r.id_rol))
@@ -1341,7 +1341,7 @@ AS BEGIN
 	
 		INSERT INTO PRIVILEGIOS(id_privilegios, id_rol, btipopla,btipocont,bregimensalud,bsubsinosub,bcargo,btipodoc,bbanco,broles,bregimenpen,bcomisiones,bempleado,bempresa,bsucursal,busuario,bplanilla)
 		VALUES(@privi, @idrol, @btipopla,@btipocont,@bregimensalud,@bsubsinosub,@bcargo,@btipodoc,@bbanco,@broles,@bregimenpen,@bcomisiones,@bempleado,@bempresa,@bsucursal,@busuario,@bplanilla)
-		SET @mensaje= '¡Registrado!'
+		--SET @mensaje= '¡Registrado!'
 	END
 
 	ELSE
@@ -1350,6 +1350,10 @@ AS BEGIN
 	WHERE id_privilegios=@idprivilegios;
 END
 GO
+
+EXEC SP_RegistroPrivilegios 1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1
+
+EXEC SP_SHOW_PRIVILEGIOS 1
 
 CREATE PROC SP_SHOW_PRIVILEGIOS
 @id_rol int

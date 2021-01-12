@@ -39,9 +39,7 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.Crimson;
         }
 
-<<<<<<< HEAD
-      
-=======
+
         private void ShowSubsidio()
         {
             using (np)
@@ -50,7 +48,7 @@ namespace Presentacion.Vista
                 //lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
             }
         }
->>>>>>> 213cd1cb9c383223f69e3524a4e8866cd72d22bd
+
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -86,12 +84,12 @@ namespace Presentacion.Vista
                     Messages.M_warning(result);
                 else
                 {
-<<<<<<< HEAD
+
                     //ShowSubsidio();
-=======
+
                     ShowSubsidio();
                     //limpiar();
->>>>>>> 213cd1cb9c383223f69e3524a4e8866cd72d22bd
+
                     Messages.M_info(result);
                 }
 
@@ -119,13 +117,26 @@ namespace Presentacion.Vista
                 return true;
             }
         }
-<<<<<<< HEAD
+
 
         private void cbxrol_TextChanged(object sender, EventArgs e)
         {
 
         }
-=======
->>>>>>> 213cd1cb9c383223f69e3524a4e8866cd72d22bd
+
+        private void cbxrol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxrol.SelectedIndex == 0)
+            {
+                //ns.state = EntityState.Modificar;
+                using (np)
+                {
+                    cbxrol.DataSource = np.Getall();
+                }
+            }
+
+        }
+
+
     }
 }
