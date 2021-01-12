@@ -17,6 +17,7 @@ namespace Presentacion.Vista
         public Privilegios()
         {
             InitializeComponent();
+            Mostrar_Rol();
         }
 
         private NPrivilegios np = new NPrivilegios();
@@ -38,14 +39,7 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.Crimson;
         }
 
-        private void ShowSubsidio()
-        {
-            using (np)
-            {
-                dgv.DataSource = np.get();
-                lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
-            }
-        }
+      
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -81,11 +75,20 @@ namespace Presentacion.Vista
                     Messages.M_warning(result);
                 else
                 {
-                    ShowSubsidio();
-                    limpiar();
+                    //ShowSubsidio();
                     Messages.M_info(result);
                 }
 
+            }
+        }
+
+        private void Mostrar_Rol()
+        {
+            using (Nrol nr = new Nrol())
+            {
+                cbxrol.DataSource = nr.Getall();
+                cbxrol.DisplayMember = "nombre_rol";
+                cbxrol.ValueMember = "idrol";
             }
         }
 
@@ -100,4 +103,10 @@ namespace Presentacion.Vista
                 return true;
             }
         }
+
+        private void cbxrol_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

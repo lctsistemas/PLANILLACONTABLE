@@ -322,6 +322,7 @@ namespace Presentacion.Vista
             this.cbxrol.Name = "cbxrol";
             this.cbxrol.Size = new System.Drawing.Size(121, 25);
             this.cbxrol.TabIndex = 0;
+            this.cbxrol.TextChanged += new System.EventHandler(this.cbxrol_TextChanged);
             // 
             // panel1
             // 

@@ -3,6 +3,7 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,11 +32,15 @@ namespace Negocio.Models
 
         public EntityState State { get; set; }
         private readonly RPrivilegios rpriv;
-        List<NPrivilegios> listpriv;
+        private readonly Rcargo rcargo;
+        //List<NPrivilegios> listpriv;
+        List<Nrol> listacargo;
 
         public NPrivilegios()
         {
             rpriv = new RPrivilegios();
+            rcargo = new Rcargo();
+
         }
 
         public string SaveChanges()
@@ -86,6 +91,24 @@ namespace Negocio.Models
                 finally { }
             }
             return message;
+        }
+
+
+        public IEnumerable<Nrol> Getall()
+        {
+            using (var dt = rcargo.GetData(null))
+            {
+                listacargo = new List<Nrol>();
+                foreach (DataRow item in dt.Rows)
+                {
+                    listacargo.Add(new Nrol()
+                    {
+                        idrol = Convert.ToInt32(item[0]),
+                        nombre_rol = Convert.ToString(item[1]),
+                    });
+                }
+            }
+            return listacargo;
         }
 
         public void Dispose()
