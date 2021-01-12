@@ -57,6 +57,7 @@
     <Compile Include="Entities\DempresaMaestra.cs" />
     <Compile Include="Entities\DPlanilla.cs" />
     <Compile Include="Entities\DplanillaM.cs" />
+    <Compile Include="Entities\Dprivilegios.cs" />
     <Compile Include="Entities\DRegimen.cs" />
     <Compile Include="Entities\DRegimenSalud.cs" />
     <Compile Include="Entities\Drol.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Repositories\Rlogin.cs" />
     <Compile Include="Repositories\RPlanilla.cs" />
     <Compile Include="Repositories\RplanillaM.cs" />
+    <Compile Include="Repositories\RPrivilegios.cs" />
     <Compile Include="Repositories\RRegimen.cs" />
     <Compile Include="Repositories\RRegimenSalud.cs" />
     <Compile Include="Repositories\Rrol.cs" />

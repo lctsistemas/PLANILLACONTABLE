@@ -379,3 +379,4 @@ C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Prese
 C:\Users\Carlos\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.FrmVista_comisionesAfp.resources
 >>>>>>> ba3ea9d9d63a56215810c776685b6556b95a405b
 C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Subvista.FrmVista_comisionesAfp.resources
+C:\Users\mramirez\Source\Repos\PLANILLACONTABLE\Presentacion\obj\x86\Debug\Presentacion.Vista.Privilegios.resources

@@ -505,6 +505,26 @@ recarg_consu bit not null --recargo consumo
 )
 GO
 
+CREATE TABLE PRIVILEGIOS(
+id_privilegios int not null,
+id_rol int not null,
+btipopla bit not null,
+btipocont bit not null,
+bregimensalud bit not null,
+bsubsinosub bit not null,
+bcargo bit not null,
+btipodoc bit not null,
+bbanco bit not null,
+broles bit not null,
+bregimenpen bit not null,
+bcomisiones bit not null,
+bempleado bit not null,
+bempresa bit not null,
+bsucursal bit not null,
+busuario bit not null,
+bplanilla bit not null
+)
+
 /*TABLAS CON VALOR PRIMARY KEY IDENTITY
 -CARGO
 -TIPO DOCUMENTO
