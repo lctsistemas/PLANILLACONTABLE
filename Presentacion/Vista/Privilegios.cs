@@ -42,8 +42,8 @@ namespace Presentacion.Vista
         {
             using (np)
             {
-                dgv.DataSource = np.get();
-                lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
+                //dgv.DataSource = np.get();
+                //lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
             }
         }
 
@@ -74,7 +74,7 @@ namespace Presentacion.Vista
                 np.Busuario = Convert.ToBoolean(checkusuario.Checked);
                 np.Bplanilla = Convert.ToBoolean(checkplan.Checked);
 
-               
+
 
                 result = np.SaveChanges();
                 if (result.Contains("Codigo ya existe"))
@@ -82,7 +82,7 @@ namespace Presentacion.Vista
                 else
                 {
                     ShowSubsidio();
-                    limpiar();
+                    //limpiar();
                     Messages.M_info(result);
                 }
 
@@ -91,7 +91,7 @@ namespace Presentacion.Vista
 
         private bool ValidarDatos()
         {
-            if (cbxrol.Text==String.Empty)
+            if (cbxrol.Text == String.Empty)
             {
                 return false;
             }
@@ -100,4 +100,5 @@ namespace Presentacion.Vista
                 return true;
             }
         }
+    }
 }

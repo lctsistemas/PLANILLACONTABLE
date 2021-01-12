@@ -15,13 +15,9 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
+
             Application.Run(new FrmPlanillaMensual2());
-=======
 
-            Application.Run(new frmsubsidios());
-
->>>>>>> 1c1269c0c8f47f4c74adaaac01e6f5d9f755f95a
 
         }
     }
