@@ -66,7 +66,6 @@ namespace Presentacion.Helps
             return imp_tarde;
         }
 
-
         public static decimal MontoSubsidios(int dia, decimal basico, decimal asig_fami)
         {
             decimal monto_Sub = 0;

@@ -28,7 +28,7 @@ namespace Presentacion.Vista
             this.Dgvplanilla1.DoubleBuffered(true);
 
         }
-
+        
         //METODO LLAMAR FORMULARIO EN OTRO SIN CARGAR MUCHAS INSTANCIAS.
         public static FrmPlanillaMensual2 Getinstancia()
         {
@@ -91,17 +91,17 @@ namespace Presentacion.Vista
 
             //subsidios
             Dgvplanilla1.Columns["ndias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["ndias"].ReadOnly = true;
+            Dgvplanilla1.Columns["ndias"].ReadOnly = false;
             Dgvplanilla1.Columns["montosub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montosub"].ReadOnly = true;
+            Dgvplanilla1.Columns["montosub"].ReadOnly = false;
             Dgvplanilla1.Columns["ndiasnega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["ndiasnega"].ReadOnly = true;
+            Dgvplanilla1.Columns["ndiasnega"].ReadOnly = false;
             Dgvplanilla1.Columns["montonega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montonega"].ReadOnly = true;
+            Dgvplanilla1.Columns["montonega"].ReadOnly = false;
             Dgvplanilla1.Columns["ndiasposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["ndiasposi"].ReadOnly = true;
+            Dgvplanilla1.Columns["ndiasposi"].ReadOnly = false;
             Dgvplanilla1.Columns["montoposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montoposi"].ReadOnly = true;
+            Dgvplanilla1.Columns["montoposi"].ReadOnly = false;
 
             Dgvplanilla1.Columns["thoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             Dgvplanilla1.Columns["thoras"].ReadOnly = true;
@@ -267,30 +267,87 @@ namespace Presentacion.Vista
             }
         }
 
-        //METODO HORAS DIARIAS.
-        private int HorasDiarias(DataGridViewRow dgr, int hrboninoc)
+        //METODOS PARA LOS SUBSIDIOS NEGA, POSI Y BONI NOCTURNA, PARA DETERMINAR HORAS DIARIAS 
+        private int BonificacionNocturna(DataGridViewRow d)
         {
-            int pdias = 0, pdiaDominical = 0, horaTrabajada = 0;
-            if (dgr.Cells["dgv_dias"].Value == null)
-                pdias = 0;
-            else
-                pdias = Convert.ToInt32(dgr.Cells["dgv_dias"].Value);
+            int p_boniNoct = 0;
+            p_boniNoct = d.Cells["hrboninocturna"].Value == null ? 0 : Convert.ToInt32(d.Cells["hrboninocturna"].Value);
+            return p_boniNoct;
+        }
 
+        private int SusidiosNegativo(DataGridViewCellEventArgs e)
+        {
+            int subNega = 0;
+            subNega=Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value == null ?  0 : Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value);
+            return subNega;
+        }
 
-            if (dgr.Cells["dia_dominical"].Value == null)
-                pdiaDominical = 0;
-            else
-                pdiaDominical = Convert.ToInt32(dgr.Cells["dia_dominical"].Value);
+        private int SusidiosPositivo(DataGridViewCellEventArgs e)
+        {
+            int subPosi = 0;
+            subPosi = Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value == null ? 0: Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
+            return subPosi;
+        }
 
-            horaTrabajada = (((pdias - pdiaDominical) * 8) - hrboninoc);
+        //METODO HORAS DIARIAS.
+        private int HorasDiarias(DataGridViewRow dgr, int hrboninoc, int p_diasubnega, int p_diasubposi)
+        {
+            int pdias = 0, pdiaDominical = 0, horaTrabajada = 0, tdias_subsidio = 0;//total dias subsidiado
+
+            pdias = dgr.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dgr.Cells["dgv_dias"].Value);
+
+            pdiaDominical = dgr.Cells["dia_dominical"].Value == null ? 0 : Convert.ToInt32(dgr.Cells["dia_dominical"].Value);
+
+            tdias_subsidio = (p_diasubnega + p_diasubposi);
+            horaTrabajada = ((((pdias - pdiaDominical) - tdias_subsidio) * 8) - hrboninoc);
 
             return horaTrabajada;
         }
 
+        //DE ACUERDO A LOS DIAS QUE TIENES EL MES, SE CALCULA SU SUELDO
+        private decimal SueldoPorMes(DataGridViewRow dar)
+        {
+            decimal p_sueldo = 0, p_basico = 0, p_subsidioposi = 0;
+            int p_dias = 0;
+
+            int diasMes = Convert.ToInt32(txtdiasMes.Text);
+            p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
+            p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
+            p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montoposi"].Value);
+
+            if (diasMes == 30)
+            {
+                p_sueldo = ((p_basico / diasMes) * p_dias);
+            }
+            else if (diasMes == 31)
+            {
+                if (p_dias == 31)
+                    p_sueldo = ((p_basico / diasMes) * p_dias);
+                else if (p_dias < 31 && p_dias > 0)
+                    p_sueldo = ((p_basico / 30) * p_dias);
+            }
+            else if (diasMes == 28)
+            {
+                if (p_dias == 28)
+                    p_sueldo = ((p_basico / diasMes) * p_dias);
+                else if (p_dias < 28 && p_dias > 0)
+                    p_sueldo = ((p_basico / 30) * p_dias);
+            }
+            else if (diasMes == 29)
+            {
+                if (p_dias == 29)
+                    p_sueldo = ((p_basico / diasMes) * p_dias);
+                else if (p_dias < 29 && p_dias > 0)
+                    p_sueldo = ((p_basico / 30) * p_dias);
+            }
+
+            return (p_sueldo - p_subsidioposi);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Dgvplanilla1.Rows.Add();
-            //dgvplanilla1.BeginEdit(true);
+            // Dgvplanilla1.Rows.Add();
+            //dgvplanilla1.BeginEdit(true);           
         }
 
       
@@ -311,65 +368,24 @@ namespace Presentacion.Vista
             Dgvplanilla2.HorizontalScrollingOffset = Dgvplanilla1.HorizontalScrollingOffset;
         }
 
+        //INICIO DEL CALCULO
         private void Dgvplanilla1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            //decimal sueldo = 0, asig_fami = 0, Hdiurna25 = 0;
-            //decimal subtotal = 0;
-
-            //if (dgvplanilla1.Columns[e.ColumnIndex].Name=="sueldo")
-            //{
-            //    sueldo = decimal.Parse(dgvplanilla1.Rows[e.RowIndex].Cells["sueldo"].Value.ToString());
-            //    asig_fami = decimal.Parse(dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value.ToString());
-            //    Hdiurna25 = decimal.Parse(dgvplanilla1.Rows[e.RowIndex].Cells[10].Value.ToString());
-            //    subtotal = (sueldo + asig_fami + Hdiurna25);
-            //    dgvplanilla1.Rows[e.RowIndex].Cells[35].Value = subtotal.ToString("#.##");//total remu.
-            //}                             
-
+        {                          
             DataGridViewRow dar = Dgvplanilla1.CurrentRow;
 
             //VAMOS A CALCULAR LOS DIAS Y SUELDO 
-            int diasMes = Convert.ToInt32(txtdiasMes.Text);
+            
             switch (e.ColumnIndex)
             {
                 case 13://dias que laboro
-                    decimal p_basico = 0, p_sueldo=0;
-                    int p_dias = 0;
-
-                    p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
-                    p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
-
-                    if (diasMes == 30)
-                    {                        
-                        p_sueldo = ((p_basico / diasMes) * p_dias);
-
-                    }else if (diasMes == 31)
-                    {
-                        if (p_dias == 31)                        
-                            p_sueldo = ((p_basico / diasMes) * p_dias);                        
-                        else if (p_dias < 31 && p_dias > 0)
-                            p_sueldo = ((p_basico / 30) * p_dias);
-                          
-                    }else if(diasMes == 28)
-                    {
-                        if (p_dias == 28)
-                            p_sueldo = ((p_basico / diasMes) * p_dias);
-                        else if (p_dias < 28 && p_dias > 0)
-                            p_sueldo = ((p_basico / 30) * p_dias);
-
-                    }else if(diasMes == 29)
-                    {
-                        if (p_dias == 29)
-                            p_sueldo = ((p_basico / diasMes) * p_dias);
-                        else if (p_dias < 29 && p_dias > 0)
-                            p_sueldo = ((p_basico / 30)* p_dias);
-                    }
-
+                    decimal p_sueldo=0;
+                                        
+                    p_sueldo = SueldoPorMes(dar);
                     dar.Cells["sueldo"].Value = p_sueldo.ToString("N2");
                     break;
                 default:
                     break;
             }
-
 
             //Calculo para Horas Extras y descuentos
             switch (e.ColumnIndex)
@@ -470,13 +486,11 @@ namespace Presentacion.Vista
                 case 33:
                     double boninoc = 0;
                     int horanoc = 0, h_trabajada = 0;
-                    if (dar.Cells["hrboninocturna"].Value == null)
-                        horanoc = 0;
-                    else
-                        horanoc = Convert.ToInt32(dar.Cells["hrboninocturna"].Value);
+                   
+                    horanoc = BonificacionNocturna(dar);
 
                     boninoc = Calculo.BoniNocturno(930, 0, horanoc);
-                    h_trabajada = HorasDiarias(dar, horanoc);
+                    h_trabajada = HorasDiarias(dar, horanoc, SusidiosNegativo(e), SusidiosPositivo(e));
 
                     dar.Cells["montoboninocturno"].Value = boninoc.ToString("N2");
                     dar.Cells["hora_trabajada"].Value = h_trabajada.ToString();
@@ -570,12 +584,9 @@ namespace Presentacion.Vista
                 case 14:
                     int pboniNocturno = 0, hr_trabajada = 0;
 
-                    if (dar.Cells["hrboninocturna"].Value == null)
-                        pboniNocturno = 0;
-                    else
-                        pboniNocturno = Convert.ToInt32(dar.Cells["hrboninocturna"].Value);
+                    pboniNocturno = BonificacionNocturna(dar);
 
-                    hr_trabajada = HorasDiarias(dar, pboniNocturno);
+                    hr_trabajada = HorasDiarias(dar, pboniNocturno, SusidiosNegativo(e), SusidiosPositivo(e));
                     dar.Cells["hora_trabajada"].Value = hr_trabajada.ToString();
 
                     break;
@@ -587,27 +598,31 @@ namespace Presentacion.Vista
             Descuento_aportes();
         }
 
+       
+
+       
+
         //AQUI ESTAMOS USANDO TIPO DATO DECIMAL
         private void Dgvplanilla1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                int dias = 0;
-                decimal monto = 0, monto_v = 0;
+                DataGridViewRow dar= Dgvplanilla1.CurrentRow;
+                int dias = 0, diapo = 0, hro_trabajada = 0, boniNoc = 0 ;
+                decimal monto = 0, monto_posi = 0, monto_v = 0;
                 decimal xvacaciones = 0; //prueba
-                decimal p_remu = 0, p_asigF = 0;
+                decimal p_remu = 0, p_asigF = 0, suel_porMes = 0;
+
 
                 void ValoresInicial()
                 {
                     p_remu = Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["remu"].Value);
-                    p_asigF = Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value);
+                    p_asigF = Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value);                    
                 }
-
-                //MessageBox.Show(""+e.RowIndex);
+                
                 if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
                 {
-                    ValoresInicial();
-                    //Messages.M_info("seleccione el boton susbidio");
+                    ValoresInicial();                    
                     PlanillaCache.Subsidiado = Subsidiado;
                     PlanillaCache.p_idempleado = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["id_contrato"].Value);
                     FrmDiasSubsidiados2 fr2 = FrmDiasSubsidiados2.Getinstance();
@@ -616,6 +631,7 @@ namespace Presentacion.Vista
                     fr2.lblnombre_empleado.Text = Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Value.ToString();
                     fr2.ShowDialog();
 
+                    //TOMAMOS EL VALOR DEL DIA Y CALCULAMOS
                     if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null)
                         dias = 0;
                     else
@@ -638,29 +654,28 @@ namespace Presentacion.Vista
                     fr2.ShowDialog();
 
                     //MONTO NEGATIVO.
-                    if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value == null)
-                        dias = 0;
-                    else
-                        dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasnega"].Value);
-
+                    dias = SusidiosNegativo(e);
                     monto = Calculo.MontoSubsidios(dias, p_remu);
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montonega"].Value = monto.ToString("N2");
 
                     //MONTO POSITIVO
-                    if (Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value == null)
-                        dias = 0;
-                    else
-                        dias = Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndiasposi"].Value);
-
+                    diapo = SusidiosPositivo(e);
                     xvacaciones = Calculo.MontoSubsidios(xdia_vacaciones, p_remu);
-                    monto = Calculo.MontoSubsidios(dias, p_remu);
+                    monto_posi = Calculo.MontoSubsidios(diapo, p_remu);
 
-                    monto_v = (monto - xvacaciones);
-                    Dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_v.ToString("N2");
+                    monto_v = (monto_posi - xvacaciones);
+                    boniNoc = BonificacionNocturna(dar); //OBTENEMOS VALOR BONI NOCTUR.
+                    hro_trabajada = HorasDiarias(dar, boniNoc, dias, diapo); // Y LO RESTAMOS EN HORA. TRABAJADAS.
+                 
+                    Dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_v.ToString("N2");                                        
+                    dar.Cells["hora_trabajada"].Value = hro_trabajada.ToString();
+
+                    suel_porMes = SueldoPorMes(dar);//EL VALOR DEL SUBSIDIO POSITIVO LO VA RESTAR AL SUELDO.
+                    dar.Cells["sueldo"].Value = suel_porMes.ToString("N2");
                     TotalRemuneracion();
                 }
             }
-        }        
+        }
         //.........
 
         private void tbtnsalir_Click(object sender, EventArgs e)
