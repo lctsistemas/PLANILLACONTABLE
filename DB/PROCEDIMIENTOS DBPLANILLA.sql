@@ -1351,24 +1351,24 @@ AS BEGIN
 END
 GO
 
-EXEC SP_RegistroPrivilegios 1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1
+EXEC SP_RegistroPrivilegios 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 
-EXEC SP_SHOW_PRIVILEGIOS 1
+EXEC SP_SHOW_PRIVILEGIOS 2
 
-CREATE PROC SP_SHOW_PRIVILEGIOS
+GO
+ALTER PROC SP_SHOW_PRIVILEGIOS
 @id_rol int
 AS BEGIN
-	IF(EXISTS(SELECT p.id_privilegios FROM dbo.PRIVILEGIOS p join Rol r on r.id_rol = p.id_rol 
+	IF(EXISTS(SELECT p.id_rol FROM dbo.PRIVILEGIOS p join Rol r on r.id_rol = p.id_rol 
 	WHERE p.id_rol = @id_rol))
 	BEGIN
 		SELECT p.btipopla,p.btipocont,p.bregimensalud,p.bsubsinosub,p.bcargo,p.btipodoc,p.bbanco,p.broles,p.bregimenpen,
 		p.bcomisiones,bempleado,p.bempresa,p.bsucursal,p.busuario,p.bplanilla
 		from PRIVILEGIOS p 
-		WHERE p.id_rol=@id_rol 
-		
+		WHERE p.id_rol=@id_rol 		
 	END
 END
-
+GO
 
 select * from Conceptos
 delete from Conceptos

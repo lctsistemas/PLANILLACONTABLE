@@ -32,14 +32,12 @@ namespace Negocio.Models
 
         public EntityState State { get; set; }
         private readonly RPrivilegios rpriv;
-        private readonly Rcargo rcargo;
-        //List<NPrivilegios> listpriv;
-        List<Nrol> listacargo;
+        
+        List<NPrivilegios> listpriv;
 
         public NPrivilegios()
         {
             rpriv = new RPrivilegios();
-            rcargo = new Rcargo();
 
         }
 
@@ -94,21 +92,38 @@ namespace Negocio.Models
         }
 
 
-        public IEnumerable<Nrol> Getall()
+        public List<NPrivilegios> Getall()
         {
-            using (var dt = rcargo.GetData(null))
+            Dprivilegios dp = new Dprivilegios();
+            dp.Id_rol=Id_rol;
+            using (var dt = rpriv.GetData(dp))
             {
-                listacargo = new List<Nrol>();
+                listpriv = new List<NPrivilegios>();
                 foreach (DataRow item in dt.Rows)
                 {
-                    listacargo.Add(new Nrol()
+                    listpriv.Add(new NPrivilegios()
                     {
-                        idrol = Convert.ToInt32(item[0]),
-                        nombre_rol = Convert.ToString(item[1]),
+                        //Id_rol = Convert.ToInt32(item[0]),
+                        Btipopla=Convert.ToBoolean(item[0]),
+                        Btipocont = Convert.ToBoolean(item[1]),
+                        Bregimensalud = Convert.ToBoolean(item[2]),
+                        Bsubsinosub = Convert.ToBoolean(item[3]),
+                        Bcargo = Convert.ToBoolean(item[4]),
+                        Btipodoc = Convert.ToBoolean(item[5]),
+                        Bbanco = Convert.ToBoolean(item[6]),
+                        Broles = Convert.ToBoolean(item[7]),
+                        Bregimenpen = Convert.ToBoolean(item[8]),
+                        Bcomisiones = Convert.ToBoolean(item[9]),
+                        Bempleado = Convert.ToBoolean(item[10]),
+                        Bempresa = Convert.ToBoolean(item[11]),
+                        Bsucursal = Convert.ToBoolean(item[12]),
+                        Busuario = Convert.ToBoolean(item[13]),
+                        Bplanilla = Convert.ToBoolean(item[14])
+
                     });
                 }
             }
-            return listacargo;
+            return listpriv;
         }
 
         public void Dispose()
