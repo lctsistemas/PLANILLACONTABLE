@@ -8,6 +8,7 @@ namespace Presentacion.Helps
 {
     public  class Calculo
     {
+        //TODO CODIGO AQUI SE PUEDE SIMPLIFICAR CREANDO METODOS ESPECIFICOS. PARA SISTEMA 1.1
 
         public static double HoraExDiurna(double basico, double asig_fami, double taza, int hora, int minuto)
         {
@@ -34,11 +35,24 @@ namespace Presentacion.Helps
             double montominuto = (taza_nocturnamasminuto * minuto);
             return (montohora + montominuto);
         }
-
-        public static double FeriadoDom(double basico, double asig_fami, int hora, int minuto)
+        
+        public static double FeriadoDom(double basico, double asig_fami, int hora, int minuto, string jornadaLabo)
         {
-            double sub_hora = (((basico + asig_fami) / 30) / 8);
-            double sub_minuto = (sub_hora / 60);
+            
+            double sub_hora = 0;
+            double sub_minuto = 0;
+            if (jornadaLabo.Equals("PART-TIME"))
+            {
+                sub_hora = (((basico + asig_fami) / 30) / 3.5);
+                sub_minuto = (sub_hora / 60);
+            }
+            else
+            {
+                sub_hora = (((basico + asig_fami) / 30) / 8);
+                sub_minuto = (sub_hora / 60);
+            }
+
+            
 
             double importe_hora = (sub_hora * 2) * hora;
             double importe_minuto = (sub_minuto * 2) * minuto;
@@ -47,9 +61,14 @@ namespace Presentacion.Helps
             return importe_feriado;
         }
 
-        public static double BoniNocturno(double basico, double asig_fami, int hora)
+        public static double BoniNocturno(double basico, double asig_fami, int hora, string jornadaLabo)
         {
-            double sub_hora = (((basico + asig_fami) / 30) / 8);
+            double sub_hora = 0;
+            if (jornadaLabo.Equals("PART-TIME"))
+                sub_hora = (((basico + asig_fami) / 30) / 3.5);
+            else
+                sub_hora = (((basico + asig_fami) / 30) / 8);
+            
             double hora_mastasa = (sub_hora * 0.35);
             double boninocturno = (hora_mastasa * hora);
             return boninocturno;
