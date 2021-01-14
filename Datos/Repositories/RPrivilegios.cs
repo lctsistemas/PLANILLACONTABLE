@@ -62,7 +62,7 @@ namespace Datos.Repositories
                     cmd.CommandText = "SP_SHOW_PRIVILEGIOS";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@idrol", entiti.Id_rol);
+                    cmd.Parameters.AddWithValue("@id_rol", entiti.Id_rol);
 
                     SqlDataReader reader = cmd.ExecuteReader();
                     using (dt = new DataTable())

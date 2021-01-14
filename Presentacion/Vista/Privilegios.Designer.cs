@@ -55,6 +55,7 @@ namespace Presentacion.Vista
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtid_privilegios = new System.Windows.Forms.TextBox();
             this.Registrar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -358,11 +359,19 @@ namespace Presentacion.Vista
             this.label1.Text = "PRIVILEGIOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // txtid_privilegios
+            // 
+            this.txtid_privilegios.Location = new System.Drawing.Point(404, 45);
+            this.txtid_privilegios.Name = "txtid_privilegios";
+            this.txtid_privilegios.Size = new System.Drawing.Size(56, 20);
+            this.txtid_privilegios.TabIndex = 5;
+            // 
             // Privilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(545, 467);
+            this.Controls.Add(this.txtid_privilegios);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Registrar);
             this.Controls.Add(this.btnguardar);
@@ -414,5 +423,6 @@ namespace Presentacion.Vista
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox btnminimizar;
+        private System.Windows.Forms.TextBox txtid_privilegios;
     }
 }

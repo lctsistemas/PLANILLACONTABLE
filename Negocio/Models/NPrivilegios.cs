@@ -96,29 +96,29 @@ namespace Negocio.Models
         {
             Dprivilegios dp = new Dprivilegios();
             dp.Id_rol=Id_rol;
-            using (var dt = rpriv.GetData(dp))
+            using (DataTable dt = rpriv.GetData(dp))
             {
                 listpriv = new List<NPrivilegios>();
                 foreach (DataRow item in dt.Rows)
                 {
                     listpriv.Add(new NPrivilegios()
                     {
-                        //Id_rol = Convert.ToInt32(item[0]),
-                        Btipopla=Convert.ToBoolean(item[0]),
-                        Btipocont = Convert.ToBoolean(item[1]),
-                        Bregimensalud = Convert.ToBoolean(item[2]),
-                        Bsubsinosub = Convert.ToBoolean(item[3]),
-                        Bcargo = Convert.ToBoolean(item[4]),
-                        Btipodoc = Convert.ToBoolean(item[5]),
-                        Bbanco = Convert.ToBoolean(item[6]),
-                        Broles = Convert.ToBoolean(item[7]),
-                        Bregimenpen = Convert.ToBoolean(item[8]),
-                        Bcomisiones = Convert.ToBoolean(item[9]),
-                        Bempleado = Convert.ToBoolean(item[10]),
-                        Bempresa = Convert.ToBoolean(item[11]),
-                        Bsucursal = Convert.ToBoolean(item[12]),
-                        Busuario = Convert.ToBoolean(item[13]),
-                        Bplanilla = Convert.ToBoolean(item[14])
+                        Id_privilegios = Convert.ToInt32(item[0]),
+                        Btipopla=Convert.ToBoolean(item[1]),
+                        Btipocont = Convert.ToBoolean(item[2]),
+                        Bregimensalud = Convert.ToBoolean(item[3]),
+                        Bsubsinosub = Convert.ToBoolean(item[4]),
+                        Bcargo = Convert.ToBoolean(item[5]),
+                        Btipodoc = Convert.ToBoolean(item[6]),
+                        Bbanco = Convert.ToBoolean(item[7]),
+                        Broles = Convert.ToBoolean(item[8]),
+                        Bregimenpen = Convert.ToBoolean(item[9]),
+                        Bcomisiones = Convert.ToBoolean(item[10]),
+                        Bempleado = Convert.ToBoolean(item[11]),
+                        Bempresa = Convert.ToBoolean(item[12]),
+                        Bsucursal = Convert.ToBoolean(item[13]),
+                        Busuario = Convert.ToBoolean(item[14]),
+                        Bplanilla = Convert.ToBoolean(item[15])
 
                     });
                 }
