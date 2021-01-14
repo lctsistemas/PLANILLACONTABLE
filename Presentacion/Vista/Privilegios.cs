@@ -14,51 +14,75 @@ namespace Presentacion.Vista
 {
     public partial class Privilegios : Form
     {
+        private NPrivilegios np = new NPrivilegios();
+        String result = "";
         public Privilegios()
         {
             InitializeComponent();
+            Mostrar_Rol();
+            //ShowPrivilegios();
+            
         }
 
-        private NPrivilegios np = new NPrivilegios();
-
-        String result = "";
-
-        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        //MOSTRAR ROL EN COMBOBOX
+        private void Mostrar_Rol()
         {
-            btncerrar.BackColor = Color.FromArgb(241, 112, 122);
+            using (Nrol nr = new Nrol())
+            {
+                cbxrol.DataSource = nr.Getall();
+                cbxrol.DisplayMember = "nombre_rol";
+                cbxrol.ValueMember = "idrol";
+                cbxrol.Text = null;
+                
+            }
         }
-
-        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        //MOSTRAR LOS PRIVILEGIOS
+        private void ShowPrivilegios()
         {
-            btncerrar.BackColor = Color.FromArgb(116, 118, 118);
-        }
+            List<NPrivilegios> lisprive;
 
-        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
-        {
-            btncerrar.BackColor = Color.Crimson;
-        }
-
-        private void ShowSubsidio()
-        {
             using (np)
             {
-                //dgv.DataSource = np.get();
-                //lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
+                np.Id_rol = Convert.ToInt32(cbxrol.SelectedValue);
+                lisprive = np.Getall();
+                if (lisprive.Count <= 0)
+                {
+                    lisprive.Clear();
+                }
+                else
+                {
+
+                    this.txtid_privilegios.Text = lisprive[0].Id_privilegios.ToString();
+                    this.checktpla.Checked = lisprive[0].Btipopla;
+                    this.checktipocont.Checked = lisprive[0].Btipocont;
+                    this.checkregsalud.Checked = lisprive[0].Bregimensalud;
+                    this.checksubnosub.Checked = lisprive[0].Bsubsinosub;
+                    this.checkcargo.Checked = lisprive[0].Bcargo;
+                    this.checktipodoc.Checked = lisprive[0].Btipodoc;
+                    this.checkbanco.Checked = lisprive[0].Bbanco;
+                    this.checkroles.Checked=lisprive[0].Broles;
+                    this.checkregpens.Checked = lisprive[0].Bregimenpen;
+                    this.checkcomis.Checked = lisprive[0].Bcomisiones;
+                    this.checkempl.Checked = lisprive[0].Bempleado;
+                    this.checkempresa.Checked = lisprive[0].Bempresa;
+                    this.checksucursal.Checked = lisprive[0].Bsucursal;
+                    this.checkusuario.Checked = lisprive[0].Busuario;
+                    this.checkplan.Checked = lisprive[0].Bplanilla;
+                }
+
             }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (ValidarDatos())
-            {
-                ValidateChildren();
-                return;
-            }
-
+            
             result = "";
             using (np)
             {
-                np.Id_rol = cbxrol.SelectedIndex;
+                if (txtid_privilegios.Text.Trim() != string.Empty)
+                    np.Id_privilegios= Convert.ToInt32(txtid_privilegios.Text.Trim());
+
+                np.Id_rol = Convert.ToInt32(cbxrol.SelectedValue);
                 np.Btipopla = Convert.ToBoolean(checktpla.Checked);
                 np.Btipocont = Convert.ToBoolean(checktipocont.Checked);
                 np.Bregimensalud = Convert.ToBoolean(checkregsalud.Checked);
@@ -77,28 +101,60 @@ namespace Presentacion.Vista
 
 
                 result = np.SaveChanges();
-                if (result.Contains("Codigo ya existe"))
-                    Messages.M_warning(result);
-                else
-                {
-                    ShowSubsidio();
-                    //limpiar();
-                    Messages.M_info(result);
-                }
+               
+                Messages.M_info(result);
+               
 
             }
         }
 
-        private bool ValidarDatos()
+
+
+        private void cbxrol_TextChanged(object sender, EventArgs e)
         {
-            if (cbxrol.Text == String.Empty)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+
         }
+
+        private void cbxrol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxrol.SelectedIndex == 0)
+                btnguardar.Enabled = false;
+            else
+                btnguardar.Enabled = true;
+
+            if (cbxrol.SelectedIndex > 0)
+                ShowPrivilegios();
+
+            
+        }
+
+        private void Privilegios_Load(object sender, EventArgs e)
+        {
+
+
+        }
+
+
+
+        private void btncerrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(241, 112, 122);
+        }
+
+        private void btncerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btncerrar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btncerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btncerrar.BackColor = Color.Crimson;
+        }
+
+
+
+
+
+
     }
 }

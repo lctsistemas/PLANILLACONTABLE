@@ -3,6 +3,7 @@ using Datos.Repositories;
 using Negocio.ValueObjects;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,11 +32,13 @@ namespace Negocio.Models
 
         public EntityState State { get; set; }
         private readonly RPrivilegios rpriv;
+        
         List<NPrivilegios> listpriv;
 
         public NPrivilegios()
         {
             rpriv = new RPrivilegios();
+
         }
 
         public string SaveChanges()
@@ -86,6 +89,41 @@ namespace Negocio.Models
                 finally { }
             }
             return message;
+        }
+
+
+        public List<NPrivilegios> Getall()
+        {
+            Dprivilegios dp = new Dprivilegios();
+            dp.Id_rol=Id_rol;
+            using (DataTable dt = rpriv.GetData(dp))
+            {
+                listpriv = new List<NPrivilegios>();
+                foreach (DataRow item in dt.Rows)
+                {
+                    listpriv.Add(new NPrivilegios()
+                    {
+                        Id_privilegios = Convert.ToInt32(item[0]),
+                        Btipopla=Convert.ToBoolean(item[1]),
+                        Btipocont = Convert.ToBoolean(item[2]),
+                        Bregimensalud = Convert.ToBoolean(item[3]),
+                        Bsubsinosub = Convert.ToBoolean(item[4]),
+                        Bcargo = Convert.ToBoolean(item[5]),
+                        Btipodoc = Convert.ToBoolean(item[6]),
+                        Bbanco = Convert.ToBoolean(item[7]),
+                        Broles = Convert.ToBoolean(item[8]),
+                        Bregimenpen = Convert.ToBoolean(item[9]),
+                        Bcomisiones = Convert.ToBoolean(item[10]),
+                        Bempleado = Convert.ToBoolean(item[11]),
+                        Bempresa = Convert.ToBoolean(item[12]),
+                        Bsucursal = Convert.ToBoolean(item[13]),
+                        Busuario = Convert.ToBoolean(item[14]),
+                        Bplanilla = Convert.ToBoolean(item[15])
+
+                    });
+                }
+            }
+            return listpriv;
         }
 
         public void Dispose()
