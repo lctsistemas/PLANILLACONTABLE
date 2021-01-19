@@ -257,6 +257,7 @@ namespace Presentacion.Vista
             subMv = Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null ? 0 : Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value);
             return subMv;           
         }
+
         private int SusidiosNegativo(DataGridViewCellEventArgs e)
         {
             int subNega = 0;
@@ -302,13 +303,18 @@ namespace Presentacion.Vista
         //DE ACUERDO A LOS DIAS QUE TIENES EL MES, SE CALCULA SU SUELDO
         private decimal SueldoPorMes(DataGridViewRow dar)
         {
-            decimal p_sueldo = 0, p_basico = 0, p_subsidioposi = 0;
-            int p_dias = 0;
+            decimal p_sueldo = 0, p_basico = 0, p_subsidiado = 0, p_subsidioposi = 0, p_valasigFami = 0, p_totasubsidi = 0;
+            int p_dias = 0, p_diasub = 0;
 
             int diasMes = Convert.ToInt32(txtdiasMes.Text);
             p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
             p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
             p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montoposi"].Value);
+
+            p_diasub = dar.Cells["ndias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["ndias"].Value);
+            p_subsidiado = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montosub"].Value);
+            p_valasigFami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["a_familiar"].Value);
+
 
             if (diasMes == 30)
             {
@@ -337,19 +343,33 @@ namespace Presentacion.Vista
                     p_sueldo = ((p_basico / 30) * p_dias);
             }
 
-            return (p_sueldo - p_subsidioposi);
+            if (diasMes == p_diasub)
+                p_subsidiado = (p_subsidiado - p_valasigFami);
+            if (diasMes == 31)
+            {
+                if (p_diasub == 30)
+                    p_subsidiado = (p_subsidiado - p_valasigFami);
+            }
+
+            p_totasubsidi = (p_subsidiado + p_subsidioposi);
+
+            return (p_sueldo - p_totasubsidi);
         }
 
         //SOBRE CARGA DE METODO
         private decimal SueldoPorMes(DataGridViewRow dar, int dia_vacacione)
         {
-            decimal p_sueldo = 0, p_basico = 0, p_subsidioposi = 0;
-            int p_dias = 0;
+            decimal p_sueldo = 0, p_basico = 0, p_subsidiado = 0, p_subsidioposi = 0, p_valasigFami = 0, p_totasubsidi = 0;
+            int p_dias = 0, p_diasub = 0;
 
             int diasMes = Convert.ToInt32(txtdiasMes.Text);
             p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
             p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
             p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montoposi"].Value);
+
+            p_diasub = dar.Cells["ndias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["ndias"].Value);
+            p_subsidiado = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montosub"].Value);
+            p_valasigFami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["a_familiar"].Value);
 
             if (diasMes == 30)
             {
@@ -393,7 +413,18 @@ namespace Presentacion.Vista
                     p_sueldo = ((p_basico / 30) * (p_dias - dia_vacacione));
             }
 
-            return (p_sueldo - p_subsidioposi);
+            
+
+            if (diasMes == p_diasub)
+                p_subsidiado = (p_subsidiado - p_valasigFami);
+            if (diasMes == 31)
+            {
+                if (p_diasub == 30)
+                    p_subsidiado = (p_subsidiado - p_valasigFami);
+            }
+
+            p_totasubsidi = (p_subsidiado + p_subsidioposi);
+            return (p_sueldo - p_totasubsidi);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -438,16 +469,17 @@ namespace Presentacion.Vista
             switch (e.ColumnIndex)
             {
                 case 13://dias que laboro
-                    decimal p_sueldo=0;
+                    decimal p_sueldo = 0;
                     
                     if (dar.Cells["dgvdia_vaca"].Value != null) 
                     {
                         int x = dar.Cells["dgvdia_vaca"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgvdia_vaca"].Value);
-                        p_sueldo = SueldoPorMes(dar, x);                      
+                        p_sueldo = SueldoPorMes(dar, x);                   
                     }else
                         p_sueldo = SueldoPorMes(dar);
 
                     dar.Cells["sueldo"].Value = p_sueldo.ToString("N2");
+                  
                     break;
                 default:
                     break;
@@ -755,19 +787,10 @@ namespace Presentacion.Vista
                     dias = SubsidiosMayorVeinte(e);
                     monto = Calculo.MontoSubsidios(dias, p_remu, p_asigF, diames);
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
-
-                    if (diames == dias)
-                        monto = (monto - p_asigF);
-                    if (diames == 31)
-                    {
-                        if (dias == 30)
-                            monto = (monto - p_asigF);
-                    }
-
+                   
                     p_diavaca = dar.Cells["dgvdia_vaca"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgvdia_vaca"].Value);
                     monto_sueldo = SueldoPorMes(dar, p_diavaca);
-                    //monto_sueldo = dar.Cells["sueldo"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["sueldo"].Value);
-                    monto_sueldo = (monto_sueldo - monto);
+                                       
                     dar.Cells["sueldo"].Value = monto_sueldo.ToString("N2");
 
                     TotalRemuneracion();
@@ -808,6 +831,7 @@ namespace Presentacion.Vista
                     //OBTENGO EL DIA DE VACACIONES PARA PODER RESTAR A LOS DIAS LABORADOS.
                     p_diavaca = dar.Cells["dgvdia_vaca"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgvdia_vaca"].Value);
                     suel_porMes = SueldoPorMes(dar, p_diavaca);//EL VALOR DEL SUBSIDIO POSITIVO LO VA RESTAR AL SUELDO.
+
                     dar.Cells["sueldo"].Value = suel_porMes.ToString("N2");
                     TotalRemuneracion();
                     Descuento_aportes(dar);
