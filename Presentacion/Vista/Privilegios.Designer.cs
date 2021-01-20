@@ -361,6 +361,7 @@ namespace Presentacion.Vista
             // 
             // txtid_privilegios
             // 
+            this.txtid_privilegios.Enabled = false;
             this.txtid_privilegios.Location = new System.Drawing.Point(404, 45);
             this.txtid_privilegios.Name = "txtid_privilegios";
             this.txtid_privilegios.Size = new System.Drawing.Size(56, 20);

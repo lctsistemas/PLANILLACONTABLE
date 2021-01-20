@@ -247,7 +247,7 @@ namespace Presentacion.Vista
 
         private void ValorHorasDiarias(DataGridViewRow dar, double hr_trabajada)
         {
-            if (hr_trabajada.ToString().Contains("."))
+            if (hr_trabajada.ToString().Contains(".") || hr_trabajada.ToString().Contains(","))
                 dar.Cells["hora_trabajada"].Value = hr_trabajada.ToString("N2");
             else
                 dar.Cells["hora_trabajada"].Value = hr_trabajada.ToString();
