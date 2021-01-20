@@ -19,6 +19,7 @@ namespace Presentacion.Vista
     {
         NSubsidios nsub;
         NDiasSubsidiados ndsub;
+        int subtotal_si = 0;
         string mensaje;
         
         private static FrmDiasSubsidiados2 _intancia;
@@ -66,6 +67,7 @@ namespace Presentacion.Vista
         //SUMAR SUMA CELDA DATAGRIDVIEW | IMPORTANTE ANALIZAR Y SIMPLIFICAR CODIGO
         private void SumarDias()
         {
+            subtotal_si = 0;
             int total_sp = 0, total_si = 0, total = 0, vaca = 0;
             foreach (DataGridViewRow item in dgvsubsidio.Rows)
             {
@@ -79,11 +81,11 @@ namespace Presentacion.Vista
                     vaca = canti;
             }
 
-            total_si = (total_si + vaca);
+            subtotal_si = (total_si + vaca);            
             lbltotalSp.Text = total_sp.ToString();
             lbltotalSi.Text = total_si.ToString();
             lblvacaciones.Text = vaca.ToString();
-            total = (total_sp + total_si);
+            total = (total_sp + subtotal_si);
             txttotaldias.Text = total.ToString();
         }
 
@@ -103,8 +105,10 @@ namespace Presentacion.Vista
             if (val)
                 frpla2.Dgvplanilla1.CurrentRow.Cells[negativo].Value = lbltotalSp.Text;
 
-            frpla2.Dgvplanilla1.CurrentRow.Cells[positivo].Value = lbltotalSi.Text;
+            frpla2.Dgvplanilla1.CurrentRow.Cells[positivo].Value = subtotal_si;
             frpla2.xdia_vacaciones =Convert.ToInt32(lblvacaciones.Text);
+            frpla2.xdia_subposi = Convert.ToInt32(lbltotalSi.Text);
+            frpla2.Dgvplanilla1.CurrentRow.Cells["dgvdia_vaca"].Value = Convert.ToInt32(lblvacaciones.Text);
         }
 
         //ENVIAR DIAS POR TIPO DE SUBSIDIO

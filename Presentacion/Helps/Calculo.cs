@@ -51,7 +51,6 @@ namespace Presentacion.Helps
                 sub_hora = (((basico + asig_fami) / 30) / 8);
                 sub_minuto = (sub_hora / 60);
             }
-
             
 
             double importe_hora = (sub_hora * 2) * hora;
@@ -85,30 +84,87 @@ namespace Presentacion.Helps
             return imp_tarde;
         }
 
-        public static decimal MontoSubsidios(int dia, decimal basico, decimal asig_fami)
+        public static decimal MontoSubsidios(int dia, decimal basico, decimal asig_fami, int diames)
         {
             decimal monto_Sub = 0;
             decimal diario = (basico / 30);
 
-            //le falta.
-            if (dia >= 30 && dia <=31 )
+            if (diames == 30)
             {
-                monto_Sub = ((diario * dia) + asig_fami);
-            }else if( dia < 30)
+                if (dia == 30)
+                    monto_Sub = ((diario * dia) + asig_fami);
+                else if (dia < 30 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            else if (diames == 31)
             {
-                monto_Sub = (diario * dia);
-            }            
+                if (dia == 31)
+                    monto_Sub = ((diario * (dia - 1)) + asig_fami);
+                else if (dia == 30)
+                    monto_Sub = ((diario * dia) + asig_fami);
+                else if (dia < 30 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            else if (diames == 28)
+            {
+                if (dia == 28)
+                    monto_Sub = ((diario * (dia + 2)) + asig_fami);
+                else if (dia < 28 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            else if (diames == 29)
+            {
+                if (dia == 29)
+                    monto_Sub = ((diario * (dia + 1)) + asig_fami);
+                else if (dia < 29 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
             return monto_Sub;
+
+        }
+                    
+        //SOBRECARGA.
+        public static decimal MontoSubsidios(int dia, decimal basico, int diames)
+        {
+            decimal monto_Sub = 0;
+            decimal diario = (basico / 30);
+
+            if (diames == 30)
+            {
+                if (dia == 30)
+                    monto_Sub = ((diario * dia));
+                else if (dia < 30 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            else if (diames == 31)
+            {
+                if (dia == 31)
+                    monto_Sub = (diario * (dia - 1));               
+                else if (dia < 31 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            else if (diames == 28)
+            {
+                if (dia == 28)
+                    monto_Sub = (diario * (dia + 2));
+                else if (dia < 28 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            else if (diames == 29)
+            {
+                if (dia == 29)
+                    monto_Sub = (diario * (dia + 1));
+                else if (dia < 29 && dia > 0)
+                    monto_Sub = (diario * dia);
+            }
+            return monto_Sub;
+            
         }
 
-        //SOBRECARGA.
-        public static decimal MontoSubsidios(int dia, decimal basico)
+        //EL 9% DE LA GRATIFICACION PARA LA BONIFICACION
+        public static double BonificacionGrati(double gratifi)
         {
-            decimal monto_Sub = 0;
-            decimal diario = (basico / 30);
-
-            monto_Sub = (diario * dia);
-            return monto_Sub;
+            return (gratifi * 0.09);
         }
 
     }
