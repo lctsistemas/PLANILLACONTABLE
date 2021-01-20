@@ -139,10 +139,8 @@ namespace Presentacion.Helps
             else if (diames == 31)
             {
                 if (dia == 31)
-                    monto_Sub = (diario * (dia - 1));
-                else if (dia == 30)
-                    monto_Sub = (diario * (dia - 1));
-                else if (dia < 30 && dia > 0)
+                    monto_Sub = (diario * (dia - 1));               
+                else if (dia < 31 && dia > 0)
                     monto_Sub = (diario * dia);
             }
             else if (diames == 28)

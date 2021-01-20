@@ -134,23 +134,30 @@ namespace Presentacion.Vista
             DataGridViewRow dar = Dgvplanilla1.CurrentRow;
             try
             {
+                int diaMes = txtdiasMes.Text.Trim() == string.Empty ? 0 : Convert.ToInt32(txtdiasMes.Text.Trim()); //OBTENEMOS DIAS PARA NO PODER SUMAR LA ASIG FAM. CUANDO TIENE SUBSIDIO MES COMPLETO
+                int pdiasubsi = SubsidiosMayorVeinte(dar);
+
                 double suel = 0, asigfami = 0, monto_sub = 0, montonegasub = 0, montoposisub = 0, totalHorasEx = 0;
                 double tardanzasub = 0, p_unomayo = 0, reintegr = 0, p_otroreintegro = 0, vacacion = 0, vaca_trun = 0, grati_tru = 0, boni_tru = 0, cts_tru = 0;
                 double subtotal1 = 0, p_prest_alimen = 0, p_grati = 0, p_boni = 0, subtotal2 = 0, totalsub = 0;
 
                 suel = dar.Cells["sueldo"].Value == null ? 0 : Convert.ToDouble(dar.Cells["sueldo"].Value);
-                asigfami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDouble(dar.Cells["a_familiar"].Value);
+
+                if (!((diaMes == 31 && pdiasubsi == 31) || (diaMes == 31 && pdiasubsi == 30) || (diaMes == 30 && pdiasubsi == 30)
+                    || (diaMes == 29 && pdiasubsi == 29) || (diaMes == 28 && pdiasubsi == 28)))
+                    asigfami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDouble(dar.Cells["a_familiar"].Value);
+
                 monto_sub = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montosub"].Value);
                 montonegasub = dar.Cells["montonega"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montonega"].Value);
                 montoposisub = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montoposi"].Value);               
                 tardanzasub = dar.Cells["montotarde"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montotarde"].Value);
-                p_unomayo = dar.Cells["unomayo"].Value == null ? 0 : Convert.ToDouble(dar.Cells["unomayo"].Value);//variable
+                p_unomayo = dar.Cells["unomayo"].Value == null ? 0 : Convert.ToDouble(dar.Cells["unomayo"].Value);
                 totalHorasEx = dar.Cells["thoras"].Value == null ? 0 : Convert.ToDouble(dar.Cells["thoras"].Value);
                 reintegr = dar.Cells["reintegro"].Value == null ? 0 : Convert.ToDouble(dar.Cells["reintegro"].Value);
-                p_otroreintegro = dar.Cells["otros_reintegros"].Value == null ? 0 : Convert.ToDouble(dar.Cells["otros_reintegros"].Value);//variable
-                p_prest_alimen = dar.Cells["prestacion_alimenta"].Value == null ? 0 : Convert.ToDouble(dar.Cells["prestacion_alimenta"].Value);//variable
-                p_grati = dar.Cells["grati"].Value == null ? 0 : Convert.ToDouble(dar.Cells["grati"].Value);//variable
-                p_boni = dar.Cells["boni"].Value == null ? 0 : Convert.ToDouble(dar.Cells["boni"].Value);//variable
+                p_otroreintegro = dar.Cells["otros_reintegros"].Value == null ? 0 : Convert.ToDouble(dar.Cells["otros_reintegros"].Value);
+                p_prest_alimen = dar.Cells["prestacion_alimenta"].Value == null ? 0 : Convert.ToDouble(dar.Cells["prestacion_alimenta"].Value);
+                p_grati = dar.Cells["grati"].Value == null ? 0 : Convert.ToDouble(dar.Cells["grati"].Value);
+                p_boni = dar.Cells["boni"].Value == null ? 0 : Convert.ToDouble(dar.Cells["boni"].Value);
                 vacacion = dar.Cells["vacacione"].Value == null ? 0 : Convert.ToDouble(dar.Cells["vacacione"].Value);
                 vaca_trun = dar.Cells["tvaca"].Value == null ? 0 : Convert.ToDouble(dar.Cells["tvaca"].Value);
                 grati_tru = dar.Cells["tgrati"].Value == null ? 0 : Convert.ToDouble(dar.Cells["tgrati"].Value);
@@ -187,8 +194,8 @@ namespace Presentacion.Vista
 
                 p_subto = ((p_totaremu + p_transporte + p_recarconsumo + p_regrati + p_reboni) - p_totadescuen);
                 dar.Cells["topagar"].Value = p_subto.ToString("N2");
-
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -211,6 +218,7 @@ namespace Presentacion.Vista
 
             return conceptostotal;
         }
+
         private void Descuento_aportes(DataGridViewRow dgr )
         {            
             double comi = 0, segu = 0, apor = 0, tremu = 0;
@@ -243,7 +251,7 @@ namespace Presentacion.Vista
             }
         }
 
-        //METODOS PARA LOS SUBSIDIOS NEGA, POSI Y BONI NOCTURNA, PARA DETERMINAR HORAS DIARIAS 
+        //METODOS PARA LOS SUBSIDIOS, SUB NEGA, POSI Y BONI NOCTURNA, PARA DETERMINAR HORAS DIARIAS 
         private int BonificacionNocturna(DataGridViewRow d)
         {
             int p_boniNoct = 0;
@@ -251,10 +259,10 @@ namespace Presentacion.Vista
             return p_boniNoct;
         }
 
-        private int SubsidiosMayorVeinte(DataGridViewCellEventArgs e)
+        private int SubsidiosMayorVeinte(DataGridViewRow dar)
         {
             int subMv = 0;
-            subMv = Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value == null ? 0 : Convert.ToInt32(Dgvplanilla1.Rows[e.RowIndex].Cells["ndias"].Value);
+            subMv = dar.Cells["ndias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["ndias"].Value);
             return subMv;           
         }
 
@@ -273,7 +281,7 @@ namespace Presentacion.Vista
         }
 
         //METODO HORAS DIARIAS.
-        private double HorasDiarias(DataGridViewRow dgr, int hrboninoc, int p_diasubnega, int p_diasubposi)
+        private double HorasDiarias(DataGridViewRow dgr, int hrboninoc, int p_diasubnega, int p_diasubposi, int p_diaSubsidio)
         {
             int pdias = 0, pdiaDominical = 0, tdias_subsidio = 0;//total dias subsidiado
             double horaTrabajada = 0;       
@@ -282,7 +290,7 @@ namespace Presentacion.Vista
 
             pdiaDominical = dgr.Cells["dia_dominical"].Value == null ? 0 : Convert.ToInt32(dgr.Cells["dia_dominical"].Value);
 
-            tdias_subsidio = (p_diasubnega + p_diasubposi);//suma de sub negativo y positivo para restar a dias trabajados
+            tdias_subsidio = (p_diasubnega + p_diasubposi + p_diaSubsidio);//suma de sub negativo y positivo para restar a dias trabajados
 
             if (dgr.Cells["jornada_labo"].Value.ToString() == "PART-TIME")
                 horaTrabajada = ((((pdias - pdiaDominical) - tdias_subsidio) * 3.5) - hrboninoc);
@@ -593,7 +601,7 @@ namespace Presentacion.Vista
                     jornadaLaboral = dar.Cells["jornada_labo"].Value.ToString();//OBTENEMOS EL PART-TIME PARA EL CALCULO
 
                     boninoc = Calculo.BoniNocturno(valor_sueldo, valor_asigFami, horanoc, jornadaLaboral);
-                    h_trabajada = HorasDiarias(dar, horanoc, SusidiosNegativo(e), SusidiosPositivo(e));
+                    h_trabajada = HorasDiarias(dar, horanoc, SusidiosNegativo(e), SusidiosPositivo(e), SubsidiosMayorVeinte(dar));
                     
                     dar.Cells["montoboninocturno"].Value = boninoc.ToString("N2");
                     ValorHorasDiarias(dar,h_trabajada);
@@ -691,7 +699,7 @@ namespace Presentacion.Vista
 
                     pboniNocturno = BonificacionNocturna(dar);
 
-                    hr_trabajada = HorasDiarias(dar, pboniNocturno, SusidiosNegativo(e), SusidiosPositivo(e));
+                    hr_trabajada = HorasDiarias(dar, pboniNocturno, SusidiosNegativo(e), SusidiosPositivo(e), SubsidiosMayorVeinte(dar));
                     ValorHorasDiarias(dar, hr_trabajada);
                     break;
 
@@ -765,7 +773,6 @@ namespace Presentacion.Vista
                 //decimal xvacaciones = 0; 
                 decimal p_remu = 0, p_asigF = 0, suel_porMes = 0;
 
-
                 void ValoresInicial()
                 {
                     p_remu = Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["remu"].Value);
@@ -784,11 +791,16 @@ namespace Presentacion.Vista
                     fr2.ShowDialog();
 
                     //TOMAMOS EL VALOR DEL DIA Y CALCULAMOS
-                    dias = SubsidiosMayorVeinte(e);
+                    dias = SubsidiosMayorVeinte(dar);
                     monto = Calculo.MontoSubsidios(dias, p_remu, p_asigF, diames);
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montosub"].Value = monto.ToString("N2");
-                   
+
+                    boniNoc = BonificacionNocturna(dar); //OBTENEMOS VALOR BONI NOCTUR.
+                    hro_trabajada = HorasDiarias(dar, boniNoc, SusidiosNegativo(e), SusidiosPositivo(e), dias);// Y LO RESTAMOS EN HORA. TRABAJADAS.
+                    ValorHorasDiarias(dar,hro_trabajada); // MOSTRAMOS VALOR DE HORAS DIARIAS.
+
                     p_diavaca = dar.Cells["dgvdia_vaca"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgvdia_vaca"].Value);
+
                     monto_sueldo = SueldoPorMes(dar, p_diavaca);
                                        
                     dar.Cells["sueldo"].Value = monto_sueldo.ToString("N2");
@@ -822,7 +834,7 @@ namespace Presentacion.Vista
 
                     //monto_v = (monto_posi); -- borro
                     boniNoc = BonificacionNocturna(dar); //OBTENEMOS VALOR BONI NOCTUR.
-                    hro_trabajada = HorasDiarias(dar, boniNoc, dias, diapo); // Y LO RESTAMOS EN HORA. TRABAJADAS.
+                    hro_trabajada = HorasDiarias(dar, boniNoc, dias, diapo, SubsidiosMayorVeinte(dar)); // Y LO RESTAMOS EN HORA. TRABAJADAS.
                     if(xdia_subposi > 0)
                         Dgvplanilla1.Rows[e.RowIndex].Cells["montoposi"].Value = monto_posi.ToString("N2");
 
