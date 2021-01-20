@@ -33,6 +33,7 @@ namespace Presentacion.Subvista
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelLista = new System.Windows.Forms.Panel();
+            this.btncerrar = new System.Windows.Forms.Label();
             this.dgvcomision = new System.Windows.Forms.DataGridView();
             this.id_regimen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.afp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@ namespace Presentacion.Subvista
             this.seguro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tope = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btncerrar = new System.Windows.Forms.Label();
             this.PanelLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcomision)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +57,26 @@ namespace Presentacion.Subvista
             this.PanelLista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelLista.Location = new System.Drawing.Point(0, 0);
             this.PanelLista.Name = "PanelLista";
-            this.PanelLista.Size = new System.Drawing.Size(781, 281);
+            this.PanelLista.Size = new System.Drawing.Size(810, 313);
             this.PanelLista.TabIndex = 1;
             this.PanelLista.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelLista_MouseDown);
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncerrar.ForeColor = System.Drawing.Color.Crimson;
+            this.btncerrar.Location = new System.Drawing.Point(775, 0);
+            this.btncerrar.Margin = new System.Windows.Forms.Padding(0);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(33, 30);
+            this.btncerrar.TabIndex = 12;
+            this.btncerrar.Text = "X";
+            this.btncerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
+            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
+            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
             // dgvcomision
             // 
@@ -71,6 +88,7 @@ namespace Presentacion.Subvista
             this.dgvcomision.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvcomision.BackgroundColor = System.Drawing.Color.White;
             this.dgvcomision.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvcomision.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvcomision.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvcomision.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -102,12 +120,12 @@ namespace Presentacion.Subvista
             this.dgvcomision.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvcomision.EnableHeadersVisualStyles = false;
             this.dgvcomision.GridColor = System.Drawing.Color.Lavender;
-            this.dgvcomision.Location = new System.Drawing.Point(2, 31);
+            this.dgvcomision.Location = new System.Drawing.Point(15, 31);
             this.dgvcomision.MultiSelect = false;
             this.dgvcomision.Name = "dgvcomision";
             this.dgvcomision.ReadOnly = true;
             this.dgvcomision.RowHeadersVisible = false;
-            this.dgvcomision.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvcomision.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvcomision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvcomision.Size = new System.Drawing.Size(784, 247);
             this.dgvcomision.TabIndex = 1;
@@ -174,28 +192,11 @@ namespace Presentacion.Subvista
             this.tope.ReadOnly = true;
             this.tope.Width = 143;
             // 
-            // btncerrar
-            // 
-            this.btncerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncerrar.ForeColor = System.Drawing.Color.Crimson;
-            this.btncerrar.Location = new System.Drawing.Point(747, 0);
-            this.btncerrar.Margin = new System.Windows.Forms.Padding(0);
-            this.btncerrar.Name = "btncerrar";
-            this.btncerrar.Size = new System.Drawing.Size(33, 30);
-            this.btncerrar.TabIndex = 12;
-            this.btncerrar.Text = "X";
-            this.btncerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
-            this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
-            this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
-            this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
-            // 
             // FrmVista_comisionesAfp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 281);
+            this.ClientSize = new System.Drawing.Size(810, 313);
             this.Controls.Add(this.PanelLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVista_comisionesAfp";
