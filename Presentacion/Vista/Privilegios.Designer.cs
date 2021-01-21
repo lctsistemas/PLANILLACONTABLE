@@ -332,6 +332,8 @@ namespace Presentacion.Vista
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnminimizar.TabIndex = 3;
             this.btnminimizar.TabStop = false;
+            this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
+            this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
             // 
             // btncerrar
             // 
@@ -343,6 +345,7 @@ namespace Presentacion.Vista
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btncerrar.TabIndex = 2;
             this.btncerrar.TabStop = false;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
             this.btncerrar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseDown);
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
@@ -378,6 +381,7 @@ namespace Presentacion.Vista
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.cbxrol);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Privilegios";
             this.Text = "Privilegios";
             this.Load += new System.EventHandler(this.Privilegios_Load);
