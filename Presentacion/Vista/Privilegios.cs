@@ -130,7 +130,7 @@ namespace Presentacion.Vista
 
         private void Privilegios_Load(object sender, EventArgs e)
         {
-
+           cbxrol.SelectedIndex = cbxrol.Items.IndexOf(0);
 
         }
 
@@ -151,10 +151,19 @@ namespace Presentacion.Vista
             btncerrar.BackColor = Color.Crimson;
         }
 
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void btnminimizar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(165, 171, 179);
+        }
 
-
-
-
+        private void btnminimizar_MouseLeave(object sender, EventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
     }
 }
