@@ -8,8 +8,7 @@ namespace Comun.Cache
 {
     public class PlanillaCache
     {
-        public static string Subsidiado { get; set; } // para enviar datos a form subsidios.
-        //public static bool Visible { get; set; } //para ocultar los controles de planilla al abril planilla manto.
+        public static string Subsidiado { get; set; } // para enviar datos a form subsidios.        
         public static int p_idplanilla {get; set;}
         public static int p_idmes { get; set; }
         public static int p_idempleado { get; set; }

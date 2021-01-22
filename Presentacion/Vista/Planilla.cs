@@ -16,9 +16,7 @@ namespace Presentacion.Vista
 
         public FrmPlanilla()
         {
-            InitializeComponent();
-            //UserCache.Periodo = "2020";
-            //Initialize();
+            InitializeComponent();         
             
         }
         
@@ -62,23 +60,7 @@ namespace Presentacion.Vista
                 cbotipoplanilla.DisplayMember = "Tipo_Planilla";
                 cbotipoplanilla.ValueMember = "IdTipoPlanilla";
             }
-        }
-
-        private void Initialize()
-        {                     
-            DateTime datefin;
-            datefin = dtpfin.Value;
-           
-            DateTime primerDia = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, 1); //obteniendo el ultimo primer del mes
-            DateTime ultimoDia = primerDia.AddMonths(1).AddDays(-1);//obteniendo el ultimo dia del mes
-            Int32 ultimoDiaInt = ultimoDia.Day;
-
-            dtpini.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, 1);
-            dtpfin.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month+1, ultimoDiaInt);
-            dtppago.Value = new DateTime(Convert.ToInt32(UserCache.Periodo), datefin.Month + 1, ultimoDiaInt);
-
-            //cbxmes.SelectedItem = cbxmes.Items[datefin.Month];seleccionar el ultimo mes ingresado          
-        }
+        }       
 
         //MOSTRAR MES DE MAQUINA ACTUAL AL INICIAR PLANILLA
         private void Mes_actual()
@@ -104,7 +86,7 @@ namespace Presentacion.Vista
 
                 if (frmplaem.Existe(idmes))
                 {
-                    Messages.M_error("La planilla de "+ cbxmes.Text+ " ya existe.");
+                    Messages.M_warning("La planilla de "+ cbxmes.Text+ " ya existe.");
                     return;
                 }
                 np.Idtipo_planilla = Convert.ToInt32(cbotipoplanilla.SelectedValue);

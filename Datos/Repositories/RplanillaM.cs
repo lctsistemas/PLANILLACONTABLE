@@ -29,8 +29,8 @@ namespace Datos.Repositories
                     cmd.Parameters.AddWithValue("@idplanilla", pid_planilla);
                     cmd.Parameters.AddWithValue("@idmes", entity.Pid_mes);
                     cmd.Parameters.AddWithValue("@id_empresaMaestra", entity.Pid_empreMaestra);
-                   // cmd.Parameters.AddWithValue("@fechaini", entity.Pfecha_inicio);
-                    //cmd.Parameters.AddWithValue("@fechafin", entity.Pfecha_fin);
+                    cmd.Parameters.AddWithValue("@fechaini", entity.Pfecha_inicio);
+                    cmd.Parameters.AddWithValue("@fechafin", entity.Pfecha_fin);
                     SqlDataReader reader = cmd.ExecuteReader();
                     using (dt = new DataTable())
                     {

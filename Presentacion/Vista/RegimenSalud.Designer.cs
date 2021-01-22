@@ -353,7 +353,7 @@
             this.Controls.Add(this.panelsalud);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmRegimenSalud";
-            this.Text = "RegimenSalud";
+            this.Text = "Regimen Salud";
             this.Load += new System.EventHandler(this.RegimenSalud_Load);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();

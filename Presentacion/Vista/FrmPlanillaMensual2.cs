@@ -14,8 +14,7 @@ namespace Presentacion.Vista
     public partial class FrmPlanillaMensual2 : Form
     {
         private const string Subsidiado = "SUBSIDIADOS";
-        private const string NoSubsidiado = "NO SUBSIDIADOS";
-        public int xdia_vacaciones = 0; // el valor es enviado desde el formulario susbidios.
+        private const string NoSubsidiado = "NO SUBSIDIADOS";        
         public int xdia_subposi = 0; // el valor es enviado desde el formulario susbidios.
         private static FrmPlanillaMensual2 _intancia;
 
@@ -43,8 +42,9 @@ namespace Presentacion.Vista
         private void TablaPlanilla()
         {
             Dgvplanilla1.Columns["ape_nom"].Frozen = true;
+            Dgvplanilla1.Columns["ape_nom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             Dgvplanilla2.Columns["valor1"].Frozen = true;
-
+            
             Dgvplanilla1.Columns["id_contrato"].Visible = false;//se registrara este id
             Dgvplanilla1.Columns["id_planilla_manto"].Visible = false;//sera para poder actualizar
             Dgvplanilla1.Columns["jornada_labo"].Visible = false;
@@ -55,83 +55,112 @@ namespace Presentacion.Vista
             Dgvplanilla1.Columns["codigo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Dgvplanilla1.Columns["f_ini"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            Dgvplanilla1.Columns["f_ini"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             Dgvplanilla1.Columns["ape_nom"].ReadOnly = true;
             Dgvplanilla1.Columns["regi_pen"].ReadOnly = true;
+            Dgvplanilla1.Columns["regi_pen"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             Dgvplanilla1.Columns["codigo"].ReadOnly = true;
             Dgvplanilla1.Columns["cargo"].ReadOnly = true;
+            Dgvplanilla1.Columns["cargo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             Dgvplanilla1.Columns["f_ini"].ReadOnly = true;
             Dgvplanilla1.Columns["remu"].ReadOnly = true;
 
             Dgvplanilla1.Columns["remu"].DefaultCellStyle.Format = "N2";
-            Dgvplanilla1.Columns["remu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["a_familiar"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["sueldo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
+           
             Dgvplanilla1.Columns["dgv_dias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             Dgvplanilla1.Columns["dia_dominical"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["hora_trabajada"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            Dgvplanilla1.Columns["montod25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montod25"].ReadOnly = true;
-            Dgvplanilla1.Columns["montod35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montod35"].ReadOnly = true;
-
-            Dgvplanilla1.Columns["monton25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["monton25"].ReadOnly = true;
-            Dgvplanilla1.Columns["monton35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["hxd25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["minud25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["hxd35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["minud35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["hxn25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["minun25"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["hxn35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["minun35"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["hrferiado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["minuferiado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["hrboninocturna"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["htarde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["mtarde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
+            
+            Dgvplanilla1.Columns["montod25"].ReadOnly = true;           
+            Dgvplanilla1.Columns["montod35"].ReadOnly = true;         
+            Dgvplanilla1.Columns["monton25"].ReadOnly = true;           
             Dgvplanilla1.Columns["monton35"].ReadOnly = true;
 
-            Dgvplanilla1.Columns["montoferiado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montoferiado"].ReadOnly = true;
+            Dgvplanilla1.Columns["montod25"].DefaultCellStyle.ForeColor = Color.Blue;  //FromArgb(27, 79, 144); //es color del azul de form principal
+            Dgvplanilla1.Columns["montod35"].DefaultCellStyle.ForeColor = Color.Blue;
+            Dgvplanilla1.Columns["monton25"].DefaultCellStyle.ForeColor = Color.Blue;
+            Dgvplanilla1.Columns["monton35"].DefaultCellStyle.ForeColor = Color.Blue;
+            Dgvplanilla1.Columns["totaremu"].DefaultCellStyle.ForeColor = Color.Blue;
+            Dgvplanilla1.Columns["topagar"].DefaultCellStyle.ForeColor = Color.Blue;
 
-            Dgvplanilla1.Columns["montoboninocturno"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montoboninocturno"].ReadOnly = true;
-
-            Dgvplanilla1.Columns["montotarde"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["montoferiado"].ReadOnly = true;           
+            Dgvplanilla1.Columns["montoboninocturno"].ReadOnly = true;           
             Dgvplanilla1.Columns["montotarde"].ReadOnly = true;
-
+            Dgvplanilla1.Columns["hora_trabajada"].ReadOnly = true;
+            Dgvplanilla1.Columns["sueldo"].ReadOnly = true;
+            Dgvplanilla1.Columns["a_familiar"].ReadOnly = true;
             //subsidios
             Dgvplanilla1.Columns["ndias"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["ndias"].ReadOnly = false;
-            Dgvplanilla1.Columns["montosub"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montosub"].ReadOnly = false;
+            Dgvplanilla1.Columns["ndias"].ReadOnly = true;           
+            Dgvplanilla1.Columns["montosub"].ReadOnly = true;
             Dgvplanilla1.Columns["ndiasnega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["ndiasnega"].ReadOnly = false;
-            Dgvplanilla1.Columns["montonega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montonega"].ReadOnly = false;
+            Dgvplanilla1.Columns["ndiasnega"].ReadOnly = true;       
+            Dgvplanilla1.Columns["montonega"].ReadOnly = true;
             Dgvplanilla1.Columns["ndiasposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            Dgvplanilla1.Columns["ndiasposi"].ReadOnly = false;
-            Dgvplanilla1.Columns["montoposi"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["montoposi"].ReadOnly = false;
+            Dgvplanilla1.Columns["ndiasposi"].ReadOnly = true;          
+            Dgvplanilla1.Columns["montoposi"].ReadOnly = true;
 
-            Dgvplanilla1.Columns["thoras"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Dgvplanilla1.Columns["thoras"].ReadOnly = true;
+            Dgvplanilla1.Columns["onp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["comision"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["seguro"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Dgvplanilla1.Columns["spp"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            Dgvplanilla1.Columns["totaremu"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Dgvplanilla1.Columns["onp"].ReadOnly = true;
+            Dgvplanilla1.Columns["comision"].ReadOnly = true;
+            Dgvplanilla1.Columns["seguro"].ReadOnly = true;
+            Dgvplanilla1.Columns["spp"].ReadOnly = true;
+
+            Dgvplanilla1.Columns["thoras"].ReadOnly = true;      
             Dgvplanilla1.Columns["totaremu"].ReadOnly = true;
-
-            //Dgvplanilla1.Columns["reintegro"].DefaultCellStyle.Format = "##.##"; //NO FUN
-            // dgvplanilla1.Columns["hxdiurnas"].Background
+            Dgvplanilla1.Columns["totades"].ReadOnly = true;
+            Dgvplanilla1.Columns["topagar"].ReadOnly = true;
+            Dgvplanilla1.Columns["aportsalud"].ReadOnly = true;
+            Dgvplanilla1.Columns["dgvdia_vaca"].Visible = false;
+           
         }
+
+       /* private void OcultarSoloPrueba()
+        {
+            Dgvplanilla1.Columns["btnnosubsidio"].Visible = false;
+            Dgvplanilla1.Columns["ndiasnega"].Visible = false;
+            Dgvplanilla1.Columns["montonega"].Visible = false;
+            Dgvplanilla1.Columns["ndiasposi"].Visible = false;
+            Dgvplanilla1.Columns["montoposi"].Visible = false;
+            Dgvplanilla1.Columns["reintegro"].Visible = false;
+            Dgvplanilla2.Columns["dreintegro"].Visible = false;
+            Dgvplanilla2.Columns["nosubsi"].Visible = false;
+        }*/
 
         //CARGAR DATAGRI        
         private void FillTabla()
         {
             using (nplam = new NplanillaM())
             {
-                nplam.PId_mes = 9; //PlanillaCache.p_idmes;
-                nplam.PId_empreMaestra = 1; // UserCache.Codigo_empresa;
-                //nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
-                //nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
+                nplam.PId_mes = PlanillaCache.p_idmes;
+                nplam.PId_empreMaestra = UserCache.Codigo_empresa;
+                nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
+                nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
                 Dgvplanilla1.DataSource = nplam.Show_planillaM(PlanillaCache.p_idplanilla);
             }
-
         }
 
         //TOTAL REMUNERACION
-        private void TotalRemuneracion()
-        {
-            DataGridViewRow dar = Dgvplanilla1.CurrentRow;
+        private void TotalRemuneracion(DataGridViewRow dar)
+        {             
             try
             {
                 int diaMes = txtdiasMes.Text.Trim() == string.Empty ? 0 : Convert.ToInt32(txtdiasMes.Text.Trim()); //OBTENEMOS DIAS PARA NO PODER SUMAR LA ASIG FAM. CUANDO TIENE SUBSIDIO MES COMPLETO
@@ -182,10 +211,10 @@ namespace Presentacion.Vista
         {
             try
             {
-                decimal p_totaremu = 0, p_transporte = 0, p_recarconsumo = 0, p_regrati = 0, p_reboni = 0;
+                decimal p_totaremu = 0, p_transporte = 0, p_recarconsumo = 0, p_regrati = 0, p_reboni = 0;               
                 decimal p_totadescuen = 0, p_subto;
 
-                p_totaremu = dar.Cells["totaremu"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["totaremu"].Value);
+                p_totaremu = dar.Cells["totaremu"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["totaremu"].Value);       
                 p_transporte = dar.Cells["transporte"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["transporte"].Value);
                 p_recarconsumo = dar.Cells["recargo_consumo"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["recargo_consumo"].Value);
                 p_regrati = dar.Cells["reintegro_grati"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["reintegro_grati"].Value);
@@ -200,9 +229,35 @@ namespace Presentacion.Vista
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
-        // DESCUENTO O.N.P  Y A.F.P y LOS CONCEPTOS QUE NO ESTAN AFECTOS
+        //TOTAL DESCUENTO
+        private void TotalDescuento(DataGridViewRow dar)
+        {
+            decimal p_comision = 0, p_seguro = 0, p_spp = 0, p_onp = 0, totaAportes = 0;
+            decimal p_saludvida = 0, p_adela = 0, p_presta = 0, p_renta = 0, p_rentencion = 0;
+            decimal p_otrodes = 0, p_totaldes = 0;
+
+            p_onp = dar.Cells["onp"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["onp"].Value);
+            p_comision = dar.Cells["comision"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["comision"].Value);
+            p_seguro = dar.Cells["seguro"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["seguro"].Value);
+            p_spp = dar.Cells["spp"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["spp"].Value);
+          
+            p_saludvida = dar.Cells["essalud_vida"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["essalud_vida"].Value);
+            p_adela = dar.Cells["adelant"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["adelant"].Value);
+            p_presta = dar.Cells["prestam"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["prestam"].Value);
+            p_renta = dar.Cells["renta5cate"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["renta5cate"].Value);
+            p_rentencion = dar.Cells["retencionj"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["retencionj"].Value);
+            p_otrodes = dar.Cells["otrodes"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["otrodes"].Value);
+
+            totaAportes = (p_onp + p_comision + p_seguro + p_spp);
+            p_totaldes = ((p_saludvida + p_adela + p_presta + p_renta + p_rentencion + p_otrodes) + totaAportes);
+            dar.Cells["totades"].Value = p_totaldes.ToString("N2");
+
+        }
+
+        // DESCUENTO O.N.P  Y A.F.P y LOS CONCEPTOS QUE NO ESTAN AFECTOS A ESSALUD
         private double ConceptoNoAfectos(DataGridViewRow dgr)
         {
             double conceptostotal = 0;
@@ -249,6 +304,17 @@ namespace Presentacion.Vista
                 dgr.Cells["seguro"].Value = xsegu.ToString("N2");
                 dgr.Cells["spp"].Value = xapor.ToString("N2");
             }
+        }
+
+        //CALCULO ESSALUD
+        private void MontoEssalud(DataGridViewRow dar)
+        {
+            double p_montosalud = 0, p_montoSubsidio = 0, p_totaremu = 0;
+            p_totaremu = dar.Cells["totaremu"].Value == null ? 0 : Convert.ToDouble(dar.Cells["totaremu"].Value);
+            p_montoSubsidio = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montosub"].Value);
+            p_montosalud = Calculo.EssaludMonto(ConceptoNoAfectos(dar), p_montoSubsidio, p_totaremu, 930, 9);
+
+            dar.Cells["aportsalud"].Value = p_montosalud.ToString("N2");
         }
 
         //METODOS PARA LOS SUBSIDIOS, SUB NEGA, POSI Y BONI NOCTURNA, PARA DETERMINAR HORAS DIARIAS 
@@ -326,7 +392,7 @@ namespace Presentacion.Vista
 
             if (diasMes == 30)
             {
-                if(diasMes <=30)
+                if(p_dias <=30)
                     p_sueldo = ((p_basico / diasMes) * p_dias);
             }
             else if (diasMes == 31)
@@ -419,9 +485,7 @@ namespace Presentacion.Vista
                 }                    
                 else if (p_dias < 29 && p_dias > 0)
                     p_sueldo = ((p_basico / 30) * (p_dias - dia_vacacione));
-            }
-
-            
+            }            
 
             if (diasMes == p_diasub)
                 p_subsidiado = (p_subsidiado - p_valasigFami);
@@ -433,17 +497,12 @@ namespace Presentacion.Vista
 
             p_totasubsidi = (p_subsidiado + p_subsidioposi);
             return (p_sueldo - p_totasubsidi);
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Dgvplanilla1.Rows.Add();
-            //dgvplanilla1.BeginEdit(true);           
-        }
+        }       
 
       
         private void FrmPlanillaMensual_Load(object sender, EventArgs e)
         {
-            //CheckConceptos();
+            CheckConceptos();
             FillTabla();
             TablaPlanilla();
             Tooltip.Title(Picsave_conceptos, "Guardar cambios", false);
@@ -727,37 +786,11 @@ namespace Presentacion.Vista
                 default:
                     break;
             }
-            TotalRemuneracion();
+            TotalRemuneracion(dar);
             Descuento_aportes(dar);
-
-            //DESCUENTOS
-            switch (e.ColumnIndex)
-            {
-                case 63:
-                case 64:
-                case 65:
-                case 66:
-                case 67:
-                case 68:
-                    decimal p_saludvida = 0, p_adela = 0, p_presta = 0, p_renta = 0, p_rentencion = 0;
-                    decimal p_otrodes = 0, p_totaldes = 0;
-
-                    p_saludvida = dar.Cells["essalud_vida"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["essalud_vida"].Value);
-                    p_adela = dar.Cells["adelant"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["adelant"].Value);
-                    p_presta = dar.Cells["prestam"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["prestam"].Value);
-                    p_renta = dar.Cells["renta5cate"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["renta5cate"].Value);
-                    p_rentencion = dar.Cells["retencionj"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["retencionj"].Value);
-                    p_otrodes = dar.Cells["otrodes"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["otrodes"].Value);
-
-                    p_totaldes = (p_saludvida + p_adela + p_presta + p_renta + p_rentencion + p_otrodes);
-                    dar.Cells["totades"].Value = p_totaldes.ToString("N2");
-
-                    break;
-                default:
-                    break;
-            }
+            TotalDescuento(dar);
             TotalAPagar(dar);
-
+            MontoEssalud(dar);
         }
              
         //AQUI ESTAMOS USANDO TIPO DATO DECIMAL
@@ -769,8 +802,7 @@ namespace Presentacion.Vista
                 DataGridViewRow dar= Dgvplanilla1.CurrentRow;
                 int dias = 0, diapo = 0, boniNoc = 0, p_diavaca = 0;
                 double hro_trabajada = 0;
-                decimal monto = 0, monto_posi = 0, monto_sueldo = 0;
-                //decimal xvacaciones = 0; 
+                decimal monto = 0, monto_posi = 0, monto_sueldo = 0;            
                 decimal p_remu = 0, p_asigF = 0, suel_porMes = 0;
 
                 void ValoresInicial()
@@ -805,9 +837,11 @@ namespace Presentacion.Vista
                                        
                     dar.Cells["sueldo"].Value = monto_sueldo.ToString("N2");
 
-                    TotalRemuneracion();
+                    TotalRemuneracion(dar);
                     Descuento_aportes(dar);
+                    TotalDescuento(dar);
                     TotalAPagar(dar);
+                    MontoEssalud(dar);
                 }
 
                 if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
@@ -827,12 +861,10 @@ namespace Presentacion.Vista
                     Dgvplanilla1.Rows[e.RowIndex].Cells["montonega"].Value = monto.ToString("N2");
 
                     //MONTO POSITIVO
-                    diapo = SusidiosPositivo(e);
-                    //xvacaciones = Calculo.MontoSubsidios(xdia_vacaciones, p_remu, diames); --borro
+                    diapo = SusidiosPositivo(e);                  
                     if(xdia_subposi > 0)
                         monto_posi = Calculo.MontoSubsidios(xdia_subposi, p_remu, diames);
 
-                    //monto_v = (monto_posi); -- borro
                     boniNoc = BonificacionNocturna(dar); //OBTENEMOS VALOR BONI NOCTUR.
                     hro_trabajada = HorasDiarias(dar, boniNoc, dias, diapo, SubsidiosMayorVeinte(dar)); // Y LO RESTAMOS EN HORA. TRABAJADAS.
                     if(xdia_subposi > 0)
@@ -845,9 +877,11 @@ namespace Presentacion.Vista
                     suel_porMes = SueldoPorMes(dar, p_diavaca);//EL VALOR DEL SUBSIDIO POSITIVO LO VA RESTAR AL SUELDO.
 
                     dar.Cells["sueldo"].Value = suel_porMes.ToString("N2");
-                    TotalRemuneracion();
+                    TotalRemuneracion(dar);
                     Descuento_aportes(dar);
+                    TotalDescuento(dar);
                     TotalAPagar(dar);
+                    MontoEssalud(dar);
                     xdia_subposi = 0;
                 }
             }
@@ -858,67 +892,18 @@ namespace Presentacion.Vista
         {
             FrmPlanillaEmpleados plaem = (FrmPlanillaEmpleados)Owner;
 
-            //plaem.btncerrar.Enabled = true;
-            //plaem.toolmenu.Visible = true;
+            plaem.btncerrar.Enabled = true;
+            plaem.toolmenu.Visible = true;
             this.Close();
         }       
 
         private void dgvplanilla1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
-             {
-
-                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;
-                //DataGridViewRow dar = dgvplanilla1.CurrentRow;
-                //if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
-                //{
-                //    double hferi = 0;
-                //    Int32 horaferiado = 0, minutoferi = 0;
-                //    if (dar.Cells["hrferiado"].Value == null)
-                //        horaferiado = 0;
-                //    else
-                //        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
-
-
-                //    if (dar.Cells["minuferiado"].Value == null)
-                //        minutoferi = 0;
-                //    else
-                //        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
-
-                //    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
-                //    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
-                //}
-            }
+                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;          
+            
         }
-
-        private void dgvplanilla1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                /*DataGridViewRow dar = dgvplanilla1.CurrentRow;
-                if (dgvplanilla1.Rows[e.RowIndex].Cells["btnnosubsidio"].Selected)
-                {
-                    double hferi = 0;
-                    Int32 horaferiado = 0, minutoferi = 0;
-                    if (dar.Cells["hrferiado"].Value == null)
-                        horaferiado = 0;
-                    else
-                        horaferiado = Convert.ToInt32(dar.Cells["hrferiado"].Value);
-
-
-                    if (dar.Cells["minuferiado"].Value == null)
-                        minutoferi = 0;
-                    else
-                        minutoferi = Convert.ToInt32(dar.Cells["minuferiado"].Value);
-
-                    hferi = Calculo.FeriadoDom(930, 0, horaferiado, minutoferi);
-                    dar.Cells["montoferiado"].Value = hferi.ToString("0.##");
-                }*/
-                // MessageBox.Show("holalalacell enter");
-            }
-
-        }
-
+       
         private void dgvplanilla1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
             //if (e.RowIndex != -1)
@@ -973,12 +958,11 @@ namespace Presentacion.Vista
             //}                        
         }
 
-
         //MOVER VENTANA
         private void menuarchivos_MouseDown(object sender, MouseEventArgs e)
         {
-            WindowsMove.ReleaseCapture();
-            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+            //WindowsMove.ReleaseCapture();
+            //WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         
         private void tbtnlistaconceptos_Click(object sender, EventArgs e)
@@ -1080,8 +1064,6 @@ namespace Presentacion.Vista
             Lblsave_estado.Text = string.Empty;
         }
         #endregion
-
-
 
         #region CHECKED CONCEPTOS PARA LOS CAMPOS DE LA PLANILLA
         private void Chkhdiurnas_CheckedChanged(object sender, EventArgs e)
@@ -1275,7 +1257,6 @@ namespace Presentacion.Vista
         }
         #endregion
 
-
         #region METODOS PARA OCULTAR COLUMNAS DE LA TABLA
         private void HorasDirunas(bool v)
         {
@@ -1344,7 +1325,7 @@ namespace Presentacion.Vista
 
         private void OtroReintegro(bool v)
         {
-            Dgvplanilla2.Columns["dreintegro"].Visible = v;
+            Dgvplanilla2.Columns["dotro_reintegro"].Visible = v;
             Dgvplanilla1.Columns["otros_reintegros"].Visible = v;
         }
 
@@ -1495,17 +1476,7 @@ namespace Presentacion.Vista
             }
         }
 
-        //coloca numeracion en header cell, pero tienes que hacer click para que se coloque.
-        //private void Dgvplanilla1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        //{
-
-        //    this.Dgvplanilla1.Rows[e.RowIndex].HeaderCell.Value = (e.RowIndex + 1).ToString();
-
-        //}
-
-
-       //this.Dgvplanilla1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.Dgvplanilla1_RowPostPaint);
-        
+       
         //Coloca Numeracion en HeaderCell.
         private void Dgvplanilla1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
