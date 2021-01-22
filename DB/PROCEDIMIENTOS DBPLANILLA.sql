@@ -1083,8 +1083,6 @@ WHERE s.tipo_subsidio = @tipo_subsidio
 END
 GO
 
-
-
 --MANTENIMIENTO DETALLE DE SUBSIDIOS (ADD,UPDATE,DELETE)
 ALTER PROC SP_INSERT_SUBSIDIOS
 @id_subsidios int,
