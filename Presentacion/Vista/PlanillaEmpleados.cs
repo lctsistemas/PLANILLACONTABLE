@@ -183,6 +183,10 @@ namespace Presentacion.Vista
             pago = Convert.ToDateTime(dgvplanilla.CurrentRow.Cells[7].Value);
             plm.Txtpago.Text =pago.ToString("dd,MM,yyyy");
 
+            plm.txtdiasMes.Text = dgvplanilla.CurrentRow.Cells[8].Value.ToString();
+            plm.txtid_tipoplanilla.Text = dgvplanilla.CurrentRow.Cells[11].Value.ToString();
+            plm.lbltipoplanilla.Text = dgvplanilla.CurrentRow.Cells[12].Value.ToString();
+
             plm.FormBorderStyle = FormBorderStyle.None;
             plm.TopLevel = false;//como ventana nivel superior
             plm.Dock = DockStyle.Fill;
@@ -197,8 +201,11 @@ namespace Presentacion.Vista
         {
             //WindowsMove.ReleaseCapture();
             //WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
-            //btnrestaurar.Visible = false;
-            //btnmaximizar.Visible = true;
+            //if (this.WindowState == FormWindowState.Normal)
+            //{
+            //    btnrestaurar.Visible = false;
+            //    btnmaximizar.Visible = true;
+            //}                
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -208,9 +215,9 @@ namespace Presentacion.Vista
 
         private void btnmaximizar_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Maximized;
-            //btnrestaurar.Visible = true;
-            //btnmaximizar.Visible = false;
+            this.WindowState = FormWindowState.Maximized;
+            btnrestaurar.Visible = true;
+            btnmaximizar.Visible = false;
         }
 
         private void btnminimizar_Click(object sender, EventArgs e)
@@ -220,9 +227,9 @@ namespace Presentacion.Vista
 
         private void btnrestaurar_Click(object sender, EventArgs e)
         {
-            //this.WindowState = FormWindowState.Normal;
-            //btnrestaurar.Visible = false;
-            //btnmaximizar.Visible = true;
+            this.WindowState = FormWindowState.Normal;
+            btnrestaurar.Visible = false;
+            btnmaximizar.Visible = true;
         }      
 
         //botones colores

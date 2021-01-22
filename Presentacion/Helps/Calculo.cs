@@ -167,5 +167,28 @@ namespace Presentacion.Helps
             return (gratifi * 0.09);
         }
 
+
+        //CALCULO DE ESSALUD
+        public static double EssaludMonto(double noafect, double e_subsidio, double totaremune, double rmv, double porcentaje )
+        {
+            double monto_essalud = 0;
+            double porciento = (porcentaje / 100);
+            double descuento = (noafect + e_subsidio);
+
+            if (e_subsidio > 0)
+                monto_essalud = ((totaremune - descuento) * porciento);
+            else
+            {
+                if (totaremune < rmv)
+                    monto_essalud = (rmv * porciento);
+                else
+                    monto_essalud = ((totaremune - descuento) * porciento);
+            }
+            return monto_essalud;
+        }
+
+
     }
 }
+
+

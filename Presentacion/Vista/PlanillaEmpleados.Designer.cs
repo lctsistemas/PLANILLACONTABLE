@@ -47,6 +47,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tbtcalculo = new System.Windows.Forms.ToolStripButton();
             this.dgvplanilla = new System.Windows.Forms.DataGridView();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
@@ -161,70 +162,81 @@
             this.toolStripSeparator2,
             this.tbtneliminar,
             this.toolStripSeparator3,
-            this.tbtcalculo});
+            this.tbtcalculo,
+            this.toolStripSeparator4});
             this.toolmenu.Location = new System.Drawing.Point(0, 35);
             this.toolmenu.Name = "toolmenu";
             this.toolmenu.Padding = new System.Windows.Forms.Padding(3, 1, 1, 1);
-            this.toolmenu.Size = new System.Drawing.Size(1081, 26);
+            this.toolmenu.Size = new System.Drawing.Size(1081, 45);
             this.toolmenu.TabIndex = 95;
             this.toolmenu.Text = "toolStrip1";
             // 
             // tbtnnuevo
             // 
-            this.tbtnnuevo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnnuevo.AutoSize = false;
+            this.tbtnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnnuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
             this.tbtnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtnnuevo.Name = "tbtnnuevo";
-            this.tbtnnuevo.Size = new System.Drawing.Size(66, 21);
+            this.tbtnnuevo.Size = new System.Drawing.Size(70, 40);
             this.tbtnnuevo.Text = "&Nuevo";
+            this.tbtnnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tbtnnuevo.Click += new System.EventHandler(this.tbtnnuevo_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 24);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 43);
             // 
             // tbtnmodificar
             // 
-            this.tbtnmodificar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnmodificar.AutoSize = false;
+            this.tbtnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnmodificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtnmodificar.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
             this.tbtnmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtnmodificar.Name = "tbtnmodificar";
-            this.tbtnmodificar.Size = new System.Drawing.Size(84, 21);
+            this.tbtnmodificar.Size = new System.Drawing.Size(70, 40);
             this.tbtnmodificar.Text = "&Modificar";
+            this.tbtnmodificar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tbtnmodificar.Click += new System.EventHandler(this.tbtnmodificar_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 24);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 43);
             // 
             // tbtneliminar
             // 
-            this.tbtneliminar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtneliminar.AutoSize = false;
+            this.tbtneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtneliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtneliminar.Image = global::Presentacion.Properties.Resources.borrar;
             this.tbtneliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtneliminar.Name = "tbtneliminar";
-            this.tbtneliminar.Size = new System.Drawing.Size(74, 21);
+            this.tbtneliminar.Size = new System.Drawing.Size(70, 40);
             this.tbtneliminar.Text = "&Eliminar";
+            this.tbtneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tbtneliminar.ToolTipText = "Eliminar";
             this.tbtneliminar.Click += new System.EventHandler(this.tbtneliminar_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 24);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 43);
             // 
             // tbtcalculo
             // 
+            this.tbtcalculo.AutoSize = false;
+            this.tbtcalculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtcalculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtcalculo.Image = global::Presentacion.Properties.Resources.planilla;
             this.tbtcalculo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtcalculo.Name = "tbtcalculo";
-            this.tbtcalculo.Size = new System.Drawing.Size(87, 21);
-            this.tbtcalculo.Text = "Ir al cálculo";
+            this.tbtcalculo.Size = new System.Drawing.Size(70, 40);
+            this.tbtcalculo.Text = "&Cálculo";
+            this.tbtcalculo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tbtcalculo.Click += new System.EventHandler(this.tbtcalculo_Click);
             // 
             // dgvplanilla
@@ -258,7 +270,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvplanilla.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvplanilla.EnableHeadersVisualStyles = false;
-            this.dgvplanilla.Location = new System.Drawing.Point(10, 102);
+            this.dgvplanilla.Location = new System.Drawing.Point(10, 111);
             this.dgvplanilla.MultiSelect = false;
             this.dgvplanilla.Name = "dgvplanilla";
             this.dgvplanilla.ReadOnly = true;
@@ -278,6 +290,11 @@
             this.dgvplanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvplanilla.Size = new System.Drawing.Size(1059, 435);
             this.dgvplanilla.TabIndex = 96;
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 43);
             // 
             // FrmPlanillaEmpleados
             // 
@@ -321,5 +338,6 @@
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btnrestaurar;
         protected internal System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

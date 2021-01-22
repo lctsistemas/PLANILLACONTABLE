@@ -21,7 +21,7 @@ namespace Presentacion.Helps
 
         public static DialogResult M_question(String men)
         {
-            return MessageBox.Show(men, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return MessageBox.Show(men, "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
         }
 
     }

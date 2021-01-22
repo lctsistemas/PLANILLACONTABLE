@@ -925,7 +925,7 @@ namespace Presentacion.Vista
             // 
             // cbotipo_documento
             // 
-            this.cbotipo_documento.DropDownHeight = 100;
+            this.cbotipo_documento.DropDownHeight = 300;
             this.cbotipo_documento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbotipo_documento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbotipo_documento.FormattingEnabled = true;

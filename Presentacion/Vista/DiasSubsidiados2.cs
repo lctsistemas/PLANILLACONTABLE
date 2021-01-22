@@ -26,8 +26,7 @@ namespace Presentacion.Vista
         public FrmDiasSubsidiados2()
         {
             InitializeComponent();
-            Fillcombo(PlanillaCache.Subsidiado);      
-            //PlanillaCache.mensaje
+            Fillcombo(PlanillaCache.Subsidiado);            
             
         }
 
@@ -105,8 +104,7 @@ namespace Presentacion.Vista
             if (val)
                 frpla2.Dgvplanilla1.CurrentRow.Cells[negativo].Value = lbltotalSp.Text;
 
-            frpla2.Dgvplanilla1.CurrentRow.Cells[positivo].Value = subtotal_si;
-            frpla2.xdia_vacaciones =Convert.ToInt32(lblvacaciones.Text);
+            frpla2.Dgvplanilla1.CurrentRow.Cells[positivo].Value = subtotal_si;           
             frpla2.xdia_subposi = Convert.ToInt32(lbltotalSi.Text);
             frpla2.Dgvplanilla1.CurrentRow.Cells["dgvdia_vaca"].Value = Convert.ToInt32(lblvacaciones.Text);
         }
