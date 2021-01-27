@@ -387,13 +387,18 @@ VALUES(17, '28', 'S.I.', 'DIAS LICENCIA POR PATERNIDAD','DIAS LICENCIA POR PATER
 GO
 
 
---TABLA PLANILLA MANTO, AUNA FANTAN MAS CAMPOS QUE TENGO QUE PONER.
+--TABLA PLANILLA MANTO, AUN FANTAN MAS CAMPOS QUE TENGO QUE PONER.
 CREATE TABLE PlanillaManto(
 idplanilla_manto int not null,
 id_contrato int not null,
 id_planilla int not null,
 id_tipo_planilla int not null,--es foreing key
 jornadalaboral varchar(11) not null,--exite en empleado
+pregimen_pension varchar(30) not null, -- exite en
+pvalor_comision decimal(6,2) null,--exite
+pvalor_seguro decimal (6,2)null,--exite
+pvalor_aporte decimal(6,2)null,--exite
+pcargo varchar(40) not null, -- exite en empleado
 basico money not null,--exite en empleado
 dias int null,
 dia_dominical int null,
@@ -469,13 +474,12 @@ aporte_essalud decimal(7,2) null,
 transporte decimal(6,2) null,
 recargo_consumo decimal(6,2)null,
 reintegro_grati decimal(7,2)null,
-reintegro_boni decimal(7,2)null
+reintegro_boni decimal(7,2)null,
+dia_vacaciones int null
 )
 GO
 --ALTER TABLE dbo.PlanillaManto ADD jornadalaboral varchar(11) not null
 
-
-GO
 -- CONCEPTOS PARA PLANILLA
 CREATE TABLE Conceptos(
 id_conceptos int not null,
@@ -532,5 +536,4 @@ bplanilla bit not null
 -PERIODO
 
 */
-go
-select * from cargo join empleado on Cargo.id_cargo=Empleado.id_cargo
+GO

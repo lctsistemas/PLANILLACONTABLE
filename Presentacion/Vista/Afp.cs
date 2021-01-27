@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Comun.Cache;
 using Negocio.Models;
+using Negocio.ValueObjects;
 using Presentacion.Helps;
 namespace Presentacion.Vista
 {
@@ -104,6 +105,7 @@ namespace Presentacion.Vista
 
             using (nafp = new Nafp())
             {
+                nafp.State = EntityState.Modificar;
                 if (nafp.ListNafp == null)
                     nafp.ListNafp = new List<Nafp>();
 
@@ -120,9 +122,19 @@ namespace Presentacion.Vista
                     });
                 }
                 string result = nafp.EditComision();
-                Messages.M_info(result);
-                btnupdate.Enabled = false;
+                //Para ONP
+                nafp.Comision = Convert.ToDecimal(dgvonp.CurrentRow.Cells["onpcomision"].Value);
+                nafp.Id_comision = Convert.ToInt32(dgvonp.CurrentRow.Cells["idcomi"].Value);
+
+                string verificar = nafp.SaveOnp();
+                if (!verificar.Equals(""))
+                {
+                    Messages.M_info(result);
+                    btnupdate.Enabled = false;                    
+                }
                 nafp.ListNafp.Clear();
+                nafp.State = EntityState.Guardar;
+
             }                                    
         }
 

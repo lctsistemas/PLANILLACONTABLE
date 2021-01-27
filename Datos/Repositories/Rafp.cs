@@ -142,8 +142,8 @@ namespace Datos.Repositories
                     }
                     catch (Exception ex)
                     {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
                         sqltra.Rollback();
+                        System.Windows.Forms.MessageBox.Show(ex.Message);                        
                     }
                 }
             }
@@ -161,6 +161,44 @@ namespace Datos.Repositories
             }
             return i;
         }
+
+
+        //EDITAR ONP
+        public int EditOnp(Dafp daf)
+        {
+            result = 0;
+            using (SqlConnection conect = RConexion.Getconectar())
+            {
+                conect.Open();
+                using (SqlTransaction sqltra = conect.BeginTransaction())
+                {
+                    try
+                    {
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.CommandText = "SP_UPDATE_COMISIONES_ONP";
+                            cmd.Connection = conect;
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Transaction = sqltra;
+
+                            cmd.Parameters.Add("@comision", SqlDbType.Decimal).Value = daf.Comision;                           
+                            cmd.Parameters.Add("@idcomision", SqlDbType.Int).Value = daf.Id_comision;
+                            result = cmd.ExecuteNonQuery();
+                        }
+
+                        sqltra.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        sqltra.Rollback();
+                        System.Windows.Forms.MessageBox.Show(ex.Message);                        
+                    }
+                }
+            }
+            return result;
+        }
+
+
 
         //MOSTRAR MES.
         public DataTable Mostrar_mes()

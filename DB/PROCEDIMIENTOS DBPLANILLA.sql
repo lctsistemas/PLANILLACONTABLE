@@ -845,10 +845,7 @@ CREATE PROC SP_INSERT_NUEVA_COMISIONES ---pendiente
 @idmes int,
 @idperiodo int
 AS BEGIN
-CREATE TABLE OPERA(
-id int primary key,
-nombre varchar(50)
-)
+
 select max(id) +1 as canti from OPERA
 
 	DECLARE @idcomi int
@@ -918,6 +915,14 @@ CREATE PROC SP_UPDATE_COMISIONES
 AS BEGIN	
 	UPDATE dbo.ComisionesPension SET comision=@comision, saldo=@saldo, seguro=@seguro, 
 	aporte=@aporte, tope=@tope WHERE idcomision=@idcomision
+END
+GO
+
+ALTER PROC SP_UPDATE_COMISIONES_ONP
+@comision decimal(6,2),
+@idcomision int
+AS BEGIN	
+	UPDATE dbo.ComisionesPension SET comision = @comision WHERE idcomision=@idcomision
 END
 GO
 
@@ -1177,14 +1182,16 @@ ELSE
 END
 GO
 
-CREATE PROC SP_MOSTRAR_SUBSIDIOS 
+ALTER PROC SP_MOSTRAR_SUBSIDIOS
+@tip_subsidio varchar(30)
 AS BEGIN
 SELECT id_subsidios, cod_subsidio,tipo_suspension, descripcion_corta, descripcion_subsidio, tipo_subsidio,descuento FROM Subsidios 
+WHERE Subsidios.tipo_subsidio = @tip_subsidio
 END
 GO
 
 
-/* PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO */
+/*         PROCEDIMIENTO PARA PLANILLA MANTO QUE ESTA TODO EL CALCULO             */
    --te mostrara empleados repetidos, es por las comisiones que estas registrando mensualmente es esta tabla es el where 
 ALTER PROC SP_ShowPlanillaManto
 @idplanilla int,
@@ -1228,14 +1235,125 @@ END
 END
 GO
 
-SELECT * FROM Empleado
-SELECT * FROM RegimenPensionario
-SELECT * FROM ComisionesPension
+CREATE PROCEDURE SP_REGISTRAR_PLANILLAMANTO( --73 campos
+@id_contrato int,
+@id_planilla int,
+@id_tipo_planilla int,
+@jornadalaboral varchar(11), 
+@pregimen_pension varchar(30),
+@pvalor_comision decimal(6,2),
+@pvalor_seguro decimal(6,2),
+@pvalor_aporte decimal(6,2),
+@pcargo varchar(40),
+@basico money,
+@dias int,
+@dia_dominical int,
+@horas_diarias decimal(5,2),
+@sueldo_basico money,
+@asig_familiar decimal(5,2),
+@hora_dvc int,
+@minuto_dvc int,
+@monto_dvc decimal(5,2),
+@hora_dtc int,
+@minuto_dtc int,
+@monto_dtc decimal(5,2),
+@hora_nvc int,
+@minuto_nvc int,
+@monto_nvc decimal(5,2),
+@hora_ntc int,
+@minuto_ntc int,
+@monto_ntc decimal(5,2),
+@hora_feriado int,
+@minuto_feriado int,
+@monto_feriado decimal(5,2),
+@hora_boni int,
+@monto_boni decimal(5,2),
+@uno_mayo decimal(5,2),
+@hora_tarde int,
+@minuto_tarde int,
+@monto_tarde decimal(5,2),
+@dia_sub int,
+@monto_sub decimal(6,2),
+@dia_subnegativo int,
+@monto_subnegativo decimal(6,2),
+@dia_subpositivo int,
+@monto_subpositivo decimal(6,2),
+@total_horaex decimal(7,2),
+@reintegro decimal(6,2),
+@otro_reintegro decimal(6,2),
+@pre_alimentaria decimal(6,2),
+@gratiex decimal(7,2),
+@boniex decimal(7,2),
+@vacaciones decimal(7,2),
+@vaca_trunca decimal(7,2),
+@grati_trunca decimal(7,2),
+@boni_trunca decimal(7,2),
+@cts_trunca decimal(7,2),
+@total_remuneracion decimal(8,2),
+@descuento_onp decimal(8,2),
+@des_comision decimal(8,2),
+@des_seguro decimal(8,2),
+@des_spp decimal(8,2),
+@essalud_vida decimal(6,2),
+@adelanto decimal(6,2),
+@prestamo  decimal(6,2),
+@renta_quinta decimal(7,2),
+@retencion_judicial decimal(6,2),
+@otro_des decimal(6,2),
+@total_desc decimal(7,2),
+@total_pagar decimal(8,2),
+@aporte_essalud  decimal(7,2),
+@transporte decimal(6,2),
+@recargo_consumo decimal(6,2),
+@reintegro_grati decimal(7,2),
+@reintegro_boni decimal(7,2),
+@dia_vacaciones int,
+@mensaje varchar(100) OUTPUT)
+AS BEGIN
+	DECLARE @idplanilla_manto int
+	SET @idplanilla_manto=(SELECT count(pm.idplanilla_manto) FROM dbo.PlanillaManto pm)
+	IF(@idplanilla_manto=0)	
+		SET @idplanilla_manto=1	
+	ELSE
+		SET @idplanilla_manto=(SELECT MAX(pm.idplanilla_manto)+1 FROM dbo.PlanillaManto pm)
+BEGIN TRANSACTION 
+	BEGIN TRY	
+		INSERT INTO PlanillaManto (idplanilla_manto, id_contrato, id_planilla, id_tipo_planilla,
+		jornadalaboral, pregimen_pension, pvalor_comision, pvalor_seguro, pvalor_aporte,
+		pcargo, basico, dias, dia_dominical, horas_diarias, sueldo_basico, asig_familiar,
+		hora_dvc, minuto_dvc, monto_dvc, hora_dtc, minuto_dtc, monto_dtc, hora_nvc, minuto_nvc,
+		monto_nvc, hora_ntc, minuto_ntc, monto_ntc, hora_feriado, minuto_feriado, monto_feriado,
+		hora_boni, monto_boni, uno_mayo, hora_tarde, minuto_tarde, monto_tarde, dia_sub, monto_sub,
+		dia_subnegativo, monto_subnegativo, dia_subpositivo, monto_subpositivo, total_horaex, reintegro,
+		otro_reintegro, pre_alimentaria, gratiex, boniex, vacaciones, vaca_trunca, grati_trunca, boni_trunca,
+		cts_trunca, total_remuneracion, descuento_onp, des_comision, des_seguro, des_spp, essalud_vida, adelanto,
+		prestamo, renta_quinta, retencion_judicial, otro_des, total_desc, total_pagar, aporte_essalud, transporte,
+		recargo_consumo, reintegro_grati, reintegro_boni, dia_vacaciones)
+		VALUES (@idplanilla_manto, @id_contrato, @id_planilla, @id_tipo_planilla,
+		@jornadalaboral, @pregimen_pension, @pvalor_comision, @pvalor_seguro, @pvalor_aporte,
+		@pcargo, @basico, @dias, @dia_dominical, @horas_diarias, @sueldo_basico, @asig_familiar,
+		@hora_dvc, @minuto_dvc, @monto_dvc, @hora_dtc, @minuto_dtc, @monto_dtc, @hora_nvc, @minuto_nvc,
+		@monto_nvc, @hora_ntc, @minuto_ntc, @monto_ntc, @hora_feriado, @minuto_feriado, @monto_feriado,
+		@hora_boni, @monto_boni, @uno_mayo, @hora_tarde, @minuto_tarde, @monto_tarde, @dia_sub, @monto_sub,
+		@dia_subnegativo, @monto_subnegativo, @dia_subpositivo, @monto_subpositivo, @total_horaex, @reintegro,
+		@otro_reintegro, @pre_alimentaria, @gratiex, @boniex, @vacaciones, @vaca_trunca, @grati_trunca, @boni_trunca,
+		@cts_trunca, @total_remuneracion, @descuento_onp, @des_comision, @des_seguro, @des_spp, @essalud_vida, @adelanto,
+		@prestamo, @renta_quinta, @retencion_judicial, @otro_des, @total_desc, @total_pagar, @aporte_essalud, @transporte,
+		@recargo_consumo, @reintegro_grati, @reintegro_boni, @dia_vacaciones)
+
+		SET @mensaje='¡Se registro la planilla!'
+		COMMIT TRANSACTION
+	END TRY
+		BEGIN CATCH
+			SET @mensaje= ERROR_MESSAGE()
+			ROLLBACK TRANSACTION
+		END CATCH
+
+END
+
+
 GO
-
-
-
-/* PROCEDIMIENTO PARA CONCEPTOS DE PLANILLA */
+/*   PROCEDIMIENTO PARA CONCEPTOS DE PLANILLA     */
 ALTER PROC SP_RegistroConceptos
 @id_conceptos int,
 @id_mes int,

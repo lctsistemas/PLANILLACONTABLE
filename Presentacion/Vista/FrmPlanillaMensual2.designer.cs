@@ -47,12 +47,12 @@
             this.Tbtsbs = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbtspp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolbotones = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.TbtnguardarPlanilla = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.TbtneditarPlanilla = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.panelplanilla = new System.Windows.Forms.Panel();
-            this.txtdiasMes = new System.Windows.Forms.TextBox();
+            this.lbltipoplanilla = new System.Windows.Forms.Label();
             this.Dgvplanilla1 = new System.Windows.Forms.DataGridView();
             this.id_contrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_planilla_manto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,6 +187,8 @@
             this.Chkhdiurnas = new System.Windows.Forms.CheckBox();
             this.Lblperiodo = new System.Windows.Forms.Label();
             this.Groupplanilla = new System.Windows.Forms.GroupBox();
+            this.txtid_tipoplanilla = new System.Windows.Forms.TextBox();
+            this.txtdiasMes = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -195,8 +197,6 @@
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtid_tipoplanilla = new System.Windows.Forms.TextBox();
-            this.lbltipoplanilla = new System.Windows.Forms.Label();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -215,7 +215,7 @@
             this.ayudaToolStripMenuItem});
             this.menuarchivos.Location = new System.Drawing.Point(0, 0);
             this.menuarchivos.Name = "menuarchivos";
-            this.menuarchivos.Size = new System.Drawing.Size(1243, 24);
+            this.menuarchivos.Size = new System.Drawing.Size(1243, 25);
             this.menuarchivos.TabIndex = 9;
             this.menuarchivos.Text = "menuStrip1";
             this.menuarchivos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuarchivos_MouseDown);
@@ -225,8 +225,9 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bloquearPlanillaToolStripMenuItem,
             this.tbtnsalir});
+            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(69, 21);
             this.archivoToolStripMenuItem.Text = "&Archivo";
             // 
             // bloquearPlanillaToolStripMenuItem
@@ -234,7 +235,7 @@
             this.bloquearPlanillaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.bloquearPlanillaToolStripMenuItem.Name = "bloquearPlanillaToolStripMenuItem";
-            this.bloquearPlanillaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.bloquearPlanillaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.bloquearPlanillaToolStripMenuItem.Text = "&Bloquear planilla";
             // 
             // toolStripTextBox1
@@ -246,7 +247,7 @@
             // tbtnsalir
             // 
             this.tbtnsalir.Name = "tbtnsalir";
-            this.tbtnsalir.Size = new System.Drawing.Size(162, 22);
+            this.tbtnsalir.Size = new System.Drawing.Size(184, 22);
             this.tbtnsalir.Text = "&Salir";
             this.tbtnsalir.Click += new System.EventHandler(this.tbtnsalir_Click);
             // 
@@ -256,15 +257,16 @@
             this.tbtnlistaconceptos,
             this.tbtnbarraerramientas,
             this.tbtncomi_pri_spp});
+            this.verToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(41, 21);
             this.verToolStripMenuItem.Text = "&Ver";
             // 
             // tbtnlistaconceptos
             // 
             this.tbtnlistaconceptos.CheckOnClick = true;
             this.tbtnlistaconceptos.Name = "tbtnlistaconceptos";
-            this.tbtnlistaconceptos.Size = new System.Drawing.Size(230, 22);
+            this.tbtnlistaconceptos.Size = new System.Drawing.Size(268, 22);
             this.tbtnlistaconceptos.Text = "&Mantenimiento de conceptos";
             this.tbtnlistaconceptos.Click += new System.EventHandler(this.tbtnlistaconceptos_Click);
             // 
@@ -272,14 +274,14 @@
             // 
             this.tbtnbarraerramientas.CheckOnClick = true;
             this.tbtnbarraerramientas.Name = "tbtnbarraerramientas";
-            this.tbtnbarraerramientas.Size = new System.Drawing.Size(230, 22);
+            this.tbtnbarraerramientas.Size = new System.Drawing.Size(268, 22);
             this.tbtnbarraerramientas.Text = "&Barra de herramientas";
             this.tbtnbarraerramientas.Click += new System.EventHandler(this.tbtnbarraerramientas_Click);
             // 
             // tbtncomi_pri_spp
             // 
             this.tbtncomi_pri_spp.Name = "tbtncomi_pri_spp";
-            this.tbtncomi_pri_spp.Size = new System.Drawing.Size(230, 22);
+            this.tbtncomi_pri_spp.Size = new System.Drawing.Size(268, 22);
             this.tbtncomi_pri_spp.Text = "&Comisiones y Primas del SPP";
             this.tbtncomi_pri_spp.Click += new System.EventHandler(this.tbtncomi_pri_spp_Click);
             // 
@@ -288,21 +290,22 @@
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Tbtsbs,
             this.Tbtspp});
+            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
             this.ayudaToolStripMenuItem.Text = "A&yuda";
             // 
             // Tbtsbs
             // 
             this.Tbtsbs.Name = "Tbtsbs";
-            this.Tbtsbs.Size = new System.Drawing.Size(224, 22);
+            this.Tbtsbs.Size = new System.Drawing.Size(257, 22);
             this.Tbtsbs.Text = "Página Web Comisiones SBS";
             this.Tbtsbs.Click += new System.EventHandler(this.Tbtsbs_Click);
             // 
             // Tbtspp
             // 
             this.Tbtspp.Name = "Tbtspp";
-            this.Tbtspp.Size = new System.Drawing.Size(224, 22);
+            this.Tbtspp.Size = new System.Drawing.Size(257, 22);
             this.Tbtspp.Text = "Consulta Afiliado en el SPP";
             this.Tbtspp.Click += new System.EventHandler(this.Tbtspp_Click);
             // 
@@ -310,38 +313,41 @@
             // 
             this.toolbotones.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolbotones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.TbtnguardarPlanilla,
             this.toolStripSeparator1,
-            this.toolStripButton2,
+            this.TbtneditarPlanilla,
             this.toolStripSeparator2});
-            this.toolbotones.Location = new System.Drawing.Point(0, 24);
+            this.toolbotones.Location = new System.Drawing.Point(0, 25);
             this.toolbotones.Name = "toolbotones";
             this.toolbotones.Size = new System.Drawing.Size(1243, 25);
             this.toolbotones.TabIndex = 10;
             this.toolbotones.Text = "toolStrip1";
             this.toolbotones.Visible = false;
             // 
-            // toolStripButton1
+            // TbtnguardarPlanilla
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.toolStripButton1.Size = new System.Drawing.Size(117, 22);
-            this.toolStripButton1.Text = "&Guardar planilla";
+            this.TbtnguardarPlanilla.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbtnguardarPlanilla.Image = ((System.Drawing.Image)(resources.GetObject("TbtnguardarPlanilla.Image")));
+            this.TbtnguardarPlanilla.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TbtnguardarPlanilla.Name = "TbtnguardarPlanilla";
+            this.TbtnguardarPlanilla.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.TbtnguardarPlanilla.Size = new System.Drawing.Size(140, 22);
+            this.TbtnguardarPlanilla.Text = "&Guardar planilla";
+            this.TbtnguardarPlanilla.Click += new System.EventHandler(this.TbtnguardarPlanilla_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton2
+            // TbtneditarPlanilla
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(119, 22);
-            this.toolStripButton2.Text = "&Modificar planilla";
+            this.TbtneditarPlanilla.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbtneditarPlanilla.Image = ((System.Drawing.Image)(resources.GetObject("TbtneditarPlanilla.Image")));
+            this.TbtneditarPlanilla.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TbtneditarPlanilla.Name = "TbtneditarPlanilla";
+            this.TbtneditarPlanilla.Size = new System.Drawing.Size(139, 22);
+            this.TbtneditarPlanilla.Text = "&Modificar planilla";
             // 
             // toolStripSeparator2
             // 
@@ -360,19 +366,21 @@
             this.panelplanilla.Controls.Add(this.label5);
             this.panelplanilla.Controls.Add(this.label4);
             this.panelplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelplanilla.Location = new System.Drawing.Point(0, 24);
+            this.panelplanilla.Location = new System.Drawing.Point(0, 50);
             this.panelplanilla.Name = "panelplanilla";
-            this.panelplanilla.Size = new System.Drawing.Size(1243, 581);
+            this.panelplanilla.Size = new System.Drawing.Size(1243, 555);
             this.panelplanilla.TabIndex = 11;
             // 
-            // txtdiasMes
+            // lbltipoplanilla
             // 
-            this.txtdiasMes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdiasMes.Location = new System.Drawing.Point(262, 45);
-            this.txtdiasMes.Name = "txtdiasMes";
-            this.txtdiasMes.Size = new System.Drawing.Size(30, 20);
-            this.txtdiasMes.TabIndex = 18;
-            this.txtdiasMes.Visible = false;
+            this.lbltipoplanilla.AutoSize = true;
+            this.lbltipoplanilla.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.lbltipoplanilla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbltipoplanilla.Location = new System.Drawing.Point(134, 41);
+            this.lbltipoplanilla.Name = "lbltipoplanilla";
+            this.lbltipoplanilla.Size = new System.Drawing.Size(21, 17);
+            this.lbltipoplanilla.TabIndex = 18;
+            this.lbltipoplanilla.Text = "TP";
             // 
             // Dgvplanilla1
             // 
@@ -495,7 +503,7 @@
             this.Dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Dgvplanilla1.RowHeadersWidth = 28;
             this.Dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Dgvplanilla1.Size = new System.Drawing.Size(1225, 363);
+            this.Dgvplanilla1.Size = new System.Drawing.Size(1225, 337);
             this.Dgvplanilla1.TabIndex = 17;
             this.Dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.Dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellContentClick);
@@ -1695,6 +1703,24 @@
             this.Groupplanilla.TabIndex = 9;
             this.Groupplanilla.TabStop = false;
             // 
+            // txtid_tipoplanilla
+            // 
+            this.txtid_tipoplanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtid_tipoplanilla.Location = new System.Drawing.Point(298, 45);
+            this.txtid_tipoplanilla.Name = "txtid_tipoplanilla";
+            this.txtid_tipoplanilla.Size = new System.Drawing.Size(30, 20);
+            this.txtid_tipoplanilla.TabIndex = 18;
+            this.txtid_tipoplanilla.Visible = false;
+            // 
+            // txtdiasMes
+            // 
+            this.txtdiasMes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtdiasMes.Location = new System.Drawing.Point(262, 45);
+            this.txtdiasMes.Name = "txtdiasMes";
+            this.txtdiasMes.Size = new System.Drawing.Size(30, 20);
+            this.txtdiasMes.TabIndex = 18;
+            this.txtdiasMes.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1791,26 +1817,6 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
             // 
-            // txtid_tipoplanilla
-            // 
-            this.txtid_tipoplanilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtid_tipoplanilla.Location = new System.Drawing.Point(298, 45);
-            this.txtid_tipoplanilla.Name = "txtid_tipoplanilla";
-            this.txtid_tipoplanilla.Size = new System.Drawing.Size(30, 20);
-            this.txtid_tipoplanilla.TabIndex = 18;
-            this.txtid_tipoplanilla.Visible = false;
-            // 
-            // lbltipoplanilla
-            // 
-            this.lbltipoplanilla.AutoSize = true;
-            this.lbltipoplanilla.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.lbltipoplanilla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltipoplanilla.Location = new System.Drawing.Point(134, 41);
-            this.lbltipoplanilla.Name = "lbltipoplanilla";
-            this.lbltipoplanilla.Size = new System.Drawing.Size(21, 17);
-            this.lbltipoplanilla.TabIndex = 18;
-            this.lbltipoplanilla.Text = "TP";
-            // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1852,9 +1858,9 @@
         private System.Windows.Forms.ToolStripMenuItem tbtnbarraerramientas;
         private System.Windows.Forms.ToolStripMenuItem tbtncomi_pri_spp;
         private System.Windows.Forms.ToolStrip toolbotones;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton TbtnguardarPlanilla;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton TbtneditarPlanilla;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Panel panelplanilla;
         private System.Windows.Forms.GroupBox Groupplanilla;
