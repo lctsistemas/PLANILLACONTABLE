@@ -33,8 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_subsidio = new System.Windows.Forms.Panel();
             this.lbltotal = new System.Windows.Forms.Label();
+            this.rbnosubsidios = new System.Windows.Forms.RadioButton();
+            this.rbsubsidios = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,7 +63,7 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.tbtneliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel1.SuspendLayout();
+            this.panel_subsidio.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).BeginInit();
             this.panel2.SuspendLayout();
@@ -72,29 +74,59 @@
             this.barra_herramientas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_subsidio
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lbltotal);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.dgvsubsidio);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(972, 614);
-            this.panel1.TabIndex = 9;
+            this.panel_subsidio.BackColor = System.Drawing.Color.White;
+            this.panel_subsidio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_subsidio.Controls.Add(this.lbltotal);
+            this.panel_subsidio.Controls.Add(this.rbnosubsidios);
+            this.panel_subsidio.Controls.Add(this.rbsubsidios);
+            this.panel_subsidio.Controls.Add(this.groupBox1);
+            this.panel_subsidio.Controls.Add(this.dgvsubsidio);
+            this.panel_subsidio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_subsidio.Location = new System.Drawing.Point(0, 0);
+            this.panel_subsidio.Name = "panel_subsidio";
+            this.panel_subsidio.Size = new System.Drawing.Size(972, 630);
+            this.panel_subsidio.TabIndex = 9;
             // 
             // lbltotal
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lbltotal.Location = new System.Drawing.Point(11, 235);
+            this.lbltotal.Location = new System.Drawing.Point(813, 233);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(47, 17);
             this.lbltotal.TabIndex = 87;
             this.lbltotal.Text = "label7";
+            // 
+            // rbnosubsidios
+            // 
+            this.rbnosubsidios.AutoSize = true;
+            this.rbnosubsidios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.rbnosubsidios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rbnosubsidios.Location = new System.Drawing.Point(137, 233);
+            this.rbnosubsidios.Name = "rbnosubsidios";
+            this.rbnosubsidios.Size = new System.Drawing.Size(222, 20);
+            this.rbnosubsidios.TabIndex = 87;
+            this.rbnosubsidios.TabStop = true;
+            this.rbnosubsidios.Text = "No Laborados | No Subsidiados.";
+            this.rbnosubsidios.UseVisualStyleBackColor = true;
+            this.rbnosubsidios.CheckedChanged += new System.EventHandler(this.rbnosubsidios_CheckedChanged);
+            // 
+            // rbsubsidios
+            // 
+            this.rbsubsidios.AutoSize = true;
+            this.rbsubsidios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.rbsubsidios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rbsubsidios.Location = new System.Drawing.Point(23, 233);
+            this.rbsubsidios.Name = "rbsubsidios";
+            this.rbsubsidios.Size = new System.Drawing.Size(105, 20);
+            this.rbsubsidios.TabIndex = 87;
+            this.rbsubsidios.TabStop = true;
+            this.rbsubsidios.Text = "Subsidiados.";
+            this.rbsubsidios.UseVisualStyleBackColor = true;
+            this.rbsubsidios.CheckedChanged += new System.EventHandler(this.rbsubsidios_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -291,7 +323,7 @@
             this.dgvsubsidio.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvsubsidio.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvsubsidio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvsubsidio.Size = new System.Drawing.Size(947, 349);
+            this.dgvsubsidio.Size = new System.Drawing.Size(947, 364);
             this.dgvsubsidio.TabIndex = 86;
             this.dgvsubsidio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellClick);
             this.dgvsubsidio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvsubsidio_CellDoubleClick);
@@ -402,10 +434,11 @@
             // 
             // tbtnnuevo
             // 
+            this.tbtnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
             this.tbtnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtnnuevo.Name = "tbtnnuevo";
-            this.tbtnnuevo.Size = new System.Drawing.Size(62, 20);
+            this.tbtnnuevo.Size = new System.Drawing.Size(68, 20);
             this.tbtnnuevo.Text = "Nuevo";
             this.tbtnnuevo.Click += new System.EventHandler(this.tbtnnuevo_Click);
             // 
@@ -416,10 +449,11 @@
             // 
             // tbtnguardar
             // 
+            this.tbtnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnguardar.Image = global::Presentacion.Properties.Resources.Save_37110;
             this.tbtnguardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtnguardar.Name = "tbtnguardar";
-            this.tbtnguardar.Size = new System.Drawing.Size(69, 20);
+            this.tbtnguardar.Size = new System.Drawing.Size(77, 20);
             this.tbtnguardar.Text = "Guardar";
             this.tbtnguardar.Click += new System.EventHandler(this.tbtnguardar_Click);
             // 
@@ -430,10 +464,11 @@
             // 
             // tbtneliminar
             // 
+            this.tbtneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtneliminar.Image = global::Presentacion.Properties.Resources.borrar;
             this.tbtneliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tbtneliminar.Name = "tbtneliminar";
-            this.tbtneliminar.Size = new System.Drawing.Size(70, 20);
+            this.tbtneliminar.Size = new System.Drawing.Size(76, 20);
             this.tbtneliminar.Text = "Eliminar";
             this.tbtneliminar.Click += new System.EventHandler(this.tbtneliminar_Click);
             // 
@@ -446,17 +481,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 614);
+            this.ClientSize = new System.Drawing.Size(972, 630);
             this.Controls.Add(this.barra_herramientas);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_subsidio);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmsubsidios";
             this.Text = "Subsidios";
             this.Load += new System.EventHandler(this.Subsidios_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_subsidio.ResumeLayout(false);
+            this.panel_subsidio.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsubsidio)).EndInit();
@@ -473,7 +508,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_subsidio;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtdescSubsi;
         private System.Windows.Forms.ComboBox cbxsuspension;
@@ -501,5 +536,7 @@
         private System.Windows.Forms.PictureBox btnmaximizar;
         private System.Windows.Forms.PictureBox btnrestaurar;
         private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.RadioButton rbnosubsidios;
+        private System.Windows.Forms.RadioButton rbsubsidios;
     }
 }

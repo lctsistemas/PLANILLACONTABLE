@@ -46,8 +46,8 @@
             this.tbtneliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tbtcalculo = new System.Windows.Forms.ToolStripButton();
-            this.dgvplanilla = new System.Windows.Forms.DataGridView();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.dgvplanilla = new System.Windows.Forms.DataGridView();
             this.paneltitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnmaximizar)).BeginInit();
@@ -174,7 +174,7 @@
             // tbtnnuevo
             // 
             this.tbtnnuevo.AutoSize = false;
-            this.tbtnnuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnnuevo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnnuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtnnuevo.Image = global::Presentacion.Properties.Resources.agregar;
             this.tbtnnuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -192,7 +192,7 @@
             // tbtnmodificar
             // 
             this.tbtnmodificar.AutoSize = false;
-            this.tbtnmodificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtnmodificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtnmodificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtnmodificar.Image = global::Presentacion.Properties.Resources.DocumentEdit_40924;
             this.tbtnmodificar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -210,7 +210,7 @@
             // tbtneliminar
             // 
             this.tbtneliminar.AutoSize = false;
-            this.tbtneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtneliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtneliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtneliminar.Image = global::Presentacion.Properties.Resources.borrar;
             this.tbtneliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -229,7 +229,7 @@
             // tbtcalculo
             // 
             this.tbtcalculo.AutoSize = false;
-            this.tbtcalculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtcalculo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbtcalculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbtcalculo.Image = global::Presentacion.Properties.Resources.planilla;
             this.tbtcalculo.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -238,6 +238,11 @@
             this.tbtcalculo.Text = "&Cálculo";
             this.tbtcalculo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.tbtcalculo.Click += new System.EventHandler(this.tbtcalculo_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 43);
             // 
             // dgvplanilla
             // 
@@ -290,11 +295,6 @@
             this.dgvplanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvplanilla.Size = new System.Drawing.Size(1059, 435);
             this.dgvplanilla.TabIndex = 96;
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 43);
             // 
             // FrmPlanillaEmpleados
             // 

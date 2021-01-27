@@ -64,10 +64,10 @@ namespace Negocio.Models
                         PVaporte = Convert.ToDecimal(item[8]),
                         PCargop = item[9].ToString(),
                         PFecha_inicio = Convert.ToDateTime(item[10]),                      
-                        //PFecha_fin = Convert.ToDateTime(item[11]),                      
+                        //PFecha_fin = Convert.ToDateTime(item[11]),                   
                         PRemune_basica = Convert.ToDecimal(item[12]),
                         //PAsig_familiar = item[13].ToString() == "0.00" || item[13].ToString() == "0,00" ? null : item[13].ToString()
-                        PAsig_familiar = item[13].ToString() == "0.00" ? null : item[13].ToString()
+                        PAsig_familiar = item[13].ToString() == "0" ? null : item[13].ToString()
                         //PAsig_familiar = item[13].ToString().Replace(",",".") == "0.00" ? null : item[13].ToString()
                        
                     });

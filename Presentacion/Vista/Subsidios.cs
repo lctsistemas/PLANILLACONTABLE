@@ -17,17 +17,20 @@ namespace Presentacion.Vista
     public partial class frmsubsidios : Form
     {
         String result;
+        string msg; // variable almacena tipo subsidio
         private NSubsidios ns = new NSubsidios();
         public frmsubsidios()
         {
             InitializeComponent();
             Permisos();
+            
         }
 
-        private void ShowSubsidio()
+        private void ShowSubsidio(string tip_subNosub)
         {
             using (ns)
             {
+                ns.Tipo_subsidio = tip_subNosub;
                 dgvsubsidio.DataSource = ns.Getall();
                 lbltotal.Text = "Total registro:  " + dgvsubsidio.RowCount;
             }
@@ -67,17 +70,13 @@ namespace Presentacion.Vista
             dgvsubsidio.Columns[5].Width = 100;
 
             dgvsubsidio.Columns[6].HeaderText = "DESCUENTO";
-            dgvsubsidio.Columns[6].Width = 90;
+            dgvsubsidio.Columns[6].Width = 107;
 
             dgvsubsidio.Columns[7].HeaderText = "state";
             dgvsubsidio.Columns[7].Width = 50;
             dgvsubsidio.Columns[7].Visible = false;
 
-            //foreach (DataGridViewColumn col in dgvsubsidio.Columns)
-            //{
-            //    col.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //    col.HeaderCell.Style.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Pixel);
-            //}
+
         }
 
         //VALIDAR DATOS PARA ERROR PROVIDER
@@ -123,7 +122,7 @@ namespace Presentacion.Vista
         {
             Habilitar(true);
             limpiar();
-            
+            ValidateError.validate.Clear();
         }
 
         private void tbtnguardar_Click(object sender, EventArgs e)
@@ -149,7 +148,7 @@ namespace Presentacion.Vista
                     Messages.M_warning(result);
                 else
                 {
-                    ShowSubsidio();
+                    ShowSubsidio(msg);
                     limpiar();
                     Messages.M_info(result);
                 }
@@ -174,7 +173,7 @@ namespace Presentacion.Vista
                             Messages.M_warning(result);
                         else
                         {
-                            ShowSubsidio();
+                            ShowSubsidio(msg);
                             limpiar();
                             Messages.M_info(result);
                         }
@@ -191,8 +190,10 @@ namespace Presentacion.Vista
 
         private void Subsidios_Load(object sender, EventArgs e)
         {
-            ShowSubsidio();
-            Tabla();
+            rbnosubsidios.Checked = true;
+            if (dgvsubsidio.RowCount > 0)
+                Tabla();
+
             Habilitar(false);
             cbxsuspension.Items.Add("S.P.");
             cbxsuspension.Items.Add("S.I.");
@@ -310,6 +311,20 @@ namespace Presentacion.Vista
         {
             if (e.RowIndex > -1)
                 tbtneliminar.Enabled = true;
+        }
+
+        private void rbsubsidios_CheckedChanged(object sender, EventArgs e)
+        {
+            msg = string.Empty;
+            msg = "SUBSIDIADOS";
+            ShowSubsidio(msg);
+        }
+
+        private void rbnosubsidios_CheckedChanged(object sender, EventArgs e)
+        {
+            msg = string.Empty;
+            msg = "NO SUBSIDIADOS";
+            ShowSubsidio(msg);
         }
     }
 }

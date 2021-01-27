@@ -21,10 +21,12 @@ namespace Negocio.Models
 
         public EntityState state { get; set; }
         private ISubsidios rsubsidios;
+        DSubsidios ds = null;    
         private List<NSubsidios> listasubsidios;
         public NSubsidios()
         {
             rsubsidios = new RSubsidios();
+            ds = new DSubsidios();
         }
 
         public string SaveChanges()
@@ -73,8 +75,9 @@ namespace Negocio.Models
 
 
         public List<NSubsidios> Getall()
-        {
-            using (DataTable dt = rsubsidios.GetData(null))
+        {           
+            ds.Tipo_subsidio = Tipo_subsidio;
+            using (DataTable dt = rsubsidios.GetData(ds))
             {
                 listasubsidios = new List<NSubsidios>();
                 foreach (DataRow item in dt.Rows)
@@ -97,8 +100,7 @@ namespace Negocio.Models
 
         //MOSTRAR SUBSIDIO EN COMBOBOX
         public IEnumerable<NSubsidios> ShowSubsidio()
-        {
-            DSubsidios ds = new DSubsidios();
+        {           
             ds.Tipo_subsidio = Tipo_subsidio;
             if (listasubsidios == null)
                 listasubsidios = new List<NSubsidios>();

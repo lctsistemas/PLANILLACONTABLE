@@ -211,15 +211,15 @@ namespace Presentacion.Vista
         {
             try
             {
-                decimal p_totaremu = 0, p_transporte = 0, p_recarconsumo = 0, p_regrati = 0, p_reboni = 0;               
-                decimal p_totadescuen = 0, p_subto;
+                double p_totaremu = 0, p_transporte = 0, p_recarconsumo = 0, p_regrati = 0, p_reboni = 0;               
+                double p_totadescuen = 0, p_subto;
 
-                p_totaremu = dar.Cells["totaremu"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["totaremu"].Value);       
-                p_transporte = dar.Cells["transporte"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["transporte"].Value);
-                p_recarconsumo = dar.Cells["recargo_consumo"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["recargo_consumo"].Value);
-                p_regrati = dar.Cells["reintegro_grati"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["reintegro_grati"].Value);
-                p_reboni = dar.Cells["reintegro_boni"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["reintegro_boni"].Value);
-                p_totadescuen = dar.Cells["totades"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["totades"].Value);
+                p_totaremu = dar.Cells["totaremu"].Value == null ? 0 : Convert.ToDouble(dar.Cells["totaremu"].Value);       
+                p_transporte = dar.Cells["transporte"].Value == null ? 0 : Convert.ToDouble(dar.Cells["transporte"].Value);
+                p_recarconsumo = dar.Cells["recargo_consumo"].Value == null ? 0 : Convert.ToDouble(dar.Cells["recargo_consumo"].Value);
+                p_regrati = dar.Cells["reintegro_grati"].Value == null ? 0 : Convert.ToDouble(dar.Cells["reintegro_grati"].Value);
+                p_reboni = dar.Cells["reintegro_boni"].Value == null ? 0 : Convert.ToDouble(dar.Cells["reintegro_boni"].Value);
+                p_totadescuen = dar.Cells["totades"].Value == null ? 0 : Convert.ToDouble(dar.Cells["totades"].Value);
 
                 p_subto = ((p_totaremu + p_transporte + p_recarconsumo + p_regrati + p_reboni) - p_totadescuen);
                 dar.Cells["topagar"].Value = p_subto.ToString("N2");
@@ -235,21 +235,21 @@ namespace Presentacion.Vista
         //TOTAL DESCUENTO
         private void TotalDescuento(DataGridViewRow dar)
         {
-            decimal p_comision = 0, p_seguro = 0, p_spp = 0, p_onp = 0, totaAportes = 0;
-            decimal p_saludvida = 0, p_adela = 0, p_presta = 0, p_renta = 0, p_rentencion = 0;
-            decimal p_otrodes = 0, p_totaldes = 0;
+            double p_comision = 0, p_seguro = 0, p_spp = 0, p_onp = 0, totaAportes = 0;
+            double p_saludvida = 0, p_adela = 0, p_presta = 0, p_renta = 0, p_rentencion = 0;
+            double p_otrodes = 0, p_totaldes = 0;
 
-            p_onp = dar.Cells["onp"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["onp"].Value);
-            p_comision = dar.Cells["comision"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["comision"].Value);
-            p_seguro = dar.Cells["seguro"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["seguro"].Value);
-            p_spp = dar.Cells["spp"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["spp"].Value);
+            p_onp = dar.Cells["onp"].Value == null ? 0 : Convert.ToDouble(dar.Cells["onp"].Value);
+            p_comision = dar.Cells["comision"].Value == null ? 0 : Convert.ToDouble(dar.Cells["comision"].Value);
+            p_seguro = dar.Cells["seguro"].Value == null ? 0 : Convert.ToDouble(dar.Cells["seguro"].Value);
+            p_spp = dar.Cells["spp"].Value == null ? 0 : Convert.ToDouble(dar.Cells["spp"].Value);
           
-            p_saludvida = dar.Cells["essalud_vida"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["essalud_vida"].Value);
-            p_adela = dar.Cells["adelant"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["adelant"].Value);
-            p_presta = dar.Cells["prestam"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["prestam"].Value);
-            p_renta = dar.Cells["renta5cate"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["renta5cate"].Value);
-            p_rentencion = dar.Cells["retencionj"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["retencionj"].Value);
-            p_otrodes = dar.Cells["otrodes"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["otrodes"].Value);
+            p_saludvida = dar.Cells["essalud_vida"].Value == null ? 0 : Convert.ToDouble(dar.Cells["essalud_vida"].Value);
+            p_adela = dar.Cells["adelant"].Value == null ? 0 : Convert.ToDouble(dar.Cells["adelant"].Value);
+            p_presta = dar.Cells["prestam"].Value == null ? 0 : Convert.ToDouble(dar.Cells["prestam"].Value);
+            p_renta = dar.Cells["renta5cate"].Value == null ? 0 : Convert.ToDouble(dar.Cells["renta5cate"].Value);
+            p_rentencion = dar.Cells["retencionj"].Value == null ? 0 : Convert.ToDouble(dar.Cells["retencionj"].Value);
+            p_otrodes = dar.Cells["otrodes"].Value == null ? 0 : Convert.ToDouble(dar.Cells["otrodes"].Value);
 
             totaAportes = (p_onp + p_comision + p_seguro + p_spp);
             p_totaldes = ((p_saludvida + p_adela + p_presta + p_renta + p_rentencion + p_otrodes) + totaAportes);
@@ -375,19 +375,19 @@ namespace Presentacion.Vista
         }
 
         //DE ACUERDO A LOS DIAS QUE TIENES EL MES, SE CALCULA SU SUELDO
-        private decimal SueldoPorMes(DataGridViewRow dar)
+        private double SueldoPorMes(DataGridViewRow dar)
         {
-            decimal p_sueldo = 0, p_basico = 0, p_subsidiado = 0, p_subsidioposi = 0, p_valasigFami = 0, p_totasubsidi = 0;
+            double p_sueldo = 0, p_basico = 0, p_subsidiado = 0, p_subsidioposi = 0, p_valasigFami = 0, p_totasubsidi = 0;
             int p_dias = 0, p_diasub = 0;
 
             int diasMes = Convert.ToInt32(txtdiasMes.Text);
-            p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
+            p_basico = Convert.ToDouble(dar.Cells["remu"].Value);
             p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
-            p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montoposi"].Value);
+            p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montoposi"].Value);
 
             p_diasub = dar.Cells["ndias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["ndias"].Value);
-            p_subsidiado = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montosub"].Value);
-            p_valasigFami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["a_familiar"].Value);
+            p_subsidiado = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montosub"].Value);
+            p_valasigFami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDouble(dar.Cells["a_familiar"].Value);
 
 
             if (diasMes == 30)
@@ -431,19 +431,19 @@ namespace Presentacion.Vista
         }
 
         //SOBRE CARGA DE METODO
-        private decimal SueldoPorMes(DataGridViewRow dar, int dia_vacacione)
+        private double SueldoPorMes(DataGridViewRow dar, int dia_vacacione)
         {
-            decimal p_sueldo = 0, p_basico = 0, p_subsidiado = 0, p_subsidioposi = 0, p_valasigFami = 0, p_totasubsidi = 0;
+            double p_sueldo = 0, p_basico = 0, p_subsidiado = 0, p_subsidioposi = 0, p_valasigFami = 0, p_totasubsidi = 0;
             int p_dias = 0, p_diasub = 0;
 
             int diasMes = Convert.ToInt32(txtdiasMes.Text);
-            p_basico = Convert.ToDecimal(dar.Cells["remu"].Value);
+            p_basico = Convert.ToDouble(dar.Cells["remu"].Value);
             p_dias = dar.Cells["dgv_dias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["dgv_dias"].Value);
-            p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montoposi"].Value);
+            p_subsidioposi = dar.Cells["montoposi"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montoposi"].Value);
 
             p_diasub = dar.Cells["ndias"].Value == null ? 0 : Convert.ToInt32(dar.Cells["ndias"].Value);
-            p_subsidiado = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["montosub"].Value);
-            p_valasigFami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(dar.Cells["a_familiar"].Value);
+            p_subsidiado = dar.Cells["montosub"].Value == null ? 0 : Convert.ToDouble(dar.Cells["montosub"].Value);
+            p_valasigFami = dar.Cells["a_familiar"].Value == null ? 0 : Convert.ToDouble(dar.Cells["a_familiar"].Value);
 
             if (diasMes == 30)
             {
@@ -536,7 +536,7 @@ namespace Presentacion.Vista
             switch (e.ColumnIndex)
             {
                 case 13://dias que laboro
-                    decimal p_sueldo = 0;
+                    double p_sueldo = 0;
                     
                     if (dar.Cells["dgvdia_vaca"].Value != null) 
                     {
@@ -793,7 +793,7 @@ namespace Presentacion.Vista
             MontoEssalud(dar);
         }
              
-        //AQUI ESTAMOS USANDO TIPO DATO DECIMAL
+        //AQUI ESTAMOS USANDO TIPO DATO DOUBLE
         private void Dgvplanilla1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
@@ -802,13 +802,13 @@ namespace Presentacion.Vista
                 DataGridViewRow dar= Dgvplanilla1.CurrentRow;
                 int dias = 0, diapo = 0, boniNoc = 0, p_diavaca = 0;
                 double hro_trabajada = 0;
-                decimal monto = 0, monto_posi = 0, monto_sueldo = 0;            
-                decimal p_remu = 0, p_asigF = 0, suel_porMes = 0;
+                double monto = 0, monto_posi = 0, monto_sueldo = 0;            
+                double p_remu = 0, p_asigF = 0, suel_porMes = 0;
 
                 void ValoresInicial()
                 {
-                    p_remu = Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["remu"].Value);
-                    p_asigF = Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value == null ? 0 : Convert.ToDecimal(Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value);                    
+                    p_remu = Convert.ToDouble(Dgvplanilla1.Rows[e.RowIndex].Cells["remu"].Value);
+                    p_asigF = Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value == null ? 0 : Convert.ToDouble(Dgvplanilla1.Rows[e.RowIndex].Cells["a_familiar"].Value);                    
                 }
                 
                 if (Dgvplanilla1.Rows[e.RowIndex].Cells["btnsubsidio"].Selected)
@@ -1485,6 +1485,10 @@ namespace Presentacion.Vista
                 e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 8, e.RowBounds.Location.Y + 4);
             }
         }
-    
+
+        private void TbtnguardarPlanilla_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

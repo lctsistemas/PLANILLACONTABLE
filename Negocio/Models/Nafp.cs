@@ -73,6 +73,7 @@ namespace Negocio.Models
         {
             string resul;
             daf.Codigo_regimen = Codigo_regimen;
+            daf.Id_comision = Id_comision;
             daf.Comision = Comision;
             daf.Idmes = Idmes;
             daf.Idperiodo = Idperiodo;
@@ -81,6 +82,11 @@ namespace Negocio.Models
             {
                 case EntityState.Guardar:
                     raf.SaveOnp(daf);
+                    resul = "ok";
+                    break;
+
+                case EntityState.Modificar:
+                    raf.EditOnp(daf);
                     resul = "ok";
                     break;
                 default:
@@ -116,9 +122,9 @@ namespace Negocio.Models
             daf.DlistAfp.Clear();
 
             if (i > 0)
-                message = "Ok Edit";
+                message = "¡Modificado!";
             else
-                message = "Error Al Edit";
+                message = "Error Al Editar";
 
             return message;
         }
@@ -212,6 +218,9 @@ namespace Negocio.Models
         public void Dispose()
         {
             //throw new NotImplementedException();
+           
+
+
         }
     }
 }

@@ -84,10 +84,10 @@ namespace Presentacion.Helps
             return imp_tarde;
         }
 
-        public static decimal MontoSubsidios(int dia, decimal basico, decimal asig_fami, int diames)
+        public static double MontoSubsidios(int dia, double basico, double asig_fami, int diames)
         {
-            decimal monto_Sub = 0;
-            decimal diario = (basico / 30);
+            double monto_Sub = 0;
+            double diario = (basico / 30);
 
             if (diames == 30)
             {
@@ -124,10 +124,10 @@ namespace Presentacion.Helps
         }
                     
         //SOBRECARGA.
-        public static decimal MontoSubsidios(int dia, decimal basico, int diames)
+        public static double MontoSubsidios(int dia, double basico, int diames)
         {
-            decimal monto_Sub = 0;
-            decimal diario = (basico / 30);
+            double monto_Sub = 0;
+            double diario = (basico / 30);
 
             if (diames == 30)
             {

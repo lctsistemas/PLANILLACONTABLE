@@ -98,9 +98,10 @@ namespace Datos.Repositories
                 using (cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn;
-                    cmd.CommandText = "SP_MOSTRAR_SUBSIDIOS";
+                    cmd.CommandText = "SP_MOSTRAR_SUBSIDIOS";                    
                     cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@tip_subsidio", entiti.Tipo_subsidio);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     using (dt = new DataTable())
