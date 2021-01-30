@@ -197,6 +197,8 @@
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbtvista_prueba = new System.Windows.Forms.ToolStripMenuItem();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -212,6 +214,7 @@
             this.menuarchivos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.archivoToolStripMenuItem,
             this.verToolStripMenuItem,
+            this.exportarToolStripMenuItem,
             this.ayudaToolStripMenuItem});
             this.menuarchivos.Location = new System.Drawing.Point(0, 0);
             this.menuarchivos.Name = "menuarchivos";
@@ -348,6 +351,7 @@
             this.TbtneditarPlanilla.Name = "TbtneditarPlanilla";
             this.TbtneditarPlanilla.Size = new System.Drawing.Size(139, 22);
             this.TbtneditarPlanilla.Text = "&Modificar planilla";
+            this.TbtneditarPlanilla.Click += new System.EventHandler(this.TbtneditarPlanilla_Click);
             // 
             // toolStripSeparator2
             // 
@@ -366,9 +370,9 @@
             this.panelplanilla.Controls.Add(this.label5);
             this.panelplanilla.Controls.Add(this.label4);
             this.panelplanilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelplanilla.Location = new System.Drawing.Point(0, 50);
+            this.panelplanilla.Location = new System.Drawing.Point(0, 25);
             this.panelplanilla.Name = "panelplanilla";
-            this.panelplanilla.Size = new System.Drawing.Size(1243, 555);
+            this.panelplanilla.Size = new System.Drawing.Size(1243, 580);
             this.panelplanilla.TabIndex = 11;
             // 
             // lbltipoplanilla
@@ -384,6 +388,7 @@
             // 
             // Dgvplanilla1
             // 
+            this.Dgvplanilla1.AllowUserToAddRows = false;
             this.Dgvplanilla1.AllowUserToResizeColumns = false;
             this.Dgvplanilla1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
@@ -503,7 +508,7 @@
             this.Dgvplanilla1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Dgvplanilla1.RowHeadersWidth = 28;
             this.Dgvplanilla1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.Dgvplanilla1.Size = new System.Drawing.Size(1225, 337);
+            this.Dgvplanilla1.Size = new System.Drawing.Size(1225, 362);
             this.Dgvplanilla1.TabIndex = 17;
             this.Dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.Dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellContentClick);
@@ -611,7 +616,7 @@
             // 
             // remu
             // 
-            this.remu.DataPropertyName = "PRemune_basica";
+            this.remu.DataPropertyName = "Pm_basico";
             this.remu.HeaderText = "Basico";
             this.remu.Name = "remu";
             this.remu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -1817,6 +1822,23 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
             // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtvista_prueba});
+            this.exportarToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
+            this.exportarToolStripMenuItem.Text = "Exportar";
+            // 
+            // tbtvista_prueba
+            // 
+            this.tbtvista_prueba.Name = "tbtvista_prueba";
+            this.tbtvista_prueba.Size = new System.Drawing.Size(239, 22);
+            this.tbtvista_prueba.Text = "Vista registro solo prueba";
+            this.tbtvista_prueba.ToolTipText = "Prueba";
+            this.tbtvista_prueba.Click += new System.EventHandler(this.tbtvista_prueba_Click);
+            // 
             // FrmPlanillaMensual2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1933,6 +1955,9 @@
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Tbtsbs;
         private System.Windows.Forms.ToolStripMenuItem Tbtspp;
+        public System.Windows.Forms.TextBox txtdiasMes;
+        public System.Windows.Forms.Label lbltipoplanilla;
+        public System.Windows.Forms.TextBox txtid_tipoplanilla;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_contrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_planilla_manto;
         private System.Windows.Forms.DataGridViewTextBoxColumn jornada_labo;
@@ -2010,8 +2035,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_grati;
         private System.Windows.Forms.DataGridViewTextBoxColumn reintegro_boni;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvdia_vaca;
-        public System.Windows.Forms.TextBox txtdiasMes;
-        public System.Windows.Forms.Label lbltipoplanilla;
-        public System.Windows.Forms.TextBox txtid_tipoplanilla;
+        private System.Windows.Forms.ToolStripMenuItem exportarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tbtvista_prueba;
     }
 }

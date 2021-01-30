@@ -10,7 +10,8 @@ namespace Datos.Repositories
     public class Rafp : IDisposable
     {
         int result;
-        #region Metodo insertar masivo
+
+        #region METODO INSERTAR MASIVO
         public int Add(Dafp daf)
         {
             result = 0;
@@ -36,10 +37,9 @@ namespace Datos.Repositories
                             cmd.Parameters.Add("@aporte", SqlDbType.Decimal).Value = daf.Aporte;
                             cmd.Parameters.Add("@tope", SqlDbType.Decimal).Value = daf.Tope;
                             cmd.Parameters.Add("@idmes", SqlDbType.Int).Value = daf.Idmes;
-                            cmd.Parameters.Add("@idperiodo", SqlDbType.Int).Value = daf.Idperiodo;                            
+                            cmd.Parameters.Add("@idperiodo", SqlDbType.Int).Value = daf.Idperiodo;
                             result = cmd.ExecuteNonQuery();
-                            //System.Windows.Forms.MessageBox.Show("EXECUTE: " + result);                            
-
+                            //System.Windows.Forms.MessageBox.Show("EXECUTE: " + result);
                         }
 
                         sqltra.Commit();

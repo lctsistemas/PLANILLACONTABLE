@@ -1201,7 +1201,7 @@ ALTER PROC SP_ShowPlanillaManto
 AS BEGIN
 IF(NOT EXISTS(SELECT plam.id_planilla FROM dbo.PlanillaManto plam JOIN dbo.Planilla p ON(plam.id_planilla = p.id_planilla) WHERE p.id_planilla=@idplanilla))
 BEGIN
-SELECT co.id_contrato, e.jornada_laboral,do.codigo_doc, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+SELECT co.id_contrato, e.jornada_laboral, do.codigo_doc, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
 rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, co.fecha_fin, co.remuneracion_basica, 
 co.asignacion_familiar
 FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
@@ -1211,7 +1211,7 @@ JOIN Cargo ca on(ca.id_cargo = e.id_cargo)
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
 WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
 END
-ELSE
+/*ELSE
 BEGIN
 SELECT co.id_contrato, plama.idplanilla_manto, plama.jornadalaboral, do.codigo_doc, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
 rp.descripcion,  cop.comision, cop.seguro, cop.aporte, ca.nombre_cargo, co.fecha_inicio, plama.basico, plama.dias, plama.dia_dominical, 
@@ -1230,84 +1230,112 @@ JOIN Tipo_documento do on(e.id_documento=do.id_documento)
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado) JOIN PlanillaManto  plama ON(plama.id_contrato=co.id_contrato)
 WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) --AND co.fecha_inicio  BETWEEN @fechaini AND @fechafin
-END
+END*/
 END
 GO
 
-CREATE PROCEDURE SP_REGISTRAR_PLANILLAMANTO( --73 campos
-@id_contrato int,
-@id_planilla int,
-@id_tipo_planilla int,
-@jornadalaboral varchar(11), 
-@pregimen_pension varchar(30),
-@pvalor_comision decimal(6,2),
-@pvalor_seguro decimal(6,2),
-@pvalor_aporte decimal(6,2),
-@pcargo varchar(40),
-@basico money,
-@dias int,
-@dia_dominical int,
-@horas_diarias decimal(5,2),
-@sueldo_basico money,
-@asig_familiar decimal(5,2),
-@hora_dvc int,
-@minuto_dvc int,
-@monto_dvc decimal(5,2),
-@hora_dtc int,
-@minuto_dtc int,
-@monto_dtc decimal(5,2),
-@hora_nvc int,
-@minuto_nvc int,
-@monto_nvc decimal(5,2),
-@hora_ntc int,
-@minuto_ntc int,
-@monto_ntc decimal(5,2),
-@hora_feriado int,
-@minuto_feriado int,
-@monto_feriado decimal(5,2),
-@hora_boni int,
-@monto_boni decimal(5,2),
-@uno_mayo decimal(5,2),
-@hora_tarde int,
-@minuto_tarde int,
-@monto_tarde decimal(5,2),
-@dia_sub int,
-@monto_sub decimal(6,2),
-@dia_subnegativo int,
-@monto_subnegativo decimal(6,2),
-@dia_subpositivo int,
-@monto_subpositivo decimal(6,2),
-@total_horaex decimal(7,2),
-@reintegro decimal(6,2),
-@otro_reintegro decimal(6,2),
-@pre_alimentaria decimal(6,2),
-@gratiex decimal(7,2),
-@boniex decimal(7,2),
-@vacaciones decimal(7,2),
-@vaca_trunca decimal(7,2),
-@grati_trunca decimal(7,2),
-@boni_trunca decimal(7,2),
-@cts_trunca decimal(7,2),
-@total_remuneracion decimal(8,2),
-@descuento_onp decimal(8,2),
-@des_comision decimal(8,2),
-@des_seguro decimal(8,2),
-@des_spp decimal(8,2),
-@essalud_vida decimal(6,2),
-@adelanto decimal(6,2),
-@prestamo  decimal(6,2),
-@renta_quinta decimal(7,2),
-@retencion_judicial decimal(6,2),
-@otro_des decimal(6,2),
-@total_desc decimal(7,2),
-@total_pagar decimal(8,2),
-@aporte_essalud  decimal(7,2),
-@transporte decimal(6,2),
-@recargo_consumo decimal(6,2),
-@reintegro_grati decimal(7,2),
-@reintegro_boni decimal(7,2),
-@dia_vacaciones int,
-@mensaje varchar(100) OUTPUT)
+ALTER PROC SP_SHOW_PLANILLAMANTO_PRUEBA(
+@idplanilla int,
+@idmes int)
+AS BEGIN
+SELECT co.id_contrato, plama.idplanilla_manto, plama.jornadalaboral, do.codigo_doc, e.numero_documento, CONCAT(e.ape_paterno, ' ', e.ape_materno,', ',e.nombre_empleado) AS nombres, 
+rp.descripcion,  plama.pvalor_comision, plama.pvalor_seguro, plama.pvalor_aporte, plama.pcargo, co.fecha_inicio, plama.basico, plama.dias, plama.dia_dominical, 
+plama.horas_diarias, plama.sueldo_basico, plama.asig_familiar, plama.hora_dvc, plama.minuto_dvc, plama.monto_dvc, plama.hora_dtc, plama.minuto_dtc, 
+plama.monto_dtc, plama.hora_nvc, plama.minuto_nvc, plama.monto_nvc, plama.hora_ntc, plama.minuto_ntc, plama.monto_ntc, plama.hora_feriado, 
+plama.minuto_feriado, plama.monto_feriado, plama.hora_boni, plama.monto_boni, plama.uno_mayo, plama.hora_tarde, plama.minuto_tarde, 
+plama.monto_tarde, plama.dia_sub, plama.monto_sub, plama.dia_subnegativo, plama.monto_subnegativo, plama.dia_subpositivo, plama.monto_subpositivo, 
+plama.total_horaex, plama.reintegro, plama.otro_reintegro, plama.pre_alimentaria, plama.gratiex, plama.boniex, plama.vacaciones, 
+plama.vaca_trunca, plama.grati_trunca, plama.boni_trunca, plama.cts_trunca, plama.total_remuneracion, plama.descuento_onp, 
+plama.des_comision, plama.des_seguro, plama.des_spp, plama.essalud_vida, plama.adelanto, plama.prestamo, plama.renta_quinta, 
+plama.retencion_judicial, plama.otro_des, plama.total_desc, plama.total_pagar, plama.aporte_essalud, plama.transporte, plama.recargo_consumo, 
+plama.reintegro_grati, plama.reintegro_boni
+FROM Empleado e JOIN RegimenPensionario rp on(e.codigo_regimen = rp.codigo_regimen) 
+JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen) 
+JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
+JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
+JOIN Contrato co on(co.id_empleado=e.id_empleado) 
+JOIN PlanillaManto  plama ON(plama.id_contrato=co.id_contrato)
+WHERE (cop.idmes = @idmes AND plama.id_planilla = @idplanilla)
+END
+GO
+
+select * from PlanillaManto
+delete from planillaManto
+
+GO
+ALTER PROCEDURE SP_REGISTRAR_PLANILLAMANTO( --73 campos
+@id_contrato int,--1
+@id_planilla int,--2
+@id_tipo_planilla int,--3
+@jornadalaboral varchar(11), --4
+@pregimen_pension varchar(30),--5
+@pvalor_comision decimal(6,2),--6
+@pvalor_seguro decimal(6,2),--7
+@pvalor_aporte decimal(6,2),--8
+@pcargo varchar(40),--9
+@basico money,--10
+@dias int,--11
+@dia_dominical int,--12
+@horas_diarias money,--13
+@sueldo_basico money = null,--14
+@asig_familiar money = null,--15
+@hora_dvc int = null,--16
+@minuto_dvc int = null,--17
+@monto_dvc money = null,--18
+@hora_dtc int = null,--19
+@minuto_dtc int = null,--20
+@monto_dtc money = null,--21
+@hora_nvc int = null,--22
+@minuto_nvc int = null,--23
+@monto_nvc money = null,--24
+@hora_ntc int = null,--25
+@minuto_ntc int = null,--26
+@monto_ntc money = null,--27
+@hora_feriado int = null,--28
+@minuto_feriado int = null,--29
+@monto_feriado money = null,--30
+@hora_boni int = null,--31
+@monto_boni money = null,--32
+@uno_mayo money = null,--33
+@hora_tarde int = null,--34
+@minuto_tarde int = null,--35
+@monto_tarde money = null,--36
+@dia_sub int = null,--37
+@monto_sub money = null,--38
+@dia_subnegativo int= null,--39
+@monto_subnegativo money = null,--40
+@dia_subpositivo int = null,--41
+@monto_subpositivo money = null,--42
+@total_horaex money = null,--43---------------
+@reintegro money = null,--44
+@otro_reintegro money = null,--45
+@pre_alimentaria money = null,--46
+@gratiex money = null,--47
+@boniex money = null,--48
+@vacaciones money = null,--49
+@vaca_trunca money = null,--50
+@grati_trunca money = null,--51
+@boni_trunca money = null,--52
+@cts_trunca money = null,--53
+@total_remuneracion money = null,--54------------------------
+@descuento_onp money = null,--55-----
+@des_comision money = null,--56----
+@des_seguro money = null,--57----
+@des_spp money = null,--58-------
+@essalud_vida money = null,--59
+@adelanto money = null,--60
+@prestamo  money = null,--61
+@renta_quinta money = null,--62
+@retencion_judicial money = null,--63
+@otro_des money = null,--64
+@total_desc money = null,--65----------------
+@total_pagar money = null,--66--------------------------
+@aporte_essalud  money = null,--67 ---------------------------
+@transporte money = null,--68
+@recargo_consumo money = null,--69
+@reintegro_grati money = null,--70
+@reintegro_boni money = null,--71
+@dia_vacaciones int = null)--72
 AS BEGIN
 	DECLARE @idplanilla_manto int
 	SET @idplanilla_manto=(SELECT count(pm.idplanilla_manto) FROM dbo.PlanillaManto pm)
@@ -1315,8 +1343,8 @@ AS BEGIN
 		SET @idplanilla_manto=1	
 	ELSE
 		SET @idplanilla_manto=(SELECT MAX(pm.idplanilla_manto)+1 FROM dbo.PlanillaManto pm)
-BEGIN TRANSACTION 
-	BEGIN TRY	
+--BEGIN TRANSACTION 
+	--BEGIN TRY	
 		INSERT INTO PlanillaManto (idplanilla_manto, id_contrato, id_planilla, id_tipo_planilla,
 		jornadalaboral, pregimen_pension, pvalor_comision, pvalor_seguro, pvalor_aporte,
 		pcargo, basico, dias, dia_dominical, horas_diarias, sueldo_basico, asig_familiar,
@@ -1339,19 +1367,18 @@ BEGIN TRANSACTION
 		@cts_trunca, @total_remuneracion, @descuento_onp, @des_comision, @des_seguro, @des_spp, @essalud_vida, @adelanto,
 		@prestamo, @renta_quinta, @retencion_judicial, @otro_des, @total_desc, @total_pagar, @aporte_essalud, @transporte,
 		@recargo_consumo, @reintegro_grati, @reintegro_boni, @dia_vacaciones)
-
-		SET @mensaje='¡Se registro la planilla!'
-		COMMIT TRANSACTION
-	END TRY
-		BEGIN CATCH
-			SET @mensaje= ERROR_MESSAGE()
-			ROLLBACK TRANSACTION
-		END CATCH
-
+		
+		--COMMIT TRANSACTION
+		
+	--END TRY
+		--BEGIN CATCH
+			--print ERROR_MESSAGE()
+			--ROLLBACK TRANSACTION
+		--END CATCH
 END
-
-
 GO
+
+
 /*   PROCEDIMIENTO PARA CONCEPTOS DE PLANILLA     */
 ALTER PROC SP_RegistroConceptos
 @id_conceptos int,
@@ -1406,7 +1433,6 @@ BEGIN
 END
 END
 GO
-
 
 ALTER PROC SP_SHOW_CONCEPTOS
 @idmes int,

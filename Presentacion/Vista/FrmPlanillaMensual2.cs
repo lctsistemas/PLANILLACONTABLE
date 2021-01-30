@@ -17,7 +17,7 @@ namespace Presentacion.Vista
         private const string NoSubsidiado = "NO SUBSIDIADOS";        
         public int xdia_subposi = 0; // el valor es enviado desde el formulario susbidios.
         private static FrmPlanillaMensual2 _intancia;
-
+        string result;
         NplanillaM nplam;
         NConceptos nconcepto;
         public FrmPlanillaMensual2()
@@ -151,10 +151,12 @@ namespace Presentacion.Vista
             using (nplam = new NplanillaM())
             {
                 nplam.PId_mes = PlanillaCache.p_idmes;
+                nplam.Pid_planilla = PlanillaCache.p_idplanilla;
                 nplam.PId_empreMaestra = UserCache.Codigo_empresa;
                 nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
                 nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
-                Dgvplanilla1.DataSource = nplam.Show_planillaM(PlanillaCache.p_idplanilla);
+
+                Dgvplanilla1.DataSource = nplam.Show_planillaM();
             }
         }
 
@@ -1486,9 +1488,117 @@ namespace Presentacion.Vista
             }
         }
 
+        //PARA REGISTRAR LA PLANILLA CALCULO
         private void TbtnguardarPlanilla_Click(object sender, EventArgs e)
         {
+            result = "";
+            using (nplam = new NplanillaM())
+            {
+                if (nplam.ListNpm == null)
+                    nplam.ListNpm = new List<NplanillaM>();
 
+                foreach (DataGridViewRow item in Dgvplanilla1.Rows)
+                {
+                    nplam.ListNpm.Add(new NplanillaM()
+                    {
+                        PId_contrato = Convert.ToInt32(item.Cells["id_contrato"].Value),
+                        Pid_planilla = PlanillaCache.p_idplanilla,
+                        Pm_id_tipoplanilla = Convert.ToInt32(txtid_tipoplanilla.Text),
+                        PJornada_laboral = item.Cells["jornada_labo"].Value.ToString(),
+                        PDescrip_regipension = item.Cells["regi_pen"].Value.ToString(),
+                        PVcomision = Convert.ToDecimal(item.Cells["valor_comision"].Value),
+                        PVseguro = Convert.ToDecimal(item.Cells["valor_seguro"].Value),
+                        PVaporte = Convert.ToDecimal(item.Cells["valor_aporte"].Value),
+                        PCargop = item.Cells["cargo"].Value.ToString(),
+                        Pm_basico = Convert.ToDecimal(item.Cells["remu"].Value),
+                        Pm_dias = Convert.ToInt32(item.Cells["dgv_dias"].Value),
+                        Pm_diadominical = Convert.ToInt32(item.Cells["dia_dominical"].Value),
+                        Pm_horasdiarias = Convert.ToDecimal(item.Cells["hora_trabajada"].Value),
+
+                        Premune_basica = item.Cells["sueldo"].Value == null ? null : item.Cells["sueldo"].Value.ToString(),
+                        PAsig_familiar = item.Cells["a_familiar"].Value == null ? null : item.Cells["a_familiar"].Value.ToString(),
+                        Pm_hora_dvc = item.Cells["hxd25"].Value == null ? null : item.Cells["hxd25"].Value.ToString(),
+                        Pm_minuto_dvc = item.Cells["minud25"].Value == null ? null : item.Cells["minud25"].Value.ToString(),
+                        Pm_monto_dvc = item.Cells["montod25"].Value == null ? null : item.Cells["montod25"].Value.ToString(),
+                        Pm_hora_dtc = item.Cells["hxd35"].Value == null ? null : item.Cells["hxd35"].Value.ToString(),
+                        Pm_minuto_dtc = item.Cells["minud35"].Value == null ? null : item.Cells["minud35"].Value.ToString(),
+                        Pm_monto_dtc = item.Cells["montod35"].Value == null ? null : item.Cells["montod35"].Value.ToString(),
+                        Pm_hora_nvc = item.Cells["hxn25"].Value == null ? null : item.Cells["hxn25"].Value.ToString(),
+                        Pm_minuto_nvc = item.Cells["minun25"].Value == null ? null : item.Cells["minun25"].Value.ToString(),
+                        Pm_monto_nvc = item.Cells["monton25"].Value == null ? null : item.Cells["monton25"].Value.ToString(),
+                        Pm_hora_ntc = item.Cells["hxn35"].Value == null ? null : item.Cells["hxn35"].Value.ToString(),
+                        Pm_minuto_ntc = item.Cells["minun35"].Value == null ? null : item.Cells["minun35"].Value.ToString(),
+                        Pm_monto_ntc = item.Cells["monton35"].Value == null ? null : item.Cells["monton35"].Value.ToString(),
+                        Pm_hora_feriado = item.Cells["hrferiado"].Value == null ? null : item.Cells["hrferiado"].Value.ToString(),
+                        Pm_minuto_feriado = item.Cells["minuferiado"].Value == null ? null : item.Cells["minuferiado"].Value.ToString(),
+                        Pm_monto_feriado = item.Cells["montoferiado"].Value == null ? null : item.Cells["montoferiado"].Value.ToString(),
+                        Pm_hora_boni = item.Cells["hrboninocturna"].Value == null ? null : item.Cells["hrboninocturna"].Value.ToString(),
+                        Pm_monto_boni = item.Cells["montoboninocturno"].Value == null ? null : item.Cells["montoboninocturno"].Value.ToString(),
+                        Pm_uno_mayo = item.Cells["unomayo"].Value == null ? null : item.Cells["unomayo"].Value.ToString(),
+                        Pm_hora_tarde = item.Cells["htarde"].Value == null ? null : item.Cells["htarde"].Value.ToString(),
+                        Pm_minuto_tarde = item.Cells["mtarde"].Value == null ? null : item.Cells["mtarde"].Value.ToString(),
+                        Pm_monto_tarde = item.Cells["montotarde"].Value == null ? null : item.Cells["montotarde"].Value.ToString(),
+                        Pm_dia_sub = item.Cells["ndias"].Value == null ? null : item.Cells["ndias"].Value.ToString(),
+                        Pm_monto_sub = item.Cells["montosub"].Value == null ? null : item.Cells["montosub"].Value.ToString(),
+                        Pm_dia_subnegativo = item.Cells["ndiasnega"].Value == null ? null : item.Cells["ndiasnega"].Value.ToString(),
+                        Pm_monto_subnegativo = item.Cells["montonega"].Value == null ? null : item.Cells["montonega"].Value.ToString(),
+                        Pm_dia_subpositivo = item.Cells["ndiasposi"].Value == null ? null : item.Cells["ndiasposi"].Value.ToString(),
+                        Pm_monto_subpositivo = item.Cells["montoposi"].Value == null ? null : item.Cells["montoposi"].Value.ToString(),
+                        Pm_total_horaex = item.Cells["thoras"].Value == null ? null : item.Cells["thoras"].Value.ToString(),
+                        Pm_reintegro = item.Cells["reintegro"].Value == null ? null : item.Cells["reintegro"].Value.ToString(),
+                        Pm_otro_reintegro = item.Cells["otros_reintegros"].Value == null ? null : item.Cells["otros_reintegros"].Value.ToString(),
+                        Pm_pre_alimentaria = item.Cells["prestacion_alimenta"].Value == null ? null : item.Cells["prestacion_alimenta"].Value.ToString(),
+                        Pm_gratiex = item.Cells["grati"].Value == null ? null : item.Cells["grati"].Value.ToString(),
+                        Pm_boniex = item.Cells["boni"].Value == null ? null : item.Cells["boni"].Value.ToString(),
+                        Pm_vacaciones = item.Cells["vacacione"].Value == null ? null : item.Cells["vacacione"].Value.ToString(),
+                        Pm_vaca_trunca = item.Cells["tvaca"].Value == null ? null : item.Cells["tvaca"].Value.ToString(),
+                        Pm_grati_trunca = item.Cells["tgrati"].Value == null ? null : item.Cells["tgrati"].Value.ToString(),
+                        Pm_boni_trunca = item.Cells["tboni"].Value == null ? null : item.Cells["tboni"].Value.ToString(),
+                        Pm_cts_trunca = item.Cells["tcts"].Value == null ? null : item.Cells["tcts"].Value.ToString(),
+                        Pm_total_remuneracion = item.Cells["totaremu"].Value == null ? null : item.Cells["totaremu"].Value.ToString(),
+                        Pm_descuento_onp = item.Cells["onp"].Value == null ? null : item.Cells["onp"].Value.ToString(),
+                        Pm_des_comision = item.Cells["comision"].Value == null ? null : item.Cells["comision"].Value.ToString(),
+                        Pm_des_seguro = item.Cells["seguro"].Value == null ? null : item.Cells["seguro"].Value.ToString(),
+                        Pm_des_spp = item.Cells["spp"].Value == null ? null : item.Cells["spp"].Value.ToString(),
+                        Pm_essalud_vida = item.Cells["essalud_vida"].Value == null ? null : item.Cells["essalud_vida"].Value.ToString(),
+                        Pm_adelanto = item.Cells["adelant"].Value == null ? null : item.Cells["adelant"].Value.ToString(),
+                        Pm_prestamo = item.Cells["prestam"].Value == null ? null : item.Cells["prestam"].Value.ToString(),
+                        Pm_renta_quinta = item.Cells["renta5cate"].Value == null ? null : item.Cells["renta5cate"].Value.ToString(),
+                        Pm_retencion_judicial = item.Cells["retencionj"].Value == null ? null : item.Cells["retencionj"].Value.ToString(),
+                        Pm_otro_des = item.Cells["otrodes"].Value == null ? null : item.Cells["otrodes"].Value.ToString(),
+                        Pm_total_desc = item.Cells["totades"].Value == null ? null : item.Cells["totades"].Value.ToString(),
+                        Pm_total_pagar = item.Cells["topagar"].Value == null ? null : item.Cells["topagar"].Value.ToString(),
+                        Pm_aporte_essalud = item.Cells["aportsalud"].Value == null ? null : item.Cells["aportsalud"].Value.ToString(),
+                        Pm_transporte = item.Cells["transporte"].Value == null ? null : item.Cells["transporte"].Value.ToString(),
+                        Pm_recargo_consumo = item.Cells["recargo_consumo"].Value == null ? null : item.Cells["recargo_consumo"].Value.ToString(),
+                        Pm_reintegro_grati = item.Cells["reintegro_grati"].Value == null ? null : item.Cells["reintegro_grati"].Value.ToString(),
+                        Pm_reintegro_boni = item.Cells["reintegro_boni"].Value == null ? null : item.Cells["reintegro_boni"].Value.ToString(),
+                        Pm_dia_vacaciones = item.Cells["dgvdia_vaca"].Value == null ? null : item.Cells["dgvdia_vaca"].Value.ToString()
+
+                    });
+                }
+                result = nplam.SavePlanilaManto();
+                //if (result.Contains("¡Registrado!"))
+                    Messages.M_info(result);
+                //else
+                //    Messages.M_warning(result);
+
+                nplam.ListNpm.Clear();
+
+            }
+        }
+
+        private void TbtneditarPlanilla_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("id planilla es:  " + PlanillaCache.p_idplanilla);
+        }
+
+        private void tbtvista_prueba_Click(object sender, EventArgs e)
+        {
+            using (FrmVistaPruebaPlanilla plaprueba = new FrmVistaPruebaPlanilla())
+            {
+                plaprueba.ShowDialog(this);
+            }
         }
     }
 }
