@@ -404,48 +404,48 @@ dias int null,
 dia_dominical int null,
 horas_diarias int null,
 sueldo_basico money null,
-asig_familiar decimal(5,2),--exite en empleado
+asig_familiar decimal(6,2),--exite en empleado
 --horas diurnas 25%
 hora_dvc int null,
 minuto_dvc int null,
-monto_dvc decimal(5,2) null,
+monto_dvc decimal(6,2) null, 
 --hora diurna 35%
 hora_dtc int null,
 minuto_dtc int null,
-monto_dtc decimal(5,2) null,
+monto_dtc decimal(6,2) null, 
 --hora nocturna 25%
 hora_nvc int null,
 minuto_nvc int null,
-monto_nvc decimal(5,2) null,
+monto_nvc decimal(6,2) null, 
 --hora nocturna 35%
 hora_ntc int null,
 minuto_ntc int null,
-monto_ntc decimal(5,2) null,
+monto_ntc decimal(6,2) null, 
 --feriado
 hora_feriado int null,
 minuto_feriado int null,
-monto_feriado decimal(5,2) null,
+monto_feriado decimal(6,2) null, 
 --boni nocturna
 hora_boni int null,
-monto_boni decimal(5,2) null,
+monto_boni decimal(6,2) null, 
 --primero de mayo
-uno_mayo decimal(5,2)null,
+uno_mayo decimal(7,2)null, 
 --tardanzas
-hora_tarde int null,
-minuto_tarde int null,
-monto_tarde decimal(5,2) null,
+hora_tarde int null, 
+minuto_tarde int null, 
+monto_tarde decimal(6,2) null,  
 --subsidio
 dia_sub int null,
-monto_sub decimal (6,2) null,
+monto_sub decimal (7,2) null, 
 --no subsidiados no laborados
 dia_subnegativo int null,
-monto_subnegativo decimal(6,2) null,
+monto_subnegativo decimal(7,2) null, 
 dia_subpositivo int null,
-monto_subpositivo decimal(6,2) null,
+monto_subpositivo decimal(7,2) null,
 --otros
 total_horaex decimal(7,2) null,
-reintegro decimal(6,2) null,
-otro_reintegro decimal(6,2)null,
+reintegro decimal(6,2) null, 
+otro_reintegro decimal(6,2)null, 
 pre_alimentaria decimal(6,2)null, --prestacion alimentaria
 gratiex decimal(7,2)null, --gratificacion extraordinaria
 boniex decimal(7,2) null, --bonificacion 9%

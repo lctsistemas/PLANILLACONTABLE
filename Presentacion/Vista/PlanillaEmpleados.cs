@@ -184,7 +184,7 @@ namespace Presentacion.Vista
             plm.Txtpago.Text =pago.ToString("dd,MM,yyyy");
 
             plm.txtdiasMes.Text = dgvplanilla.CurrentRow.Cells[8].Value.ToString();
-            plm.txtid_tipoplanilla.Text = dgvplanilla.CurrentRow.Cells[11].Value.ToString();
+            plm.txtid_tipoplanilla.Text = dgvplanilla.CurrentRow.Cells[11].Value.ToString().Trim();
             plm.lbltipoplanilla.Text = dgvplanilla.CurrentRow.Cells[12].Value.ToString();
 
             plm.FormBorderStyle = FormBorderStyle.None;
