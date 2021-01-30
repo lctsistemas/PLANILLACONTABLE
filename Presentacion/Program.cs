@@ -15,11 +15,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new Privilegios());
-=======
             Application.Run(new frminicio());
->>>>>>> Carlos2
 
         }
     }
