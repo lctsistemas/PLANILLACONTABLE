@@ -43,6 +43,8 @@
             this.tbtnlistaconceptos = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtnbarraerramientas = new System.Windows.Forms.ToolStripMenuItem();
             this.tbtncomi_pri_spp = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbtvista_prueba = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbtsbs = new System.Windows.Forms.ToolStripMenuItem();
             this.Tbtspp = new System.Windows.Forms.ToolStripMenuItem();
@@ -197,8 +199,6 @@
             this.Txtpago = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbtvista_prueba = new System.Windows.Forms.ToolStripMenuItem();
             this.menuarchivos.SuspendLayout();
             this.toolbotones.SuspendLayout();
             this.panelplanilla.SuspendLayout();
@@ -287,6 +287,23 @@
             this.tbtncomi_pri_spp.Size = new System.Drawing.Size(268, 22);
             this.tbtncomi_pri_spp.Text = "&Comisiones y Primas del SPP";
             this.tbtncomi_pri_spp.Click += new System.EventHandler(this.tbtncomi_pri_spp_Click);
+            // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tbtvista_prueba});
+            this.exportarToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
+            this.exportarToolStripMenuItem.Text = "Exportar";
+            // 
+            // tbtvista_prueba
+            // 
+            this.tbtvista_prueba.Name = "tbtvista_prueba";
+            this.tbtvista_prueba.Size = new System.Drawing.Size(239, 22);
+            this.tbtvista_prueba.Text = "Vista registro solo prueba";
+            this.tbtvista_prueba.ToolTipText = "Prueba";
+            this.tbtvista_prueba.Click += new System.EventHandler(this.tbtvista_prueba_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -513,6 +530,7 @@
             this.Dgvplanilla1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvplanilla1_CellClick);
             this.Dgvplanilla1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellContentClick);
             this.Dgvplanilla1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellEndEdit);
+            this.Dgvplanilla1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellEnter);
             this.Dgvplanilla1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Dgvplanilla1_CellFormatting);
             this.Dgvplanilla1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgvplanilla1_CellLeave);
             this.Dgvplanilla1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dgvplanilla1_CellMouseDown);
@@ -1821,23 +1839,6 @@
             this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 11;
             this.label4.Text = "Periodo :";
-            // 
-            // exportarToolStripMenuItem
-            // 
-            this.exportarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tbtvista_prueba});
-            this.exportarToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
-            this.exportarToolStripMenuItem.Text = "Exportar";
-            // 
-            // tbtvista_prueba
-            // 
-            this.tbtvista_prueba.Name = "tbtvista_prueba";
-            this.tbtvista_prueba.Size = new System.Drawing.Size(239, 22);
-            this.tbtvista_prueba.Text = "Vista registro solo prueba";
-            this.tbtvista_prueba.ToolTipText = "Prueba";
-            this.tbtvista_prueba.Click += new System.EventHandler(this.tbtvista_prueba_Click);
             // 
             // FrmPlanillaMensual2
             // 

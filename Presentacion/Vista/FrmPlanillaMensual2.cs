@@ -18,6 +18,7 @@ namespace Presentacion.Vista
         public int xdia_subposi = 0; // el valor es enviado desde el formulario susbidios.
         private static FrmPlanillaMensual2 _intancia;
         string result;
+        bool ValorColor = false;
         NplanillaM nplam;
         NConceptos nconcepto;
         public FrmPlanillaMensual2()
@@ -153,7 +154,7 @@ namespace Presentacion.Vista
                 nplam.PId_mes = PlanillaCache.p_idmes;
                 nplam.Pid_planilla = PlanillaCache.p_idplanilla;
                 nplam.PId_empreMaestra = UserCache.Codigo_empresa;
-                nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
+                //nplam.PFecha_inicio = Convert.ToDateTime(TxtfechaInicio.Text);
                 nplam.PFecha_fin = Convert.ToDateTime(TxtfechaFin.Text);
 
                 Dgvplanilla1.DataSource = nplam.Show_planillaM();
@@ -902,7 +903,12 @@ namespace Presentacion.Vista
         private void dgvplanilla1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
-                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;          
+            {
+                if(!ValorColor)
+                    Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;
+                
+                ValorColor = true;
+            }                     
             
         }
        
@@ -1429,7 +1435,9 @@ namespace Presentacion.Vista
         private void Dgvplanilla1_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex > -1)
-                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = SystemColors.WindowText;
+                Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Empty;
+
+            Dgvplanilla1[e.ColumnIndex, e.RowIndex].Style.SelectionBackColor = Color.Empty;
         }
 
         // VISTA DE LISTA DE COMISIONES AFP.
@@ -1598,6 +1606,17 @@ namespace Presentacion.Vista
             using (FrmVistaPruebaPlanilla plaprueba = new FrmVistaPruebaPlanilla())
             {
                 plaprueba.ShowDialog(this);
+            }
+        }
+
+        private void Dgvplanilla1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (ValorColor)
+                    Dgvplanilla1.Rows[e.RowIndex].Cells["ape_nom"].Style.ForeColor = Color.Crimson;
+
+                Dgvplanilla1[e.ColumnIndex, e.RowIndex].Style.SelectionBackColor = Color.FromArgb(212, 230, 241);               
             }
         }
     }

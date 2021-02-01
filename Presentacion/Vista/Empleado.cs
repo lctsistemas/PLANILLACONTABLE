@@ -59,8 +59,8 @@ namespace Presentacion.Vista
             dgvempleado.Columns[0].Visible = false;
 
             dgvempleado.Columns[1].Visible = false;
-            dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES"; // este nombre esta validando en eliminar, si cambiar este nombre tambien cambia en Eliminar
-            dgvempleado.Columns[2].Width = 320;
+            //dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES  |  COL. " + dgvempleado.RowCount; // este nombre esta validando en eliminar, si cambiar este nombre tambien cambia en Eliminar
+            dgvempleado.Columns[2].Width = 310;
 
             dgvempleado.Columns[3].Visible = false;
             dgvempleado.Columns[4].Visible = false;
@@ -189,7 +189,8 @@ namespace Presentacion.Vista
             {
                 emple_contra.Id_emp_maestra = UserCache.Codigo_empresa;
                 dgvempleado.DataSource = emple_contra.listar_empleado();
-                lblcantidad_registro.Text = "Total registro:  " + dgvempleado.RowCount;
+                dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES  |  COL. " + dgvempleado.RowCount; // este nombre esta validando en eliminar, si cambiar este nombre tambien cambia en Eliminar
+                
             }
         }
 
@@ -574,7 +575,8 @@ namespace Presentacion.Vista
             using (emple_contra)
             {
                 dgvempleado.DataSource = emple_contra.Search(txtbuscar.Text.Trim());
-                lblcantidad_registro.Text = "Registro:  " + dgvempleado.RowCount;
+                dgvempleado.Columns[2].HeaderText = "APELLIDOS Y NOMBRES  |  COL. " + dgvempleado.RowCount; // este nombre esta validando en eliminar, si cambiar este nombre tambien cambia en Eliminar
+
             }
         }
 
@@ -843,6 +845,12 @@ namespace Presentacion.Vista
             this.Dispose();
         }
 
-       
+        private void dgvempleado_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush b = new SolidBrush(dgvempleado.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, b, e.RowBounds.Location.X + 8, e.RowBounds.Location.Y + 4);
+            }
+        }
     }
 }

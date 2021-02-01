@@ -211,7 +211,7 @@ namespace Negocio.Models
             dplam.Pid_mes = PId_mes;
             dplam.Pm_id_planilla = Pid_planilla;
             dplam.Pid_empreMaestra= PId_empreMaestra;
-            dplam.Pfecha_inicio = PFecha_inicio;
+            //dplam.Pfecha_inicio = PFecha_inicio;
             dplam.Pfecha_fin = PFecha_fin;
 
             using (DataTable dt = new RplanillaM().Show_planillaM(dplam))
