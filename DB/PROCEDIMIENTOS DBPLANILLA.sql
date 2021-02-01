@@ -1451,7 +1451,7 @@ END
 GO
 
 
-ALTER PROC SP_RegistroPrivilegios
+create PROC SP_RegistroPrivilegios
 @idprivilegios int,
 @idrol int,
 @btipopla bit,
@@ -1502,7 +1502,7 @@ SELECT * FROM
 
 
 GO
-ALTER PROC SP_SHOW_PRIVILEGIOS
+CREATE PROC SP_SHOW_PRIVILEGIOS
 @id_rol int
 AS BEGIN
 	IF(EXISTS(SELECT p.id_rol FROM dbo.PRIVILEGIOS p join Rol r on r.id_rol = p.id_rol 
