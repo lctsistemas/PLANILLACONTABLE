@@ -10,18 +10,18 @@ using Datos.Repositories;
 
 namespace Negocio.Models
 {
-    public class NplanillaM:IDisposable
+    public class NplanillaM : IDisposable
     {
-        public int PId_contrato { get; set;}//1
+        public int PId_contrato { get; set; }//1
         public int Pid_planilla { get; set; }//2
         public int Pm_id_tipoplanilla { get; set; }//3
         public string PJornada_laboral { get; set; }//4
         public string PCod_documento { get; set; }
-        public int PId_mes { get; set;}
-        public int PId_empreMaestra { get; set;}
-        public string PNumero_documento { get; set;}
-        public string PNombres { get; set;}
-        public string PDescrip_regipension { get; set;}//5
+        public int PId_mes { get; set; }
+        public int PId_empreMaestra { get; set; }
+        public string PNumero_documento { get; set; }
+        public string PNombres { get; set; }
+        public string PDescrip_regipension { get; set; }//5
         public decimal PVcomision { get; set; }//6
         public decimal PVseguro { get; set; }//7
         public decimal PVaporte { get; set; }//8
@@ -111,7 +111,7 @@ namespace Negocio.Models
 
             if (dplam.ListDpm == null)
                 dplam.ListDpm = new List<DplanillaM>();
-           
+
             foreach (NplanillaM item in ListNpm)
             {
                 dplam.ListDpm.Add(new DplanillaM()
@@ -207,10 +207,10 @@ namespace Negocio.Models
         public IEnumerable<NplanillaM> Show_planillaM()
         {
             list_planillam = new List<NplanillaM>();
-                        
+
             dplam.Pid_mes = PId_mes;
             dplam.Pm_id_planilla = Pid_planilla;
-            dplam.Pid_empreMaestra= PId_empreMaestra;
+            dplam.Pid_empreMaestra = PId_empreMaestra;
             //dplam.Pfecha_inicio = PFecha_inicio;
             dplam.Pfecha_fin = PFecha_fin;
 
