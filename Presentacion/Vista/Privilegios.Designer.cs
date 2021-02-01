@@ -70,6 +70,7 @@ namespace Presentacion.Vista
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,7 +296,7 @@ namespace Presentacion.Vista
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(162, 53);
+            this.label2.Location = new System.Drawing.Point(208, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 1;
@@ -307,7 +308,7 @@ namespace Presentacion.Vista
             this.cbxrol.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxrol.FormattingEnabled = true;
             this.cbxrol.IntegralHeight = false;
-            this.cbxrol.Location = new System.Drawing.Point(215, 50);
+            this.cbxrol.Location = new System.Drawing.Point(250, 50);
             this.cbxrol.Name = "cbxrol";
             this.cbxrol.Size = new System.Drawing.Size(186, 25);
             this.cbxrol.TabIndex = 0;
@@ -371,7 +372,7 @@ namespace Presentacion.Vista
             // txtid_privilegios
             // 
             this.txtid_privilegios.Enabled = false;
-            this.txtid_privilegios.Location = new System.Drawing.Point(432, 54);
+            this.txtid_privilegios.Location = new System.Drawing.Point(459, 54);
             this.txtid_privilegios.Name = "txtid_privilegios";
             this.txtid_privilegios.Size = new System.Drawing.Size(56, 20);
             this.txtid_privilegios.TabIndex = 5;

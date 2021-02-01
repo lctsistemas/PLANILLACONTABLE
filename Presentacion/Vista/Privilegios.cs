@@ -139,7 +139,7 @@ namespace Presentacion.Vista
         private void Privilegios_Load(object sender, EventArgs e)
         {
            cbxrol.SelectedIndex = cbxrol.Items.IndexOf(0);
-
+           txtid_privilegios.Visible = false; 
         }
 
 
