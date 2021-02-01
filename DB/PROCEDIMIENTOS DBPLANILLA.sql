@@ -1197,7 +1197,7 @@ ALTER PROC SP_ShowPlanillaManto
 @idplanilla int,
 @idmes int,
 @id_empresaMaestra int,
-@fechaini date,
+--@fechaini date,
 @fechafin date
 AS BEGIN
 IF(NOT EXISTS(SELECT plam.id_planilla FROM dbo.PlanillaManto plam JOIN dbo.Planilla p ON(plam.id_planilla = p.id_planilla) WHERE p.id_planilla=@idplanilla))
@@ -1210,7 +1210,7 @@ JOIN ComisionesPension cop on(cop.codigo_regimen=rp.codigo_regimen)
 JOIN Tipo_documento do on(e.id_documento=do.id_documento) 
 JOIN Cargo ca on(ca.id_cargo = e.id_cargo) 
 JOIN Contrato co on(co.id_empleado=e.id_empleado)
-WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechaini AND co.fecha_fin <=@fechafin)
+WHERE (cop.idmes =@idmes  AND e.id_em_maestra=@id_empresaMaestra) AND (co.fecha_inicio <=@fechafin)
 END
 /*ELSE
 BEGIN
