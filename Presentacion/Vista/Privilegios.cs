@@ -139,7 +139,7 @@ namespace Presentacion.Vista
         private void Privilegios_Load(object sender, EventArgs e)
         {
            cbxrol.SelectedIndex = cbxrol.Items.IndexOf(0);
-           txtid_privilegios.Visible = false; 
+           txtid_privilegios.Visible = false;
         }
 
 
@@ -211,6 +211,11 @@ namespace Presentacion.Vista
         {
             WindowsMove.ReleaseCapture();
             WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138, 140, 140);
         }
     }
 }

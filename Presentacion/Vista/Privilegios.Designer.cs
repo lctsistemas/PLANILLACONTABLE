@@ -340,6 +340,7 @@ namespace Presentacion.Vista
             this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
             this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
             this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
             // 
             // btncerrar
             // 
@@ -372,7 +373,7 @@ namespace Presentacion.Vista
             // txtid_privilegios
             // 
             this.txtid_privilegios.Enabled = false;
-            this.txtid_privilegios.Location = new System.Drawing.Point(459, 54);
+            this.txtid_privilegios.Location = new System.Drawing.Point(466, 54);
             this.txtid_privilegios.Name = "txtid_privilegios";
             this.txtid_privilegios.Size = new System.Drawing.Size(56, 20);
             this.txtid_privilegios.TabIndex = 5;
