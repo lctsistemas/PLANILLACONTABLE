@@ -51,30 +51,33 @@ namespace Presentacion.Vista
             this.checkbanco = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxrol = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelpriv = new System.Windows.Forms.Panel();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblpriv = new System.Windows.Forms.Label();
             this.txtid_privilegios = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Registrar.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.CONFIGURACION.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelpriv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnguardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.ForeColor = System.Drawing.Color.White;
             this.btnguardar.Image = global::Presentacion.Properties.Resources.baseline_save_white_24dp;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(10, 40);
+            this.btnguardar.Location = new System.Drawing.Point(38, 49);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(99, 27);
             this.btnguardar.TabIndex = 0;
@@ -90,9 +93,9 @@ namespace Presentacion.Vista
             this.Registrar.Controls.Add(this.CONFIGURACION);
             this.Registrar.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Registrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Registrar.Location = new System.Drawing.Point(3, 69);
+            this.Registrar.Location = new System.Drawing.Point(21, 94);
             this.Registrar.Name = "Registrar";
-            this.Registrar.Size = new System.Drawing.Size(541, 396);
+            this.Registrar.Size = new System.Drawing.Size(541, 342);
             this.Registrar.TabIndex = 3;
             this.Registrar.TabStop = false;
             this.Registrar.Text = "ACCESOS";
@@ -292,11 +295,12 @@ namespace Presentacion.Vista
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(130, 44);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(208, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.Size = new System.Drawing.Size(37, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Rol";
+            this.label2.Text = "ROL";
             // 
             // cbxrol
             // 
@@ -304,42 +308,45 @@ namespace Presentacion.Vista
             this.cbxrol.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxrol.FormattingEnabled = true;
             this.cbxrol.IntegralHeight = false;
-            this.cbxrol.Location = new System.Drawing.Point(177, 41);
+            this.cbxrol.Location = new System.Drawing.Point(250, 50);
             this.cbxrol.Name = "cbxrol";
             this.cbxrol.Size = new System.Drawing.Size(186, 25);
             this.cbxrol.TabIndex = 0;
             this.cbxrol.SelectedIndexChanged += new System.EventHandler(this.cbxrol_SelectedIndexChanged);
             // 
-            // panel1
+            // panelpriv
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
-            this.panel1.Controls.Add(this.btnminimizar);
-            this.panel1.Controls.Add(this.btncerrar);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 35);
-            this.panel1.TabIndex = 4;
+            this.panelpriv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(118)))), ((int)(((byte)(118)))));
+            this.panelpriv.Controls.Add(this.btnminimizar);
+            this.panelpriv.Controls.Add(this.btncerrar);
+            this.panelpriv.Controls.Add(this.lblpriv);
+            this.panelpriv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelpriv.Location = new System.Drawing.Point(0, 0);
+            this.panelpriv.Name = "panelpriv";
+            this.panelpriv.Size = new System.Drawing.Size(583, 35);
+            this.panelpriv.TabIndex = 4;
+            this.panelpriv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelpriv_MouseDown);
             // 
             // btnminimizar
             // 
             this.btnminimizar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnminimizar.Image = global::Presentacion.Properties.Resources.mi_18dp;
-            this.btnminimizar.Location = new System.Drawing.Point(475, 0);
+            this.btnminimizar.Location = new System.Drawing.Point(513, 0);
             this.btnminimizar.Name = "btnminimizar";
             this.btnminimizar.Size = new System.Drawing.Size(35, 35);
             this.btnminimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnminimizar.TabIndex = 3;
             this.btnminimizar.TabStop = false;
+            this.btnminimizar.Click += new System.EventHandler(this.btnminimizar_Click);
             this.btnminimizar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseDown);
             this.btnminimizar.MouseLeave += new System.EventHandler(this.btnminimizar_MouseLeave);
+            this.btnminimizar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnminimizar_MouseMove);
             // 
             // btncerrar
             // 
             this.btncerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btncerrar.Image = global::Presentacion.Properties.Resources.baseline_close_white_18dp;
-            this.btncerrar.Location = new System.Drawing.Point(510, 0);
+            this.btncerrar.Location = new System.Drawing.Point(548, 0);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(35, 35);
             this.btncerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -350,37 +357,47 @@ namespace Presentacion.Vista
             this.btncerrar.MouseLeave += new System.EventHandler(this.btncerrar_MouseLeave);
             this.btncerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btncerrar_MouseMove);
             // 
-            // label1
+            // lblpriv
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 35);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PRIVILEGIOS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblpriv.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblpriv.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
+            this.lblpriv.ForeColor = System.Drawing.Color.White;
+            this.lblpriv.Location = new System.Drawing.Point(0, 0);
+            this.lblpriv.Name = "lblpriv";
+            this.lblpriv.Size = new System.Drawing.Size(125, 35);
+            this.lblpriv.TabIndex = 0;
+            this.lblpriv.Text = "PRIVILEGIOS";
+            this.lblpriv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblpriv.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblpriv_MouseDown);
             // 
             // txtid_privilegios
             // 
             this.txtid_privilegios.Enabled = false;
-            this.txtid_privilegios.Location = new System.Drawing.Point(404, 45);
+            this.txtid_privilegios.Location = new System.Drawing.Point(466, 54);
             this.txtid_privilegios.Name = "txtid_privilegios";
             this.txtid_privilegios.Size = new System.Drawing.Size(56, 20);
             this.txtid_privilegios.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.txtid_privilegios);
+            this.panel2.Controls.Add(this.Registrar);
+            this.panel2.Controls.Add(this.btnguardar);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.cbxrol);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(583, 456);
+            this.panel2.TabIndex = 6;
             // 
             // Privilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 467);
-            this.Controls.Add(this.txtid_privilegios);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Registrar);
-            this.Controls.Add(this.btnguardar);
-            this.Controls.Add(this.cbxrol);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(583, 456);
+            this.Controls.Add(this.panelpriv);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Privilegios";
             this.Text = "Privilegios";
@@ -392,11 +409,12 @@ namespace Presentacion.Vista
             this.groupBox1.PerformLayout();
             this.CONFIGURACION.ResumeLayout(false);
             this.CONFIGURACION.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.panelpriv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -404,8 +422,8 @@ namespace Presentacion.Vista
 
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.GroupBox Registrar;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelpriv;
+        private System.Windows.Forms.Label lblpriv;
         private System.Windows.Forms.PictureBox btncerrar;
         private System.Windows.Forms.ComboBox cbxrol;
         private System.Windows.Forms.Label label2;
@@ -429,5 +447,6 @@ namespace Presentacion.Vista
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.TextBox txtid_privilegios;
+        private System.Windows.Forms.Panel panel2;
     }
 }

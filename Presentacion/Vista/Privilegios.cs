@@ -1,4 +1,5 @@
 ﻿using Negocio.Models;
+using Negocio.ValueObjects;
 using Presentacion.Helps;
 using System;
 using System.Collections.Generic;
@@ -90,6 +91,7 @@ namespace Presentacion.Vista
                 np.Bcargo = Convert.ToBoolean(checkcargo.Checked);
                 np.Btipodoc = Convert.ToBoolean(checktipodoc.Checked);
                 np.Bbanco = Convert.ToBoolean(checkbanco.Checked);
+                np.Broles = Convert.ToBoolean(checkroles.Checked);
                 np.Bregimenpen = Convert.ToBoolean(checkregpens.Checked);
                 np.Bcomisiones = Convert.ToBoolean(checkcomis.Checked);
                 np.Bempleado = Convert.ToBoolean(checkempl.Checked);
@@ -103,8 +105,10 @@ namespace Presentacion.Vista
                 result = np.SaveChanges();
                
                 Messages.M_info(result);
-               
 
+                limpiar();
+
+                cbxrol.Text = null;
             }
         }
 
@@ -118,20 +122,24 @@ namespace Presentacion.Vista
         private void cbxrol_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxrol.SelectedIndex == 0)
+            {
                 btnguardar.Enabled = false;
+                limpiar();
+            }
             else
+            {
                 btnguardar.Enabled = true;
-
+            }
+                
             if (cbxrol.SelectedIndex > 0)
                 ShowPrivilegios();
-
-            
+ 
         }
 
         private void Privilegios_Load(object sender, EventArgs e)
         {
            cbxrol.SelectedIndex = cbxrol.Items.IndexOf(0);
-
+           txtid_privilegios.Visible = false;
         }
 
 
@@ -164,6 +172,50 @@ namespace Presentacion.Vista
         private void btnminimizar_MouseLeave(object sender, EventArgs e)
         {
             btnminimizar.BackColor = Color.FromArgb(116, 118, 118);
+        }
+
+        private void btnminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void limpiar()
+        {
+            cbxrol.Text = String.Empty;
+            checktpla.Checked=false;
+            checktipocont.Checked = false;
+            checkregsalud.Checked = false;
+            checksubnosub.Checked = false;
+            checkcargo.Checked = false;
+            checktipodoc.Checked = false;
+            checkbanco.Checked = false;
+            checkroles.Checked = false;
+            checkregpens.Checked = false;
+            checkcomis.Checked = false;
+            checkempl.Checked = false;
+            checkempresa.Checked = false;
+            checksucursal.Checked = false;
+            checkusuario.Checked = false;
+            checkplan.Checked = false;
+
+            using (np) { np.State = EntityState.Guardar; }
+        }
+
+        private void panelpriv_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void lblpriv_MouseDown(object sender, MouseEventArgs e)
+        {
+            WindowsMove.ReleaseCapture();
+            WindowsMove.SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnminimizar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnminimizar.BackColor = Color.FromArgb(138, 140, 140);
         }
     }
 }

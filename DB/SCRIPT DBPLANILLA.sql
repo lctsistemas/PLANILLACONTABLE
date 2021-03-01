@@ -529,6 +529,8 @@ busuario bit not null,
 bplanilla bit not null
 )
 
+DELETE FROM PRIVILEGIOS;
+
 /*TABLAS CON VALOR PRIMARY KEY IDENTITY
 -CARGO
 -TIPO DOCUMENTO
